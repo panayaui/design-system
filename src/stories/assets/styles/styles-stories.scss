@@ -1,0 +1,14 @@
+@import 'custom';
+
+body {
+  font-family: $font-family-main;
+  padding: 0;
+}
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+.sr-only {
+  font-size: 0;
+}
