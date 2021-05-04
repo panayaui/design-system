@@ -1,31 +1,47 @@
 $white: #ffffff;
 $black: #000000;
 
-//system colors
-//$system-primary: rgba(84, 54, 44);
-$system-accent: #0875e1;
-$system-active: #3CADEF;
-$system-decoration: #7968AD;
-$system-attention: #CA2429;
-//$system-notification: #F96B0A;
-//$system-normal: #318e1e;
+$primary-basic: #2D3047;
+$primary-accent: #52B788;
 
-//font colors
-//$text-darkest: #747474;
-$text-dark: #1F1F1F;
-//$text-medium: #272727;
-$text-light: #686868;
-//$text-lighter: #545454;
+$secondary-basic-800: #362B97;
+$secondary-basic-700: #4132C8;
+$secondary-basic-600: #6A83DC;
+$secondary-basic-500: #88A0F6;
+$secondary-basic-200: #C9D5FF;
+$secondary-basic-100: #DCE4FF;
+$secondary-basic-050: #EDF0FA;
 
-//layout colors
-$layout-accent: #E7E7E7;
-$layout-border: #7b858f;
-$layout-disabled: #f6f7f8;
-$layout-disabled-border: #b9c0c7;
+$secondary-accent-700: #005A9A;
+$secondary-accent-500: #018CD3;
+$secondary-accent-400: #009EF5;
+$secondary-accent-300: #33B6FF;
+$secondary-accent-200: #B8E4FF;
+$secondary-accent-100: #D5EFFF;
+$secondary-accent-050: #EAF7FF;
 
-//color scheme
-$fuchsia: #EB2B8C;
-$violet: #7A69AD;
-$beige: #F8B062;
+$grayscale-800: #595F72;
+$grayscale-700: #8F8F8F;
+$grayscale-600: #B2B2B2;
+$grayscale-500: #C4C4C7;
+$grayscale-400: #D2D2D6;
+$grayscale-100: #DFDFDF;
+$grayscale-050: #E7E7E9;
+$grayscale-005: #F6F7F9;
+$grayscale-001: #FEFEFF;
 
+$alert-700: #A80603;
+$alert-500: #E11731;
+$alert-050: #FED6DE;
 
+$yellow: #F3DC5E;
+
+$orange-300: #FF9900;
+$orange-050: #FFE1B5;
+
+$success-400: #52B788;
+$success-050: #CCEFDF;
+
+$palette-a: #6D86E1;
+$palette-b: #9A4CB6;
+$palette-c: #4132C8;

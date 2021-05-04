@@ -206,6 +206,177 @@
             }
         },
         {
+            "name": "ColorsComponent",
+            "id": "component-ColorsComponent-68d4870690ac985dd88c2dbf0ca223f1",
+            "file": "src/stories/colors/colors.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-colors",
+            "styleUrls": [
+                "./colors.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./colors.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "line": 13,
+                    "type": "boolean"
+                },
+                {
+                    "name": "error",
+                    "line": 16,
+                    "type": "string"
+                },
+                {
+                    "name": "fullSize",
+                    "defaultValue": "false",
+                    "line": 14,
+                    "type": "boolean"
+                },
+                {
+                    "name": "icon",
+                    "defaultValue": "true",
+                    "line": 17,
+                    "type": "boolean"
+                },
+                {
+                    "name": "label",
+                    "line": 10,
+                    "type": "string"
+                },
+                {
+                    "name": "placeholder",
+                    "line": 11,
+                    "type": "string"
+                },
+                {
+                    "name": "topLabelled",
+                    "line": 12,
+                    "type": "boolean"
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'text'",
+                    "line": 15,
+                    "type": "string"
+                },
+                {
+                    "name": "value",
+                    "line": 9,
+                    "type": "string"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "clearValue",
+                    "args": [
+                        {
+                            "name": "$event",
+                            "type": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 43,
+                    "jsdoctags": [
+                        {
+                            "name": "$event",
+                            "type": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "search",
+                    "args": [
+                        {
+                            "name": "$event",
+                            "type": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 39,
+                    "jsdoctags": [
+                        {
+                            "name": "$event",
+                            "type": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'p-colors',\r\n  templateUrl: './colors.component.html',\r\n  styleUrls: ['./colors.scss'],\r\n})\r\nexport default class ColorsComponent {\r\n  @Input() value?: string;\r\n  @Input() label: string;\r\n  @Input() placeholder: string;\r\n  @Input() topLabelled: boolean;\r\n  @Input() disabled?: boolean = false;\r\n  @Input() fullSize?: boolean = false;\r\n  @Input() type?: string = 'text';\r\n  @Input() error?: string;\r\n  @Input() icon?: boolean = true;\r\n\r\n  public get containerClasses(): string[] {\r\n    const isTopLabelled = this.topLabelled ? 'top-labelled' : 'left-labelled';\r\n    const isFullSize = this.fullSize ? 'full-size' : 'regular-size';\r\n    return [ isTopLabelled, isFullSize ];\r\n  }\r\n\r\n  public get inputClasses(): string[] {\r\n    const isDisabled = this.disabled ? 'disabled' : '';\r\n    const isFullSize = this.fullSize ? 'full-size-input' : 'regular-size-input';\r\n    return [ isDisabled, isFullSize ];\r\n  }\r\n\r\n  public get _type(): string {\r\n    return this.type ? this.type : 'text';\r\n  }\r\n\r\n  public get _value(): string {\r\n    return this.value ? this.value : '';\r\n  }\r\n\r\n  search($event): void {\r\n    console.log('search');\r\n  }\r\n\r\n  clearValue($event): void {\r\n    console.log('clear');\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n",
+                    "styleUrl": "./colors.scss"
+                }
+            ],
+            "stylesData": "",
+            "accessors": {
+                "containerClasses": {
+                    "name": "containerClasses",
+                    "getSignature": {
+                        "name": "containerClasses",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 19
+                    }
+                },
+                "inputClasses": {
+                    "name": "inputClasses",
+                    "getSignature": {
+                        "name": "inputClasses",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 25
+                    }
+                },
+                "_type": {
+                    "name": "_type",
+                    "getSignature": {
+                        "name": "_type",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 31
+                    }
+                },
+                "_value": {
+                    "name": "_value",
+                    "getSignature": {
+                        "name": "_value",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 35
+                    }
+                }
+            },
+            "templateData": ""
+        },
+        {
             "name": "HeaderComponent",
             "id": "component-HeaderComponent-246e2a69dc126a3bd76c6328dd3b93e2",
             "file": "src/stories/header/header.component.ts",
@@ -861,6 +1032,14 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/button/Button.stories.ts",
+                "type": "Story<Button>",
+                "defaultValue": "(args: Button) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/header/Header.stories.ts",
                 "type": "Story<Header>",
                 "defaultValue": "(args: Header) => ({\n  props: args,\n})"
@@ -888,14 +1067,6 @@
                 "file": "src/stories/page/Page.stories.ts",
                 "type": "Story<Page>",
                 "defaultValue": "(args: Page) => ({\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/button/Button.stories.ts",
-                "type": "Story<Button>",
-                "defaultValue": "(args: Button) => ({\n  props: args,\n})"
             },
             {
                 "name": "TopLabelled",
@@ -1236,6 +1407,15 @@
                 "coveragePercent": 83,
                 "coverageCount": "5/6",
                 "status": "very-good"
+            },
+            {
+                "filePath": "src/stories/colors/colors.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ColorsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/12",
+                "status": "low"
             },
             {
                 "filePath": "src/stories/header/Header.stories.ts",
