@@ -1,53 +1,53 @@
-@import "../assets/styles/custom";
-
-$container-padding: 32px;
-$container-border-color: #CED3D9;
-
-:host {
-  display: block;
-  height: 100vh;
-  position: relative;
-}
-
-.custom-modal {
-  width: fit-content;
-  height: fit-content;
-  background-color: $white;
-  border: 1px solid $container-border-color;
-  border-radius: 8px;
-  box-sizing: border-box;
-  box-shadow: rgb(0 0 0 / 10%) 0 4px 8px 0;
-  padding: $container-padding;
-  margin: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-
-  &.full-size {
-    width: 80vw;
-    ::ng-deep .custom-input-label {
-      min-width: 80px;
-    }
-  }
-
-  &-backdrop {
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.65);
-    position: fixed;
-    top: 0;
-    left: 0;
-  }
-
-  &-input {
-    display: block;
-    margin-bottom: 10px;
-  }
-
-  &-button {
-    float: right;
-    margin-top: 10px;
-  }
-}
+//@import "../assets/styles/custom";
+//
+//$container-padding: 32px;
+//$container-border-color: #CED3D9;
+//
+//:host {
+//  display: block;
+//  height: 100vh;
+//  position: relative;
+//}
+//
+//.custom-modal {
+//  width: fit-content;
+//  height: fit-content;
+//  background-color: $primary-contrast;
+//  border: 1px solid $container-border-color;
+//  border-radius: 8px;
+//  box-sizing: border-box;
+//  box-shadow: rgb(0 0 0 / 10%) 0 4px 8px 0;
+//  padding: $container-padding;
+//  margin: auto;
+//  position: absolute;
+//  top: 0;
+//  left: 0;
+//  bottom: 0;
+//  right: 0;
+//
+//  &.full-size {
+//    width: 80vw;
+//    ::ng-deep .custom-input-label {
+//      min-width: 80px;
+//    }
+//  }
+//
+//  &-backdrop {
+//    width: 100vw;
+//    height: 100vh;
+//    background: rgba(0, 0, 0, 0.65);
+//    position: fixed;
+//    top: 0;
+//    left: 0;
+//  }
+//
+//  &-input {
+//    display: block;
+//    margin-bottom: 10px;
+//  }
+//
+//  &-button {
+//    float: right;
+//    margin-top: 10px;
+//  }
+//}
