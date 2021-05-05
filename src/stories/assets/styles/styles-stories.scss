@@ -21,3 +21,14 @@ p {
   margin-top: 0;
   margin-bottom: 0;
 }
+
+.page-title {
+  font-family: $font-family-accent;
+  font-size: 60px;
+  color: $gray-scale-700;
+  line-height: 72px;
+  margin-bottom: 95px;
+  &-highlighted {
+    font-weight: 700;
+  }
+}

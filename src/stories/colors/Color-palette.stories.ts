@@ -4,7 +4,7 @@ import { Story, Meta } from '@storybook/angular/types-6-0';
 import ColorPaletteComponent from './color-palette.component';
 
 export default {
-  title: 'Custom/Color Palette',
+  title: 'Principles/Color Palette',
   component: ColorPaletteComponent,
   decorators: [
     moduleMetadata({

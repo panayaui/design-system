@@ -52,17 +52,6 @@ $box-gap: 23px;
 }
 
 .color {
-  &-title {
-    font-family: $font-family-accent;
-    font-size: 60px;
-    color: $gray-scale-700;
-    line-height: 72px;
-    margin-bottom: 95px;
-    &-highlighted {
-      font-weight: 700;
-    }
-  }
-
   &-scheme {
     display: flex;
     flex-wrap: wrap;
