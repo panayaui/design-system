@@ -1,5 +1,9 @@
 @import "../assets/styles/custom";
 
+.page {
+  width: 1440px;
+}
+
 .font-family {
   display: flex;
   justify-content: stretch;
@@ -8,42 +12,48 @@
   color: $primary-basic-main;
   line-height: 24.44px;
 
-  &-accent {
+  &-accent-container {
     font-family: $font-family-accent;
+    width: 530px;
+    margin-right: 75px;
   }
 
-  &-basic {
-    font-family: $font-family-accent;
+  &-basic-container {
+    font-family: $font-family-basic;
+    width: 605px;
   }
 
   &-title {
     font-weight: 700;
     font-size: 40px;
     line-height: 40.72px;
+    margin-bottom: 26px;
   }
 
-  &-description {
-
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
   }
 
   &-example {
+    width: 159px;
     margin-top: 64px;
+    margin-right: 78px;
+  }
+
+  &-weight {
+    margin-bottom: 26px;
+  }
+
+  &-sample {
+    line-break: anywhere;
+  }
+
+  &-class {
+    font-weight: 400;
+    color: $gray-scale-700;
+    margin-top: 20px;
   }
 
 }
 
-.regular {
-  font-weight: 400;
-}
-
-.medium {
-  font-weight: 500;
-}
-
-.semi-bold {
-  font-weight: 600;
-}
-
-.bold {
-  font-weight: 700;
-}
