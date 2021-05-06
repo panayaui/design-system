@@ -1,0 +1,29 @@
+<div class="custom-input-container"
+     [ngClass]="containerClasses">
+  <label class="custom-input-label">{{ label }}</label>
+  <div class="custom-input-group">
+    <div class="custom-input-wrapper">
+      <input
+        type={{_type}}
+        class="custom-input-control"
+        value={{_value}}
+        [ngClass]="inputClasses"
+        placeholder={{placeholder}}
+        [attr.disabled]="disabled ? '': null"
+      >
+      <ng-template [ngIf]="value" [ngIfElse]="emptyInput">
+        <button *ngIf="icon" class="custom-input-button clear" (click)="search($event)">Search</button>
+      </ng-template>
+
+      <ng-template #emptyInput>
+        <button *ngIf="icon" class="custom-input-button search" (click)="clearValue($event)">Clear</button>
+      </ng-template>
+    </div>
+
+    <p class="custom-input-error" *ngIf="error">{{ error }}</p>
+  </div>
+</div>
+
+
+
+

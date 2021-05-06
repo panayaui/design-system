@@ -1,0 +1,23 @@
+<storybook-button  [primary]="true"
+                   [size]=" 'small' "
+                   (onClick)="showModal($event)"
+                   [label]=" 'Sign up' "></storybook-button>
+
+<div *ngIf="shown" class="custom-modal-backdrop"></div>
+
+<div *ngIf="shown" class="custom-modal" [ngClass]="modalClasses">
+  <ng-container *ngFor="let input of params | keyvalue">
+    <custom-input [label]="input.value"
+                  [topLabelled]="true"
+                  [fullSize]="fullSize"
+                  [icon]="false"
+                  class="custom-modal-input"
+                  [type]="input.value==='Email' ? 'email' : 'text' "></custom-input>
+  </ng-container>
+  <storybook-button  [primary]="true"
+                     [size]=" 'small' "
+                     (onClick)="signUp($event)"
+                     [label]=" 'Sign up' "
+                     class="custom-modal-button"></storybook-button>
+</div>
+

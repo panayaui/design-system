@@ -1,0 +1,117 @@
+//@import "../assets/styles/custom";
+//
+//$container-width: 500px;
+//$line-height: 20px;
+//$input-min-width: 280px;
+//$input-padding: 8px;
+//$input-border-width: 1px;
+//
+//.custom-input {
+//  &-container {
+//    &.full-size {
+//      display: flex;
+//      align-items: center;
+//      width: 100%;
+//      flex-wrap: wrap;
+//    }
+//    &.top-labelled:not(.full-size) {
+//      display: inline-block;
+//    }
+//    &.left-labelled:not(.full-size) {
+//      display: flex;
+//      width: $container-width;
+//      justify-content: space-between;
+//      align-items: center;
+//    }
+//  }
+//
+//  &-label {
+//    display: block;
+//    font-size: $base-font-size;
+//    font-weight: 400;
+//    line-height: $line-height;
+//    color: $primary-basic;
+//    padding: 0;
+//    .top-labelled:not(.full-size) & {
+//      margin-bottom: 4px;
+//    }
+//    .full-size & {
+//      margin-right: 10px;
+//    }
+//  }
+//
+//  &-group {
+//    height: 40px;
+//    .full-size & {
+//      flex-grow: 1;
+//    }
+//  }
+//
+//  &-wrapper {
+//    position: relative;
+//  }
+//
+//  &-control {
+//    @include resetInput;
+//    font-size: $base-font-size;
+//    font-weight: 400;
+//    line-height: $line-height;
+//    color: $primary-basic;
+//    min-width: $input-min-width;
+//    background-color: $primary-contrast;
+//    border: $input-border-width solid $primary-basic;
+//    border-radius: 4px;
+//    padding: $input-padding;
+//    transition: 0.2s border-color, 0.2s box-shadow;
+//    height: 40px;
+//    &:focus {
+//      border-color: $primary-accent;
+//      box-shadow: inset 0 0 0 1px $primary-accent;
+//      outline: none;
+//    }
+//    &.disabled {
+//      cursor: default;
+//      background-color: #ddd;
+//      border-color: #ddd;
+//      pointer-events: none;
+//    }
+//    &.full-size-input {
+//      width: 100%;
+//    }
+//  }
+//
+//  &-button {
+//    @include resetButton;
+//    font-size: 0;
+//    width: $line-height;
+//    height: $line-height;
+//    padding: 5px;
+//    background-image: url("../assets/images/search.svg");
+//    background-position: center;
+//    background-repeat: no-repeat;
+//    position: absolute;
+//    right: $input-padding + $input-border-width;
+//    bottom: $line-height / 2 + $input-padding + $input-border-width;
+//    transform: translateY(50%);
+//
+//    &.search {
+//      background-image: url("../assets/images/search.svg");
+//      background-size: 95%;
+//    }
+//
+//    &.clear {
+//      background-image: url("../assets/images/close.svg");
+//      background-size: 80%;
+//    }
+//
+//    .disabled + & {
+//      display: none;
+//    }
+//  }
+//
+//  &-error {
+//    color: $secondary-accent-700;
+//    font-size: $small-font-size;
+//    margin-top: 5px;
+//  }
+//}

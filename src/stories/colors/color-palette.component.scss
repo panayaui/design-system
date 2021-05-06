@@ -1,0 +1,129 @@
+@import "../assets/styles/custom";
+
+$colorScheme: (
+  primary-basic-main: $primary-basic-main,
+  primary-basic-contrast: $primary-basic-contrast,
+  primary-accent-main: $primary-accent-main,
+  secondary-basic-800: $secondary-basic-800,
+  secondary-basic-700: $secondary-basic-700,
+  secondary-basic-600: $secondary-basic-600,
+  secondary-basic-500: $secondary-basic-500,
+  secondary-basic-200: $secondary-basic-200,
+  secondary-basic-100: $secondary-basic-100,
+  secondary-basic-50: $secondary-basic-50,
+  secondary-accent-700: $secondary-accent-700,
+  secondary-accent-500: $secondary-accent-500,
+  secondary-accent-400: $secondary-accent-400,
+  secondary-accent-300: $secondary-accent-300,
+  secondary-accent-200: $secondary-accent-200,
+  secondary-accent-100: $secondary-accent-100,
+  secondary-accent-50: $secondary-accent-50,
+  gray-scale-800: $gray-scale-800,
+  gray-scale-700: $gray-scale-700,
+  gray-scale-600: $gray-scale-600,
+  gray-scale-500: $gray-scale-500,
+  gray-scale-400: $gray-scale-400,
+  gray-scale-100: $gray-scale-100,
+  gray-scale-50: $gray-scale-50,
+  gray-scale-5: $gray-scale-5,
+  gray-scale-1: $gray-scale-1,
+  supportive-alert-700: $supportive-alert-700,
+  supportive-alert-500: $supportive-alert-500,
+  supportive-alert-50: $supportive-alert-50,
+  supportive-yellow-300: $supportive-yellow-300,
+  supportive-orange-300 :$supportive-orange-300,
+  supportive-orange-50: $supportive-orange-50,
+  supportive-success-400: $supportive-success-400,
+  supportive-success-50: $supportive-success-50,
+  supportive-dev-a: $supportive-dev-a,
+  supportive-dev-b: $supportive-dev-b,
+  supportive-dev-c: $supportive-dev-c,
+);
+$group-odd-width: 442px;
+$group-odd-margin: 259px;
+$box-width: 209px;
+$box-height: 87px;
+$box-gap: 23px;
+
+@each $name, $value in $colorScheme {
+  .#{$name} {
+    background-color: $value;
+  }
+}
+
+.color {
+  &-scheme {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1800px;
+    &-group {
+      width: $group-odd-width;
+      &:nth-child(odd) {
+        margin-right: $group-odd-margin;
+      }
+      &:nth-child(even) {
+        flex-basis: $box-width * 4 + $box-gap * 3;
+      }
+    }
+    &-title {
+      font-size: 17px;
+      color: $gray-scale-700;
+      line-height: 21.37px;
+      text-transform: capitalize;
+      flex-basis: 100%;
+      padding-bottom: 14px;
+    }
+    &-container {
+      display: flex;
+      flex-wrap: wrap;
+      width: fit-content;
+      padding-top: 50px;
+      border-top: 1px solid $black;
+    }
+  }
+
+  &-column {
+    & ~ &:not(.color-supportive-dev) {
+      margin-left: $box-gap;
+    }
+  }
+
+  &-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 17px;
+    line-height: 21px;
+    width: $box-width;
+    height: $box-height;
+    margin-bottom: 41px;
+    padding-left: 25px;
+    padding-right: 25px;
+    &.white {
+      color: $gray-scale-1;
+      font-weight: 500;
+    }
+    &.black {
+      color: $primary-basic-main;
+      font-weight: 700;
+    }
+  }
+
+  &-box-name,
+  &-box-class {
+    line-height: 21.37px;
+  }
+
+  &-supportive-dev {
+    display: flex;
+    justify-content: flex-end;
+    flex-basis: 100%;
+    margin-top: $box-height;
+    .color-box {
+      display: inline-flex;
+      & ~ .color-box {
+        margin-left: $box-gap;
+      }
+    }
+  }
+}
