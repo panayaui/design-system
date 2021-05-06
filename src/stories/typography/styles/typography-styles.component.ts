@@ -14,7 +14,7 @@ const typographyStyles = {
       capitals: 'Yes',
       useCase: 'Page titles - level 1'
     },
-    classes: ['.headline-1-bold', '.headline-1-bold.headline-contrast']
+    classes: ['headline-1-bold', 'headline-1-bold headline-contrast']
   },
   h1sub: {
     title: 'Headline 1-sub',
@@ -27,7 +27,7 @@ const typographyStyles = {
       capitals: 'No',
       useCase: 'Page titles - level 2'
     },
-    classes: ['.headline-1-sub-semibold']
+    classes: ['headline-1-sub-semibold']
   },
   h2: {
     title: 'Headline 2',
@@ -40,7 +40,7 @@ const typographyStyles = {
       capitals: 'Yes',
       useCase: 'Masthead items. SemiBold for default text, Bold for selected, Bold green for Hover.',
     },
-    classes: ['.headline-2-bold', '.headline-2-semibold', '.headline-2-bold.headline-contrast']
+    classes: ['headline-2-bold', 'headline-2-semibold', 'headline-2-bold headline-contrast']
   },
   h3: {
     title: 'Headline 3',
@@ -53,12 +53,12 @@ const typographyStyles = {
       capitals: 'No',
       useCase: 'Masthead sub menu items. Regular for default text, SemiBold green for hover and selected.'
     },
-    classes: ['.headline-3-regular', '.headline-3-semibold.headline-contrast']
+    classes: ['headline-3-regular', 'headline-3-semibold headline-contrast']
   },
   h4: {
     title: 'Headline 4',
-    description: 'table header, status labels)',
-    set: {
+    description: 'table header, status labels',
+    sets: {
       family: 'Inter - Bold',
       size: '12px',
       letterSpacing: '5%',
@@ -66,11 +66,11 @@ const typographyStyles = {
       capitals: 'Yes',
       useCase: 'Table header row (black), Status labels (white)'
     },
-    classes: ['.headline-4-bold']
+    classes: ['headline-4-bold']
   },
   h5: {
     title: 'Headline 5',
-    description: 'expansion panel title)',
+    description: 'expansion panel title',
     sets: {
       family: 'Source Sans Pro - Bold',
       size: '15px',
@@ -79,7 +79,7 @@ const typographyStyles = {
       capitals: 'Yes',
       useCase: 'Expansion panel title',
     },
-    classes: ['.headline-5-bold']
+    classes: ['headline-5-bold']
   },
   h6: {
     title: 'Headline 6',
@@ -92,7 +92,7 @@ const typographyStyles = {
       capitals: 'Yes',
       useCase: 'Default tab - Bold, Selected tab - SemiBold'
     },
-    classes: ['.headline-6-bold', '.headline-3-semibold']
+    classes: ['headline-6-bold', 'headline-3-semibold']
   },
   h7: {
     title: 'Headline 7',
@@ -105,12 +105,12 @@ const typographyStyles = {
       capitals: 'No',
       useCase: 'Modal title',
     },
-    classes: ['.headline-7-bold']
+    classes: ['headline-7-bold']
   },
   p1: {
-    title: 'Headline 7',
+    title: 'Paragraph 1',
     description: '',
-    set: {
+    sets: {
       family: 'Inter - Regular',
       size: '14px',
       letterSpacing: '0%',
@@ -118,7 +118,7 @@ const typographyStyles = {
       capitals: 'No',
       useCase: 'Paragraphs, Input text',
     },
-    classes: ['.paragraph-1-regular']
+    classes: ['paragraph-1-regular']
   },
   p2: {
     title: 'Paragraph 2',
@@ -131,7 +131,7 @@ const typographyStyles = {
       capitals: 'No',
       useCase: 'Buttons, Actions, Filter, Drop down menu items, Notifications',
     },
-    classes: ['.paragraph-2-regular']
+    classes: ['paragraph-2-regular']
   },
   p3: {
     title: 'Paragraph 3',
@@ -144,7 +144,7 @@ const typographyStyles = {
       capitals: 'No',
       useCase: 'Table content, Input top label',
     },
-    classes: ['.paragraph-3-regular']
+    classes: ['paragraph-3-regular']
   }
 };
 

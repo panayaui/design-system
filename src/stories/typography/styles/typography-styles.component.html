@@ -5,8 +5,10 @@
     <li *ngFor="let item of typographyStyles | keyvalue: originalOrder"
         class="font-style-item">
       <div class="font-style-top">
-        <h2 class="font-style-title">{{ item.value.title }}</h2>
-        <p class="font-style-description">({{ item.value.description }})</p>
+        <h2 class="font-style-title">{{ item.value.title }} </h2>
+        <p *ngIf="item.value.description" class="font-style-description">
+          ({{ item.value.description }})
+        </p>
       </div>
       <div class="font-style-desc">
         <dl *ngFor="let set of item.value.sets | keyvalue: originalOrder"
@@ -19,8 +21,8 @@
         <div *ngFor="let example of item.value.classes"
              class="font-style-example">
           <dl class="font-style-desc-set">
-            <dt class="font-style-desc-title">{{ example }}</dt>
-            <dd class="font-style-desc-data {{ example }}">Lorem ipsum dolor sit amet, consectetur adipiscing.</dd>
+            <dt class="font-style-desc-title">.{{ example }}</dt>
+            <dd class="font-style-desc-data {{ example }}">Lorem ipsum dolor sit amet</dd>
           </dl>
         </div>
       </div>

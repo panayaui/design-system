@@ -54,14 +54,16 @@
   &-desc-title {
     color: $gray-scale-700;
     margin-bottom: 10px;
-    .font-style-desc {
+    .font-style-desc & {
       text-transform: capitalize;
     }
   }
 
   &-desc-data {
-    font-weight: 600;
     margin-left: 0;
+    .font-style-desc & {
+      font-weight: 600;
+    }
   }
 
   &-ex-title {
