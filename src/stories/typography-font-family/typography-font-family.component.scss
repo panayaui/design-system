@@ -1,0 +1,49 @@
+@import "../assets/styles/custom";
+
+.font-family {
+  display: flex;
+  justify-content: stretch;
+  width: 1800px;
+  font-size: 18px;
+  color: $primary-basic-main;
+  line-height: 24.44px;
+
+  &-accent {
+    font-family: $font-family-accent;
+  }
+
+  &-basic {
+    font-family: $font-family-accent;
+  }
+
+  &-title {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 40.72px;
+  }
+
+  &-description {
+
+  }
+
+  &-example {
+    margin-top: 64px;
+  }
+
+}
+
+.regular {
+  font-weight: 400;
+}
+
+.medium {
+  font-weight: 500;
+}
+
+.semi-bold {
+  font-weight: 600;
+}
+
+.bold {
+  font-weight: 700;
+}
