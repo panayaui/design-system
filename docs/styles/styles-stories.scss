@@ -1,7 +1,7 @@
 @import 'custom';
 
 body {
-  font-family: $font-family-main;
+  font-family: $font-family-basic;
   padding: 0;
 }
 
@@ -22,6 +22,11 @@ p {
   margin-bottom: 0;
 }
 
+.page {
+  padding: 80px;
+  background-color: $white;
+}
+
 .page-title {
   font-family: $font-family-accent;
   font-size: 60px;
@@ -32,3 +37,26 @@ p {
     font-weight: 700;
   }
 }
+
+//font-family
+.font-family-accent {
+  font-family: $font-family-accent;
+}
+.font-family-basic {
+  font-family: $font-family-basic;
+}
+
+//font-weight
+.weight-regular {
+  font-weight: 400;
+}
+.weight-medium {
+  font-weight: 500;
+}
+.weight-semi-bold {
+  font-weight: 600;
+}
+.weight-bold {
+  font-weight: 700;
+}
+
