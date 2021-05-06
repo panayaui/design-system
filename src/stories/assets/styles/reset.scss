@@ -1,6 +1,6 @@
 @mixin resetH {
     font-size: inherit;
-    font-weight: 400;
+    font-weight: inherit;
     line-height: unset;
     margin: 0;
     padding: 0;
@@ -32,7 +32,7 @@
 }
 
 @mixin resetInput {
-    font-family: $font-family-main;
+    font-family: $font-family-basic;
     font-size: $base-font-size;
     background: none;
     padding: 0;
@@ -40,7 +40,7 @@
 }
 
 @mixin resetTextarea {
-    font-family: $font-family-main;
+    font-family: $font-family-basic;
     font-size: $base-font-size;
     background: none;
     border: none;
