@@ -16,7 +16,6 @@
            class="color-column color-{{group.key}}-{{column.key}}">
         <div *ngFor="let box of column.value | keyvalue: reverseKeyOrder"
              class="color-box {{group.key}}-{{column.key}}-{{box.key}} {{box.value.labelColor}}">
-          <p class="color-box-name">{{box.value.name}}</p>
           <p class="color-box-class">${{group.key}}-{{column.key}}-{{box.key}}</p>
         </div>
       </div>
