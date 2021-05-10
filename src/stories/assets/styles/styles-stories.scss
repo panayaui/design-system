@@ -138,11 +138,27 @@ p {
   font-weight: 700;
   letter-spacing: normal;
 }
-.paragraph-1-regular {
+.paragraph-1-default {
   font-family: $font-family-basic;
   font-size: $base-font-size;
   font-weight: 400;
   letter-spacing: normal;
+  line-height: 20px;
+}
+.paragraph-1-link {
+  font-family: $font-family-basic;
+  font-size: $base-font-size;
+  font-weight: 500;
+  letter-spacing: normal;
+  color: $secondary-a-700;
+  line-height: 20px;
+}
+.paragraph-1-large-label {
+  font-family: $font-family-basic;
+  font-size: $base-font-size;
+  font-weight: 500;
+  letter-spacing: normal;
+  color: $gray-scale-700;
   line-height: 20px;
 }
 .paragraph-2-regular {
@@ -152,10 +168,48 @@ p {
   letter-spacing: normal;
   line-height: 20px;
 }
-.paragraph-3-regular {
+.paragraph-2-link {
+  font-family: $font-family-basic;
+  font-size: $small-font-size;
+  font-weight: 500;
+  letter-spacing: normal;
+  color: $secondary-a-700;
+  line-height: 20px;
+}
+.paragraph-2-actions {
+  font-family: $font-family-basic;
+  font-size: $small-font-size;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 20px;
+}
+.paragraph-3-default {
   font-family: $font-family-basic;
   font-size: $tiny-font-size;
   font-weight: 400;
   letter-spacing: normal;
+  line-height: 20px;
+}
+.paragraph-3-link {
+  font-family: $font-family-basic;
+  font-size: $tiny-font-size;
+  font-weight: 400;
+  letter-spacing: normal;
+  color: $secondary-a-700;
+  line-height: 20px;
+}
+.paragraph-3-medium {
+  font-family: $font-family-basic;
+  font-size: $tiny-font-size;
+  font-weight: 500;
+  letter-spacing: normal;
+  line-height: 20px;
+}
+.paragraph-3-semibold {
+  font-family: $font-family-basic;
+  font-size: $tiny-font-size;
+  font-weight: 600;
+  letter-spacing: normal;
+  color: $gray-scale-700;
   line-height: 20px;
 }

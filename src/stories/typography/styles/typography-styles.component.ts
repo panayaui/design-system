@@ -8,7 +8,7 @@ const typographyStyles = {
     description: 'page header level 1',
     sets: {
       family: 'Source Sans Pro - Bold',
-      size: '20px',
+      size: '18px',
       letterSpacing: '5%',
       lineHeight: 'Auto',
       capitals: 'Yes',
@@ -118,7 +118,7 @@ const typographyStyles = {
       capitals: 'No',
       useCase: 'Paragraphs, Input text',
     },
-    classes: ['paragraph-1-regular']
+    classes: ['paragraph-1-default', 'paragraph-1-link', 'paragraph-1-large-label']
   },
   p2: {
     title: 'Paragraph 2',
@@ -131,7 +131,7 @@ const typographyStyles = {
       capitals: 'No',
       useCase: 'Buttons, Actions, Filter, Drop down menu items, Notifications',
     },
-    classes: ['paragraph-2-regular']
+    classes: ['paragraph-2-default', 'paragraph-2-link', 'paragraph-2-actions']
   },
   p3: {
     title: 'Paragraph 3',
@@ -144,7 +144,7 @@ const typographyStyles = {
       capitals: 'No',
       useCase: 'Table content, Input top label',
     },
-    classes: ['paragraph-3-regular']
+    classes: ['paragraph-3-default', 'paragraph-3-link', 'paragraph-3-medium', 'paragraph-3-semibold']
   }
 };
 
