@@ -1,23 +1,23 @@
 @import "../assets/styles/custom";
 
 $colorScheme: (
-  primary-basic-main: $primary-basic-main,
-  primary-basic-contrast: $primary-basic-contrast,
-  primary-accent-main: $primary-accent-main,
-  secondary-basic-800: $secondary-basic-800,
-  secondary-basic-700: $secondary-basic-700,
-  secondary-basic-600: $secondary-basic-600,
-  secondary-basic-500: $secondary-basic-500,
-  secondary-basic-200: $secondary-basic-200,
-  secondary-basic-100: $secondary-basic-100,
-  secondary-basic-50: $secondary-basic-50,
-  secondary-accent-700: $secondary-accent-700,
-  secondary-accent-500: $secondary-accent-500,
-  secondary-accent-400: $secondary-accent-400,
-  secondary-accent-300: $secondary-accent-300,
-  secondary-accent-200: $secondary-accent-200,
-  secondary-accent-100: $secondary-accent-100,
-  secondary-accent-50: $secondary-accent-50,
+  primary-a-900: $primary-a-900,
+  primary-b-300: $primary-b-300,
+  primary-c-50: $primary-c-50,
+  secondary-a-800: $secondary-a-800,
+  secondary-a-700: $secondary-a-700,
+  secondary-a-600: $secondary-a-600,
+  secondary-a-500: $secondary-a-500,
+  secondary-a-200: $secondary-a-200,
+  secondary-a-100: $secondary-a-100,
+  secondary-a-50: $secondary-a-50,
+  secondary-b-700: $secondary-b-700,
+  secondary-b-500: $secondary-b-500,
+  secondary-b-400: $secondary-b-400,
+  secondary-b-300: $secondary-b-300,
+  secondary-b-200: $secondary-b-200,
+  secondary-b-100: $secondary-b-100,
+  secondary-b-50: $secondary-b-50,
   gray-scale-800: $gray-scale-800,
   gray-scale-700: $gray-scale-700,
   gray-scale-600: $gray-scale-600,
@@ -39,8 +39,7 @@ $colorScheme: (
   supportive-dev-b: $supportive-dev-b,
   supportive-dev-c: $supportive-dev-c,
 );
-$group-odd-width: 442px;
-$group-odd-margin: 259px;
+
 $box-width: 209px;
 $box-height: 87px;
 $box-gap: 23px;
@@ -55,11 +54,12 @@ $box-gap: 23px;
   &-scheme {
     display: flex;
     flex-wrap: wrap;
-    width: 1800px;
+    width: 1900px;
     &-group {
-      width: $group-odd-width;
+      margin-bottom: 193px;
       &:nth-child(odd) {
-        margin-right: $group-odd-margin;
+        width: $box-width * 3 + $box-gap * 2;
+        margin-right: 259px;
       }
       &:nth-child(even) {
         flex-basis: $box-width * 4 + $box-gap * 3;
@@ -96,7 +96,6 @@ $box-gap: 23px;
     line-height: 21px;
     width: $box-width;
     height: $box-height;
-    margin-bottom: 41px;
     padding-left: 25px;
     padding-right: 25px;
     &.white {
@@ -104,7 +103,7 @@ $box-gap: 23px;
       font-weight: 500;
     }
     &.black {
-      color: $primary-basic-main;
+      color: $primary-a-900;
       font-weight: 700;
     }
   }
@@ -116,13 +115,14 @@ $box-gap: 23px;
 
   &-supportive-dev {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
     flex-basis: 100%;
     margin-top: $box-height;
     .color-box {
       display: inline-flex;
       & ~ .color-box {
-        margin-left: $box-gap;
+        margin-right: $box-gap;
       }
     }
   }

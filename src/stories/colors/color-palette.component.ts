@@ -3,23 +3,25 @@ import {KeyValue} from '@angular/common';
 
 const palette = {
   primary: {
-    basic: {
-      contrast: {name: 'P-C 50', labelColor: 'black'},
-      main: {name: 'P-A 900', labelColor: 'white'},
+    a: {
+      900: {name: 'P-A 900', labelColor: 'white'}
     },
-    accent: {
-      main: { name: 'P-A 300', labelColor: 'white' }
+    b: {
+      300: { name: 'P-B 300', labelColor: 'white' }
     },
+    c: {
+      50: {name: 'P-C 50', labelColor: 'black'}
+    }
   },
   secondary: {
-    basic: { 800: { name: 'S-A 800', labelColor: 'white' },
+    a: { 800: { name: 'S-A 800', labelColor: 'white' },
       700: { name: 'S-A 700', labelColor: 'white' },
       600: { name: 'S-A 600', labelColor: 'white' },
       500: { name: 'S-A 500', labelColor: 'black' },
       200: { name: 'S-A 200', labelColor: 'black' },
       100: { name: 'S-A 100', labelColor: 'black' },
       50: { name: 'S-A 50', labelColor: 'black' } },
-    accent: { 700: { name: 'S-B 700', labelColor: 'white' },
+    b: { 700: { name: 'S-B 700', labelColor: 'white' },
       500: { name: 'S-B 500', labelColor: 'white' },
       400: { name: 'S-B 400', labelColor: 'white' },
       300: { name: 'S-B 300', labelColor: 'white' },

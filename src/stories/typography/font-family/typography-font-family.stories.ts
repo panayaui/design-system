@@ -4,7 +4,7 @@ import { Story, Meta } from '@storybook/angular/types-6-0';
 import TypographyFontFamilyComponent from './typography-font-family.component';
 
 export default {
-  title: 'Principles/Typography/Font Families',
+  title: 'Principles/Typography/Fonts',
   component: TypographyFontFamilyComponent,
   decorators: [
     moduleMetadata({
@@ -18,5 +18,5 @@ const Template: Story<TypographyFontFamilyComponent> = (args: TypographyFontFami
   props: args,
 });
 
-export const Typography = Template.bind({});
-Typography.args = {};
+export const Fonts = Template.bind({});
+Fonts.args = {};

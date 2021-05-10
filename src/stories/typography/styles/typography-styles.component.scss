@@ -1,0 +1,76 @@
+@import "../../assets/styles/custom";
+
+.page {
+  width: 1440px;
+}
+
+.font-style {
+  @include resetUl;
+
+  &-item {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid $gray-scale-100;
+    margin-bottom: 32px;
+  }
+
+  &-top {
+    flex-basis: 100%;
+    margin-bottom: 15px;
+  }
+
+  &-title {
+    display: inline;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 29.26px;
+  }
+
+  &-description {
+    display: inline;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 29.26px;
+  }
+
+  &-desc {
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+    margin-right: 110px;
+  }
+
+  &-desc-set {
+    font-size: 14px;
+    line-height: 19.07px;
+    margin-top: 0;
+    margin-right: 40px;
+    margin-bottom: 25px;
+    &.family {
+      width: 145px;
+    }
+  }
+
+  &-desc-title {
+    color: $gray-scale-700;
+    margin-bottom: 10px;
+    .font-style-desc & {
+      text-transform: capitalize;
+    }
+  }
+
+  &-desc-data {
+    margin-left: 0;
+    .font-style-desc & {
+      font-weight: 600;
+    }
+  }
+
+  &-ex-title {
+    font-size: 14px;
+    color: $gray-scale-700;
+    line-height: 19.07px;
+    margin-bottom: 10px;
+  }
+}
+
