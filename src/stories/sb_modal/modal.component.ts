@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import IParams from '../modals/params.interface';
+import IParams from '../models/params.interface';
 
 @Component({
   selector: 'custom-modal',

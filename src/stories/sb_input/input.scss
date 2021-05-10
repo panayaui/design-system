@@ -2,11 +2,11 @@
 //
 //$container-width: 500px;
 //$line-height: 20px;
-//$input-min-width: 280px;
-//$input-padding: 8px;
-//$input-border-width: 1px;
+//$sb_input-min-width: 280px;
+//$sb_input-padding: 8px;
+//$sb_input-border-width: 1px;
 //
-//.custom-input {
+//.custom-sb_input {
 //  &-container {
 //    &.full-size {
 //      display: flex;
@@ -57,11 +57,11 @@
 //    font-weight: 400;
 //    line-height: $line-height;
 //    color: $primary-basic;
-//    min-width: $input-min-width;
+//    min-width: $sb_input-min-width;
 //    background-color: $primary-contrast;
-//    border: $input-border-width solid $primary-basic;
+//    border: $sb_input-border-width solid $primary-basic;
 //    border-radius: 4px;
-//    padding: $input-padding;
+//    padding: $sb_input-padding;
 //    transition: 0.2s border-color, 0.2s box-shadow;
 //    height: 40px;
 //    &:focus {
@@ -75,12 +75,12 @@
 //      border-color: #ddd;
 //      pointer-events: none;
 //    }
-//    &.full-size-input {
+//    &.full-size-sb_input {
 //      width: 100%;
 //    }
 //  }
 //
-//  &-button {
+//  &-sb_button {
 //    @include resetButton;
 //    font-size: 0;
 //    width: $line-height;
@@ -90,8 +90,8 @@
 //    background-position: center;
 //    background-repeat: no-repeat;
 //    position: absolute;
-//    right: $input-padding + $input-border-width;
-//    bottom: $line-height / 2 + $input-padding + $input-border-width;
+//    right: $sb_input-padding + $sb_input-border-width;
+//    bottom: $line-height / 2 + $sb_input-padding + $sb_input-border-width;
 //    transform: translateY(50%);
 //
 //    &.search {

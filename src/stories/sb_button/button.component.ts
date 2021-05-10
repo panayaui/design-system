@@ -14,7 +14,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export default class ButtonComponent {
   /**
-   * Is this the principal call to action on the page?
+   * Is this the principal call to action on the sb_page?
    */
   @Input()
   primary = false;
@@ -26,7 +26,7 @@ export default class ButtonComponent {
   backgroundColor?: string;
 
   /**
-   * How large should the button be?
+   * How large should the sb_button be?
    */
   @Input()
   size: 'small' | 'medium' | 'large' = 'medium';
@@ -46,7 +46,7 @@ export default class ButtonComponent {
   onClick = new EventEmitter<Event>();
 
   public get classes(): string[] {
-    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+    const mode = this.primary ? 'storybook-sb_button--primary' : 'storybook-sb_button--secondary';
 
     return ['storybook-button', `storybook-button--${this.size}`, mode];
   }

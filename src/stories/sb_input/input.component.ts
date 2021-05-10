@@ -24,7 +24,7 @@ export default class InputComponent {
 
   public get inputClasses(): string[] {
     const isDisabled = this.disabled ? 'disabled' : '';
-    const isFullSize = this.fullSize ? 'full-size-input' : 'regular-size-input';
+    const isFullSize = this.fullSize ? 'full-size-sb_input' : 'regular-size-sb_input';
     return [ isDisabled, isFullSize ];
   }
 

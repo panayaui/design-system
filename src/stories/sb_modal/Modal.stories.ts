@@ -2,8 +2,8 @@ import { moduleMetadata } from '@storybook/angular';
 import { CommonModule } from '@angular/common';
 import { Story, Meta } from '@storybook/angular/types-6-0';
 import Modal from './modal.component';
-import Button from '../button/button.component';
-import Input from '../input/input.component';
+import Button from '../sb_button/button.component';
+import Input from '../sb_input/input.component';
 
 export default {
   title: 'Custom/Modal',
