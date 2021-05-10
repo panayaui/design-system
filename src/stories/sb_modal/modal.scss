@@ -9,7 +9,7 @@
 //  position: relative;
 //}
 //
-//.custom-modal {
+//.custom-sb_modal {
 //  width: fit-content;
 //  height: fit-content;
 //  background-color: $primary-contrast;
@@ -27,7 +27,7 @@
 //
 //  &.full-size {
 //    width: 80vw;
-//    ::ng-deep .custom-input-label {
+//    ::ng-deep .custom-sb_input-label {
 //      min-width: 80px;
 //    }
 //  }
@@ -41,12 +41,12 @@
 //    left: 0;
 //  }
 //
-//  &-input {
+//  &-sb_input {
 //    display: block;
 //    margin-bottom: 10px;
 //  }
 //
-//  &-button {
+//  &-sb_button {
 //    float: right;
 //    margin-top: 10px;
 //  }

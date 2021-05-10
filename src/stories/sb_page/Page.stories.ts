@@ -1,11 +1,11 @@
 import { moduleMetadata, Story, Meta } from '@storybook/angular';
 import { CommonModule } from '@angular/common';
 
-import Button from '../button/button.component';
-import Header from '../header/header.component';
+import Button from '../sb_button/button.component';
+import Header from '../sb_header/header.component';
 import Page from './page.component';
 
-import * as HeaderStories from '../header/Header.stories';
+import * as HeaderStories from '../sb_header/Header.stories';
 
 export default {
   title: 'Example/Page',
