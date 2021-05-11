@@ -1,31 +1,35 @@
 <div class="page">
-  <h1 class="page-title">Typography / <span class="page-title-highlighted">Styles</span></h1>
+  <header class="page-header">
+    <h1 class="page-title">Typography / <span class="page-title-highlighted">Styles</span></h1>
+  </header>
 
-  <ul *ngIf="typographyStyles" class="font-style">
-    <li *ngFor="let item of typographyStyles | keyvalue: originalOrder"
-        class="font-style-item">
-      <div class="font-style-top">
-        <h2 class="font-style-title">{{ item.value.title }} </h2>
-        <p *ngIf="item.value.description" class="font-style-description">
-          ({{ item.value.description }})
-        </p>
-      </div>
-      <div class="font-style-desc">
-        <dl *ngFor="let set of item.value.sets | keyvalue: originalOrder"
-            class="font-style-desc-set {{ set.key }}">
-          <dt class="font-style-desc-title">{{ set.key }}</dt>
-          <dd class="font-style-desc-data">{{ set.value}}</dd>
-        </dl>
-      </div>
-      <div class="font-style-preview">
-        <div *ngFor="let example of item.value.classes"
-             class="font-style-example">
-          <dl class="font-style-desc-set">
-            <dt class="font-style-desc-title">.{{ example }}</dt>
-            <dd class="font-style-desc-data {{ example }}">Lorem ipsum dolor sit amet</dd>
+  <main class="page-main">
+    <ul *ngIf="typographyStyles" class="font-style">
+      <li *ngFor="let item of typographyStyles | keyvalue: originalOrder"
+          class="font-style-item">
+        <div class="font-style-top">
+          <h2 class="font-style-title">{{ item.value.title }} </h2>
+          <p *ngIf="item.value.description" class="font-style-description">
+            ({{ item.value.description }})
+          </p>
+        </div>
+        <div class="font-style-desc">
+          <dl *ngFor="let set of item.value.sets | keyvalue: originalOrder"
+              class="font-style-desc-set {{ set.key }}">
+            <dt class="font-style-desc-title">{{ set.key }}</dt>
+            <dd class="font-style-desc-data">{{ set.value}}</dd>
           </dl>
         </div>
-      </div>
-    </li>
-  </ul>
+        <div class="font-style-preview">
+          <div *ngFor="let example of item.value.classes"
+               class="font-style-example">
+            <dl class="font-style-desc-set">
+              <dt class="font-style-desc-title">.{{ example }}</dt>
+              <dd class="font-style-desc-data {{ example }}">Lorem ipsum dolor sit amet</dd>
+            </dl>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </main>
 </div>

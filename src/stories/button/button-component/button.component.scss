@@ -1,0 +1,80 @@
+@import "../../assets/styles/custom";
+
+.p-button {
+  @include resetButton;
+  font-family: $font-family-basic;
+  font-size: $small-font-size;
+  font-weight: 500;
+  line-height: 19px;
+  min-width: 80px;
+  border-radius: 2px;
+
+  &-large {
+    padding: 10px 23px;
+  }
+
+  &-small {
+    padding: 5.5px 23px;
+  }
+
+  &-primary {
+    color: $white;
+    background-color: $secondary-a-700;
+    &:hover {
+      background-color: $secondary-b-700;
+    }
+    &:focus {
+      background-color: $secondary-b-700;
+    }
+    &-disabled {
+      color: $gray-scale-600;
+      background-color: $secondary-a-50;
+    }
+  }
+
+  &-secondary {
+    color: $secondary-a-700;
+    background-color: $gray-scale-1;
+    border: 1px solid $secondary-a-700;
+    &:hover {
+      background-color: $primary-c-50;
+    }
+    &:focus {
+      background-color: $primary-c-50;
+    }
+    &-disabled {
+      color: $gray-scale-600;
+      border-color: $secondary-a-500;
+    }
+  }
+
+  &-tertiary {
+    color: $secondary-a-700;
+    background-color: $gray-scale-1;
+    &:hover {
+      background-color: $primary-c-50;
+    }
+    &:focus {
+      background-color: $primary-c-50;
+    }
+    &-disabled {
+      color: $gray-scale-600;
+    }
+  }
+
+  &-distructive {
+    color: $white;
+    background-color: $supportive-alert-500;
+    &:hover {
+      background-color: $supportive-alert-700;
+    }
+    &:focus {
+      background-color: $supportive-alert-700;
+    }
+    &-disabled {
+      color: $gray-scale-600;
+      background-color: $supportive-alert-50;
+    }
+  }
+}
+

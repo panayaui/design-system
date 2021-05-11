@@ -50,6 +50,10 @@ $box-gap: 23px;
   }
 }
 
+.page {
+  width: fit-content;
+}
+
 .color {
   &-scheme {
     display: flex;
