@@ -1,6 +1,10 @@
 @import "../assets/styles/custom";
 
 .buttons {
+  .page-header-highlighted {
+    text-transform: capitalize;
+  }
+
   &-main {
     display: flex;
   }
