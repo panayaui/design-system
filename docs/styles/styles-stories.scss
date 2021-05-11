@@ -3,7 +3,7 @@
 body {
   font-family: $font-family-basic;
   color: $primary-a-900;
-  padding: 0;
+  padding: 0 !important;
 }
 
 *, *:after, *:before {
@@ -23,17 +23,37 @@ p {
   margin-bottom: 0;
 }
 
-.page {
+.page {}
+
+.page-header {
+  color: $gray-scale-700;
+  height: $page-header-height;
+  padding: 46px 46px 10px 46px;
+  background-color: $primary-c-50;
+  &-line {
+    font-size: 25px;
+    line-height: 30.48px;
+    .page-title ~ & {
+      margin-top: 33px;
+    }
+    & ~ & {
+      margin-top: 13px;
+    }
+  }
+  &-highlighted {
+    font-weight: 500;
+  }
+}
+
+.page-main {
   padding: 80px;
   background-color: $white;
 }
 
 .page-title {
   font-family: $font-family-accent;
-  font-size: 60px;
-  color: $gray-scale-700;
-  line-height: 72px;
-  margin-bottom: 95px;
+  font-size: 50px;
+  line-height: 42px;
   &-highlighted {
     font-weight: 700;
   }
@@ -213,3 +233,6 @@ p {
   color: $gray-scale-700;
   line-height: 20px;
 }
+
+
+@import 'icons';
