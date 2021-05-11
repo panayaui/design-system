@@ -32,12 +32,11 @@
   }
 }
 
-@mixin icon($path: '', $width: 28px, $height: 28px, $rotate: false) {
+@mixin icon($width: 18px, $height: 18px, $rotate: false) {
   content: '';
   display: inline-block;
   width: $width;
   height: $height;
-  background-image: url($path);
   background-repeat: no-repeat;
   background-position: center center;
   @if $rotate {

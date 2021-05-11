@@ -4,7 +4,7 @@
         {
             "name": "IParams",
             "id": "interface-IParams-e5ed9546171bf6377d7343f9dbfa6317",
-            "file": "src/stories/modals/params.interface.ts",
+            "file": "src/stories/examples/models/params.interface.ts",
             "type": "interface",
             "sourceCode": "export default interface IParams {\r\n  name: string;\r\n  country: string;\r\n  email: string;\r\n}\r\n",
             "properties": [
@@ -126,8 +126,94 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-642c6c4e474cd5a0ac760dfda26b2fc9",
-            "file": "src/stories/button/button.component.ts",
+            "id": "component-ButtonComponent-c039e1db56d2d8ee04e0dab03ea98989",
+            "file": "src/stories/button/button-component/button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-typography-styles",
+            "styleUrls": [
+                "./button.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./button.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "buttonType",
+                    "defaultValue": "ButtonTypeEnum.Primary",
+                    "line": 15,
+                    "type": "ButtonTypeEnum"
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "line": 12,
+                    "type": "boolean"
+                },
+                {
+                    "name": "iconAfter",
+                    "defaultValue": "'arrow'",
+                    "line": 14,
+                    "type": "string"
+                },
+                {
+                    "name": "iconBefore",
+                    "defaultValue": "'view'",
+                    "line": 13,
+                    "type": "string"
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Label'",
+                    "line": 10,
+                    "type": "string"
+                },
+                {
+                    "name": "large",
+                    "defaultValue": "false",
+                    "line": 11,
+                    "type": "boolean"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {ButtonTypeEnum} from '../button-type.enum';\r\n\r\n@Component({\r\n  selector: 'p-typography-styles',\r\n  templateUrl: './button.component.html',\r\n  styleUrls: ['./button.component.scss'],\r\n})\r\nexport default class ButtonComponent {\r\n  @Input() label: string = 'Label';\r\n  @Input() large: boolean = false;\r\n  @Input() disabled: boolean = false;\r\n  @Input() iconBefore: string = 'view';\r\n  @Input() iconAfter: string = 'arrow';\r\n  @Input() buttonType: ButtonTypeEnum = ButtonTypeEnum.Primary;\r\n\r\n  public get classes(): string[] {\r\n    const classParams = [];\r\n    this.large ? classParams.push('p-btn-large') : classParams.push('p-btn-small');\r\n    this.disabled ? classParams.push('p-btn-disabled') : null;\r\n    this.iconBefore ? classParams.push('p-btn-icon-before') : null;\r\n    this.iconAfter ? classParams.push('p-btn-icon-after') : null;\r\n    classParams.push(`p-btn-${this.buttonType}`);\r\n    return classParams;\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n.p-btn {\r\n  @include resetButton;\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  font-weight: 500;\r\n  line-height: 19px;\r\n  min-width: 80px;\r\n  border-radius: 2px;\r\n\r\n  &-large {\r\n    padding: 10px 23px;\r\n  }\r\n\r\n  &-small {\r\n    padding: 5.5px 23px;\r\n  }\r\n\r\n  &-primary {\r\n    color: $gray-scale-1;\r\n    background-color: $secondary-a-700;\r\n    &:hover {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:focus {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &-disabled {\r\n      color: $gray-scale-600;\r\n      background-color: $secondary-a-50;\r\n    }\r\n  }\r\n\r\n  &-secondary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    border: 1px solid $secondary-a-700;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &-disabled {\r\n      color: $gray-scale-600;\r\n      border-color: $secondary-a-500;\r\n    }\r\n  }\r\n\r\n  &-tertiary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &-disabled {\r\n      color: $gray-scale-600;\r\n    }\r\n  }\r\n\r\n  &-distructive {\r\n    color: $gray-scale-1;\r\n    background-color: $supportive-alert-500;\r\n    &:hover {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:focus {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &-disabled {\r\n      color: $gray-scale-600;\r\n      background-color: $supportive-alert-50;\r\n    }\r\n  }\r\n\r\n  &-icon-before {\r\n    padding-left: 17px;\r\n    .p-btn-label {\r\n      margin-left: 11px;\r\n    }\r\n  }\r\n\r\n  &-icon-after {\r\n    padding-right: 17px;\r\n    .p-btn-label {\r\n      margin-right: 11px;\r\n    }\r\n  }\r\n\r\n  &-icon {\r\n\r\n  }\r\n}\r\n\r\n",
+                    "styleUrl": "./button.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 17
+                    }
+                }
+            },
+            "templateData": "<button class=\"p-btn\" [ngClass]=\"classes\">\r\n  <span *ngIf=\"iconBefore\" [ngClass]=\"'p-btn-icon icon-' + iconBefore\"></span>\r\n  <span class=\"p-btn-label\">{{label}}</span>\r\n  <span *ngIf=\"iconAfter\" [ngClass]=\"'p-btn-icon icon-' + iconAfter\"></span>\r\n</button>\r\n"
+        },
+        {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-0d01c493a6e60f288383f9ecdf51ed54-1",
+            "file": "src/stories/examples/sb_button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -157,13 +243,13 @@
                 {
                     "name": "primary",
                     "defaultValue": "false",
-                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "description": "<p>Is this the principal call to action on the sb_page?</p>\n",
                     "line": 20
                 },
                 {
                     "name": "size",
                     "defaultValue": "'medium'",
-                    "description": "<p>How large should the button be?</p>\n",
+                    "description": "<p>How large should the sb_button be?</p>\n",
                     "line": 32,
                     "type": "\"small\" | \"medium\" | \"large\""
                 }
@@ -184,7 +270,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  template: ` <button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\n  >\n    {{ label }}\n  </button>`,\n  styleUrls: ['./button.css'],\n})\nexport default class ButtonComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  template: ` <button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\n  >\n    {{ label }}\n  </button>`,\n  styleUrls: ['./button.css'],\n})\nexport default class ButtonComponent {\n  /**\n   * Is this the principal call to action on the sb_page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * How large should the sb_button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-sb_button--primary' : 'storybook-sb_button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -203,7 +289,65 @@
                         "line": 48
                     }
                 }
-            }
+            },
+            "isDuplicate": true,
+            "duplicateId": 1,
+            "duplicateName": "ButtonComponent-1"
+        },
+        {
+            "name": "ButtonPageComponent",
+            "id": "component-ButtonPageComponent-dca5b73d9bcd4014d17895f102265262",
+            "file": "src/stories/button/button-page.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-typography-styles",
+            "styleUrls": [
+                "./button-page.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./button-page.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "originalOrder",
+                    "defaultValue": "() => {...}",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                },
+                {
+                    "name": "reverseKeyOrder",
+                    "defaultValue": "() => {...}",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                }
+            ],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component} from '@angular/core';\r\nimport {KeyValue} from '@angular/common';\r\n\r\n@Component({\r\n  selector: 'p-typography-styles',\r\n  templateUrl: './button-page.component.html',\r\n  styleUrls: ['./button-page.component.scss'],\r\n})\r\nexport default class ButtonPageComponent {\r\n\r\n  originalOrder = (a: KeyValue<number, string>, b: KeyValue<number, string>): number => {\r\n    return 0;\r\n  }\r\n\r\n  reverseKeyOrder = (a: KeyValue<number, string>, b: KeyValue<number, string>): number => {\r\n    return -1;\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n\r\n",
+                    "styleUrl": "./button-page.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"page\">\r\n  <header class=\"page-header\">\r\n    <h1 class=\"page-title\">Buttons / <span class=\"page-header-highlighted\">Small</span></h1>\r\n    <p class=\"page-header-line\">\r\n      Height:\r\n      <span class=\"page-header-highlighted\">30px</span>, min. width:\r\n      <span class=\"page-header-highlighted\">80px</span>\r\n    </p>\r\n    <p class=\"page-header-line\">\r\n      Typography style:\r\n      <span class=\"page-header-highlighted\">Paragraph 2 - medium</span>\r\n    </p>\r\n  </header>\r\n\r\n  <main class=\"page-main\">\r\n    <ul *ngIf=\"\" class=\"\">\r\n      <li *ngFor=\"let item of  \"\r\n          class=\"\">\r\n\r\n      </li>\r\n    </ul>\r\n  </main>\r\n\r\n\r\n</div>\r\n"
         },
         {
             "name": "ColorPaletteComponent",
@@ -264,17 +408,17 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$colorScheme: (\r\n  primary-a-900: $primary-a-900,\r\n  primary-b-300: $primary-b-300,\r\n  primary-c-50: $primary-c-50,\r\n  secondary-a-800: $secondary-a-800,\r\n  secondary-a-700: $secondary-a-700,\r\n  secondary-a-600: $secondary-a-600,\r\n  secondary-a-500: $secondary-a-500,\r\n  secondary-a-200: $secondary-a-200,\r\n  secondary-a-100: $secondary-a-100,\r\n  secondary-a-50: $secondary-a-50,\r\n  secondary-b-700: $secondary-b-700,\r\n  secondary-b-500: $secondary-b-500,\r\n  secondary-b-400: $secondary-b-400,\r\n  secondary-b-300: $secondary-b-300,\r\n  secondary-b-200: $secondary-b-200,\r\n  secondary-b-100: $secondary-b-100,\r\n  secondary-b-50: $secondary-b-50,\r\n  gray-scale-800: $gray-scale-800,\r\n  gray-scale-700: $gray-scale-700,\r\n  gray-scale-600: $gray-scale-600,\r\n  gray-scale-500: $gray-scale-500,\r\n  gray-scale-400: $gray-scale-400,\r\n  gray-scale-100: $gray-scale-100,\r\n  gray-scale-50: $gray-scale-50,\r\n  gray-scale-5: $gray-scale-5,\r\n  gray-scale-1: $gray-scale-1,\r\n  supportive-alert-700: $supportive-alert-700,\r\n  supportive-alert-500: $supportive-alert-500,\r\n  supportive-alert-50: $supportive-alert-50,\r\n  supportive-yellow-300: $supportive-yellow-300,\r\n  supportive-orange-300 :$supportive-orange-300,\r\n  supportive-orange-50: $supportive-orange-50,\r\n  supportive-success-400: $supportive-success-400,\r\n  supportive-success-50: $supportive-success-50,\r\n  supportive-dev-a: $supportive-dev-a,\r\n  supportive-dev-b: $supportive-dev-b,\r\n  supportive-dev-c: $supportive-dev-c,\r\n);\r\n\r\n$box-width: 209px;\r\n$box-height: 87px;\r\n$box-gap: 23px;\r\n\r\n@each $name, $value in $colorScheme {\r\n  .#{$name} {\r\n    background-color: $value;\r\n  }\r\n}\r\n\r\n.color {\r\n  &-scheme {\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    width: 1900px;\r\n    &-group {\r\n      margin-bottom: 193px;\r\n      &:nth-child(odd) {\r\n        width: $box-width * 3 + $box-gap * 2;\r\n        margin-right: 259px;\r\n      }\r\n      &:nth-child(even) {\r\n        flex-basis: $box-width * 4 + $box-gap * 3;\r\n      }\r\n    }\r\n    &-title {\r\n      font-size: 17px;\r\n      color: $gray-scale-700;\r\n      line-height: 21.37px;\r\n      text-transform: capitalize;\r\n      flex-basis: 100%;\r\n      padding-bottom: 14px;\r\n    }\r\n    &-container {\r\n      display: flex;\r\n      flex-wrap: wrap;\r\n      width: fit-content;\r\n      padding-top: 50px;\r\n      border-top: 1px solid $black;\r\n    }\r\n  }\r\n\r\n  &-column {\r\n    & ~ &:not(.color-supportive-dev) {\r\n      margin-left: $box-gap;\r\n    }\r\n  }\r\n\r\n  &-box {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    font-size: 17px;\r\n    line-height: 21px;\r\n    width: $box-width;\r\n    height: $box-height;\r\n    padding-left: 25px;\r\n    padding-right: 25px;\r\n    &.white {\r\n      color: $gray-scale-1;\r\n      font-weight: 500;\r\n    }\r\n    &.black {\r\n      color: $primary-a-900;\r\n      font-weight: 700;\r\n    }\r\n  }\r\n\r\n  &-box-name,\r\n  &-box-class {\r\n    line-height: 21.37px;\r\n  }\r\n\r\n  &-supportive-dev {\r\n    display: flex;\r\n    flex-direction: row-reverse;\r\n    justify-content: flex-start;\r\n    flex-basis: 100%;\r\n    margin-top: $box-height;\r\n    .color-box {\r\n      display: inline-flex;\r\n      & ~ .color-box {\r\n        margin-right: $box-gap;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$colorScheme: (\r\n  primary-a-900: $primary-a-900,\r\n  primary-b-300: $primary-b-300,\r\n  primary-c-50: $primary-c-50,\r\n  secondary-a-800: $secondary-a-800,\r\n  secondary-a-700: $secondary-a-700,\r\n  secondary-a-600: $secondary-a-600,\r\n  secondary-a-500: $secondary-a-500,\r\n  secondary-a-200: $secondary-a-200,\r\n  secondary-a-100: $secondary-a-100,\r\n  secondary-a-50: $secondary-a-50,\r\n  secondary-b-700: $secondary-b-700,\r\n  secondary-b-500: $secondary-b-500,\r\n  secondary-b-400: $secondary-b-400,\r\n  secondary-b-300: $secondary-b-300,\r\n  secondary-b-200: $secondary-b-200,\r\n  secondary-b-100: $secondary-b-100,\r\n  secondary-b-50: $secondary-b-50,\r\n  gray-scale-800: $gray-scale-800,\r\n  gray-scale-700: $gray-scale-700,\r\n  gray-scale-600: $gray-scale-600,\r\n  gray-scale-500: $gray-scale-500,\r\n  gray-scale-400: $gray-scale-400,\r\n  gray-scale-100: $gray-scale-100,\r\n  gray-scale-50: $gray-scale-50,\r\n  gray-scale-5: $gray-scale-5,\r\n  gray-scale-1: $gray-scale-1,\r\n  supportive-alert-700: $supportive-alert-700,\r\n  supportive-alert-500: $supportive-alert-500,\r\n  supportive-alert-50: $supportive-alert-50,\r\n  supportive-yellow-300: $supportive-yellow-300,\r\n  supportive-orange-300 :$supportive-orange-300,\r\n  supportive-orange-50: $supportive-orange-50,\r\n  supportive-success-400: $supportive-success-400,\r\n  supportive-success-50: $supportive-success-50,\r\n  supportive-dev-a: $supportive-dev-a,\r\n  supportive-dev-b: $supportive-dev-b,\r\n  supportive-dev-c: $supportive-dev-c,\r\n);\r\n\r\n$box-width: 209px;\r\n$box-height: 87px;\r\n$box-gap: 23px;\r\n\r\n@each $name, $value in $colorScheme {\r\n  .#{$name} {\r\n    background-color: $value;\r\n  }\r\n}\r\n\r\n.page {\r\n  width: fit-content;\r\n}\r\n\r\n.color {\r\n  &-scheme {\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    width: 1900px;\r\n    &-group {\r\n      margin-bottom: 193px;\r\n      &:nth-child(odd) {\r\n        width: $box-width * 3 + $box-gap * 2;\r\n        margin-right: 259px;\r\n      }\r\n      &:nth-child(even) {\r\n        flex-basis: $box-width * 4 + $box-gap * 3;\r\n      }\r\n    }\r\n    &-title {\r\n      font-size: 17px;\r\n      color: $gray-scale-700;\r\n      line-height: 21.37px;\r\n      text-transform: capitalize;\r\n      flex-basis: 100%;\r\n      padding-bottom: 14px;\r\n    }\r\n    &-container {\r\n      display: flex;\r\n      flex-wrap: wrap;\r\n      width: fit-content;\r\n      padding-top: 50px;\r\n      border-top: 1px solid $black;\r\n    }\r\n  }\r\n\r\n  &-column {\r\n    & ~ &:not(.color-supportive-dev) {\r\n      margin-left: $box-gap;\r\n    }\r\n  }\r\n\r\n  &-box {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    font-size: 17px;\r\n    line-height: 21px;\r\n    width: $box-width;\r\n    height: $box-height;\r\n    padding-left: 25px;\r\n    padding-right: 25px;\r\n    &.white {\r\n      color: $gray-scale-1;\r\n      font-weight: 500;\r\n    }\r\n    &.black {\r\n      color: $primary-a-900;\r\n      font-weight: 700;\r\n    }\r\n  }\r\n\r\n  &-box-name,\r\n  &-box-class {\r\n    line-height: 21.37px;\r\n  }\r\n\r\n  &-supportive-dev {\r\n    display: flex;\r\n    flex-direction: row-reverse;\r\n    justify-content: flex-start;\r\n    flex-basis: 100%;\r\n    margin-top: $box-height;\r\n    .color-box {\r\n      display: inline-flex;\r\n      & ~ .color-box {\r\n        margin-right: $box-gap;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "./color-palette.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<h1 class=\"page-title\">Colors / <span class=\"page-title-highlighted\">Scheme</span></h1>\r\n\r\n<div *ngIf=\"palette\" class=\"color-scheme\">\r\n  <div *ngFor=\"let group of palette | keyvalue: originalOrder\"\r\n       class=\"color-scheme-group {{group.key}}\">\r\n    <ng-template [ngIf]=\"group.key === 'gray'\" [ngIfElse]=\"regularTitle\">\r\n      <h2 class=\"color-scheme-title\">Grayscale</h2>\r\n    </ng-template>\r\n\r\n    <ng-template #regularTitle>\r\n      <h2 class=\"color-scheme-title\">{{group.key}}</h2>\r\n    </ng-template>\r\n\r\n    <div class=\"color-scheme-container\">\r\n      <div *ngFor=\"let column of group.value | keyvalue: originalOrder\"\r\n           class=\"color-column color-{{group.key}}-{{column.key}}\">\r\n        <div *ngFor=\"let box of column.value | keyvalue: reverseKeyOrder\"\r\n             class=\"color-box {{group.key}}-{{column.key}}-{{box.key}} {{box.value.labelColor}}\">\r\n          <p class=\"color-box-class\">${{group.key}}-{{column.key}}-{{box.key}}</p>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+            "templateData": "<div class=\"page\">\r\n  <header class=\"page-header\">\r\n    <h1 class=\"page-title\">Colors / <span class=\"page-title-highlighted\">Scheme</span></h1>\r\n  </header>\r\n\r\n  <main class=\"page-main\">\r\n    <div *ngIf=\"palette\" class=\"color-scheme\">\r\n      <div *ngFor=\"let group of palette | keyvalue: originalOrder\"\r\n           class=\"color-scheme-group {{group.key}}\">\r\n        <ng-template [ngIf]=\"group.key === 'gray'\" [ngIfElse]=\"regularTitle\">\r\n          <h2 class=\"color-scheme-title\">Grayscale</h2>\r\n        </ng-template>\r\n\r\n        <ng-template #regularTitle>\r\n          <h2 class=\"color-scheme-title\">{{group.key}}</h2>\r\n        </ng-template>\r\n\r\n        <div class=\"color-scheme-container\">\r\n          <div *ngFor=\"let column of group.value | keyvalue: originalOrder\"\r\n               class=\"color-column color-{{group.key}}-{{column.key}}\">\r\n            <div *ngFor=\"let box of column.value | keyvalue: reverseKeyOrder\"\r\n                 class=\"color-box {{group.key}}-{{column.key}}-{{box.key}} {{box.value.labelColor}}\">\r\n              <p class=\"color-box-class\">${{group.key}}-{{column.key}}-{{box.key}}</p>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </main>\r\n</div>\r\n"
         },
         {
             "name": "HeaderComponent",
             "id": "component-HeaderComponent-246e2a69dc126a3bd76c6328dd3b93e2",
-            "file": "src/stories/header/header.component.ts",
+            "file": "src/stories/examples/sb_header/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -335,8 +479,8 @@
         },
         {
             "name": "InputComponent",
-            "id": "component-InputComponent-cab36ee1dd4b87294d87624c150d5a65",
-            "file": "src/stories/input/input.component.ts",
+            "id": "component-InputComponent-4ab49b0ec79837b0c34b6784895f42de",
+            "file": "src/stories/examples/sb_input/input.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -455,11 +599,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'custom-input',\r\n  templateUrl: './input.component.html',\r\n  styleUrls: ['./input.scss'],\r\n})\r\nexport default class InputComponent {\r\n  @Input() value?: string;\r\n  @Input() label: string;\r\n  @Input() placeholder: string;\r\n  @Input() topLabelled: boolean;\r\n  @Input() disabled?: boolean = false;\r\n  @Input() fullSize?: boolean = false;\r\n  @Input() type?: string = 'text';\r\n  @Input() error?: string;\r\n  @Input() icon?: boolean = true;\r\n\r\n  public get containerClasses(): string[] {\r\n    const isTopLabelled = this.topLabelled ? 'top-labelled' : 'left-labelled';\r\n    const isFullSize = this.fullSize ? 'full-size' : 'regular-size';\r\n    return [ isTopLabelled, isFullSize ];\r\n  }\r\n\r\n  public get inputClasses(): string[] {\r\n    const isDisabled = this.disabled ? 'disabled' : '';\r\n    const isFullSize = this.fullSize ? 'full-size-input' : 'regular-size-input';\r\n    return [ isDisabled, isFullSize ];\r\n  }\r\n\r\n  public get _type(): string {\r\n    return this.type ? this.type : 'text';\r\n  }\r\n\r\n  public get _value(): string {\r\n    return this.value ? this.value : '';\r\n  }\r\n\r\n  search($event): void {\r\n    console.log('search');\r\n  }\r\n\r\n  clearValue($event): void {\r\n    console.log('clear');\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'custom-input',\r\n  templateUrl: './input.component.html',\r\n  styleUrls: ['./input.scss'],\r\n})\r\nexport default class InputComponent {\r\n  @Input() value?: string;\r\n  @Input() label: string;\r\n  @Input() placeholder: string;\r\n  @Input() topLabelled: boolean;\r\n  @Input() disabled?: boolean = false;\r\n  @Input() fullSize?: boolean = false;\r\n  @Input() type?: string = 'text';\r\n  @Input() error?: string;\r\n  @Input() icon?: boolean = true;\r\n\r\n  public get containerClasses(): string[] {\r\n    const isTopLabelled = this.topLabelled ? 'top-labelled' : 'left-labelled';\r\n    const isFullSize = this.fullSize ? 'full-size' : 'regular-size';\r\n    return [ isTopLabelled, isFullSize ];\r\n  }\r\n\r\n  public get inputClasses(): string[] {\r\n    const isDisabled = this.disabled ? 'disabled' : '';\r\n    const isFullSize = this.fullSize ? 'full-size-sb_input' : 'regular-size-sb_input';\r\n    return [ isDisabled, isFullSize ];\r\n  }\r\n\r\n  public get _type(): string {\r\n    return this.type ? this.type : 'text';\r\n  }\r\n\r\n  public get _value(): string {\r\n    return this.value ? this.value : '';\r\n  }\r\n\r\n  search($event): void {\r\n    console.log('search');\r\n  }\r\n\r\n  clearValue($event): void {\r\n    console.log('clear');\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "//@import \"../assets/styles/custom\";\r\n//\r\n//$container-width: 500px;\r\n//$line-height: 20px;\r\n//$input-min-width: 280px;\r\n//$input-padding: 8px;\r\n//$input-border-width: 1px;\r\n//\r\n//.custom-input {\r\n//  &-container {\r\n//    &.full-size {\r\n//      display: flex;\r\n//      align-items: center;\r\n//      width: 100%;\r\n//      flex-wrap: wrap;\r\n//    }\r\n//    &.top-labelled:not(.full-size) {\r\n//      display: inline-block;\r\n//    }\r\n//    &.left-labelled:not(.full-size) {\r\n//      display: flex;\r\n//      width: $container-width;\r\n//      justify-content: space-between;\r\n//      align-items: center;\r\n//    }\r\n//  }\r\n//\r\n//  &-label {\r\n//    display: block;\r\n//    font-size: $base-font-size;\r\n//    font-weight: 400;\r\n//    line-height: $line-height;\r\n//    color: $primary-basic;\r\n//    padding: 0;\r\n//    .top-labelled:not(.full-size) & {\r\n//      margin-bottom: 4px;\r\n//    }\r\n//    .full-size & {\r\n//      margin-right: 10px;\r\n//    }\r\n//  }\r\n//\r\n//  &-group {\r\n//    height: 40px;\r\n//    .full-size & {\r\n//      flex-grow: 1;\r\n//    }\r\n//  }\r\n//\r\n//  &-wrapper {\r\n//    position: relative;\r\n//  }\r\n//\r\n//  &-control {\r\n//    @include resetInput;\r\n//    font-size: $base-font-size;\r\n//    font-weight: 400;\r\n//    line-height: $line-height;\r\n//    color: $primary-basic;\r\n//    min-width: $input-min-width;\r\n//    background-color: $primary-contrast;\r\n//    border: $input-border-width solid $primary-basic;\r\n//    border-radius: 4px;\r\n//    padding: $input-padding;\r\n//    transition: 0.2s border-color, 0.2s box-shadow;\r\n//    height: 40px;\r\n//    &:focus {\r\n//      border-color: $primary-accent;\r\n//      box-shadow: inset 0 0 0 1px $primary-accent;\r\n//      outline: none;\r\n//    }\r\n//    &.disabled {\r\n//      cursor: default;\r\n//      background-color: #ddd;\r\n//      border-color: #ddd;\r\n//      pointer-events: none;\r\n//    }\r\n//    &.full-size-input {\r\n//      width: 100%;\r\n//    }\r\n//  }\r\n//\r\n//  &-button {\r\n//    @include resetButton;\r\n//    font-size: 0;\r\n//    width: $line-height;\r\n//    height: $line-height;\r\n//    padding: 5px;\r\n//    background-image: url(\"../assets/images/search.svg\");\r\n//    background-position: center;\r\n//    background-repeat: no-repeat;\r\n//    position: absolute;\r\n//    right: $input-padding + $input-border-width;\r\n//    bottom: $line-height / 2 + $input-padding + $input-border-width;\r\n//    transform: translateY(50%);\r\n//\r\n//    &.search {\r\n//      background-image: url(\"../assets/images/search.svg\");\r\n//      background-size: 95%;\r\n//    }\r\n//\r\n//    &.clear {\r\n//      background-image: url(\"../assets/images/close.svg\");\r\n//      background-size: 80%;\r\n//    }\r\n//\r\n//    .disabled + & {\r\n//      display: none;\r\n//    }\r\n//  }\r\n//\r\n//  &-error {\r\n//    color: $secondary-accent-700;\r\n//    font-size: $small-font-size;\r\n//    margin-top: 5px;\r\n//  }\r\n//}\r\n",
+                    "data": "//@import \"../assets/styles/custom\";\r\n//\r\n//$container-width: 500px;\r\n//$line-height: 20px;\r\n//$sb_input-min-width: 280px;\r\n//$sb_input-padding: 8px;\r\n//$sb_input-border-width: 1px;\r\n//\r\n//.custom-sb_input {\r\n//  &-container {\r\n//    &.full-size {\r\n//      display: flex;\r\n//      align-items: center;\r\n//      width: 100%;\r\n//      flex-wrap: wrap;\r\n//    }\r\n//    &.top-labelled:not(.full-size) {\r\n//      display: inline-block;\r\n//    }\r\n//    &.left-labelled:not(.full-size) {\r\n//      display: flex;\r\n//      width: $container-width;\r\n//      justify-content: space-between;\r\n//      align-items: center;\r\n//    }\r\n//  }\r\n//\r\n//  &-label {\r\n//    display: block;\r\n//    font-size: $base-font-size;\r\n//    font-weight: 400;\r\n//    line-height: $line-height;\r\n//    color: $primary-basic;\r\n//    padding: 0;\r\n//    .top-labelled:not(.full-size) & {\r\n//      margin-bottom: 4px;\r\n//    }\r\n//    .full-size & {\r\n//      margin-right: 10px;\r\n//    }\r\n//  }\r\n//\r\n//  &-group {\r\n//    height: 40px;\r\n//    .full-size & {\r\n//      flex-grow: 1;\r\n//    }\r\n//  }\r\n//\r\n//  &-wrapper {\r\n//    position: relative;\r\n//  }\r\n//\r\n//  &-control {\r\n//    @include resetInput;\r\n//    font-size: $base-font-size;\r\n//    font-weight: 400;\r\n//    line-height: $line-height;\r\n//    color: $primary-basic;\r\n//    min-width: $sb_input-min-width;\r\n//    background-color: $primary-contrast;\r\n//    border: $sb_input-border-width solid $primary-basic;\r\n//    border-radius: 4px;\r\n//    padding: $sb_input-padding;\r\n//    transition: 0.2s border-color, 0.2s box-shadow;\r\n//    height: 40px;\r\n//    &:focus {\r\n//      border-color: $primary-accent;\r\n//      box-shadow: inset 0 0 0 1px $primary-accent;\r\n//      outline: none;\r\n//    }\r\n//    &.disabled {\r\n//      cursor: default;\r\n//      background-color: #ddd;\r\n//      border-color: #ddd;\r\n//      pointer-events: none;\r\n//    }\r\n//    &.full-size-sb_input {\r\n//      width: 100%;\r\n//    }\r\n//  }\r\n//\r\n//  &-sb_button {\r\n//    @include resetButton;\r\n//    font-size: 0;\r\n//    width: $line-height;\r\n//    height: $line-height;\r\n//    padding: 5px;\r\n//    background-image: url(\"../assets/images/search.svg\");\r\n//    background-position: center;\r\n//    background-repeat: no-repeat;\r\n//    position: absolute;\r\n//    right: $sb_input-padding + $sb_input-border-width;\r\n//    bottom: $line-height / 2 + $sb_input-padding + $sb_input-border-width;\r\n//    transform: translateY(50%);\r\n//\r\n//    &.search {\r\n//      background-image: url(\"../assets/images/search.svg\");\r\n//      background-size: 95%;\r\n//    }\r\n//\r\n//    &.clear {\r\n//      background-image: url(\"../assets/images/close.svg\");\r\n//      background-size: 80%;\r\n//    }\r\n//\r\n//    .disabled + & {\r\n//      display: none;\r\n//    }\r\n//  }\r\n//\r\n//  &-error {\r\n//    color: $secondary-accent-700;\r\n//    font-size: $small-font-size;\r\n//    margin-top: 5px;\r\n//  }\r\n//}\r\n",
                     "styleUrl": "./input.scss"
                 }
             ],
@@ -506,8 +650,8 @@
         },
         {
             "name": "ModalComponent",
-            "id": "component-ModalComponent-21df6d87ca40bf28218bf2ae79c85c37",
-            "file": "src/stories/modal/modal.component.ts",
+            "id": "component-ModalComponent-41a78b7426e0b4f5ac815b6bb75827b8",
+            "file": "src/stories/examples/sb_modal/modal.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -618,11 +762,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport IParams from '../modals/params.interface';\r\n\r\n@Component({\r\n  selector: 'custom-modal',\r\n  templateUrl: './modal.component.html',\r\n  styleUrls: ['./modal.scss'],\r\n})\r\nexport default class ModalComponent implements OnInit{\r\n  @Input() toParams: IParams;\r\n  @Input() fullSize: boolean = false;\r\n  public params: IParams;\r\n  public shown: boolean = false;\r\n\r\n  public get modalClasses(): string[] {\r\n    const isFullSize = this.fullSize ? 'full-size' : 'regular-size';\r\n    return [ isFullSize ];\r\n  }\r\n\r\n  ngOnInit(): void {\r\n    if (this.toParams) {\r\n      this.params = this.toParams;\r\n    }\r\n  }\r\n\r\n  showModal($event):void {\r\n    this.shown = true;\r\n  }\r\n\r\n  signUp($event): void {\r\n    console.log('sign up');\r\n    this.shown = false;\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport IParams from '../models/params.interface';\r\n\r\n@Component({\r\n  selector: 'custom-modal',\r\n  templateUrl: './modal.component.html',\r\n  styleUrls: ['./modal.scss'],\r\n})\r\nexport default class ModalComponent implements OnInit{\r\n  @Input() toParams: IParams;\r\n  @Input() fullSize: boolean = false;\r\n  public params: IParams;\r\n  public shown: boolean = false;\r\n\r\n  public get modalClasses(): string[] {\r\n    const isFullSize = this.fullSize ? 'full-size' : 'regular-size';\r\n    return [ isFullSize ];\r\n  }\r\n\r\n  ngOnInit(): void {\r\n    if (this.toParams) {\r\n      this.params = this.toParams;\r\n    }\r\n  }\r\n\r\n  showModal($event):void {\r\n    this.shown = true;\r\n  }\r\n\r\n  signUp($event): void {\r\n    console.log('sign up');\r\n    this.shown = false;\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "//@import \"../assets/styles/custom\";\r\n//\r\n//$container-padding: 32px;\r\n//$container-border-color: #CED3D9;\r\n//\r\n//:host {\r\n//  display: block;\r\n//  height: 100vh;\r\n//  position: relative;\r\n//}\r\n//\r\n//.custom-modal {\r\n//  width: fit-content;\r\n//  height: fit-content;\r\n//  background-color: $primary-contrast;\r\n//  border: 1px solid $container-border-color;\r\n//  border-radius: 8px;\r\n//  box-sizing: border-box;\r\n//  box-shadow: rgb(0 0 0 / 10%) 0 4px 8px 0;\r\n//  padding: $container-padding;\r\n//  margin: auto;\r\n//  position: absolute;\r\n//  top: 0;\r\n//  left: 0;\r\n//  bottom: 0;\r\n//  right: 0;\r\n//\r\n//  &.full-size {\r\n//    width: 80vw;\r\n//    ::ng-deep .custom-input-label {\r\n//      min-width: 80px;\r\n//    }\r\n//  }\r\n//\r\n//  &-backdrop {\r\n//    width: 100vw;\r\n//    height: 100vh;\r\n//    background: rgba(0, 0, 0, 0.65);\r\n//    position: fixed;\r\n//    top: 0;\r\n//    left: 0;\r\n//  }\r\n//\r\n//  &-input {\r\n//    display: block;\r\n//    margin-bottom: 10px;\r\n//  }\r\n//\r\n//  &-button {\r\n//    float: right;\r\n//    margin-top: 10px;\r\n//  }\r\n//}\r\n",
+                    "data": "//@import \"../assets/styles/custom\";\r\n//\r\n//$container-padding: 32px;\r\n//$container-border-color: #CED3D9;\r\n//\r\n//:host {\r\n//  display: block;\r\n//  height: 100vh;\r\n//  position: relative;\r\n//}\r\n//\r\n//.custom-sb_modal {\r\n//  width: fit-content;\r\n//  height: fit-content;\r\n//  background-color: $primary-contrast;\r\n//  border: 1px solid $container-border-color;\r\n//  border-radius: 8px;\r\n//  box-sizing: border-box;\r\n//  box-shadow: rgb(0 0 0 / 10%) 0 4px 8px 0;\r\n//  padding: $container-padding;\r\n//  margin: auto;\r\n//  position: absolute;\r\n//  top: 0;\r\n//  left: 0;\r\n//  bottom: 0;\r\n//  right: 0;\r\n//\r\n//  &.full-size {\r\n//    width: 80vw;\r\n//    ::ng-deep .custom-sb_input-label {\r\n//      min-width: 80px;\r\n//    }\r\n//  }\r\n//\r\n//  &-backdrop {\r\n//    width: 100vw;\r\n//    height: 100vh;\r\n//    background: rgba(0, 0, 0, 0.65);\r\n//    position: fixed;\r\n//    top: 0;\r\n//    left: 0;\r\n//  }\r\n//\r\n//  &-sb_input {\r\n//    display: block;\r\n//    margin-bottom: 10px;\r\n//  }\r\n//\r\n//  &-sb_button {\r\n//    float: right;\r\n//    margin-top: 10px;\r\n//  }\r\n//}\r\n",
                     "styleUrl": "./modal.scss"
                 }
             ],
@@ -646,7 +790,7 @@
         {
             "name": "PageComponent",
             "id": "component-PageComponent-8f196770333aa216860a88c0b6b221aa",
-            "file": "src/stories/page/page.component.ts",
+            "file": "src/stories/examples/sb_page/page.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -741,11 +885,11 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"page\">\r\n  <h1 class=\"page-title\">Typography / <span class=\"page-title-highlighted\">Font families</span></h1>\r\n\r\n  <div class=\"font-family\">\r\n    <div class=\"font-family-accent font-family-accent-container\">\r\n      <h2 class=\"font-family-title\">Source Sans Pro</h2>\r\n      <p class=\"font-family-description\">Used only in caps, bold and 5% letter spacing, on headlines and highlighted areas such as menus, tabs, page titles, etc.</p>\r\n      <div class=\"font-family-list\">\r\n        <div class=\"font-family-example weight-bold\">\r\n          <h3 class=\"font-family-weight\">Bold</h3>\r\n          <p class=\"font-family-sample\">ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890/?.,<>’”;:!@#$%^&*()~`</p>\r\n          <p class=\"font-family-class\">\r\n            $font-family-accent\r\n            <br/>\r\n            .font-family-accent\r\n            <br/>\r\n            .weight-bold\r\n          </p>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"font-family-basic font-family-basic-container\">\r\n      <h2 class=\"font-family-title\">Inter</h2>\r\n      <p class=\"font-family-description\">Used in all the text of the paragraphs and wherever there is text in the lower case such as subheadings, buttons, etc.</p>\r\n      <div class=\"font-family-list\">\r\n        <div class=\"font-family-example\">\r\n          <h3 class=\"font-family-weight weight-regular\">Regular</h3>\r\n          <p class=\"font-family-sample\">ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890/?.,<>’”;:!@#$%^&*()~`</p>\r\n          <p class=\"font-family-class\">\r\n            $font-family-basic\r\n            <br/>\r\n            .font-family-basic\r\n            <br/>\r\n            .weight-regular\r\n          </p>\r\n        </div>\r\n        <div class=\"font-family-example\">\r\n          <h3 class=\"font-family-weight weight-medium\">Medium</h3>\r\n          <p class=\"font-family-sample\">ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890/?.,<>’”;:!@#$%^&*()~`</p>\r\n          <p class=\"font-family-class\">\r\n            $font-family-basic\r\n            <br/>\r\n            .font-family-basic\r\n            <br/>\r\n            .weight-medium\r\n          </p>\r\n        </div>\r\n        <div class=\"font-family-example weight-semi-bold\">\r\n          <h3 class=\"font-family-weight\">Semi Bold</h3>\r\n          <p class=\"font-family-sample\">ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890/?.,<>’”;:!@#$%^&*()~`</p>\r\n          <p class=\"font-family-class\">\r\n            $font-family-basic\r\n            <br/>\r\n            .font-family-basic\r\n            <br/>\r\n            .weight-semi-bold\r\n          </p>\r\n        </div>\r\n        <div class=\"font-family-example weight-bold\">\r\n          <h3 class=\"font-family-weight\">Bold</h3>\r\n          <p class=\"font-family-sample\">ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890/?.,<>’”;:!@#$%^&*()~`</p>\r\n          <p class=\"font-family-class\">\r\n            $font-family-basic\r\n            <br/>\r\n            .font-family-basic\r\n            <br/>\r\n            .weight-bold\r\n          </p>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+            "templateData": "<div class=\"page\">\r\n  <header class=\"page-header\">\r\n    <h1 class=\"page-title\">Typography / <span class=\"page-title-highlighted\">Font families</span></h1>\r\n  </header>\r\n\r\n  <main class=\"page-main\">\r\n    <div class=\"font-family\">\r\n    <div class=\"font-family-accent font-family-accent-container\">\r\n      <h2 class=\"font-family-title\">Source Sans Pro</h2>\r\n      <p class=\"font-family-description\">Used only in caps, bold and 5% letter spacing, on headlines and highlighted areas such as menus, tabs, page titles, etc.</p>\r\n      <div class=\"font-family-list\">\r\n        <div class=\"font-family-example weight-bold\">\r\n          <h3 class=\"font-family-weight\">Bold</h3>\r\n          <p class=\"font-family-sample\">ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890/?.,<>’”;:!@#$%^&*()~`</p>\r\n          <p class=\"font-family-class\">\r\n            $font-family-accent\r\n            <br/>\r\n            .font-family-accent\r\n            <br/>\r\n            .weight-bold\r\n          </p>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"font-family-basic font-family-basic-container\">\r\n      <h2 class=\"font-family-title\">Inter</h2>\r\n      <p class=\"font-family-description\">Used in all the text of the paragraphs and wherever there is text in the lower case such as subheadings, buttons, etc.</p>\r\n      <div class=\"font-family-list\">\r\n        <div class=\"font-family-example weight-regular\">\r\n          <h3 class=\"font-family-weight\">Regular</h3>\r\n          <p class=\"font-family-sample\">ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890/?.,<>’”;:!@#$%^&*()~`</p>\r\n          <p class=\"font-family-class\">\r\n            $font-family-basic\r\n            <br/>\r\n            .font-family-basic\r\n            <br/>\r\n            .weight-regular\r\n          </p>\r\n        </div>\r\n        <div class=\"font-family-example weight-medium\">\r\n          <h3 class=\"font-family-weight\">Medium</h3>\r\n          <p class=\"font-family-sample\">ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890/?.,<>’”;:!@#$%^&*()~`</p>\r\n          <p class=\"font-family-class\">\r\n            $font-family-basic\r\n            <br/>\r\n            .font-family-basic\r\n            <br/>\r\n            .weight-medium\r\n          </p>\r\n        </div>\r\n        <div class=\"font-family-example weight-semi-bold\">\r\n          <h3 class=\"font-family-weight\">Semi Bold</h3>\r\n          <p class=\"font-family-sample\">ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890/?.,<>’”;:!@#$%^&*()~`</p>\r\n          <p class=\"font-family-class\">\r\n            $font-family-basic\r\n            <br/>\r\n            .font-family-basic\r\n            <br/>\r\n            .weight-semi-bold\r\n          </p>\r\n        </div>\r\n        <div class=\"font-family-example weight-bold\">\r\n          <h3 class=\"font-family-weight\">Bold</h3>\r\n          <p class=\"font-family-sample\">ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890/?.,<>’”;:!@#$%^&*()~`</p>\r\n          <p class=\"font-family-class\">\r\n            $font-family-basic\r\n            <br/>\r\n            .font-family-basic\r\n            <br/>\r\n            .weight-bold\r\n          </p>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  </main>\r\n</div>\r\n"
         },
         {
             "name": "TypographyStylesComponent",
-            "id": "component-TypographyStylesComponent-fc2a1285e5a7fd8ad3310c2f4cc49939",
+            "id": "component-TypographyStylesComponent-52dad9777d612ada57dc0772a8ebbdc3",
             "file": "src/stories/typography/styles/typography-styles.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -798,7 +942,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component} from '@angular/core';\r\nimport {KeyValue} from '@angular/common';\r\n\r\n// class' properties are defined in styles-stories.scss\r\nconst typographyStyles = {\r\n  h1: {\r\n    title: 'Headline 1',\r\n    description: 'page header level 1',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold',\r\n      size: '20px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Page titles - level 1'\r\n    },\r\n    classes: ['headline-1-bold', 'headline-1-bold headline-contrast']\r\n  },\r\n  h1sub: {\r\n    title: 'Headline 1-sub',\r\n    description: 'page header level 2',\r\n    sets: {\r\n      family: 'Inter - SemiBold',\r\n      size: '16px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Page titles - level 2'\r\n    },\r\n    classes: ['headline-1-sub-semibold']\r\n  },\r\n  h2: {\r\n    title: 'Headline 2',\r\n    description: 'masthead menu',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold + SemiBold',\r\n      size: '15px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Masthead items. SemiBold for default text, Bold for selected, Bold green for Hover.',\r\n    },\r\n    classes: ['headline-2-bold', 'headline-2-semibold', 'headline-2-bold headline-contrast']\r\n  },\r\n  h3: {\r\n    title: 'Headline 3',\r\n    description: 'masthead sub menu',\r\n    sets: {\r\n      family: 'Source Sans Pro - Regular + SemiBold',\r\n      size: '15px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Masthead sub menu items. Regular for default text, SemiBold green for hover and selected.'\r\n    },\r\n    classes: ['headline-3-regular', 'headline-3-semibold headline-contrast']\r\n  },\r\n  h4: {\r\n    title: 'Headline 4',\r\n    description: 'table header, status labels',\r\n    sets: {\r\n      family: 'Inter - Bold',\r\n      size: '12px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Table header row (black), Status labels (white)'\r\n    },\r\n    classes: ['headline-4-bold']\r\n  },\r\n  h5: {\r\n    title: 'Headline 5',\r\n    description: 'expansion panel title',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold',\r\n      size: '15px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Expansion panel title',\r\n    },\r\n    classes: ['headline-5-bold']\r\n  },\r\n  h6: {\r\n    title: 'Headline 6',\r\n    description: 'tabs',\r\n    family: 'Inter Bold / Semi Bold',\r\n    sets: {\r\n      size: '12px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Default tab - Bold, Selected tab - SemiBold'\r\n    },\r\n    classes: ['headline-6-bold', 'headline-3-semibold']\r\n  },\r\n  h7: {\r\n    title: 'Headline 7',\r\n    description: 'modal title',\r\n    sets: {\r\n      family: 'Inter Bold',\r\n      size: '22px',\r\n      letterSpacing: '0%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Modal title',\r\n    },\r\n    classes: ['headline-7-bold']\r\n  },\r\n  p1: {\r\n    title: 'Paragraph 1',\r\n    description: '',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '14px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Paragraphs, Input text',\r\n    },\r\n    classes: ['paragraph-1-default', 'paragraph-1-link', 'paragraph-1-large-label']\r\n  },\r\n  p2: {\r\n    title: 'Paragraph 2',\r\n    description: '',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '13px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Buttons, Actions, Filter, Drop down menu items, Notifications',\r\n    },\r\n    classes: ['paragraph-2-default', 'paragraph-2-link', 'paragraph-2-actions']\r\n  },\r\n  p3: {\r\n    title: 'Paragraph 3',\r\n    description: 'table content',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '12px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Table content, Input top label',\r\n    },\r\n    classes: ['paragraph-3-default', 'paragraph-3-link', 'paragraph-3-medium', 'paragraph-3-semibold']\r\n  }\r\n};\r\n\r\n\r\n@Component({\r\n  selector: 'p-typography-styles',\r\n  templateUrl: './typography-styles.component.html',\r\n  styleUrls: ['./typography-styles.component.scss'],\r\n})\r\nexport default class TypographyStylesComponent {\r\n  public typographyStyles = typographyStyles;\r\n\r\n  originalOrder = (a: KeyValue<number, string>, b: KeyValue<number, string>): number => {\r\n    return 0;\r\n  }\r\n\r\n  reverseKeyOrder = (a: KeyValue<number, string>, b: KeyValue<number, string>): number => {\r\n    return -1;\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component} from '@angular/core';\r\nimport {KeyValue} from '@angular/common';\r\n\r\n// class' properties are defined in styles-stories.scss\r\nconst typographyStyles = {\r\n  h1: {\r\n    title: 'Headline 1',\r\n    description: 'page header level 1',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold',\r\n      size: '18px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Page titles - level 1'\r\n    },\r\n    classes: ['headline-1-bold', 'headline-1-bold headline-contrast']\r\n  },\r\n  h1sub: {\r\n    title: 'Headline 1-sub',\r\n    description: 'page header level 2',\r\n    sets: {\r\n      family: 'Inter - SemiBold',\r\n      size: '16px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Page titles - level 2'\r\n    },\r\n    classes: ['headline-1-sub-semibold']\r\n  },\r\n  h2: {\r\n    title: 'Headline 2',\r\n    description: 'masthead menu',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold + SemiBold',\r\n      size: '15px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Masthead items. SemiBold for default text, Bold for selected, Bold green for Hover.',\r\n    },\r\n    classes: ['headline-2-bold', 'headline-2-semibold', 'headline-2-bold headline-contrast']\r\n  },\r\n  h3: {\r\n    title: 'Headline 3',\r\n    description: 'masthead sub menu',\r\n    sets: {\r\n      family: 'Source Sans Pro - Regular + SemiBold',\r\n      size: '15px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Masthead sub menu items. Regular for default text, SemiBold green for hover and selected.'\r\n    },\r\n    classes: ['headline-3-regular', 'headline-3-semibold headline-contrast']\r\n  },\r\n  h4: {\r\n    title: 'Headline 4',\r\n    description: 'table header, status labels',\r\n    sets: {\r\n      family: 'Inter - Bold',\r\n      size: '12px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Table header row (black), Status labels (white)'\r\n    },\r\n    classes: ['headline-4-bold']\r\n  },\r\n  h5: {\r\n    title: 'Headline 5',\r\n    description: 'expansion panel title',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold',\r\n      size: '15px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Expansion panel title',\r\n    },\r\n    classes: ['headline-5-bold']\r\n  },\r\n  h6: {\r\n    title: 'Headline 6',\r\n    description: 'tabs',\r\n    family: 'Inter Bold / Semi Bold',\r\n    sets: {\r\n      size: '12px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Default tab - Bold, Selected tab - SemiBold'\r\n    },\r\n    classes: ['headline-6-bold', 'headline-3-semibold']\r\n  },\r\n  h7: {\r\n    title: 'Headline 7',\r\n    description: 'modal title',\r\n    sets: {\r\n      family: 'Inter Bold',\r\n      size: '22px',\r\n      letterSpacing: '0%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Modal title',\r\n    },\r\n    classes: ['headline-7-bold']\r\n  },\r\n  p1: {\r\n    title: 'Paragraph 1',\r\n    description: '',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '14px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Paragraphs, Input text',\r\n    },\r\n    classes: ['paragraph-1-default', 'paragraph-1-link', 'paragraph-1-large-label']\r\n  },\r\n  p2: {\r\n    title: 'Paragraph 2',\r\n    description: '',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '13px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Buttons, Actions, Filter, Drop down menu items, Notifications',\r\n    },\r\n    classes: ['paragraph-2-default', 'paragraph-2-link', 'paragraph-2-actions']\r\n  },\r\n  p3: {\r\n    title: 'Paragraph 3',\r\n    description: 'table content',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '12px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Table content, Input top label',\r\n    },\r\n    classes: ['paragraph-3-default', 'paragraph-3-link', 'paragraph-3-medium', 'paragraph-3-semibold']\r\n  }\r\n};\r\n\r\n\r\n@Component({\r\n  selector: 'p-typography-styles',\r\n  templateUrl: './typography-styles.component.html',\r\n  styleUrls: ['./typography-styles.component.scss'],\r\n})\r\nexport default class TypographyStylesComponent {\r\n  public typographyStyles = typographyStyles;\r\n\r\n  originalOrder = (a: KeyValue<number, string>, b: KeyValue<number, string>): number => {\r\n    return 0;\r\n  }\r\n\r\n  reverseKeyOrder = (a: KeyValue<number, string>, b: KeyValue<number, string>): number => {\r\n    return -1;\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -807,7 +951,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"page\">\r\n  <h1 class=\"page-title\">Typography / <span class=\"page-title-highlighted\">Styles</span></h1>\r\n\r\n  <ul *ngIf=\"typographyStyles\" class=\"font-style\">\r\n    <li *ngFor=\"let item of typographyStyles | keyvalue: originalOrder\"\r\n        class=\"font-style-item\">\r\n      <div class=\"font-style-top\">\r\n        <h2 class=\"font-style-title\">{{ item.value.title }} </h2>\r\n        <p *ngIf=\"item.value.description\" class=\"font-style-description\">\r\n          ({{ item.value.description }})\r\n        </p>\r\n      </div>\r\n      <div class=\"font-style-desc\">\r\n        <dl *ngFor=\"let set of item.value.sets | keyvalue: originalOrder\"\r\n            class=\"font-style-desc-set {{ set.key }}\">\r\n          <dt class=\"font-style-desc-title\">{{ set.key }}</dt>\r\n          <dd class=\"font-style-desc-data\">{{ set.value}}</dd>\r\n        </dl>\r\n      </div>\r\n      <div class=\"font-style-preview\">\r\n        <div *ngFor=\"let example of item.value.classes\"\r\n             class=\"font-style-example\">\r\n          <dl class=\"font-style-desc-set\">\r\n            <dt class=\"font-style-desc-title\">.{{ example }}</dt>\r\n            <dd class=\"font-style-desc-data {{ example }}\">Lorem ipsum dolor sit amet</dd>\r\n          </dl>\r\n        </div>\r\n      </div>\r\n    </li>\r\n  </ul>\r\n</div>\r\n"
+            "templateData": "<div class=\"page\">\r\n  <header class=\"page-header\">\r\n    <h1 class=\"page-title\">Typography / <span class=\"page-title-highlighted\">Styles</span></h1>\r\n  </header>\r\n\r\n  <main class=\"page-main\">\r\n    <ul *ngIf=\"typographyStyles\" class=\"font-style\">\r\n      <li *ngFor=\"let item of typographyStyles | keyvalue: originalOrder\"\r\n          class=\"font-style-item\">\r\n        <div class=\"font-style-top\">\r\n          <h2 class=\"font-style-title\">{{ item.value.title }} </h2>\r\n          <p *ngIf=\"item.value.description\" class=\"font-style-description\">\r\n            ({{ item.value.description }})\r\n          </p>\r\n        </div>\r\n        <div class=\"font-style-desc\">\r\n          <dl *ngFor=\"let set of item.value.sets | keyvalue: originalOrder\"\r\n              class=\"font-style-desc-set {{ set.key }}\">\r\n            <dt class=\"font-style-desc-title\">{{ set.key }}</dt>\r\n            <dd class=\"font-style-desc-data\">{{ set.value}}</dd>\r\n          </dl>\r\n        </div>\r\n        <div class=\"font-style-preview\">\r\n          <div *ngFor=\"let example of item.value.classes\"\r\n               class=\"font-style-example\">\r\n            <dl class=\"font-style-desc-set\">\r\n              <dt class=\"font-style-desc-title\">.{{ example }}</dt>\r\n              <dd class=\"font-style-desc-data {{ example }}\">Lorem ipsum dolor sit amet</dd>\r\n            </dl>\r\n          </div>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </main>\r\n</div>\r\n"
         }
     ],
     "modules": [
@@ -885,6 +1029,14 @@
     "miscellaneous": {
         "variables": [
             {
+                "name": "Button",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/button/button-component/button.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "ColorPalette",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -901,20 +1053,12 @@
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
             {
-                "name": "Default",
+                "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/modal/Modal.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Disabled",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/input/Input.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
+                "file": "src/environments/environment.prod.ts",
+                "type": "object",
+                "defaultValue": "{\n  production: true\n}"
             },
             {
                 "name": "environment",
@@ -925,90 +1069,10 @@
                 "defaultValue": "{\n  production: false\n}"
             },
             {
-                "name": "environment",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
-                "type": "object",
-                "defaultValue": "{\n  production: true\n}"
-            },
-            {
-                "name": "ErrorMessage",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/input/Input.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "FontFamily",
+                "name": "Fonts",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "FullSize",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/input/Input.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "FullSize",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/modal/Modal.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Large",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/button/Button.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "LeftLabelled",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/input/Input.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "LoggedIn",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/header/Header.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "LoggedIn",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/page/Page.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "LoggedOut",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/header/Header.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "LoggedOut",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/page/Page.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -1021,35 +1085,11 @@
                 "defaultValue": "{\r\n  primary: {\r\n    a: {\r\n      900: {name: 'P-A 900', labelColor: 'white'}\r\n    },\r\n    b: {\r\n      300: { name: 'P-B 300', labelColor: 'white' }\r\n    },\r\n    c: {\r\n      50: {name: 'P-C 50', labelColor: 'black'}\r\n    }\r\n  },\r\n  secondary: {\r\n    a: { 800: { name: 'S-A 800', labelColor: 'white' },\r\n      700: { name: 'S-A 700', labelColor: 'white' },\r\n      600: { name: 'S-A 600', labelColor: 'white' },\r\n      500: { name: 'S-A 500', labelColor: 'black' },\r\n      200: { name: 'S-A 200', labelColor: 'black' },\r\n      100: { name: 'S-A 100', labelColor: 'black' },\r\n      50: { name: 'S-A 50', labelColor: 'black' } },\r\n    b: { 700: { name: 'S-B 700', labelColor: 'white' },\r\n      500: { name: 'S-B 500', labelColor: 'white' },\r\n      400: { name: 'S-B 400', labelColor: 'white' },\r\n      300: { name: 'S-B 300', labelColor: 'white' },\r\n      200: { name: 'S-B 200', labelColor: 'black' },\r\n      100: { name: 'S-B 100', labelColor: 'black' },\r\n      50: { name: 'S-B 500', labelColor: 'black' }\r\n    }\r\n  },\r\n  gray: {\r\n    scale: { 800: { name: 'grayscale 800', labelColor: 'white' },\r\n        700: { name: 'grayscale 700', labelColor: 'white' },\r\n        600: { name: 'grayscale 600', labelColor: 'white' },\r\n        500: { name: 'grayscale 500', labelColor: 'white' },\r\n        400: { name: 'grayscale 400', labelColor: 'black' },\r\n        100: { name: 'grayscale 100', labelColor: 'black' },\r\n        50: { name: 'grayscale 50', labelColor: 'black' },\r\n        5: { name: 'grayscale 5', labelColor: 'black' },\r\n        1: { name: 'grayscale 1', labelColor: 'black' }\r\n    }\r\n  },\r\n  supportive: {\r\n    alert: {\r\n      700: { name: 'Alert 700', labelColor: 'white' },\r\n      500: { name: 'Alert 500', labelColor: 'black' },\r\n      50: { name: 'Alert 50', labelColor: 'black' }\r\n    },\r\n    yellow: { 300: { name: 'Yellow 300', labelColor: 'black' } },\r\n    orange: {\r\n      300: { name: 'Orange 300', labelColor: 'black' },\r\n      50: { name: 'Orange 50', labelColor: 'black' }\r\n    },\r\n    success: {\r\n      400: { name: 'Success 400', labelColor: 'black' },\r\n      50: { name: 'Success 50', labelColor: 'black' }\r\n    },\r\n    dev: {\r\n      a: { name: 'Dev A', labelColor: 'white' },\r\n      b: { name: 'Dev B', labelColor: 'white' },\r\n      c: { name: 'Dev C', labelColor: 'white' }\r\n    }\r\n  }\r\n}"
             },
             {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/button/Button.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
                 "name": "require",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/test.ts",
                 "type": "literal type"
-            },
-            {
-                "name": "Secondary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/button/Button.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Small",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/button/Button.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Styles",
@@ -1063,22 +1103,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/header/Header.stories.ts",
-                "type": "Story<Header>",
-                "defaultValue": "(args: Header) => ({\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/button/Button.stories.ts",
-                "type": "Story<Button>",
-                "defaultValue": "(args: Button) => ({\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/colors/color-palette.stories.ts",
                 "type": "Story<ColorPaletteComponent>",
                 "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
@@ -1087,33 +1111,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input/Input.stories.ts",
-                "type": "Story<Input>",
-                "defaultValue": "(args: Input) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/modal/Modal.stories.ts",
-                "type": "Story<Modal>",
-                "defaultValue": "(args: Modal) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/page/Page.stories.ts",
-                "type": "Story<Page>",
-                "defaultValue": "(args: Page) => ({\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
-                "type": "Story<TypographyFontFamilyComponent>",
-                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/button/button-component/button.stories.ts",
+                "type": "Story<ButtonComponent>",
+                "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -1124,12 +1124,12 @@
                 "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
             },
             {
-                "name": "TopLabelled",
+                "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input/Input.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
+                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
+                "type": "Story<TypographyFontFamilyComponent>",
+                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "typographyStyles",
@@ -1137,13 +1137,57 @@
                 "subtype": "variable",
                 "file": "src/stories/typography/styles/typography-styles.component.ts",
                 "type": "object",
-                "defaultValue": "{\r\n  h1: {\r\n    title: 'Headline 1',\r\n    description: 'page header level 1',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold',\r\n      size: '20px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Page titles - level 1'\r\n    },\r\n    classes: ['headline-1-bold', 'headline-1-bold headline-contrast']\r\n  },\r\n  h1sub: {\r\n    title: 'Headline 1-sub',\r\n    description: 'page header level 2',\r\n    sets: {\r\n      family: 'Inter - SemiBold',\r\n      size: '16px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Page titles - level 2'\r\n    },\r\n    classes: ['headline-1-sub-semibold']\r\n  },\r\n  h2: {\r\n    title: 'Headline 2',\r\n    description: 'masthead menu',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold + SemiBold',\r\n      size: '15px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Masthead items. SemiBold for default text, Bold for selected, Bold green for Hover.',\r\n    },\r\n    classes: ['headline-2-bold', 'headline-2-semibold', 'headline-2-bold headline-contrast']\r\n  },\r\n  h3: {\r\n    title: 'Headline 3',\r\n    description: 'masthead sub menu',\r\n    sets: {\r\n      family: 'Source Sans Pro - Regular + SemiBold',\r\n      size: '15px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Masthead sub menu items. Regular for default text, SemiBold green for hover and selected.'\r\n    },\r\n    classes: ['headline-3-regular', 'headline-3-semibold headline-contrast']\r\n  },\r\n  h4: {\r\n    title: 'Headline 4',\r\n    description: 'table header, status labels',\r\n    sets: {\r\n      family: 'Inter - Bold',\r\n      size: '12px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Table header row (black), Status labels (white)'\r\n    },\r\n    classes: ['headline-4-bold']\r\n  },\r\n  h5: {\r\n    title: 'Headline 5',\r\n    description: 'expansion panel title',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold',\r\n      size: '15px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Expansion panel title',\r\n    },\r\n    classes: ['headline-5-bold']\r\n  },\r\n  h6: {\r\n    title: 'Headline 6',\r\n    description: 'tabs',\r\n    family: 'Inter Bold / Semi Bold',\r\n    sets: {\r\n      size: '12px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Default tab - Bold, Selected tab - SemiBold'\r\n    },\r\n    classes: ['headline-6-bold', 'headline-3-semibold']\r\n  },\r\n  h7: {\r\n    title: 'Headline 7',\r\n    description: 'modal title',\r\n    sets: {\r\n      family: 'Inter Bold',\r\n      size: '22px',\r\n      letterSpacing: '0%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Modal title',\r\n    },\r\n    classes: ['headline-7-bold']\r\n  },\r\n  p1: {\r\n    title: 'Paragraph 1',\r\n    description: '',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '14px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Paragraphs, Input text',\r\n    },\r\n    classes: ['paragraph-1-default', 'paragraph-1-link', 'paragraph-1-large-label']\r\n  },\r\n  p2: {\r\n    title: 'Paragraph 2',\r\n    description: '',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '13px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Buttons, Actions, Filter, Drop down menu items, Notifications',\r\n    },\r\n    classes: ['paragraph-2-default', 'paragraph-2-link', 'paragraph-2-actions']\r\n  },\r\n  p3: {\r\n    title: 'Paragraph 3',\r\n    description: 'table content',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '12px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Table content, Input top label',\r\n    },\r\n    classes: ['paragraph-3-default', 'paragraph-3-link', 'paragraph-3-medium', 'paragraph-3-semibold']\r\n  }\r\n}"
+                "defaultValue": "{\r\n  h1: {\r\n    title: 'Headline 1',\r\n    description: 'page header level 1',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold',\r\n      size: '18px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Page titles - level 1'\r\n    },\r\n    classes: ['headline-1-bold', 'headline-1-bold headline-contrast']\r\n  },\r\n  h1sub: {\r\n    title: 'Headline 1-sub',\r\n    description: 'page header level 2',\r\n    sets: {\r\n      family: 'Inter - SemiBold',\r\n      size: '16px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Page titles - level 2'\r\n    },\r\n    classes: ['headline-1-sub-semibold']\r\n  },\r\n  h2: {\r\n    title: 'Headline 2',\r\n    description: 'masthead menu',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold + SemiBold',\r\n      size: '15px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Masthead items. SemiBold for default text, Bold for selected, Bold green for Hover.',\r\n    },\r\n    classes: ['headline-2-bold', 'headline-2-semibold', 'headline-2-bold headline-contrast']\r\n  },\r\n  h3: {\r\n    title: 'Headline 3',\r\n    description: 'masthead sub menu',\r\n    sets: {\r\n      family: 'Source Sans Pro - Regular + SemiBold',\r\n      size: '15px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Masthead sub menu items. Regular for default text, SemiBold green for hover and selected.'\r\n    },\r\n    classes: ['headline-3-regular', 'headline-3-semibold headline-contrast']\r\n  },\r\n  h4: {\r\n    title: 'Headline 4',\r\n    description: 'table header, status labels',\r\n    sets: {\r\n      family: 'Inter - Bold',\r\n      size: '12px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Table header row (black), Status labels (white)'\r\n    },\r\n    classes: ['headline-4-bold']\r\n  },\r\n  h5: {\r\n    title: 'Headline 5',\r\n    description: 'expansion panel title',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold',\r\n      size: '15px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Expansion panel title',\r\n    },\r\n    classes: ['headline-5-bold']\r\n  },\r\n  h6: {\r\n    title: 'Headline 6',\r\n    description: 'tabs',\r\n    family: 'Inter Bold / Semi Bold',\r\n    sets: {\r\n      size: '12px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Default tab - Bold, Selected tab - SemiBold'\r\n    },\r\n    classes: ['headline-6-bold', 'headline-3-semibold']\r\n  },\r\n  h7: {\r\n    title: 'Headline 7',\r\n    description: 'modal title',\r\n    sets: {\r\n      family: 'Inter Bold',\r\n      size: '22px',\r\n      letterSpacing: '0%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Modal title',\r\n    },\r\n    classes: ['headline-7-bold']\r\n  },\r\n  p1: {\r\n    title: 'Paragraph 1',\r\n    description: '',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '14px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Paragraphs, Input text',\r\n    },\r\n    classes: ['paragraph-1-default', 'paragraph-1-link', 'paragraph-1-large-label']\r\n  },\r\n  p2: {\r\n    title: 'Paragraph 2',\r\n    description: '',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '13px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Buttons, Actions, Filter, Drop down menu items, Notifications',\r\n    },\r\n    classes: ['paragraph-2-default', 'paragraph-2-link', 'paragraph-2-actions']\r\n  },\r\n  p3: {\r\n    title: 'Paragraph 3',\r\n    description: 'table content',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '12px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Table content, Input top label',\r\n    },\r\n    classes: ['paragraph-3-default', 'paragraph-3-link', 'paragraph-3-medium', 'paragraph-3-semibold']\r\n  }\r\n}"
             }
         ],
         "functions": [],
         "typealiases": [],
-        "enumerations": [],
+        "enumerations": [
+            {
+                "name": "ButtonTypeEnum",
+                "childs": [
+                    {
+                        "name": "Primary",
+                        "value": "primary"
+                    },
+                    {
+                        "name": "Secondary",
+                        "value": "secondary"
+                    },
+                    {
+                        "name": "Tertiary",
+                        "value": "tertiary"
+                    },
+                    {
+                        "name": "Distructive",
+                        "value": "distructive"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "description": "",
+                "file": "src/stories/button/button-type.enum.ts"
+            }
+        ],
         "groupedVariables": {
+            "src/stories/button/button-component/button.stories.ts": [
+                {
+                    "name": "Button",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/button/button-component/button.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/button/button-component/button.stories.ts",
+                    "type": "Story<ButtonComponent>",
+                    "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
             "src/stories/colors/color-palette.stories.ts": [
                 {
                     "name": "ColorPalette",
@@ -1179,80 +1223,14 @@
                     "type": "literal type"
                 }
             ],
-            "src/stories/modal/Modal.stories.ts": [
+            "src/environments/environment.prod.ts": [
                 {
-                    "name": "Default",
+                    "name": "environment",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/modal/Modal.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "FullSize",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/modal/Modal.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/modal/Modal.stories.ts",
-                    "type": "Story<Modal>",
-                    "defaultValue": "(args: Modal) => ({\r\n  props: args,\r\n})"
-                }
-            ],
-            "src/stories/input/Input.stories.ts": [
-                {
-                    "name": "Disabled",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/input/Input.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "ErrorMessage",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/input/Input.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "FullSize",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/input/Input.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "LeftLabelled",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/input/Input.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/input/Input.stories.ts",
-                    "type": "Story<Input>",
-                    "defaultValue": "(args: Input) => ({\r\n  props: args,\r\n})"
-                },
-                {
-                    "name": "TopLabelled",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/input/Input.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
+                    "file": "src/environments/environment.prod.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  production: true\n}"
                 }
             ],
             "src/environments/environment.ts": [
@@ -1265,19 +1243,9 @@
                     "defaultValue": "{\n  production: false\n}"
                 }
             ],
-            "src/environments/environment.prod.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.prod.ts",
-                    "type": "object",
-                    "defaultValue": "{\n  production: true\n}"
-                }
-            ],
             "src/stories/typography/font-family/typography-font-family.stories.ts": [
                 {
-                    "name": "FontFamily",
+                    "name": "Fonts",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
@@ -1291,100 +1259,6 @@
                     "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
                     "type": "Story<TypographyFontFamilyComponent>",
                     "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
-                }
-            ],
-            "src/stories/button/Button.stories.ts": [
-                {
-                    "name": "Large",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/button/Button.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/button/Button.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Secondary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/button/Button.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Small",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/button/Button.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/button/Button.stories.ts",
-                    "type": "Story<Button>",
-                    "defaultValue": "(args: Button) => ({\n  props: args,\n})"
-                }
-            ],
-            "src/stories/header/Header.stories.ts": [
-                {
-                    "name": "LoggedIn",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/header/Header.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "LoggedOut",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/header/Header.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/header/Header.stories.ts",
-                    "type": "Story<Header>",
-                    "defaultValue": "(args: Header) => ({\n  props: args,\n})"
-                }
-            ],
-            "src/stories/page/Page.stories.ts": [
-                {
-                    "name": "LoggedIn",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/page/Page.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "LoggedOut",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/page/Page.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/page/Page.stories.ts",
-                    "type": "Story<Page>",
-                    "defaultValue": "(args: Page) => ({\n  props: args,\n})"
                 }
             ],
             "src/stories/colors/color-palette.component.ts": [
@@ -1422,12 +1296,40 @@
                     "subtype": "variable",
                     "file": "src/stories/typography/styles/typography-styles.component.ts",
                     "type": "object",
-                    "defaultValue": "{\r\n  h1: {\r\n    title: 'Headline 1',\r\n    description: 'page header level 1',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold',\r\n      size: '20px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Page titles - level 1'\r\n    },\r\n    classes: ['headline-1-bold', 'headline-1-bold headline-contrast']\r\n  },\r\n  h1sub: {\r\n    title: 'Headline 1-sub',\r\n    description: 'page header level 2',\r\n    sets: {\r\n      family: 'Inter - SemiBold',\r\n      size: '16px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Page titles - level 2'\r\n    },\r\n    classes: ['headline-1-sub-semibold']\r\n  },\r\n  h2: {\r\n    title: 'Headline 2',\r\n    description: 'masthead menu',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold + SemiBold',\r\n      size: '15px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Masthead items. SemiBold for default text, Bold for selected, Bold green for Hover.',\r\n    },\r\n    classes: ['headline-2-bold', 'headline-2-semibold', 'headline-2-bold headline-contrast']\r\n  },\r\n  h3: {\r\n    title: 'Headline 3',\r\n    description: 'masthead sub menu',\r\n    sets: {\r\n      family: 'Source Sans Pro - Regular + SemiBold',\r\n      size: '15px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Masthead sub menu items. Regular for default text, SemiBold green for hover and selected.'\r\n    },\r\n    classes: ['headline-3-regular', 'headline-3-semibold headline-contrast']\r\n  },\r\n  h4: {\r\n    title: 'Headline 4',\r\n    description: 'table header, status labels',\r\n    sets: {\r\n      family: 'Inter - Bold',\r\n      size: '12px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Table header row (black), Status labels (white)'\r\n    },\r\n    classes: ['headline-4-bold']\r\n  },\r\n  h5: {\r\n    title: 'Headline 5',\r\n    description: 'expansion panel title',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold',\r\n      size: '15px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Expansion panel title',\r\n    },\r\n    classes: ['headline-5-bold']\r\n  },\r\n  h6: {\r\n    title: 'Headline 6',\r\n    description: 'tabs',\r\n    family: 'Inter Bold / Semi Bold',\r\n    sets: {\r\n      size: '12px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Default tab - Bold, Selected tab - SemiBold'\r\n    },\r\n    classes: ['headline-6-bold', 'headline-3-semibold']\r\n  },\r\n  h7: {\r\n    title: 'Headline 7',\r\n    description: 'modal title',\r\n    sets: {\r\n      family: 'Inter Bold',\r\n      size: '22px',\r\n      letterSpacing: '0%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Modal title',\r\n    },\r\n    classes: ['headline-7-bold']\r\n  },\r\n  p1: {\r\n    title: 'Paragraph 1',\r\n    description: '',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '14px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Paragraphs, Input text',\r\n    },\r\n    classes: ['paragraph-1-default', 'paragraph-1-link', 'paragraph-1-large-label']\r\n  },\r\n  p2: {\r\n    title: 'Paragraph 2',\r\n    description: '',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '13px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Buttons, Actions, Filter, Drop down menu items, Notifications',\r\n    },\r\n    classes: ['paragraph-2-default', 'paragraph-2-link', 'paragraph-2-actions']\r\n  },\r\n  p3: {\r\n    title: 'Paragraph 3',\r\n    description: 'table content',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '12px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Table content, Input top label',\r\n    },\r\n    classes: ['paragraph-3-default', 'paragraph-3-link', 'paragraph-3-medium', 'paragraph-3-semibold']\r\n  }\r\n}"
+                    "defaultValue": "{\r\n  h1: {\r\n    title: 'Headline 1',\r\n    description: 'page header level 1',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold',\r\n      size: '18px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Page titles - level 1'\r\n    },\r\n    classes: ['headline-1-bold', 'headline-1-bold headline-contrast']\r\n  },\r\n  h1sub: {\r\n    title: 'Headline 1-sub',\r\n    description: 'page header level 2',\r\n    sets: {\r\n      family: 'Inter - SemiBold',\r\n      size: '16px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Page titles - level 2'\r\n    },\r\n    classes: ['headline-1-sub-semibold']\r\n  },\r\n  h2: {\r\n    title: 'Headline 2',\r\n    description: 'masthead menu',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold + SemiBold',\r\n      size: '15px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Masthead items. SemiBold for default text, Bold for selected, Bold green for Hover.',\r\n    },\r\n    classes: ['headline-2-bold', 'headline-2-semibold', 'headline-2-bold headline-contrast']\r\n  },\r\n  h3: {\r\n    title: 'Headline 3',\r\n    description: 'masthead sub menu',\r\n    sets: {\r\n      family: 'Source Sans Pro - Regular + SemiBold',\r\n      size: '15px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Masthead sub menu items. Regular for default text, SemiBold green for hover and selected.'\r\n    },\r\n    classes: ['headline-3-regular', 'headline-3-semibold headline-contrast']\r\n  },\r\n  h4: {\r\n    title: 'Headline 4',\r\n    description: 'table header, status labels',\r\n    sets: {\r\n      family: 'Inter - Bold',\r\n      size: '12px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Table header row (black), Status labels (white)'\r\n    },\r\n    classes: ['headline-4-bold']\r\n  },\r\n  h5: {\r\n    title: 'Headline 5',\r\n    description: 'expansion panel title',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold',\r\n      size: '15px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Expansion panel title',\r\n    },\r\n    classes: ['headline-5-bold']\r\n  },\r\n  h6: {\r\n    title: 'Headline 6',\r\n    description: 'tabs',\r\n    family: 'Inter Bold / Semi Bold',\r\n    sets: {\r\n      size: '12px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Default tab - Bold, Selected tab - SemiBold'\r\n    },\r\n    classes: ['headline-6-bold', 'headline-3-semibold']\r\n  },\r\n  h7: {\r\n    title: 'Headline 7',\r\n    description: 'modal title',\r\n    sets: {\r\n      family: 'Inter Bold',\r\n      size: '22px',\r\n      letterSpacing: '0%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Modal title',\r\n    },\r\n    classes: ['headline-7-bold']\r\n  },\r\n  p1: {\r\n    title: 'Paragraph 1',\r\n    description: '',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '14px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Paragraphs, Input text',\r\n    },\r\n    classes: ['paragraph-1-default', 'paragraph-1-link', 'paragraph-1-large-label']\r\n  },\r\n  p2: {\r\n    title: 'Paragraph 2',\r\n    description: '',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '13px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Buttons, Actions, Filter, Drop down menu items, Notifications',\r\n    },\r\n    classes: ['paragraph-2-default', 'paragraph-2-link', 'paragraph-2-actions']\r\n  },\r\n  p3: {\r\n    title: 'Paragraph 3',\r\n    description: 'table content',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '12px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Table content, Input top label',\r\n    },\r\n    classes: ['paragraph-3-default', 'paragraph-3-link', 'paragraph-3-medium', 'paragraph-3-semibold']\r\n  }\r\n}"
                 }
             ]
         },
         "groupedFunctions": {},
-        "groupedEnumerations": {},
+        "groupedEnumerations": {
+            "src/stories/button/button-type.enum.ts": [
+                {
+                    "name": "ButtonTypeEnum",
+                    "childs": [
+                        {
+                            "name": "Primary",
+                            "value": "primary"
+                        },
+                        {
+                            "name": "Secondary",
+                            "value": "secondary"
+                        },
+                        {
+                            "name": "Tertiary",
+                            "value": "tertiary"
+                        },
+                        {
+                            "name": "Distructive",
+                            "value": "distructive"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "description": "",
+                    "file": "src/stories/button/button-type.enum.ts"
+                }
+            ]
+        },
         "groupedTypeAliases": {}
     },
     "routes": {
@@ -1445,7 +1347,7 @@
         ]
     },
     "coverage": {
-        "count": 1,
+        "count": 3,
         "status": "low",
         "files": [
             {
@@ -1487,47 +1389,26 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/button/Button.stories.ts",
+                "filePath": "src/stories/button/button-component/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/button/button-component/button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Large",
+                "name": "Button",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "src/stories/button/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/button/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Secondary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/button/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Small",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/button/Button.stories.ts",
+                "filePath": "src/stories/button/button-component/button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -1537,13 +1418,13 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/button/button.component.ts",
+                "filePath": "src/stories/button/button-page.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "ButtonComponent",
-                "coveragePercent": 83,
-                "coverageCount": "5/6",
-                "status": "very-good"
+                "name": "ButtonPageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
             },
             {
                 "filePath": "src/stories/colors/color-palette.component.ts",
@@ -1585,154 +1466,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/header/Header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedIn",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/header/Header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedOut",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/header/Header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/header/header.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "HeaderComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/5",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/input/Input.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Disabled",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/input/Input.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "ErrorMessage",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/input/Input.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "FullSize",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/input/Input.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LeftLabelled",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/input/Input.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/input/Input.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "TopLabelled",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/input/input.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "InputComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/12",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/modal/Modal.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Default",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/modal/Modal.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "FullSize",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/modal/Modal.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/modal/modal.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "ModalComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/8",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/modals/params.interface.ts",
+                "filePath": "src/stories/examples/models/params.interface.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "IParams",
@@ -1741,37 +1475,43 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/page/Page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedIn",
+                "filePath": "src/stories/examples/sb_button/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 83,
+                "coverageCount": "5/6",
+                "status": "very-good"
+            },
+            {
+                "filePath": "src/stories/examples/sb_header/header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
-                "filePath": "src/stories/page/Page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedOut",
+                "filePath": "src/stories/examples/sb_input/input.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "InputComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/12",
                 "status": "low"
             },
             {
-                "filePath": "src/stories/page/Page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
+                "filePath": "src/stories/examples/sb_modal/modal.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ModalComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/8",
                 "status": "low"
             },
             {
-                "filePath": "src/stories/page/page.component.ts",
+                "filePath": "src/stories/examples/sb_page/page.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "PageComponent",
@@ -1793,7 +1533,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "FontFamily",
+                "name": "Fonts",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
