@@ -1,5 +1,5 @@
 <button class="p-btn" [ngClass]="classes">
-  <span *ngIf="iconBefore" [ngClass]="'p-btn-icon icon-' + iconBefore"></span>
-  <span class="p-btn-label">{{label}}</span>
-  <span *ngIf="iconAfter" [ngClass]="'p-btn-icon icon-' + iconAfter"></span>
+  <span *ngIf="button.iconBefore" [ngClass]="'p-btn-icon icon-' + button.iconBefore"></span>
+  <span class="p-btn-label">{{button.label}}</span>
+  <span *ngIf="button.iconAfter" [ngClass]="'p-btn-icon icon-' + button.iconAfter"></span>
 </button>
