@@ -20,8 +20,5 @@ const Template: Story<ButtonComponent> = (args: ButtonComponent) => ({
 
 export const Button = Template.bind({});
 Button.args = {
-  label: 'Full Size Input',
-  placeholder: 'Type some fun',
-  topLabelled: false,
-  fullSize: true,
+  label: 'Label',
 };

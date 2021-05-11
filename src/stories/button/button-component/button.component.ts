@@ -10,8 +10,8 @@ export default class ButtonComponent {
   @Input() label: string = 'Label';
   @Input() large: boolean = false;
   @Input() disabled: boolean = false;
-  @Input() iconBefore: boolean = false;
-  @Input() iconAfter: boolean = false;
+  @Input() iconBefore: string = 'view';
+  @Input() iconAfter: string = 'arrow';
   @Input() buttonType: ButtonTypeEnum = ButtonTypeEnum.Primary;
 
   public get classes(): string[] {
@@ -20,7 +20,7 @@ export default class ButtonComponent {
     this.disabled ? classParams.push('p-btn-disabled') : null;
     this.iconBefore ? classParams.push('p-btn-icon-before') : null;
     this.iconAfter ? classParams.push('p-btn-icon-after') : null;
-    classParams.push(this.buttonType);
+    classParams.push(`p-btn-${this.buttonType}`);
     return classParams;
   }
 }
