@@ -12,36 +12,22 @@
     </p>
   </header>
 
-  <main class="page-main">
-    <p-button *ngFor="let button of buttons" [button]="button"></p-button>
-    <!--<ul *ngIf="" class="">-->
-      <!--<li *ngFor="let item of  "-->
-          <!--class="">-->
-
-      <!--</li>-->
-    <!--</ul>-->
+  <main class="page-main buttons-main">
+    <ul class="buttons-list first-list">
+      <li class="buttons-list-header"></li>
+      <li class="buttons-list-header">Default state</li>
+      <li class="buttons-list-header">.p-btn-disabled</li>
+      <li class="buttons-list-header">.p-btn-icon-before</li>
+      <li class="buttons-list-header">.p-btn-icon-after</li>
+      <li class="buttons-list-header">.p-btn-icon-before <br/> .p-btn-icon-after</li>
+    </ul>
+    <ul *ngFor="let buttonType of buttons | keyvalue: originalOrder"
+        class="buttons-list content-list {{buttonType.key}}">
+      <li class="buttons-list-header">.p-btn-{{buttonType.key}}</li>
+      <li *ngFor="let button of buttonType.value" class="buttons-list-item">
+        <p-button [button]="button"></p-button>
+      </li>
+    </ul>
   </main>
-
-
-  <!--<div class="list-items">-->
-    <!--+     <app-task-->
-    <!--+       *ngFor="let task of tasksInOrder"-->
-    <!--+       [task]="task"-->
-    <!--+       (onArchiveTask)="onArchiveTask.emit($event)"-->
-    <!--+       (onPinTask)="onPinTask.emit($event)"-->
-    <!--+     >-->
-    <!--+     </app-task>-->
-    <!--+     <div *ngIf="tasksInOrder.length === 0 && !loading" class="wrapper-message">-->
-    <!--+       <span class="icon-check"></span>-->
-    <!--+       <div class="title-message">You have no tasks</div>-->
-    <!--+       <div class="subtitle-message">Sit back and relax</div>-->
-    <!--+     </div>-->
-    <!--+     <div *ngIf="loading">-->
-    <!--+       <div *ngFor="let i of [1, 2, 3, 4, 5, 6]" class="loading-item">-->
-    <!--+         <span class="glow-checkbox"></span>-->
-    <!--+         <span class="glow-text"> <span>Loading</span> <span>cool</span> <span>state</span> </span>-->
-    <!--+       </div>-->
-    <!--+     </div>-->
-    <!--+   </div>-->
 
 </div>
