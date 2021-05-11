@@ -25,8 +25,6 @@ Primary.args = {
     label: 'Label',
     large: false,
     disabled: false,
-    iconBefore: 'view',
-    iconAfter: 'arrow',
     buttonType: ButtonTypeEnum.Primary
   }
 };
