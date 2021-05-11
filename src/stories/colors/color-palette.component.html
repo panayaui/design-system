@@ -1,24 +1,30 @@
-<h1 class="page-title">Colors / <span class="page-title-highlighted">Scheme</span></h1>
+<div class="page">
+  <header class="page-header">
+    <h1 class="page-title">Colors / <span class="page-title-highlighted">Scheme</span></h1>
+  </header>
 
-<div *ngIf="palette" class="color-scheme">
-  <div *ngFor="let group of palette | keyvalue: originalOrder"
-       class="color-scheme-group {{group.key}}">
-    <ng-template [ngIf]="group.key === 'gray'" [ngIfElse]="regularTitle">
-      <h2 class="color-scheme-title">Grayscale</h2>
-    </ng-template>
+  <main class="page-main">
+    <div *ngIf="palette" class="color-scheme">
+      <div *ngFor="let group of palette | keyvalue: originalOrder"
+           class="color-scheme-group {{group.key}}">
+        <ng-template [ngIf]="group.key === 'gray'" [ngIfElse]="regularTitle">
+          <h2 class="color-scheme-title">Grayscale</h2>
+        </ng-template>
 
-    <ng-template #regularTitle>
-      <h2 class="color-scheme-title">{{group.key}}</h2>
-    </ng-template>
+        <ng-template #regularTitle>
+          <h2 class="color-scheme-title">{{group.key}}</h2>
+        </ng-template>
 
-    <div class="color-scheme-container">
-      <div *ngFor="let column of group.value | keyvalue: originalOrder"
-           class="color-column color-{{group.key}}-{{column.key}}">
-        <div *ngFor="let box of column.value | keyvalue: reverseKeyOrder"
-             class="color-box {{group.key}}-{{column.key}}-{{box.key}} {{box.value.labelColor}}">
-          <p class="color-box-class">${{group.key}}-{{column.key}}-{{box.key}}</p>
+        <div class="color-scheme-container">
+          <div *ngFor="let column of group.value | keyvalue: originalOrder"
+               class="color-column color-{{group.key}}-{{column.key}}">
+            <div *ngFor="let box of column.value | keyvalue: reverseKeyOrder"
+                 class="color-box {{group.key}}-{{column.key}}-{{box.key}} {{box.value.labelColor}}">
+              <p class="color-box-class">${{group.key}}-{{column.key}}-{{box.key}}</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </main>
 </div>
