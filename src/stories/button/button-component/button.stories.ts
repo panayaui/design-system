@@ -21,34 +21,26 @@ const Template: Story<ButtonComponent> = (args: ButtonComponent) => ({
 
 export const Primary = Template.bind({});
 Primary.args = {
-  button: {
-    label: 'Label',
-    large: false,
-    disabled: false,
-    buttonType: ButtonTypeEnum.Primary
-  }
+  label: 'Label',
+  large: false,
+  disabled: false,
+  buttonType: ButtonTypeEnum.Primary
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  button: {
-    ...Primary.args.button,
-    buttonType: ButtonTypeEnum.Secondary
-  }
+  ...Primary.args,
+  buttonType: ButtonTypeEnum.Secondary
 };
 
 export const Tertiary = Template.bind({});
 Tertiary.args = {
-  button: {
-    ...Primary.args.button,
-    buttonType: ButtonTypeEnum.Tertiary
-  }
+  ...Primary.args,
+  buttonType: ButtonTypeEnum.Tertiary
 };
 
 export const Distructive = Template.bind({});
 Distructive.args = {
-  button: {
-    ...Primary.args.button,
-    buttonType: ButtonTypeEnum.Distructive
-  }
+  ...Primary.args,
+  buttonType: ButtonTypeEnum.Distructive
 };

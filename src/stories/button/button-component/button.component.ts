@@ -16,7 +16,6 @@ export default class ButtonComponent {
   @Input() buttonType: ButtonTypeEnum = ButtonTypeEnum.Primary;
 
   public get classes(): string[] {
-    console.log(this);
     const classParams = [];
     this.large ? classParams.push('p-btn-large') : classParams.push('p-btn-small');
     this.iconBefore ? classParams.push('p-btn-icon-before') : null;

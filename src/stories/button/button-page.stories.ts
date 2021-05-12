@@ -27,32 +27,32 @@ Buttons.args = {
       height: '30px',
       buttons: {
         primary: [
-          {...ButtonStories.Primary.args.button},
-          {...ButtonStories.Primary.args.button, disabled: true},
-          {...ButtonStories.Primary.args.button, iconBefore: 'view'},
-          {...ButtonStories.Primary.args.button, iconAfter: 'arrow'},
-          {...ButtonStories.Primary.args.button, iconBefore: 'view', iconAfter: 'arrow'}
+          {...ButtonStories.Primary.args},
+          {...ButtonStories.Primary.args, disabled: true},
+          {...ButtonStories.Primary.args, iconBefore: 'view'},
+          {...ButtonStories.Primary.args, iconAfter: 'arrow'},
+          {...ButtonStories.Primary.args, iconBefore: 'view', iconAfter: 'arrow'}
         ],
         secondary: [
-          {...ButtonStories.Secondary.args.button},
-          {...ButtonStories.Secondary.args.button, disabled: true},
-          {...ButtonStories.Secondary.args.button, iconBefore: 'view'},
-          {...ButtonStories.Secondary.args.button, iconAfter: 'arrow'},
-          {...ButtonStories.Secondary.args.button, iconBefore: 'view', iconAfter: 'arrow'}
+          {...ButtonStories.Secondary.args},
+          {...ButtonStories.Secondary.args, disabled: true},
+          {...ButtonStories.Secondary.args, iconBefore: 'view'},
+          {...ButtonStories.Secondary.args, iconAfter: 'arrow'},
+          {...ButtonStories.Secondary.args, iconBefore: 'view', iconAfter: 'arrow'}
         ],
         tertiary: [
-          {...ButtonStories.Tertiary.args.button},
-          {...ButtonStories.Tertiary.args.button, disabled: true},
-          {...ButtonStories.Tertiary.args.button, iconBefore: 'view'},
-          {...ButtonStories.Tertiary.args.button, iconAfter: 'arrow'},
-          {...ButtonStories.Tertiary.args.button, iconBefore: 'view', iconAfter: 'arrow'}
+          {...ButtonStories.Tertiary.args},
+          {...ButtonStories.Tertiary.args, disabled: true},
+          {...ButtonStories.Tertiary.args, iconBefore: 'view'},
+          {...ButtonStories.Tertiary.args, iconAfter: 'arrow'},
+          {...ButtonStories.Tertiary.args, iconBefore: 'view', iconAfter: 'arrow'}
         ],
         distructive: [
-          {...ButtonStories.Distructive.args.button},
-          {...ButtonStories.Distructive.args.button, disabled: true},
-          {...ButtonStories.Distructive.args.button, iconBefore: 'view'},
-          {...ButtonStories.Distructive.args.button, iconAfter: 'arrow'},
-          {...ButtonStories.Distructive.args.button, iconBefore: 'view', iconAfter: 'arrow'}
+          {...ButtonStories.Distructive.args},
+          {...ButtonStories.Distructive.args, disabled: true},
+          {...ButtonStories.Distructive.args, iconBefore: 'view'},
+          {...ButtonStories.Distructive.args, iconAfter: 'arrow'},
+          {...ButtonStories.Distructive.args, iconBefore: 'view', iconAfter: 'arrow'}
         ]
       }
     },
@@ -60,32 +60,32 @@ Buttons.args = {
       height: '40px',
       buttons: {
         primary: [
-          {...ButtonStories.Primary.args.button, large: true},
-          {...ButtonStories.Primary.args.button, large: true, disabled: true},
-          {...ButtonStories.Primary.args.button, large: true, iconBefore: 'view'},
-          {...ButtonStories.Primary.args.button, large: true, iconAfter: 'arrow'},
-          {...ButtonStories.Primary.args.button, large: true, iconBefore: 'view', iconAfter: 'arrow'}
+          {...ButtonStories.Primary.args, large: true},
+          {...ButtonStories.Primary.args, large: true, disabled: true},
+          {...ButtonStories.Primary.args, large: true, iconBefore: 'view'},
+          {...ButtonStories.Primary.args, large: true, iconAfter: 'arrow'},
+          {...ButtonStories.Primary.args, large: true, iconBefore: 'view', iconAfter: 'arrow'}
         ],
         secondary: [
-          {...ButtonStories.Secondary.args.button, large: true},
-          {...ButtonStories.Secondary.args.button, large: true, disabled: true},
-          {...ButtonStories.Secondary.args.button, large: true, iconBefore: 'view'},
-          {...ButtonStories.Secondary.args.button, large: true, iconAfter: 'arrow'},
-          {...ButtonStories.Secondary.args.button, large: true, iconBefore: 'view', iconAfter: 'arrow'}
+          {...ButtonStories.Secondary.args, large: true},
+          {...ButtonStories.Secondary.args, large: true, disabled: true},
+          {...ButtonStories.Secondary.args, large: true, iconBefore: 'view'},
+          {...ButtonStories.Secondary.args, large: true, iconAfter: 'arrow'},
+          {...ButtonStories.Secondary.args, large: true, iconBefore: 'view', iconAfter: 'arrow'}
         ],
         tertiary: [
-          {...ButtonStories.Tertiary.args.button, large: true},
-          {...ButtonStories.Tertiary.args.button, large: true, disabled: true},
-          {...ButtonStories.Tertiary.args.button, large: true, iconBefore: 'view'},
-          {...ButtonStories.Tertiary.args.button, large: true, iconAfter: 'arrow'},
-          {...ButtonStories.Tertiary.args.button, large: true, iconBefore: 'view', iconAfter: 'arrow'}
+          {...ButtonStories.Tertiary.args, large: true},
+          {...ButtonStories.Tertiary.args, large: true, disabled: true},
+          {...ButtonStories.Tertiary.args, large: true, iconBefore: 'view'},
+          {...ButtonStories.Tertiary.args, large: true, iconAfter: 'arrow'},
+          {...ButtonStories.Tertiary.args, large: true, iconBefore: 'view', iconAfter: 'arrow'}
         ],
         distructive: [
-          {...ButtonStories.Distructive.args.button, large: true},
-          {...ButtonStories.Distructive.args.button, large: true, disabled: true},
-          {...ButtonStories.Distructive.args.button, large: true, iconBefore: 'view'},
-          {...ButtonStories.Distructive.args.button, large: true, iconAfter: 'arrow'},
-          {...ButtonStories.Distructive.args.button, large: true, iconBefore: 'view', iconAfter: 'arrow'}
+          {...ButtonStories.Distructive.args, large: true},
+          {...ButtonStories.Distructive.args, large: true, disabled: true},
+          {...ButtonStories.Distructive.args, large: true, iconBefore: 'view'},
+          {...ButtonStories.Distructive.args, large: true, iconAfter: 'arrow'},
+          {...ButtonStories.Distructive.args, large: true, iconBefore: 'view', iconAfter: 'arrow'}
         ]
       }
 
