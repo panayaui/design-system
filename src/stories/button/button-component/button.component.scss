@@ -10,6 +10,8 @@
   padding-right: 23px;
   padding-left: 23px;
   border-radius: 2px;
+  white-space: nowrap;
+  transition: all 500ms;
 
   &-large {
     height: 40px;
