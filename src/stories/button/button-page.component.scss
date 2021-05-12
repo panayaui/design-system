@@ -1,5 +1,7 @@
 @import "../assets/styles/custom";
 
+$line-height: 70px;
+
 .buttons {
   .page-header-highlighted {
     text-transform: capitalize;
@@ -20,9 +22,10 @@
     display: flex;
     align-items: center;
     font-size: $base-font-size;
-    font-weight: 600;
+    font-weight: 500;
     color: $gray-scale-800;
-    height: 62px;
+    line-height: 1.5;
+    height: $line-height;
     padding-right: 20px;
     padding-left: 20px;
     white-space: nowrap;
@@ -35,7 +38,7 @@
   &-list-item {
     display: flex;
     align-items: center;
-    height: 62px;
+    height: $line-height;
     padding-right: 20px;
     padding-left: 20px;
   }
