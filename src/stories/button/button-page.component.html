@@ -16,17 +16,49 @@
     <main class="page-main buttons-main">
       <ul class="buttons-list first-list">
         <li class="buttons-list-header"></li>
-        <li class="buttons-list-header">Default state</li>
-        <li class="buttons-list-header">.p-btn-disabled</li>
-        <li class="buttons-list-header">.p-btn-icon-before</li>
-        <li class="buttons-list-header">.p-btn-icon-after</li>
-        <li class="buttons-list-header">.p-btn-icon-before <br/> .p-btn-icon-after</li>
+        <li class="buttons-list-header">.p-btn.p-btn-{{type.key}}</li>
+        <li class="buttons-list-header">
+          [disabled]=true
+          <br/>
+          .p-btn:disabled
+        </li>
+        <li class="buttons-list-header">
+          [iconBefore]="view"
+          <br/>
+          .p-btn-icon-before
+        </li>
+        <li class="buttons-list-header">
+          [iconAfter]="arrow"
+          <br/>
+          .p-btn-icon-after
+        </li>
+        <li class="buttons-list-header">
+          [iconBefore]="view"
+          <br/>
+          [iconAfter]="arrow"
+          <br/>
+          .p-btn-icon-before
+          <br/>
+          .p-btn-icon-after
+        </li>
       </ul>
       <ul *ngFor="let buttonType of type.value.buttons | keyvalue: originalOrder"
           class="buttons-list content-list {{buttonType.key}}">
-        <li class="buttons-list-header">.p-btn-{{buttonType.key}}</li>
+        <li class="buttons-list-header">
+          [buttonType]=
+          <br/>
+          "ButtonTypeEnum.{{buttonType.key.charAt(0).toUpperCase() + buttonType.key.slice(1)}}"
+          <br/>
+          .p-btn-{{buttonType.key}}
+        </li>
         <li *ngFor="let button of buttonType.value" class="buttons-list-item">
-          <p-button [button]="button"></p-button>
+          <p-button [label]="button.label"
+                    [large]="button.large"
+                    [disabled]="button.disabled"
+                    [iconBefore]="button.iconBefore"
+                    [iconAfter]="button.iconAfter"
+                    [buttonType]="button.buttonType">
+          </p-button>
         </li>
       </ul>
     </main>
