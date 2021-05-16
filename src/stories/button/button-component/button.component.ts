@@ -8,11 +8,11 @@ import {ButtonTypeEnum} from '../button-type.enum';
   styleUrls: ['./button.component.scss'],
 })
 export default class ButtonComponent {
-  @Input() label: string = 'Label';
+  @Input() label: string;
   @Input() large: boolean = false;
   @Input() disabled: boolean = false;
-  @Input() iconBefore: string = 'view';
-  @Input() iconAfter: string = 'arrow';
+  @Input() iconBefore: string;
+  @Input() iconAfter: string;
   @Input() buttonType: ButtonTypeEnum = ButtonTypeEnum.Primary;
 
   public get classes(): string[] {

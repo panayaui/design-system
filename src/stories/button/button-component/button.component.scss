@@ -85,18 +85,27 @@
     }
   }
 
+  // class of the button
   &-icon-before {
     padding-left: 17px;
     .p-btn-label {
       margin-left: 11px;
     }
   }
-
+  // class of the button
   &-icon-after {
     padding-right: 17px;
     .p-btn-label {
       margin-right: 11px;
     }
+  }
+
+  // class of the icon
+  &-icon-pre,
+  &-icon-post {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 

@@ -1,15 +1,14 @@
 import {Component, Input} from '@angular/core';
 
 @Component({
-  selector: 'p-button',
+  selector: 'p-icon',
   templateUrl: './icon.component.html',
   styleUrls: ['./icon.component.scss'],
 })
 export default class IconComponent {
   @Input() name: string;
-  @Input() display: string = 'inline-block';
-  @Input() width: number  = 16; // pixels
-  @Input() height: number  = 16; // pixels
+  @Input() width: string  = '16'; // pixels or auto
+  @Input() height: string  = 'auto'; // pixels or auto
   @Input() fill: string = 'none'; // icon background
   @Input() stroke: string = 'currentColor'; // line color
   @Input() strokeWidth: number = 1; // line width in pixels
@@ -18,9 +17,8 @@ export default class IconComponent {
 
   public get iconStyles(): any {
     return {
-      display: this.display,
-      width: `${this.width}px`,
-      height: `${this.height}px`,
+      width: this.width === 'auto' ? this.width : `${this.width}px`,
+      height: this.height === 'auto' ? this.height : `${this.height}px`,
       fill: this.fill,
       stroke: this.stroke,
       strokeWidth: `${this.strokeWidth}px`,

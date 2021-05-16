@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 import {Story, Meta} from '@storybook/angular/types-6-0';
 import ButtonComponent from './button.component';
 import {ButtonTypeEnum} from '../button-type.enum';
+import IconComponent from '../../icons/icon.component';
 import {IconsModule} from '../../../app/icons/icons.module';
 
 export default {
@@ -10,7 +11,7 @@ export default {
   component: ButtonComponent,
   decorators: [
     moduleMetadata({
-      declarations: [ButtonComponent],
+      declarations: [ButtonComponent, IconComponent],
       imports: [CommonModule, IconsModule],
     }),
   ],
