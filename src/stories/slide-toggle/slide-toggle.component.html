@@ -1,0 +1,10 @@
+<mat-slide-toggle
+  class="p-slide-toggle"
+  [aria-label]="ariaLabel"
+  [checked]="checked"
+  [disabled]="disabled"
+  [color]="color">
+  <ng-container *ngIf="label">
+    {{label}}
+  </ng-container>
+</mat-slide-toggle>
