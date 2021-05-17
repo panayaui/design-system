@@ -1,6 +1,4 @@
 import {Component, Input} from '@angular/core';
-import {ThemePalette} from '@angular/material/core';
-import {I} from '@angular/cdk/keycodes';
 
 @Component({
   selector: 'p-slide-toggle',

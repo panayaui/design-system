@@ -1,5 +1,4 @@
 import {Component, Input} from '@angular/core';
-import IButton from '../button.interface';
 import {ButtonTypeEnum} from '../button-type.enum';
 
 @Component({
