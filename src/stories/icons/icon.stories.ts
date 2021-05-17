@@ -1,48 +1,40 @@
 import {moduleMetadata} from '@storybook/angular';
 import {CommonModule} from '@angular/common';
 import {Story, Meta} from '@storybook/angular/types-6-0';
-import ButtonComponent from './button.component';
-import {ButtonTypeEnum} from '../button-type.enum';
-import IconComponent from '../../icons/icon.component';
-import {IconsModule} from '../../../app/icons/icons.module';
+import IconComponent from './icon.component';
+import {IconsModule} from '../../app/icons/icons.module';
 
 export default {
-  title: 'Components/Button',
-  component: ButtonComponent,
+  title: 'Principles/Icons',
+  component: IconComponent,
   decorators: [
     moduleMetadata({
-      declarations: [ButtonComponent, IconComponent],
+      declarations: [IconComponent],
       imports: [CommonModule, IconsModule],
     }),
   ],
 } as Meta;
 
-const Template: Story<ButtonComponent> = (args: ButtonComponent) => ({
+const Template: Story<IconComponent> = (args: IconComponent) => ({
   props: args,
 });
 
 export const Primary = Template.bind({});
 Primary.args = {
-  label: 'Label',
-  large: false,
-  disabled: false,
-  buttonType: ButtonTypeEnum.Primary
+  name: 'activity'
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   ...Primary.args,
-  buttonType: ButtonTypeEnum.Secondary
 };
 
 export const Tertiary = Template.bind({});
 Tertiary.args = {
   ...Primary.args,
-  buttonType: ButtonTypeEnum.Tertiary
 };
 
 export const Distructive = Template.bind({});
 Distructive.args = {
   ...Primary.args,
-  buttonType: ButtonTypeEnum.Distructive
 };
