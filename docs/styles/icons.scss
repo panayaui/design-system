@@ -1,12 +1,1 @@
 @import "custom";
-
-.icon {
-  &-view {
-    @include icon();
-    background-image: url('../images/icons/general/view.svg');
-  }
-  &-arrow {
-    @include icon(10px, 5px);
-    background-image: url('../images/icons/general/arrow.svg');
-  }
-}
