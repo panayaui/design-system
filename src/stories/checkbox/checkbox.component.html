@@ -1,0 +1,11 @@
+<mat-checkbox
+  class="p-checkbox"
+  [ngClass]="{selectAll: 'select-all'}"
+  [aria-label]="ariaLabel"
+  [checked]="checked"
+  [disabled]="disabled"
+  [indeterminate]="indeterminate">
+  <ng-container *ngIf="label">
+    {{label}}
+  </ng-container>
+</mat-checkbox>

@@ -4,7 +4,7 @@
         {
             "name": "IButton",
             "id": "interface-IButton-ebfc5223207c42f52ba30d6c164f909f",
-            "file": "src/stories/button/button.interface.ts",
+            "file": "src/stories/button/button-page/button.interface.ts",
             "type": "interface",
             "sourceCode": "import {ButtonTypeEnum} from './button-type.enum';\r\n\r\nexport default interface IButton {\r\n  label: string;\r\n  large: boolean;\r\n  disabled: boolean;\r\n  iconBefore: string;\r\n  iconAfter: string;\r\n  buttonType: ButtonTypeEnum;\r\n}\r\n",
             "properties": [
@@ -58,7 +58,7 @@
         {
             "name": "IButtonsPage",
             "id": "interface-IButtonsPage-93c8349727c73b504af14134935526ad",
-            "file": "src/stories/button/button-page.component.ts",
+            "file": "src/stories/button/button-page/button-page.component.ts",
             "type": "interface",
             "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport IButton from './button.interface';\r\nimport {KeyValue} from '@angular/common';\r\n\r\ninterface IButtonsPage {\r\n  small: {\r\n    height: string;\r\n    buttons: {\r\n      primary: IButton[];\r\n      secondary: IButton[];\r\n      tertiary: IButton[];\r\n      distructive: IButton[]\r\n    }\r\n  };\r\n  large: {\r\n    height: string;\r\n    buttons: {\r\n      primary: IButton[];\r\n      secondary: IButton[];\r\n      tertiary: IButton[];\r\n      distructive: IButton[]\r\n    }\r\n  };\r\n}\r\n\r\n@Component({\r\n  selector: 'p-button-page',\r\n  templateUrl: './button-page.component.html',\r\n  styleUrls: ['./button-page.component.scss'],\r\n})\r\nexport default class ButtonPageComponent {\r\n  @Input() buttonsPage: IButtonsPage;\r\n\r\n  originalOrder = (a: KeyValue<number, string>, b: KeyValue<number, string>): number => {\r\n    return 0;\r\n  }\r\n}\r\n",
             "properties": [
@@ -206,8 +206,8 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-e22c2916a03c4c0d15eb83d728f8e1cb",
-            "file": "src/stories/button/button-component/button.component.ts",
+            "id": "component-ButtonComponent-a0a22362cb9323430947f4fb32069c6e",
+            "file": "src/stories/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -265,11 +265,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {ButtonTypeEnum} from '../button-type.enum';\r\n\r\n@Component({\r\n  selector: 'p-button',\r\n  templateUrl: './button.component.html',\r\n  styleUrls: ['./button.component.scss'],\r\n})\r\nexport default class ButtonComponent {\r\n  @Input() label: string;\r\n  @Input() large: boolean = false;\r\n  @Input() disabled: boolean = false;\r\n  @Input() iconBefore: string;\r\n  @Input() iconAfter: string;\r\n  @Input() buttonType: ButtonTypeEnum = ButtonTypeEnum.Primary;\r\n\r\n  public get classes(): string[] {\r\n    const classParams = [];\r\n    this.large ? classParams.push('p-btn-large') : classParams.push('p-btn-small');\r\n    this.iconBefore ? classParams.push('p-btn-icon-before') : null;\r\n    this.iconAfter ? classParams.push('p-btn-icon-after') : null;\r\n    classParams.push(`p-btn-${this.buttonType}`);\r\n    return classParams;\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {ButtonTypeEnum} from './button-page/button-type.enum';\r\n\r\n@Component({\r\n  selector: 'p-button',\r\n  templateUrl: './button.component.html',\r\n  styleUrls: ['./button.component.scss'],\r\n})\r\nexport default class ButtonComponent {\r\n  @Input() label: string;\r\n  @Input() large: boolean = false;\r\n  @Input() disabled: boolean = false;\r\n  @Input() iconBefore: string;\r\n  @Input() iconAfter: string;\r\n  @Input() buttonType: ButtonTypeEnum = ButtonTypeEnum.Primary;\r\n\r\n  public get classes(): string[] {\r\n    const classParams = [];\r\n    this.large ? classParams.push('p-btn-large') : classParams.push('p-btn-small');\r\n    this.iconBefore ? classParams.push('p-btn-icon-before') : null;\r\n    this.iconAfter ? classParams.push('p-btn-icon-after') : null;\r\n    classParams.push(`p-btn-${this.buttonType}`);\r\n    return classParams;\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n.p-btn {\r\n  @include resetButton;\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  font-weight: 500;\r\n  line-height: 19px;\r\n  min-width: 80px;\r\n  padding-right: 23px;\r\n  padding-left: 23px;\r\n  border-radius: 2px;\r\n  white-space: nowrap;\r\n  transition: all 400ms;\r\n\r\n  &-large {\r\n    height: 40px;\r\n  }\r\n\r\n  &-small {\r\n    height: 30px;\r\n  }\r\n\r\n  &:disabled {\r\n    pointer-events: none;\r\n  }\r\n\r\n  &-primary {\r\n    color: $gray-scale-1;\r\n    background-color: $secondary-a-700;\r\n    &:hover {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:focus {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      background-color: $secondary-a-50;\r\n    }\r\n  }\r\n\r\n  &-secondary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    border: 1px solid $secondary-a-700;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      border-color: $secondary-a-500;\r\n    }\r\n  }\r\n\r\n  &-tertiary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n    }\r\n  }\r\n\r\n  &-distructive {\r\n    color: $gray-scale-1;\r\n    background-color: $supportive-alert-500;\r\n    &:hover {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:focus {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      background-color: $supportive-alert-50;\r\n    }\r\n  }\r\n\r\n  // class of the button\r\n  &-icon-before {\r\n    padding-left: 17px;\r\n    .p-btn-label {\r\n      margin-left: 11px;\r\n    }\r\n  }\r\n  // class of the button\r\n  &-icon-after {\r\n    padding-right: 17px;\r\n    .p-btn-label {\r\n      margin-right: 11px;\r\n    }\r\n  }\r\n\r\n  // class of the icon\r\n  &-icon-pre,\r\n  &-icon-post {\r\n    display: inline-flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n  }\r\n}\r\n\r\n\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n.p-btn {\r\n  @include resetButton;\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  font-weight: 500;\r\n  line-height: 19px;\r\n  min-width: 80px;\r\n  padding-right: 23px;\r\n  padding-left: 23px;\r\n  border-radius: 2px;\r\n  white-space: nowrap;\r\n  transition: all 400ms;\r\n\r\n  &-large {\r\n    height: 40px;\r\n  }\r\n\r\n  &-small {\r\n    height: 30px;\r\n  }\r\n\r\n  &:disabled {\r\n    pointer-events: none;\r\n  }\r\n\r\n  &-primary {\r\n    color: $gray-scale-1;\r\n    background-color: $secondary-a-700;\r\n    &:hover {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:focus {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      background-color: $secondary-a-50;\r\n    }\r\n  }\r\n\r\n  &-secondary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    border: 1px solid $secondary-a-700;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      border-color: $secondary-a-500;\r\n    }\r\n  }\r\n\r\n  &-tertiary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n    }\r\n  }\r\n\r\n  &-distructive {\r\n    color: $gray-scale-1;\r\n    background-color: $supportive-alert-500;\r\n    &:hover {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:focus {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      background-color: $supportive-alert-50;\r\n    }\r\n  }\r\n\r\n  // class of the button\r\n  &-icon-before {\r\n    padding-left: 17px;\r\n    .p-btn-label {\r\n      margin-left: 11px;\r\n    }\r\n  }\r\n  // class of the button\r\n  &-icon-after {\r\n    padding-right: 17px;\r\n    .p-btn-label {\r\n      margin-right: 11px;\r\n    }\r\n  }\r\n\r\n  // class of the icon\r\n  &-icon-pre,\r\n  &-icon-post {\r\n    display: inline-flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n  }\r\n}\r\n\r\n\r\n",
                     "styleUrl": "./button.component.scss"
                 }
             ],
@@ -374,7 +374,7 @@
         {
             "name": "ButtonPageComponent",
             "id": "component-ButtonPageComponent-93c8349727c73b504af14134935526ad",
-            "file": "src/stories/button/button-page.component.ts",
+            "file": "src/stories/button/button-page/button-page.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -417,12 +417,138 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$line-height: 70px;\r\n\r\n.buttons {\r\n  .page-header-highlighted {\r\n    text-transform: capitalize;\r\n  }\r\n\r\n  &-main {\r\n    display: flex;\r\n  }\r\n\r\n  &-list {\r\n    @include resetUl;\r\n    &.first-list {\r\n      min-width: 175px;\r\n    }\r\n  }\r\n\r\n  &-list-header {\r\n    display: flex;\r\n    align-items: center;\r\n    font-size: $base-font-size;\r\n    font-weight: 500;\r\n    color: $gray-scale-800;\r\n    line-height: 1.5;\r\n    height: $line-height;\r\n    padding-right: 20px;\r\n    padding-left: 20px;\r\n    white-space: nowrap;\r\n    .first-list & {\r\n      text-align: right;\r\n      justify-content: flex-end;\r\n    }\r\n  }\r\n\r\n  &-list-item {\r\n    display: flex;\r\n    align-items: center;\r\n    height: $line-height;\r\n    padding-right: 20px;\r\n    padding-left: 20px;\r\n  }\r\n}\r\n\r\n//border\r\n.first-list {\r\n  .buttons-list-header:not(:first-child) {\r\n    border-right: 1px dashed $secondary-a-500;\r\n  }\r\n}\r\n.content-list {\r\n  .buttons-list-header {\r\n    border-bottom: 1px dashed $secondary-a-500;\r\n  }\r\n  &:last-child {\r\n    .buttons-list-item {\r\n      border-right: 1px dashed $secondary-a-500;\r\n    }\r\n  }\r\n  .buttons-list-item:last-child {\r\n    border-bottom: 1px dashed $secondary-a-500;\r\n  }\r\n}\r\n",
+                    "data": "",
                     "styleUrl": "./button-page.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"page buttons\">\r\n  <ng-container *ngFor=\"let type of buttonsPage | keyvalue: originalOrder\">\r\n    <header class=\"page-header\">\r\n      <h1 class=\"page-title\">Buttons / <span class=\"page-header-highlighted\">{{type.key}}</span></h1>\r\n      <p class=\"page-header-line\">\r\n        Height:\r\n        <span class=\"page-header-highlighted\">{{type.value.height}}</span>, min. width:\r\n        <span class=\"page-header-highlighted\">80px</span>\r\n      </p>\r\n      <p class=\"page-header-line\">\r\n        Typography style:\r\n        <span class=\"page-header-highlighted\">Paragraph 2 - medium</span>\r\n      </p>\r\n    </header>\r\n\r\n    <main class=\"page-main buttons-main\">\r\n      <ul class=\"buttons-list first-list\">\r\n        <li class=\"buttons-list-header\"></li>\r\n        <li class=\"buttons-list-header\">.p-btn.p-btn-{{type.key}}</li>\r\n        <li class=\"buttons-list-header\">\r\n          [disabled]=true\r\n          <br/>\r\n          .p-btn:disabled\r\n        </li>\r\n        <li class=\"buttons-list-header\">\r\n          [iconBefore]=\"eye\"\r\n          <br/>\r\n          .p-btn-icon-before\r\n        </li>\r\n        <li class=\"buttons-list-header\">\r\n          [iconAfter]=\"chevron-down\"\r\n          <br/>\r\n          .p-btn-icon-after\r\n        </li>\r\n        <li class=\"buttons-list-header\">\r\n          [iconBefore]=\"eye\"\r\n          <br/>\r\n          [iconAfter]=\"chevron-down\"\r\n          <br/>\r\n          .p-btn-icon-before\r\n          <br/>\r\n          .p-btn-icon-after\r\n        </li>\r\n      </ul>\r\n      <ul *ngFor=\"let buttonType of type.value.buttons | keyvalue: originalOrder\"\r\n          class=\"buttons-list content-list {{buttonType.key}}\">\r\n        <li class=\"buttons-list-header\">\r\n          [buttonType]=\r\n          <br/>\r\n          \"ButtonTypeEnum.{{buttonType.key.charAt(0).toUpperCase() + buttonType.key.slice(1)}}\"\r\n          <br/>\r\n          .p-btn-{{buttonType.key}}\r\n        </li>\r\n        <li *ngFor=\"let button of buttonType.value\" class=\"buttons-list-item\">\r\n          <p-button [label]=\"button.label\"\r\n                    [large]=\"button.large\"\r\n                    [disabled]=\"button.disabled\"\r\n                    [iconBefore]=\"button.iconBefore\"\r\n                    [iconAfter]=\"button.iconAfter\"\r\n                    [buttonType]=\"button.buttonType\">\r\n          </p-button>\r\n        </li>\r\n      </ul>\r\n    </main>\r\n  </ng-container>\r\n\r\n\r\n</div>\r\n"
+            "templateData": "<div class=\"page buttons\">\r\n  <ng-container *ngFor=\"let type of buttonsPage | keyvalue: originalOrder\">\r\n    <header class=\"page-header\">\r\n      <h1 class=\"page-title\">Buttons / <span class=\"page-header-highlighted\">{{type.key}}</span></h1>\r\n      <p class=\"page-header-line\">\r\n        Height:\r\n        <span class=\"page-header-highlighted\">{{type.value.height}}</span>, min. width:\r\n        <span class=\"page-header-highlighted\">80px</span>\r\n      </p>\r\n      <p class=\"page-header-line\">\r\n        Typography style:\r\n        <span class=\"page-header-highlighted\">Paragraph 2 - medium</span>\r\n      </p>\r\n    </header>\r\n\r\n    <main class=\"page-main\">\r\n      <ul class=\"page-list header-list\">\r\n        <li class=\"list-header\"></li>\r\n        <li class=\"list-header\">.p-btn.p-btn-{{type.key}}</li>\r\n        <li class=\"list-header\">\r\n          [disabled]=true\r\n          <br/>\r\n          .p-btn:disabled\r\n        </li>\r\n        <li class=\"list-header\">\r\n          [iconBefore]=\"eye\"\r\n          <br/>\r\n          .p-btn-icon-before\r\n        </li>\r\n        <li class=\"list-header\">\r\n          [iconAfter]=\"chevron-down\"\r\n          <br/>\r\n          .p-btn-icon-after\r\n        </li>\r\n        <li class=\"list-header\">\r\n          [iconBefore]=\"eye\"\r\n          <br/>\r\n          [iconAfter]=\"chevron-down\"\r\n          <br/>\r\n          .p-btn-icon-before\r\n          <br/>\r\n          .p-btn-icon-after\r\n        </li>\r\n      </ul>\r\n      <ul *ngFor=\"let buttonType of type.value.buttons | keyvalue: originalOrder\"\r\n          class=\"page-list content-list {{buttonType.key}}\">\r\n        <li class=\"list-header\">\r\n          [buttonType]=\r\n          <br/>\r\n          \"ButtonTypeEnum.{{buttonType.key.charAt(0).toUpperCase() + buttonType.key.slice(1)}}\"\r\n          <br/>\r\n          .p-btn-{{buttonType.key}}\r\n        </li>\r\n        <li *ngFor=\"let button of buttonType.value\" class=\"list-item\">\r\n          <p-button [label]=\"button.label\"\r\n                    [large]=\"button.large\"\r\n                    [disabled]=\"button.disabled\"\r\n                    [iconBefore]=\"button.iconBefore\"\r\n                    [iconAfter]=\"button.iconAfter\"\r\n                    [buttonType]=\"button.buttonType\">\r\n          </p-button>\r\n        </li>\r\n      </ul>\r\n    </main>\r\n  </ng-container>\r\n</div>\r\n"
+        },
+        {
+            "name": "CheckboxComponent",
+            "id": "component-CheckboxComponent-b11d5996e721b4eeadb661a9f3532264",
+            "file": "src/stories/checkbox/checkbox.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-checkbox",
+            "styleUrls": [
+                "./checkbox.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./checkbox.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "ariaLabel",
+                    "line": 10,
+                    "type": "string"
+                },
+                {
+                    "name": "checked",
+                    "defaultValue": "false",
+                    "line": 11,
+                    "type": "boolean"
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "line": 12,
+                    "type": "boolean"
+                },
+                {
+                    "name": "indeterminate",
+                    "defaultValue": "false",
+                    "line": 14,
+                    "type": "boolean"
+                },
+                {
+                    "name": "label",
+                    "line": 9,
+                    "type": "string"
+                },
+                {
+                    "name": "selectAll",
+                    "defaultValue": "false",
+                    "line": 13,
+                    "type": "boolean"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'p-checkbox',\r\n  templateUrl: './checkbox.component.html',\r\n  styleUrls: ['./checkbox.component.scss'],\r\n})\r\nexport default class CheckboxComponent {\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string;\r\n  @Input() checked: boolean = false;\r\n  @Input() disabled: boolean = false;\r\n  @Input() selectAll: boolean = false;\r\n  @Input() indeterminate: boolean = false;\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n.p-slide-toggle {\r\n  // material styles override\r\n  ::ng-deep &.mat-slide-toggle {\r\n    .mat-slide-toggle-bar {\r\n      width: 48px;\r\n      height: 24px;\r\n      background-color: $gray-scale-500;\r\n      border-radius: 24px;\r\n      box-sizing: content-box;\r\n  }\r\n  .mat-slide-toggle-thumb-container {\r\n    top: 2px;\r\n    left: 2px;\r\n  }\r\n  .mat-slide-toggle-content {\r\n    font-family: $font-family-basic;\r\n    font-size: $small-font-size;\r\n    font-weight: 500;\r\n  }\r\n  .mat-slide-toggle-ripple {\r\n    display: none;\r\n  }\r\n\r\n  &:hover {\r\n    .mat-slide-toggle-bar {\r\n      background-color: $gray-scale-700;\r\n    }\r\n  }\r\n\r\n  // focus\r\n  &.cdk-focused {\r\n    .mat-slide-toggle-bar {\r\n      background-color: $gray-scale-700;\r\n      border: 2px solid $gray-scale-100;\r\n    }\r\n  }\r\n\r\n  // disabled\r\n  &.mat-disabled {\r\n    opacity: 1;\r\n    .mat-slide-toggle-bar {\r\n      background-color: $gray-scale-50;\r\n    }\r\n  }\r\n\r\n  // checked\r\n  &.mat-checked {\r\n    .mat-slide-toggle-bar {\r\n      background-color: $secondary-a-700;\r\n    }\r\n    .mat-slide-toggle-thumb-container {\r\n      transform: translate3d(24px, 0, 0);\r\n    }\r\n    .mat-slide-toggle-thumb {\r\n      background-color: $white;\r\n    }\r\n    // checked + hover\r\n    &:hover {\r\n      .mat-slide-toggle-bar {\r\n        background-color: $secondary-a-800;\r\n      }\r\n    }\r\n    // checked + focus\r\n    &.cdk-focused {\r\n      .mat-slide-toggle-bar {\r\n        border: 2px solid $secondary-a-200;\r\n      }\r\n    }\r\n    // checked + disabled\r\n    &.mat-disabled {\r\n      .mat-slide-toggle-bar {\r\n         background-color: $secondary-a-100;\r\n       }\r\n      }\r\n    }\r\n  }\r\n\r\n  // icons added\r\n  ::ng-deep &.mat-slide-toggle {\r\n    .mat-slide-toggle-bar {\r\n      &:before {\r\n        content: '';\r\n        display: block;\r\n        width: 16px;\r\n        height: 12px;\r\n        background-image: url('../assets/images/check.svg');\r\n        background-position: center center;\r\n        background-repeat: no-repeat;\r\n        background-size: cover;\r\n        position: absolute;\r\n        top: 5px;\r\n        left: 6px;\r\n      }\r\n      &:after {\r\n        content: '';\r\n        display: block;\r\n        width: 16px;\r\n        height: 16px;\r\n        background-image: url('../assets/images/x.svg');\r\n        background-position: center center;\r\n        background-repeat: no-repeat;\r\n        background-size: cover;\r\n        position: absolute;\r\n        top: 3.5px;\r\n        right: 5px;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+                    "styleUrl": "./checkbox.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<mat-slide-toggle\r\n  class=\"p-slide-toggle\"\r\n  [aria-label]=\"ariaLabel\"\r\n  [checked]=\"checked\"\r\n  [disabled]=\"disabled\">\r\n  <ng-container *ngIf=\"label\">\r\n    {{label}}\r\n  </ng-container>\r\n</mat-slide-toggle>\r\n"
+        },
+        {
+            "name": "CheckboxPageComponent",
+            "id": "component-CheckboxPageComponent-d2c76f82e645c784e4441ef45cce1e98",
+            "file": "src/stories/checkbox/checkbox-page/checkbox-page.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-button-page",
+            "styleUrls": [
+                "./checkbox-page.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./checkbox-page.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "checkboxesPage",
+                    "line": 10,
+                    "type": "any"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "originalOrder",
+                    "defaultValue": "() => {...}",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                }
+            ],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {KeyValue} from '@angular/common';\r\n\r\n@Component({\r\n  selector: 'p-button-page',\r\n  templateUrl: './checkbox-page.component.html',\r\n  styleUrls: ['./checkbox-page.component.scss'],\r\n})\r\nexport default class CheckboxPageComponent {\r\n  @Input() checkboxesPage: any;\r\n\r\n  originalOrder = (a: KeyValue<number, string>, b: KeyValue<number, string>): number => {\r\n    return 0;\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".slide-toggles {\r\n  .content-list {\r\n    min-width: 175px;\r\n  }\r\n}\r\n",
+                    "styleUrl": "./checkbox-page.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"page checkboxes\">\r\n    <header class=\"page-header\">\r\n      <h1 class=\"page-title\">Checkbox /<span class=\"page-header-highlighted\">Base</span></h1>\r\n    </header>\r\n\r\n    <main class=\"page-main\">\r\n      <ul class=\"page-list header-list\">\r\n        <li class=\"list-header\"></li>\r\n        <li class=\"list-header\">[checked]=true</li>\r\n        <li class=\"list-header\">\r\n          [checked]=true\r\n          <br/>\r\n          [disabled]=true\r\n        </li>\r\n        <li class=\"list-header\">\r\n          [checked]=false\r\n        </li>\r\n        <li class=\"list-header\">\r\n          [checked]=false\r\n          <br/>\r\n          [disabled]=true\r\n        </li>\r\n      </ul>\r\n\r\n      <ul *ngFor=\"let toggleType of slideTogglePage | keyvalue: originalOrder\"\r\n          class=\"page-list content-list {{toggleType.key}}\">\r\n        <li class=\"list-header\">\r\n          [{{toggleType.key}}]=\"Label\"\r\n        </li>\r\n        <li *ngFor=\"let toggle of toggleType.value\" class=\"list-item\">\r\n          <p-slide-toggle [label]=\"toggle.label\"\r\n                          [ariaLabel]=\"toggle.ariaLabel\"\r\n                          [checked]=\"toggle.checked\"\r\n                          [disabled]=\"toggle.disabled\">\r\n          </p-slide-toggle>\r\n        </li>\r\n      </ul>\r\n\r\n    </main>\r\n</div>\r\n"
         },
         {
             "name": "ColorPaletteComponent",
@@ -1023,7 +1149,7 @@
         },
         {
             "name": "SlideToggleComponent",
-            "id": "component-SlideToggleComponent-d2b4631b267ce299af3feac48ade4dba",
+            "id": "component-SlideToggleComponent-26248c0809d38e231de75e570be8b19a",
             "file": "src/stories/slide-toggle/slide-toggle.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1047,7 +1173,7 @@
                 },
                 {
                     "name": "checked",
-                    "defaultValue": "true",
+                    "defaultValue": "false",
                     "line": 11,
                     "type": "boolean"
                 },
@@ -1071,27 +1197,27 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'p-slide-toggle',\r\n  templateUrl: './slide-toggle.component.html',\r\n  styleUrls: ['./slide-toggle.component.scss'],\r\n})\r\nexport default class SlideToggleComponent {\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string;\r\n  @Input() checked: boolean = true;\r\n  @Input() disabled: boolean = false;\r\n}\r\n",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'p-slide-toggle',\r\n  templateUrl: './slide-toggle.component.html',\r\n  styleUrls: ['./slide-toggle.component.scss'],\r\n})\r\nexport default class SlideToggleComponent {\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string;\r\n  @Input() checked: boolean = false;\r\n  @Input() disabled: boolean = false;\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n.p-slide-toggle {\r\n  // material styles override\r\n  ::ng-deep &.mat-slide-toggle {\r\n    .mat-slide-toggle-bar {\r\n      width: 48px;\r\n      height: 24px;\r\n      background-color: $gray-scale-500;\r\n      border-radius: 24px;\r\n      box-sizing: content-box;\r\n  }\r\n  .mat-slide-toggle-thumb-container {\r\n    top: 2px;\r\n    left: 2px;\r\n  }\r\n  .mat-focus-indicator {\r\n    display: none;\r\n  }\r\n  .mat-slide-toggle-content {\r\n    font-family: $font-family-basic;\r\n    font-size: $small-font-size;\r\n    font-weight: 500;\r\n  }\r\n\r\n  &:hover {\r\n    .mat-slide-toggle-bar {\r\n      background-color: $gray-scale-700;\r\n    }\r\n  }\r\n\r\n  &:focus {\r\n    .mat-slide-toggle-bar {\r\n      background-color: $gray-scale-700;\r\n      //border: 2px solid $gray-scale-100;\r\n    }\r\n  }\r\n\r\n  // disabled\r\n  &.mat-disabled {\r\n    opacity: 1;\r\n    .mat-slide-toggle-bar {\r\n      background-color: $gray-scale-50;\r\n    }\r\n  }\r\n\r\n  // checked\r\n  &.mat-checked {\r\n    .mat-slide-toggle-bar {\r\n      background-color: $secondary-a-700;\r\n    }\r\n    .mat-slide-toggle-thumb-container {\r\n      transform: translate3d(24px, 0, 0);\r\n    }\r\n    .mat-slide-toggle-thumb {\r\n      background-color: $white;\r\n    }\r\n\r\n    &:hover {\r\n      .mat-slide-toggle-bar {\r\n        background-color: $secondary-a-800;\r\n      }\r\n    }\r\n\r\n    &:focus {\r\n      .mat-slide-toggle-bar {\r\n        //border: 2px solid $secondary-a-200;\r\n      }\r\n    }\r\n\r\n    &.mat-disabled {\r\n      .mat-slide-toggle-bar {\r\n         background-color: $secondary-a-100;\r\n       }\r\n      }\r\n    }\r\n  }\r\n\r\n  // icons added\r\n  ::ng-deep &.mat-slide-toggle {\r\n    .mat-slide-toggle-bar {\r\n      &:before {\r\n        content: '';\r\n        display: block;\r\n        width: 16px;\r\n        height: 12px;\r\n        background-image: url('../assets/images/check.svg');\r\n        background-position: center center;\r\n        background-repeat: no-repeat;\r\n        background-size: cover;\r\n        position: absolute;\r\n        top: 5px;\r\n        left: 6px;\r\n      }\r\n      &:after {\r\n        content: '';\r\n        display: block;\r\n        width: 16px;\r\n        height: 16px;\r\n        background-image: url('../assets/images/x.svg');\r\n        background-position: center center;\r\n        background-repeat: no-repeat;\r\n        background-size: cover;\r\n        position: absolute;\r\n        top: 3.5px;\r\n        right: 5px;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n.p-slide-toggle {\r\n  // material styles override\r\n  ::ng-deep &.mat-slide-toggle {\r\n    .mat-slide-toggle-bar {\r\n      width: 48px;\r\n      height: 24px;\r\n      background-color: $gray-scale-500;\r\n      border-radius: 24px;\r\n      box-sizing: content-box;\r\n  }\r\n  .mat-slide-toggle-thumb-container {\r\n    top: 2px;\r\n    left: 2px;\r\n  }\r\n  .mat-slide-toggle-content {\r\n    font-family: $font-family-basic;\r\n    font-size: $small-font-size;\r\n    font-weight: 500;\r\n  }\r\n  .mat-slide-toggle-ripple {\r\n    display: none;\r\n  }\r\n\r\n  &:hover {\r\n    .mat-slide-toggle-bar {\r\n      background-color: $gray-scale-700;\r\n    }\r\n  }\r\n\r\n  // focus\r\n  &.cdk-focused {\r\n    .mat-slide-toggle-bar {\r\n      background-color: $gray-scale-700;\r\n      border: 2px solid $gray-scale-100;\r\n    }\r\n  }\r\n\r\n  // disabled\r\n  &.mat-disabled {\r\n    opacity: 1;\r\n    .mat-slide-toggle-bar {\r\n      background-color: $gray-scale-50;\r\n    }\r\n  }\r\n\r\n  // checked\r\n  &.mat-checked {\r\n    .mat-slide-toggle-bar {\r\n      background-color: $secondary-a-700;\r\n    }\r\n    .mat-slide-toggle-thumb-container {\r\n      transform: translate3d(24px, 0, 0);\r\n    }\r\n    .mat-slide-toggle-thumb {\r\n      background-color: $white;\r\n    }\r\n    // checked + hover\r\n    &:hover {\r\n      .mat-slide-toggle-bar {\r\n        background-color: $secondary-a-800;\r\n      }\r\n    }\r\n    // checked + focus\r\n    &.cdk-focused {\r\n      .mat-slide-toggle-bar {\r\n        border: 2px solid $secondary-a-200;\r\n      }\r\n    }\r\n    // checked + disabled\r\n    &.mat-disabled {\r\n      .mat-slide-toggle-bar {\r\n         background-color: $secondary-a-100;\r\n       }\r\n      }\r\n    }\r\n  }\r\n\r\n  // icons added\r\n  ::ng-deep &.mat-slide-toggle {\r\n    .mat-slide-toggle-bar {\r\n      &:before {\r\n        content: '';\r\n        display: block;\r\n        width: 16px;\r\n        height: 12px;\r\n        background-image: url('../assets/images/check.svg');\r\n        background-position: center center;\r\n        background-repeat: no-repeat;\r\n        background-size: cover;\r\n        position: absolute;\r\n        top: 5px;\r\n        left: 6px;\r\n      }\r\n      &:after {\r\n        content: '';\r\n        display: block;\r\n        width: 16px;\r\n        height: 16px;\r\n        background-image: url('../assets/images/x.svg');\r\n        background-position: center center;\r\n        background-repeat: no-repeat;\r\n        background-size: cover;\r\n        position: absolute;\r\n        top: 3.5px;\r\n        right: 5px;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "./slide-toggle.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<mat-slide-toggle\r\n  class=\"p-slide-toggle\"\r\n  [aria-label]=\"ariaLabel\"\r\n  [checked]=\"checked\"\r\n  [disabled]=\"disabled\"\r\n  [color]=\"color\">\r\n  <ng-container *ngIf=\"label\">\r\n    {{label}}\r\n  </ng-container>\r\n</mat-slide-toggle>\r\n"
+            "templateData": "<mat-checkbox\r\n  class=\"p-checkbox\"\r\n  [aria-label]=\"ariaLabel\"\r\n  [checked]=\"checked\"\r\n  [disabled]=\"disabled\"\r\n  [selectAll]=\"selectAll\"\r\n  [indeterminate]=\"indeterminate\">\r\n  <ng-container *ngIf=\"label\">\r\n    {{label}}\r\n  </ng-container>\r\n</mat-checkbox>\r\n"
         },
         {
             "name": "SlideTogglePageComponent",
-            "id": "component-SlideTogglePageComponent-dc6fa262460456d4a37d47ec4cf16879",
+            "id": "component-SlideTogglePageComponent-87ecb55a426c34533bc5fbb8203286c6",
             "file": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "p-button-page",
+            "selector": "p-slide-toggle-page",
             "styleUrls": [
                 "./slide-toggle-page.component.scss"
             ],
@@ -1103,28 +1229,37 @@
             "inputsClass": [
                 {
                     "name": "slideTogglePage",
-                    "line": 9,
+                    "line": 10,
                     "type": "any"
                 }
             ],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "originalOrder",
+                    "defaultValue": "() => {...}",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                }
+            ],
             "methodsClass": [],
             "hostBindings": [],
             "hostListeners": [],
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'p-button-page',\r\n  templateUrl: './slide-toggle-page.component.html',\r\n  styleUrls: ['./slide-toggle-page.component.scss'],\r\n})\r\nexport default class SlideTogglePageComponent {\r\n  @Input() slideTogglePage: any;\r\n}\r\n",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {KeyValue} from '@angular/common';\r\n\r\n@Component({\r\n  selector: 'p-slide-toggle-page',\r\n  templateUrl: './slide-toggle-page.component.html',\r\n  styleUrls: ['./slide-toggle-page.component.scss'],\r\n})\r\nexport default class SlideTogglePageComponent {\r\n  @Input() slideTogglePage: any;\r\n\r\n  originalOrder = (a: KeyValue<number, string>, b: KeyValue<number, string>): number => {\r\n    return 0;\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../assets/styles/custom';\r\n\r\n$line-height: 70px;\r\n\r\n.buttons {\r\n  .page-header-highlighted {\r\n    text-transform: capitalize;\r\n  }\r\n\r\n  &-main {\r\n    display: flex;\r\n  }\r\n\r\n  &-list {\r\n    @include resetUl;\r\n    &.first-list {\r\n      min-width: 175px;\r\n    }\r\n  }\r\n\r\n  &-list-header {\r\n    display: flex;\r\n    align-items: center;\r\n    font-size: $base-font-size;\r\n    font-weight: 500;\r\n    color: $gray-scale-800;\r\n    line-height: 1.5;\r\n    height: $line-height;\r\n    padding-right: 20px;\r\n    padding-left: 20px;\r\n    white-space: nowrap;\r\n    .first-list & {\r\n      text-align: right;\r\n      justify-content: flex-end;\r\n    }\r\n  }\r\n\r\n  &-list-item {\r\n    display: flex;\r\n    align-items: center;\r\n    height: $line-height;\r\n    padding-right: 20px;\r\n    padding-left: 20px;\r\n  }\r\n}\r\n\r\n//border\r\n.first-list {\r\n  .buttons-list-header:not(:first-child) {\r\n    border-right: 1px dashed $secondary-a-500;\r\n  }\r\n}\r\n.content-list {\r\n  .buttons-list-header {\r\n    border-bottom: 1px dashed $secondary-a-500;\r\n  }\r\n  &:last-child {\r\n    .buttons-list-item {\r\n      border-right: 1px dashed $secondary-a-500;\r\n    }\r\n  }\r\n  .buttons-list-item:last-child {\r\n    border-bottom: 1px dashed $secondary-a-500;\r\n  }\r\n}\r\n",
+                    "data": ".slide-toggles {\r\n  .content-list {\r\n    min-width: 175px;\r\n  }\r\n}\r\n",
                     "styleUrl": "./slide-toggle-page.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"page slide-toggles\">\r\n    <header class=\"page-header\">\r\n      <h1 class=\"page-title\">Toggle /<span class=\"page-header-highlighted\">Items</span></h1>\r\n    </header>\r\n\r\n    <main class=\"page-main slide-toggles-main\">\r\n      <ul class=\"slide-toggles-list first-list\">\r\n        <li class=\"slide-toggles-list-header\"></li>\r\n        <li class=\"slide-toggles-list-header\">.p-btn.p-btn-{{type.key}}</li>\r\n        <li class=\"slide-toggles-list-header\">\r\n          [disabled]=true\r\n          <br/>\r\n          .p-btn:disabled\r\n        </li>\r\n        <li class=\"slide-toggles-list-header\">\r\n          [iconBefore]=\"eye\"\r\n          <br/>\r\n          .p-btn-icon-before\r\n        </li>\r\n        <li class=\"slide-toggles-list-header\">\r\n          [iconAfter]=\"chevron-down\"\r\n          <br/>\r\n          .p-btn-icon-after\r\n        </li>\r\n        <li class=\"slide-toggles-list-header\">\r\n          [iconBefore]=\"eye\"\r\n          <br/>\r\n          [iconAfter]=\"chevron-down\"\r\n          <br/>\r\n          .p-btn-icon-before\r\n          <br/>\r\n          .p-btn-icon-after\r\n        </li>\r\n      </ul>\r\n      <ul *ngFor=\"let buttonType of type.value.buttons | keyvalue: originalOrder\"\r\n          class=\"slide-toggles-list content-list {{buttonType.key}}\">\r\n        <li class=\"slide-toggles-list-header\">\r\n          [buttonType]=\r\n          <br/>\r\n          \"ButtonTypeEnum.{{buttonType.key.charAt(0).toUpperCase() + buttonType.key.slice(1)}}\"\r\n          <br/>\r\n          .p-btn-{{buttonType.key}}\r\n        </li>\r\n        <li *ngFor=\"let button of buttonType.value\" class=\"slide-toggles-list-item\">\r\n          <p-button [label]=\"button.label\"\r\n                    [large]=\"button.large\"\r\n                    [disabled]=\"button.disabled\"\r\n                    [iconBefore]=\"button.iconBefore\"\r\n                    [iconAfter]=\"button.iconAfter\"\r\n                    [buttonType]=\"button.buttonType\">\r\n          </p-button>\r\n        </li>\r\n      </ul>\r\n    </main>\r\n  </ng-container>\r\n\r\n\r\n</div>\r\n"
+            "templateData": "<div class=\"page slide-toggles\">\r\n    <header class=\"page-header\">\r\n      <h1 class=\"page-title\">Toggle /<span class=\"page-header-highlighted\">Items</span></h1>\r\n    </header>\r\n\r\n    <main class=\"page-main\">\r\n      <ul class=\"page-list header-list\">\r\n        <li class=\"list-header\"></li>\r\n        <li class=\"list-header\">[checked]=true</li>\r\n        <li class=\"list-header\">\r\n          [checked]=true\r\n          <br/>\r\n          [disabled]=true\r\n        </li>\r\n        <li class=\"list-header\">\r\n          [checked]=false\r\n        </li>\r\n        <li class=\"list-header\">\r\n          [checked]=false\r\n          <br/>\r\n          [disabled]=true\r\n        </li>\r\n      </ul>\r\n\r\n      <ul *ngFor=\"let toggleType of slideTogglePage | keyvalue: originalOrder\"\r\n          class=\"page-list content-list {{toggleType.key}}\">\r\n        <li class=\"list-header\">\r\n          [{{toggleType.key}}]=\"Label\"\r\n        </li>\r\n        <li *ngFor=\"let toggle of toggleType.value\" class=\"list-item\">\r\n          <p-slide-toggle [label]=\"toggle.label\"\r\n                          [ariaLabel]=\"toggle.ariaLabel\"\r\n                          [checked]=\"toggle.checked\"\r\n                          [disabled]=\"toggle.disabled\">\r\n          </p-slide-toggle>\r\n        </li>\r\n      </ul>\r\n\r\n    </main>\r\n</div>\r\n"
         },
         {
             "name": "TypographyFontFamilyComponent",
@@ -1338,9 +1473,25 @@
                 "name": "Buttons",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/button/button-page.stories.ts",
+                "file": "src/stories/button/button-page/button-page.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Checkboxes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "",
+                "defaultValue": "PageTemplate.bind({})"
+            },
+            {
+                "name": "CheckboxTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "Story<CheckboxComponent>",
+                "defaultValue": "(args: CheckboxComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "ColorPalette",
@@ -1362,25 +1513,9 @@
                 "name": "Distructive",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/icons/icon.stories.ts",
+                "file": "src/stories/button/button.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Distructive",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/button/button-component/button.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "environment",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/environments/environment.ts",
-                "type": "object",
-                "defaultValue": "{\r\n  production: false\r\n}"
             },
             {
                 "name": "environment",
@@ -1389,6 +1524,14 @@
                 "file": "src/environments/environment.prod.ts",
                 "type": "object",
                 "defaultValue": "{\r\n  production: true\r\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.ts",
+                "type": "object",
+                "defaultValue": "{\r\n  production: false\r\n}"
             },
             {
                 "name": "Fonts",
@@ -1402,9 +1545,33 @@
                 "name": "NoLabel",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/slide-toggle/slide-toggle.stories.ts",
+                "file": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts",
                 "type": "",
-                "defaultValue": "Template.bind({})"
+                "defaultValue": "SlideToggleTemplate.bind({})"
+            },
+            {
+                "name": "NoLabel",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "",
+                "defaultValue": "CheckboxTemplate.bind({})"
+            },
+            {
+                "name": "PageTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts",
+                "type": "Story<SlideTogglePageComponent>",
+                "defaultValue": "(args: SlideTogglePageComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "PageTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "Story<CheckboxPageComponent>",
+                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "palette",
@@ -1418,15 +1585,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/icons/icon.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/button/button-component/button.stories.ts",
+                "file": "src/stories/button/button.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -1441,25 +1600,17 @@
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/icons/icon.stories.ts",
+                "file": "src/stories/button/button.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "Secondary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/button/button-component/button.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "SlideToggle",
+                "name": "SlideToggleTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
+                "type": "Story<SlideToggleComponent>",
+                "defaultValue": "(args: SlideToggleComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Styles",
@@ -1473,9 +1624,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/button/button-page.stories.ts",
-                "type": "Story<ButtonPageComponent>",
-                "defaultValue": "(args: ButtonPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/button/button.stories.ts",
+                "type": "Story<ButtonComponent>",
+                "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -1489,33 +1640,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/slide-toggle/slide-toggle.stories.ts",
-                "type": "Story<SlideToggleComponent>",
-                "defaultValue": "(args: SlideToggleComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/icons/icon.stories.ts",
-                "type": "Story<IconComponent>",
-                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/button/button-component/button.stories.ts",
-                "type": "Story<ButtonComponent>",
-                "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts",
-                "type": "Story<SlideTogglePageComponent>",
-                "defaultValue": "(args: SlideTogglePageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/button/button-page/button-page.stories.ts",
+                "type": "Story<ButtonPageComponent>",
+                "defaultValue": "(args: ButtonPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -1537,17 +1664,17 @@
                 "name": "Tertiary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/icons/icon.stories.ts",
+                "file": "src/stories/button/button.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "Tertiary",
+                "name": "Toggles",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/button/button-component/button.stories.ts",
+                "file": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts",
                 "type": "",
-                "defaultValue": "Template.bind({})"
+                "defaultValue": "PageTemplate.bind({})"
             },
             {
                 "name": "typographyStyles",
@@ -1561,9 +1688,17 @@
                 "name": "WithLabel",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/slide-toggle/slide-toggle.stories.ts",
+                "file": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts",
                 "type": "",
-                "defaultValue": "Template.bind({})"
+                "defaultValue": "SlideToggleTemplate.bind({})"
+            },
+            {
+                "name": "WithLabel",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "",
+                "defaultValue": "CheckboxTemplate.bind({})"
             }
         ],
         "functions": [],
@@ -1592,16 +1727,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "enum",
                 "description": "",
-                "file": "src/stories/button/button-type.enum.ts"
+                "file": "src/stories/button/button-page/button-type.enum.ts"
             }
         ],
         "groupedVariables": {
-            "src/stories/button/button-page.stories.ts": [
+            "src/stories/button/button-page/button-page.stories.ts": [
                 {
                     "name": "Buttons",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/button/button-page.stories.ts",
+                    "file": "src/stories/button/button-page/button-page.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -1609,9 +1744,51 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/button/button-page.stories.ts",
+                    "file": "src/stories/button/button-page/button-page.stories.ts",
                     "type": "Story<ButtonPageComponent>",
                     "defaultValue": "(args: ButtonPageComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts": [
+                {
+                    "name": "Checkboxes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                    "type": "",
+                    "defaultValue": "PageTemplate.bind({})"
+                },
+                {
+                    "name": "CheckboxTemplate",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                    "type": "Story<CheckboxComponent>",
+                    "defaultValue": "(args: CheckboxComponent) => ({\r\n  props: args,\r\n})"
+                },
+                {
+                    "name": "NoLabel",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                    "type": "",
+                    "defaultValue": "CheckboxTemplate.bind({})"
+                },
+                {
+                    "name": "PageTemplate",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                    "type": "Story<CheckboxPageComponent>",
+                    "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
+                },
+                {
+                    "name": "WithLabel",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                    "type": "",
+                    "defaultValue": "CheckboxTemplate.bind({})"
                 }
             ],
             "src/stories/colors/Color-palette.stories.ts": [
@@ -1649,12 +1826,12 @@
                     "type": "literal type"
                 }
             ],
-            "src/stories/icons/icon.stories.ts": [
+            "src/stories/button/button.stories.ts": [
                 {
                     "name": "Distructive",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/icons/icon.stories.ts",
+                    "file": "src/stories/button/button.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -1662,7 +1839,7 @@
                     "name": "Primary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/icons/icon.stories.ts",
+                    "file": "src/stories/button/button.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -1670,7 +1847,7 @@
                     "name": "Secondary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/icons/icon.stories.ts",
+                    "file": "src/stories/button/button.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -1678,49 +1855,7 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/icons/icon.stories.ts",
-                    "type": "Story<IconComponent>",
-                    "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
-                },
-                {
-                    "name": "Tertiary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/icons/icon.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                }
-            ],
-            "src/stories/button/button-component/button.stories.ts": [
-                {
-                    "name": "Distructive",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/button/button-component/button.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/button/button-component/button.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Secondary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/button/button-component/button.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/button/button-component/button.stories.ts",
+                    "file": "src/stories/button/button.stories.ts",
                     "type": "Story<ButtonComponent>",
                     "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
                 },
@@ -1728,19 +1863,9 @@
                     "name": "Tertiary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/button/button-component/button.stories.ts",
+                    "file": "src/stories/button/button.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
-                }
-            ],
-            "src/environments/environment.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.ts",
-                    "type": "object",
-                    "defaultValue": "{\r\n  production: false\r\n}"
                 }
             ],
             "src/environments/environment.prod.ts": [
@@ -1751,6 +1876,16 @@
                     "file": "src/environments/environment.prod.ts",
                     "type": "object",
                     "defaultValue": "{\r\n  production: true\r\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: false\r\n}"
                 }
             ],
             "src/stories/typography/font-family/typography-font-family.stories.ts": [
@@ -1771,30 +1906,46 @@
                     "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
                 }
             ],
-            "src/stories/slide-toggle/slide-toggle.stories.ts": [
+            "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts": [
                 {
                     "name": "NoLabel",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/slide-toggle/slide-toggle.stories.ts",
+                    "file": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts",
                     "type": "",
-                    "defaultValue": "Template.bind({})"
+                    "defaultValue": "SlideToggleTemplate.bind({})"
                 },
                 {
-                    "name": "Template",
+                    "name": "PageTemplate",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/slide-toggle/slide-toggle.stories.ts",
+                    "file": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts",
+                    "type": "Story<SlideTogglePageComponent>",
+                    "defaultValue": "(args: SlideTogglePageComponent) => ({\r\n  props: args,\r\n})"
+                },
+                {
+                    "name": "SlideToggleTemplate",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts",
                     "type": "Story<SlideToggleComponent>",
                     "defaultValue": "(args: SlideToggleComponent) => ({\r\n  props: args,\r\n})"
+                },
+                {
+                    "name": "Toggles",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts",
+                    "type": "",
+                    "defaultValue": "PageTemplate.bind({})"
                 },
                 {
                     "name": "WithLabel",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/slide-toggle/slide-toggle.stories.ts",
+                    "file": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts",
                     "type": "",
-                    "defaultValue": "Template.bind({})"
+                    "defaultValue": "SlideToggleTemplate.bind({})"
                 }
             ],
             "src/stories/colors/color-palette.component.ts": [
@@ -1805,24 +1956,6 @@
                     "file": "src/stories/colors/color-palette.component.ts",
                     "type": "object",
                     "defaultValue": "{\r\n  primary: {\r\n    a: {\r\n      900: {name: 'P-A 900', labelColor: 'white'}\r\n    },\r\n    b: {\r\n      300: { name: 'P-B 300', labelColor: 'white' }\r\n    },\r\n    c: {\r\n      50: {name: 'P-C 50', labelColor: 'black'}\r\n    }\r\n  },\r\n  secondary: {\r\n    a: { 800: { name: 'S-A 800', labelColor: 'white' },\r\n      700: { name: 'S-A 700', labelColor: 'white' },\r\n      600: { name: 'S-A 600', labelColor: 'white' },\r\n      500: { name: 'S-A 500', labelColor: 'black' },\r\n      200: { name: 'S-A 200', labelColor: 'black' },\r\n      100: { name: 'S-A 100', labelColor: 'black' },\r\n      50: { name: 'S-A 50', labelColor: 'black' } },\r\n    b: { 700: { name: 'S-B 700', labelColor: 'white' },\r\n      500: { name: 'S-B 500', labelColor: 'white' },\r\n      400: { name: 'S-B 400', labelColor: 'white' },\r\n      300: { name: 'S-B 300', labelColor: 'white' },\r\n      200: { name: 'S-B 200', labelColor: 'black' },\r\n      100: { name: 'S-B 100', labelColor: 'black' },\r\n      50: { name: 'S-B 500', labelColor: 'black' }\r\n    }\r\n  },\r\n  gray: {\r\n    scale: { 800: { name: 'grayscale 800', labelColor: 'white' },\r\n        700: { name: 'grayscale 700', labelColor: 'white' },\r\n        600: { name: 'grayscale 600', labelColor: 'white' },\r\n        500: { name: 'grayscale 500', labelColor: 'white' },\r\n        400: { name: 'grayscale 400', labelColor: 'black' },\r\n        100: { name: 'grayscale 100', labelColor: 'black' },\r\n        50: { name: 'grayscale 50', labelColor: 'black' },\r\n        5: { name: 'grayscale 5', labelColor: 'black' },\r\n        1: { name: 'grayscale 1', labelColor: 'black' }\r\n    }\r\n  },\r\n  supportive: {\r\n    alert: {\r\n      700: { name: 'Alert 700', labelColor: 'white' },\r\n      500: { name: 'Alert 500', labelColor: 'black' },\r\n      50: { name: 'Alert 50', labelColor: 'black' }\r\n    },\r\n    yellow: { 300: { name: 'Yellow 300', labelColor: 'black' } },\r\n    orange: {\r\n      300: { name: 'Orange 300', labelColor: 'black' },\r\n      50: { name: 'Orange 50', labelColor: 'black' }\r\n    },\r\n    success: {\r\n      400: { name: 'Success 400', labelColor: 'black' },\r\n      50: { name: 'Success 50', labelColor: 'black' }\r\n    },\r\n    dev: {\r\n      a: { name: 'Dev A', labelColor: 'white' },\r\n      b: { name: 'Dev B', labelColor: 'white' },\r\n      c: { name: 'Dev C', labelColor: 'white' }\r\n    }\r\n  }\r\n}"
-                }
-            ],
-            "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts": [
-                {
-                    "name": "SlideToggle",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts",
-                    "type": "Story<SlideTogglePageComponent>",
-                    "defaultValue": "(args: SlideTogglePageComponent) => ({\r\n  props: args,\r\n})"
                 }
             ],
             "src/stories/typography/styles/typography-styles.stories.ts": [
@@ -1856,7 +1989,7 @@
         },
         "groupedFunctions": {},
         "groupedEnumerations": {
-            "src/stories/button/button-type.enum.ts": [
+            "src/stories/button/button-page/button-type.enum.ts": [
                 {
                     "name": "ButtonTypeEnum",
                     "childs": [
@@ -1880,7 +2013,7 @@
                     "ctype": "miscellaneous",
                     "subtype": "enum",
                     "description": "",
-                    "file": "src/stories/button/button-type.enum.ts"
+                    "file": "src/stories/button/button-page/button-type.enum.ts"
                 }
             ]
         },
@@ -1943,66 +2076,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/button/button-component/button.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "ButtonComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/7",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/button/button-component/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Distructive",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/button/button-component/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/button/button-component/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Secondary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/button/button-component/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/button/button-component/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Tertiary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/button/button-page.component.ts",
+                "filePath": "src/stories/button/button-page/button-page.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "ButtonPageComponent",
@@ -2011,7 +2085,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/button/button-page.component.ts",
+                "filePath": "src/stories/button/button-page/button-page.component.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "IButtonsPage",
@@ -2020,7 +2094,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/button/button-page.stories.ts",
+                "filePath": "src/stories/button/button-page/button-page.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -2030,7 +2104,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/button/button-page.stories.ts",
+                "filePath": "src/stories/button/button-page/button-page.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -2040,10 +2114,137 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/button/button.interface.ts",
+                "filePath": "src/stories/button/button-page/button.interface.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "IButton",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/button/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Distructive",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Secondary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Tertiary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/checkbox/checkbox-page/checkbox-page.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CheckboxPageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Checkboxes",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "CheckboxTemplate",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "NoLabel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PageTemplate",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithLabel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/checkbox/checkbox.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CheckboxComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/7",
                 "status": "low"
@@ -2151,62 +2352,12 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/icons/icon.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Distructive",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/icons/icon.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/icons/icon.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Secondary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/icons/icon.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/icons/icon.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Tertiary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
                 "filePath": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "SlideTogglePageComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/2",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -2214,7 +2365,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "SlideToggle",
+                "name": "NoLabel",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -2224,7 +2375,37 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Template",
+                "name": "PageTemplate",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SlideToggleTemplate",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Toggles",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithLabel",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -2236,36 +2417,6 @@
                 "name": "SlideToggleComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/slide-toggle/slide-toggle.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "NoLabel",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/slide-toggle/slide-toggle.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/slide-toggle/slide-toggle.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "WithLabel",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
                 "status": "low"
             },
             {
