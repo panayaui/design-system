@@ -14,13 +14,13 @@
     top: 2px;
     left: 2px;
   }
-  .mat-focus-indicator {
-    display: none;
-  }
   .mat-slide-toggle-content {
     font-family: $font-family-basic;
     font-size: $small-font-size;
     font-weight: 500;
+  }
+  .mat-slide-toggle-ripple {
+    display: none;
   }
 
   &:hover {
@@ -29,10 +29,11 @@
     }
   }
 
-  &:focus {
+  // focus
+  &.cdk-focused {
     .mat-slide-toggle-bar {
       background-color: $gray-scale-700;
-      //border: 2px solid $gray-scale-100;
+      border: 2px solid $gray-scale-100;
     }
   }
 
@@ -55,19 +56,19 @@
     .mat-slide-toggle-thumb {
       background-color: $white;
     }
-
+    // checked + hover
     &:hover {
       .mat-slide-toggle-bar {
         background-color: $secondary-a-800;
       }
     }
-
-    &:focus {
+    // checked + focus
+    &.cdk-focused {
       .mat-slide-toggle-bar {
-        //border: 2px solid $secondary-a-200;
+        border: 2px solid $secondary-a-200;
       }
     }
-
+    // checked + disabled
     &.mat-disabled {
       .mat-slide-toggle-bar {
          background-color: $secondary-a-100;
