@@ -13,26 +13,26 @@
       </p>
     </header>
 
-    <main class="page-main buttons-main">
-      <ul class="buttons-list first-list">
-        <li class="buttons-list-header"></li>
-        <li class="buttons-list-header">.p-btn.p-btn-{{type.key}}</li>
-        <li class="buttons-list-header">
+    <main class="page-main">
+      <ul class="page-list header-list">
+        <li class="list-header"></li>
+        <li class="list-header">.p-btn.p-btn-{{type.key}}</li>
+        <li class="list-header">
           [disabled]=true
           <br/>
           .p-btn:disabled
         </li>
-        <li class="buttons-list-header">
+        <li class="list-header">
           [iconBefore]="eye"
           <br/>
           .p-btn-icon-before
         </li>
-        <li class="buttons-list-header">
+        <li class="list-header">
           [iconAfter]="chevron-down"
           <br/>
           .p-btn-icon-after
         </li>
-        <li class="buttons-list-header">
+        <li class="list-header">
           [iconBefore]="eye"
           <br/>
           [iconAfter]="chevron-down"
@@ -43,15 +43,15 @@
         </li>
       </ul>
       <ul *ngFor="let buttonType of type.value.buttons | keyvalue: originalOrder"
-          class="buttons-list content-list {{buttonType.key}}">
-        <li class="buttons-list-header">
+          class="page-list content-list {{buttonType.key}}">
+        <li class="list-header">
           [buttonType]=
           <br/>
           "ButtonTypeEnum.{{buttonType.key.charAt(0).toUpperCase() + buttonType.key.slice(1)}}"
           <br/>
           .p-btn-{{buttonType.key}}
         </li>
-        <li *ngFor="let button of buttonType.value" class="buttons-list-item">
+        <li *ngFor="let button of buttonType.value" class="list-item">
           <p-button [label]="button.label"
                     [large]="button.large"
                     [disabled]="button.disabled"
@@ -63,6 +63,4 @@
       </ul>
     </main>
   </ng-container>
-
-
 </div>

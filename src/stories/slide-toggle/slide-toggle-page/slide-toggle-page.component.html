@@ -1,0 +1,40 @@
+<div class="page slide-toggles">
+    <header class="page-header">
+      <h1 class="page-title">Toggle /<span class="page-header-highlighted">Items</span></h1>
+    </header>
+
+    <main class="page-main">
+      <ul class="page-list header-list">
+        <li class="list-header"></li>
+        <li class="list-header">[checked]=true</li>
+        <li class="list-header">
+          [checked]=true
+          <br/>
+          [disabled]=true
+        </li>
+        <li class="list-header">
+          [checked]=false
+        </li>
+        <li class="list-header">
+          [checked]=false
+          <br/>
+          [disabled]=true
+        </li>
+      </ul>
+
+      <ul *ngFor="let toggleType of slideTogglePage | keyvalue: originalOrder"
+          class="page-list content-list {{toggleType.key}}">
+        <li class="list-header">
+          [{{toggleType.key}}]="Label"
+        </li>
+        <li *ngFor="let toggle of toggleType.value" class="list-item">
+          <p-slide-toggle [label]="toggle.label"
+                          [ariaLabel]="toggle.ariaLabel"
+                          [checked]="toggle.checked"
+                          [disabled]="toggle.disabled">
+          </p-slide-toggle>
+        </li>
+      </ul>
+
+    </main>
+</div>

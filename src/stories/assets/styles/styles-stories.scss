@@ -26,7 +26,46 @@ p {
   margin-bottom: 0;
 }
 
-.page {}
+.page {
+  $page-line-height: 70px;
+  &-main {
+    display: flex;
+    padding: 80px;
+    background-color: $white;
+  }
+
+  &-list {
+    @include resetUl;
+    &.header-list {
+      min-width: 175px;
+      .list-header {
+        text-align: right;
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  .list-header {
+    display: flex;
+    align-items: center;
+    font-size: $base-font-size;
+    font-weight: 500;
+    color: $gray-scale-800;
+    line-height: 1.5;
+    height: $page-line-height;
+    padding-right: 20px;
+    padding-left: 20px;
+    white-space: nowrap;
+  }
+
+  .list-item {
+    display: flex;
+    align-items: center;
+    height: $page-line-height;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
 
 .page-header {
   color: $gray-scale-700;
@@ -48,17 +87,32 @@ p {
   }
 }
 
-.page-main {
-  padding: 80px;
-  background-color: $white;
-}
-
 .page-title {
   font-family: $font-family-accent;
   font-size: 50px;
   line-height: 42px;
   &-highlighted {
     font-weight: 700;
+  }
+}
+
+//border around the elements
+.header-list {
+  .list-header:not(:first-child) {
+    border-right: 1px dashed $secondary-a-500;
+  }
+}
+.content-list {
+  .list-header {
+    border-bottom: 1px dashed $secondary-a-500;
+  }
+  &:last-child {
+    .list-item {
+      border-right: 1px dashed $secondary-a-500;
+    }
+  }
+  .list-item:last-child {
+    border-bottom: 1px dashed $secondary-a-500;
   }
 }
 
