@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {ButtonTypeEnum} from '../button-type.enum';
+import {ButtonTypeEnum} from './button-page/button-type.enum';
 
 @Component({
   selector: 'p-button',

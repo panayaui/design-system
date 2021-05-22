@@ -1,0 +1,46 @@
+<div class="page checkboxes">
+    <header class="page-header">
+      <h1 class="page-title">Checkbox /<span class="page-header-highlighted">Base</span></h1>
+    </header>
+
+    <main class="page-main">
+      <ul class="page-list header-list">
+        <li class="list-header"></li>
+        <li class="list-header">[checked]=false</li>
+        <li class="list-header">
+          [checked]=false
+          <br/>
+          [disabled]=true
+        </li>
+        <li class="list-header">
+          [checked]=true
+        </li>
+        <li class="list-header">
+          [checked]=true
+          <br/>
+          [disabled]=true
+        </li>
+        <li class="list-header">
+          [selectAll]=true
+        </li>
+        <li class="list-header">
+          [indeterminate]=true
+        </li>
+      </ul>
+
+      <ul *ngFor="let checkboxType of checkboxesPage | keyvalue: originalOrder"
+          class="page-list content-list {{checkboxType.key}}">
+        <li class="list-header">
+          [{{checkboxType.key}}]="Label"
+        </li>
+        <li *ngFor="let checkbox of checkboxType.value" class="list-item">
+          <p-checkbox [label]="checkbox.label"
+                          [ariaLabel]="checkbox.ariaLabel"
+                          [checked]="checkbox.checked"
+                          [disabled]="checkbox.disabled">
+          </p-checkbox>
+        </li>
+      </ul>
+
+    </main>
+</div>

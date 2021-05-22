@@ -1,0 +1,64 @@
+@import "../assets/styles/custom";
+
+::ng-deep.p-checkbox {
+  // material styles override
+  .mat-checkbox-label {
+    font-family: $font-family-basic;
+    font-size: $small-font-size;
+    font-weight: 500;
+  }
+  .mat-checkbox-frame {
+    background-color: $gray-scale-1;
+    border-width: 1px;
+    border-color: $gray-scale-400;
+  }
+
+  &:not(.mat-checkbox-disabled):hover {
+    .mat-checkbox-frame {
+      border-color: $secondary-a-700;
+    }
+  }
+
+  &.mat-checkbox-checked {
+    .mat-checkbox-background {
+      background-color: $secondary-a-700;
+    }
+    &:not(.mat-checkbox-disabled):hover {
+      .mat-checkbox-background {
+        background-color: $secondary-a-800;
+      }
+    }
+  }
+
+  
+  // checked
+  &.mat-checked {
+    .mat-slide-toggle-bar {
+      background-color: $secondary-a-700;
+    }
+    .mat-slide-toggle-thumb-container {
+      transform: translate3d(24px, 0, 0);
+    }
+    .mat-slide-toggle-thumb {
+      background-color: $white;
+    }
+    // checked + hover
+    &:hover {
+      .mat-slide-toggle-bar {
+        background-color: $secondary-a-800;
+      }
+    }
+    // checked + focus
+    &.cdk-focused {
+      .mat-slide-toggle-bar {
+        border: 2px solid $secondary-a-200;
+      }
+    }
+    // checked + disabled
+    &.mat-disabled {
+      .mat-slide-toggle-bar {
+         background-color: $secondary-a-100;
+       }
+      }
+    }
+  }

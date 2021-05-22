@@ -8,6 +8,6 @@ import {Component, Input} from '@angular/core';
 export default class SlideToggleComponent {
   @Input() label: string;
   @Input() ariaLabel: string;
-  @Input() checked: boolean;
+  @Input() checked: boolean = false;
   @Input() disabled: boolean = false;
 }

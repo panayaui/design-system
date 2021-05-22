@@ -2,20 +2,20 @@ import {moduleMetadata} from '@storybook/angular';
 import {CommonModule} from '@angular/common';
 import {Story, Meta} from '@storybook/angular/types-6-0';
 import ButtonComponent from './button.component';
-import {ButtonTypeEnum} from '../button-type.enum';
-import IconComponent from '../../icons/icon.component';
-import {IconsModule} from '../../../app/icons/icons.module';
+import {ButtonTypeEnum} from './button-page/button-type.enum';
+import IconComponent from '../icons/icon.component';
+import {IconsModule} from '../../app/icons/icons.module';
 
-export default {
-  title: 'Components/Button',
-  component: ButtonComponent,
-  decorators: [
-    moduleMetadata({
-      declarations: [ButtonComponent, IconComponent],
-      imports: [CommonModule, IconsModule],
-    }),
-  ],
-} as Meta;
+// export default {
+//   title: 'Components/Button',
+//   component: ButtonComponent,
+//   decorators: [
+//     moduleMetadata({
+//       declarations: [ButtonComponent, IconComponent],
+//       imports: [CommonModule, IconsModule],
+//     }),
+//   ],
+// } as Meta;
 
 const Template: Story<ButtonComponent> = (args: ButtonComponent) => ({
   props: args,
