@@ -5,6 +5,10 @@ export default interface IButton {
   large: boolean;
   disabled: boolean;
   iconBefore: string;
+  iconBeforeWidth: string;
+  iconBeforeHeight: string;
   iconAfter: string;
+  iconAfterWidth: string;
+  iconAfterHeight: string;
   buttonType: ButtonTypeEnum;
 }

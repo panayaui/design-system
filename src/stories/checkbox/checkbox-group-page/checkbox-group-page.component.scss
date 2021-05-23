@@ -1,0 +1,14 @@
+@import "../../assets/styles/custom";
+
+.checkbox-group-page {
+  .page-main {
+    margin-top: 110px;
+  }
+  &-list {
+    display: flex;
+    @include resetUl;
+  }
+  &-item:not(:first-child) {
+    margin-left: 140px;
+  }
+}

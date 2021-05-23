@@ -1,0 +1,13 @@
+<div class="checkbox-group">
+  <h3 class="checkbox-group-title">{{groupTitle}}</h3>
+    <ul class="checkbox-group-list">
+      <li *ngFor="let checkbox of checkboxGroup" class="checkbox-group-item">
+        <p-checkbox [label]="checkbox.label"
+                    [ariaLabel]="checkbox.ariaLabel"
+                    [checked]="checkbox.checked"
+                    [disabled]="checkbox.disabled">
+        </p-checkbox>
+      </li>
+    </ul>
+  <p *ngIf="error" class="checkbox-group-error">{{error}}</p>
+</div>

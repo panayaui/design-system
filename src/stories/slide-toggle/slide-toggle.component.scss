@@ -33,7 +33,7 @@
   &.cdk-focused {
     .mat-slide-toggle-bar {
       background-color: $gray-scale-700;
-      border: 2px solid $gray-scale-100;
+      //border: 2px solid $gray-scale-100;
     }
   }
 
@@ -65,14 +65,17 @@
     // checked + focus
     &.cdk-focused {
       .mat-slide-toggle-bar {
-        border: 2px solid $secondary-a-200;
+        //border: 2px solid $secondary-a-200;
       }
     }
     // checked + disabled
     &.mat-disabled {
       .mat-slide-toggle-bar {
          background-color: $secondary-a-100;
-       }
+      }
+      .mat-slide-toggle-thumb {
+        box-shadow: none;
+      }
       }
     }
   }
@@ -83,27 +86,27 @@
       &:before {
         content: '';
         display: block;
-        width: 16px;
+        width: 15px;
         height: 12px;
         background-image: url('../assets/images/check.svg');
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
         position: absolute;
-        top: 5px;
-        left: 6px;
+        top: 6px;
+        left: 7px;
       }
       &:after {
         content: '';
         display: block;
-        width: 16px;
-        height: 16px;
+        width: 15px;
+        height: 15px;
         background-image: url('../assets/images/x.svg');
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
         position: absolute;
-        top: 3.5px;
+        top: 4px;
         right: 5px;
       }
     }

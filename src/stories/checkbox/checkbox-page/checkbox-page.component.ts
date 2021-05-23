@@ -2,7 +2,7 @@ import {Component, Input} from '@angular/core';
 import {KeyValue} from '@angular/common';
 
 @Component({
-  selector: 'p-button-page',
+  selector: 'p-checkbox-page',
   templateUrl: './checkbox-page.component.html',
   styleUrls: ['./checkbox-page.component.scss'],
 })

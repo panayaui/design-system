@@ -11,7 +11,11 @@ export default class ButtonComponent {
   @Input() large: boolean = false;
   @Input() disabled: boolean = false;
   @Input() iconBefore: string;
+  @Input() iconBeforeWidth: string = 'auto';
+  @Input() iconBeforeHeight: string = 'auto';
   @Input() iconAfter: string;
+  @Input() iconAfterWidth: string = 'auto';
+  @Input() iconAfterHeight: string = 'auto';
   @Input() buttonType: ButtonTypeEnum = ButtonTypeEnum.Primary;
 
   public get classes(): string[] {
