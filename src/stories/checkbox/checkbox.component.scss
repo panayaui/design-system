@@ -13,52 +13,39 @@
     border-color: $gray-scale-400;
   }
 
+  // hover
   &:not(.mat-checkbox-disabled):hover {
     .mat-checkbox-frame {
       border-color: $secondary-a-700;
     }
   }
 
+  // disabled
+  &.mat-checkbox-disabled {
+    &:not(.mat-checkbox-checked) .mat-checkbox-frame {
+      background-color: $primary-c-50;
+      border-color: $gray-scale-400;
+    }
+    .mat-checkbox-label {
+      color: $gray-scale-600;
+    }
+  }
+
+  // checked
   &.mat-checkbox-checked {
     .mat-checkbox-background {
       background-color: $secondary-a-700;
     }
+    // checked + hover
     &:not(.mat-checkbox-disabled):hover {
       .mat-checkbox-background {
         background-color: $secondary-a-800;
       }
     }
+    // checked + focus
+
+    // checked + disabled
+
   }
 
-  
-  // checked
-  &.mat-checked {
-    .mat-slide-toggle-bar {
-      background-color: $secondary-a-700;
-    }
-    .mat-slide-toggle-thumb-container {
-      transform: translate3d(24px, 0, 0);
-    }
-    .mat-slide-toggle-thumb {
-      background-color: $white;
-    }
-    // checked + hover
-    &:hover {
-      .mat-slide-toggle-bar {
-        background-color: $secondary-a-800;
-      }
-    }
-    // checked + focus
-    &.cdk-focused {
-      .mat-slide-toggle-bar {
-        border: 2px solid $secondary-a-200;
-      }
-    }
-    // checked + disabled
-    &.mat-disabled {
-      .mat-slide-toggle-bar {
-         background-color: $secondary-a-100;
-       }
-      }
-    }
-  }
+}
