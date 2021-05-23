@@ -26,7 +26,9 @@ Primary.args = {
   label: 'Label',
   large: false,
   disabled: false,
-  buttonType: ButtonTypeEnum.Primary
+  buttonType: ButtonTypeEnum.Primary,
+  iconBeforeWidth: '17',
+  iconAfterWidth: '17'
 };
 
 export const Secondary = Template.bind({});
