@@ -1,15 +1,11 @@
 import {Component, Input} from '@angular/core';
-import {KeyValue} from '@angular/common';
+import ICheckboxGroup from '../checkbox-group/checkbox-group.interface';
 
 @Component({
-  selector: 'p-checkbox-group',
+  selector: 'p-checkbox-group-page',
   templateUrl: './checkbox-group-page.component.html',
   styleUrls: ['./checkbox-group-page.component.scss'],
 })
 export default class CheckboxGroupPageComponent {
-  @Input() checkboxGroup: any;
-
-  originalOrder = (a: KeyValue<number, string>, b: KeyValue<number, string>): number => {
-    return 0;
-  }
+  @Input() checkboxGroupPage: ICheckboxGroup[];
 }
