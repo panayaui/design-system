@@ -7,7 +7,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import * as CheckboxStories from '../checkbox.stories';
 
 export default {
-  title: 'Components/Checkboxes/Base',
+  title: 'Components/Checkbox/Base',
   component: CheckboxPageComponent,
   decorators: [
     moduleMetadata({
