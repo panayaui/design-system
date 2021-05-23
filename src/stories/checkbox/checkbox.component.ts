@@ -10,6 +10,6 @@ export default class CheckboxComponent {
   @Input() ariaLabel: string;
   @Input() checked: boolean = false;
   @Input() disabled: boolean = false;
-  @Input() selectAll: boolean = true;
+  @Input() selectAll: boolean = false;
   @Input() indeterminate: boolean = false;
 }
