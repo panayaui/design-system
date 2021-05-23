@@ -4,9 +4,10 @@ import {Story, Meta} from '@storybook/angular/types-6-0';
 import CheckboxPageComponent from './checkbox-page.component';
 import CheckboxComponent from '../checkbox.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import * as CheckboxStories from '../checkbox.stories';
 
 export default {
-  title: 'Components/Checkboxes',
+  title: 'Components/Checkboxes/Base',
   component: CheckboxPageComponent,
   decorators: [
     moduleMetadata({
@@ -16,42 +17,28 @@ export default {
   ],
 } as Meta;
 
-const CheckboxTemplate: Story<CheckboxComponent> = (args: CheckboxComponent) => ({
-  props: args,
-});
-
-const WithLabel = CheckboxTemplate.bind({});
-WithLabel.args = {
-  label: 'Label'
-};
-
-const NoLabel = CheckboxTemplate.bind({});
-NoLabel.args = {
-  ariaLabel: 'Label'
-};
-
 const PageTemplate: Story<CheckboxPageComponent> = (args: CheckboxPageComponent) => ({
   props: args,
 });
 
-export const Checkboxes = PageTemplate.bind({});
-Checkboxes.args = {
+export const Base = PageTemplate.bind({});
+Base.args = {
   checkboxesPage: {
     label: [
-      {...WithLabel.args, checked: false},
-      {...WithLabel.args, checked: false, disabled: true},
-      {...WithLabel.args, checked: true},
-      {...WithLabel.args, checked: true, disabled: true},
-      {...WithLabel.args, selectAll: true},
-      {...WithLabel.args, indeterminate: true}
+      {...CheckboxStories.WithLabel.args, checked: false},
+      {...CheckboxStories.WithLabel.args, checked: false, disabled: true},
+      {...CheckboxStories.WithLabel.args, checked: true},
+      {...CheckboxStories.WithLabel.args, checked: true, disabled: true},
+      {...CheckboxStories.WithLabel.args, selectAll: true},
+      {...CheckboxStories.WithLabel.args, indeterminate: true}
     ],
     ariaLabel: [
-      {...NoLabel.args, checked: false},
-      {...NoLabel.args, checked: false, disabled: true},
-      {...NoLabel.args, checked: true},
-      {...NoLabel.args, checked: true, disabled: true},
-      {...NoLabel.args, selectAll: true},
-      {...NoLabel.args, indeterminate: true}
+      {...CheckboxStories.NoLabel.args, checked: false},
+      {...CheckboxStories.NoLabel.args, checked: false, disabled: true},
+      {...CheckboxStories.NoLabel.args, checked: true},
+      {...CheckboxStories.NoLabel.args, checked: true, disabled: true},
+      {...CheckboxStories.NoLabel.args, selectAll: true},
+      {...CheckboxStories.NoLabel.args, indeterminate: true}
     ],
   }
 };

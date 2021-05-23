@@ -1,0 +1,23 @@
+@import "../../assets/styles/custom";
+
+.checkbox-group {
+  &-title {
+    font-family: $font-family-basic;
+    font-size: $tiny-font-size;
+    font-weight: 700;
+    line-height: 18px;
+  }
+  &-list {
+    @include resetUl;
+  }
+  &-item {
+    margin-top: 10px;
+  }
+  &-error {
+    font-family: $font-family-basic;
+    font-size: $tiny-font-size;
+    line-height: 18px;
+    color: #A40014;
+    margin-top: 10px;
+  }
+}
