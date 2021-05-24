@@ -8,9 +8,11 @@ import {Component, Input} from '@angular/core';
 export default class InputTextComponent {
   @Input() type: string = 'text';
   @Input() label: string;
+  @Input() ariaLabel: string;
   @Input() value: string = 'value';
   @Input() placeholder: string = 'placeholder';
-  @Input() error: string;
-  @Input() disabled: boolean;
-  @Input() readonly: boolean;
+  @Input() errorState: boolean = true;
+  @Input() error: string = 'error';
+  @Input() disabled: boolean = false;
+  @Input() readonly: boolean = false;
 }

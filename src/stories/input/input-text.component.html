@@ -1,10 +1,13 @@
-<mat-form-field class="p-input-text">
+<mat-form-field class="p-input-text"
+                [ngClass]="{'error-state' : errorState}">
   <mat-label class="p-input-text-label">{{label}}</mat-label>
   <input matInput
-         [placeholder]="placeholder"
+         [type]="type"
          [value]="value"
+         [placeholder]="placeholder"
          [disabled]="disabled"
          [readonly]="readonly"
+         attr.aria-label="{{ariaLabel}}"
          class="p-input-text-input">
   <mat-error *ngIf="error">
     {{error}}
