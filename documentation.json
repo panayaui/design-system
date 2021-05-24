@@ -3,17 +3,17 @@
     "interfaces": [
         {
             "name": "IButton",
-            "id": "interface-IButton-ebfc5223207c42f52ba30d6c164f909f",
+            "id": "interface-IButton-29ee872a25cdd7eee400441d71afe969",
             "file": "src/stories/button/button-page/button.interface.ts",
             "type": "interface",
-            "sourceCode": "import {ButtonTypeEnum} from './button-type.enum';\r\n\r\nexport default interface IButton {\r\n  label: string;\r\n  large: boolean;\r\n  disabled: boolean;\r\n  iconBefore: string;\r\n  iconAfter: string;\r\n  buttonType: ButtonTypeEnum;\r\n}\r\n",
+            "sourceCode": "import {ButtonTypeEnum} from './button-type.enum';\r\n\r\nexport default interface IButton {\r\n  label: string;\r\n  large: boolean;\r\n  disabled: boolean;\r\n  iconBefore: string;\r\n  iconBeforeWidth: string;\r\n  iconBeforeHeight: string;\r\n  iconAfter: string;\r\n  iconAfterWidth: string;\r\n  iconAfterHeight: string;\r\n  buttonType: ButtonTypeEnum;\r\n}\r\n",
             "properties": [
                 {
                     "name": "buttonType",
                     "type": "ButtonTypeEnum",
                     "optional": false,
                     "description": "",
-                    "line": 9
+                    "line": 13
                 },
                 {
                     "name": "disabled",
@@ -27,7 +27,21 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 8
+                    "line": 10
+                },
+                {
+                    "name": "iconAfterHeight",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "iconAfterWidth",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
                 },
                 {
                     "name": "iconBefore",
@@ -35,6 +49,20 @@
                     "optional": false,
                     "description": "",
                     "line": 7
+                },
+                {
+                    "name": "iconBeforeHeight",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                },
+                {
+                    "name": "iconBeforeWidth",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 8
                 },
                 {
                     "name": "label",
@@ -75,6 +103,93 @@
                     "optional": false,
                     "description": "",
                     "line": 6
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
+            "name": "ICheckbox",
+            "id": "interface-ICheckbox-92d8f47b73e0c489469123326fd838de",
+            "file": "src/stories/checkbox/checkbox.interface.ts",
+            "type": "interface",
+            "sourceCode": "export default interface ICheckbox {\r\n  label: string;\r\n  ariaLabel: string;\r\n  checked: boolean;\r\n  disabled: boolean;\r\n  selectAll: boolean;\r\n  indeterminate: boolean;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "ariaLabel",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "checked",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "disabled",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "indeterminate",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                },
+                {
+                    "name": "label",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "selectAll",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
+            "name": "ICheckboxGroup",
+            "id": "interface-ICheckboxGroup-a5c02e49a4ab635d8d1e6ad6831fa7f1",
+            "file": "src/stories/checkbox/checkbox-group/checkbox-group.interface.ts",
+            "type": "interface",
+            "sourceCode": "import ICheckbox from '../checkbox.interface';\r\n\r\nexport default interface ICheckboxGroup {\r\n  groupTitle: string;\r\n  checkboxGroup: ICheckbox[];\r\n  error: string;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "checkboxGroup",
+                    "type": "ICheckbox[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "error",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "groupTitle",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
                 }
             ],
             "indexSignatures": [],
@@ -206,7 +321,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-a0a22362cb9323430947f4fb32069c6e",
+            "id": "component-ButtonComponent-dbcea0df04c9c3d904ccd3dd4202676b",
             "file": "src/stories/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -226,7 +341,7 @@
                 {
                     "name": "buttonType",
                     "defaultValue": "ButtonTypeEnum.Primary",
-                    "line": 15,
+                    "line": 19,
                     "type": "ButtonTypeEnum"
                 },
                 {
@@ -237,12 +352,36 @@
                 },
                 {
                     "name": "iconAfter",
-                    "line": 14,
+                    "line": 16,
+                    "type": "string"
+                },
+                {
+                    "name": "iconAfterHeight",
+                    "defaultValue": "'auto'",
+                    "line": 18,
+                    "type": "string"
+                },
+                {
+                    "name": "iconAfterWidth",
+                    "defaultValue": "'auto'",
+                    "line": 17,
                     "type": "string"
                 },
                 {
                     "name": "iconBefore",
                     "line": 13,
+                    "type": "string"
+                },
+                {
+                    "name": "iconBeforeHeight",
+                    "defaultValue": "'auto'",
+                    "line": 15,
+                    "type": "string"
+                },
+                {
+                    "name": "iconBeforeWidth",
+                    "defaultValue": "'auto'",
+                    "line": 14,
                     "type": "string"
                 },
                 {
@@ -265,7 +404,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {ButtonTypeEnum} from './button-page/button-type.enum';\r\n\r\n@Component({\r\n  selector: 'p-button',\r\n  templateUrl: './button.component.html',\r\n  styleUrls: ['./button.component.scss'],\r\n})\r\nexport default class ButtonComponent {\r\n  @Input() label: string;\r\n  @Input() large: boolean = false;\r\n  @Input() disabled: boolean = false;\r\n  @Input() iconBefore: string;\r\n  @Input() iconAfter: string;\r\n  @Input() buttonType: ButtonTypeEnum = ButtonTypeEnum.Primary;\r\n\r\n  public get classes(): string[] {\r\n    const classParams = [];\r\n    this.large ? classParams.push('p-btn-large') : classParams.push('p-btn-small');\r\n    this.iconBefore ? classParams.push('p-btn-icon-before') : null;\r\n    this.iconAfter ? classParams.push('p-btn-icon-after') : null;\r\n    classParams.push(`p-btn-${this.buttonType}`);\r\n    return classParams;\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {ButtonTypeEnum} from './button-page/button-type.enum';\r\n\r\n@Component({\r\n  selector: 'p-button',\r\n  templateUrl: './button.component.html',\r\n  styleUrls: ['./button.component.scss'],\r\n})\r\nexport default class ButtonComponent {\r\n  @Input() label: string;\r\n  @Input() large: boolean = false;\r\n  @Input() disabled: boolean = false;\r\n  @Input() iconBefore: string;\r\n  @Input() iconBeforeWidth: string = 'auto';\r\n  @Input() iconBeforeHeight: string = 'auto';\r\n  @Input() iconAfter: string;\r\n  @Input() iconAfterWidth: string = 'auto';\r\n  @Input() iconAfterHeight: string = 'auto';\r\n  @Input() buttonType: ButtonTypeEnum = ButtonTypeEnum.Primary;\r\n\r\n  public get classes(): string[] {\r\n    const classParams = [];\r\n    this.large ? classParams.push('p-btn-large') : classParams.push('p-btn-small');\r\n    this.iconBefore ? classParams.push('p-btn-icon-before') : null;\r\n    this.iconAfter ? classParams.push('p-btn-icon-after') : null;\r\n    classParams.push(`p-btn-${this.buttonType}`);\r\n    return classParams;\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -281,11 +420,11 @@
                         "name": "classes",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 17
+                        "line": 21
                     }
                 }
             },
-            "templateData": "<button class=\"p-btn\" [ngClass]=\"classes\" [disabled]=\"disabled\">\r\n  <p-icon *ngIf=\"iconBefore\"\r\n          class=\"p-btn-icon-pre\"\r\n          [name]=\"iconBefore\"\r\n          [width]=\"17\"\r\n          [height]=\"auto\"></p-icon>\r\n  <span class=\"p-btn-label\">{{label}}</span>\r\n  <p-icon *ngIf=\"iconAfter\"\r\n          class=\"p-btn-icon-post\"\r\n          [name]=\"iconAfter\"\r\n          [width]=\"17\"\r\n          [height]=\"auto\"></p-icon>\r\n</button>\r\n"
+            "templateData": "<button class=\"p-btn\" [ngClass]=\"classes\" [disabled]=\"disabled\">\r\n  <p-icon *ngIf=\"iconBefore\"\r\n          class=\"p-btn-icon-pre\"\r\n          [name]=\"iconBefore\"\r\n          [width]=\"iconBeforeWidth\"\r\n          [height]=\"iconBeforeHeight\"></p-icon>\r\n  <span class=\"p-btn-label\">{{label}}</span>\r\n  <p-icon *ngIf=\"iconAfter\"\r\n          class=\"p-btn-icon-post\"\r\n          [name]=\"iconAfter\"\r\n          [width]=\"iconAfterWidth\"\r\n          [height]=\"iconAfterHeight\"></p-icon>\r\n</button>\r\n"
         },
         {
             "name": "ButtonComponent",
@@ -422,11 +561,11 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"page buttons\">\r\n  <ng-container *ngFor=\"let type of buttonsPage | keyvalue: originalOrder\">\r\n    <header class=\"page-header\">\r\n      <h1 class=\"page-title\">Buttons / <span class=\"page-header-highlighted\">{{type.key}}</span></h1>\r\n      <p class=\"page-header-line\">\r\n        Height:\r\n        <span class=\"page-header-highlighted\">{{type.value.height}}</span>, min. width:\r\n        <span class=\"page-header-highlighted\">80px</span>\r\n      </p>\r\n      <p class=\"page-header-line\">\r\n        Typography style:\r\n        <span class=\"page-header-highlighted\">Paragraph 2 - medium</span>\r\n      </p>\r\n    </header>\r\n\r\n    <main class=\"page-main\">\r\n      <ul class=\"page-list header-list\">\r\n        <li class=\"list-header\"></li>\r\n        <li class=\"list-header\">.p-btn.p-btn-{{type.key}}</li>\r\n        <li class=\"list-header\">\r\n          [disabled]=true\r\n          <br/>\r\n          .p-btn:disabled\r\n        </li>\r\n        <li class=\"list-header\">\r\n          [iconBefore]=\"eye\"\r\n          <br/>\r\n          .p-btn-icon-before\r\n        </li>\r\n        <li class=\"list-header\">\r\n          [iconAfter]=\"chevron-down\"\r\n          <br/>\r\n          .p-btn-icon-after\r\n        </li>\r\n        <li class=\"list-header\">\r\n          [iconBefore]=\"eye\"\r\n          <br/>\r\n          [iconAfter]=\"chevron-down\"\r\n          <br/>\r\n          .p-btn-icon-before\r\n          <br/>\r\n          .p-btn-icon-after\r\n        </li>\r\n      </ul>\r\n      <ul *ngFor=\"let buttonType of type.value.buttons | keyvalue: originalOrder\"\r\n          class=\"page-list content-list {{buttonType.key}}\">\r\n        <li class=\"list-header\">\r\n          [buttonType]=\r\n          <br/>\r\n          \"ButtonTypeEnum.{{buttonType.key.charAt(0).toUpperCase() + buttonType.key.slice(1)}}\"\r\n          <br/>\r\n          .p-btn-{{buttonType.key}}\r\n        </li>\r\n        <li *ngFor=\"let button of buttonType.value\" class=\"list-item\">\r\n          <p-button [label]=\"button.label\"\r\n                    [large]=\"button.large\"\r\n                    [disabled]=\"button.disabled\"\r\n                    [iconBefore]=\"button.iconBefore\"\r\n                    [iconAfter]=\"button.iconAfter\"\r\n                    [buttonType]=\"button.buttonType\">\r\n          </p-button>\r\n        </li>\r\n      </ul>\r\n    </main>\r\n  </ng-container>\r\n</div>\r\n"
+            "templateData": "<div class=\"page buttons\">\r\n  <ng-container *ngFor=\"let type of buttonsPage | keyvalue: originalOrder\">\r\n    <header class=\"page-header\">\r\n      <h1 class=\"page-title\">Buttons / <span class=\"page-header-highlighted\">{{type.key}}</span></h1>\r\n      <p class=\"page-header-line\">\r\n        Height:\r\n        <span class=\"page-header-highlighted\">{{type.value.height}}</span>, min. width:\r\n        <span class=\"page-header-highlighted\">80px</span>\r\n      </p>\r\n      <p class=\"page-header-line\">\r\n        Typography style:\r\n        <span class=\"page-header-highlighted\">Paragraph 2 - medium</span>\r\n      </p>\r\n    </header>\r\n\r\n    <main class=\"page-main\">\r\n      <ul class=\"page-list header-list\">\r\n        <li class=\"list-header\"></li>\r\n        <li class=\"list-header\">.p-btn.p-btn-{{type.key}}</li>\r\n        <li class=\"list-header\">\r\n          [disabled]=true\r\n          <br/>\r\n          .p-btn:disabled\r\n        </li>\r\n        <li class=\"list-header\">\r\n          [iconBefore]=\"eye\"\r\n          <br/>\r\n          .p-btn-icon-before\r\n        </li>\r\n        <li class=\"list-header\">\r\n          [iconAfter]=\"chevron-down\"\r\n          <br/>\r\n          .p-btn-icon-after\r\n        </li>\r\n        <li class=\"list-header\">\r\n          [iconBefore]=\"eye\"\r\n          <br/>\r\n          [iconAfter]=\"chevron-down\"\r\n          <br/>\r\n          .p-btn-icon-before\r\n          <br/>\r\n          .p-btn-icon-after\r\n        </li>\r\n      </ul>\r\n      <ul *ngFor=\"let buttonType of type.value.buttons | keyvalue: originalOrder\"\r\n          class=\"page-list content-list {{buttonType.key}}\">\r\n        <li class=\"list-header\">\r\n          [buttonType]=\r\n          <br/>\r\n          \"ButtonTypeEnum.{{buttonType.key.charAt(0).toUpperCase() + buttonType.key.slice(1)}}\"\r\n          <br/>\r\n          .p-btn-{{buttonType.key}}\r\n        </li>\r\n        <li *ngFor=\"let button of buttonType.value\" class=\"list-item\">\r\n          <p-button [label]=\"button.label\"\r\n                    [large]=\"button.large\"\r\n                    [disabled]=\"button.disabled\"\r\n                    [iconBefore]=\"button.iconBefore\"\r\n                    [iconBeforeWidth]=\"button.iconBeforeWidth\"\r\n                    [iconBeforeHeight]=\"button.iconBeforeHeight\"\r\n                    [iconAfter]=\"button.iconAfter\"\r\n                    [buttonType]=\"button.buttonType\"\r\n                    [iconAfterWidth]=\"button.iconAfterWidth\"\r\n                    [iconAfterHeight]=\"button.iconAfterHeight\">\r\n          </p-button>\r\n        </li>\r\n      </ul>\r\n    </main>\r\n  </ng-container>\r\n</div>\r\n"
         },
         {
             "name": "CheckboxComponent",
-            "id": "component-CheckboxComponent-109ec21f7930bcf8d1051113bc68f8cb",
+            "id": "component-CheckboxComponent-b11d5996e721b4eeadb661a9f3532264",
             "file": "src/stories/checkbox/checkbox.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -473,7 +612,7 @@
                 },
                 {
                     "name": "selectAll",
-                    "defaultValue": "true",
+                    "defaultValue": "false",
                     "line": 13,
                     "type": "boolean"
                 }
@@ -486,27 +625,125 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'p-checkbox',\r\n  templateUrl: './checkbox.component.html',\r\n  styleUrls: ['./checkbox.component.scss'],\r\n})\r\nexport default class CheckboxComponent {\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string;\r\n  @Input() checked: boolean = false;\r\n  @Input() disabled: boolean = false;\r\n  @Input() selectAll: boolean = true;\r\n  @Input() indeterminate: boolean = false;\r\n}\r\n",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'p-checkbox',\r\n  templateUrl: './checkbox.component.html',\r\n  styleUrls: ['./checkbox.component.scss'],\r\n})\r\nexport default class CheckboxComponent {\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string;\r\n  @Input() checked: boolean = false;\r\n  @Input() disabled: boolean = false;\r\n  @Input() selectAll: boolean = false;\r\n  @Input() indeterminate: boolean = false;\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n::ng-deep.p-checkbox {\r\n  // material styles override\r\n  .mat-checkbox-label {\r\n    font-family: $font-family-basic;\r\n    font-size: $small-font-size;\r\n    font-weight: 500;\r\n  }\r\n  .mat-checkbox-frame {\r\n    background-color: $gray-scale-1;\r\n    border-width: 1px;\r\n    border-color: $gray-scale-400;\r\n  }\r\n\r\n  // hover\r\n  &:not(.mat-checkbox-disabled):hover {\r\n    .mat-checkbox-frame {\r\n      border-color: $secondary-a-700;\r\n    }\r\n  }\r\n\r\n  // disabled\r\n  &.mat-checkbox-disabled {\r\n    &:not(.mat-checkbox-checked) .mat-checkbox-frame {\r\n      background-color: $primary-c-50;\r\n      border-color: $gray-scale-400;\r\n    }\r\n    .mat-checkbox-label {\r\n      color: $gray-scale-600;\r\n    }\r\n  }\r\n\r\n  // checked\r\n  &.mat-checkbox-checked {\r\n    .mat-checkbox-background {\r\n      background-color: $secondary-a-700;\r\n    }\r\n    // checked + hover\r\n    &:not(.mat-checkbox-disabled):hover {\r\n      .mat-checkbox-background {\r\n        background-color: $secondary-a-800;\r\n      }\r\n    }\r\n    // checked + focus\r\n\r\n    // checked + disabled\r\n\r\n  }\r\n\r\n}\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n::ng-deep.p-checkbox {\r\n  // material styles override\r\n  .mat-checkbox-label {\r\n    font-family: $font-family-basic;\r\n    font-size: $small-font-size;\r\n    font-weight: 500;\r\n  }\r\n  .mat-checkbox-frame {\r\n    background-color: $gray-scale-1;\r\n    border-width: 1px;\r\n    border-color: $gray-scale-400;\r\n  }\r\n  .mat-ripple-element {\r\n    display: none;\r\n  }\r\n\r\n  // hover\r\n  // focus\r\n  &:not(.mat-checkbox-disabled):hover,\r\n  &.cdk-focused {\r\n    .mat-checkbox-frame {\r\n      border-color: $secondary-a-700;\r\n    }\r\n  }\r\n\r\n  // disabled\r\n  &.mat-checkbox-disabled {\r\n    &:not(.mat-checkbox-checked) .mat-checkbox-frame {\r\n      background-color: $primary-c-50;\r\n      border-color: $gray-scale-400;\r\n    }\r\n    .mat-checkbox-label {\r\n      color: $gray-scale-600;\r\n    }\r\n  }\r\n\r\n  // checked\r\n  &.mat-checkbox-checked {\r\n    .mat-checkbox-background {\r\n      background-color: $secondary-a-700;\r\n    }\r\n    // checked + hover\r\n    &:not(.mat-checkbox-disabled):hover {\r\n      .mat-checkbox-background {\r\n        background-color: $secondary-a-800;\r\n      }\r\n    }\r\n\r\n    // checked + disabled\r\n    &.mat-checkbox-disabled {\r\n      .mat-checkbox-background {\r\n        background-color: $secondary-a-100;\r\n      }\r\n    }\r\n  }\r\n  .mat-checkbox-checkmark-path {\r\n    stroke-width: 3px;\r\n  }\r\n  .mat-checkbox-checkmark {\r\n    width: 88%;\r\n    left: 1px;\r\n  }\r\n  .mat-checkbox-checkmark {\r\n    fill: $gray-scale-1;\r\n  }\r\n\r\n  // select all\r\n  &.select-all {\r\n    .mat-checkbox-frame {\r\n      border-color: $primary-a-900;\r\n    }\r\n  }\r\n\r\n  // indeterminate\r\n  &.mat-checkbox-indeterminate {\r\n    .mat-checkbox-background {\r\n      background-color: transparent;\r\n    }\r\n    .mat-checkbox-frame {\r\n      border-width: 1px;\r\n      border-color: $primary-a-900;\r\n    }\r\n  }\r\n  .mat-checkbox-mixedmark {\r\n    width: calc(100% - 7px);\r\n    height: 2px;\r\n    background-color: $primary-a-900;\r\n  }\r\n}\r\n",
                     "styleUrl": "./checkbox.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<mat-checkbox\r\n  class=\"p-checkbox\"\r\n  [ngClass]=\"{selectAll: 'select-all'}\"\r\n  [aria-label]=\"ariaLabel\"\r\n  [checked]=\"checked\"\r\n  [disabled]=\"disabled\"\r\n  [indeterminate]=\"indeterminate\">\r\n  <ng-container *ngIf=\"label\">\r\n    {{label}}\r\n  </ng-container>\r\n</mat-checkbox>\r\n"
+            "templateData": "<mat-checkbox\r\n  class=\"p-checkbox\"\r\n  [ngClass]=\"{'select-all': selectAll}\"\r\n  [aria-label]=\"ariaLabel\"\r\n  [checked]=\"checked\"\r\n  [disabled]=\"disabled\"\r\n  [indeterminate]=\"indeterminate\">\r\n  <ng-container *ngIf=\"label\">\r\n    {{label}}\r\n  </ng-container>\r\n</mat-checkbox>\r\n"
+        },
+        {
+            "name": "CheckboxGroupComponent",
+            "id": "component-CheckboxGroupComponent-cd1ad49753e88a23b525fc88b2b311d5",
+            "file": "src/stories/checkbox/checkbox-group/checkbox-group.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-checkbox-group",
+            "styleUrls": [
+                "./checkbox-group.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./checkbox-group.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "checkboxGroup",
+                    "line": 11,
+                    "type": "ICheckbox[]"
+                },
+                {
+                    "name": "error",
+                    "line": 12,
+                    "type": "string"
+                },
+                {
+                    "name": "groupTitle",
+                    "line": 10,
+                    "type": "string"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport ICheckbox from '../checkbox.interface';\r\n\r\n@Component({\r\n  selector: 'p-checkbox-group',\r\n  templateUrl: './checkbox-group.component.html',\r\n  styleUrls: ['./checkbox-group.component.scss'],\r\n})\r\nexport default class CheckboxGroupComponent {\r\n  @Input() groupTitle: string;\r\n  @Input() checkboxGroup: ICheckbox[];\r\n  @Input() error: string;\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n.checkbox-group {\r\n  &-title {\r\n    font-family: $font-family-basic;\r\n    font-size: $tiny-font-size;\r\n    font-weight: 700;\r\n    line-height: 18px;\r\n  }\r\n  &-list {\r\n    @include resetUl;\r\n  }\r\n  &-item {\r\n    margin-top: 10px;\r\n  }\r\n  &-error {\r\n    font-family: $font-family-basic;\r\n    font-size: $tiny-font-size;\r\n    line-height: 18px;\r\n    color: #A40014;\r\n    margin-top: 10px;\r\n  }\r\n}\r\n",
+                    "styleUrl": "./checkbox-group.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"checkbox-group\">\r\n  <h3 class=\"checkbox-group-title\">{{groupTitle}}</h3>\r\n    <ul class=\"checkbox-group-list\">\r\n      <li *ngFor=\"let checkbox of checkboxGroup\" class=\"checkbox-group-item\">\r\n        <p-checkbox [label]=\"checkbox.label\"\r\n                    [ariaLabel]=\"checkbox.ariaLabel\"\r\n                    [checked]=\"checkbox.checked\"\r\n                    [disabled]=\"checkbox.disabled\">\r\n        </p-checkbox>\r\n      </li>\r\n    </ul>\r\n  <p *ngIf=\"error\" class=\"checkbox-group-error\">{{error}}</p>\r\n</div>\r\n"
+        },
+        {
+            "name": "CheckboxGroupPageComponent",
+            "id": "component-CheckboxGroupPageComponent-acfc98b95e9e264deed6de805334a97d",
+            "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-checkbox-group-page",
+            "styleUrls": [
+                "./checkbox-group-page.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./checkbox-group-page.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "checkboxGroupPage",
+                    "line": 10,
+                    "type": "ICheckboxGroup[]"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport ICheckboxGroup from '../checkbox-group/checkbox-group.interface';\r\n\r\n@Component({\r\n  selector: 'p-checkbox-group-page',\r\n  templateUrl: './checkbox-group-page.component.html',\r\n  styleUrls: ['./checkbox-group-page.component.scss'],\r\n})\r\nexport default class CheckboxGroupPageComponent {\r\n  @Input() checkboxGroupPage: ICheckboxGroup[];\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n.checkbox-group-page {\r\n  .page-main {\r\n    margin-top: 110px;\r\n  }\r\n  &-list {\r\n    display: flex;\r\n    @include resetUl;\r\n  }\r\n  &-item:not(:first-child) {\r\n    margin-left: 140px;\r\n  }\r\n}\r\n",
+                    "styleUrl": "./checkbox-group-page.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"page checkbox-group-page\">\r\n    <header class=\"page-header\">\r\n      <h1 class=\"page-title\">Checkbox /<span class=\"page-header-highlighted\">Examples</span></h1>\r\n    </header>\r\n\r\n    <main class=\"page-main\">\r\n      <ul class=\"checkbox-group-page-list\">\r\n        <li *ngFor=\"let group of checkboxGroupPage\" class=\"checkbox-group-page-item\">\r\n          <p-checkbox-group [groupTitle]=\"group.groupTitle\"\r\n                          [checkboxGroup]=\"group.checkboxGroup\"\r\n                          [error]=\"group.error\">\r\n          </p-checkbox-group>\r\n        </li>\r\n      </ul>\r\n\r\n    </main>\r\n</div>\r\n"
         },
         {
             "name": "CheckboxPageComponent",
-            "id": "component-CheckboxPageComponent-d2c76f82e645c784e4441ef45cce1e98",
+            "id": "component-CheckboxPageComponent-e1c761147f5ebe593344e9c2c0672193",
             "file": "src/stories/checkbox/checkbox-page/checkbox-page.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "p-button-page",
+            "selector": "p-checkbox-page",
             "styleUrls": [
                 "./checkbox-page.component.scss"
             ],
@@ -539,16 +776,16 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {KeyValue} from '@angular/common';\r\n\r\n@Component({\r\n  selector: 'p-button-page',\r\n  templateUrl: './checkbox-page.component.html',\r\n  styleUrls: ['./checkbox-page.component.scss'],\r\n})\r\nexport default class CheckboxPageComponent {\r\n  @Input() checkboxesPage: any;\r\n\r\n  originalOrder = (a: KeyValue<number, string>, b: KeyValue<number, string>): number => {\r\n    return 0;\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {KeyValue} from '@angular/common';\r\n\r\n@Component({\r\n  selector: 'p-checkbox-page',\r\n  templateUrl: './checkbox-page.component.html',\r\n  styleUrls: ['./checkbox-page.component.scss'],\r\n})\r\nexport default class CheckboxPageComponent {\r\n  @Input() checkboxesPage: any;\r\n\r\n  originalOrder = (a: KeyValue<number, string>, b: KeyValue<number, string>): number => {\r\n    return 0;\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".slide-toggles {\r\n  .content-list {\r\n    min-width: 175px;\r\n  }\r\n}\r\n",
+                    "data": "",
                     "styleUrl": "./checkbox-page.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"page checkboxes\">\r\n    <header class=\"page-header\">\r\n      <h1 class=\"page-title\">Checkbox /<span class=\"page-header-highlighted\">Base</span></h1>\r\n    </header>\r\n\r\n    <main class=\"page-main\">\r\n      <ul class=\"page-list header-list\">\r\n        <li class=\"list-header\"></li>\r\n        <li class=\"list-header\">[checked]=false</li>\r\n        <li class=\"list-header\">\r\n          [checked]=false\r\n          <br/>\r\n          [disabled]=true\r\n        </li>\r\n        <li class=\"list-header\">\r\n          [checked]=true\r\n        </li>\r\n        <li class=\"list-header\">\r\n          [checked]=true\r\n          <br/>\r\n          [disabled]=true\r\n        </li>\r\n        <li class=\"list-header\">\r\n          [selectAll]=true\r\n        </li>\r\n        <li class=\"list-header\">\r\n          [indeterminate]=true\r\n        </li>\r\n      </ul>\r\n\r\n      <ul *ngFor=\"let checkboxType of checkboxesPage | keyvalue: originalOrder\"\r\n          class=\"page-list content-list {{checkboxType.key}}\">\r\n        <li class=\"list-header\">\r\n          [{{checkboxType.key}}]=\"Label\"\r\n        </li>\r\n        <li *ngFor=\"let checkbox of checkboxType.value\" class=\"list-item\">\r\n          <p-checkbox [label]=\"checkbox.label\"\r\n                          [ariaLabel]=\"checkbox.ariaLabel\"\r\n                          [checked]=\"checkbox.checked\"\r\n                          [disabled]=\"checkbox.disabled\">\r\n          </p-checkbox>\r\n        </li>\r\n      </ul>\r\n\r\n    </main>\r\n</div>\r\n"
+            "templateData": "<div class=\"page checkboxes\">\r\n    <header class=\"page-header\">\r\n      <h1 class=\"page-title\">Checkbox /<span class=\"page-header-highlighted\">Base</span></h1>\r\n    </header>\r\n\r\n    <main class=\"page-main\">\r\n      <ul class=\"page-list header-list\">\r\n        <li class=\"list-header\"></li>\r\n        <li class=\"list-header\">[checked]=false</li>\r\n        <li class=\"list-header\">\r\n          [checked]=false\r\n          <br/>\r\n          [disabled]=true\r\n        </li>\r\n        <li class=\"list-header\">\r\n          [checked]=true\r\n        </li>\r\n        <li class=\"list-header\">\r\n          [checked]=true\r\n          <br/>\r\n          [disabled]=true\r\n        </li>\r\n        <li class=\"list-header\">\r\n          [selectAll]=true\r\n        </li>\r\n        <li class=\"list-header\">\r\n          [indeterminate]=true\r\n        </li>\r\n      </ul>\r\n\r\n      <ul *ngFor=\"let checkboxType of checkboxesPage | keyvalue: originalOrder\"\r\n          class=\"page-list content-list {{checkboxType.key}}\">\r\n        <li class=\"list-header\">\r\n          [{{checkboxType.key}}]=\"Label\"\r\n        </li>\r\n        <li *ngFor=\"let checkbox of checkboxType.value\" class=\"list-item\">\r\n          <p-checkbox [label]=\"checkbox.label\"\r\n                          [ariaLabel]=\"checkbox.ariaLabel\"\r\n                          [checked]=\"checkbox.checked\"\r\n                          [disabled]=\"checkbox.disabled\"\r\n                          [selectAll]=\"checkbox.selectAll\"\r\n                          [indeterminate]=\"checkbox.indeterminate\">\r\n          </p-checkbox>\r\n        </li>\r\n      </ul>\r\n\r\n    </main>\r\n</div>\r\n"
         },
         {
             "name": "ColorPaletteComponent",
@@ -1550,6 +1787,14 @@
     "miscellaneous": {
         "variables": [
             {
+                "name": "Base",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "",
+                "defaultValue": "PageTemplate.bind({})"
+            },
+            {
                 "name": "Buttons",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1558,10 +1803,10 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "Checkboxes",
+                "name": "CheckboxGroup",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
                 "type": "",
                 "defaultValue": "PageTemplate.bind({})"
             },
@@ -1569,7 +1814,7 @@
                 "name": "CheckboxTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "file": "src/stories/checkbox/checkbox.stories.ts",
                 "type": "Story<CheckboxComponent>",
                 "defaultValue": "(args: CheckboxComponent) => ({\r\n  props: args,\r\n})"
             },
@@ -1598,12 +1843,12 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "Distructive",
+                "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input/input.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
+                "file": "src/environments/environment.ts",
+                "type": "object",
+                "defaultValue": "{\r\n  production: false\r\n}"
             },
             {
                 "name": "environment",
@@ -1614,12 +1859,12 @@
                 "defaultValue": "{\r\n  production: true\r\n}"
             },
             {
-                "name": "environment",
+                "name": "Examples",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
-                "type": "object",
-                "defaultValue": "{\r\n  production: false\r\n}"
+                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "",
+                "defaultValue": "PageTemplate.bind({})"
             },
             {
                 "name": "Fonts",
@@ -1633,7 +1878,7 @@
                 "name": "NoLabel",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "file": "src/stories/checkbox/checkbox.stories.ts",
                 "type": "",
                 "defaultValue": "CheckboxTemplate.bind({})"
             },
@@ -1649,9 +1894,25 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
+                "type": "Story<CheckboxGroupComponent>",
+                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "PageTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
                 "type": "Story<CheckboxPageComponent>",
                 "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "PageTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "Story<CheckboxGroupPageComponent>",
+                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -1678,14 +1939,6 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/input/input.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
                 "name": "require",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1697,14 +1950,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/button/button.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Secondary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/input/input.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -1728,14 +1973,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/button/button.stories.ts",
-                "type": "Story<ButtonComponent>",
-                "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/colors/Color-palette.stories.ts",
                 "type": "Story<ColorPaletteComponent>",
                 "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
@@ -1744,9 +1981,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input/input.stories.ts",
-                "type": "Story<InputComponent>",
-                "defaultValue": "(args: InputComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/button/button.stories.ts",
+                "type": "Story<ButtonComponent>",
+                "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -1781,14 +2018,6 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "Tertiary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/input/input.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
                 "name": "Toggles",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1808,7 +2037,7 @@
                 "name": "WithLabel",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "file": "src/stories/checkbox/checkbox.stories.ts",
                 "type": "",
                 "defaultValue": "CheckboxTemplate.bind({})"
             },
@@ -1851,6 +2080,24 @@
             }
         ],
         "groupedVariables": {
+            "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts": [
+                {
+                    "name": "Base",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                    "type": "",
+                    "defaultValue": "PageTemplate.bind({})"
+                },
+                {
+                    "name": "PageTemplate",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                    "type": "Story<CheckboxPageComponent>",
+                    "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
             "src/stories/button/button-page/button-page.stories.ts": [
                 {
                     "name": "Buttons",
@@ -1869,20 +2116,30 @@
                     "defaultValue": "(args: ButtonPageComponent) => ({\r\n  props: args,\r\n})"
                 }
             ],
-            "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts": [
+            "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts": [
                 {
-                    "name": "Checkboxes",
+                    "name": "CheckboxGroup",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                    "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
                     "type": "",
                     "defaultValue": "PageTemplate.bind({})"
                 },
                 {
+                    "name": "PageTemplate",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
+                    "type": "Story<CheckboxGroupComponent>",
+                    "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/stories/checkbox/checkbox.stories.ts": [
+                {
                     "name": "CheckboxTemplate",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                    "file": "src/stories/checkbox/checkbox.stories.ts",
                     "type": "Story<CheckboxComponent>",
                     "defaultValue": "(args: CheckboxComponent) => ({\r\n  props: args,\r\n})"
                 },
@@ -1890,23 +2147,15 @@
                     "name": "NoLabel",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                    "file": "src/stories/checkbox/checkbox.stories.ts",
                     "type": "",
                     "defaultValue": "CheckboxTemplate.bind({})"
-                },
-                {
-                    "name": "PageTemplate",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
-                    "type": "Story<CheckboxPageComponent>",
-                    "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
                 },
                 {
                     "name": "WithLabel",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                    "file": "src/stories/checkbox/checkbox.stories.ts",
                     "type": "",
                     "defaultValue": "CheckboxTemplate.bind({})"
                 }
@@ -1988,46 +2237,14 @@
                     "defaultValue": "Template.bind({})"
                 }
             ],
-            "src/stories/input/input.stories.ts": [
+            "src/environments/environment.ts": [
                 {
-                    "name": "Distructive",
+                    "name": "environment",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/input/input.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/input/input.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Secondary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/input/input.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/input/input.stories.ts",
-                    "type": "Story<InputComponent>",
-                    "defaultValue": "(args: InputComponent) => ({\r\n  props: args,\r\n})"
-                },
-                {
-                    "name": "Tertiary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/input/input.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
+                    "file": "src/environments/environment.ts",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: false\r\n}"
                 }
             ],
             "src/environments/environment.prod.ts": [
@@ -2040,14 +2257,22 @@
                     "defaultValue": "{\r\n  production: true\r\n}"
                 }
             ],
-            "src/environments/environment.ts": [
+            "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts": [
                 {
-                    "name": "environment",
+                    "name": "Examples",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/environments/environment.ts",
-                    "type": "object",
-                    "defaultValue": "{\r\n  production: false\r\n}"
+                    "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                    "type": "",
+                    "defaultValue": "PageTemplate.bind({})"
+                },
+                {
+                    "name": "PageTemplate",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                    "type": "Story<CheckboxGroupPageComponent>",
+                    "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
                 }
             ],
             "src/stories/typography/font-family/typography-font-family.stories.ts": [
@@ -2281,7 +2506,7 @@
                 "linktype": "interface",
                 "name": "IButton",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/11",
                 "status": "low"
             },
             {
@@ -2290,7 +2515,7 @@
                 "linktype": "component",
                 "name": "ButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/11",
                 "status": "low"
             },
             {
@@ -2344,6 +2569,73 @@
                 "status": "low"
             },
             {
+                "filePath": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CheckboxGroupPageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Examples",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PageTemplate",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/checkbox/checkbox-group/checkbox-group.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CheckboxGroupComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/checkbox/checkbox-group/checkbox-group.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "ICheckboxGroup",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "CheckboxGroup",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PageTemplate",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/stories/checkbox/checkbox-page/checkbox-page.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -2357,27 +2649,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Checkboxes",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "CheckboxTemplate",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "NoLabel",
+                "name": "Base",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -2393,22 +2665,51 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "WithLabel",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
                 "filePath": "src/stories/checkbox/checkbox.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "CheckboxComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/checkbox/checkbox.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "ICheckbox",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/checkbox/checkbox.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "CheckboxTemplate",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/checkbox/checkbox.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "NoLabel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/checkbox/checkbox.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithLabel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -2520,56 +2821,6 @@
                 "name": "InputComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/6",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/input/input.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Distructive",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/input/input.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/input/input.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Secondary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/input/input.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/input/input.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Tertiary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
                 "status": "low"
             },
             {
