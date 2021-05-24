@@ -16,23 +16,50 @@
     <main class="page-main">
       <ul class="page-list header-list">
         <li class="list-header"></li>
-        <li class="list-header">.p-btn.p-btn-{{type.key}}</li>
         <li class="list-header">
+          <span class="buttons-list-header">Default</span>
+          .p-btn.p-btn-{{type.key}}
+        </li>
+        <li class="list-header">
+          <span class="buttons-list-header">Disabled</span>
           [disabled]=true
           <br/>
           .p-btn:disabled
         </li>
         <li class="list-header">
+          <span class="buttons-list-header">Default + icon left</span>
           [iconBefore]="eye"
           <br/>
           .p-btn-icon-before
         </li>
         <li class="list-header">
+          <span class="buttons-list-header">Disabled + icon left</span>
+          [iconBefore]="eye"
+          <br/>
+          [disabled]=true
+          <br/>
+          .p-btn-icon-before
+          <br/>
+          .p-btn:disabled
+        </li>
+        <li class="list-header">
+          <span class="buttons-list-header">Default + icon right</span>
           [iconAfter]="chevron-down"
           <br/>
           .p-btn-icon-after
         </li>
         <li class="list-header">
+          <span class="buttons-list-header">Disabled + icon right</span>
+          [iconAfter]="chevron-down"
+          <br/>
+          [disabled]=true
+          <br/>
+          .p-btn-icon-after
+          <br/>
+          .p-btn:disabled
+        </li>
+        <li class="list-header">
+          <span class="buttons-list-header">Default + icon right&left</span>
           [iconBefore]="eye"
           <br/>
           [iconAfter]="chevron-down"
@@ -40,11 +67,20 @@
           .p-btn-icon-before
           <br/>
           .p-btn-icon-after
+        </li>
+        <li class="list-header">
+          <span class="buttons-list-header">Disabled + icon right&left</span>
+          [iconBefore]="eye"
+          <br/>
+          [iconAfter]="chevron-down"
+          <br/>
+          [disabled]=true
         </li>
       </ul>
       <ul *ngFor="let buttonType of type.value.buttons | keyvalue: originalOrder"
           class="page-list content-list {{buttonType.key}}">
         <li class="list-header">
+          <span class="buttons-list-header">{{buttonType.key}}</span>
           [buttonType]=
           <br/>
           "ButtonTypeEnum.{{buttonType.key.charAt(0).toUpperCase() + buttonType.key.slice(1)}}"
@@ -61,7 +97,8 @@
                     [iconAfter]="button.iconAfter"
                     [buttonType]="button.buttonType"
                     [iconAfterWidth]="button.iconAfterWidth"
-                    [iconAfterHeight]="button.iconAfterHeight">
+                    [iconAfterHeight]="button.iconAfterHeight"
+                    class="buttons-element">
           </p-button>
         </li>
       </ul>
