@@ -23,6 +23,9 @@
     .mat-checkbox-frame {
       border-color: $secondary-a-700;
     }
+    .mat-checkbox-mixedmark {
+      background-color: $secondary-a-700;
+    }
   }
 
   // disabled
@@ -56,6 +59,7 @@
     }
   }
   .mat-checkbox-checkmark-path {
+    stroke: $gray-scale-1 !important;
     stroke-width: 3px;
   }
   .mat-checkbox-checkmark {
@@ -82,9 +86,12 @@
       border-width: 1px;
       border-color: $primary-a-900;
     }
+    .mat-checkbox-checkmark {
+      transform: rotate(0);
+    }
   }
   .mat-checkbox-mixedmark {
-    width: calc(100% - 7px);
+    width: calc(100% - 8px);
     height: 2px;
     background-color: $primary-a-900;
   }
