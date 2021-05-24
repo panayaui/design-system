@@ -1,0 +1,12 @@
+<mat-form-field class="p-input-text">
+  <mat-label class="p-input-text-label">{{label}}</mat-label>
+  <input matInput
+         [placeholder]="placeholder"
+         [value]="value"
+         [disabled]="disabled"
+         [readonly]="readonly"
+         class="p-input-text-input">
+  <mat-error *ngIf="error">
+    {{error}}
+  </mat-error>
+</mat-form-field>
