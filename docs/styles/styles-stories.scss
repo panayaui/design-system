@@ -1,0 +1,295 @@
+// Theme variables, must be included before the libraries to allow overriding defaults
+@import './theme-variables';
+
+@import 'custom';
+
+body {
+  font-family: $font-family-basic;
+  color: $primary-a-900;
+  padding: 0 !important;
+}
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+.sr-only {
+  font-size: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @include resetH;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.page {
+  $page-line-height: 70px;
+  &-main {
+    display: flex;
+    padding: 80px;
+    background-color: $white;
+  }
+
+  &-list {
+    @include resetUl;
+    &.header-list {
+      min-width: 175px;
+      .list-header {
+        text-align: right;
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  .list-header {
+    display: flex;
+    align-items: center;
+    font-size: $base-font-size;
+    font-weight: 500;
+    color: $gray-scale-800;
+    line-height: 1.5;
+    height: $page-line-height;
+    padding-right: 20px;
+    padding-left: 20px;
+    white-space: nowrap;
+  }
+
+  .list-item {
+    display: flex;
+    align-items: center;
+    height: $page-line-height;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
+.page-header {
+  color: $gray-scale-700;
+  height: $page-header-height;
+  padding: 46px 46px 10px 46px;
+  background-color: $primary-c-50;
+  &-line {
+    font-size: 25px;
+    line-height: 30.48px;
+    .page-title ~ & {
+      margin-top: 33px;
+    }
+    & ~ & {
+      margin-top: 13px;
+    }
+  }
+  &-highlighted {
+    font-weight: 500;
+  }
+}
+
+.page-title {
+  font-family: $font-family-accent;
+  font-size: 50px;
+  line-height: 42px;
+  &-highlighted {
+    font-weight: 700;
+  }
+}
+
+//border around the elements
+.header-list {
+  .list-header:not(:first-child) {
+    border-right: 1px dashed $secondary-a-500;
+  }
+}
+.content-list {
+  .list-header {
+    border-bottom: 1px dashed $secondary-a-500;
+  }
+  &:last-child {
+    .list-item {
+      border-right: 1px dashed $secondary-a-500;
+    }
+  }
+  .list-item:last-child {
+    border-bottom: 1px dashed $secondary-a-500;
+  }
+}
+
+//font-family
+.font-family-accent {
+  font-family: $font-family-accent;
+}
+.font-family-basic {
+  font-family: $font-family-basic;
+}
+
+//font-weight
+.weight-regular {
+  font-weight: 400;
+}
+.weight-medium {
+  font-weight: 500;
+}
+.weight-semi-bold {
+  font-weight: 600;
+}
+.weight-bold {
+  font-weight: 700;
+}
+
+//typography
+.headline-contrast {
+  color: $primary-b-300;
+}
+.headline-1-bold {
+  font-family: $font-family-accent;
+  font-size: $large-font-size;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.headline-1-sub-semibold {
+  font-family: $font-family-basic;
+  font-size: $big-font-size;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+.headline-2-bold {
+   font-family: $font-family-accent;
+   font-size: $middle-font-size;
+   font-weight: 700;
+   letter-spacing: 0.08em;
+   text-transform: uppercase;
+ }
+.headline-2-semibold {
+  font-family: $font-family-accent;
+  font-size: $middle-font-size;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.headline-3-regular {
+  font-family: $font-family-accent;
+  font-size: $middle-font-size;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+}
+.headline-3-semibold {
+  font-family: $font-family-accent;
+  font-size: $middle-font-size;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+.headline-4-bold {
+  font-family: $font-family-basic;
+  font-size: $tiny-font-size;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.headline-5-bold {
+  font-family: $font-family-accent;
+  font-size: $middle-font-size;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.headline-6-bold {
+  font-family: $font-family-basic;
+  font-size: $tiny-font-size;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.headline-6-semibold {
+  font-family: $font-family-basic;
+  font-size: $tiny-font-size;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.headline-7-bold {
+  font-family: $font-family-basic;
+  font-size: $dominant-font-size;
+  font-weight: 700;
+  letter-spacing: normal;
+}
+.paragraph-1-default {
+  font-family: $font-family-basic;
+  font-size: $base-font-size;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 20px;
+}
+.paragraph-1-link {
+  font-family: $font-family-basic;
+  font-size: $base-font-size;
+  font-weight: 500;
+  letter-spacing: normal;
+  color: $secondary-a-700;
+  line-height: 20px;
+}
+.paragraph-1-large-label {
+  font-family: $font-family-basic;
+  font-size: $base-font-size;
+  font-weight: 500;
+  letter-spacing: normal;
+  color: $gray-scale-700;
+  line-height: 20px;
+}
+.paragraph-2-regular {
+  font-family: $font-family-basic;
+  font-size: $small-font-size;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 20px;
+}
+.paragraph-2-link {
+  font-family: $font-family-basic;
+  font-size: $small-font-size;
+  font-weight: 500;
+  letter-spacing: normal;
+  color: $secondary-a-700;
+  line-height: 20px;
+}
+.paragraph-2-actions {
+  font-family: $font-family-basic;
+  font-size: $small-font-size;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 20px;
+}
+.paragraph-3-default {
+  font-family: $font-family-basic;
+  font-size: $tiny-font-size;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 20px;
+}
+.paragraph-3-link {
+  font-family: $font-family-basic;
+  font-size: $tiny-font-size;
+  font-weight: 400;
+  letter-spacing: normal;
+  color: $secondary-a-700;
+  line-height: 20px;
+}
+.paragraph-3-medium {
+  font-family: $font-family-basic;
+  font-size: $tiny-font-size;
+  font-weight: 500;
+  letter-spacing: normal;
+  line-height: 20px;
+}
+.paragraph-3-semibold {
+  font-family: $font-family-basic;
+  font-size: $tiny-font-size;
+  font-weight: 600;
+  letter-spacing: normal;
+  color: $gray-scale-700;
+  line-height: 20px;
+}
+
+
+@import 'icons';
