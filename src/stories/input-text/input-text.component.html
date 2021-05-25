@@ -8,8 +8,9 @@
          [disabled]="disabled"
          [readonly]="readonly"
          attr.aria-label="{{ariaLabel}}"
+         [formControl]="emailFormControl"
          class="p-input-text-input">
-  <mat-error *ngIf="errorMessage" class="p-input-text-error">
+  <mat-error *ngIf="emailFormControl.hasError('required')" class="p-input-text-error">
     {{errorMessage}}
   </mat-error>
 </mat-form-field>
