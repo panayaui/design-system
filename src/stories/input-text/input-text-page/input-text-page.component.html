@@ -1,0 +1,38 @@
+<div class="page input-text">
+    <header class="page-header">
+      <h1 class="page-title">Text Input / <span class="page-header-highlighted">Base</span></h1>
+    </header>
+
+    <main class="page-main">
+      <ul class="page-list header-list">
+        <li class="list-header"></li>
+        <li class="list-header">
+          Default
+        </li>
+        <li class="list-header">
+          Disabled
+        </li>
+        <li class="list-header">
+          View only
+        </li>
+      </ul>
+
+      <ul *ngFor="let inputType of inputTextPage | keyvalue: originalOrder"
+          class="page-list content-list">
+        <li class="list-header">
+          {{inputType.value.title}}
+        </li>
+        <li *ngFor="let input of inputType.value.list" class="list-item">
+          <p-input-text [type]="input.type"
+                        [label]="input.label"
+                        [ariaLabel]="input.ariaLabel"
+                        [placeholder]="input.placeholder"
+                        [errorState]="input.errorState"
+                        [errorMessage]="input.errorMessage"
+                        [disabled]="input.disabled"
+                        [readonly]="input.readonly">
+          </p-input-text>
+        </li>
+      </ul>
+    </main>
+</div>
