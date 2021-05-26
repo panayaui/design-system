@@ -8,18 +8,24 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
 import {ReactiveFormsModule} from '@angular/forms';
+import {IconsModule} from '../../../app/icons/icons.module';
+import IconComponent from '../../icons/icon.component';
 
 export default {
   title: 'Components/Input/Table',
   component: InputTextTableLayoutComponent,
   decorators: [
     moduleMetadata({
-      declarations: [InputTextTableLayoutComponent, InputTextComponent],
+      declarations: [InputTextTableLayoutComponent,
+        InputTextComponent,
+        IconComponent
+      ],
       imports: [CommonModule,
         MatInputModule,
         BrowserAnimationsModule,
         MatFormFieldModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        IconsModule
       ],
     }),
   ],
@@ -31,8 +37,8 @@ const PageTemplate: Story<InputTextTableLayoutComponent> = (args: InputTextTable
 
 export const Table = PageTemplate.bind({});
 Table.args = {
-  inputTablePage: [
-    {
+  inputTablePage: {
+    simple: {
       title: 'Resolution',
       table: [
         {
@@ -61,7 +67,7 @@ Table.args = {
         }
       ]
     },
-    {
+    complex: {
       title: 'Resolution',
       table: [
         {
@@ -82,9 +88,11 @@ Table.args = {
         },
         {
           tableHeader: 'Cell long long Label Cell long long Label Cell long Label Cell long Label Cell long Label Cell long Label',
-          tableData: {...InputTextStories.NoLabel.args,
+          tableData: {
+            ...InputTextStories.NoLabel.args,
             ariaLabel: 'Cell long long Label Cell long long Label Cell long Label Cell long Label Cell long Label Cell long Label',
-            errorMessage: 'Validation text'}
+            errorMessage: 'Validation text'
+          }
         },
         {
           tableHeader: 'Cell Label',
@@ -92,7 +100,7 @@ Table.args = {
         }
       ]
     }
-  ]
+  }
 };
 
 

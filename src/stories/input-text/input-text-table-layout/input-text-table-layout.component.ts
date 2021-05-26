@@ -8,6 +8,8 @@ import {KeyValue} from '@angular/common';
 })
 export default class InputTextTableLayoutComponent {
   @Input() inputTablePage: any;
+  public isSimpleTableVisible: boolean = true;
+  public isComplesTableVisible: boolean = false;
 
   originalOrder = (a: KeyValue<number, string>, b: KeyValue<number, string>): number => {
     return 0;
