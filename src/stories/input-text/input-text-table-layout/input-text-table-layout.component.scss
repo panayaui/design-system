@@ -1,0 +1,42 @@
+@import "../../assets/styles/custom";
+
+.page-input-text-table-layout {
+  .page-main {
+    display: block;
+  }
+}
+
+.input-table {
+  border-collapse: collapse;
+  //border: 1px solid black;
+  &~& {
+    margin-top: 220px;
+  }
+
+  &-header,
+  &-data {
+    //border: 1px solid black;
+  }
+
+  &-header {
+    font-family: $font-family-basic;
+    font-size: $base-font-size;
+    font-weight: 400;
+    color: $gray-scale-700;
+    text-align: left;
+    text-transform: capitalize;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-right: 40px;
+    @include clamp;
+  }
+
+  &-data {
+    ::ng-deep .mat-form-field-infix {
+      border-top-width: 0.08px;
+    }
+    ::ng-deep .mat-form-field-wrapper {
+      padding-bottom: 1em;
+    }
+  }
+}

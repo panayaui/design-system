@@ -29,8 +29,8 @@ const PageTemplate: Story<InputTextPageComponent> = (args: InputTextPageComponen
   props: args,
 });
 
-export const Base = PageTemplate.bind({});
-Base.args = {
+export const Page = PageTemplate.bind({});
+Page.args = {
   inputTextPage: {
     noLabel: {
       title: 'No label',

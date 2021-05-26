@@ -7,7 +7,7 @@ import {KeyValue} from '@angular/common';
   styleUrls: ['./input-text-page.component.scss'],
 })
 export default class InputTextPageComponent {
-  @Input() checkboxesPage: any;
+  @Input() inputTextPage: any;
 
   originalOrder = (a: KeyValue<number, string>, b: KeyValue<number, string>): number => {
     return 0;

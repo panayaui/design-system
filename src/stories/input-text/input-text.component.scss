@@ -1,6 +1,7 @@
 @import "../assets/styles/custom";
 
 $input-text-width: 220px;
+$input-text-padding: 8px;
 
 .p-input-text {
   &-label {
@@ -17,13 +18,17 @@ $input-text-width: 220px;
     .mat-input-element {
       font-family: $font-family-basic;
       font-size: $base-font-size;
+      max-width: $input-text-width - $input-text-padding;
       line-height: 20px;
       color: $primary-a-900;
-      padding-left: 8px;
+      padding-left: $input-text-padding;
       caret-color: $primary-a-900;
     }
     .mat-form-field-infix {
       width: $input-text-width;
+    }
+    &.mat-form-field-appearance-standard .mat-form-field-flex {
+      padding-top: 0;
     }
     &.mat-form-field-appearance-standard .mat-form-field-underline {
       background-color: transparent;
