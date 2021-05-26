@@ -1,0 +1,63 @@
+@import "../../assets/styles/custom";
+
+$table-header-max-width: 240px;
+$table-header-padding-right: 40px;
+
+.page-input-text-table-layout {
+  .page-main {
+    display: block;
+  }
+}
+
+.input-table {
+  border-collapse: collapse;
+
+  &-header {
+    font-family: $font-family-basic;
+    font-size: $base-font-size;
+    font-weight: 400;
+    color: $gray-scale-700;
+    text-align: left;
+    text-transform: capitalize;
+    max-width: $table-header-max-width;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-right: $table-header-padding-right;
+    @include clamp;
+  }
+
+  &-data {
+    ::ng-deep .mat-form-field-infix {
+      border-top-width: 0.08px;
+    }
+    ::ng-deep .mat-form-field-wrapper {
+      padding-bottom: 1em;
+    }
+  }
+}
+
+.input-table-wrapper {
+  height: 325px;
+  &~& {
+    margin-top: 220px;
+  }
+}
+
+.input-table-trigger {
+  @include resetButton;
+  font-family: $font-family-accent;
+  font-weight: 700;
+  font-size: $middle-font-size;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $primary-a-900;
+  margin-bottom: 15px;
+  &-icon {
+    display: flex;
+    margin-right: 12.5px;
+  }
+}
+
+.input-table-container {
+  padding-left: 22px;
+}

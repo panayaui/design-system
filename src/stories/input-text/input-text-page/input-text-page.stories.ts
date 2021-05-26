@@ -29,8 +29,8 @@ const PageTemplate: Story<InputTextPageComponent> = (args: InputTextPageComponen
   props: args,
 });
 
-export const Base = PageTemplate.bind({});
-Base.args = {
+export const Page = PageTemplate.bind({});
+Page.args = {
   inputTextPage: {
     noLabel: {
       title: 'No label',
@@ -51,17 +51,13 @@ Base.args = {
     errorState: {
       title: 'Label - error',
       list: [
-        {...InputTextStories.ErrorState.args},
-        {...InputTextStories.ErrorState.args, disabled: true},
-        {...InputTextStories.ErrorState.args, readonly: true},
+        {...InputTextStories.ErrorState.args}
       ]
     },
     errorMessage: {
       title: 'Label+validation text - error',
       list: [
-        {...InputTextStories.ErrorMessage.args},
-        {...InputTextStories.ErrorMessage.args, disabled: true},
-        {...InputTextStories.ErrorMessage.args, readonly: true},
+        {...InputTextStories.ErrorMessage.args}
       ]
     },
   }

@@ -1,4 +1,4 @@
-<div class="page input-text">
+<div class="page page-input-text">
     <header class="page-header">
       <h1 class="page-title">Text Input / <span class="page-header-highlighted">Base</span></h1>
     </header>
@@ -27,12 +27,17 @@
                         [label]="input.label"
                         [ariaLabel]="input.ariaLabel"
                         [placeholder]="input.placeholder"
-                        [errorState]="input.errorState"
                         [errorMessage]="input.errorMessage"
                         [disabled]="input.disabled"
-                        [readonly]="input.readonly">
+                        [readonly]="input.readonly"
+                        [value]="input.value"
+                        [validators]="input.validators">
           </p-input-text>
         </li>
+        <ng-container *ngIf="inputType.value.list.length === 1">
+          <li class="list-item"></li>
+          <li class="list-item"></li>
+        </ng-container>
       </ul>
     </main>
 </div>

@@ -34,3 +34,11 @@ $tiny-font-size: 12px;
 $weeny-font-size: 10px;
 
 $page-header-height: 220px;
+
+@mixin clamp($lines: 2) {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+}

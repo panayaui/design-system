@@ -1,16 +1,17 @@
 <mat-form-field class="p-input-text"
-                [ngClass]="{'error-state' : errorState, 'read-only' : readonly}"
+                appearance="standard"
+                [ngClass]="{'p-input-text-readonly' : readonly}"
                 floatLabel="always">
   <mat-label class="p-input-text-label">{{label}}</mat-label>
   <input matInput
          [type]="type"
          [placeholder]="placeholder"
-         [disabled]="disabled"
          [readonly]="readonly"
          attr.aria-label="{{ariaLabel}}"
-         [formControl]="emailFormControl"
+         [formControl]="inputTextControl"
          class="p-input-text-input">
-  <mat-error *ngIf="emailFormControl.hasError('required')" class="p-input-text-error">
+  <mat-error *ngIf="inputTextControl.hasError('required')"
+             class="p-input-text-error">
     {{errorMessage}}
   </mat-error>
 </mat-form-field>
