@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, Validators} from '@angular/forms';
+import {FormControl, ValidatorFn} from '@angular/forms';
 
 @Component({
   selector: 'p-input-text',
@@ -8,7 +8,6 @@ import {FormBuilder, FormControl, Validators} from '@angular/forms';
 })
 export default class InputTextComponent implements OnInit {
   @Input() type: string = 'text';
-  @Input() inputName: string;
   @Input() label: string;
   @Input() ariaLabel: string;
   @Input() placeholder: string;
@@ -16,21 +15,13 @@ export default class InputTextComponent implements OnInit {
   @Input() errorMessage: string;
   @Input() disabled: boolean = false;
   @Input() readonly: boolean = false;
+  @Input() value: string;
+  @Input() validators: ValidatorFn[];
   public emailFormControl: FormControl;
 
-  constructor(private fb: FormBuilder) {}
-
   ngOnInit(): void {
-    this.emailFormControl = new FormControl({value: 'Input text', disabled: this.disabled}, [
-      Validators.required
-    ]);
+    this.emailFormControl = new FormControl(
+      {value: this.value, disabled: this.disabled},
+      this.validators);
   }
-
-
-
-  // form = this.fb.group({
-  //   emailFormControl: new FormControl({ value: 'Input text', disabled: this.disabled }, [
-  //     Validators.required
-  //   ])
-  // });
 }
