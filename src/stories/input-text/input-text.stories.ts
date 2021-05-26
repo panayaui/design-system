@@ -34,14 +34,16 @@ NoLabel.args = {
 
 export const WithLabel = Template.bind({});
 WithLabel.args = {
-  ...NoLabel.args,
-  label: 'Label'
+  label: 'Label',
+  value: 'Input text',
+  validators: Validators.required
 };
 
 export const ErrorState = Template.bind({});
 ErrorState.args = {
-  ...WithLabel.args,
-  errorState: true
+  label: 'Label',
+  value: '',
+  validators: Validators.required
 };
 
 export const ErrorMessage = Template.bind({});

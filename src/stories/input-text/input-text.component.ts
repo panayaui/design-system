@@ -11,16 +11,15 @@ export default class InputTextComponent implements OnInit {
   @Input() label: string;
   @Input() ariaLabel: string;
   @Input() placeholder: string;
-  @Input() errorState: boolean = false;
   @Input() errorMessage: string;
   @Input() disabled: boolean = false;
   @Input() readonly: boolean = false;
   @Input() value: string;
   @Input() validators: ValidatorFn[];
-  public emailFormControl: FormControl;
+  public inputTextControl: FormControl;
 
   ngOnInit(): void {
-    this.emailFormControl = new FormControl(
+    this.inputTextControl = new FormControl(
       {value: this.value, disabled: this.disabled},
       this.validators);
   }
