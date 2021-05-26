@@ -99,20 +99,20 @@ p {
 //border around the elements
 .header-list {
   .list-header:not(:first-child) {
-    border-right: 1px dashed $secondary-a-500;
+    border-right: 1px solid $gray-scale-500;
   }
 }
 .content-list {
   .list-header {
-    border-bottom: 1px dashed $secondary-a-500;
+    border-bottom: 1px solid $gray-scale-500;
   }
   &:last-child {
     .list-item {
-      border-right: 1px dashed $secondary-a-500;
+      border-right: 1px solid $gray-scale-500;
     }
   }
   .list-item:last-child {
-    border-bottom: 1px dashed $secondary-a-500;
+    border-bottom: 1px solid $gray-scale-500;
   }
 }
 
