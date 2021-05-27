@@ -8,8 +8,9 @@ import IconComponent from '../../icons/icon.component';
 import {IconsModule} from '../../../app/icons/icons.module';
 
 export default {
-  title: 'Components/Buttons',
+  title: 'Components/Buttons/All',
   component: ButtonPageComponent,
+  subcomponents: { ButtonComponent },
   decorators: [
     moduleMetadata({
       declarations: [ButtonPageComponent, ButtonComponent, IconComponent],
@@ -22,8 +23,8 @@ const Template: Story<ButtonPageComponent> = (args: ButtonPageComponent) => ({
   props: args,
 });
 
-export const Buttons = Template.bind({});
-Buttons.args = {
+export const All = Template.bind({});
+All.args = {
   buttonsPage: {
     small: {
       height: '30px',
