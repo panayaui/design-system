@@ -5,12 +5,17 @@ import ButtonComponent from './button.component';
 
 # App Component
 
-export const Template = (args) => <ButtonComponent {...args} />
 
+export const Template = (args) => <ButtonComponent {...args} />
 
 <Story name="Button"
 args={{
-  label: 'test button'
+  label: 'Label',
+    large: false,
+    disabled: false,
+    buttonType: 'primary',
+    iconBeforeWidth: '17',
+    iconAfterWidth: '17'
 }}>
 {Template.bind({})}
 </Story>
