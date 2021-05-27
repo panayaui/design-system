@@ -474,7 +474,7 @@
                     }
                 }
             },
-            "templateData": "<button class=\"p-btn\" [ngClass]=\"classes\" [disabled]=\"disabled\">\r\n  <p-icon *ngIf=\"iconBefore\"\r\n          class=\"p-btn-icon-pre\"\r\n          [name]=\"iconBefore\"\r\n          [width]=\"iconBeforeWidth\"\r\n          [height]=\"iconBeforeHeight\"></p-icon>\r\n  <span class=\"p-btn-label\">{{label}}</span>\r\n  <p-icon *ngIf=\"iconAfter\"\r\n          class=\"p-btn-icon-post\"\r\n          [name]=\"iconAfter\"\r\n          [width]=\"iconAfterWidth\"\r\n          [height]=\"iconAfterHeight\"></p-icon>\r\n</button>\r\n"
+            "templateData": "<button class=\"p-btn\" [ngClass]=\"classes\" [disabled]=\"disabled\">\r\n  <!--<p-icon *ngIf=\"iconBefore\"-->\r\n          <!--class=\"p-btn-icon-pre\"-->\r\n          <!--[name]=\"iconBefore\"-->\r\n          <!--[width]=\"iconBeforeWidth\"-->\r\n          <!--[height]=\"iconBeforeHeight\"></p-icon>-->\r\n  <span class=\"p-btn-label\">{{label}}</span>\r\n  <!--<p-icon *ngIf=\"iconAfter\"-->\r\n          <!--class=\"p-btn-icon-post\"-->\r\n          <!--[name]=\"iconAfter\"-->\r\n          <!--[width]=\"iconAfterWidth\"-->\r\n          <!--[height]=\"iconAfterHeight\"></p-icon>-->\r\n</button>\r\n"
         },
         {
             "name": "ButtonPageComponent",
@@ -1616,14 +1616,6 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
-                "type": "Story<CheckboxPageComponent>",
-                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "PageTemplate",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
                 "type": "Story<CheckboxGroupComponent>",
                 "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
@@ -1640,9 +1632,9 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts",
-                "type": "Story<SlideTogglePageComponent>",
-                "defaultValue": "(args: SlideTogglePageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "Story<CheckboxPageComponent>",
+                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -1659,6 +1651,14 @@
                 "file": "src/stories/input-text/input-text-table-layout/input-text-table-layout.stories.ts",
                 "type": "Story<InputTextTableLayoutComponent>",
                 "defaultValue": "(args: InputTextTableLayoutComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "PageTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts",
+                "type": "Story<SlideTogglePageComponent>",
+                "defaultValue": "(args: SlideTogglePageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "palette",
@@ -1719,14 +1719,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/colors/Color-palette.stories.ts",
-                "type": "Story<ColorPaletteComponent>",
-                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/button/button.stories.ts",
                 "type": "Story<ButtonComponent>",
                 "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
@@ -1738,6 +1730,14 @@
                 "file": "src/stories/input-text/input-text.stories.ts",
                 "type": "Story<InputTextComponent>",
                 "defaultValue": "(args: InputTextComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/colors/Color-palette.stories.ts",
+                "type": "Story<ColorPaletteComponent>",
+                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
