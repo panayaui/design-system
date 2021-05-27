@@ -1,0 +1,17 @@
+import { Meta, Story, ArgsTable } from '@storybook/addon-docs/blocks';
+import ButtonComponent from './button.component';
+
+<Meta title='App Component' component={ButtonComponent} />
+
+# App Component
+
+export const Template = (args) => <ButtonComponent {...args} />
+
+
+<Story name="Button"
+args={{
+  label: 'test button'
+}}>
+{Template.bind({})}
+</Story>
+

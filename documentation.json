@@ -1477,20 +1477,20 @@
     "miscellaneous": {
         "variables": [
             {
+                "name": "All",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/button/button-page/button-page.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "Base",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
                 "type": "",
                 "defaultValue": "PageTemplate.bind({})"
-            },
-            {
-                "name": "Buttons",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/button/button-page/button-page.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "CheckboxGroup",
@@ -1584,17 +1584,17 @@
                 "name": "NoLabel",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input-text/input-text.stories.ts",
+                "file": "src/stories/checkbox/checkbox.stories.ts",
                 "type": "",
-                "defaultValue": "Template.bind({})"
+                "defaultValue": "CheckboxTemplate.bind({})"
             },
             {
                 "name": "NoLabel",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox.stories.ts",
+                "file": "src/stories/input-text/input-text.stories.ts",
                 "type": "",
-                "defaultValue": "CheckboxTemplate.bind({})"
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "NoLabel",
@@ -1616,33 +1616,9 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
-                "type": "Story<InputTextPageComponent>",
-                "defaultValue": "(args: InputTextPageComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "PageTemplate",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/input-text/input-text-table-layout/input-text-table-layout.stories.ts",
-                "type": "Story<InputTextTableLayoutComponent>",
-                "defaultValue": "(args: InputTextTableLayoutComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "PageTemplate",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts",
-                "type": "Story<SlideTogglePageComponent>",
-                "defaultValue": "(args: SlideTogglePageComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "PageTemplate",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
-                "type": "Story<CheckboxGroupPageComponent>",
-                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "Story<CheckboxPageComponent>",
+                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -1656,9 +1632,33 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
-                "type": "Story<CheckboxPageComponent>",
-                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "Story<CheckboxGroupPageComponent>",
+                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "PageTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts",
+                "type": "Story<SlideTogglePageComponent>",
+                "defaultValue": "(args: SlideTogglePageComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "PageTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
+                "type": "Story<InputTextPageComponent>",
+                "defaultValue": "(args: InputTextPageComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "PageTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/input-text/input-text-table-layout/input-text-table-layout.stories.ts",
+                "type": "Story<InputTextTableLayoutComponent>",
+                "defaultValue": "(args: InputTextTableLayoutComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "palette",
@@ -1791,17 +1791,17 @@
                 "name": "WithLabel",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input-text/input-text.stories.ts",
+                "file": "src/stories/checkbox/checkbox.stories.ts",
                 "type": "",
-                "defaultValue": "Template.bind({})"
+                "defaultValue": "CheckboxTemplate.bind({})"
             },
             {
                 "name": "WithLabel",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox.stories.ts",
+                "file": "src/stories/input-text/input-text.stories.ts",
                 "type": "",
-                "defaultValue": "CheckboxTemplate.bind({})"
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "WithLabel",
@@ -1842,6 +1842,24 @@
             }
         ],
         "groupedVariables": {
+            "src/stories/button/button-page/button-page.stories.ts": [
+                {
+                    "name": "All",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/button/button-page/button-page.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/button/button-page/button-page.stories.ts",
+                    "type": "Story<ButtonPageComponent>",
+                    "defaultValue": "(args: ButtonPageComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
             "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts": [
                 {
                     "name": "Base",
@@ -1858,24 +1876,6 @@
                     "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
                     "type": "Story<CheckboxPageComponent>",
                     "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
-                }
-            ],
-            "src/stories/button/button-page/button-page.stories.ts": [
-                {
-                    "name": "Buttons",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/button/button-page/button-page.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/button/button-page/button-page.stories.ts",
-                    "type": "Story<ButtonPageComponent>",
-                    "defaultValue": "(args: ButtonPageComponent) => ({\r\n  props: args,\r\n})"
                 }
             ],
             "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts": [
@@ -2325,7 +2325,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Buttons",
+                "name": "All",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
