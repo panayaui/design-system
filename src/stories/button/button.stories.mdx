@@ -1,0 +1,76 @@
+import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs/blocks';
+import ButtonComponent from './button.component';
+import {ButtonTypeEnum} from './button-page/button-type.enum';
+
+<Meta title='Button' component={ButtonComponent} />
+
+# Button
+
+export const Template = (args) => <ButtonComponent {...args} />
+
+###### Selector
+```ts
+  <p-button></p-button>
+```
+```ts
+export default class ButtonComponent {
+  @Input() label: string;
+  @Input() large: boolean = false;
+  @Input() disabled: boolean = false;
+  @Input() iconBefore: string;
+  @Input() iconBeforeWidth: string = 'auto';
+  @Input() iconBeforeHeight: string = 'auto';
+  @Input() iconAfter: string;
+  @Input() iconAfterWidth: string = 'auto';
+  @Input() iconAfterHeight: string = 'auto';
+  @Input() buttonType: ButtonTypeEnum = ButtonTypeEnum.Primary;
+}
+```
+
+<Canvas>
+  <Story name="Primary"
+    args={{
+      label: 'Label',
+      large: false,
+      disabled: false,
+      buttonType: ButtonTypeEnum.Primary,
+      iconBeforeWidth: '17',
+      iconAfterWidth: '17'
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Secondary"
+    args={{
+      label: 'Label',
+      large: false,
+      disabled: false,
+      buttonType: ButtonTypeEnum.Secondary,
+      iconBeforeWidth: '17',
+      iconAfterWidth: '17'
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Tertiary"
+    args={{
+      label: 'Label',
+      large: false,
+      disabled: false,
+      buttonType: ButtonTypeEnum.Tertiary,
+      iconBeforeWidth: '17',
+      iconAfterWidth: '17'
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Distructive"
+      args={{
+        label: 'Label',
+        large: false,
+        disabled: false,
+        buttonType: ButtonTypeEnum.Distructive,
+        iconBeforeWidth: '17',
+        iconAfterWidth: '17'
+      }}>
+      {Template.bind({})}
+    </Story>
+</Canvas>
+

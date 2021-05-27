@@ -26,6 +26,13 @@ p {
   margin-bottom: 0;
 }
 
+.sbdocs-h6 {
+  font-weight: 700;
+  & + .sbdocs-pre .docblock-source {
+    margin-top: 10px;
+  }
+}
+
 .page {
   $page-line-height: 70px;
   &-main {
@@ -156,12 +163,12 @@ p {
   letter-spacing: 0.05em;
 }
 .headline-2-bold {
-   font-family: $font-family-accent;
-   font-size: $middle-font-size;
-   font-weight: 700;
-   letter-spacing: 0.08em;
-   text-transform: uppercase;
- }
+  font-family: $font-family-accent;
+  font-size: $middle-font-size;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
 .headline-2-semibold {
   font-family: $font-family-accent;
   font-size: $middle-font-size;
