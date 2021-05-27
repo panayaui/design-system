@@ -195,6 +195,81 @@
             "indexSignatures": [],
             "kind": 150,
             "methods": []
+        },
+        {
+            "name": "IInputText",
+            "id": "interface-IInputText-8c282e88a7dfda980351670b8aadbccd",
+            "file": "src/stories/input-text/input-text.interface.ts",
+            "type": "interface",
+            "sourceCode": "import {ValidatorFn} from '@angular/forms';\r\n\r\nexport default interface IInputText {\r\n  type: string;\r\n  label: string;\r\n  ariaLabel: string;\r\n  placeholder: string;\r\n  errorMessage: string;\r\n  disabled: boolean;\r\n  readonly: boolean;\r\n  value: string;\r\n  validators: ValidatorFn[];\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "ariaLabel",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "disabled",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                },
+                {
+                    "name": "errorMessage",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 8
+                },
+                {
+                    "name": "label",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "placeholder",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                },
+                {
+                    "name": "readonly",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                },
+                {
+                    "name": "type",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "validators",
+                    "type": "ValidatorFn[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "value",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
         }
     ],
     "injectables": [],
@@ -941,7 +1016,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$input-text-width: 220px;\r\n\r\n.p-input-text {\r\n  &-label {\r\n    font-family: $font-family-basic;\r\n    font-weight: 500;\r\n    font-size: $tiny-font-size;\r\n    text-transform: capitalize;\r\n    line-height: 19px;\r\n    color: $gray-scale-700;\r\n  }\r\n\r\n  ::ng-deep & {\r\n    // material styles override\r\n    .mat-input-element {\r\n      font-family: $font-family-basic;\r\n      font-size: $base-font-size;\r\n      line-height: 20px;\r\n      color: $primary-a-900;\r\n      padding-left: 8px;\r\n      caret-color: $primary-a-900;\r\n    }\r\n    .mat-form-field-infix {\r\n      width: $input-text-width;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $gray-scale-600;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-underline,\r\n    &:not(.mat-form-field-disabled):not(.mat-form-field-invalid)\r\n            .mat-form-field-flex:hover~.mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $primary-a-900;\r\n    }\r\n    .mat-form-field-ripple {\r\n      display: none;\r\n    }\r\n    .mat-error {\r\n      font-family: $font-family-basic;\r\n      font-size: $tiny-font-size;\r\n      color: $supportive-alert-500;\r\n      line-height: 19px;\r\n    }\r\n\r\n    // disabled\r\n    &.mat-form-field-disabled {\r\n      .mat-input-element {\r\n        color: $gray-scale-600;\r\n      }\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $gray-scale-400;\r\n      }\r\n    }\r\n\r\n    // error state\r\n    &.mat-form-field-invalid {\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-500;\r\n      }\r\n      &.mat-form-field.mat-focused .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-700;\r\n      }\r\n    }\r\n\r\n    // readonly\r\n    &.read-only {\r\n      .mat-form-field-underline {\r\n        box-shadow: none;\r\n      }\r\n    }\r\n  }\r\n\r\n}\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$input-text-width: 220px;\r\n$input-text-padding: 8px;\r\n\r\n.p-input-text {\r\n  &-label {\r\n    font-family: $font-family-basic;\r\n    font-weight: 500;\r\n    font-size: $tiny-font-size;\r\n    text-transform: capitalize;\r\n    line-height: 19px;\r\n    color: $gray-scale-700;\r\n  }\r\n\r\n  ::ng-deep & {\r\n    // material styles override\r\n    .mat-input-element {\r\n      font-family: $font-family-basic;\r\n      font-size: $base-font-size;\r\n      max-width: $input-text-width - $input-text-padding;\r\n      line-height: 20px;\r\n      color: $primary-a-900;\r\n      padding-left: $input-text-padding;\r\n      caret-color: $primary-a-900;\r\n    }\r\n    .mat-form-field-infix {\r\n      width: $input-text-width;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-flex {\r\n      padding-top: 0;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $gray-scale-600;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-underline,\r\n    &:not(.mat-form-field-disabled):not(.mat-form-field-invalid)\r\n            .mat-form-field-flex:hover~.mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $primary-a-900;\r\n    }\r\n    .mat-form-field-ripple {\r\n      display: none;\r\n    }\r\n    .mat-error {\r\n      font-family: $font-family-basic;\r\n      font-size: $tiny-font-size;\r\n      color: $supportive-alert-500;\r\n      line-height: 19px;\r\n    }\r\n\r\n    // disabled\r\n    &.mat-form-field-disabled {\r\n      .mat-input-element {\r\n        color: $gray-scale-600;\r\n      }\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $gray-scale-400;\r\n      }\r\n    }\r\n\r\n    // error state\r\n    &.mat-form-field-invalid {\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-500;\r\n      }\r\n      &.mat-form-field.mat-focused .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-700;\r\n      }\r\n    }\r\n\r\n    // readonly\r\n    &.p-input-text-readonly {\r\n      .mat-form-field-underline {\r\n        box-shadow: none;\r\n      }\r\n    }\r\n  }\r\n\r\n}\r\n",
                     "styleUrl": "./input-text.component.scss"
                 }
             ],
@@ -949,11 +1024,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<mat-form-field class=\"p-input-text\"\r\n                appearance=\"standard\"\r\n                [ngClass]=\"{'read-only' : readonly}\"\r\n                floatLabel=\"always\">\r\n  <mat-label class=\"p-input-text-label\">{{label}}</mat-label>\r\n  <input matInput\r\n         [type]=\"type\"\r\n         [placeholder]=\"placeholder\"\r\n         [disabled]=\"disabled\"\r\n         [readonly]=\"readonly\"\r\n         attr.aria-label=\"{{ariaLabel}}\"\r\n         [formControl]=\"inputTextControl\"\r\n         class=\"p-input-text-input\">\r\n  <mat-error *ngIf=\"inputTextControl.hasError('required')\" class=\"p-input-text-error\">\r\n    {{errorMessage}}\r\n  </mat-error>\r\n</mat-form-field>\r\n"
+            "templateData": "<mat-form-field class=\"p-input-text\"\r\n                appearance=\"standard\"\r\n                [ngClass]=\"{'p-input-text-readonly' : readonly}\"\r\n                floatLabel=\"always\">\r\n  <mat-label class=\"p-input-text-label\">{{label}}</mat-label>\r\n  <input matInput\r\n         [type]=\"type\"\r\n         [placeholder]=\"placeholder\"\r\n         [readonly]=\"readonly\"\r\n         attr.aria-label=\"{{ariaLabel}}\"\r\n         [formControl]=\"inputTextControl\"\r\n         class=\"p-input-text-input\">\r\n  <mat-error *ngIf=\"inputTextControl.hasError('required')\"\r\n             class=\"p-input-text-error\">\r\n    {{errorMessage}}\r\n  </mat-error>\r\n</mat-form-field>\r\n"
         },
         {
             "name": "InputTextPageComponent",
-            "id": "component-InputTextPageComponent-2ec323543bc3ace908bb4b2468a7cbe7",
+            "id": "component-InputTextPageComponent-5ccd3658571e2b6881c3496584af3a38",
             "file": "src/stories/input-text/input-text-page/input-text-page.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -971,7 +1046,7 @@
             "viewProviders": [],
             "inputsClass": [
                 {
-                    "name": "checkboxesPage",
+                    "name": "inputTextPage",
                     "line": 10,
                     "type": "any"
                 }
@@ -993,7 +1068,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {KeyValue} from '@angular/common';\r\n\r\n@Component({\r\n  selector: 'p-input-text-page',\r\n  templateUrl: './input-text-page.component.html',\r\n  styleUrls: ['./input-text-page.component.scss'],\r\n})\r\nexport default class InputTextPageComponent {\r\n  @Input() checkboxesPage: any;\r\n\r\n  originalOrder = (a: KeyValue<number, string>, b: KeyValue<number, string>): number => {\r\n    return 0;\r\n  }\r\n}\r\n\r\n\r\n",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {KeyValue} from '@angular/common';\r\n\r\n@Component({\r\n  selector: 'p-input-text-page',\r\n  templateUrl: './input-text-page.component.html',\r\n  styleUrls: ['./input-text-page.component.scss'],\r\n})\r\nexport default class InputTextPageComponent {\r\n  @Input() inputTextPage: any;\r\n\r\n  originalOrder = (a: KeyValue<number, string>, b: KeyValue<number, string>): number => {\r\n    return 0;\r\n  }\r\n}\r\n\r\n\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1003,6 +1078,81 @@
             ],
             "stylesData": "",
             "templateData": "<div class=\"page page-input-text\">\r\n    <header class=\"page-header\">\r\n      <h1 class=\"page-title\">Text Input / <span class=\"page-header-highlighted\">Base</span></h1>\r\n    </header>\r\n\r\n    <main class=\"page-main\">\r\n      <ul class=\"page-list header-list\">\r\n        <li class=\"list-header\"></li>\r\n        <li class=\"list-header\">\r\n          Default\r\n        </li>\r\n        <li class=\"list-header\">\r\n          Disabled\r\n        </li>\r\n        <li class=\"list-header\">\r\n          View only\r\n        </li>\r\n      </ul>\r\n\r\n      <ul *ngFor=\"let inputType of inputTextPage | keyvalue: originalOrder\"\r\n          class=\"page-list content-list\">\r\n        <li class=\"list-header\">\r\n          {{inputType.value.title}}\r\n        </li>\r\n        <li *ngFor=\"let input of inputType.value.list\" class=\"list-item\">\r\n          <p-input-text [type]=\"input.type\"\r\n                        [label]=\"input.label\"\r\n                        [ariaLabel]=\"input.ariaLabel\"\r\n                        [placeholder]=\"input.placeholder\"\r\n                        [errorMessage]=\"input.errorMessage\"\r\n                        [disabled]=\"input.disabled\"\r\n                        [readonly]=\"input.readonly\"\r\n                        [value]=\"input.value\"\r\n                        [validators]=\"input.validators\">\r\n          </p-input-text>\r\n        </li>\r\n        <ng-container *ngIf=\"inputType.value.list.length === 1\">\r\n          <li class=\"list-item\"></li>\r\n          <li class=\"list-item\"></li>\r\n        </ng-container>\r\n      </ul>\r\n    </main>\r\n</div>\r\n"
+        },
+        {
+            "name": "InputTextTableLayoutComponent",
+            "id": "component-InputTextTableLayoutComponent-a0ff9ff76b23fa249aff2293cf93b7c0",
+            "file": "src/stories/input-text/input-text-table-layout/input-text-table-layout.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-input-text-table-layout",
+            "styleUrls": [
+                "./input-text-table-layout.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./input-text-table-layout.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "inputTablePage",
+                    "line": 10,
+                    "type": "any"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "isComplesTableVisible",
+                    "defaultValue": "false",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "isSimpleTableVisible",
+                    "defaultValue": "true",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 11,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "originalOrder",
+                    "defaultValue": "() => {...}",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                }
+            ],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {KeyValue} from '@angular/common';\r\n\r\n@Component({\r\n  selector: 'p-input-text-table-layout',\r\n  templateUrl: './input-text-table-layout.component.html',\r\n  styleUrls: ['./input-text-table-layout.component.scss'],\r\n})\r\nexport default class InputTextTableLayoutComponent {\r\n  @Input() inputTablePage: any;\r\n  public isSimpleTableVisible: boolean = true;\r\n  public isComplesTableVisible: boolean = false;\r\n\r\n  originalOrder = (a: KeyValue<number, string>, b: KeyValue<number, string>): number => {\r\n    return 0;\r\n  }\r\n}\r\n\r\n\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$table-header-max-width: 240px;\r\n$table-header-padding-right: 40px;\r\n\r\n.page-input-text-table-layout {\r\n  .page-main {\r\n    display: block;\r\n  }\r\n}\r\n\r\n.input-table {\r\n  border-collapse: collapse;\r\n\r\n  &-header {\r\n    font-family: $font-family-basic;\r\n    font-size: $base-font-size;\r\n    font-weight: 400;\r\n    color: $gray-scale-700;\r\n    text-align: left;\r\n    text-transform: capitalize;\r\n    max-width: $table-header-max-width;\r\n    margin-top: 10px;\r\n    margin-bottom: 10px;\r\n    padding-right: $table-header-padding-right;\r\n    @include clamp;\r\n  }\r\n\r\n  &-data {\r\n    ::ng-deep .mat-form-field-infix {\r\n      border-top-width: 0.08px;\r\n    }\r\n    ::ng-deep .mat-form-field-wrapper {\r\n      padding-bottom: 1em;\r\n    }\r\n  }\r\n}\r\n\r\n.input-table-wrapper {\r\n  height: 325px;\r\n  &~& {\r\n    margin-top: 220px;\r\n  }\r\n}\r\n\r\n.input-table-trigger {\r\n  @include resetButton;\r\n  font-family: $font-family-accent;\r\n  font-weight: 700;\r\n  font-size: $middle-font-size;\r\n  letter-spacing: 0.05em;\r\n  text-transform: uppercase;\r\n  color: $primary-a-900;\r\n  margin-bottom: 15px;\r\n  &-icon {\r\n    display: flex;\r\n    margin-right: 12.5px;\r\n  }\r\n}\r\n\r\n.input-table-container {\r\n  padding-left: 22px;\r\n}\r\n",
+                    "styleUrl": "./input-text-table-layout.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"page page-input-text-table-layout\">\r\n    <header class=\"page-header\">\r\n      <h1 class=\"page-title\">Text Input /\r\n        <span class=\"page-header-highlighted\">Table layout definitions</span>\r\n      </h1>\r\n    </header>\r\n\r\n    <main class=\"page-main\">\r\n      <div class=\"input-table-wrapper\">\r\n        <button class=\"input-table-trigger\" (click)=\"isSimpleTableVisible = !isSimpleTableVisible\">\r\n          <p-icon class=\"input-table-trigger-icon\"\r\n                  name=\"chevron-down\"\r\n                  width=\"16\"\r\n                  height=\"auto\"\r\n                  strokeWidth=\"3\"></p-icon>\r\n          {{inputTablePage.simple.title}}\r\n        </button>\r\n        <div *ngIf=\"isSimpleTableVisible\"\r\n            tabindex=\"-1\"\r\n            attr.aria-label=\"{{inputTablePage.simple.title}}\"\r\n            class=\"input-table-container\">\r\n          <table class=\"input-table\">\r\n            <tbody class=\"input-table-body\">\r\n            <ng-container *ngFor=\"let input of inputTablePage.simple.table\">\r\n              <tr class=\"input-table-row\">\r\n                <th class=\"input-table-header\">\r\n                  {{input.tableHeader}}\r\n                </th>\r\n                <td class=\"input-table-data\">\r\n                  <p-input-text [type]=\"input.tableData.type\"\r\n                                [label]=\"input.tableData.label\"\r\n                                [ariaLabel]=\"input.tableData.ariaLabel\"\r\n                                [placeholder]=\"input.tableData.placeholder\"\r\n                                [errorMessage]=\"input.tableData.errorMessage\"\r\n                                [disabled]=\"input.tableData.disabled\"\r\n                                [readonly]=\"input.tableData.readonly\"\r\n                                [value]=\"input.tableData.value\"\r\n                                [validators]=\"input.tableData.validators\">\r\n                  </p-input-text>\r\n                </td>\r\n              </tr>\r\n            </ng-container>\r\n            </tbody>\r\n          </table>\r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"input-table-wrapper\">\r\n        <button class=\"input-table-trigger\" (click)=\"isComplesTableVisible = !isComplesTableVisible\">\r\n          <p-icon class=\"input-table-trigger-icon\"\r\n                  name=\"chevron-down\"\r\n                  width=\"16\"\r\n                  height=\"auto\"\r\n                  strokeWidth=\"3\"></p-icon>\r\n          {{inputTablePage.complex.title}}\r\n        </button>\r\n        <div *ngIf=\"isComplesTableVisible\"\r\n             tabindex=\"-1\"\r\n             attr.aria-label=\"{{inputTablePage.complex.title}}\"\r\n             class=\"input-table-container\">\r\n          <table class=\"input-table\">\r\n            <tbody class=\"input-table-body\">\r\n            <ng-container *ngFor=\"let input of inputTablePage.complex.table\">\r\n              <tr class=\"input-table-row\">\r\n                <th class=\"input-table-header\">\r\n                  {{input.tableHeader}}\r\n                </th>\r\n                <td class=\"input-table-data\">\r\n                  <p-input-text [type]=\"input.tableData.type\"\r\n                                [label]=\"input.tableData.label\"\r\n                                [ariaLabel]=\"input.tableData.ariaLabel\"\r\n                                [placeholder]=\"input.tableData.placeholder\"\r\n                                [errorMessage]=\"input.tableData.errorMessage\"\r\n                                [disabled]=\"input.tableData.disabled\"\r\n                                [readonly]=\"input.tableData.readonly\"\r\n                                [value]=\"input.tableData.value\"\r\n                                [validators]=\"input.tableData.validators\">\r\n                  </p-input-text>\r\n                </td>\r\n              </tr>\r\n            </ng-container>\r\n            </tbody>\r\n          </table>\r\n        </div>\r\n      </div>\r\n    </main>\r\n</div>\r\n"
         },
         {
             "name": "SlideToggleComponent",
@@ -1335,14 +1485,6 @@
                 "defaultValue": "PageTemplate.bind({})"
             },
             {
-                "name": "Base",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
-                "type": "",
-                "defaultValue": "PageTemplate.bind({})"
-            },
-            {
                 "name": "Buttons",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1442,14 +1584,6 @@
                 "name": "NoLabel",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox.stories.ts",
-                "type": "",
-                "defaultValue": "CheckboxTemplate.bind({})"
-            },
-            {
-                "name": "NoLabel",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/input-text/input-text.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
@@ -1458,9 +1592,57 @@
                 "name": "NoLabel",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/checkbox/checkbox.stories.ts",
+                "type": "",
+                "defaultValue": "CheckboxTemplate.bind({})"
+            },
+            {
+                "name": "NoLabel",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts",
                 "type": "",
                 "defaultValue": "SlideToggleTemplate.bind({})"
+            },
+            {
+                "name": "Page",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
+                "type": "",
+                "defaultValue": "PageTemplate.bind({})"
+            },
+            {
+                "name": "PageTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
+                "type": "Story<InputTextPageComponent>",
+                "defaultValue": "(args: InputTextPageComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "PageTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/input-text/input-text-table-layout/input-text-table-layout.stories.ts",
+                "type": "Story<InputTextTableLayoutComponent>",
+                "defaultValue": "(args: InputTextTableLayoutComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "PageTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts",
+                "type": "Story<SlideTogglePageComponent>",
+                "defaultValue": "(args: SlideTogglePageComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "PageTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "Story<CheckboxGroupPageComponent>",
+                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -1477,30 +1659,6 @@
                 "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
                 "type": "Story<CheckboxPageComponent>",
                 "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "PageTemplate",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
-                "type": "Story<CheckboxGroupPageComponent>",
-                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "PageTemplate",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
-                "type": "Story<InputTextPageComponent>",
-                "defaultValue": "(args: InputTextPageComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "PageTemplate",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts",
-                "type": "Story<SlideTogglePageComponent>",
-                "defaultValue": "(args: SlideTogglePageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "palette",
@@ -1550,6 +1708,22 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Table",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/input-text/input-text-table-layout/input-text-table-layout.stories.ts",
+                "type": "",
+                "defaultValue": "PageTemplate.bind({})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/colors/Color-palette.stories.ts",
+                "type": "Story<ColorPaletteComponent>",
+                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1564,14 +1738,6 @@
                 "file": "src/stories/input-text/input-text.stories.ts",
                 "type": "Story<InputTextComponent>",
                 "defaultValue": "(args: InputTextComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/colors/Color-palette.stories.ts",
-                "type": "Story<ColorPaletteComponent>",
-                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -1625,17 +1791,17 @@
                 "name": "WithLabel",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox.stories.ts",
+                "file": "src/stories/input-text/input-text.stories.ts",
                 "type": "",
-                "defaultValue": "CheckboxTemplate.bind({})"
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "WithLabel",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input-text/input-text.stories.ts",
+                "file": "src/stories/checkbox/checkbox.stories.ts",
                 "type": "",
-                "defaultValue": "Template.bind({})"
+                "defaultValue": "CheckboxTemplate.bind({})"
             },
             {
                 "name": "WithLabel",
@@ -1692,24 +1858,6 @@
                     "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
                     "type": "Story<CheckboxPageComponent>",
                     "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
-                }
-            ],
-            "src/stories/input-text/input-text-page/input-text-page.stories.ts": [
-                {
-                    "name": "Base",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
-                    "type": "",
-                    "defaultValue": "PageTemplate.bind({})"
-                },
-                {
-                    "name": "PageTemplate",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
-                    "type": "Story<InputTextPageComponent>",
-                    "defaultValue": "(args: InputTextPageComponent) => ({\r\n  props: args,\r\n})"
                 }
             ],
             "src/stories/button/button-page/button-page.stories.ts": [
@@ -1989,6 +2137,42 @@
                     "file": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts",
                     "type": "",
                     "defaultValue": "SlideToggleTemplate.bind({})"
+                }
+            ],
+            "src/stories/input-text/input-text-page/input-text-page.stories.ts": [
+                {
+                    "name": "Page",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
+                    "type": "",
+                    "defaultValue": "PageTemplate.bind({})"
+                },
+                {
+                    "name": "PageTemplate",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
+                    "type": "Story<InputTextPageComponent>",
+                    "defaultValue": "(args: InputTextPageComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/stories/input-text/input-text-table-layout/input-text-table-layout.stories.ts": [
+                {
+                    "name": "PageTemplate",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/input-text/input-text-table-layout/input-text-table-layout.stories.ts",
+                    "type": "Story<InputTextTableLayoutComponent>",
+                    "defaultValue": "(args: InputTextTableLayoutComponent) => ({\r\n  props: args,\r\n})"
+                },
+                {
+                    "name": "Table",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/input-text/input-text-table-layout/input-text-table-layout.stories.ts",
+                    "type": "",
+                    "defaultValue": "PageTemplate.bind({})"
                 }
             ],
             "src/stories/colors/color-palette.component.ts": [
@@ -2430,7 +2614,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Base",
+                "name": "Page",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -2446,12 +2630,50 @@
                 "status": "low"
             },
             {
+                "filePath": "src/stories/input-text/input-text-table-layout/input-text-table-layout.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "InputTextTableLayoutComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/input-text/input-text-table-layout/input-text-table-layout.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PageTemplate",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/input-text/input-text-table-layout/input-text-table-layout.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Table",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/stories/input-text/input-text.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "InputTextComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/12",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/input-text/input-text.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "IInputText",
+                "coveragePercent": 0,
+                "coverageCount": "0/10",
                 "status": "low"
             },
             {
