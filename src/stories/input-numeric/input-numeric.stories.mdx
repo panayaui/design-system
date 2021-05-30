@@ -1,5 +1,6 @@
-import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {Meta, Story, Canvas, Preview} from '@storybook/addon-docs/blocks';
 import InputNumericComponent from './input-numeric.component';
+import {CommonModule} from '@angular/common';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -9,7 +10,8 @@ import {moduleMetadata} from '@storybook/angular';
 <Meta title='Numeric' component={InputNumericComponent}
 decorators={[
   moduleMetadata({
-    imports: [MatInputModule,
+    imports: [CommonModule,
+            MatInputModule,
             BrowserAnimationsModule,
             MatFormFieldModule,
             ReactiveFormsModule]
@@ -26,13 +28,91 @@ export const Template = (args) => <InputNumericComponent {...args} />
   <p-input-numeric></p-input-numeric>
 ```
 
-
+###### Label Position
 <Canvas>
-  <Story name="Primary"
+  <Story name="LabelFirst"
      args={{
-       label: 'Label'
+         label: 'Label',
+         ariaLabel: 'Label',
+         value: 100,
+         validators: Validators.required
      }}>
      {Template.bind({})}
    </Story>
+  <Story name="LabelLast"
+    args={{
+       label: 'Label',
+       ariaLabel: 'Label',
+       value: 100,
+       validators: Validators.required,
+       labelLast: true
+    }}>
+  {Template.bind({})}
+  </Story>
+  <Story name="NoLabel"
+    args={{
+        ariaLabel: 'Label',
+        value: 100,
+        validators: Validators.required
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Disabled
+<Canvas>
+  <Story name="LabelFirstDisabled"
+     args={{
+         label: 'Label',
+         ariaLabel: 'Label',
+         value: 100,
+         validators: Validators.required,
+         disabled: true
+     }}>
+     {Template.bind({})}
+   </Story>
+  <Story name="LabelLastDisabled"
+    args={{
+       label: 'Label',
+       ariaLabel: 'Label',
+       value: 100,
+       validators: Validators.required,
+       labelLast: true,
+       disabled: true
+    }}>
+  {Template.bind({})}
+  </Story>
+  <Story name="NoLabelDisabled"
+    args={{
+        ariaLabel: 'Label',
+        value: 100,
+        validators: Validators.required,
+        disabled: true
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Errors
+<Canvas>
+  <Story name="ErrorState"
+    args={{
+        label: 'Label',
+        ariaLabel: 'Label',
+        value: null,
+        validators: Validators.required
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="ErrorMessage"
+      args={{
+          label: 'Label',
+          ariaLabel: 'Label',
+          value: null,
+          validators: Validators.required,
+          errorMessage: 'Validation text'
+      }}>
+      {Template.bind({})}
+    </Story>
 </Canvas>
 
