@@ -16,10 +16,10 @@ export default class InputTextComponent implements OnInit {
   @Input() readonly: boolean = false;
   @Input() value: string;
   @Input() validators: ValidatorFn[];
-  public inputTextControl: FormControl;
+  public customControl: FormControl;
 
   ngOnInit(): void {
-    this.inputTextControl = new FormControl(
+    this.customControl = new FormControl(
       {value: this.value, disabled: this.disabled},
       this.validators);
   }

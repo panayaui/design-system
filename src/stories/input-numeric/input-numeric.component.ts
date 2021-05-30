@@ -9,17 +9,18 @@ import {FormControl, ValidatorFn} from '@angular/forms';
 export default class InputNumericComponent implements OnInit {
   @Input() type: string = 'number';
   @Input() label: string;
-  @Input() ariaLabel: string;
-  @Input() placeholder: string;
+  @Input() ariaLabel: string; // required
+  @Input() placeholder: number;
   @Input() errorMessage: string;
   @Input() disabled: boolean = false;
   @Input() readonly: boolean = false;
-  @Input() value: string;
+  @Input() value: number;
   @Input() validators: ValidatorFn[];
-  public inputNumericControl: FormControl;
+  @Input() labelLast: boolean = false;
+  public customControl: FormControl;
 
   ngOnInit(): void {
-    this.inputNumericControl = new FormControl(
+    this.customControl = new FormControl(
       {value: this.value, disabled: this.disabled},
       this.validators);
   }

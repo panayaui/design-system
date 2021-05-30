@@ -4,10 +4,11 @@ export default interface IInputNumeric {
   type: string;
   label: string;
   ariaLabel: string;
-  placeholder: string;
+  placeholder: number;
   errorMessage: string;
   disabled: boolean;
   readonly: boolean;
-  value: string;
+  value: number;
   validators: ValidatorFn[];
+  labelLast: boolean;
 }

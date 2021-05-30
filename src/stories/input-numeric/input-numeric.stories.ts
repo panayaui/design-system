@@ -8,7 +8,7 @@
 // import {ReactiveFormsModule, Validators} from '@angular/forms';
 //
 // export default {
-//   title: 'Components/Input/Numeric',
+//   title: 'Components/Numeric',
 //   component: InputNumericComponent,
 //   decorators: [
 //     moduleMetadata({
@@ -28,29 +28,30 @@
 //
 // export const NoLabel = Template.bind({});
 // NoLabel.args = {
-//   value: 'Input text',
+//   ariaLabel: 'Label',
+//   value: 100,
 //   validators: Validators.required
 // };
 //
 // export const WithLabel = Template.bind({});
 // WithLabel.args = {
 //   label: 'Label',
-//   value: 'Input text',
+//   value: 100,
 //   validators: Validators.required
 // };
 //
-// export const ErrorState = Template.bind({});
-// ErrorState.args = {
-//   label: 'Label',
-//   value: '',
-//   validators: Validators.required
-// };
-//
-// export const ErrorMessage = Template.bind({});
-// ErrorMessage.args = {
-//   label: 'Label',
-//   value: '',
-//   validators: Validators.required,
-//   errorMessage: 'Validation text'
-// };
+// // export const ErrorState = Template.bind({});
+// // ErrorState.args = {
+// //   label: 'Label',
+// //   value: '',
+// //   validators: Validators.required
+// // };
+// //
+// // export const ErrorMessage = Template.bind({});
+// // ErrorMessage.args = {
+// //   label: 'Label',
+// //   value: '',
+// //   validators: Validators.required,
+// //   errorMessage: 'Validation text'
+// // };
 //
