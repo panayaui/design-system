@@ -79,7 +79,7 @@ $input-numeric-padding: 8px;
     }
 
     // error state
-    &.mat-form-field-invalid {
+    &.ng-invalid {
       .mat-form-field-underline {
         box-shadow: inset 0px -1px 0px $supportive-alert-500;
       }

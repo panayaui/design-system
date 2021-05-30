@@ -198,10 +198,10 @@
         },
         {
             "name": "IInputNumeric",
-            "id": "interface-IInputNumeric-f0641aac731487d100ed195b30fdf2d4",
+            "id": "interface-IInputNumeric-a8a9bd720b33a973f62f539e1673dc7b",
             "file": "src/stories/input-numeric/input-numeric.interface.ts",
             "type": "interface",
-            "sourceCode": "import {ValidatorFn} from '@angular/forms';\r\n\r\nexport default interface IInputNumeric {\r\n  type: string;\r\n  label: string;\r\n  ariaLabel: string;\r\n  placeholder: number;\r\n  errorMessage: string;\r\n  disabled: boolean;\r\n  readonly: boolean;\r\n  value: string;\r\n  validators: ValidatorFn[];\r\n  labelLast: boolean;\r\n}\r\n",
+            "sourceCode": "import {ValidatorFn} from '@angular/forms';\r\n\r\nexport default interface IInputNumeric {\r\n  type: string;\r\n  label: string;\r\n  ariaLabel: string;\r\n  placeholder: number;\r\n  errorMessage: string;\r\n  disabled: boolean;\r\n  readonly: boolean;\r\n  value: number;\r\n  validators: ValidatorFn[];\r\n  labelLast: boolean;\r\n}\r\n",
             "properties": [
                 {
                     "name": "ariaLabel",
@@ -268,7 +268,7 @@
                 },
                 {
                     "name": "value",
-                    "type": "string",
+                    "type": "number",
                     "optional": false,
                     "description": "",
                     "line": 11
@@ -1000,7 +1000,7 @@
         },
         {
             "name": "InputNumericComponent",
-            "id": "component-InputNumericComponent-a0fbb0ad6c21a3ca4681b3235359cc8e",
+            "id": "component-InputNumericComponent-7f95fe3d6a190ef86b407735e7ee3c7e",
             "file": "src/stories/input-numeric/input-numeric.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1075,7 +1075,7 @@
             "outputsClass": [],
             "propertiesClass": [
                 {
-                    "name": "numericControl",
+                    "name": "customControl",
                     "type": "FormControl",
                     "optional": false,
                     "description": "",
@@ -1100,7 +1100,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport {FormControl, ValidatorFn} from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'p-input-numeric',\r\n  templateUrl: './input-numeric.component.html',\r\n  styleUrls: ['./input-numeric.component.scss'],\r\n})\r\nexport default class InputNumericComponent implements OnInit {\r\n  @Input() type: string = 'number';\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string; // required\r\n  @Input() placeholder: number;\r\n  @Input() errorMessage: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() readonly: boolean = false; // ???????\r\n  @Input() value: number;\r\n  @Input() validators: ValidatorFn[];\r\n  @Input() labelLast: boolean = false;\r\n  public numericControl: FormControl;\r\n\r\n  ngOnInit(): void {\r\n    this.numericControl = new FormControl(\r\n      {value: this.value, disabled: this.disabled},\r\n      this.validators);\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport {FormControl, ValidatorFn} from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'p-input-numeric',\r\n  templateUrl: './input-numeric.component.html',\r\n  styleUrls: ['./input-numeric.component.scss'],\r\n})\r\nexport default class InputNumericComponent implements OnInit {\r\n  @Input() type: string = 'number';\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string; // required\r\n  @Input() placeholder: number;\r\n  @Input() errorMessage: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() readonly: boolean = false;\r\n  @Input() value: number;\r\n  @Input() validators: ValidatorFn[];\r\n  @Input() labelLast: boolean = false;\r\n  public customControl: FormControl;\r\n\r\n  ngOnInit(): void {\r\n    this.customControl = new FormControl(\r\n      {value: this.value, disabled: this.disabled},\r\n      this.validators);\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1112,11 +1112,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<ng-template [ngIf]=\"label\" [ngIfElse]=\"noLabel\">\r\n  <div class=\"p-input-numeric-container\">\r\n    <label *ngIf=\"!labelLast\" class=\"p-input-numeric-label first\" [ngClass]=\"{'disabled' : disabled}\">\r\n      {{label}}\r\n    </label>\r\n    <ng-container *ngTemplateOutlet=\"noLabel\"></ng-container>\r\n    <label *ngIf=\"labelLast\" class=\"p-input-numeric-label last\" [ngClass]=\"{'disabled' : disabled}\">\r\n      {{label}}\r\n    </label>\r\n  </div>\r\n</ng-template>\r\n\r\n<ng-template #noLabel>\r\n  <mat-form-field class=\"p-input-numeric\"\r\n                  appearance=\"standard\"\r\n                  [ngClass]=\"{'p-input-numeric-readonly' : readonly}\"\r\n                  floatLabel=\"always\">\r\n    <input matInput\r\n           [type]=\"type\"\r\n           [placeholder]=\"placeholder\"\r\n           [readonly]=\"readonly\"\r\n           attr.aria-label=\"{{ariaLabel}}\"\r\n           [formControl]=\"numericControl\"\r\n           class=\"p-input-numeric-input\">\r\n    <mat-error *ngIf=\"numericControl.invalid\"\r\n               class=\"p-input-numeric-error\">\r\n      {{errorMessage}}\r\n    </mat-error>\r\n  </mat-form-field>\r\n</ng-template>\r\n"
+            "templateData": "<ng-template [ngIf]=\"label\" [ngIfElse]=\"noLabel\">\r\n  <div class=\"p-input-numeric-container\">\r\n    <label *ngIf=\"!labelLast\" class=\"p-input-numeric-label first\" [ngClass]=\"{'disabled' : disabled}\">\r\n      {{label}}\r\n    </label>\r\n    <ng-container *ngTemplateOutlet=\"noLabel\"></ng-container>\r\n    <label *ngIf=\"labelLast\" class=\"p-input-numeric-label last\" [ngClass]=\"{'disabled' : disabled}\">\r\n      {{label}}\r\n    </label>\r\n  </div>\r\n</ng-template>\r\n\r\n<ng-template #noLabel>\r\n  <mat-form-field class=\"p-input-numeric\"\r\n                  appearance=\"standard\"\r\n                  [ngClass]=\"{'p-input-numeric-readonly' : readonly}\"\r\n                  floatLabel=\"always\">\r\n    <input matInput\r\n           [type]=\"type\"\r\n           [placeholder]=\"placeholder\"\r\n           [readonly]=\"readonly\"\r\n           attr.aria-label=\"{{ariaLabel}}\"\r\n           [formControl]=\"customControl\"\r\n           class=\"p-input-numeric-input\">\r\n    <mat-error *ngIf=\"customControl.invalid\"\r\n               class=\"p-input-numeric-error\">\r\n      {{errorMessage}}\r\n    </mat-error>\r\n  </mat-form-field>\r\n</ng-template>\r\n"
         },
         {
             "name": "InputTextComponent",
-            "id": "component-InputTextComponent-fb01938f7174aa00b387462c87cc7de0",
+            "id": "component-InputTextComponent-ddc8847bfef451062522877da9fd7a33",
             "file": "src/stories/input-text/input-text.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1185,7 +1185,7 @@
             "outputsClass": [],
             "propertiesClass": [
                 {
-                    "name": "textControl",
+                    "name": "customControl",
                     "type": "FormControl",
                     "optional": false,
                     "description": "",
@@ -1210,7 +1210,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport {FormControl, ValidatorFn} from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'p-input-text',\r\n  templateUrl: './input-text.component.html',\r\n  styleUrls: ['./input-text.component.scss'],\r\n})\r\nexport default class InputTextComponent implements OnInit {\r\n  @Input() type: string = 'text';\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string;\r\n  @Input() placeholder: string;\r\n  @Input() errorMessage: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() readonly: boolean = false;\r\n  @Input() value: string;\r\n  @Input() validators: ValidatorFn[];\r\n  public textControl: FormControl;\r\n\r\n  ngOnInit(): void {\r\n    this.textControl = new FormControl(\r\n      {value: this.value, disabled: this.disabled},\r\n      this.validators);\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport {FormControl, ValidatorFn} from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'p-input-text',\r\n  templateUrl: './input-text.component.html',\r\n  styleUrls: ['./input-text.component.scss'],\r\n})\r\nexport default class InputTextComponent implements OnInit {\r\n  @Input() type: string = 'text';\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string;\r\n  @Input() placeholder: string;\r\n  @Input() errorMessage: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() readonly: boolean = false;\r\n  @Input() value: string;\r\n  @Input() validators: ValidatorFn[];\r\n  public customControl: FormControl;\r\n\r\n  ngOnInit(): void {\r\n    this.customControl = new FormControl(\r\n      {value: this.value, disabled: this.disabled},\r\n      this.validators);\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1222,7 +1222,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<mat-form-field class=\"p-input-text\"\r\n                appearance=\"standard\"\r\n                [ngClass]=\"{'p-input-text-readonly' : readonly}\"\r\n                floatLabel=\"always\">\r\n  <mat-label class=\"p-input-text-label\">{{label}}</mat-label>\r\n  <input matInput\r\n         [type]=\"type\"\r\n         [placeholder]=\"placeholder\"\r\n         [readonly]=\"readonly\"\r\n         attr.aria-label=\"{{ariaLabel}}\"\r\n         [formControl]=\"textControl\"\r\n         class=\"p-input-text-input\">\r\n  <mat-error *ngIf=\"textControl.hasError('required')\"\r\n             class=\"p-input-text-error\">\r\n    {{errorMessage}}\r\n  </mat-error>\r\n</mat-form-field>\r\n"
+            "templateData": "<mat-form-field class=\"p-input-text\"\r\n                appearance=\"standard\"\r\n                [ngClass]=\"{'p-input-text-readonly' : readonly}\"\r\n                floatLabel=\"always\">\r\n  <mat-label class=\"p-input-text-label\">{{label}}</mat-label>\r\n  <input matInput\r\n         [type]=\"type\"\r\n         [placeholder]=\"placeholder\"\r\n         [readonly]=\"readonly\"\r\n         attr.aria-label=\"{{ariaLabel}}\"\r\n         [formControl]=\"customControl\"\r\n         class=\"p-input-text-input\">\r\n  <mat-error *ngIf=\"customControl.hasError('required')\"\r\n             class=\"p-input-text-error\">\r\n    {{errorMessage}}\r\n  </mat-error>\r\n</mat-form-field>\r\n"
         },
         {
             "name": "InputTextPageComponent",
@@ -1814,9 +1814,9 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
-                "type": "Story<CheckboxGroupPageComponent>",
-                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "Story<CheckboxPageComponent>",
+                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -1830,17 +1830,9 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
-                "type": "Story<CheckboxPageComponent>",
-                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "PageTemplate",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/input-text/input-text-table-layout/input-text-table-layout.stories.ts",
-                "type": "Story<InputTextTableLayoutComponent>",
-                "defaultValue": "(args: InputTextTableLayoutComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "Story<CheckboxGroupPageComponent>",
+                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -1849,6 +1841,14 @@
                 "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
                 "type": "Story<InputTextPageComponent>",
                 "defaultValue": "(args: InputTextPageComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "PageTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/input-text/input-text-table-layout/input-text-table-layout.stories.ts",
+                "type": "Story<InputTextTableLayoutComponent>",
+                "defaultValue": "(args: InputTextTableLayoutComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -1917,17 +1917,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/colors/Color-palette.stories.ts",
-                "type": "Story<ColorPaletteComponent>",
-                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/button/button.stories.ts",
+                "type": "Story<ButtonComponent>",
+                "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/button/button.stories.ts",
-                "type": "Story<ButtonComponent>",
-                "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/colors/Color-palette.stories.ts",
+                "type": "Story<ColorPaletteComponent>",
+                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
