@@ -6,18 +6,18 @@ import {ButtonTypeEnum} from './button-page/button-type.enum';
 import IconComponent from '../icons/icon.component';
 import {IconsModule} from '../../app/icons/icons.module';
 
-export default {
-  title: 'Components/Buttons',
-  component: ButtonComponent,
-  subcomponents: { IconComponent },
-  decorators: [
-    moduleMetadata({
-      declarations: [ButtonComponent, IconComponent],
-      imports: [CommonModule, IconsModule],
-    }),
-    componentWrapperDecorator((story) => `<div style="margin: 3em">${story}</div>`)
-  ],
-} as Meta;
+// export default {
+//   title: 'Components/Buttons',
+//   component: ButtonComponent,
+//   subcomponents: { IconComponent },
+//   decorators: [
+//     moduleMetadata({
+//       declarations: [ButtonComponent, IconComponent],
+//       imports: [CommonModule, IconsModule],
+//     }),
+//     componentWrapperDecorator((story) => `<div style="margin: 3em">${story}</div>`)
+//   ],
+// } as Meta;
 
 const Template: Story<ButtonComponent> = (args: ButtonComponent) => ({
   props: args,

@@ -8,9 +8,9 @@
          [placeholder]="placeholder"
          [readonly]="readonly"
          attr.aria-label="{{ariaLabel}}"
-         [formControl]="inputTextControl"
+         [formControl]="customControl"
          class="p-input-text-input">
-  <mat-error *ngIf="inputTextControl.hasError('required')"
+  <mat-error *ngIf="customControl.hasError('required')"
              class="p-input-text-error">
     {{errorMessage}}
   </mat-error>

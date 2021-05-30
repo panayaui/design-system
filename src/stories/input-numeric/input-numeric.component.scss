@@ -1,16 +1,30 @@
 @import "../assets/styles/custom";
 
-$input-text-width: 220px;
-$input-text-padding: 8px;
+$input-numeric-width: 55px;
+$input-numeric-padding: 8px;
 
-.p-input-text {
+.p-input-numeric {
+  &-container {
+    display: flex;
+    align-items: center;
+  }
   &-label {
     font-family: $font-family-basic;
-    font-weight: 500;
-    font-size: $tiny-font-size;
+    font-weight: 400;
+    font-size: $small-font-size;
     text-transform: capitalize;
     line-height: 19px;
-    color: $gray-scale-700;
+    color: $primary-a-900;
+    padding-bottom: 15px;
+    &.disabled {
+      color: $gray-scale-600;
+    }
+    &.first {
+      margin-right: 8px;
+    }
+    &.last {
+      margin-left: 8px;
+    }
   }
 
   ::ng-deep & {
@@ -18,14 +32,18 @@ $input-text-padding: 8px;
     .mat-input-element {
       font-family: $font-family-basic;
       font-size: $base-font-size;
-      max-width: $input-text-width - $input-text-padding;
+      max-width: $input-numeric-width - $input-numeric-padding;
       line-height: 20px;
       color: $primary-a-900;
-      padding-left: $input-text-padding;
+      padding-left: $input-numeric-padding;
       caret-color: $primary-a-900;
     }
     .mat-form-field-infix {
-      width: $input-text-width;
+      width: $input-numeric-width;
+      padding-top: 0;
+    }
+    .mat-form-field-label-wrapper {
+      padding-top: 0;
     }
     &.mat-form-field-appearance-standard .mat-form-field-flex {
       padding-top: 0;
@@ -71,7 +89,7 @@ $input-text-padding: 8px;
     }
 
     // readonly
-    &.p-input-text-readonly {
+    &.p-input-numeric-readonly {
       .mat-form-field-underline {
         box-shadow: none;
       }

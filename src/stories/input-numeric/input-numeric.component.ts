@@ -2,20 +2,21 @@ import {Component, Input, OnInit} from '@angular/core';
 import {FormControl, ValidatorFn} from '@angular/forms';
 
 @Component({
-  selector: 'p-input-text',
-  templateUrl: './input-text.component.html',
-  styleUrls: ['./input-text.component.scss'],
+  selector: 'p-input-numeric',
+  templateUrl: './input-numeric.component.html',
+  styleUrls: ['./input-numeric.component.scss'],
 })
-export default class InputTextComponent implements OnInit {
-  @Input() type: string = 'text';
+export default class InputNumericComponent implements OnInit {
+  @Input() type: string = 'number';
   @Input() label: string;
-  @Input() ariaLabel: string;
-  @Input() placeholder: string;
+  @Input() ariaLabel: string; // required
+  @Input() placeholder: number;
   @Input() errorMessage: string;
   @Input() disabled: boolean = false;
   @Input() readonly: boolean = false;
-  @Input() value: string;
+  @Input() value: number;
   @Input() validators: ValidatorFn[];
+  @Input() labelLast: boolean = false;
   public customControl: FormControl;
 
   ngOnInit(): void {
