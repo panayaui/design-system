@@ -1,0 +1,17 @@
+<mat-form-field class="p-input-numeric"
+                appearance="standard"
+                [ngClass]="{'p-input-numeric-readonly' : readonly}"
+                floatLabel="always">
+  <mat-label class="p-input-numeric-label">{{label}}</mat-label>
+  <input matInput
+         [type]="type"
+         [placeholder]="placeholder"
+         [readonly]="readonly"
+         attr.aria-label="{{ariaLabel}}"
+         [formControl]="inputNumericControl"
+         class="p-input-numeric-input">
+  <mat-error *ngIf="inputNumericControl.hasError('required')"
+             class="p-input-numeric-error">
+    {{errorMessage}}
+  </mat-error>
+</mat-form-field>
