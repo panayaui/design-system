@@ -1099,7 +1099,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<mat-form-field class=\"p-input-numeric\"\r\n                appearance=\"standard\"\r\n                [ngClass]=\"{'p-input-numeric-readonly' : readonly}\"\r\n                floatLabel=\"always\">\r\n  <mat-label class=\"p-input-numeric-label\">{{label}}</mat-label>\r\n  <input matInput\r\n         [type]=\"type\"\r\n         [placeholder]=\"placeholder\"\r\n         [readonly]=\"readonly\"\r\n         attr.aria-label=\"{{ariaLabel}}\"\r\n         [formControl]=\"inputnumericControl\"\r\n         class=\"p-input-numeric-input\">\r\n  <mat-error *ngIf=\"inputNumericControl.hasError('required')\"\r\n             class=\"p-input-numeric-error\">\r\n    {{errorMessage}}\r\n  </mat-error>\r\n</mat-form-field>\r\n"
+            "templateData": "<mat-form-field class=\"p-input-numeric\"\r\n                appearance=\"standard\"\r\n                [ngClass]=\"{'p-input-numeric-readonly' : readonly}\"\r\n                floatLabel=\"always\">\r\n  <mat-label class=\"p-input-numeric-label\">{{label}}</mat-label>\r\n  <input matInput\r\n         [type]=\"type\"\r\n         [placeholder]=\"placeholder\"\r\n         [readonly]=\"readonly\"\r\n         attr.aria-label=\"{{ariaLabel}}\"\r\n         [formControl]=\"inputNumericControl\"\r\n         class=\"p-input-numeric-input\">\r\n  <mat-error *ngIf=\"inputNumericControl.hasError('required')\"\r\n             class=\"p-input-numeric-error\">\r\n    {{errorMessage}}\r\n  </mat-error>\r\n</mat-form-field>\r\n"
         },
         {
             "name": "InputTextComponent",
@@ -1809,6 +1809,14 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "Story<CheckboxGroupPageComponent>",
+                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "PageTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
                 "type": "Story<CheckboxPageComponent>",
                 "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
@@ -1817,9 +1825,9 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
-                "type": "Story<CheckboxGroupPageComponent>",
-                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts",
+                "type": "Story<SlideTogglePageComponent>",
+                "defaultValue": "(args: SlideTogglePageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -1836,14 +1844,6 @@
                 "file": "src/stories/input-text/input-text-table-layout/input-text-table-layout.stories.ts",
                 "type": "Story<InputTextTableLayoutComponent>",
                 "defaultValue": "(args: InputTextTableLayoutComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "PageTemplate",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts",
-                "type": "Story<SlideTogglePageComponent>",
-                "defaultValue": "(args: SlideTogglePageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "palette",
@@ -1904,17 +1904,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/button/button.stories.ts",
-                "type": "Story<ButtonComponent>",
-                "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/colors/Color-palette.stories.ts",
+                "type": "Story<ColorPaletteComponent>",
+                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/colors/Color-palette.stories.ts",
-                "type": "Story<ColorPaletteComponent>",
-                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/button/button.stories.ts",
+                "type": "Story<ButtonComponent>",
+                "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -1936,17 +1936,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
-                "type": "Story<TypographyFontFamilyComponent>",
-                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/styles/typography-styles.stories.ts",
+                "type": "Story<TypographyStylesComponent>",
+                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/styles/typography-styles.stories.ts",
-                "type": "Story<TypographyStylesComponent>",
-                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
+                "type": "Story<TypographyFontFamilyComponent>",
+                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Tertiary",

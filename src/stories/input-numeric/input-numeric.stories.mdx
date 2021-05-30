@@ -21,18 +21,18 @@ decorators={[
 export const Template = (args) => <InputNumericComponent {...args} />
 
 ###### Selector
+
 ```ts
   <p-input-numeric></p-input-numeric>
 ```
 
 
 <Canvas>
-  <Story name="Default"
-    args={{
-      label: 'Label',
-      placeholder: '11';
-    }}>
-    {Template.bind{})}
-  </Story>
+  <Story name="Primary"
+     args={{
+       label: 'Label'
+     }}>
+     {Template.bind({})}
+   </Story>
 </Canvas>
 
