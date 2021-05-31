@@ -26,6 +26,7 @@ $input-text-padding: 8px;
     }
     .mat-form-field-infix {
       width: $input-text-width;
+      padding-bottom: 6px;
     }
     &.mat-form-field-appearance-standard .mat-form-field-flex {
       padding-top: 0;
@@ -75,6 +76,9 @@ $input-text-padding: 8px;
 
     // readonly
     &.p-input-text-readonly {
+      &:not(.mat-form-field-disabled):not(.mat-form-field-invalid)
+      .mat-form-field-flex:hover~.mat-form-field-underline,
+
       .mat-form-field-underline {
         box-shadow: none;
       }
