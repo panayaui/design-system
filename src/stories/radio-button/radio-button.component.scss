@@ -1,0 +1,126 @@
+@import "../assets/styles/custom";
+
+.p-slide-toggle {
+  // material styles override
+  ::ng-deep &.mat-slide-toggle {
+    .mat-slide-toggle-bar {
+      width: 48px;
+      height: 24px;
+      background-color: $gray-scale-500;
+      border-radius: 24px;
+      box-sizing: content-box;
+    }
+    .mat-slide-toggle-thumb-container {
+      top: 2px;
+      left: 2px;
+    }
+    .mat-slide-toggle-thumb {
+      background-color: $gray-scale-1;
+      box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
+    }
+    .mat-slide-toggle-content {
+      font-family: $font-family-basic;
+      font-size: $small-font-size;
+      font-weight: 500;
+    }
+    .mat-slide-toggle-ripple {
+      display: none;
+    }
+
+    &:hover {
+      .mat-slide-toggle-bar {
+        background-color: $gray-scale-700;
+      }
+    }
+
+    // focus
+    &.cdk-focused {
+      .mat-slide-toggle-bar {
+        background-color: $gray-scale-700;
+        //border: 2px solid $gray-scale-100;
+      }
+    }
+
+    // disabled
+    &.mat-disabled {
+      opacity: 1;
+      .mat-slide-toggle-bar {
+        background-color: $gray-scale-50;
+      }
+      .mat-slide-toggle-thumb {
+        box-shadow: none;
+      }
+      .mat-slide-toggle-content {
+        color: $gray-scale-700;
+      }
+    }
+
+    // checked
+    &.mat-checked {
+      .mat-slide-toggle-bar {
+        background-color: $secondary-a-700;
+      }
+      .mat-slide-toggle-thumb-container {
+        transform: translate3d(24px, 0, 0);
+      }
+      .mat-slide-toggle-thumb {
+        box-shadow: 0 0 3px $secondary-a-800;
+      }
+      // checked + hover
+      &:hover {
+        .mat-slide-toggle-bar {
+          background-color: $secondary-a-800;
+        }
+      }
+      // checked + focus
+      &.cdk-focused {
+        .mat-slide-toggle-bar {
+          //border: 2px solid $secondary-a-200;
+        }
+      }
+      // checked + disabled
+      &.mat-disabled {
+        .mat-slide-toggle-bar {
+           background-color: $secondary-a-100;
+        }
+        .mat-slide-toggle-thumb {
+          width: 19px;
+          height: 19px;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+
+  // icons added
+  ::ng-deep &.mat-slide-toggle {
+    .mat-slide-toggle-bar {
+      &:before {
+        content: '';
+        display: block;
+        width: 15px;
+        height: 12px;
+        background-image: url('../assets/images/check.svg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        top: 6px;
+        left: 7px;
+      }
+      &:after {
+        content: '';
+        display: block;
+        width: 15px;
+        height: 15px;
+        background-image: url('../assets/images/x.svg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        top: 4px;
+        right: 5px;
+      }
+    }
+  }
+}
