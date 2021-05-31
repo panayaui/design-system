@@ -1104,7 +1104,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$input-numeric-width: 55px;\r\n$input-numeric-padding: 8px;\r\n\r\n.p-input-numeric {\r\n  &-container {\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n  &-label {\r\n    font-family: $font-family-basic;\r\n    font-weight: 400;\r\n    font-size: $small-font-size;\r\n    text-transform: capitalize;\r\n    line-height: 19px;\r\n    color: $primary-a-900;\r\n    padding-bottom: 15px;\r\n    &.disabled {\r\n      color: $gray-scale-600;\r\n    }\r\n    &.first {\r\n      margin-right: 8px;\r\n    }\r\n    &.last {\r\n      margin-left: 8px;\r\n    }\r\n  }\r\n\r\n  ::ng-deep & {\r\n    // material styles override\r\n    .mat-input-element {\r\n      font-family: $font-family-basic;\r\n      font-size: $base-font-size;\r\n      max-width: $input-numeric-width - $input-numeric-padding;\r\n      line-height: 20px;\r\n      color: $primary-a-900;\r\n      padding-left: $input-numeric-padding;\r\n      caret-color: $primary-a-900;\r\n    }\r\n    .mat-form-field-infix {\r\n      width: $input-numeric-width;\r\n      padding-top: 0;\r\n    }\r\n    .mat-form-field-label-wrapper {\r\n      padding-top: 0;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-flex {\r\n      padding-top: 0;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $gray-scale-600;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-underline,\r\n    &:not(.mat-form-field-disabled):not(.mat-form-field-invalid)\r\n            .mat-form-field-flex:hover~.mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $primary-a-900;\r\n    }\r\n    .mat-form-field-ripple {\r\n      display: none;\r\n    }\r\n    .mat-error {\r\n      font-family: $font-family-basic;\r\n      font-size: $tiny-font-size;\r\n      color: $supportive-alert-500;\r\n      line-height: 19px;\r\n    }\r\n\r\n    // disabled\r\n    &.mat-form-field-disabled {\r\n      .mat-input-element {\r\n        color: $gray-scale-600;\r\n      }\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $gray-scale-400;\r\n      }\r\n    }\r\n\r\n    // error state\r\n    &.mat-form-field-invalid {\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-500;\r\n      }\r\n      &.mat-form-field.mat-focused .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-700;\r\n      }\r\n    }\r\n\r\n    // readonly\r\n    &.p-input-numeric-readonly {\r\n      .mat-form-field-underline {\r\n        box-shadow: none;\r\n      }\r\n    }\r\n  }\r\n\r\n}\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$input-numeric-width: 55px;\r\n$input-numeric-padding: 8px;\r\n\r\n.p-input-numeric {\r\n  &-container {\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n  &-label {\r\n    font-family: $font-family-basic;\r\n    font-weight: 400;\r\n    font-size: $small-font-size;\r\n    text-transform: capitalize;\r\n    line-height: 19px;\r\n    color: $primary-a-900;\r\n    padding-bottom: 15px;\r\n    &.disabled {\r\n      color: $gray-scale-600;\r\n    }\r\n    &.first {\r\n      margin-right: 8px;\r\n    }\r\n    &.last {\r\n      margin-left: 8px;\r\n    }\r\n  }\r\n\r\n  ::ng-deep & {\r\n    // material styles override\r\n    .mat-input-element {\r\n      font-family: $font-family-basic;\r\n      font-size: $base-font-size;\r\n      max-width: $input-numeric-width - $input-numeric-padding;\r\n      line-height: 20px;\r\n      color: $primary-a-900;\r\n      padding-left: $input-numeric-padding;\r\n      caret-color: $primary-a-900;\r\n    }\r\n    .mat-form-field-infix {\r\n      width: $input-numeric-width;\r\n      padding-top: 0;\r\n    }\r\n    .mat-form-field-label-wrapper {\r\n      padding-top: 0;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-flex {\r\n      padding-top: 0;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $gray-scale-600;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-underline,\r\n    &:not(.mat-form-field-disabled):not(.mat-form-field-invalid)\r\n            .mat-form-field-flex:hover~.mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $primary-a-900;\r\n    }\r\n    .mat-form-field-ripple {\r\n      display: none;\r\n    }\r\n    .mat-error {\r\n      font-family: $font-family-basic;\r\n      font-size: $tiny-font-size;\r\n      color: $supportive-alert-500;\r\n      line-height: 19px;\r\n    }\r\n\r\n    // disabled\r\n    &.mat-form-field-disabled {\r\n      .mat-input-element {\r\n        color: $gray-scale-600;\r\n      }\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $gray-scale-400;\r\n      }\r\n    }\r\n\r\n    // error state\r\n    &.ng-invalid {\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-500;\r\n      }\r\n      &.mat-form-field.mat-focused .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-700;\r\n      }\r\n    }\r\n\r\n    // readonly\r\n    &.p-input-numeric-readonly {\r\n      .mat-form-field-underline {\r\n        box-shadow: none;\r\n      }\r\n    }\r\n  }\r\n\r\n}\r\n",
                     "styleUrl": "./input-numeric.component.scss"
                 }
             ],
@@ -1214,7 +1214,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$input-text-width: 220px;\r\n$input-text-padding: 8px;\r\n\r\n.p-input-text {\r\n  &-label {\r\n    font-family: $font-family-basic;\r\n    font-weight: 500;\r\n    font-size: $tiny-font-size;\r\n    text-transform: capitalize;\r\n    line-height: 19px;\r\n    color: $gray-scale-700;\r\n  }\r\n\r\n  ::ng-deep & {\r\n    // material styles override\r\n    .mat-input-element {\r\n      font-family: $font-family-basic;\r\n      font-size: $base-font-size;\r\n      max-width: $input-text-width - $input-text-padding;\r\n      line-height: 20px;\r\n      color: $primary-a-900;\r\n      padding-left: $input-text-padding;\r\n      caret-color: $primary-a-900;\r\n    }\r\n    .mat-form-field-infix {\r\n      width: $input-text-width;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-flex {\r\n      padding-top: 0;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $gray-scale-600;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-underline,\r\n    &:not(.mat-form-field-disabled):not(.mat-form-field-invalid)\r\n            .mat-form-field-flex:hover~.mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $primary-a-900;\r\n    }\r\n    .mat-form-field-ripple {\r\n      display: none;\r\n    }\r\n    .mat-error {\r\n      font-family: $font-family-basic;\r\n      font-size: $tiny-font-size;\r\n      color: $supportive-alert-500;\r\n      line-height: 19px;\r\n    }\r\n\r\n    // disabled\r\n    &.mat-form-field-disabled {\r\n      .mat-input-element {\r\n        color: $gray-scale-600;\r\n      }\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $gray-scale-400;\r\n      }\r\n    }\r\n\r\n    // error state\r\n    &.mat-form-field-invalid {\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-500;\r\n      }\r\n      &.mat-form-field.mat-focused .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-700;\r\n      }\r\n    }\r\n\r\n    // readonly\r\n    &.p-input-text-readonly {\r\n      .mat-form-field-underline {\r\n        box-shadow: none;\r\n      }\r\n    }\r\n  }\r\n\r\n}\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$input-text-width: 220px;\r\n$input-text-padding: 8px;\r\n\r\n.p-input-text {\r\n  &-label {\r\n    font-family: $font-family-basic;\r\n    font-weight: 500;\r\n    font-size: $tiny-font-size;\r\n    text-transform: capitalize;\r\n    line-height: 19px;\r\n    color: $gray-scale-700;\r\n  }\r\n\r\n  ::ng-deep & {\r\n    // material styles override\r\n    .mat-input-element {\r\n      font-family: $font-family-basic;\r\n      font-size: $base-font-size;\r\n      max-width: $input-text-width - $input-text-padding;\r\n      line-height: 20px;\r\n      color: $primary-a-900;\r\n      padding-left: $input-text-padding;\r\n      caret-color: $primary-a-900;\r\n    }\r\n    .mat-form-field-infix {\r\n      width: $input-text-width;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-flex {\r\n      padding-top: 0;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $gray-scale-600;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-underline,\r\n    &:not(.mat-form-field-disabled):not(.mat-form-field-invalid)\r\n            .mat-form-field-flex:hover~.mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $primary-a-900;\r\n    }\r\n    .mat-form-field-ripple {\r\n      display: none;\r\n    }\r\n    .mat-error {\r\n      font-family: $font-family-basic;\r\n      font-size: $tiny-font-size;\r\n      color: $supportive-alert-500;\r\n      line-height: 19px;\r\n    }\r\n\r\n    // disabled\r\n    &.mat-form-field-disabled {\r\n      .mat-input-element {\r\n        color: $gray-scale-600;\r\n      }\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $gray-scale-400;\r\n      }\r\n    }\r\n\r\n    // error state\r\n    &.ng-invalid {\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-500;\r\n      }\r\n      &.mat-form-field.mat-focused .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-700;\r\n      }\r\n    }\r\n\r\n    // readonly\r\n    &.p-input-text-readonly {\r\n      .mat-form-field-underline {\r\n        box-shadow: none;\r\n      }\r\n    }\r\n  }\r\n\r\n}\r\n",
                     "styleUrl": "./input-text.component.scss"
                 }
             ],
@@ -1814,9 +1814,9 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
-                "type": "Story<CheckboxPageComponent>",
-                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "Story<CheckboxGroupPageComponent>",
+                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -1830,17 +1830,9 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
-                "type": "Story<CheckboxGroupPageComponent>",
-                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "PageTemplate",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
-                "type": "Story<InputTextPageComponent>",
-                "defaultValue": "(args: InputTextPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "Story<CheckboxPageComponent>",
+                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -1849,6 +1841,14 @@
                 "file": "src/stories/input-text/input-text-table-layout/input-text-table-layout.stories.ts",
                 "type": "Story<InputTextTableLayoutComponent>",
                 "defaultValue": "(args: InputTextTableLayoutComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "PageTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
+                "type": "Story<InputTextPageComponent>",
+                "defaultValue": "(args: InputTextPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",

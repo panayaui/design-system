@@ -20,19 +20,21 @@ $table-header-padding-right: 40px;
     text-align: left;
     text-transform: capitalize;
     max-width: $table-header-max-width;
-    margin-top: 10px;
-    margin-bottom: 10px;
     padding-right: $table-header-padding-right;
-    @include clamp;
+    padding-bottom: 7px;
+    &-text {
+      @include clamp;
+      padding-bottom: 7px;
+    }
   }
 
   &-data {
-    ::ng-deep .mat-form-field-infix {
-      border-top-width: 0.08px;
-    }
-    ::ng-deep .mat-form-field-wrapper {
-      padding-bottom: 1em;
-    }
+    //::ng-deep .mat-form-field-infix {
+    //  border-top-width: 0.08px;
+    //}
+    //::ng-deep .mat-form-field-wrapper {
+    //  padding-bottom: 1em;
+    //}
   }
 }
 

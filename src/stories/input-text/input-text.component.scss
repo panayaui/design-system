@@ -43,11 +43,14 @@ $input-text-padding: 8px;
     .mat-form-field-ripple {
       display: none;
     }
+    .mat-form-field-subscript-wrapper {
+      margin-top: 5px;
+    }
     .mat-error {
       font-family: $font-family-basic;
       font-size: $tiny-font-size;
       color: $supportive-alert-500;
-      line-height: 19px;
+      line-height: 12px;
     }
 
     // disabled
