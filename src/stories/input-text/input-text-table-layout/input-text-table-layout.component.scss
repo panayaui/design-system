@@ -20,18 +20,17 @@ $table-header-padding-right: 40px;
     text-align: left;
     text-transform: capitalize;
     max-width: $table-header-max-width;
-    margin-top: 10px;
-    margin-bottom: 10px;
     padding-right: $table-header-padding-right;
-    @include clamp;
+    padding-bottom: 26px;
+    &-text {
+      @include clamp;
+    }
   }
 
   &-data {
     ::ng-deep .mat-form-field-infix {
-      border-top-width: 0.08px;
-    }
-    ::ng-deep .mat-form-field-wrapper {
-      padding-bottom: 1em;
+      padding-top: 0;
+      border-top-width: 5px;
     }
   }
 }

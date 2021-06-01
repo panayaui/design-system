@@ -24,7 +24,7 @@
             <ng-container *ngFor="let input of inputTablePage.simple.table">
               <tr class="input-table-row">
                 <th class="input-table-header">
-                  {{input.tableHeader}}
+                  <span class="input-table-header-text">{{input.tableHeader}}</span>
                 </th>
                 <td class="input-table-data">
                   <p-input-text [type]="input.tableData.type"
@@ -43,6 +43,16 @@
             </tbody>
           </table>
         </div>
+        <!--<p-input-text [type]="inputTablePage.simple.table[1].tableData.type"-->
+                      <!--[label]="inputTablePage.simple.table[1].tableData.label"-->
+                      <!--[ariaLabel]="inputTablePage.simple.table[1].tableData.ariaLabel"-->
+                      <!--[placeholder]="inputTablePage.simple.table[1].tableData.placeholder"-->
+                      <!--[errorMessage]="inputTablePage.simple.table[1].tableData.errorMessage"-->
+                      <!--[disabled]="inputTablePage.simple.table[1].tableData.disabled"-->
+                      <!--[readonly]="inputTablePage.simple.table[1].tableData.readonly"-->
+                      <!--[value]="inputTablePage.simple.table[1].tableData.value"-->
+                      <!--[validators]="inputTablePage.simple.table[1].tableData.validators">-->
+        <!--</p-input-text>-->
       </div>
 
       <div class="input-table-wrapper">
@@ -54,7 +64,7 @@
                   strokeWidth="3"></p-icon>
           {{inputTablePage.complex.title}}
         </button>
-        <div *ngIf="isComplesTableVisible"
+        <div *ngIf="isComplexTableVisible"
              tabindex="-1"
              attr.aria-label="{{inputTablePage.complex.title}}"
              class="input-table-container">
@@ -63,7 +73,7 @@
             <ng-container *ngFor="let input of inputTablePage.complex.table">
               <tr class="input-table-row">
                 <th class="input-table-header">
-                  {{input.tableHeader}}
+                  <span class="input-table-header-text">{{input.tableHeader}}</span>
                 </th>
                 <td class="input-table-data">
                   <p-input-text [type]="input.tableData.type"

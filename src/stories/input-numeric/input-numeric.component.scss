@@ -41,6 +41,7 @@ $input-numeric-padding: 8px;
     .mat-form-field-infix {
       width: $input-numeric-width;
       padding-top: 0;
+      padding-bottom: 6px;
     }
     .mat-form-field-label-wrapper {
       padding-top: 0;
@@ -61,11 +62,14 @@ $input-numeric-padding: 8px;
     .mat-form-field-ripple {
       display: none;
     }
+    .mat-form-field-subscript-wrapper {
+      margin-top: 5px;
+    }
     .mat-error {
       font-family: $font-family-basic;
       font-size: $tiny-font-size;
       color: $supportive-alert-500;
-      line-height: 19px;
+      line-height: 12px;
     }
 
     // disabled

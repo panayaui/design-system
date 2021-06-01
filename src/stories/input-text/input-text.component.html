@@ -10,7 +10,7 @@
          attr.aria-label="{{ariaLabel}}"
          [formControl]="customControl"
          class="p-input-text-input">
-  <mat-error *ngIf="customControl.hasError('required')"
+  <mat-error *ngIf="customControl.invalid"
              class="p-input-text-error">
     {{errorMessage}}
   </mat-error>
