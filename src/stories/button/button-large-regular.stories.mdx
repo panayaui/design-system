@@ -5,7 +5,7 @@ import {ButtonTypeEnum} from './button-page/button-type.enum';
 import IconComponent from '../icons/icon.component';
 import {IconsModule} from '../../app/icons/icons.module';
 
-<Meta title='Components/Button/Types'
+<Meta title='Components/Button/Large/Regular'
   component={ButtonComponent}
   subcomponents={IconComponent}
   decorators={[
@@ -16,84 +16,20 @@ import {IconsModule} from '../../app/icons/icons.module';
 
 export const Template = (args) => <ButtonComponent {...args} />
 
-# Button
+# Button Large
 
 ###### Selector
 ```ts
-  <p-button></p-button>
+  <p-button [large]="true"></p-button>
 ```
 
-###### Button types (small)
+###### Default 
 <Canvas>
-  <Story name="Primary" width="200px"
-    args={{
-      label: 'Label',
-      buttonType: ButtonTypeEnum.Primary
-    }}>
-    {Template.bind({})}
-  </Story>
-  <Story name="Secondary" width="200px"
-    args={{
-      label: 'Label',
-      buttonType: ButtonTypeEnum.Secondary
-    }}>
-    {Template.bind({})}
-  </Story>
-  <Story name="Tertiary" width="200px"
-    args={{
-      label: 'Label',
-      buttonType: ButtonTypeEnum.Tertiary
-    }}>
-    {Template.bind({})}
-  </Story>
-  <Story name="Distructive" width="200px"
-      args={{
-        label: 'Label',
-        buttonType: ButtonTypeEnum.Distructive
-      }}>
-      {Template.bind({})}
-    </Story>
-</Canvas>
-
-###### Disabled (small)
-<Canvas>
-  <Story name="PrimaryDisabled" width="200px"
-    args={{
-      label: 'Label',
-      disabled: true,
-      buttonType: ButtonTypeEnum.Primary
-    }}>
-    {Template.bind({})}
-  </Story>
-  <Story name="SecondaryDisabled" width="200px"
-    args={{
-      label: 'Label',
-      disabled: true,
-      buttonType: ButtonTypeEnum.Secondary
-    }}>
-    {Template.bind({})}
-  </Story>
-  <Story name="TertiaryDisabled" width="200px"
-    args={{
-      label: 'Label',
-      disabled: true,
-      buttonType: ButtonTypeEnum.Tertiary
-    }}>
-    {Template.bind({})}
-  </Story>
-  <Story name="DistructiveDisabled" width="200px"
-      args={{
-        label: 'Label',
-        disabled: true,
-        buttonType: ButtonTypeEnum.Distructive
-      }}>
-      {Template.bind({})}
-    </Story>
-</Canvas>
-
-###### Button types (large)
-<Canvas>
-  <Story name="PrimaryLarge" width="200px"
+  <p className="story-title">Primary</p>
+  <p className="story-title">Secondary</p>
+  <p className="story-title">Tertiary</p>
+  <p className="story-title">Distructive</p>
+  <Story name="Primary"
     args={{
       label: 'Label',
       large: true,
@@ -101,15 +37,15 @@ export const Template = (args) => <ButtonComponent {...args} />
     }}>
     {Template.bind({})}
   </Story>
-  <Story name="SecondaryLarge" width="200px"
+  <Story name="Secondary"
     args={{
       label: 'Label',
       large: true,
       buttonType: ButtonTypeEnum.Secondary
     }}>
     {Template.bind({})}
-  </Story>
-  <Story name="TertiaryLarge" width="200px"
+  </Story>   
+  <Story name="Tertiary"
     args={{
       label: 'Label',
       large: true,
@@ -117,7 +53,7 @@ export const Template = (args) => <ButtonComponent {...args} />
     }}>
     {Template.bind({})}
   </Story>
-  <Story name="DistructiveLarge" width="200px"
+  <Story name="Distructive"
       args={{
         label: 'Label',
         large: true,
@@ -127,9 +63,13 @@ export const Template = (args) => <ButtonComponent {...args} />
     </Story>
 </Canvas>
 
-###### Disabled (large)
+###### Disabled
 <Canvas>
-  <Story name="PrimaryLargeDisabled" width="200px"
+  <p className="story-title">Primary</p>
+  <p className="story-title">Secondary</p>
+  <p className="story-title">Tertiary</p>
+  <p className="story-title">Distructive</p>
+  <Story name="Primary Disabled"
     args={{
       label: 'Label',
       large: true,
@@ -138,7 +78,7 @@ export const Template = (args) => <ButtonComponent {...args} />
     }}>
     {Template.bind({})}
   </Story>
-  <Story name="SecondaryLargeDisabled" width="200px"
+  <Story name="SecondaryDisabled"
     args={{
       label: 'Label',
       large: true,
@@ -147,7 +87,7 @@ export const Template = (args) => <ButtonComponent {...args} />
     }}>
     {Template.bind({})}
   </Story>
-  <Story name="TertiaryLargeDisabled" width="200px"
+  <Story name="TertiaryDisabled"
     args={{
       label: 'Label',
       large: true,
@@ -156,7 +96,7 @@ export const Template = (args) => <ButtonComponent {...args} />
     }}>
     {Template.bind({})}
   </Story>
-  <Story name="DistructiveLargeDisabled" width="200px"
+  <Story name="DistructiveDisabled"
       args={{
         label: 'Label',
         large: true,

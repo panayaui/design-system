@@ -1,8 +1,9 @@
 import { setCompodocJson } from "@storybook/addon-docs/angular";
 import "!style-loader!css-loader!sass-loader!../src/stories/assets/styles/styles-stories.scss";
 import docJson from "../documentation.json";
-setCompodocJson(docJson);
+import { addParameters } from '@storybook/angular';
 
+setCompodocJson(docJson);
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -12,4 +13,10 @@ export const parameters = {
       date: /Date$/,
     },
   },
-}
+};
+
+addParameters({
+  docs: {
+    inlineStories: true,
+  },
+});

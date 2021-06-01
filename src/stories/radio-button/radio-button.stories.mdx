@@ -1,0 +1,108 @@
+import {Meta, Story, Canvas, Preview} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+import {CommonModule} from '@angular/common';
+import {MatRadioModule} from '@angular/material/radio';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import RadioButtonComponent from './radio-button.component';
+
+<Meta title='Components/Radio Button/Base' component={RadioButtonComponent}
+decorators={[
+  moduleMetadata({
+    imports: [CommonModule,
+            MatRadioModule]
+        })
+]} />
+
+# Radio Button / Base
+
+export const Template = (args) => <RadioButtonComponent {...args} />
+
+###### Selector
+
+```html
+  <p-radio-button></p-radio-button>
+```
+
+###### Label
+<Canvas>
+  <p className="story-title">Default Off</p>
+  <Story name="Label Off"
+    args={{
+      label: 'Label'
+    }}>
+    {Template.bind({})}
+  </Story>
+  <p className="story-title">Disabled Off</p>
+  <Story name="Label Off Disabled"
+    args={{
+      label: 'Label',
+      disabled: true
+    }}>
+    {Template.bind({})}
+  </Story>
+  <p className="story-title">Default On</p>
+  <Story name="Label On"
+    args={{
+      label: 'Label',
+      checked: true
+    }}>
+    {Template.bind({})}
+  </Story>
+  <p className="story-title">Disabled On</p>
+  <Story name="Label On Disabled"
+    args={{
+      label: 'Label',
+      checked: true,
+      disabled: true
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### No Label
+<Canvas>
+  <p className="story-title">Disabled On</p>
+  <Story name="No Label Off"
+    args={{
+      ariaLabel: 'Label'
+    }}>
+    {Template.bind({})}
+  </Story>
+  <p className="story-title">Disabled On</p>
+  <Story name="No Label Off Disabled"
+    args={{
+      ariaLabel: 'Label',
+      disabled: true
+    }}>
+    {Template.bind({})}
+  </Story>
+  <p className="story-title">Disabled On</p>
+  <Story name="No Label On"
+    args={{
+      ariaLabel: 'Label',
+      checked: true
+    }}>
+    {Template.bind({})}
+  </Story>
+  <p className="story-title">Disabled On</p>
+  <Story name="No Label On Disabled"
+    args={{
+      ariaLabel: 'Label',
+      checked: true,
+      disabled: true
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Component
+```ts
+export default class RadioButtonComponent {
+  @Input() value: any;
+  @Input() label: string;
+  @Input() ariaLabel: string;
+  @Input() checked: boolean = false;
+  @Input() disabled: boolean = false;
+}
+```
+

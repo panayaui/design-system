@@ -1353,6 +1353,67 @@
             "templateData": "<div class=\"page page-input-text-table-layout\">\r\n    <header class=\"page-header\">\r\n      <h1 class=\"page-title\">Text Input /\r\n        <span class=\"page-header-highlighted\">Table layout definitions</span>\r\n      </h1>\r\n    </header>\r\n\r\n    <main class=\"page-main\">\r\n      <div class=\"input-table-wrapper\">\r\n        <button class=\"input-table-trigger\" (click)=\"isSimpleTableVisible = !isSimpleTableVisible\">\r\n          <p-icon class=\"input-table-trigger-icon\"\r\n                  name=\"chevron-down\"\r\n                  width=\"16\"\r\n                  height=\"auto\"\r\n                  strokeWidth=\"3\"></p-icon>\r\n          {{inputTablePage.simple.title}}\r\n        </button>\r\n        <div *ngIf=\"isSimpleTableVisible\"\r\n            tabindex=\"-1\"\r\n            attr.aria-label=\"{{inputTablePage.simple.title}}\"\r\n            class=\"input-table-container\">\r\n          <table class=\"input-table\">\r\n            <tbody class=\"input-table-body\">\r\n            <ng-container *ngFor=\"let input of inputTablePage.simple.table\">\r\n              <tr class=\"input-table-row\">\r\n                <th class=\"input-table-header\">\r\n                  {{input.tableHeader}}\r\n                </th>\r\n                <td class=\"input-table-data\">\r\n                  <p-input-text [type]=\"input.tableData.type\"\r\n                                [label]=\"input.tableData.label\"\r\n                                [ariaLabel]=\"input.tableData.ariaLabel\"\r\n                                [placeholder]=\"input.tableData.placeholder\"\r\n                                [errorMessage]=\"input.tableData.errorMessage\"\r\n                                [disabled]=\"input.tableData.disabled\"\r\n                                [readonly]=\"input.tableData.readonly\"\r\n                                [value]=\"input.tableData.value\"\r\n                                [validators]=\"input.tableData.validators\">\r\n                  </p-input-text>\r\n                </td>\r\n              </tr>\r\n            </ng-container>\r\n            </tbody>\r\n          </table>\r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"input-table-wrapper\">\r\n        <button class=\"input-table-trigger\" (click)=\"isComplesTableVisible = !isComplesTableVisible\">\r\n          <p-icon class=\"input-table-trigger-icon\"\r\n                  name=\"chevron-down\"\r\n                  width=\"16\"\r\n                  height=\"auto\"\r\n                  strokeWidth=\"3\"></p-icon>\r\n          {{inputTablePage.complex.title}}\r\n        </button>\r\n        <div *ngIf=\"isComplesTableVisible\"\r\n             tabindex=\"-1\"\r\n             attr.aria-label=\"{{inputTablePage.complex.title}}\"\r\n             class=\"input-table-container\">\r\n          <table class=\"input-table\">\r\n            <tbody class=\"input-table-body\">\r\n            <ng-container *ngFor=\"let input of inputTablePage.complex.table\">\r\n              <tr class=\"input-table-row\">\r\n                <th class=\"input-table-header\">\r\n                  {{input.tableHeader}}\r\n                </th>\r\n                <td class=\"input-table-data\">\r\n                  <p-input-text [type]=\"input.tableData.type\"\r\n                                [label]=\"input.tableData.label\"\r\n                                [ariaLabel]=\"input.tableData.ariaLabel\"\r\n                                [placeholder]=\"input.tableData.placeholder\"\r\n                                [errorMessage]=\"input.tableData.errorMessage\"\r\n                                [disabled]=\"input.tableData.disabled\"\r\n                                [readonly]=\"input.tableData.readonly\"\r\n                                [value]=\"input.tableData.value\"\r\n                                [validators]=\"input.tableData.validators\">\r\n                  </p-input-text>\r\n                </td>\r\n              </tr>\r\n            </ng-container>\r\n            </tbody>\r\n          </table>\r\n        </div>\r\n      </div>\r\n    </main>\r\n</div>\r\n"
         },
         {
+            "name": "RadioButtonComponent",
+            "id": "component-RadioButtonComponent-7541bda88f3d6a7eb3331cff580487be",
+            "file": "src/stories/radio-button/radio-button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-radio-button",
+            "styleUrls": [
+                "./radio-button.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./radio-button.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "ariaLabel",
+                    "line": 10,
+                    "type": "string"
+                },
+                {
+                    "name": "checked",
+                    "defaultValue": "false",
+                    "line": 11,
+                    "type": "boolean"
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "line": 12,
+                    "type": "boolean"
+                },
+                {
+                    "name": "label",
+                    "line": 9,
+                    "type": "string"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'p-radio-button',\r\n  templateUrl: './radio-button.component.html',\r\n  styleUrls: ['./radio-button.component.scss'],\r\n})\r\nexport default class RadioButtonComponent {\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string;\r\n  @Input() checked: boolean = false;\r\n  @Input() disabled: boolean = false;\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$radio-button-size: 16px;\r\n\r\n::ng-deep .p-radio-button {\r\n  // material styles override\r\n  .mat-radio-label-content {\r\n    font-family: $font-family-basic;\r\n    font-weight: 400;\r\n    font-size: $small-font-size;\r\n    text-transform: capitalize;\r\n    //line-height: 20px;\r\n    color: $primary-a-900;\r\n  }\r\n\r\n  .mat-radio-container {\r\n    width: $radio-button-size;\r\n    height: $radio-button-size;\r\n  }\r\n\r\n  .mat-radio-outer-circle {\r\n    width: $radio-button-size;\r\n    height: $radio-button-size;\r\n    background-color: $gray-scale-1;\r\n    border-width: 1px;\r\n    border-style: solid;\r\n    border-radius: 50%;\r\n    border-color: $gray-scale-400;\r\n  }\r\n\r\n  .mat-radio-ripple {\r\n    display: none;\r\n  }\r\n\r\n  // hover\r\n  &:hover {\r\n    .mat-radio-outer-circle {\r\n      border-color: $secondary-a-700;\r\n    }\r\n  }\r\n\r\n  // focus\r\n  &.cdk-focused {\r\n    .mat-radio-outer-circle {\r\n      border-color: $secondary-a-700;\r\n    }\r\n  }\r\n\r\n  // disabled\r\n  &.mat-radio-button.mat-radio-disabled {\r\n    .mat-radio-outer-circle {\r\n      background-color: $primary-c-50;\r\n      border-color: $gray-scale-400;\r\n    }\r\n    .mat-radio-label-content {\r\n      color: $gray-scale-600;\r\n    }\r\n  }\r\n\r\n  // checked\r\n  &.mat-radio-button.mat-accent.mat-radio-checked {\r\n    .mat-radio-outer-circle {\r\n      border-color: $secondary-a-700;\r\n    }\r\n    .mat-radio-inner-circle {\r\n      height: $radio-button-size;\r\n      width: $radio-button-size;\r\n      background-color: $secondary-a-700;\r\n    }\r\n\r\n    // checked + hover\r\n    &:hover {\r\n      .mat-radio-inner-circle {\r\n        background-color: $secondary-a-800;\r\n      }\r\n    }\r\n\r\n    // checked + focus\r\n    &.cdk-focused {\r\n      .mat-radio-inner-circle {\r\n        background-color: $secondary-a-800;\r\n      }\r\n    }\r\n\r\n    // checked + disabled\r\n    &.mat-radio-disabled {\r\n      .mat-radio-outer-circle {\r\n        background-color: $gray-scale-1;\r\n        border-color: $secondary-a-100;\r\n      }\r\n      .mat-radio-inner-circle {\r\n        background-color: $secondary-a-100;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+                    "styleUrl": "./radio-button.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<mat-radio-button class=\"p-radio-button\"\r\n                  [value]=\"value\"\r\n                  [disabled]=\"disabled\"\r\n                  [checked]=\"checked\">\r\n  <ng-container *ngIf=\"label\">\r\n    {{label}}\r\n  </ng-container>\r\n</mat-radio-button>\r\n"
+        },
+        {
             "name": "SlideToggleComponent",
             "id": "component-SlideToggleComponent-26248c0809d38e231de75e570be8b19a",
             "file": "src/stories/slide-toggle/slide-toggle.component.ts",
@@ -1406,7 +1467,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n.p-slide-toggle {\r\n  // material styles override\r\n  ::ng-deep &.mat-slide-toggle {\r\n    .mat-slide-toggle-bar {\r\n      width: 48px;\r\n      height: 24px;\r\n      background-color: $gray-scale-500;\r\n      border-radius: 24px;\r\n      box-sizing: content-box;\r\n    }\r\n    .mat-slide-toggle-thumb-container {\r\n      top: 2px;\r\n      left: 2px;\r\n    }\r\n    .mat-slide-toggle-thumb {\r\n      background-color: $gray-scale-1;\r\n      box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);\r\n    }\r\n    .mat-slide-toggle-content {\r\n      font-family: $font-family-basic;\r\n      font-size: $small-font-size;\r\n      font-weight: 500;\r\n    }\r\n    .mat-slide-toggle-ripple {\r\n      display: none;\r\n    }\r\n\r\n    &:hover {\r\n      .mat-slide-toggle-bar {\r\n        background-color: $gray-scale-700;\r\n      }\r\n    }\r\n\r\n    // focus\r\n    &.cdk-focused {\r\n      .mat-slide-toggle-bar {\r\n        background-color: $gray-scale-700;\r\n        //border: 2px solid $gray-scale-100;\r\n      }\r\n    }\r\n\r\n    // disabled\r\n    &.mat-disabled {\r\n      opacity: 1;\r\n      .mat-slide-toggle-bar {\r\n        background-color: $gray-scale-50;\r\n      }\r\n      .mat-slide-toggle-thumb {\r\n        box-shadow: none;\r\n      }\r\n      .mat-slide-toggle-content {\r\n        color: $gray-scale-700;\r\n      }\r\n    }\r\n\r\n    // checked\r\n    &.mat-checked {\r\n      .mat-slide-toggle-bar {\r\n        background-color: $secondary-a-700;\r\n      }\r\n      .mat-slide-toggle-thumb-container {\r\n        transform: translate3d(24px, 0, 0);\r\n      }\r\n      .mat-slide-toggle-thumb {\r\n        box-shadow: 0 0 3px $secondary-a-800;\r\n      }\r\n      // checked + hover\r\n      &:hover {\r\n        .mat-slide-toggle-bar {\r\n          background-color: $secondary-a-800;\r\n        }\r\n      }\r\n      // checked + focus\r\n      &.cdk-focused {\r\n        .mat-slide-toggle-bar {\r\n          //border: 2px solid $secondary-a-200;\r\n        }\r\n      }\r\n      // checked + disabled\r\n      &.mat-disabled {\r\n        .mat-slide-toggle-bar {\r\n           background-color: $secondary-a-100;\r\n        }\r\n        .mat-slide-toggle-thumb {\r\n          width: 19px;\r\n          height: 19px;\r\n          box-shadow: none;\r\n        }\r\n      }\r\n    }\r\n  }\r\n\r\n  // icons added\r\n  ::ng-deep &.mat-slide-toggle {\r\n    .mat-slide-toggle-bar {\r\n      &:before {\r\n        content: '';\r\n        display: block;\r\n        width: 15px;\r\n        height: 12px;\r\n        background-image: url('../assets/images/check.svg');\r\n        background-position: center center;\r\n        background-repeat: no-repeat;\r\n        background-size: cover;\r\n        position: absolute;\r\n        top: 6px;\r\n        left: 7px;\r\n      }\r\n      &:after {\r\n        content: '';\r\n        display: block;\r\n        width: 15px;\r\n        height: 15px;\r\n        background-image: url('../assets/images/x.svg');\r\n        background-position: center center;\r\n        background-repeat: no-repeat;\r\n        background-size: cover;\r\n        position: absolute;\r\n        top: 4px;\r\n        right: 5px;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n.p-slide-toggle {\r\n  // material styles override\r\n  ::ng-deep &.mat-slide-toggle {\r\n    .mat-slide-toggle-bar {\r\n      width: 48px;\r\n      height: 24px;\r\n      background-color: $gray-scale-500;\r\n      border-radius: 24px;\r\n      box-sizing: content-box;\r\n    }\r\n    .mat-slide-toggle-thumb-container {\r\n      top: 2px;\r\n      left: 2px;\r\n    }\r\n    .mat-slide-toggle-thumb {\r\n      background-color: $gray-scale-1;\r\n      box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);\r\n    }\r\n    .mat-slide-toggle-content {\r\n      font-family: $font-family-basic;\r\n      font-size: $small-font-size;\r\n      font-weight: 500;\r\n    }\r\n    .mat-slide-toggle-ripple {\r\n      display: none;\r\n    }\r\n\r\n    // hover\r\n    &:hover {\r\n      .mat-slide-toggle-bar {\r\n        background-color: $gray-scale-700;\r\n      }\r\n    }\r\n\r\n    // focus\r\n    &.cdk-focused {\r\n      .mat-slide-toggle-bar {\r\n        background-color: $gray-scale-700;\r\n        //border: 2px solid $gray-scale-100;\r\n      }\r\n    }\r\n\r\n    // disabled\r\n    &.mat-disabled {\r\n      opacity: 1;\r\n      .mat-slide-toggle-bar {\r\n        background-color: $gray-scale-50;\r\n      }\r\n      .mat-slide-toggle-thumb {\r\n        box-shadow: none;\r\n      }\r\n      .mat-slide-toggle-content {\r\n        color: $gray-scale-700;\r\n      }\r\n    }\r\n\r\n    // checked\r\n    &.mat-checked {\r\n      .mat-slide-toggle-bar {\r\n        background-color: $secondary-a-700;\r\n      }\r\n      .mat-slide-toggle-thumb-container {\r\n        transform: translate3d(24px, 0, 0);\r\n      }\r\n      .mat-slide-toggle-thumb {\r\n        box-shadow: 0 0 3px $secondary-a-800;\r\n      }\r\n      // checked + hover\r\n      &:hover {\r\n        .mat-slide-toggle-bar {\r\n          background-color: $secondary-a-800;\r\n        }\r\n      }\r\n      // checked + focus\r\n      &.cdk-focused {\r\n        .mat-slide-toggle-bar {\r\n          //border: 2px solid $secondary-a-200;\r\n        }\r\n      }\r\n      // checked + disabled\r\n      &.mat-disabled {\r\n        .mat-slide-toggle-bar {\r\n           background-color: $secondary-a-100;\r\n        }\r\n        .mat-slide-toggle-thumb {\r\n          width: 19px;\r\n          height: 19px;\r\n          box-shadow: none;\r\n        }\r\n      }\r\n    }\r\n  }\r\n\r\n  // icons added\r\n  ::ng-deep &.mat-slide-toggle {\r\n    .mat-slide-toggle-bar {\r\n      &:before {\r\n        content: '';\r\n        display: block;\r\n        width: 15px;\r\n        height: 12px;\r\n        background-image: url('../assets/images/check.svg');\r\n        background-position: center center;\r\n        background-repeat: no-repeat;\r\n        background-size: cover;\r\n        position: absolute;\r\n        top: 6px;\r\n        left: 7px;\r\n      }\r\n      &:after {\r\n        content: '';\r\n        display: block;\r\n        width: 15px;\r\n        height: 15px;\r\n        background-image: url('../assets/images/x.svg');\r\n        background-position: center center;\r\n        background-repeat: no-repeat;\r\n        background-size: cover;\r\n        position: absolute;\r\n        top: 4px;\r\n        right: 5px;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "./slide-toggle.component.scss"
                 }
             ],
@@ -1833,6 +1894,7 @@
                 "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
                 "type": "Story<CheckboxPageComponent>",
                 "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
+<<<<<<< HEAD
             },
             {
                 "name": "PageTemplate",
@@ -1849,6 +1911,8 @@
                 "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
                 "type": "Story<InputTextPageComponent>",
                 "defaultValue": "(args: InputTextPageComponent) => ({\r\n  props: args,\r\n})"
+=======
+>>>>>>> storybook
             },
             {
                 "name": "PageTemplate",
@@ -1859,6 +1923,25 @@
                 "defaultValue": "(args: InputTextTableLayoutComponent) => ({\r\n  props: args,\r\n})"
             },
             {
+<<<<<<< HEAD
+=======
+                "name": "PageTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
+                "type": "Story<InputTextPageComponent>",
+                "defaultValue": "(args: InputTextPageComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "PageTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts",
+                "type": "Story<SlideTogglePageComponent>",
+                "defaultValue": "(args: SlideTogglePageComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+>>>>>>> storybook
                 "name": "palette",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2940,6 +3023,15 @@
                 "name": "WithLabel",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/radio-button/radio-button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "RadioButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
