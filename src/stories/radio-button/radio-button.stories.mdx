@@ -26,14 +26,14 @@ export const Template = (args) => <RadioButtonComponent {...args} />
 ###### Label
 <Canvas>
   <p className="story-title">Default Off</p>
-  <Story name="Label Off" 
+  <Story name="Label Off"
     args={{
       label: 'Label'
     }}>
     {Template.bind({})}
   </Story>
   <p className="story-title">Disabled Off</p>
-  <Story name="Label Off Disabled" 
+  <Story name="Label Off Disabled"
     args={{
       label: 'Label',
       disabled: true
@@ -41,7 +41,7 @@ export const Template = (args) => <RadioButtonComponent {...args} />
     {Template.bind({})}
   </Story>
   <p className="story-title">Default On</p>
-  <Story name="Label On" 
+  <Story name="Label On"
     args={{
       label: 'Label',
       checked: true
@@ -49,7 +49,7 @@ export const Template = (args) => <RadioButtonComponent {...args} />
     {Template.bind({})}
   </Story>
   <p className="story-title">Disabled On</p>
-  <Story name="Label On Disabled" 
+  <Story name="Label On Disabled"
     args={{
       label: 'Label',
       checked: true,
@@ -69,7 +69,7 @@ export const Template = (args) => <RadioButtonComponent {...args} />
     {Template.bind({})}
   </Story>
   <p className="story-title">Disabled On</p>
-  <Story name="No Label Off Disabled" 
+  <Story name="No Label Off Disabled"
     args={{
       ariaLabel: 'Label',
       disabled: true
@@ -85,7 +85,7 @@ export const Template = (args) => <RadioButtonComponent {...args} />
     {Template.bind({})}
   </Story>
   <p className="story-title">Disabled On</p>
-  <Story name="No Label On Disabled" 
+  <Story name="No Label On Disabled"
     args={{
       ariaLabel: 'Label',
       checked: true,
@@ -98,6 +98,7 @@ export const Template = (args) => <RadioButtonComponent {...args} />
 ###### Component
 ```ts
 export default class RadioButtonComponent {
+  @Input() value: any;
   @Input() label: string;
   @Input() ariaLabel: string;
   @Input() checked: boolean = false;
