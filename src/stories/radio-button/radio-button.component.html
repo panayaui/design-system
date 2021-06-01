@@ -1,5 +1,7 @@
 <mat-radio-button class="p-radio-button"
-                  [value]="season">
+                  [value]="value"
+                  [disabled]="disabled"
+                  [checked]="checked">
   <ng-container *ngIf="label">
     {{label}}
   </ng-container>

@@ -2,7 +2,7 @@ import { moduleMetadata } from '@storybook/angular';
 import { CommonModule } from '@angular/common';
 import { Story, Meta } from '@storybook/angular/types-6-0';
 import SlideTogglePageComponent from './slide-toggle-page.component';
-import RadioButtonComponent from '../../radio-button/radio-button.component';
+import SlideToggleComponent from '../slide-toggle.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 export default {
@@ -10,13 +10,13 @@ export default {
   component: SlideTogglePageComponent,
   decorators: [
     moduleMetadata({
-      declarations: [SlideTogglePageComponent, RadioButtonComponent],
+      declarations: [SlideTogglePageComponent, SlideToggleComponent],
       imports: [CommonModule, MatSlideToggleModule],
     }),
   ],
 } as Meta;
 
-const SlideToggleTemplate: Story<RadioButtonComponent> = (args: RadioButtonComponent) => ({
+const SlideToggleTemplate: Story<SlideToggleComponent> = (args: SlideToggleComponent) => ({
   props: args,
 });
 
