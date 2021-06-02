@@ -26,10 +26,11 @@ p {
   margin-bottom: 0;
 }
 
+// story section title
 .sbdocs-h6 {
   font-weight: 700;
 }
-
+// element title inside canvas
 .story-title {
   width: 100%;
   font-family: $font-family-basic;
@@ -46,6 +47,13 @@ p {
   }
   &:nth-child(even){
     width: calc(100% - #{$label-width});
+  }
+}
+
+#button-large,
+#button-small {
+  & ~ .sbdocs .innerZoomElementWrapper > div {
+    width: calc(100% / 4);
   }
 }
 
