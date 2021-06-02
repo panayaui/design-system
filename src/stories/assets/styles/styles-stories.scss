@@ -57,6 +57,12 @@ p {
   }
 }
 
+#tooltip {
+  & ~ .sbdocs .innerZoomElementWrapper > div {
+    width: calc(100% / 6);
+  }
+}
+
 .page {
   $page-line-height: 70px;
   &-main {
