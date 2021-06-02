@@ -2,17 +2,10 @@ import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import {moduleMetadata} from '@storybook/angular';
 import ButtonComponent from './button.component';
 import {ButtonTypeEnum} from './button-page/button-type.enum';
-import IconComponent from '../icons/icon.component';
-import {IconsModule} from '../../app/icons/icons.module';
 
 <Meta title='Components/Button/Small/Regular'
   component={ButtonComponent}
-  subcomponents={IconComponent}
-  decorators={[
-    moduleMetadata({
-      imports: [IconsModule]
-          })
-]} />
+/>
 
 export const Template = (args) => <ButtonComponent {...args} />
 
@@ -23,7 +16,7 @@ export const Template = (args) => <ButtonComponent {...args} />
   <p-button></p-button>
 ```
 
-###### Default 
+###### Default
 <Canvas>
   <p className="story-title">Primary</p>
   <p className="story-title">Secondary</p>
@@ -42,7 +35,7 @@ export const Template = (args) => <ButtonComponent {...args} />
       buttonType: ButtonTypeEnum.Secondary
     }}>
     {Template.bind({})}
-  </Story>   
+  </Story>
   <Story name="Tertiary"
     args={{
       label: 'Label',

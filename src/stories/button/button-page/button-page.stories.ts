@@ -5,7 +5,7 @@ import ButtonPageComponent from './button-page.component';
 import ButtonComponent from '../button.component';
 import * as ButtonStories from '../button.stories';
 import IconComponent from '../../icons/icon.component';
-import {IconsModule} from '../../../app/icons/icons.module';
+import {IconsModule} from '../../icons/icons.module';
 
 // export default {
 //   title: 'Components/Buttons/All',

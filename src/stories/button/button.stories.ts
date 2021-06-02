@@ -4,7 +4,7 @@ import {Story, Meta} from '@storybook/angular/types-6-0';
 import ButtonComponent from './button.component';
 import {ButtonTypeEnum} from './button-page/button-type.enum';
 import IconComponent from '../icons/icon.component';
-import {IconsModule} from '../../app/icons/icons.module';
+import {IconsModule} from '../icons/icons.module';
 
 // export default {
 //   title: 'Components/Buttons',

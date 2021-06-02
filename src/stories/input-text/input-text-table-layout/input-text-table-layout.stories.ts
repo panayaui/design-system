@@ -8,7 +8,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
 import {ReactiveFormsModule, Validators} from '@angular/forms';
-import {IconsModule} from '../../../app/icons/icons.module';
+import {IconsModule} from '../../icons/icons.module';
 import IconComponent from '../../icons/icon.component';
 
 export default {
