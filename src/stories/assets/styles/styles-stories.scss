@@ -36,17 +36,21 @@ p {
   font-family: $font-family-basic;
   font-weight: 500;
   font-size: $base-font-size;
+  text-transform: capitalize;
   line-height: 64px;
   color: $gray-scale-700;
 }
 
-#radio-button--base ~ .sbdocs .innerZoomElementWrapper > div {
-  $label-width: 150px;
-  &:nth-child(odd){
-    width: $label-width;
-  }
-  &:nth-child(even){
-    width: calc(100% - #{$label-width});
+#radio-button--base,
+#label-status-main {
+  & ~ .sbdocs .innerZoomElementWrapper > div {
+    $label-width: 150px;
+    &:nth-child(odd){
+      width: $label-width;
+    }
+    &:nth-child(even){
+      width: calc(100% - #{$label-width});
+    }
   }
 }
 
