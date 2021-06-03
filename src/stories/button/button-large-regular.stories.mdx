@@ -1,7 +1,11 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import {moduleMetadata} from '@storybook/angular';
-import ButtonComponent from './button.component';
-import {ButtonTypeEnum} from './button-page/button-type.enum';
+// import ButtonComponent from './button.component';
+// import {ButtonTypeEnum} from './button-page/button-type.enum';
+// import {ButtonComponent} from 'design-system-lib';
+// import {ButtonModule} from 'design-system-lib';
+import {ButtonComponent} from 'projects/design-system-lib/src/public-api';
+import {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';
 
 <Meta title='Components/Button/Large/Regular'
   component={ButtonComponent}
@@ -102,7 +106,7 @@ export const Template = (args) => <ButtonComponent {...args} />
 
 ###### Component
 ```ts
-export default class ButtonComponent {
+export class ButtonComponent {
   @Input() label: string;
   @Input() large: boolean = false;
   @Input() disabled: boolean = false;

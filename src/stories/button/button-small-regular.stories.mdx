@@ -4,16 +4,11 @@ import {moduleMetadata} from '@storybook/angular';
 // import {ButtonTypeEnum} from './button-page/button-type.enum';
 // import {ButtonComponent} from 'design-system-lib';
 // import {ButtonModule} from 'design-system-lib';
-import { ButtonComponent } from 'projects/design-system-lib/src/public-api';
-import { ButtonModule } from 'projects/design-system-lib/src/public-api';
+import {ButtonComponent} from 'projects/design-system-lib/src/public-api';
+import {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';
 
 <Meta title='Components/Button/Small/Regular'
   component={ButtonComponent}
-  decorators={[
-    moduleMetadata({
-      imports: [ButtonModule],
-    })
-]}
 />
 
 export const Template = (args) => <ButtonComponent {...args} />
@@ -33,15 +28,77 @@ export const Template = (args) => <ButtonComponent {...args} />
   <p className="story-title">Distructive</p>
   <Story name="Primary"
     args={{
-      label: 'Label'
+      label: 'Label',
+      buttonType: ButtonTypeEnum.Primary
     }}>
     {Template.bind({})}
   </Story>
+    <Story name="Secondary"
+    args={{
+      label: 'Label',
+      buttonType: ButtonTypeEnum.Secondary
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Tertiary"
+    args={{
+      label: 'Label',
+      buttonType: ButtonTypeEnum.Tertiary
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Distructive"
+      args={{
+        label: 'Label',
+        buttonType: ButtonTypeEnum.Distructive
+      }}>
+      {Template.bind({})}
+    </Story>
+</Canvas>
+
+###### Disabled
+<Canvas>
+  <p className="story-title">Primary</p>
+  <p className="story-title">Secondary</p>
+  <p className="story-title">Tertiary</p>
+  <p className="story-title">Distructive</p>
+  <Story name="Primary Disabled"
+    args={{
+      label: 'Label',
+      disabled: true,
+      buttonType: ButtonTypeEnum.Primary
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="SecondaryDisabled"
+    args={{
+      label: 'Label',
+      disabled: true,
+      buttonType: ButtonTypeEnum.Secondary
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="TertiaryDisabled"
+    args={{
+      label: 'Label',
+      disabled: true,
+      buttonType: ButtonTypeEnum.Tertiary
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="DistructiveDisabled"
+      args={{
+        label: 'Label',
+        disabled: true,
+        buttonType: ButtonTypeEnum.Distructive
+      }}>
+      {Template.bind({})}
+    </Story>
 </Canvas>
 
 ###### Component
 ```ts
-export default class ButtonComponent {
+export class ButtonComponent {
   @Input() label: string;
   @Input() large: boolean = false;
   @Input() disabled: boolean = false;
