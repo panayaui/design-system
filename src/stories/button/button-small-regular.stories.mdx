@@ -6,9 +6,15 @@ import {moduleMetadata} from '@storybook/angular';
 // import {ButtonModule} from 'design-system-lib';
 import {ButtonComponent} from 'projects/design-system-lib/src/public-api';
 import {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';
+import {IconModule} from 'projects/design-system-lib/src/lib/icon/icon.module';
 
 <Meta title='Components/Button/Small/Regular'
   component={ButtonComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [IconModule]
+    })
+  ]}  
 />
 
 export const Template = (args) => <ButtonComponent {...args} />
@@ -70,7 +76,7 @@ export const Template = (args) => <ButtonComponent {...args} />
     }}>
     {Template.bind({})}
   </Story>
-  <Story name="SecondaryDisabled"
+  <Story name="Secondary Disabled"
     args={{
       label: 'Label',
       disabled: true,
@@ -78,7 +84,7 @@ export const Template = (args) => <ButtonComponent {...args} />
     }}>
     {Template.bind({})}
   </Story>
-  <Story name="TertiaryDisabled"
+  <Story name="Tertiary Disabled"
     args={{
       label: 'Label',
       disabled: true,
@@ -86,7 +92,7 @@ export const Template = (args) => <ButtonComponent {...args} />
     }}>
     {Template.bind({})}
   </Story>
-  <Story name="DistructiveDisabled"
+  <Story name="Distructive Disabled"
       args={{
         label: 'Label',
         disabled: true,
