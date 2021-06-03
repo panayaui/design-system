@@ -1,0 +1,71 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+import {CommonModule} from '@angular/common';
+import TooltipComponent from './tooltip.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+<Meta title='Components/Tooltip'
+  component={TooltipComponent}
+  decorators={[
+    moduleMetadata({
+      declarations: [TooltipComponent],
+      imports: [CommonModule, MatTooltipModule, BrowserAnimationsModule],
+    })
+]}  />
+
+# Tooltip
+
+export const Template = (args) => <TooltipComponent {...args} />
+
+###### 
+
+```ts
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+```
+
+```html
+  <button #tooltip="matTooltip"
+        [matTooltip]="message"
+        [matTooltipDisabled]="disabled"
+        [matTooltipShowDelay]="showDelay"
+        [matTooltipHideDelay]="hideDelay"
+        [matTooltipPosition]="position"
+        [matTooltipClass]="tooltipClass">
+    Label
+  </button>
+```
+###### Position
+<Canvas>
+  <p className="story-title">Right</p>
+  <p className="story-title">Left</p>
+  <p className="story-title">Above</p>
+  <p className="story-title">Below</p>
+  <p className="story-title">After</p>
+  <p className="story-title">Before</p>
+  <Story name="Right"
+    args={{ position: 'right', message: 'Tooltip Label' }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Left"
+    args={{ position: 'left', message: 'Tooltip Label' }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Above"
+    args={{ position: 'above', message: 'Tooltip Label' }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Below"
+    args={{ position: 'below', message: 'Tooltip Label' }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="After"
+    args={{ position: 'after', message: 'Tooltip Label' }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Before"
+    args={{ position: 'before', message: 'Tooltip Label' }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
