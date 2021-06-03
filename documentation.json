@@ -445,7 +445,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-feacc190ef255396e90b970916e0ae0e",
+            "id": "component-AppComponent-583116df942a06534bcab18d9b7b4283",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -465,20 +465,12 @@
             "outputsClass": [],
             "propertiesClass": [
                 {
-                    "name": "emailFormControl",
-                    "defaultValue": "new FormControl('', [\r\n    Validators.required,\r\n    Validators.email,\r\n  ])",
-                    "type": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 11
-                },
-                {
                     "name": "title",
                     "defaultValue": "'storybooktemplate'",
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 10
+                    "line": 9
                 }
             ],
             "methodsClass": [],
@@ -487,7 +479,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport {FormControl, Validators} from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.scss']\r\n})\r\nexport class AppComponent {\r\n  title = 'storybooktemplate';\r\n  emailFormControl = new FormControl('', [\r\n    Validators.required,\r\n    Validators.email,\r\n  ]);\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.scss']\r\n})\r\nexport class AppComponent {\r\n  title = 'storybooktemplate';\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -496,7 +488,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<form class=\"example-form\">\r\n  <mat-form-field class=\"example-full-width\">\r\n    <mat-label>Email</mat-label>\r\n    <input type=\"email\" matInput [formControl]=\"emailFormControl\" placeholder=\"Ex. pat@example.com\">\r\n    <mat-error *ngIf=\"emailFormControl.hasError('email') && !emailFormControl.hasError('required')\">\r\n      Please enter a valid email address\r\n    </mat-error>\r\n    <mat-error *ngIf=\"emailFormControl.hasError('required')\">\r\n      Email is <strong>required</strong>\r\n    </mat-error>\r\n  </mat-form-field>\r\n</form>\r\n"
+            "templateData": "<p-button [label]=\"'Label'\"></p-button>\r\n"
         },
         {
             "name": "ButtonComponent",
@@ -603,6 +595,116 @@
                     }
                 }
             },
+            "templateData": "<button class=\"p-btn\" [ngClass]=\"classes\" [disabled]=\"disabled\">\r\n  <!--<p-icon *ngIf=\"iconBefore\"-->\r\n          <!--class=\"p-btn-icon-pre\"-->\r\n          <!--[name]=\"iconBefore\"-->\r\n          <!--[width]=\"iconBeforeWidth\"-->\r\n          <!--[height]=\"iconBeforeHeight\"></p-icon>-->\r\n  <span class=\"p-btn-label\">{{label}}</span>\r\n  <!--<p-icon *ngIf=\"iconAfter\"-->\r\n          <!--class=\"p-btn-icon-post\"-->\r\n          <!--[name]=\"iconAfter\"-->\r\n          <!--[width]=\"iconAfterWidth\"-->\r\n          <!--[height]=\"iconAfterHeight\"></p-icon>-->\r\n</button>\r\n"
+        },
+        {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-48c6c25a0a2a77a461ec40d5cc668acf-1",
+            "file": "projects/design-system-lib/src/lib/button/button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-button",
+            "styleUrls": [
+                "./button.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./button.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "buttonType",
+                    "defaultValue": "ButtonTypeEnum.Primary",
+                    "line": 19,
+                    "type": "ButtonTypeEnum"
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "line": 12,
+                    "type": "boolean"
+                },
+                {
+                    "name": "iconAfter",
+                    "line": 16,
+                    "type": "string"
+                },
+                {
+                    "name": "iconAfterHeight",
+                    "defaultValue": "'auto'",
+                    "line": 18,
+                    "type": "string"
+                },
+                {
+                    "name": "iconAfterWidth",
+                    "defaultValue": "'auto'",
+                    "line": 17,
+                    "type": "string"
+                },
+                {
+                    "name": "iconBefore",
+                    "line": 13,
+                    "type": "string"
+                },
+                {
+                    "name": "iconBeforeHeight",
+                    "defaultValue": "'auto'",
+                    "line": 15,
+                    "type": "string"
+                },
+                {
+                    "name": "iconBeforeWidth",
+                    "defaultValue": "'auto'",
+                    "line": 14,
+                    "type": "string"
+                },
+                {
+                    "name": "label",
+                    "line": 10,
+                    "type": "string"
+                },
+                {
+                    "name": "large",
+                    "defaultValue": "false",
+                    "line": 11,
+                    "type": "boolean"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {ButtonTypeEnum} from './button-type.enum';\r\n\r\n@Component({\r\n  selector: 'p-button',\r\n  templateUrl: './button.component.html',\r\n  styleUrls: ['./button.component.scss'],\r\n})\r\nexport class ButtonComponent {\r\n  @Input() label: string;\r\n  @Input() large: boolean = false;\r\n  @Input() disabled: boolean = false;\r\n  @Input() iconBefore: string;\r\n  @Input() iconBeforeWidth: string = 'auto';\r\n  @Input() iconBeforeHeight: string = 'auto';\r\n  @Input() iconAfter: string;\r\n  @Input() iconAfterWidth: string = 'auto';\r\n  @Input() iconAfterHeight: string = 'auto';\r\n  @Input() buttonType: ButtonTypeEnum = ButtonTypeEnum.Primary;\r\n\r\n  public get classes(): string[] {\r\n    const classParams = [];\r\n    this.large ? classParams.push('p-btn-large') : classParams.push('p-btn-small');\r\n    this.iconBefore ? classParams.push('p-btn-icon-before') : null;\r\n    this.iconAfter ? classParams.push('p-btn-icon-after') : null;\r\n    classParams.push(`p-btn-${this.buttonType}`);\r\n    return classParams;\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n.p-btn {\r\n  @include resetButton;\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  font-weight: 500;\r\n  line-height: 19px;\r\n  min-width: 80px;\r\n  padding-right: 23px;\r\n  padding-left: 23px;\r\n  border-radius: 2px;\r\n  white-space: nowrap;\r\n  transition: all 400ms;\r\n\r\n  &-large {\r\n    height: 40px;\r\n  }\r\n\r\n  &-small {\r\n    height: 30px;\r\n  }\r\n\r\n  &:disabled {\r\n    pointer-events: none;\r\n  }\r\n\r\n  &-primary {\r\n    color: $gray-scale-1;\r\n    background-color: $secondary-a-700;\r\n    &:hover {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:focus {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      background-color: $secondary-a-50;\r\n    }\r\n  }\r\n\r\n  &-secondary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    border: 1px solid $secondary-a-700;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      border-color: $secondary-a-500;\r\n    }\r\n  }\r\n\r\n  &-tertiary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n    }\r\n  }\r\n\r\n  &-distructive {\r\n    color: $gray-scale-1;\r\n    background-color: $supportive-alert-500;\r\n    &:hover {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:focus {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      background-color: $supportive-alert-50;\r\n    }\r\n  }\r\n\r\n  // class of the button\r\n  &-icon-before {\r\n    padding-left: 17px;\r\n    .p-btn-label {\r\n      margin-left: 11px;\r\n    }\r\n  }\r\n  // class of the button\r\n  &-icon-after {\r\n    padding-right: 17px;\r\n    .p-btn-label {\r\n      margin-right: 11px;\r\n    }\r\n  }\r\n\r\n  // class of the icon\r\n  &-icon-pre,\r\n  &-icon-post {\r\n    display: inline-flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n  }\r\n}\r\n\r\n\r\n",
+                    "styleUrl": "./button.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 21
+                    }
+                }
+            },
+            "isDuplicate": true,
+            "duplicateId": 1,
+            "duplicateName": "ButtonComponent-1",
             "templateData": "<button class=\"p-btn\" [ngClass]=\"classes\" [disabled]=\"disabled\">\r\n  <!--<p-icon *ngIf=\"iconBefore\"-->\r\n          <!--class=\"p-btn-icon-pre\"-->\r\n          <!--[name]=\"iconBefore\"-->\r\n          <!--[width]=\"iconBeforeWidth\"-->\r\n          <!--[height]=\"iconBeforeHeight\"></p-icon>-->\r\n  <span class=\"p-btn-label\">{{label}}</span>\r\n  <!--<p-icon *ngIf=\"iconAfter\"-->\r\n          <!--class=\"p-btn-icon-post\"-->\r\n          <!--[name]=\"iconAfter\"-->\r\n          <!--[width]=\"iconAfterWidth\"-->\r\n          <!--[height]=\"iconAfterHeight\"></p-icon>-->\r\n</button>\r\n"
         },
         {
@@ -1924,6 +2026,9 @@
                     "elements": [
                         {
                             "name": "AppRoutingModule"
+                        },
+                        {
+                            "name": "ButtonModule"
                         }
                     ]
                 },
@@ -1955,6 +2060,39 @@
                 {
                     "type": "declarations",
                     "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "ButtonModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ButtonComponent"
+                        }
+                    ]
                 },
                 {
                     "type": "imports",
@@ -2055,6 +2193,14 @@
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
             {
+                "name": "context",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/design-system-lib/src/test.ts",
+                "type": "",
+                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
+            {
                 "name": "Distructive",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2066,17 +2212,17 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
+                "file": "src/environments/environment.ts",
                 "type": "object",
-                "defaultValue": "{\r\n  production: true\r\n}"
+                "defaultValue": "{\r\n  production: false\r\n}"
             },
             {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
+                "file": "src/environments/environment.prod.ts",
                 "type": "object",
-                "defaultValue": "{\r\n  production: false\r\n}"
+                "defaultValue": "{\r\n  production: true\r\n}"
             },
             {
                 "name": "ErrorMessage",
@@ -2154,17 +2300,17 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
-                "type": "Story<CheckboxPageComponent>",
-                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
+                "type": "Story<CheckboxGroupComponent>",
+                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
-                "type": "Story<CheckboxGroupComponent>",
-                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "Story<CheckboxPageComponent>",
+                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -2214,6 +2360,13 @@
                 "type": "literal type"
             },
             {
+                "name": "require",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/design-system-lib/src/test.ts",
+                "type": "literal type"
+            },
+            {
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2249,17 +2402,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/colors/Color-palette.stories.ts",
-                "type": "Story<ColorPaletteComponent>",
-                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/button/button.stories.ts",
+                "type": "Story<ButtonComponent>",
+                "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/button/button.stories.ts",
-                "type": "Story<ButtonComponent>",
-                "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/colors/Color-palette.stories.ts",
+                "type": "Story<ColorPaletteComponent>",
+                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -2281,17 +2434,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
-                "type": "Story<TypographyFontFamilyComponent>",
-                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/styles/typography-styles.stories.ts",
+                "type": "Story<TypographyStylesComponent>",
+                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/styles/typography-styles.stories.ts",
-                "type": "Story<TypographyStylesComponent>",
-                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
+                "type": "Story<TypographyFontFamilyComponent>",
+                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Tertiary",
@@ -2369,6 +2522,31 @@
                 "subtype": "enum",
                 "description": "",
                 "file": "src/stories/button/button-page/button-type.enum.ts"
+            },
+            {
+                "name": "ButtonTypeEnum",
+                "childs": [
+                    {
+                        "name": "Primary",
+                        "value": "primary"
+                    },
+                    {
+                        "name": "Secondary",
+                        "value": "secondary"
+                    },
+                    {
+                        "name": "Tertiary",
+                        "value": "tertiary"
+                    },
+                    {
+                        "name": "Distructive",
+                        "value": "distructive"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "description": "",
+                "file": "projects/design-system-lib/src/lib/button/button-type.enum.ts"
             },
             {
                 "name": "LabelTypesEnum",
@@ -2536,6 +2714,23 @@
                     "type": "literal type"
                 }
             ],
+            "projects/design-system-lib/src/test.ts": [
+                {
+                    "name": "context",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/design-system-lib/src/test.ts",
+                    "type": "",
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+                },
+                {
+                    "name": "require",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/design-system-lib/src/test.ts",
+                    "type": "literal type"
+                }
+            ],
             "src/stories/button/button.stories.ts": [
                 {
                     "name": "Distructive",
@@ -2578,16 +2773,6 @@
                     "defaultValue": "Template.bind({})"
                 }
             ],
-            "src/environments/environment.prod.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.prod.ts",
-                    "type": "object",
-                    "defaultValue": "{\r\n  production: true\r\n}"
-                }
-            ],
             "src/environments/environment.ts": [
                 {
                     "name": "environment",
@@ -2596,6 +2781,16 @@
                     "file": "src/environments/environment.ts",
                     "type": "object",
                     "defaultValue": "{\r\n  production: false\r\n}"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: true\r\n}"
                 }
             ],
             "src/stories/input-text/input-text.stories.ts": [
@@ -2822,6 +3017,33 @@
                     "file": "src/stories/button/button-page/button-type.enum.ts"
                 }
             ],
+            "projects/design-system-lib/src/lib/button/button-type.enum.ts": [
+                {
+                    "name": "ButtonTypeEnum",
+                    "childs": [
+                        {
+                            "name": "Primary",
+                            "value": "primary"
+                        },
+                        {
+                            "name": "Secondary",
+                            "value": "secondary"
+                        },
+                        {
+                            "name": "Tertiary",
+                            "value": "tertiary"
+                        },
+                        {
+                            "name": "Distructive",
+                            "value": "distructive"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "description": "",
+                    "file": "projects/design-system-lib/src/lib/button/button-type.enum.ts"
+                }
+            ],
             "src/stories/label-main/label-main.enum.ts": [
                 {
                     "name": "LabelTypesEnum",
@@ -2904,12 +3126,41 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/design-system-lib/src/lib/button/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/11",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "context",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "require",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/app.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "AppComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {
