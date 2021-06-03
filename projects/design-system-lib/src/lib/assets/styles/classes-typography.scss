@@ -1,0 +1,198 @@
+// Theme variables, must be included before the libraries to allow overriding defaults
+@import './theme-variables';
+
+@import 'custom';
+
+body {
+  font-family: $font-family-basic;
+  color: $primary-a-900;
+  padding: 0 !important;
+}
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @include resetH;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+//font-family
+.font-family-accent {
+  font-family: $font-family-accent;
+}
+.font-family-basic {
+  font-family: $font-family-basic;
+}
+
+//font-weight
+.weight-regular {
+  font-weight: 400;
+}
+.weight-medium {
+  font-weight: 500;
+}
+.weight-semi-bold {
+  font-weight: 600;
+}
+.weight-bold {
+  font-weight: 700;
+}
+
+//typography
+.headline-contrast {
+  color: $primary-b-300;
+}
+.headline-1-bold {
+  font-family: $font-family-accent;
+  font-size: $large-font-size;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.headline-1-sub-semibold {
+  font-family: $font-family-basic;
+  font-size: $big-font-size;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+.headline-2-bold {
+  font-family: $font-family-accent;
+  font-size: $middle-font-size;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.headline-2-semibold {
+  font-family: $font-family-accent;
+  font-size: $middle-font-size;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.headline-3-regular {
+  font-family: $font-family-accent;
+  font-size: $middle-font-size;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+}
+.headline-3-semibold {
+  font-family: $font-family-accent;
+  font-size: $middle-font-size;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+.headline-4-bold {
+  font-family: $font-family-basic;
+  font-size: $tiny-font-size;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.headline-5-bold {
+  font-family: $font-family-accent;
+  font-size: $middle-font-size;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.headline-6-bold {
+  font-family: $font-family-basic;
+  font-size: $tiny-font-size;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.headline-6-semibold {
+  font-family: $font-family-basic;
+  font-size: $tiny-font-size;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.headline-7-bold {
+  font-family: $font-family-basic;
+  font-size: $dominant-font-size;
+  font-weight: 700;
+  letter-spacing: normal;
+}
+.paragraph-1-default {
+  font-family: $font-family-basic;
+  font-size: $base-font-size;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 20px;
+}
+.paragraph-1-link {
+  font-family: $font-family-basic;
+  font-size: $base-font-size;
+  font-weight: 500;
+  letter-spacing: normal;
+  color: $secondary-a-700;
+  line-height: 20px;
+}
+.paragraph-1-large-label {
+  font-family: $font-family-basic;
+  font-size: $base-font-size;
+  font-weight: 500;
+  letter-spacing: normal;
+  color: $gray-scale-700;
+  line-height: 20px;
+}
+.paragraph-2-regular {
+  font-family: $font-family-basic;
+  font-size: $small-font-size;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 20px;
+}
+.paragraph-2-link {
+  font-family: $font-family-basic;
+  font-size: $small-font-size;
+  font-weight: 500;
+  letter-spacing: normal;
+  color: $secondary-a-700;
+  line-height: 20px;
+}
+.paragraph-2-actions {
+  font-family: $font-family-basic;
+  font-size: $small-font-size;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 20px;
+}
+.paragraph-3-default {
+  font-family: $font-family-basic;
+  font-size: $tiny-font-size;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 20px;
+}
+.paragraph-3-link {
+  font-family: $font-family-basic;
+  font-size: $tiny-font-size;
+  font-weight: 400;
+  letter-spacing: normal;
+  color: $secondary-a-700;
+  line-height: 20px;
+}
+.paragraph-3-medium {
+  font-family: $font-family-basic;
+  font-size: $tiny-font-size;
+  font-weight: 500;
+  letter-spacing: normal;
+  line-height: 20px;
+}
+.paragraph-3-semibold {
+  font-family: $font-family-basic;
+  font-size: $tiny-font-size;
+  font-weight: 600;
+  letter-spacing: normal;
+  color: $gray-scale-700;
+  line-height: 20px;
+}
