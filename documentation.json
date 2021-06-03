@@ -1400,6 +1400,55 @@
             "templateData": "<div class=\"page page-input-text-table-layout\">\r\n    <header class=\"page-header\">\r\n      <h1 class=\"page-title\">Text Input /\r\n        <span class=\"page-header-highlighted\">Table layout definitions</span>\r\n      </h1>\r\n    </header>\r\n\r\n    <main class=\"page-main\">\r\n      <div class=\"input-table-wrapper\">\r\n        <button class=\"input-table-trigger\" (click)=\"isSimpleTableVisible = !isSimpleTableVisible\">\r\n          <p-icon class=\"input-table-trigger-icon\"\r\n                  name=\"chevron-down\"\r\n                  width=\"16\"\r\n                  height=\"auto\"\r\n                  strokeWidth=\"3\"></p-icon>\r\n          {{inputTablePage.simple.title}}\r\n        </button>\r\n        <div *ngIf=\"isSimpleTableVisible\"\r\n            tabindex=\"-1\"\r\n            attr.aria-label=\"{{inputTablePage.simple.title}}\"\r\n            class=\"input-table-container\">\r\n          <table class=\"input-table\">\r\n            <tbody class=\"input-table-body\">\r\n            <ng-container *ngFor=\"let input of inputTablePage.simple.table\">\r\n              <tr class=\"input-table-row\">\r\n                <th class=\"input-table-header\">\r\n                  <span class=\"input-table-header-text\">{{input.tableHeader}}</span>\r\n                </th>\r\n                <td class=\"input-table-data\">\r\n                  <p-input-text [type]=\"input.tableData.type\"\r\n                                [label]=\"input.tableData.label\"\r\n                                [ariaLabel]=\"input.tableData.ariaLabel\"\r\n                                [placeholder]=\"input.tableData.placeholder\"\r\n                                [errorMessage]=\"input.tableData.errorMessage\"\r\n                                [disabled]=\"input.tableData.disabled\"\r\n                                [readonly]=\"input.tableData.readonly\"\r\n                                [value]=\"input.tableData.value\"\r\n                                [validators]=\"input.tableData.validators\">\r\n                  </p-input-text>\r\n                </td>\r\n              </tr>\r\n            </ng-container>\r\n            </tbody>\r\n          </table>\r\n        </div>\r\n        <!--<p-input-text [type]=\"inputTablePage.simple.table[1].tableData.type\"-->\r\n                      <!--[label]=\"inputTablePage.simple.table[1].tableData.label\"-->\r\n                      <!--[ariaLabel]=\"inputTablePage.simple.table[1].tableData.ariaLabel\"-->\r\n                      <!--[placeholder]=\"inputTablePage.simple.table[1].tableData.placeholder\"-->\r\n                      <!--[errorMessage]=\"inputTablePage.simple.table[1].tableData.errorMessage\"-->\r\n                      <!--[disabled]=\"inputTablePage.simple.table[1].tableData.disabled\"-->\r\n                      <!--[readonly]=\"inputTablePage.simple.table[1].tableData.readonly\"-->\r\n                      <!--[value]=\"inputTablePage.simple.table[1].tableData.value\"-->\r\n                      <!--[validators]=\"inputTablePage.simple.table[1].tableData.validators\">-->\r\n        <!--</p-input-text>-->\r\n      </div>\r\n\r\n      <div class=\"input-table-wrapper\">\r\n        <button class=\"input-table-trigger\" (click)=\"isComplesTableVisible = !isComplesTableVisible\">\r\n          <p-icon class=\"input-table-trigger-icon\"\r\n                  name=\"chevron-down\"\r\n                  width=\"16\"\r\n                  height=\"auto\"\r\n                  strokeWidth=\"3\"></p-icon>\r\n          {{inputTablePage.complex.title}}\r\n        </button>\r\n        <div *ngIf=\"isComplexTableVisible\"\r\n             tabindex=\"-1\"\r\n             attr.aria-label=\"{{inputTablePage.complex.title}}\"\r\n             class=\"input-table-container\">\r\n          <table class=\"input-table\">\r\n            <tbody class=\"input-table-body\">\r\n            <ng-container *ngFor=\"let input of inputTablePage.complex.table\">\r\n              <tr class=\"input-table-row\">\r\n                <th class=\"input-table-header\">\r\n                  <span class=\"input-table-header-text\">{{input.tableHeader}}</span>\r\n                </th>\r\n                <td class=\"input-table-data\">\r\n                  <p-input-text [type]=\"input.tableData.type\"\r\n                                [label]=\"input.tableData.label\"\r\n                                [ariaLabel]=\"input.tableData.ariaLabel\"\r\n                                [placeholder]=\"input.tableData.placeholder\"\r\n                                [errorMessage]=\"input.tableData.errorMessage\"\r\n                                [disabled]=\"input.tableData.disabled\"\r\n                                [readonly]=\"input.tableData.readonly\"\r\n                                [value]=\"input.tableData.value\"\r\n                                [validators]=\"input.tableData.validators\">\r\n                  </p-input-text>\r\n                </td>\r\n              </tr>\r\n            </ng-container>\r\n            </tbody>\r\n          </table>\r\n        </div>\r\n      </div>\r\n    </main>\r\n</div>\r\n"
         },
         {
+            "name": "LabelMainComponent",
+            "id": "component-LabelMainComponent-6de820da7141fb3b1e86e5389d15421a",
+            "file": "src/stories/label-main/label-main.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-label-main",
+            "styleUrls": [
+                "./label-main.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./label-main.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "label",
+                    "line": 10,
+                    "type": "string"
+                },
+                {
+                    "name": "type",
+                    "line": 11,
+                    "type": "LabelTypesEnum"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {LabelTypesEnum} from './label-main.enum';\r\n\r\n@Component({\r\n  selector: 'p-label-main',\r\n  templateUrl: './label-main.component.html',\r\n  styleUrls: ['./label-main.component.scss'],\r\n})\r\nexport default class LabelMainComponent {\r\n  @Input() label: string;\r\n  @Input() type: LabelTypesEnum;\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n.p-label-main {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  font-family: $font-family-basic;\r\n  font-weight: 700;\r\n  font-size: $tiny-font-size;\r\n  color: $gray-scale-1;\r\n  letter-spacing: 0.05em;\r\n  text-transform: uppercase;\r\n  max-width: 130px;\r\n  min-width: 106px;\r\n  height: 22px;\r\n  border-radius: 23px;\r\n\r\n  &-critical {\r\n    background-color: $supportive-alert-700;\r\n  }\r\n\r\n  &-danger {\r\n    background-color: $supportive-alert-500;\r\n  }\r\n\r\n  &-success {\r\n    background-color: $supportive-success-400;\r\n  }\r\n\r\n  &-medium {\r\n    background-color: $supportive-orange-300;\r\n  }\r\n\r\n  &-low {\r\n    background-color: $supportive-yellow-300;\r\n  }\r\n\r\n  &-lightGray {\r\n    background-color: $gray-scale-400;\r\n  }\r\n\r\n  &-darkGray {\r\n    background-color: $gray-scale-800;\r\n  }\r\n\r\n  &-dev1 {\r\n    background-color: $supportive-dev-a;\r\n  }\r\n\r\n  &-dev2 {\r\n    background-color: $supportive-dev-b;\r\n  }\r\n\r\n  &-dev3 {\r\n    background-color: $secondary-a-700;\r\n  }\r\n}\r\n",
+                    "styleUrl": "./label-main.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"p-label-main\"\r\n     [ngClass]=\"'p-label-main-' + type\">\r\n  {{label}}\r\n</div>\r\n\r\n\r\n"
+        },
+        {
             "name": "RadioButtonComponent",
             "id": "component-RadioButtonComponent-7541bda88f3d6a7eb3331cff580487be",
             "file": "src/stories/radio-button/radio-button.component.ts",
@@ -1680,7 +1729,7 @@
         },
         {
             "name": "TooltipComponent",
-            "id": "component-TooltipComponent-d9cd1d598549bc0da6c95ebd40971277",
+            "id": "component-TooltipComponent-b58185a8c394046ae5be5c996873704d",
             "file": "src/stories/tooltip/tooltip.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1716,7 +1765,7 @@
                 {
                     "name": "position",
                     "line": 14,
-                    "type": "TooltipPosition"
+                    "type": "string"
                 },
                 {
                     "name": "showDelay",
@@ -1725,8 +1774,9 @@
                 },
                 {
                     "name": "tooltipClass",
-                    "line": 15,
-                    "type": "any"
+                    "defaultValue": "'p-tooltip'",
+                    "line": 16,
+                    "type": "string"
                 }
             ],
             "outputsClass": [],
@@ -1737,16 +1787,16 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {TooltipPosition} from '@angular/material/tooltip';\r\n\r\n@Component({\r\n  selector: 'p-tooltip',\r\n  templateUrl: './tooltip.component.html',\r\n  styleUrls: ['./tooltip.component.scss'],\r\n})\r\nexport default class TooltipComponent {\r\n  @Input() message: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() showDelay: number; // ms\r\n  @Input() hideDelay: number; // ms\r\n  @Input() position: TooltipPosition; // type TooltipPosition = 'left' | 'right' | 'above' | 'below' | 'before' | 'after';\r\n  @Input() tooltipClass: any; // css class\r\n}\r\n",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {TooltipPosition} from '@angular/material/tooltip';\r\n\r\n@Component({\r\n  selector: 'p-tooltip',\r\n  templateUrl: './tooltip.component.html',\r\n  styleUrls: ['./tooltip.component.scss'],\r\n})\r\nexport default class TooltipComponent {\r\n  @Input() message: string; // matTooltip\r\n  @Input() disabled: boolean = false; // matTooltipDisabled\r\n  @Input() showDelay: number; // matTooltipShowDelay in ms\r\n  @Input() hideDelay: number; // matTooltipHideDelay in ms\r\n  @Input() position: string; // matTooltipPosition\r\n  // type TooltipPosition = 'left' | 'right' | 'above' | 'below' | 'before' | 'after';\r\n  @Input() tooltipClass: string = 'p-tooltip'; // matTooltipClass - css class\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n.p-icon {\r\n  display: inline-flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n::ng-deep .mat-tooltip.p-tooltip {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  color: $gray-scale-1;\r\n  min-width: 100px;\r\n  min-height: 36px;\r\n  padding: 8px 12px;\r\n  background-color: $primary-a-900;\r\n  border-radius: 4px;\r\n}\r\n",
                     "styleUrl": "./tooltip.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<p-button label=\"Label\"\r\n          #tooltip=\"matTooltip\"\r\n          [message]=\"message\"\r\n          [disabled]=\"disabled\"\r\n          [showDelay]=\"showDelay\"\r\n          [hideDelay]=\"hideDelay\"\r\n          [position]=\"position\"\r\n        >\r\n</p-button>\r\n\r\n\r\n"
+            "templateData": "<button #tooltip=\"matTooltip\"\r\n        [matTooltip]=\"message\"\r\n        [matTooltipDisabled]=\"disabled\"\r\n        [matTooltipShowDelay]=\"showDelay\"\r\n        [matTooltipHideDelay]=\"hideDelay\"\r\n        [matTooltipPosition]=\"position\"\r\n        [matTooltipClass]=\"tooltipClass\"\r\n        class=\"p-btn-primary\"\r\n        >\r\n  Label\r\n</button>\r\n\r\n\r\n"
         },
         {
             "name": "TypographyFontFamilyComponent",
@@ -2104,14 +2154,6 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
-                "type": "Story<CheckboxPageComponent>",
-                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "PageTemplate",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
                 "type": "Story<CheckboxGroupPageComponent>",
                 "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
@@ -2120,9 +2162,17 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts",
-                "type": "Story<SlideTogglePageComponent>",
-                "defaultValue": "(args: SlideTogglePageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "Story<CheckboxPageComponent>",
+                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "PageTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
+                "type": "Story<InputTextPageComponent>",
+                "defaultValue": "(args: InputTextPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -2136,9 +2186,9 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
-                "type": "Story<InputTextPageComponent>",
-                "defaultValue": "(args: InputTextPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts",
+                "type": "Story<SlideTogglePageComponent>",
+                "defaultValue": "(args: SlideTogglePageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "palette",
@@ -2153,14 +2203,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/button/button.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/tooltip/tooltip.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -2207,17 +2249,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/colors/Color-palette.stories.ts",
-                "type": "Story<ColorPaletteComponent>",
-                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/button/button.stories.ts",
+                "type": "Story<ButtonComponent>",
+                "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/button/button.stories.ts",
-                "type": "Story<ButtonComponent>",
-                "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/colors/Color-palette.stories.ts",
+                "type": "Story<ColorPaletteComponent>",
+                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -2231,14 +2273,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/tooltip/tooltip.stories.ts",
-                "type": "Story<TooltipComponent>",
-                "defaultValue": "(args: TooltipComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/button/button-page/button-page.stories.ts",
                 "type": "Story<ButtonPageComponent>",
                 "defaultValue": "(args: ButtonPageComponent) => ({\r\n  props: args,\r\n})"
@@ -2247,17 +2281,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
-                "type": "Story<TypographyFontFamilyComponent>",
-                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/styles/typography-styles.stories.ts",
+                "type": "Story<TypographyStylesComponent>",
+                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/styles/typography-styles.stories.ts",
-                "type": "Story<TypographyStylesComponent>",
-                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
+                "type": "Story<TypographyFontFamilyComponent>",
+                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Tertiary",
@@ -2335,6 +2369,55 @@
                 "subtype": "enum",
                 "description": "",
                 "file": "src/stories/button/button-page/button-type.enum.ts"
+            },
+            {
+                "name": "LabelTypesEnum",
+                "childs": [
+                    {
+                        "name": "CRITICAL",
+                        "value": "critical"
+                    },
+                    {
+                        "name": "DANGER",
+                        "value": "danger"
+                    },
+                    {
+                        "name": "SUCCESS",
+                        "value": "success"
+                    },
+                    {
+                        "name": "MEDIUM",
+                        "value": "medium"
+                    },
+                    {
+                        "name": "LOW",
+                        "value": "low"
+                    },
+                    {
+                        "name": "LIGHTGRAY",
+                        "value": "lightGray"
+                    },
+                    {
+                        "name": "DARKGRAY",
+                        "value": "darkGray"
+                    },
+                    {
+                        "name": "DEV1",
+                        "value": "dev1"
+                    },
+                    {
+                        "name": "DEV2",
+                        "value": "dev2"
+                    },
+                    {
+                        "name": "DEV3",
+                        "value": "dev3"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "description": "",
+                "file": "src/stories/label-main/label-main.enum.ts"
             }
         ],
         "groupedVariables": {
@@ -2681,24 +2764,6 @@
                     "defaultValue": "{\r\n  primary: {\r\n    a: {\r\n      900: {name: 'P-A 900', labelColor: 'white'}\r\n    },\r\n    b: {\r\n      300: { name: 'P-B 300', labelColor: 'white' }\r\n    },\r\n    c: {\r\n      50: {name: 'P-C 50', labelColor: 'black'}\r\n    }\r\n  },\r\n  secondary: {\r\n    a: { 800: { name: 'S-A 800', labelColor: 'white' },\r\n      700: { name: 'S-A 700', labelColor: 'white' },\r\n      600: { name: 'S-A 600', labelColor: 'white' },\r\n      500: { name: 'S-A 500', labelColor: 'black' },\r\n      200: { name: 'S-A 200', labelColor: 'black' },\r\n      100: { name: 'S-A 100', labelColor: 'black' },\r\n      50: { name: 'S-A 50', labelColor: 'black' } },\r\n    b: { 700: { name: 'S-B 700', labelColor: 'white' },\r\n      500: { name: 'S-B 500', labelColor: 'white' },\r\n      400: { name: 'S-B 400', labelColor: 'white' },\r\n      300: { name: 'S-B 300', labelColor: 'white' },\r\n      200: { name: 'S-B 200', labelColor: 'black' },\r\n      100: { name: 'S-B 100', labelColor: 'black' },\r\n      50: { name: 'S-B 500', labelColor: 'black' }\r\n    }\r\n  },\r\n  gray: {\r\n    scale: { 800: { name: 'grayscale 800', labelColor: 'white' },\r\n        700: { name: 'grayscale 700', labelColor: 'white' },\r\n        600: { name: 'grayscale 600', labelColor: 'white' },\r\n        500: { name: 'grayscale 500', labelColor: 'white' },\r\n        400: { name: 'grayscale 400', labelColor: 'black' },\r\n        100: { name: 'grayscale 100', labelColor: 'black' },\r\n        50: { name: 'grayscale 50', labelColor: 'black' },\r\n        5: { name: 'grayscale 5', labelColor: 'black' },\r\n        1: { name: 'grayscale 1', labelColor: 'black' }\r\n    }\r\n  },\r\n  supportive: {\r\n    alert: {\r\n      700: { name: 'Alert 700', labelColor: 'white' },\r\n      500: { name: 'Alert 500', labelColor: 'black' },\r\n      50: { name: 'Alert 50', labelColor: 'black' }\r\n    },\r\n    yellow: { 300: { name: 'Yellow 300', labelColor: 'black' } },\r\n    orange: {\r\n      300: { name: 'Orange 300', labelColor: 'black' },\r\n      50: { name: 'Orange 50', labelColor: 'black' }\r\n    },\r\n    success: {\r\n      400: { name: 'Success 400', labelColor: 'black' },\r\n      50: { name: 'Success 50', labelColor: 'black' }\r\n    },\r\n    dev: {\r\n      a: { name: 'Dev A', labelColor: 'white' },\r\n      b: { name: 'Dev B', labelColor: 'white' },\r\n      c: { name: 'Dev C', labelColor: 'white' }\r\n    }\r\n  }\r\n}"
                 }
             ],
-            "src/stories/tooltip/tooltip.stories.ts": [
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/tooltip/tooltip.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/tooltip/tooltip.stories.ts",
-                    "type": "Story<TooltipComponent>",
-                    "defaultValue": "(args: TooltipComponent) => ({\r\n  props: args,\r\n})"
-                }
-            ],
             "src/stories/typography/styles/typography-styles.stories.ts": [
                 {
                     "name": "Styles",
@@ -2755,6 +2820,57 @@
                     "subtype": "enum",
                     "description": "",
                     "file": "src/stories/button/button-page/button-type.enum.ts"
+                }
+            ],
+            "src/stories/label-main/label-main.enum.ts": [
+                {
+                    "name": "LabelTypesEnum",
+                    "childs": [
+                        {
+                            "name": "CRITICAL",
+                            "value": "critical"
+                        },
+                        {
+                            "name": "DANGER",
+                            "value": "danger"
+                        },
+                        {
+                            "name": "SUCCESS",
+                            "value": "success"
+                        },
+                        {
+                            "name": "MEDIUM",
+                            "value": "medium"
+                        },
+                        {
+                            "name": "LOW",
+                            "value": "low"
+                        },
+                        {
+                            "name": "LIGHTGRAY",
+                            "value": "lightGray"
+                        },
+                        {
+                            "name": "DARKGRAY",
+                            "value": "darkGray"
+                        },
+                        {
+                            "name": "DEV1",
+                            "value": "dev1"
+                        },
+                        {
+                            "name": "DEV2",
+                            "value": "dev2"
+                        },
+                        {
+                            "name": "DEV3",
+                            "value": "dev3"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "description": "",
+                    "file": "src/stories/label-main/label-main.enum.ts"
                 }
             ]
         },
@@ -3259,6 +3375,15 @@
                 "status": "low"
             },
             {
+                "filePath": "src/stories/label-main/label-main.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "LabelMainComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
                 "filePath": "src/stories/radio-button/radio-button-group/radio-button-group.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -3360,26 +3485,6 @@
                 "name": "TooltipComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/7",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/tooltip/tooltip.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/tooltip/tooltip.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
                 "status": "low"
             },
             {
