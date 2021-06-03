@@ -4,7 +4,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-import {ButtonModule} from '../../projects/design-system-lib/src/lib/button/button.module';
+import {ButtonModule} from 'design-system-lib';
 
 @NgModule({
   declarations: [
