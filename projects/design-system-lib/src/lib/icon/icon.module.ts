@@ -1,18 +1,20 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {IconComponent} from './icon.component';
-// import { FeatherModule } from 'angular-feather';
-// import { allIcons } from 'angular-feather/icons';
+import {FeatherModule} from 'angular-feather';
+import {allIcons} from 'angular-feather/icons';
 
 @NgModule({
+  imports: [
+    CommonModule,
+    FeatherModule.pick(allIcons)
+  ],
   declarations: [
     IconComponent
   ],
   exports: [
-    IconComponent
-  ],
-  imports: [
-    CommonModule
+    IconComponent,
+    FeatherModule
   ]
 })
 export class IconModule { }
