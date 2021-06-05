@@ -8,8 +8,6 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
 import {ReactiveFormsModule, Validators} from '@angular/forms';
-import {IconsModule} from '../../icons/icons.module';
-import IconComponent from '../../icons/icon.component';
 
 export default {
   title: 'Components/Input/Table',
@@ -17,15 +15,13 @@ export default {
   decorators: [
     moduleMetadata({
       declarations: [InputTextTableLayoutComponent,
-        InputTextComponent,
-        IconComponent
+        InputTextComponent
       ],
       imports: [CommonModule,
         MatInputModule,
         BrowserAnimationsModule,
         MatFormFieldModule,
-        ReactiveFormsModule,
-        IconsModule
+        ReactiveFormsModule
       ],
     }),
   ],

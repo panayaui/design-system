@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {KeyValue} from '@angular/common';
 
-// class' properties are defined in styles-stories.scss
+// class' properties are defined in classes-typography.scss
 const typographyStyles = {
   h1: {
     title: 'Headline 1',

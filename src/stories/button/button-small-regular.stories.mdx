@@ -1,10 +1,18 @@
-import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
 import {moduleMetadata} from '@storybook/angular';
-import ButtonComponent from './button.component';
-import {ButtonTypeEnum} from './button-page/button-type.enum';
+// import {ButtonComponent} from 'design-system-lib';
+// import {ButtonModule} from 'design-system-lib';
+import {ButtonComponent} from 'projects/design-system-lib/src/public-api';
+import {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';
+import {IconModule} from 'projects/design-system-lib/src/lib/icon/icon.module';
 
 <Meta title='Components/Button/Small/Regular'
   component={ButtonComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [IconModule]
+    })
+  ]}  
 />
 
 export const Template = (args) => <ButtonComponent {...args} />
@@ -29,7 +37,7 @@ export const Template = (args) => <ButtonComponent {...args} />
     }}>
     {Template.bind({})}
   </Story>
-  <Story name="Secondary"
+    <Story name="Secondary"
     args={{
       label: 'Label',
       buttonType: ButtonTypeEnum.Secondary
@@ -66,7 +74,7 @@ export const Template = (args) => <ButtonComponent {...args} />
     }}>
     {Template.bind({})}
   </Story>
-  <Story name="SecondaryDisabled"
+  <Story name="Secondary Disabled"
     args={{
       label: 'Label',
       disabled: true,
@@ -74,7 +82,7 @@ export const Template = (args) => <ButtonComponent {...args} />
     }}>
     {Template.bind({})}
   </Story>
-  <Story name="TertiaryDisabled"
+  <Story name="Tertiary Disabled"
     args={{
       label: 'Label',
       disabled: true,
@@ -82,7 +90,7 @@ export const Template = (args) => <ButtonComponent {...args} />
     }}>
     {Template.bind({})}
   </Story>
-  <Story name="DistructiveDisabled"
+  <Story name="Distructive Disabled"
       args={{
         label: 'Label',
         disabled: true,
@@ -94,7 +102,7 @@ export const Template = (args) => <ButtonComponent {...args} />
 
 ###### Component
 ```ts
-export default class ButtonComponent {
+export class ButtonComponent {
   @Input() label: string;
   @Input() large: boolean = false;
   @Input() disabled: boolean = false;

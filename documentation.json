@@ -2,114 +2,6 @@
     "pipes": [],
     "interfaces": [
         {
-            "name": "IButton",
-            "id": "interface-IButton-29ee872a25cdd7eee400441d71afe969",
-            "file": "src/stories/button/button-page/button.interface.ts",
-            "type": "interface",
-            "sourceCode": "import {ButtonTypeEnum} from './button-type.enum';\r\n\r\nexport default interface IButton {\r\n  label: string;\r\n  large: boolean;\r\n  disabled: boolean;\r\n  iconBefore: string;\r\n  iconBeforeWidth: string;\r\n  iconBeforeHeight: string;\r\n  iconAfter: string;\r\n  iconAfterWidth: string;\r\n  iconAfterHeight: string;\r\n  buttonType: ButtonTypeEnum;\r\n}\r\n",
-            "properties": [
-                {
-                    "name": "buttonType",
-                    "type": "ButtonTypeEnum",
-                    "optional": false,
-                    "description": "",
-                    "line": 13
-                },
-                {
-                    "name": "disabled",
-                    "type": "boolean",
-                    "optional": false,
-                    "description": "",
-                    "line": 6
-                },
-                {
-                    "name": "iconAfter",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 10
-                },
-                {
-                    "name": "iconAfterHeight",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 12
-                },
-                {
-                    "name": "iconAfterWidth",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 11
-                },
-                {
-                    "name": "iconBefore",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 7
-                },
-                {
-                    "name": "iconBeforeHeight",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 9
-                },
-                {
-                    "name": "iconBeforeWidth",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 8
-                },
-                {
-                    "name": "label",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 4
-                },
-                {
-                    "name": "large",
-                    "type": "boolean",
-                    "optional": false,
-                    "description": "",
-                    "line": 5
-                }
-            ],
-            "indexSignatures": [],
-            "kind": 150,
-            "methods": []
-        },
-        {
-            "name": "IButtonsPage",
-            "id": "interface-IButtonsPage-93c8349727c73b504af14134935526ad",
-            "file": "src/stories/button/button-page/button-page.component.ts",
-            "type": "interface",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport IButton from './button.interface';\r\nimport {KeyValue} from '@angular/common';\r\n\r\ninterface IButtonsPage {\r\n  small: {\r\n    height: string;\r\n    buttons: {\r\n      primary: IButton[];\r\n      secondary: IButton[];\r\n      tertiary: IButton[];\r\n      distructive: IButton[]\r\n    }\r\n  };\r\n  large: {\r\n    height: string;\r\n    buttons: {\r\n      primary: IButton[];\r\n      secondary: IButton[];\r\n      tertiary: IButton[];\r\n      distructive: IButton[]\r\n    }\r\n  };\r\n}\r\n\r\n@Component({\r\n  selector: 'p-button-page',\r\n  templateUrl: './button-page.component.html',\r\n  styleUrls: ['./button-page.component.scss'],\r\n})\r\nexport default class ButtonPageComponent {\r\n  @Input() buttonsPage: IButtonsPage;\r\n\r\n  originalOrder = (a: KeyValue<number, string>, b: KeyValue<number, string>): number => {\r\n    return 0;\r\n  }\r\n}\r\n",
-            "properties": [
-                {
-                    "name": "large",
-                    "type": "literal type",
-                    "optional": false,
-                    "description": "",
-                    "line": 15
-                },
-                {
-                    "name": "small",
-                    "type": "literal type",
-                    "optional": false,
-                    "description": "",
-                    "line": 6
-                }
-            ],
-            "indexSignatures": [],
-            "kind": 150,
-            "methods": []
-        },
-        {
             "name": "ICheckbox",
             "id": "interface-ICheckbox-92d8f47b73e0c489469123326fd838de",
             "file": "src/stories/checkbox/checkbox.interface.ts",
@@ -445,7 +337,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-feacc190ef255396e90b970916e0ae0e",
+            "id": "component-AppComponent-583116df942a06534bcab18d9b7b4283",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -465,20 +357,12 @@
             "outputsClass": [],
             "propertiesClass": [
                 {
-                    "name": "emailFormControl",
-                    "defaultValue": "new FormControl('', [\r\n    Validators.required,\r\n    Validators.email,\r\n  ])",
-                    "type": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 11
-                },
-                {
                     "name": "title",
                     "defaultValue": "'storybooktemplate'",
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 10
+                    "line": 9
                 }
             ],
             "methodsClass": [],
@@ -487,7 +371,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport {FormControl, Validators} from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.scss']\r\n})\r\nexport class AppComponent {\r\n  title = 'storybooktemplate';\r\n  emailFormControl = new FormControl('', [\r\n    Validators.required,\r\n    Validators.email,\r\n  ]);\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.scss']\r\n})\r\nexport class AppComponent {\r\n  title = 'storybooktemplate';\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -496,12 +380,12 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<form class=\"example-form\">\r\n  <mat-form-field class=\"example-full-width\">\r\n    <mat-label>Email</mat-label>\r\n    <input type=\"email\" matInput [formControl]=\"emailFormControl\" placeholder=\"Ex. pat@example.com\">\r\n    <mat-error *ngIf=\"emailFormControl.hasError('email') && !emailFormControl.hasError('required')\">\r\n      Please enter a valid email address\r\n    </mat-error>\r\n    <mat-error *ngIf=\"emailFormControl.hasError('required')\">\r\n      Email is <strong>required</strong>\r\n    </mat-error>\r\n  </mat-form-field>\r\n</form>\r\n"
+            "templateData": "<p-button [label]=\"'Label'\"\r\n          [iconBefore]=\"'eye'\"\r\n          [iconBeforeWidth]=\"'17'\"\r\n          [iconAfter]=\"'chevron-down'\"\r\n          [iconAfterWidth]=\"'17'\">\r\n</p-button>\r\n"
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-dbcea0df04c9c3d904ccd3dd4202676b",
-            "file": "src/stories/button/button.component.ts",
+            "id": "component-ButtonComponent-48c6c25a0a2a77a461ec40d5cc668acf",
+            "file": "projects/design-system-lib/src/lib/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -583,7 +467,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {ButtonTypeEnum} from './button-page/button-type.enum';\r\n\r\n@Component({\r\n  selector: 'p-button',\r\n  templateUrl: './button.component.html',\r\n  styleUrls: ['./button.component.scss'],\r\n})\r\nexport default class ButtonComponent {\r\n  @Input() label: string;\r\n  @Input() large: boolean = false;\r\n  @Input() disabled: boolean = false;\r\n  @Input() iconBefore: string;\r\n  @Input() iconBeforeWidth: string = 'auto';\r\n  @Input() iconBeforeHeight: string = 'auto';\r\n  @Input() iconAfter: string;\r\n  @Input() iconAfterWidth: string = 'auto';\r\n  @Input() iconAfterHeight: string = 'auto';\r\n  @Input() buttonType: ButtonTypeEnum = ButtonTypeEnum.Primary;\r\n\r\n  public get classes(): string[] {\r\n    const classParams = [];\r\n    this.large ? classParams.push('p-btn-large') : classParams.push('p-btn-small');\r\n    this.iconBefore ? classParams.push('p-btn-icon-before') : null;\r\n    this.iconAfter ? classParams.push('p-btn-icon-after') : null;\r\n    classParams.push(`p-btn-${this.buttonType}`);\r\n    return classParams;\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {ButtonTypeEnum} from './button-type.enum';\r\n\r\n@Component({\r\n  selector: 'p-button',\r\n  templateUrl: './button.component.html',\r\n  styleUrls: ['./button.component.scss'],\r\n})\r\nexport class ButtonComponent {\r\n  @Input() label: string;\r\n  @Input() large: boolean = false;\r\n  @Input() disabled: boolean = false;\r\n  @Input() iconBefore: string;\r\n  @Input() iconBeforeWidth: string = 'auto';\r\n  @Input() iconBeforeHeight: string = 'auto';\r\n  @Input() iconAfter: string;\r\n  @Input() iconAfterWidth: string = 'auto';\r\n  @Input() iconAfterHeight: string = 'auto';\r\n  @Input() buttonType: ButtonTypeEnum = ButtonTypeEnum.Primary;\r\n\r\n  public get classes(): string[] {\r\n    const classParams = [];\r\n    this.large ? classParams.push('p-btn-large') : classParams.push('p-btn-small');\r\n    this.iconBefore ? classParams.push('p-btn-icon-before') : null;\r\n    this.iconAfter ? classParams.push('p-btn-icon-after') : null;\r\n    classParams.push(`p-btn-${this.buttonType}`);\r\n    return classParams;\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -603,60 +487,7 @@
                     }
                 }
             },
-            "templateData": "<button class=\"p-btn\" [ngClass]=\"classes\" [disabled]=\"disabled\">\r\n  <!--<p-icon *ngIf=\"iconBefore\"-->\r\n          <!--class=\"p-btn-icon-pre\"-->\r\n          <!--[name]=\"iconBefore\"-->\r\n          <!--[width]=\"iconBeforeWidth\"-->\r\n          <!--[height]=\"iconBeforeHeight\"></p-icon>-->\r\n  <span class=\"p-btn-label\">{{label}}</span>\r\n  <!--<p-icon *ngIf=\"iconAfter\"-->\r\n          <!--class=\"p-btn-icon-post\"-->\r\n          <!--[name]=\"iconAfter\"-->\r\n          <!--[width]=\"iconAfterWidth\"-->\r\n          <!--[height]=\"iconAfterHeight\"></p-icon>-->\r\n</button>\r\n"
-        },
-        {
-            "name": "ButtonPageComponent",
-            "id": "component-ButtonPageComponent-93c8349727c73b504af14134935526ad",
-            "file": "src/stories/button/button-page/button-page.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "p-button-page",
-            "styleUrls": [
-                "./button-page.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./button-page.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [
-                {
-                    "name": "buttonsPage",
-                    "line": 32,
-                    "type": "IButtonsPage"
-                }
-            ],
-            "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "originalOrder",
-                    "defaultValue": "() => {...}",
-                    "type": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 34
-                }
-            ],
-            "methodsClass": [],
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "",
-            "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport IButton from './button.interface';\r\nimport {KeyValue} from '@angular/common';\r\n\r\ninterface IButtonsPage {\r\n  small: {\r\n    height: string;\r\n    buttons: {\r\n      primary: IButton[];\r\n      secondary: IButton[];\r\n      tertiary: IButton[];\r\n      distructive: IButton[]\r\n    }\r\n  };\r\n  large: {\r\n    height: string;\r\n    buttons: {\r\n      primary: IButton[];\r\n      secondary: IButton[];\r\n      tertiary: IButton[];\r\n      distructive: IButton[]\r\n    }\r\n  };\r\n}\r\n\r\n@Component({\r\n  selector: 'p-button-page',\r\n  templateUrl: './button-page.component.html',\r\n  styleUrls: ['./button-page.component.scss'],\r\n})\r\nexport default class ButtonPageComponent {\r\n  @Input() buttonsPage: IButtonsPage;\r\n\r\n  originalOrder = (a: KeyValue<number, string>, b: KeyValue<number, string>): number => {\r\n    return 0;\r\n  }\r\n}\r\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n.buttons {\r\n  .list-header,\r\n  .list-item {\r\n    align-items: flex-start;\r\n    &:nth-child(even) {\r\n      height: 100px;\r\n    }\r\n    &:not(:first-child):nth-child(odd) {\r\n      height: 170px;\r\n    }\r\n    &:not(:first-child) {\r\n      padding-top: 20px;\r\n    }\r\n  }\r\n  .list-header {\r\n    font-size: $weeny-font-size;\r\n    line-height: 12px;\r\n    flex-direction: column;\r\n  }\r\n\r\n  .header-list .list-header {\r\n    justify-content: flex-start;\r\n    align-items: flex-end;\r\n  }\r\n\r\n  .content-list .list-header {\r\n    align-items: flex-start;\r\n  }\r\n\r\n  &-list-header {\r\n    font-size: $base-font-size;\r\n    font-weight: 700;\r\n    text-transform: capitalize;\r\n    line-height: normal;\r\n    margin-bottom: 5px;\r\n  }\r\n}\r\n",
-                    "styleUrl": "./button-page.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "templateData": "<div class=\"page buttons\">\r\n  <ng-container *ngFor=\"let type of buttonsPage | keyvalue: originalOrder\">\r\n    <header class=\"page-header\">\r\n      <h1 class=\"page-title\">Buttons / <span class=\"page-header-highlighted\">{{type.key}}</span></h1>\r\n      <p class=\"page-header-line\">\r\n        Height:\r\n        <span class=\"page-header-highlighted\">{{type.value.height}}</span>, min. width:\r\n        <span class=\"page-header-highlighted\">80px</span>\r\n      </p>\r\n      <p class=\"page-header-line\">\r\n        Typography style:\r\n        <span class=\"page-header-highlighted\">Paragraph 2 - medium</span>\r\n      </p>\r\n    </header>\r\n\r\n    <main class=\"page-main\">\r\n      <ul class=\"page-list header-list\">\r\n        <li class=\"list-header\"></li>\r\n        <li class=\"list-header\">\r\n          <span class=\"buttons-list-header\">Default</span>\r\n          .p-btn.p-btn-{{type.key}}\r\n        </li>\r\n        <li class=\"list-header\">\r\n          <span class=\"buttons-list-header\">Disabled</span>\r\n          [disabled]=true\r\n          <br/>\r\n          .p-btn:disabled\r\n        </li>\r\n        <li class=\"list-header\">\r\n          <span class=\"buttons-list-header\">Default + icon left</span>\r\n          [iconBefore]=\"eye\"\r\n          <br/>\r\n          .p-btn-icon-before\r\n        </li>\r\n        <li class=\"list-header\">\r\n          <span class=\"buttons-list-header\">Disabled + icon left</span>\r\n          [iconBefore]=\"eye\"\r\n          <br/>\r\n          [disabled]=true\r\n          <br/>\r\n          .p-btn-icon-before\r\n          <br/>\r\n          .p-btn:disabled\r\n        </li>\r\n        <li class=\"list-header\">\r\n          <span class=\"buttons-list-header\">Default + icon right</span>\r\n          [iconAfter]=\"chevron-down\"\r\n          <br/>\r\n          .p-btn-icon-after\r\n        </li>\r\n        <li class=\"list-header\">\r\n          <span class=\"buttons-list-header\">Disabled + icon right</span>\r\n          [iconAfter]=\"chevron-down\"\r\n          <br/>\r\n          [disabled]=true\r\n          <br/>\r\n          .p-btn-icon-after\r\n          <br/>\r\n          .p-btn:disabled\r\n        </li>\r\n        <li class=\"list-header\">\r\n          <span class=\"buttons-list-header\">Default + icon right&left</span>\r\n          [iconBefore]=\"eye\"\r\n          <br/>\r\n          [iconAfter]=\"chevron-down\"\r\n          <br/>\r\n          .p-btn-icon-before\r\n          <br/>\r\n          .p-btn-icon-after\r\n        </li>\r\n        <li class=\"list-header\">\r\n          <span class=\"buttons-list-header\">Disabled + icon right&left</span>\r\n          [iconBefore]=\"eye\"\r\n          <br/>\r\n          [iconAfter]=\"chevron-down\"\r\n          <br/>\r\n          [disabled]=true\r\n        </li>\r\n      </ul>\r\n      <ul *ngFor=\"let buttonType of type.value.buttons | keyvalue: originalOrder\"\r\n          class=\"page-list content-list {{buttonType.key}}\">\r\n        <li class=\"list-header\">\r\n          <span class=\"buttons-list-header\">{{buttonType.key}}</span>\r\n          [buttonType]=\r\n          <br/>\r\n          \"ButtonTypeEnum.{{buttonType.key.charAt(0).toUpperCase() + buttonType.key.slice(1)}}\"\r\n          <br/>\r\n          .p-btn-{{buttonType.key}}\r\n        </li>\r\n        <li *ngFor=\"let button of buttonType.value\" class=\"list-item\">\r\n          <p-button [label]=\"button.label\"\r\n                    [large]=\"button.large\"\r\n                    [disabled]=\"button.disabled\"\r\n                    [iconBefore]=\"button.iconBefore\"\r\n                    [iconBeforeWidth]=\"button.iconBeforeWidth\"\r\n                    [iconBeforeHeight]=\"button.iconBeforeHeight\"\r\n                    [iconAfter]=\"button.iconAfter\"\r\n                    [buttonType]=\"button.buttonType\"\r\n                    [iconAfterWidth]=\"button.iconAfterWidth\"\r\n                    [iconAfterHeight]=\"button.iconAfterHeight\"\r\n                    class=\"buttons-element\">\r\n          </p-button>\r\n        </li>\r\n      </ul>\r\n    </main>\r\n  </ng-container>\r\n</div>\r\n"
+            "templateData": "<button class=\"p-btn\" [ngClass]=\"classes\" [disabled]=\"disabled\">\r\n  <p-icon *ngIf=\"iconBefore\"\r\n          class=\"p-btn-icon-pre\"\r\n          [iconName]=\"iconBefore\"\r\n          [width]=\"iconBeforeWidth\"\r\n          [height]=\"iconBeforeHeight\"></p-icon>\r\n  <span class=\"p-btn-label\">{{label}}</span>\r\n  <p-icon *ngIf=\"iconAfter\"\r\n          class=\"p-btn-icon-post\"\r\n          [iconName]=\"iconAfter\"\r\n          [width]=\"iconAfterWidth\"\r\n          [height]=\"iconAfterHeight\"></p-icon>\r\n</button>\r\n"
         },
         {
             "name": "CheckboxComponent",
@@ -950,8 +781,8 @@
         },
         {
             "name": "IconComponent",
-            "id": "component-IconComponent-b86f06768ce530c7c9585c2853add009",
-            "file": "src/stories/icons/icon.component.ts",
+            "id": "component-IconComponent-cbf7a1c0aa15c293a166dd2b923e81df",
+            "file": "projects/design-system-lib/src/lib/icon/icon.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -980,7 +811,7 @@
                     "type": "string"
                 },
                 {
-                    "name": "name",
+                    "name": "iconName",
                     "line": 9,
                     "type": "string"
                 },
@@ -1023,7 +854,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'p-icon',\r\n  templateUrl: './icon.component.html',\r\n  styleUrls: ['./icon.component.scss'],\r\n})\r\nexport default class IconComponent {\r\n  @Input() name: string;\r\n  @Input() width: string  = '16'; // pixels or auto\r\n  @Input() height: string  = 'auto'; // pixels or auto\r\n  @Input() fill: string = 'none'; // icon background\r\n  @Input() stroke: string = 'currentColor'; // line color\r\n  @Input() strokeWidth: number = 1; // line width in pixels\r\n  @Input() strokeLinecap: string = 'round'; // line end\r\n  @Input() strokeLinejoin: string = 'round'; // two lines join\r\n\r\n  public get iconStyles(): any {\r\n    return {\r\n      width: this.width === 'auto' ? this.width : `${this.width}px`,\r\n      height: this.height === 'auto' ? this.height : `${this.height}px`,\r\n      fill: this.fill,\r\n      stroke: this.stroke,\r\n      strokeWidth: `${this.strokeWidth}px`,\r\n      strokeLinecap: this.strokeLinecap,\r\n      strokeLinejoin: this.strokeLinejoin\r\n    };\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'p-icon',\r\n  templateUrl: './icon.component.html',\r\n  styleUrls: ['./icon.component.scss'],\r\n})\r\nexport class IconComponent {\r\n  @Input() iconName: string;\r\n  @Input() width: string  = '16'; // pixels or auto\r\n  @Input() height: string  = 'auto'; // pixels or auto\r\n  @Input() fill: string = 'none'; // icon background\r\n  @Input() stroke: string = 'currentColor'; // line color\r\n  @Input() strokeWidth: number = 1; // line width in pixels\r\n  @Input() strokeLinecap: string = 'round'; // line end\r\n  @Input() strokeLinejoin: string = 'round'; // two lines join\r\n\r\n  public get iconStyles(): any {\r\n    return {\r\n      width: this.width === 'auto' ? this.width : `${this.width}px`,\r\n      height: this.height === 'auto' ? this.height : `${this.height}px`,\r\n      fill: this.fill,\r\n      stroke: this.stroke,\r\n      strokeWidth: `${this.strokeWidth}px`,\r\n      strokeLinecap: this.strokeLinecap,\r\n      strokeLinejoin: this.strokeLinejoin\r\n    };\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1043,7 +874,7 @@
                     }
                 }
             },
-            "templateData": "<i-feather name=\"{{name}}\"\r\n           [ngStyle]=\"iconStyles\"\r\n           class=\"p-icon\">\r\n</i-feather>\r\n\r\n\r\n"
+            "templateData": "<i-feather [name]=\"iconName\"\r\n           [ngStyle]=\"iconStyles\"\r\n           class=\"p-icon\">\r\n</i-feather>\r\n"
         },
         {
             "name": "InputNumericComponent",
@@ -1838,7 +1669,7 @@
         },
         {
             "name": "TypographyStylesComponent",
-            "id": "component-TypographyStylesComponent-52dad9777d612ada57dc0772a8ebbdc3",
+            "id": "component-TypographyStylesComponent-00e530185f8f83d22f0b99d04f608c38",
             "file": "src/stories/typography/styles/typography-styles.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1891,7 +1722,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component} from '@angular/core';\r\nimport {KeyValue} from '@angular/common';\r\n\r\n// class' properties are defined in styles-stories.scss\r\nconst typographyStyles = {\r\n  h1: {\r\n    title: 'Headline 1',\r\n    description: 'page header level 1',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold',\r\n      size: '18px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Page titles - level 1'\r\n    },\r\n    classes: ['headline-1-bold', 'headline-1-bold headline-contrast']\r\n  },\r\n  h1sub: {\r\n    title: 'Headline 1-sub',\r\n    description: 'page header level 2',\r\n    sets: {\r\n      family: 'Inter - SemiBold',\r\n      size: '16px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Page titles - level 2'\r\n    },\r\n    classes: ['headline-1-sub-semibold']\r\n  },\r\n  h2: {\r\n    title: 'Headline 2',\r\n    description: 'masthead menu',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold + SemiBold',\r\n      size: '15px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Masthead items. SemiBold for default text, Bold for selected, Bold green for Hover.',\r\n    },\r\n    classes: ['headline-2-bold', 'headline-2-semibold', 'headline-2-bold headline-contrast']\r\n  },\r\n  h3: {\r\n    title: 'Headline 3',\r\n    description: 'masthead sub menu',\r\n    sets: {\r\n      family: 'Source Sans Pro - Regular + SemiBold',\r\n      size: '15px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Masthead sub menu items. Regular for default text, SemiBold green for hover and selected.'\r\n    },\r\n    classes: ['headline-3-regular', 'headline-3-semibold headline-contrast']\r\n  },\r\n  h4: {\r\n    title: 'Headline 4',\r\n    description: 'table header, status labels',\r\n    sets: {\r\n      family: 'Inter - Bold',\r\n      size: '12px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Table header row (black), Status labels (white)'\r\n    },\r\n    classes: ['headline-4-bold']\r\n  },\r\n  h5: {\r\n    title: 'Headline 5',\r\n    description: 'expansion panel title',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold',\r\n      size: '15px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Expansion panel title',\r\n    },\r\n    classes: ['headline-5-bold']\r\n  },\r\n  h6: {\r\n    title: 'Headline 6',\r\n    description: 'tabs',\r\n    family: 'Inter Bold / Semi Bold',\r\n    sets: {\r\n      size: '12px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Default tab - Bold, Selected tab - SemiBold'\r\n    },\r\n    classes: ['headline-6-bold', 'headline-3-semibold']\r\n  },\r\n  h7: {\r\n    title: 'Headline 7',\r\n    description: 'modal title',\r\n    sets: {\r\n      family: 'Inter Bold',\r\n      size: '22px',\r\n      letterSpacing: '0%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Modal title',\r\n    },\r\n    classes: ['headline-7-bold']\r\n  },\r\n  p1: {\r\n    title: 'Paragraph 1',\r\n    description: '',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '14px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Paragraphs, Input text',\r\n    },\r\n    classes: ['paragraph-1-default', 'paragraph-1-link', 'paragraph-1-large-label']\r\n  },\r\n  p2: {\r\n    title: 'Paragraph 2',\r\n    description: '',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '13px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Buttons, Actions, Filter, Drop down menu items, Notifications',\r\n    },\r\n    classes: ['paragraph-2-default', 'paragraph-2-link', 'paragraph-2-actions']\r\n  },\r\n  p3: {\r\n    title: 'Paragraph 3',\r\n    description: 'table content',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '12px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Table content, Input top label',\r\n    },\r\n    classes: ['paragraph-3-default', 'paragraph-3-link', 'paragraph-3-medium', 'paragraph-3-semibold']\r\n  }\r\n};\r\n\r\n\r\n@Component({\r\n  selector: 'p-typography-styles',\r\n  templateUrl: './typography-styles.component.html',\r\n  styleUrls: ['./typography-styles.component.scss'],\r\n})\r\nexport default class TypographyStylesComponent {\r\n  public typographyStyles = typographyStyles;\r\n\r\n  originalOrder = (a: KeyValue<number, string>, b: KeyValue<number, string>): number => {\r\n    return 0;\r\n  }\r\n\r\n  reverseKeyOrder = (a: KeyValue<number, string>, b: KeyValue<number, string>): number => {\r\n    return -1;\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component} from '@angular/core';\r\nimport {KeyValue} from '@angular/common';\r\n\r\n// class' properties are defined in classes-typography.scss\r\nconst typographyStyles = {\r\n  h1: {\r\n    title: 'Headline 1',\r\n    description: 'page header level 1',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold',\r\n      size: '18px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Page titles - level 1'\r\n    },\r\n    classes: ['headline-1-bold', 'headline-1-bold headline-contrast']\r\n  },\r\n  h1sub: {\r\n    title: 'Headline 1-sub',\r\n    description: 'page header level 2',\r\n    sets: {\r\n      family: 'Inter - SemiBold',\r\n      size: '16px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Page titles - level 2'\r\n    },\r\n    classes: ['headline-1-sub-semibold']\r\n  },\r\n  h2: {\r\n    title: 'Headline 2',\r\n    description: 'masthead menu',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold + SemiBold',\r\n      size: '15px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Masthead items. SemiBold for default text, Bold for selected, Bold green for Hover.',\r\n    },\r\n    classes: ['headline-2-bold', 'headline-2-semibold', 'headline-2-bold headline-contrast']\r\n  },\r\n  h3: {\r\n    title: 'Headline 3',\r\n    description: 'masthead sub menu',\r\n    sets: {\r\n      family: 'Source Sans Pro - Regular + SemiBold',\r\n      size: '15px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Masthead sub menu items. Regular for default text, SemiBold green for hover and selected.'\r\n    },\r\n    classes: ['headline-3-regular', 'headline-3-semibold headline-contrast']\r\n  },\r\n  h4: {\r\n    title: 'Headline 4',\r\n    description: 'table header, status labels',\r\n    sets: {\r\n      family: 'Inter - Bold',\r\n      size: '12px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Table header row (black), Status labels (white)'\r\n    },\r\n    classes: ['headline-4-bold']\r\n  },\r\n  h5: {\r\n    title: 'Headline 5',\r\n    description: 'expansion panel title',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold',\r\n      size: '15px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Expansion panel title',\r\n    },\r\n    classes: ['headline-5-bold']\r\n  },\r\n  h6: {\r\n    title: 'Headline 6',\r\n    description: 'tabs',\r\n    family: 'Inter Bold / Semi Bold',\r\n    sets: {\r\n      size: '12px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Default tab - Bold, Selected tab - SemiBold'\r\n    },\r\n    classes: ['headline-6-bold', 'headline-3-semibold']\r\n  },\r\n  h7: {\r\n    title: 'Headline 7',\r\n    description: 'modal title',\r\n    sets: {\r\n      family: 'Inter Bold',\r\n      size: '22px',\r\n      letterSpacing: '0%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Modal title',\r\n    },\r\n    classes: ['headline-7-bold']\r\n  },\r\n  p1: {\r\n    title: 'Paragraph 1',\r\n    description: '',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '14px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Paragraphs, Input text',\r\n    },\r\n    classes: ['paragraph-1-default', 'paragraph-1-link', 'paragraph-1-large-label']\r\n  },\r\n  p2: {\r\n    title: 'Paragraph 2',\r\n    description: '',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '13px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Buttons, Actions, Filter, Drop down menu items, Notifications',\r\n    },\r\n    classes: ['paragraph-2-default', 'paragraph-2-link', 'paragraph-2-actions']\r\n  },\r\n  p3: {\r\n    title: 'Paragraph 3',\r\n    description: 'table content',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '12px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Table content, Input top label',\r\n    },\r\n    classes: ['paragraph-3-default', 'paragraph-3-link', 'paragraph-3-medium', 'paragraph-3-semibold']\r\n  }\r\n};\r\n\r\n\r\n@Component({\r\n  selector: 'p-typography-styles',\r\n  templateUrl: './typography-styles.component.html',\r\n  styleUrls: ['./typography-styles.component.scss'],\r\n})\r\nexport default class TypographyStylesComponent {\r\n  public typographyStyles = typographyStyles;\r\n\r\n  originalOrder = (a: KeyValue<number, string>, b: KeyValue<number, string>): number => {\r\n    return 0;\r\n  }\r\n\r\n  reverseKeyOrder = (a: KeyValue<number, string>, b: KeyValue<number, string>): number => {\r\n    return -1;\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1924,6 +1755,9 @@
                     "elements": [
                         {
                             "name": "AppRoutingModule"
+                        },
+                        {
+                            "name": "ButtonModule"
                         }
                     ]
                 },
@@ -1975,7 +1809,7 @@
             ]
         },
         {
-            "name": "IconsModule",
+            "name": "ButtonModule",
             "children": [
                 {
                     "type": "providers",
@@ -1983,7 +1817,52 @@
                 },
                 {
                     "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "IconModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
                     "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "IconModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "IconComponent"
+                        }
+                    ]
                 },
                 {
                     "type": "imports",
@@ -1991,7 +1870,11 @@
                 },
                 {
                     "type": "exports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "IconComponent"
+                        }
+                    ]
                 },
                 {
                     "type": "bootstrap",
@@ -2006,14 +1889,6 @@
     ],
     "miscellaneous": {
         "variables": [
-            {
-                "name": "All",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/button/button-page/button-page.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
             {
                 "name": "Base",
                 "ctype": "miscellaneous",
@@ -2055,12 +1930,12 @@
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
             {
-                "name": "Distructive",
+                "name": "context",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/button/button.stories.ts",
+                "file": "projects/design-system-lib/src/test.ts",
                 "type": "",
-                "defaultValue": "Template.bind({})"
+                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
             {
                 "name": "environment",
@@ -2146,14 +2021,6 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
-                "type": "Story<CheckboxGroupComponent>",
-                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "PageTemplate",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
                 "type": "Story<CheckboxGroupPageComponent>",
                 "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
@@ -2165,6 +2032,14 @@
                 "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
                 "type": "Story<CheckboxPageComponent>",
                 "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "PageTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
+                "type": "Story<CheckboxGroupComponent>",
+                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -2202,7 +2077,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/button/button.stories.ts",
+                "file": "src/stories/icons/icon.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -2214,12 +2089,11 @@
                 "type": "literal type"
             },
             {
-                "name": "Secondary",
+                "name": "require",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/button/button.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
+                "file": "projects/design-system-lib/src/test.ts",
+                "type": "literal type"
             },
             {
                 "name": "SlideToggleTemplate",
@@ -2249,9 +2123,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/button/button.stories.ts",
-                "type": "Story<ButtonComponent>",
-                "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/icons/icon.stories.ts",
+                "type": "Story<IconComponent>",
+                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -2273,14 +2147,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/button/button-page/button-page.stories.ts",
-                "type": "Story<ButtonPageComponent>",
-                "defaultValue": "(args: ButtonPageComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/typography/styles/typography-styles.stories.ts",
                 "type": "Story<TypographyStylesComponent>",
                 "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
@@ -2292,14 +2158,6 @@
                 "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
                 "type": "Story<TypographyFontFamilyComponent>",
                 "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Tertiary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/button/button.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Toggles",
@@ -2368,7 +2226,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "enum",
                 "description": "",
-                "file": "src/stories/button/button-page/button-type.enum.ts"
+                "file": "projects/design-system-lib/src/lib/button/button-type.enum.ts"
             },
             {
                 "name": "LabelTypesEnum",
@@ -2421,24 +2279,6 @@
             }
         ],
         "groupedVariables": {
-            "src/stories/button/button-page/button-page.stories.ts": [
-                {
-                    "name": "All",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/button/button-page/button-page.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/button/button-page/button-page.stories.ts",
-                    "type": "Story<ButtonPageComponent>",
-                    "defaultValue": "(args: ButtonPageComponent) => ({\r\n  props: args,\r\n})"
-                }
-            ],
             "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts": [
                 {
                     "name": "Base",
@@ -2536,46 +2376,21 @@
                     "type": "literal type"
                 }
             ],
-            "src/stories/button/button.stories.ts": [
+            "projects/design-system-lib/src/test.ts": [
                 {
-                    "name": "Distructive",
+                    "name": "context",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/button/button.stories.ts",
+                    "file": "projects/design-system-lib/src/test.ts",
                     "type": "",
-                    "defaultValue": "Template.bind({})"
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
                 },
                 {
-                    "name": "Primary",
+                    "name": "require",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/button/button.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Secondary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/button/button.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/button/button.stories.ts",
-                    "type": "Story<ButtonComponent>",
-                    "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
-                },
-                {
-                    "name": "Tertiary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/button/button.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
+                    "file": "projects/design-system-lib/src/test.ts",
+                    "type": "literal type"
                 }
             ],
             "src/environments/environment.prod.ts": [
@@ -2764,6 +2579,24 @@
                     "defaultValue": "{\r\n  primary: {\r\n    a: {\r\n      900: {name: 'P-A 900', labelColor: 'white'}\r\n    },\r\n    b: {\r\n      300: { name: 'P-B 300', labelColor: 'white' }\r\n    },\r\n    c: {\r\n      50: {name: 'P-C 50', labelColor: 'black'}\r\n    }\r\n  },\r\n  secondary: {\r\n    a: { 800: { name: 'S-A 800', labelColor: 'white' },\r\n      700: { name: 'S-A 700', labelColor: 'white' },\r\n      600: { name: 'S-A 600', labelColor: 'white' },\r\n      500: { name: 'S-A 500', labelColor: 'black' },\r\n      200: { name: 'S-A 200', labelColor: 'black' },\r\n      100: { name: 'S-A 100', labelColor: 'black' },\r\n      50: { name: 'S-A 50', labelColor: 'black' } },\r\n    b: { 700: { name: 'S-B 700', labelColor: 'white' },\r\n      500: { name: 'S-B 500', labelColor: 'white' },\r\n      400: { name: 'S-B 400', labelColor: 'white' },\r\n      300: { name: 'S-B 300', labelColor: 'white' },\r\n      200: { name: 'S-B 200', labelColor: 'black' },\r\n      100: { name: 'S-B 100', labelColor: 'black' },\r\n      50: { name: 'S-B 500', labelColor: 'black' }\r\n    }\r\n  },\r\n  gray: {\r\n    scale: { 800: { name: 'grayscale 800', labelColor: 'white' },\r\n        700: { name: 'grayscale 700', labelColor: 'white' },\r\n        600: { name: 'grayscale 600', labelColor: 'white' },\r\n        500: { name: 'grayscale 500', labelColor: 'white' },\r\n        400: { name: 'grayscale 400', labelColor: 'black' },\r\n        100: { name: 'grayscale 100', labelColor: 'black' },\r\n        50: { name: 'grayscale 50', labelColor: 'black' },\r\n        5: { name: 'grayscale 5', labelColor: 'black' },\r\n        1: { name: 'grayscale 1', labelColor: 'black' }\r\n    }\r\n  },\r\n  supportive: {\r\n    alert: {\r\n      700: { name: 'Alert 700', labelColor: 'white' },\r\n      500: { name: 'Alert 500', labelColor: 'black' },\r\n      50: { name: 'Alert 50', labelColor: 'black' }\r\n    },\r\n    yellow: { 300: { name: 'Yellow 300', labelColor: 'black' } },\r\n    orange: {\r\n      300: { name: 'Orange 300', labelColor: 'black' },\r\n      50: { name: 'Orange 50', labelColor: 'black' }\r\n    },\r\n    success: {\r\n      400: { name: 'Success 400', labelColor: 'black' },\r\n      50: { name: 'Success 50', labelColor: 'black' }\r\n    },\r\n    dev: {\r\n      a: { name: 'Dev A', labelColor: 'white' },\r\n      b: { name: 'Dev B', labelColor: 'white' },\r\n      c: { name: 'Dev C', labelColor: 'white' }\r\n    }\r\n  }\r\n}"
                 }
             ],
+            "src/stories/icons/icon.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/icons/icon.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/icons/icon.stories.ts",
+                    "type": "Story<IconComponent>",
+                    "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
             "src/stories/typography/styles/typography-styles.stories.ts": [
                 {
                     "name": "Styles",
@@ -2795,7 +2628,7 @@
         },
         "groupedFunctions": {},
         "groupedEnumerations": {
-            "src/stories/button/button-page/button-type.enum.ts": [
+            "projects/design-system-lib/src/lib/button/button-type.enum.ts": [
                 {
                     "name": "ButtonTypeEnum",
                     "childs": [
@@ -2819,7 +2652,7 @@
                     "ctype": "miscellaneous",
                     "subtype": "enum",
                     "description": "",
-                    "file": "src/stories/button/button-page/button-type.enum.ts"
+                    "file": "projects/design-system-lib/src/lib/button/button-type.enum.ts"
                 }
             ],
             "src/stories/label-main/label-main.enum.ts": [
@@ -2904,12 +2737,50 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/design-system-lib/src/lib/button/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/11",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/icon/icon.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "IconComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "context",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "require",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/app.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "AppComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {
@@ -2928,112 +2799,6 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "environment",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/button/button-page/button-page.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "ButtonPageComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/button/button-page/button-page.component.ts",
-                "type": "interface",
-                "linktype": "interface",
-                "name": "IButtonsPage",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/button/button-page/button-page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "All",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/button/button-page/button-page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/button/button-page/button.interface.ts",
-                "type": "interface",
-                "linktype": "interface",
-                "name": "IButton",
-                "coveragePercent": 0,
-                "coverageCount": "0/11",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/button/button.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "ButtonComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/11",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/button/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Distructive",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/button/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/button/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Secondary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/button/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/button/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Tertiary",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -3222,12 +2987,23 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/icons/icon.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "IconComponent",
+                "filePath": "src/stories/icons/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
                 "coveragePercent": 0,
-                "coverageCount": "0/9",
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/icons/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {

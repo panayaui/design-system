@@ -55,7 +55,13 @@ p {
 }
 
 #button-large,
-#button-small {
+#button-small,
+#button-large-with-icon-before,
+#button-small-with-icon-before,
+#button-large-with-icon-after,
+#button-small-with-icon-after,
+#button-large-with-icon-before--after,
+#button-small-with-icon-before--after {
   & ~ .sbdocs .innerZoomElementWrapper > div {
     width: calc(100% / 4);
   }

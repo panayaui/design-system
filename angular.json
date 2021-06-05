@@ -122,6 +122,46 @@
           }
         }
       }
+    },
+    "design-system-lib": {
+      "projectType": "library",
+      "root": "projects/design-system-lib",
+      "sourceRoot": "projects/design-system-lib/src",
+      "prefix": "p",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/design-system-lib/tsconfig.lib.json",
+            "project": "projects/design-system-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/design-system-lib/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/design-system-lib/src/test.ts",
+            "tsConfig": "projects/design-system-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/design-system-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/design-system-lib/tsconfig.lib.json",
+              "projects/design-system-lib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "storybooktemplate"
