@@ -6,7 +6,7 @@ import {ButtonComponent} from 'projects/design-system-lib/src/public-api';
 import {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';
 import {IconModule} from 'projects/design-system-lib/src/lib/icon/icon.module';
 
-<Meta title='Components/Button/Small/Icons/Before'
+<Meta title='Components/Button/Large/Icons/Before'
   component={ButtonComponent}
   decorators={[
     moduleMetadata({
@@ -17,11 +17,11 @@ import {IconModule} from 'projects/design-system-lib/src/lib/icon/icon.module';
 
 export const Template = (args) => <ButtonComponent {...args} />
 
-# Button Small With Icon Before
+# Button Large With Icon Before
 
 ###### Selector
 ```ts
-  <p-button></p-button>
+  <p-button [large]="true"></p-button>
 ```
 
 ###### Default
@@ -33,6 +33,7 @@ export const Template = (args) => <ButtonComponent {...args} />
   <Story name="Primary Icon Before"
     args={{
       label: 'Label',
+      large: true,
       buttonType: ButtonTypeEnum.Primary,
       iconBefore: 'eye',
       iconBeforeWidth: '17'
@@ -42,6 +43,7 @@ export const Template = (args) => <ButtonComponent {...args} />
   <Story name="Secondary Icon Before"
     args={{
       label: 'Label',
+      large: true,
       buttonType: ButtonTypeEnum.Secondary,
       iconBefore: 'eye',
       iconBeforeWidth: '17'
@@ -51,6 +53,7 @@ export const Template = (args) => <ButtonComponent {...args} />
   <Story name="Tertiary Icon Before"
     args={{
       label: 'Label',
+      large: true,
       buttonType: ButtonTypeEnum.Tertiary,
       iconBefore: 'eye',
       iconBeforeWidth: '17'
@@ -60,6 +63,7 @@ export const Template = (args) => <ButtonComponent {...args} />
   <Story name="Distructive Icon Before"
       args={{
         label: 'Label',
+        large: true,
         buttonType: ButtonTypeEnum.Distructive,
         iconBefore: 'eye',
         iconBeforeWidth: '17'
@@ -77,6 +81,7 @@ export const Template = (args) => <ButtonComponent {...args} />
   <Story name="Primary Icon Before Disabled"
     args={{
       label: 'Label',
+      large: true,
       disabled: true,
       buttonType: ButtonTypeEnum.Primary,
       iconBefore: 'eye',
@@ -87,6 +92,7 @@ export const Template = (args) => <ButtonComponent {...args} />
   <Story name="Secondary Icon Before Disabled"
     args={{
       label: 'Label',
+      large: true,
       disabled: true,
       buttonType: ButtonTypeEnum.Secondary,
       iconBefore: 'eye',
@@ -97,6 +103,7 @@ export const Template = (args) => <ButtonComponent {...args} />
   <Story name="Tertiary Icon Before Disabled"
     args={{
       label: 'Label',
+      large: true,
       disabled: true,
       buttonType: ButtonTypeEnum.Tertiary,
       iconBefore: 'eye',
@@ -107,6 +114,7 @@ export const Template = (args) => <ButtonComponent {...args} />
   <Story name="Distructive Icon Before Disabled"
       args={{
         label: 'Label',
+        large: true,
         disabled: true,
         buttonType: ButtonTypeEnum.Distructive,
         iconBefore: 'eye',

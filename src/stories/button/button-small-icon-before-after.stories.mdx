@@ -6,7 +6,7 @@ import {ButtonComponent} from 'projects/design-system-lib/src/public-api';
 import {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';
 import {IconModule} from 'projects/design-system-lib/src/lib/icon/icon.module';
 
-<Meta title='Components/Button/Small/Icons/Before'
+<Meta title='Components/Button/Small/Icons/Before and After'
   component={ButtonComponent}
   decorators={[
     moduleMetadata({
@@ -17,7 +17,7 @@ import {IconModule} from 'projects/design-system-lib/src/lib/icon/icon.module';
 
 export const Template = (args) => <ButtonComponent {...args} />
 
-# Button Small With Icon Before
+# Button Small With Icon Before & After
 
 ###### Selector
 ```ts
@@ -30,39 +30,47 @@ export const Template = (args) => <ButtonComponent {...args} />
   <p className="story-title">Secondary</p>
   <p className="story-title">Tertiary</p>
   <p className="story-title">Distructive</p>
-  <Story name="Primary Icon Before"
+  <Story name="Primary Icon Before & After"
     args={{
       label: 'Label',
       buttonType: ButtonTypeEnum.Primary,
       iconBefore: 'eye',
-      iconBeforeWidth: '17'
+      iconBeforeWidth: '17',
+      iconAfter: 'chevron-down',
+      iconAfterWidth: '17'
     }}>
     {Template.bind({})}
   </Story>
-  <Story name="Secondary Icon Before"
+  <Story name="Secondary Icon Before & After"
     args={{
       label: 'Label',
       buttonType: ButtonTypeEnum.Secondary,
       iconBefore: 'eye',
-      iconBeforeWidth: '17'
+      iconBeforeWidth: '17',
+      iconAfter: 'chevron-down',
+      iconAfterWidth: '17'
     }}>
     {Template.bind({})}
   </Story>
-  <Story name="Tertiary Icon Before"
+  <Story name="Tertiary Icon Before & After"
     args={{
       label: 'Label',
       buttonType: ButtonTypeEnum.Tertiary,
       iconBefore: 'eye',
-      iconBeforeWidth: '17'
+      iconBeforeWidth: '17',
+      iconAfter: 'chevron-down',
+      iconAfterWidth: '17'
     }}>
     {Template.bind({})}
   </Story>
-  <Story name="Distructive Icon Before"
+  <Story name="Distructive Icon Before & After"
       args={{
         label: 'Label',
         buttonType: ButtonTypeEnum.Distructive,
         iconBefore: 'eye',
-        iconBeforeWidth: '17'
+        iconBeforeWidth: '17',
+        iconAfter: 'chevron-down',
+        iconAfterWidth: '17'
       }}>
       {Template.bind({})}
     </Story>
@@ -74,43 +82,51 @@ export const Template = (args) => <ButtonComponent {...args} />
   <p className="story-title">Secondary</p>
   <p className="story-title">Tertiary</p>
   <p className="story-title">Distructive</p>
-  <Story name="Primary Icon Before Disabled"
+  <Story name="Primary Icon Before & After Disabled"
     args={{
       label: 'Label',
       disabled: true,
       buttonType: ButtonTypeEnum.Primary,
       iconBefore: 'eye',
-      iconBeforeWidth: '17'
+      iconBeforeWidth: '17',
+      iconAfter: 'chevron-down',
+      iconAfterWidth: '17'
     }}>
     {Template.bind({})}
   </Story>
-  <Story name="Secondary Icon Before Disabled"
+  <Story name="Secondary Icon Before & After Disabled"
     args={{
       label: 'Label',
       disabled: true,
       buttonType: ButtonTypeEnum.Secondary,
       iconBefore: 'eye',
-      iconBeforeWidth: '17'
+      iconBeforeWidth: '17',
+      iconAfter: 'chevron-down',
+      iconAfterWidth: '17'
     }}>
     {Template.bind({})}
   </Story>
-  <Story name="Tertiary Icon Before Disabled"
+  <Story name="Tertiary Icon Before & After Disabled"
     args={{
       label: 'Label',
       disabled: true,
       buttonType: ButtonTypeEnum.Tertiary,
       iconBefore: 'eye',
-      iconBeforeWidth: '17'
+      iconBeforeWidth: '17',
+      iconAfter: 'chevron-down',
+      iconAfterWidth: '17'
     }}>
     {Template.bind({})}
   </Story>
-  <Story name="Distructive Icon Before Disabled"
+  <Story name="Distructive Icon Before & After Disabled"
       args={{
         label: 'Label',
         disabled: true,
         buttonType: ButtonTypeEnum.Distructive,
         iconBefore: 'eye',
-        iconBeforeWidth: '17'
+        iconBeforeWidth: '17',
+        iconAfter: 'chevron-down',
+        iconAfterWidth: '17'
       }}>
       {Template.bind({})}
     </Story>
