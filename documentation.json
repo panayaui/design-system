@@ -994,7 +994,7 @@
         },
         {
             "name": "InputTextComponent",
-            "id": "component-InputTextComponent-ddc8847bfef451062522877da9fd7a33",
+            "id": "component-InputTextComponent-fa696a4748442a8c8cc12a2f3dba8c77",
             "file": "src/stories/input-text/input-text.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1088,7 +1088,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport {FormControl, ValidatorFn} from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'p-input-text',\r\n  templateUrl: './input-text.component.html',\r\n  styleUrls: ['./input-text.component.scss'],\r\n})\r\nexport default class InputTextComponent implements OnInit {\r\n  @Input() type: string = 'text';\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string;\r\n  @Input() placeholder: string;\r\n  @Input() errorMessage: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() readonly: boolean = false;\r\n  @Input() value: string;\r\n  @Input() validators: ValidatorFn[];\r\n  public customControl: FormControl;\r\n\r\n  ngOnInit(): void {\r\n    this.customControl = new FormControl(\r\n      {value: this.value, disabled: this.disabled},\r\n      this.validators);\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport {FormControl, ValidatorFn} from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'p-input-text',\r\n  templateUrl: './input-text.component.html',\r\n  styleUrls: ['./input-text.component.scss'],\r\n})\r\nexport default class InputTextComponent implements OnInit {\r\n  @Input() type: string = 'text';\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string;\r\n  @Input() placeholder: string;\r\n  @Input() errorMessage: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() readonly: boolean = false;\r\n  @Input() value: string;\r\n  @Input() validators: ValidatorFn[];\r\n  public customControl: FormControl;\r\n\r\n  ngOnInit(): void {\r\n    this.customControl = new FormControl(\r\n      {value: this.value, disabled: this.disabled},\r\n      this.validators );\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1613,6 +1613,92 @@
             "templateData": "<div class=\"page slide-toggles\">\r\n    <header class=\"page-header\">\r\n      <h1 class=\"page-title\">Toggle / <span class=\"page-header-highlighted\">Items</span></h1>\r\n    </header>\r\n\r\n    <main class=\"page-main\">\r\n      <ul class=\"page-list header-list\">\r\n        <li class=\"list-header\"></li>\r\n        <li class=\"list-header\">[checked]=true</li>\r\n        <li class=\"list-header\">\r\n          [checked]=true\r\n          <br/>\r\n          [disabled]=true\r\n        </li>\r\n        <li class=\"list-header\">\r\n          [checked]=false\r\n        </li>\r\n        <li class=\"list-header\">\r\n          [checked]=false\r\n          <br/>\r\n          [disabled]=true\r\n        </li>\r\n      </ul>\r\n\r\n      <ul *ngFor=\"let toggleType of slideTogglePage | keyvalue: originalOrder\"\r\n          class=\"page-list content-list {{toggleType.key}}\">\r\n        <li class=\"list-header\">\r\n          [{{toggleType.key}}]=\"Label\"\r\n        </li>\r\n        <li *ngFor=\"let toggle of toggleType.value\" class=\"list-item\">\r\n          <p-slide-toggle [label]=\"toggle.label\"\r\n                          [ariaLabel]=\"toggle.ariaLabel\"\r\n                          [checked]=\"toggle.checked\"\r\n                          [disabled]=\"toggle.disabled\">\r\n          </p-slide-toggle>\r\n        </li>\r\n      </ul>\r\n\r\n    </main>\r\n</div>\r\n"
         },
         {
+            "name": "ToggleComponent",
+            "id": "component-ToggleComponent-fb19c7f10f67176641b719df341595f4",
+            "file": "projects/design-system-lib/src/lib/toggle/toggle.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-toggle",
+            "styleUrls": [
+                "./toggle.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./toggle.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "line": 13,
+                    "type": "boolean"
+                },
+                {
+                    "name": "validators",
+                    "line": 14,
+                    "type": "ValidatorFn[]"
+                },
+                {
+                    "name": "value",
+                    "line": 12,
+                    "type": "any"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "form",
+                    "type": "FormGroup",
+                    "optional": false,
+                    "description": "",
+                    "line": 11,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport {FormBuilder, FormGroup, ValidatorFn, Validators} from '@angular/forms';\r\n\r\n\r\n@Component({\r\n  selector: 'p-toggle',\r\n  templateUrl: './toggle.component.html',\r\n  styleUrls: ['./toggle.component.scss'],\r\n})\r\nexport class ToggleComponent {\r\n  public form: FormGroup;\r\n  @Input() value: any;\r\n  @Input() disabled: boolean = false;\r\n  @Input() validators: ValidatorFn[];\r\n\r\n  constructor(fb: FormBuilder) {\r\n    this.form = fb.group({\r\n      gender: [{value: this.value, disabled: this.disabled},\r\n        this.validators]\r\n    });\r\n  }\r\n\r\n  // @Input() buttonType: ButtonTypeEnum = ButtonTypeEnum.Primary;\r\n\r\n  // public get classes(): string[] {\r\n  //   const classParams = [];\r\n  //   this.large ? classParams.push('p-btn-large') : classParams.push('p-btn-small');\r\n  //   this.iconBefore ? classParams.push('p-btn-icon-before') : null;\r\n  //   this.iconAfter ? classParams.push('p-btn-icon-after') : null;\r\n  //   return classParams;\r\n  // }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n.p-toggle {\r\n  float: left;\r\n  background: #242729;\r\n\r\n  &-button {\r\n    position: absolute;\r\n    opacity: 0;\r\n  }\r\n\r\n  &-label {\r\n    padding: 7px;\r\n    float:left;\r\n    color: #fff;\r\n    cursor: pointer;\r\n  }\r\n\r\n  &-button:checked + .p-toggle-label {\r\n    background: green;\r\n  }\r\n}\r\n\r\n",
+                    "styleUrl": "./toggle.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "fb",
+                        "type": "FormBuilder"
+                    }
+                ],
+                "line": 14,
+                "jsdoctags": [
+                    {
+                        "name": "fb",
+                        "type": "FormBuilder",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "templateData": "<div [formGroup]=\"form\" class=\"p-toggle\">\r\n\r\n  <input id=\"on\"\r\n         name=\"state-d\"\r\n         type=\"radio\"\r\n         class=\"p-toggle-button\"\r\n         formControlName=\"gender\"/>\r\n  <label for=\"on\" class=\"p-toggle-button-label\">ON</label>\r\n\r\n  <input id=\"na\" name=\"state-d\" type=\"radio\" checked=\"checked\"\r\n         class=\"p-toggle-button\"\r\n         formControlName=\"gender\"/>\r\n  <label for=\"na\" class=\"p-toggle-button-label\">N/A</label>\r\n\r\n  <input id=\"off\" name=\"state-d\" type=\"radio\"\r\n         class=\"p-toggle-button\"\r\n         formControlName=\"gender\"/>\r\n  <label for=\"off\" class=\"p-toggle-button-label\">OFF</label>\r\n\r\n</div>\r\n\r\n"
+        },
+        {
             "name": "TooltipComponent",
             "id": "component-TooltipComponent-b58185a8c394046ae5be5c996873704d",
             "file": "src/stories/tooltip/tooltip.component.ts",
@@ -1982,6 +2068,43 @@
                     "elements": []
                 }
             ]
+        },
+        {
+            "name": "ToggleModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ToggleComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ToggleComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
         }
     ],
     "miscellaneous": {
@@ -2126,14 +2249,6 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
-                "type": "Story<CheckboxPageComponent>",
-                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "PageTemplate",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
                 "type": "Story<CheckboxGroupPageComponent>",
                 "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
@@ -2142,9 +2257,9 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input-text/input-text-table-layout/input-text-table-layout.stories.ts",
-                "type": "Story<InputTextTableLayoutComponent>",
-                "defaultValue": "(args: InputTextTableLayoutComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "Story<CheckboxPageComponent>",
+                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -2153,6 +2268,14 @@
                 "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
                 "type": "Story<InputTextPageComponent>",
                 "defaultValue": "(args: InputTextPageComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "PageTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/input-text/input-text-table-layout/input-text-table-layout.stories.ts",
+                "type": "Story<InputTextTableLayoutComponent>",
+                "defaultValue": "(args: InputTextTableLayoutComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -2867,6 +2990,15 @@
                 "name": "LabelSmallComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/toggle/toggle.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ToggleComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {

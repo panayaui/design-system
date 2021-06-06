@@ -1,5 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, ValidatorFn, Validators} from '@angular/forms';
+import {Component} from '@angular/core';
 
 
 @Component({
