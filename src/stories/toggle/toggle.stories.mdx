@@ -1,0 +1,55 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+// import {ToggleComponent} from 'design-system-lib';
+// import {ButtonModule} from 'design-system-lib';
+import {ToggleComponent} from 'projects/design-system-lib/src/public-api';
+import {IconModule} from 'projects/design-system-lib/src/lib/icon/icon.module';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
+<Meta title='Toggle'
+  component={ToggleComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [
+        IconModule,
+        FormsModule,
+        ReactiveFormsModule
+      ]
+    })
+  ]}  
+/>
+
+export const Template = (args) => <ToggleComponent {...args} />
+
+# Toggle Button Icons
+
+###### Selector
+```ts
+  <p-toggle></p-toggle>
+```
+
+###### Default
+<Canvas>
+  <Story name="Default"
+    args={{
+      
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Disabled"
+    args={{
+      
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Component
+```ts
+
+```
+
+###### Types
+```ts
+
+```

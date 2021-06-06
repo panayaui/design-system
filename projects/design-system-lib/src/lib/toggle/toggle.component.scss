@@ -1,0 +1,23 @@
+@import "../assets/styles/custom";
+
+.p-toggle {
+  float: left;
+  background: #242729;
+
+  &-button {
+    position: absolute;
+    opacity: 0;
+  }
+
+  &-label {
+    padding: 7px;
+    float:left;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  &-button:checked + .p-toggle-label {
+    background: green;
+  }
+}
+

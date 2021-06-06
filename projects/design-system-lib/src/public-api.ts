@@ -9,3 +9,6 @@ export * from './lib/labels/label-types.enum';
 export * from './lib/labels/label.module';
 export * from './lib/labels/label-main/label-main.component';
 export * from './lib/labels/label-small/label-small.component';
+
+export * from './lib/toggle/toggle.module';
+export * from './lib/toggle/toggle.component';

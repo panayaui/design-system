@@ -6,7 +6,7 @@ import SlideToggleComponent from '../slide-toggle.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 export default {
-  title: 'Components/Toggles',
+  title: 'Components/Slide Toggle',
   component: SlideTogglePageComponent,
   decorators: [
     moduleMetadata({
