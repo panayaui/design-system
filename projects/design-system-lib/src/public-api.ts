@@ -5,6 +5,7 @@ export * from './lib/button/button-type.enum';
 export * from './lib/icon/icon.module';
 export * from './lib/icon/icon.component';
 
-export * from './lib/label-main/label-main.module';
-export * from './lib/label-main/label-main.component';
-export * from './lib/label-main/label-main.enum';
+export * from './lib/labels/label-types.enum';
+export * from './lib/labels/label.module';
+export * from './lib/labels/label-main/label-main.component';
+export * from './lib/labels/label-small/label-small.component';

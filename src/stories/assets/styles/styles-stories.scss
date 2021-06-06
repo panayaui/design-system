@@ -40,6 +40,10 @@ p {
   line-height: 64px;
   color: $gray-scale-700;
 }
+// hidden text
+.hidden-text {
+  font-size: 0;
+}
 
 #radio-button--base,
 #label-status-main {
@@ -51,6 +55,14 @@ p {
     &:nth-child(even){
       width: calc(100% - #{$label-width});
     }
+  }
+}
+
+#label-status-small ~ .sbdocs .innerZoomElementWrapper > div {
+  $label-width: 150px;
+  width: $label-width;
+  &:nth-child(3n){
+    width: calc(100% - #{$label-width} * 2);
   }
 }
 
