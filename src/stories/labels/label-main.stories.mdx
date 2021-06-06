@@ -70,15 +70,8 @@ export const Template = (args) => <LabelMainComponent {...args} />
   </Story>
 </Canvas>
 
-###### Component
-```ts
-export class LabelMainComponent {
-  @Input() label: string;
-  @Input() type: LabelTypesEnum;
-}
-```
-
 ###### Types Enum
+
 ```ts
   export enum LabelTypesEnum {
   CRITICAL = 'critical',

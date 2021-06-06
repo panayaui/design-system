@@ -1,15 +1,15 @@
 import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
 import {moduleMetadata} from '@storybook/angular';
-import {LabelMainComponent} from 'projects/design-system-lib/src/public-api';
+import {LabelSmallComponent} from 'projects/design-system-lib/src/public-api';
 import {LabelTypesEnum} from 'projects/design-system-lib/src/public-api';
 
-<Meta title='Components/Label (Status)/Main'
-  component={LabelMainComponent}
+<Meta title='Components/Label (Status)/Small'
+  component={LabelSmallComponent}
  />
 
-# Label (Status) Main
+# Label (Status) Small
 
-export const Template = (args) => <LabelMainComponent {...args} />
+export const Template = (args) => <LabelSmallComponent {...args} />
 
 ###### Selector
 
@@ -18,9 +18,16 @@ export const Template = (args) => <LabelMainComponent {...args} />
 ```
 ###### Types
 <Canvas>
+  <p className="story-title hidden-text">type</p>
+  <p className="story-title">Label On</p>
+  <p className="story-title">Label Off</p>
   <p className="story-title">critical</p>
   <Story name="Critical"
     args={{ type: LabelTypesEnum.CRITICAL, label: 'Label' }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Critical No Label"
+    args={{ type: LabelTypesEnum.CRITICAL, ariaLabel: 'Label' }}>
     {Template.bind({})}
   </Story>
   <p className="story-title">danger</p>
@@ -28,39 +35,71 @@ export const Template = (args) => <LabelMainComponent {...args} />
     args={{ type: LabelTypesEnum.DANGER, label: 'Label' }}>
     {Template.bind({})}
   </Story>
+  <Story name="Danger No Label"
+    args={{ type: LabelTypesEnum.DANGER, ariaLabel: 'Label' }}>
+    {Template.bind({})}
+  </Story>
   <p className="story-title">success</p>
-   <Story name="Success"
+  <Story name="Success"
     args={{ type: LabelTypesEnum.SUCCESS, label: 'Label' }}>
     {Template.bind({})}
   </Story>
+  <Story name="Success No Label"
+    args={{ type: LabelTypesEnum.SUCCESS, ariaLabel: 'Label' }}>
+    {Template.bind({})}
+  </Story>
   <p className="story-title">medium</p>
-   <Story name="Medium"
+  <Story name="Medium"
     args={{ type: LabelTypesEnum.MEDIUM, label: 'Label' }}>
     {Template.bind({})}
   </Story>
+  <Story name="Medium No Label"
+    args={{ type: LabelTypesEnum.MEDIUM, ariaLabel: 'Label' }}>
+    {Template.bind({})}
+  </Story>
   <p className="story-title">low</p>
-   <Story name="Low"
+  <Story name="Low"
     args={{ type: LabelTypesEnum.LOW, label: 'Label' }}>
     {Template.bind({})}
   </Story>
+  <Story name="Low No Label"
+    args={{ type: LabelTypesEnum.LOW, ariaLabel: 'Label' }}>
+    {Template.bind({})}
+  </Story>
   <p className="story-title">light gray</p>
-   <Story name="Light Gray"
+  <Story name="Light Gray"
     args={{ type: LabelTypesEnum.LIGHTGRAY, label: 'Label' }}>
     {Template.bind({})}
   </Story>
+  <Story name="Light Gray No Label"
+    args={{ type: LabelTypesEnum.LIGHTGRAY, ariaLabel: 'Label' }}>
+    {Template.bind({})}
+  </Story>
   <p className="story-title">dark gray</p>
-   <Story name="Dark Gray"
+  <Story name="Dark Gray"
     args={{ type: LabelTypesEnum.DARKGRAY, label: 'Label' }}>
     {Template.bind({})}
   </Story>
+  <Story name="Dark Gray No Label"
+    args={{ type: LabelTypesEnum.DARKGRAY, ariaLabel: 'Label' }}>
+    {Template.bind({})}
+  </Story>
   <p className="story-title">dev1</p>
-   <Story name="Dev1"
+  <Story name="Dev1"
     args={{ type: LabelTypesEnum.DEV1, label: 'Label' }}>
     {Template.bind({})}
   </Story>
+  <Story name="Dev1 No Label"
+    args={{ type: LabelTypesEnum.DEV1, ariaLabel: 'Label' }}>
+    {Template.bind({})}
+  </Story>
   <p className="story-title">dev2</p>
-   <Story name="Dev2"
+  <Story name="Dev2"
     args={{ type: LabelTypesEnum.DEV2, label: 'Label' }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Dev2 No Label"
+    args={{ type: LabelTypesEnum.DEV2, ariaLabel: 'Label' }}>
     {Template.bind({})}
   </Story>
   <p className="story-title">dev3</p>
@@ -68,12 +107,17 @@ export const Template = (args) => <LabelMainComponent {...args} />
     args={{ type: LabelTypesEnum.DEV3, label: 'Label' }}>
     {Template.bind({})}
   </Story>
+  <Story name="Dev3 No Label"
+    args={{ type: LabelTypesEnum.DEV3, ariaLabel: 'Label' }}>
+    {Template.bind({})}
+  </Story>
 </Canvas>
 
 ###### Component
 ```ts
-export class LabelMainComponent {
+export class LabelSmallComponent {
   @Input() label: string;
+  @Input() ariaLabel: string; // required if there is no label
   @Input() type: LabelTypesEnum;
 }
 ```
