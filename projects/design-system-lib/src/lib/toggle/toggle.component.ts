@@ -3,8 +3,7 @@ import {IIcon} from '../icon/icon.interface';
 
 interface IToggleOption {
   optionName: string;
-  iconOn: IIcon;
-  iconOff: IIcon;
+  icon: IIcon;
   checked: boolean;
 }
 

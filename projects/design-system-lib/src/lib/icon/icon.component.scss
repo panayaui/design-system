@@ -1,5 +1,11 @@
 @import "../assets/styles/custom";
 
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .p-icon {
   display: inline-flex;
   justify-content: center;

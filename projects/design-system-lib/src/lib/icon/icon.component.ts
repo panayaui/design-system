@@ -1,11 +1,11 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'p-icon',
   templateUrl: './icon.component.html',
   styleUrls: ['./icon.component.scss'],
 })
-export class IconComponent {
+export class IconComponent implements OnInit {
   @Input() iconName: string;
   @Input() width: string  = '16'; // pixels or auto
   @Input() height: string  = 'auto'; // pixels or auto
@@ -25,5 +25,15 @@ export class IconComponent {
       strokeLinecap: this.strokeLinecap,
       strokeLinejoin: this.strokeLinejoin
     };
+  }
+
+  ngOnInit(): void {
+    !this.width ? this.width = '16' : null;
+    !this.height ? this.height = 'auto' : null;
+    !this.fill ? this.fill = 'none' : null;
+    !this.stroke ? this.stroke = 'currentColor' : null;
+    !this.strokeWidth ? this.strokeWidth = 1 : null;
+    !this.strokeLinecap ? this.strokeLinecap = 'round' : null;
+    !this.strokeLinejoin ? this.strokeLinejoin = 'round' : null;
   }
 }

@@ -6,23 +6,32 @@
       <input [id]="'toggle-' + option.optionName"
              [name]="optionsListName"
              [value]="option.optionName"
+             [checked]="option.checked"
              type="radio"
              class="p-toggle-button"/>
-      <label [attr.for]="'toggle-' + option.optionName" class="p-toggle-label">
-        <span class="p-toggle-text" *ngIf="!option.iconOn.iconName && !option.iconOff.iconName">{{option.optionName}}</span>
-        <span class="p-toggle-icon" *ngIf="option.iconOn.iconName && option.iconOff.iconName" attr.aria-label="{{option.optionName}}">
-          <p-icon class="p-toggle-icon-comp"
-                  [iconName]="option.iconOn.iconName"
-                  [width]="option.iconOn?.width"
-                  [height]="option.iconOn?.height"
-                  [fill]="option.iconOn?.fill"
-                  [stroke]="option.iconOn?.stroke"
-                  [strokeWidth]="option.iconOn?.strokeWidth"
-                  [strokeLinecap]="option.iconOn?.strokeLinecap"
-                  [strokeLinejoin]="option.iconOn?.strokeLinejoin"></p-icon>
-        </span>
+      <label [attr.for]="'toggle-' + option.optionName" class="p-toggle-label"
+            [class.p-toggle-label-icon]="option.icon?.iconName">
+        <ng-template [ngIf]="!option.icon?.iconName && !option.icon?.iconName"
+                     [ngIfElse]="icon">
+          <span class="p-toggle-text">{{option.optionName}}</span>
+        </ng-template>
+
+        <ng-template #icon>
+          <span class="p-toggle-icon" attr.aria-label="{{option.optionName}}">
+            <p-icon class="p-toggle-icon-comp"
+                [iconName]="option.icon.iconName"
+                [width]="option.icon?.width"
+                [height]="option.icon?.height"
+                [fill]="option.icon?.fill"
+                [stroke]="option.icon?.stroke"
+                [strokeWidth]="option.icon?.strokeWidth"
+                [strokeLinecap]="option.icon?.strokeLinecap"
+                [strokeLinejoin]="option.icon?.strokeLinejoin"></p-icon>
+          </span>
+        </ng-template>
       </label>
     </div>
   </div>
 </div>
+
 
