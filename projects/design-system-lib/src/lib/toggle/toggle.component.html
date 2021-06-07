@@ -1,24 +1,17 @@
-<div class="p-toggle">
-  <div class="p-toggle-item">
-    <input id="on"
-           name="state-d"
-           type="radio"
-           class="p-toggle-button"/>
-    <label for="on" class="p-toggle-label first">Label</label>
+<div class="p-toggle-wrapper">
+  <div class="p-toggle">
+    <div *ngFor="let option of optionsList; let i = index"
+         class="p-toggle-item"
+         [ngClass]="i === 0 ? 'first' : i === optionsList.length - 1 ? 'last' : 'middle'">
+      <input [id]="'toggle-' + option.optionName"
+             [name]="optionsListName"
+             [value]="option.optionName"
+             type="radio"
+             class="p-toggle-button"/>
+      <label [attr.for]="'toggle-' + option.optionName" class="p-toggle-label">
+        {{option.optionName}}
+      </label>
+    </div>
   </div>
-
-
-  <div class="p-toggle-item">
-    <input id="na" name="state-d" type="radio" checked="checked"
-           class="p-toggle-button"/>
-    <label for="na" class="p-toggle-label middle">Label</label>
-  </div>
-
-
-  <div class="p-toggle-item">
-    <input id="off" name="state-d" type="radio" class="p-toggle-button"/>
-    <label for="off" class="p-toggle-label last">Label</label>
-  </div>
-
-
 </div>
+

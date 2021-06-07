@@ -1,5 +1,10 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
+interface IToggleOption {
+  optionName: string;
+  icon: string;
+  checked: boolean;
+}
 
 @Component({
   selector: 'p-toggle',
@@ -7,5 +12,6 @@ import {Component} from '@angular/core';
   styleUrls: ['./toggle.component.scss'],
 })
 export class ToggleComponent {
-
+  @Input() optionsListName: string;
+  @Input() optionsList: IToggleOption[];
 }

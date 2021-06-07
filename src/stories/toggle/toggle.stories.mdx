@@ -4,16 +4,13 @@ import {moduleMetadata} from '@storybook/angular';
 // import {ButtonModule} from 'design-system-lib';
 import {ToggleComponent} from 'projects/design-system-lib/src/public-api';
 import {IconModule} from 'projects/design-system-lib/src/lib/icon/icon.module';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 <Meta title='Toggle'
   component={ToggleComponent}
   decorators={[
     moduleMetadata({
       imports: [
-        IconModule,
-        FormsModule,
-        ReactiveFormsModule
+        IconModule
       ]
     })
   ]}  
@@ -21,24 +18,39 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 export const Template = (args) => <ToggleComponent {...args} />
 
-# Toggle Button Icons
+# Toggle Button
 
 ###### Selector
 ```ts
   <p-toggle></p-toggle>
 ```
 
-###### Default
+###### Label
 <Canvas>
-  <Story name="Default"
+  <Story name="Two options"
     args={{
-      
+      optionsListName: 'twoOptionsToggle',
+      optionsList: [{
+        optionName: 'First'
+      },
+      {
+        optionName: 'Second'
+      }]
     }}>
     {Template.bind({})}
   </Story>
-  <Story name="Disabled"
+  <Story name="Three options"
     args={{
-      
+      optionsListName: 'threeOptionsToggle',
+      optionsList: [{
+        optionName: 'First'
+      },
+      {
+        optionName: 'Second'
+      },
+      {
+        optionName: 'Third'
+      }]
     }}>
     {Template.bind({})}
   </Story>
