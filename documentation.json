@@ -89,6 +89,74 @@
             "methods": []
         },
         {
+            "name": "IIcon",
+            "id": "interface-IIcon-cfff2c1c7a7db9f37f81c9477f5f2df4",
+            "file": "projects/design-system-lib/src/lib/icon/icon.interface.ts",
+            "type": "interface",
+            "sourceCode": "export interface IIcon {\r\n  iconName: string; // required\r\n  width: string;\r\n  height: string;\r\n  fill: string;\r\n  stroke: string;\r\n  strokeWidth: number;\r\n  strokeLinecap: string;\r\n  strokeLinejoin: string;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "fill",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "height",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "iconName",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "stroke",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "strokeLinecap",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 8
+                },
+                {
+                    "name": "strokeLinejoin",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                },
+                {
+                    "name": "strokeWidth",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                },
+                {
+                    "name": "width",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
             "name": "IInputNumeric",
             "id": "interface-IInputNumeric-a8a9bd720b33a973f62f539e1673dc7b",
             "file": "src/stories/input-numeric/input-numeric.interface.ts",
@@ -294,31 +362,31 @@
         },
         {
             "name": "IToggleOption",
-            "id": "interface-IToggleOption-4ccd0b94a43b7714d2eaadf12423f48a",
+            "id": "interface-IToggleOption-de3608518d970bbce9bddc253539896d",
             "file": "projects/design-system-lib/src/lib/toggle/toggle.component.ts",
             "type": "interface",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\n\r\ninterface IToggleOption {\r\n  option: string;\r\n  icon: string;\r\n  checked: boolean;\r\n}\r\n\r\n@Component({\r\n  selector: 'p-toggle',\r\n  templateUrl: './toggle.component.html',\r\n  styleUrls: ['./toggle.component.scss'],\r\n})\r\nexport class ToggleComponent {\r\n  @Input() optionsList: IToggleOption[];\r\n}\r\n",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {IIcon} from '../icon/icon.interface';\r\n\r\ninterface IToggleOption {\r\n  optionName: string;\r\n  icon: IIcon;\r\n  checked: boolean;\r\n}\r\n\r\n@Component({\r\n  selector: 'p-toggle',\r\n  templateUrl: './toggle.component.html',\r\n  styleUrls: ['./toggle.component.scss'],\r\n})\r\nexport class ToggleComponent {\r\n  @Input() optionsListName: string;\r\n  @Input() optionsList: IToggleOption[];\r\n  @Input() disabled: boolean;\r\n}\r\n",
             "properties": [
                 {
                     "name": "checked",
                     "type": "boolean",
                     "optional": false,
                     "description": "",
-                    "line": 6
+                    "line": 7
                 },
                 {
                     "name": "icon",
+                    "type": "IIcon",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "optionName",
                     "type": "string",
                     "optional": false,
                     "description": "",
                     "line": 5
-                },
-                {
-                    "name": "option",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 4
                 }
             ],
             "indexSignatures": [],
@@ -814,7 +882,7 @@
         },
         {
             "name": "IconComponent",
-            "id": "component-IconComponent-cbf7a1c0aa15c293a166dd2b923e81df",
+            "id": "component-IconComponent-f9b53b95f50c74a3333bafb001ac3425",
             "file": "projects/design-system-lib/src/lib/icon/icon.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -881,21 +949,33 @@
             ],
             "outputsClass": [],
             "propertiesClass": [],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 30
+                }
+            ],
             "hostBindings": [],
             "hostListeners": [],
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'p-icon',\r\n  templateUrl: './icon.component.html',\r\n  styleUrls: ['./icon.component.scss'],\r\n})\r\nexport class IconComponent {\r\n  @Input() iconName: string;\r\n  @Input() width: string  = '16'; // pixels or auto\r\n  @Input() height: string  = 'auto'; // pixels or auto\r\n  @Input() fill: string = 'none'; // icon background\r\n  @Input() stroke: string = 'currentColor'; // line color\r\n  @Input() strokeWidth: number = 1; // line width in pixels\r\n  @Input() strokeLinecap: string = 'round'; // line end\r\n  @Input() strokeLinejoin: string = 'round'; // two lines join\r\n\r\n  public get iconStyles(): any {\r\n    return {\r\n      width: this.width === 'auto' ? this.width : `${this.width}px`,\r\n      height: this.height === 'auto' ? this.height : `${this.height}px`,\r\n      fill: this.fill,\r\n      stroke: this.stroke,\r\n      strokeWidth: `${this.strokeWidth}px`,\r\n      strokeLinecap: this.strokeLinecap,\r\n      strokeLinejoin: this.strokeLinejoin\r\n    };\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'p-icon',\r\n  templateUrl: './icon.component.html',\r\n  styleUrls: ['./icon.component.scss'],\r\n})\r\nexport class IconComponent implements OnInit {\r\n  @Input() iconName: string;\r\n  @Input() width: string  = '16'; // pixels or auto\r\n  @Input() height: string  = 'auto'; // pixels or auto\r\n  @Input() fill: string = 'none'; // icon background\r\n  @Input() stroke: string = 'currentColor'; // line color\r\n  @Input() strokeWidth: number = 1; // line width in pixels\r\n  @Input() strokeLinecap: string = 'round'; // line end\r\n  @Input() strokeLinejoin: string = 'round'; // two lines join\r\n\r\n  public get iconStyles(): any {\r\n    return {\r\n      width: this.width === 'auto' ? this.width : `${this.width}px`,\r\n      height: this.height === 'auto' ? this.height : `${this.height}px`,\r\n      fill: this.fill,\r\n      stroke: this.stroke,\r\n      strokeWidth: `${this.strokeWidth}px`,\r\n      strokeLinecap: this.strokeLinecap,\r\n      strokeLinejoin: this.strokeLinejoin\r\n    };\r\n  }\r\n\r\n  ngOnInit(): void {\r\n    !this.width ? this.width = '16' : null;\r\n    !this.height ? this.height = 'auto' : null;\r\n    !this.fill ? this.fill = 'none' : null;\r\n    !this.stroke ? this.stroke = 'currentColor' : null;\r\n    !this.strokeWidth ? this.strokeWidth = 1 : null;\r\n    !this.strokeLinecap ? this.strokeLinecap = 'round' : null;\r\n    !this.strokeLinejoin ? this.strokeLinejoin = 'round' : null;\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n.p-icon {\r\n  display: inline-flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n:host {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n.p-icon {\r\n  display: inline-flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n",
                     "styleUrl": "./icon.component.scss"
                 }
             ],
             "stylesData": "",
+            "implements": [
+                "OnInit"
+            ],
             "accessors": {
                 "iconStyles": {
                     "name": "iconStyles",
@@ -1647,7 +1727,7 @@
         },
         {
             "name": "ToggleComponent",
-            "id": "component-ToggleComponent-4ccd0b94a43b7714d2eaadf12423f48a",
+            "id": "component-ToggleComponent-de3608518d970bbce9bddc253539896d",
             "file": "projects/design-system-lib/src/lib/toggle/toggle.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1665,9 +1745,19 @@
             "viewProviders": [],
             "inputsClass": [
                 {
+                    "name": "disabled",
+                    "line": 18,
+                    "type": "boolean"
+                },
+                {
                     "name": "optionsList",
-                    "line": 15,
+                    "line": 17,
                     "type": "IToggleOption[]"
+                },
+                {
+                    "name": "optionsListName",
+                    "line": 16,
+                    "type": "string"
                 }
             ],
             "outputsClass": [],
@@ -1678,16 +1768,16 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\n\r\ninterface IToggleOption {\r\n  option: string;\r\n  icon: string;\r\n  checked: boolean;\r\n}\r\n\r\n@Component({\r\n  selector: 'p-toggle',\r\n  templateUrl: './toggle.component.html',\r\n  styleUrls: ['./toggle.component.scss'],\r\n})\r\nexport class ToggleComponent {\r\n  @Input() optionsList: IToggleOption[];\r\n}\r\n",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {IIcon} from '../icon/icon.interface';\r\n\r\ninterface IToggleOption {\r\n  optionName: string;\r\n  icon: IIcon;\r\n  checked: boolean;\r\n}\r\n\r\n@Component({\r\n  selector: 'p-toggle',\r\n  templateUrl: './toggle.component.html',\r\n  styleUrls: ['./toggle.component.scss'],\r\n})\r\nexport class ToggleComponent {\r\n  @Input() optionsListName: string;\r\n  @Input() optionsList: IToggleOption[];\r\n  @Input() disabled: boolean;\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$border-radius: 2px;\r\n\r\n.p-toggle {\r\n  display: inline-flex;\r\n  align-items: center;\r\n\r\n  &-button {\r\n    position: absolute;\r\n    opacity: 0;\r\n  }\r\n\r\n  &-label {\r\n    display: block;\r\n    text-align: center;\r\n    font-family: $font-family-basic;\r\n    font-size: $small-font-size;\r\n    font-weight: 400;\r\n    color: $primary-a-900;\r\n    width: 67px;\r\n    height: 28px;\r\n    line-height: 28px;\r\n    background-color: $gray-scale-1;\r\n    box-shadow: inset -1px 0 0 $gray-scale-400,\r\n                inset 0 -1px 0 $gray-scale-400,\r\n                inset 0 1px 0 $gray-scale-400;\r\n    transition: all 300ms;\r\n    cursor: pointer;\r\n\r\n    &.first {\r\n      border-top-left-radius: $border-radius;\r\n      border-bottom-left-radius: $border-radius;\r\n      box-shadow: inset 1px 0 0 $gray-scale-400,\r\n                  inset 0 -1px 0 $gray-scale-400,\r\n                  inset 0 1px 0 $gray-scale-400;\r\n    }\r\n\r\n    &.middle {\r\n      box-shadow: inset 1px 0 0 $gray-scale-400,\r\n                  inset -1px 0 0 $gray-scale-400,\r\n                  inset 0 -1px 0 $gray-scale-400,\r\n                  inset 0 1px 0 $gray-scale-400;\r\n    }\r\n\r\n    &.last {\r\n      border-top-right-radius: $border-radius;\r\n      border-bottom-right-radius: $border-radius;\r\n      box-shadow: inset -1px 0px 0px $gray-scale-400,\r\n                  inset 0px -1px 0px $gray-scale-400,\r\n                  inset 0px 1px 0px $gray-scale-400;\r\n    }\r\n  }\r\n\r\n  &-button:checked + .p-toggle-label {\r\n    font-weight: 600;\r\n    color: $gray-scale-1;\r\n    background-color: $secondary-a-700;\r\n    box-shadow: none;\r\n  }\r\n\r\n  &.disabled {\r\n\r\n  }\r\n}\r\n\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$border-radius: 2px;\r\n$min-size: 28px;\r\n\r\n.p-toggle {\r\n  display: inline-flex;\r\n  align-items: center;\r\n\r\n  &-button {\r\n    position: absolute;\r\n    opacity: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n    margin: 0;\r\n  }\r\n\r\n  &-label {\r\n    display: block;\r\n    font-family: $font-family-basic;\r\n    font-size: $small-font-size;\r\n    font-weight: 400;\r\n    color: $primary-a-900;\r\n    text-align: center;\r\n    text-transform: capitalize;\r\n    height: $min-size;\r\n    line-height: $min-size;\r\n    background-color: $gray-scale-1;\r\n    transition: all 300ms;\r\n    cursor: pointer;\r\n    &:not(.p-toggle-label-icon) {\r\n      padding-right: 16px;\r\n      padding-left: 16px;\r\n    }\r\n\r\n    .first & {\r\n      border-top-left-radius: $border-radius;\r\n      border-bottom-left-radius: $border-radius;\r\n      box-shadow: inset 1px 0 0 $gray-scale-400,\r\n                  inset 0 -1px 0 $gray-scale-400,\r\n                  inset 0 1px 0 $gray-scale-400;\r\n    }\r\n\r\n    .middle & {\r\n      box-shadow: inset 1px 0 0 $gray-scale-400,\r\n                  inset -1px 0 0 $gray-scale-400,\r\n                  inset 0 -1px 0 $gray-scale-400,\r\n                  inset 0 1px 0 $gray-scale-400;\r\n    }\r\n\r\n    .last & {\r\n      border-top-right-radius: $border-radius;\r\n      border-bottom-right-radius: $border-radius;\r\n      box-shadow: inset -1px 0px 0px $gray-scale-400,\r\n                  inset 0px -1px 0px $gray-scale-400,\r\n                  inset 0px 1px 0px $gray-scale-400;\r\n    }\r\n\r\n    .first + .last .p-toggle-button:not(:checked) + & {\r\n      box-shadow: inset 1px 0 0 $gray-scale-400,\r\n                  inset -1px 0 0 $gray-scale-400,\r\n                  inset 0 -1px 0 $gray-scale-400,\r\n                  inset 0 1px 0 $gray-scale-400;\r\n    }\r\n  }\r\n\r\n  &-button:checked + .p-toggle-label {\r\n    //font-weight: 600;\r\n    color: $gray-scale-1;\r\n    background-color: $secondary-a-700;\r\n    box-shadow: none;\r\n  }\r\n\r\n  &-button:disabled + .p-toggle-label {\r\n    //font-weight: 600;\r\n    color: $gray-scale-600;\r\n    background-color: $primary-c-50;\r\n  }\r\n\r\n  &-button:checked:disabled + .p-toggle-label {\r\n    //font-weight: 600;\r\n    color: $gray-scale-600;\r\n    background-color: $secondary-a-100;\r\n    box-shadow: none;\r\n  }\r\n\r\n  &-icon {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    min-width: $min-size;\r\n    height: 100%;\r\n    padding-right: 6px;\r\n    padding-left: 6px;\r\n  }\r\n}\r\n\r\n",
                     "styleUrl": "./toggle.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"p-toggle\">\r\n  <div class=\"p-toggle-item\">\r\n    <input id=\"on\"\r\n           name=\"state-d\"\r\n           type=\"radio\"\r\n           class=\"p-toggle-button\"/>\r\n    <label for=\"on\" class=\"p-toggle-label first\">Label</label>\r\n  </div>\r\n\r\n\r\n  <div class=\"p-toggle-item\">\r\n    <input id=\"na\" name=\"state-d\" type=\"radio\" checked=\"checked\"\r\n           class=\"p-toggle-button\"/>\r\n    <label for=\"na\" class=\"p-toggle-label middle\">Label</label>\r\n  </div>\r\n\r\n\r\n  <div class=\"p-toggle-item\">\r\n    <input id=\"off\" name=\"state-d\" type=\"radio\" class=\"p-toggle-button\"/>\r\n    <label for=\"off\" class=\"p-toggle-label last\">Label</label>\r\n  </div>\r\n\r\n\r\n</div>\r\n"
+            "templateData": "<div class=\"p-toggle\">\r\n  <div *ngFor=\"let option of optionsList; let i = index\"\r\n       class=\"p-toggle-item\"\r\n       [ngClass]=\"i === 0 ? 'first' : i === optionsList.length - 1 ? 'last' : 'middle'\">\r\n    <input [id]=\"'toggle-' + option.optionName\"\r\n           [name]=\"optionsListName\"\r\n           [value]=\"option.optionName\"\r\n           [checked]=\"option.checked\"\r\n           [disabled]=\"disabled\"\r\n           type=\"radio\"\r\n           class=\"p-toggle-button\"/>\r\n    <label [attr.for]=\"'toggle-' + option.optionName\" class=\"p-toggle-label\"\r\n          [class.p-toggle-label-icon]=\"option.icon?.iconName\">\r\n      <ng-template [ngIf]=\"!option.icon?.iconName && !option.icon?.iconName\"\r\n                   [ngIfElse]=\"icon\">\r\n        <span class=\"p-toggle-text\">{{option.optionName}}</span>\r\n      </ng-template>\r\n\r\n      <ng-template #icon>\r\n        <span class=\"p-toggle-icon\" attr.aria-label=\"{{option.optionName}}\">\r\n          <p-icon class=\"p-toggle-icon-comp\"\r\n              [iconName]=\"option.icon.iconName\"\r\n              [width]=\"option.icon?.width\"\r\n              [height]=\"option.icon?.height\"\r\n              [fill]=\"option.icon?.fill\"\r\n              [stroke]=\"option.icon?.stroke\"\r\n              [strokeWidth]=\"option.icon?.strokeWidth\"\r\n              [strokeLinecap]=\"option.icon?.strokeLinecap\"\r\n              [strokeLinejoin]=\"option.icon?.strokeLinejoin\"></p-icon>\r\n        </span>\r\n      </ng-template>\r\n    </label>\r\n  </div>\r\n</div>\r\n\r\n\r\n\r\n"
         },
         {
             "name": "TooltipComponent",
@@ -2232,9 +2322,9 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
-                "type": "Story<CheckboxPageComponent>",
-                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "Story<CheckboxGroupPageComponent>",
+                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -2248,17 +2338,9 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
-                "type": "Story<CheckboxGroupPageComponent>",
-                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "PageTemplate",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
-                "type": "Story<InputTextPageComponent>",
-                "defaultValue": "(args: InputTextPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "Story<CheckboxPageComponent>",
+                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -2267,6 +2349,14 @@
                 "file": "src/stories/input-text/input-text-table-layout/input-text-table-layout.stories.ts",
                 "type": "Story<InputTextTableLayoutComponent>",
                 "defaultValue": "(args: InputTextTableLayoutComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "PageTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
+                "type": "Story<InputTextPageComponent>",
+                "defaultValue": "(args: InputTextPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -2334,17 +2424,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/colors/Color-palette.stories.ts",
-                "type": "Story<ColorPaletteComponent>",
-                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/icons/icon.stories.ts",
+                "type": "Story<IconComponent>",
+                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/icons/icon.stories.ts",
-                "type": "Story<IconComponent>",
-                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/colors/Color-palette.stories.ts",
+                "type": "Story<ColorPaletteComponent>",
+                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -2962,6 +3052,15 @@
                 "linktype": "component",
                 "name": "IconComponent",
                 "coveragePercent": 0,
+                "coverageCount": "0/10",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/icon/icon.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "IIcon",
+                "coveragePercent": 0,
                 "coverageCount": "0/9",
                 "status": "low"
             },
@@ -2989,7 +3088,7 @@
                 "linktype": "component",
                 "name": "ToggleComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/2",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {

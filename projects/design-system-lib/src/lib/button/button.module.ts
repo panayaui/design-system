@@ -5,15 +5,15 @@ import {IconModule} from '../icon/icon.module';
 
 
 @NgModule({
+  imports: [
+    CommonModule,
+    IconModule
+  ],
   declarations: [
     ButtonComponent
   ],
   exports: [
     ButtonComponent
-  ],
-  imports: [
-    CommonModule,
-    IconModule
   ]
 })
 export class ButtonModule { }
