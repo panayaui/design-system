@@ -40,6 +40,10 @@ p {
   line-height: 64px;
   color: $gray-scale-700;
 }
+// hidden text
+.hidden-text {
+  font-size: 0;
+}
 
 #radio-button--base,
 #label-status-main {
@@ -54,8 +58,32 @@ p {
   }
 }
 
+#label-status-small ~ .sbdocs .innerZoomElementWrapper > div {
+  $label-width: 150px;
+  width: $label-width;
+  &:nth-child(3n){
+    width: calc(100% - #{$label-width} * 2);
+  }
+}
+
+#toggle-button ~ .sbdocs .innerZoomElementWrapper > div {
+  $label-width: 170px;
+  &:nth-child(odd){
+    width: $label-width;
+  }
+  &:nth-child(even){
+    width: calc(100% - #{$label-width});
+  }
+}
+
 #button-large,
-#button-small {
+#button-small,
+#button-large-with-icon-before,
+#button-small-with-icon-before,
+#button-large-with-icon-after,
+#button-small-with-icon-after,
+#button-large-with-icon-before--after,
+#button-small-with-icon-before--after {
   & ~ .sbdocs .innerZoomElementWrapper > div {
     width: calc(100% / 4);
   }
