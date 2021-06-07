@@ -1,8 +1,10 @@
 import {Component, Input} from '@angular/core';
+import {IIcon} from '../icon/icon.interface';
 
 interface IToggleOption {
   optionName: string;
-  icon: string;
+  iconOn: IIcon;
+  iconOff: IIcon;
   checked: boolean;
 }
 

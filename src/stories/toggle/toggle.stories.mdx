@@ -27,7 +27,7 @@ export const Template = (args) => <ToggleComponent {...args} />
 
 ###### Label
 <Canvas>
-  <Story name="Two options"
+  <Story name="Two Options"
     args={{
       optionsListName: 'twoOptionsToggle',
       optionsList: [{
@@ -39,7 +39,7 @@ export const Template = (args) => <ToggleComponent {...args} />
     }}>
     {Template.bind({})}
   </Story>
-  <Story name="Three options"
+  <Story name="Three Options"
     args={{
       optionsListName: 'threeOptionsToggle',
       optionsList: [{
@@ -50,6 +50,87 @@ export const Template = (args) => <ToggleComponent {...args} />
       },
       {
         optionName: 'Third'
+      }]
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Icon
+<Canvas>
+  <Story name="Icons Two Options"
+    args={{
+      optionsListName: 'twoOptionsToggle',
+      optionsList: [{
+        optionName: 'First',
+        iconOn:  { 
+          iconName: 'eye',
+          width: '17',
+          height: 'auto'
+        },
+        iconOff:  { 
+          iconName: 'list',
+          width: '17',
+          height: 'auto'
+        }
+      },
+      {
+        optionName: 'Second',
+        iconOn:  { 
+          iconName: 'grid',
+          width: '17',
+          height: 'auto'
+        },
+        iconOff:  { 
+          iconName: 'list',
+          width: '17',
+          height: 'auto'
+        }
+      }]
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Icons Three Options"
+    args={{
+      optionsListName: 'threeOptionsToggle',
+      optionsList: [{
+        optionName: 'First',
+        iconOn:  { 
+          iconName: 'grid',
+          width: '17',
+          height: 'auto'
+        },
+        iconOff:  { 
+          iconName: 'list',
+          width: '17',
+          height: 'auto'
+        }
+      },
+      {
+        optionName: 'Second',
+        iconOn:  { 
+          iconName: 'grid',
+          width: '17',
+          height: 'auto'
+        },
+        iconOff:  { 
+          iconName: 'list',
+          width: '17',
+          height: 'auto'
+        }
+      },
+      {
+        optionName: 'Third',
+        iconOn:  { 
+          iconName: 'grid',
+          width: '17',
+          height: 'auto'
+        },
+        iconOff:  { 
+          iconName: 'list',
+          width: '17',
+          height: 'auto'
+        }
       }]
     }}>
     {Template.bind({})}

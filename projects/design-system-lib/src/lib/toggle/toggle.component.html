@@ -9,7 +9,18 @@
              type="radio"
              class="p-toggle-button"/>
       <label [attr.for]="'toggle-' + option.optionName" class="p-toggle-label">
-        {{option.optionName}}
+        <span class="p-toggle-text" *ngIf="!option.iconOn.iconName && !option.iconOff.iconName">{{option.optionName}}</span>
+        <span class="p-toggle-icon" *ngIf="option.iconOn.iconName && option.iconOff.iconName" attr.aria-label="{{option.optionName}}">
+          <p-icon class="p-toggle-icon-comp"
+                  [iconName]="option.iconOn.iconName"
+                  [width]="option.iconOn?.width"
+                  [height]="option.iconOn?.height"
+                  [fill]="option.iconOn?.fill"
+                  [stroke]="option.iconOn?.stroke"
+                  [strokeWidth]="option.iconOn?.strokeWidth"
+                  [strokeLinecap]="option.iconOn?.strokeLinecap"
+                  [strokeLinejoin]="option.iconOn?.strokeLinejoin"></p-icon>
+        </span>
       </label>
     </div>
   </div>
