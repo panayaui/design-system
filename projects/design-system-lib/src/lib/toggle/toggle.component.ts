@@ -15,4 +15,5 @@ interface IToggleOption {
 export class ToggleComponent {
   @Input() optionsListName: string;
   @Input() optionsList: IToggleOption[];
+  @Input() disabled: boolean;
 }

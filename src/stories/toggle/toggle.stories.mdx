@@ -29,9 +29,10 @@ export const Template = (args) => <ToggleComponent {...args} />
 <Canvas>
   <Story name="Two Options"
     args={{
-      optionsListName: 'twoOptionsToggle',
+      optionsListName: 'twoLabelsToggle',
       optionsList: [{
-        optionName: 'First'
+        optionName: 'First',
+        checked: true
       },
       {
         optionName: 'Second'
@@ -41,9 +42,10 @@ export const Template = (args) => <ToggleComponent {...args} />
   </Story>
   <Story name="Three Options"
     args={{
-      optionsListName: 'threeOptionsToggle',
+      optionsListName: 'threeLabelsToggle',
       optionsList: [{
-        optionName: 'First'
+        optionName: 'First',
+        checked: true
       },
       {
         optionName: 'Second'
@@ -54,13 +56,44 @@ export const Template = (args) => <ToggleComponent {...args} />
     }}>
     {Template.bind({})}
   </Story>
+  <Story name="Two Options Disabled"
+    args={{
+      optionsListName: 'twoLabelsToggleDisabled',
+      optionsList: [{
+        optionName: 'First',
+        checked: true
+      },
+      {
+        optionName: 'Second'
+      }],
+      disabled: true
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Three Options Disabled"
+    args={{
+      optionsListName: 'threeLabelsToggleDisabled',
+      optionsList: [{
+        optionName: 'First',
+        checked: true
+      },
+      {
+        optionName: 'Second'
+      },
+      {
+        optionName: 'Third'
+      }],
+      disabled: true
+    }}>
+    {Template.bind({})}
+  </Story>
 </Canvas>
 
 ###### Icon
 <Canvas>
   <Story name="Icons Two Options"
     args={{
-      optionsListName: 'twoOptionsToggle',
+      optionsListName: 'twoIconsToggle',
       optionsList: [{
         optionName: 'First',
         icon: { 
@@ -81,7 +114,7 @@ export const Template = (args) => <ToggleComponent {...args} />
   </Story>
   <Story name="Icons Three Options"
     args={{
-      optionsListName: 'threeOptionsToggle',
+      optionsListName: 'threeIconsToggle',
       optionsList: [{
         optionName: 'First',
         icon:  { 
@@ -107,14 +140,87 @@ export const Template = (args) => <ToggleComponent {...args} />
     }}>
     {Template.bind({})}
   </Story>
+  <Story name="Icons Two Options Disabled"
+    args={{
+      optionsListName: 'twoIconsToggleDisabled',
+      optionsList: [{
+        optionName: 'First',
+        icon: { 
+          iconName: 'grid',        
+          height: 'auto'
+        },
+        checked: true
+      },
+      {
+        optionName: 'Second',
+        icon: { 
+          iconName: 'list',         
+          height: 'auto'
+        }
+      }],
+      disabled: true
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Icons Three Options Disabled"
+    args={{
+      optionsListName: 'threeIconsToggleDisabled',
+      optionsList: [{
+        optionName: 'First',
+        icon:  { 
+          iconName: 'grid',        
+          height: 'auto'
+        },
+        checked: true
+      },
+      {
+        optionName: 'Second',
+        icon:  { 
+          iconName: 'grid',
+          height: 'auto'
+        }
+      },
+      {
+        optionName: 'Third',
+        icon:  { 
+          iconName: 'list',        
+          height: 'auto'
+        }
+      }],
+      disabled: true
+    }}>
+    {Template.bind({})}
+  </Story>
 </Canvas>
 
 ###### Component
 ```ts
-
+export class ToggleComponent {
+  @Input() optionsListName: string;
+  @Input() optionsList: IToggleOption[];
+  @Input() disabled: boolean;
+}
 ```
 
-###### Types
+###### IToggleOption
 ```ts
+interface IToggleOption {
+  optionName: string;
+  icon: IIcon;
+  checked: boolean;
+}
+```
 
+###### IIcon
+```ts
+export interface IIcon {
+  iconName: string; // required
+  width: string;
+  height: string;
+  fill: string;
+  stroke: string;
+  strokeWidth: number;
+  strokeLinecap: string;
+  strokeLinejoin: string;
+}
 ```

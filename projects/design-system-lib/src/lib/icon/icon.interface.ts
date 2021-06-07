@@ -1,5 +1,5 @@
 export interface IIcon {
-  iconName: string;
+  iconName: string; // required
   width: string;
   height: string;
   fill: string;
