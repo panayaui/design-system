@@ -6,7 +6,6 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ReactiveFormsModule, Validators} from '@angular/forms';
-import {MatRadioButton} from '@angular/material/radio';
 
 export default {
   title: 'Components/Input',
@@ -18,7 +17,7 @@ export default {
         MatInputModule,
         BrowserAnimationsModule,
         MatFormFieldModule,
-        ReactiveFormsModule, MatRadioButton],
+        ReactiveFormsModule],
     }),
   ],
 } as Meta;

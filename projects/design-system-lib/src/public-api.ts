@@ -13,3 +13,9 @@ export * from './lib/labels/label-sub/label-sub.component';
 
 export * from './lib/toggle/toggle.module';
 export * from './lib/toggle/toggle.component';
+
+export * from './lib/input/input.module';
+export * from './lib/input/numeric/input-numeric.component';
+export * from './lib/input/numeric/input-numeric.interface';
+export * from './lib/input/numeric/input-numeric-size.enum';
+

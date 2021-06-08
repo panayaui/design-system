@@ -1,0 +1,26 @@
+#numeric-input {
+  &~ .sbdocs .innerZoomElementWrapper > div {
+    $label-width: 150px;
+    $regular-item-width: 250px;
+    width: $regular-item-width;
+
+    &:nth-child(4n+1){
+      width: $label-width;
+    }
+    &:nth-child(4n+4){
+      width: calc(100% - #{$label-width} - #{$regular-item-width} * 2);
+    }
+  }
+}
+
+#numeric-input---small,
+#numeric-input---medium,
+#numeric-input---large {
+  & ~ .sbdocs .innerZoomElementWrapper > div {
+    $item-width: 250px;
+    width: $item-width;
+    &:nth-child(3n){
+      width: calc(100% - #{$item-width} * 2);
+    }
+  }
+}

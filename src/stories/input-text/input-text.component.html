@@ -8,9 +8,10 @@
          [placeholder]="placeholder"
          [readonly]="readonly"
          attr.aria-label="{{ariaLabel}}"
-         [formControl]="customControl"
+         [formControl]="formFieldControl"
+         onfocus="this.select()"
          class="p-input-text-input">
-  <mat-error *ngIf="customControl.invalid"
+  <mat-error *ngIf="formFieldControl.invalid"
              class="p-input-text-error">
     {{errorMessage}}
   </mat-error>

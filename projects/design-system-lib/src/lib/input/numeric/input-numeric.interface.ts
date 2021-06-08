@@ -1,6 +1,6 @@
 import {ValidatorFn} from '@angular/forms';
 
-export default interface IInputNumeric {
+export interface IInputNumeric {
   type: string;
   label: string;
   ariaLabel: string;

@@ -1,13 +1,24 @@
-@import "../assets/styles/custom";
+@import "../../assets/styles/custom";
 
 $input-numeric-width: 55px;
 $input-numeric-padding: 8px;
 
 .p-input-numeric {
+  &-small {
+    width: 56px;
+  }
+  &-medium {
+    width: 112px;
+  }
+  &-large {
+    width: 224px;
+  }
+
   &-container {
     display: flex;
     align-items: center;
   }
+
   &-label {
     font-family: $font-family-basic;
     font-weight: 400;
@@ -32,16 +43,16 @@ $input-numeric-padding: 8px;
     .mat-input-element {
       font-family: $font-family-basic;
       font-size: $base-font-size;
-      max-width: $input-numeric-width - $input-numeric-padding;
+      width: 100%;
       line-height: 20px;
       color: $primary-a-900;
-      padding-left: $input-numeric-padding;
       caret-color: $primary-a-900;
     }
     .mat-form-field-infix {
       width: $input-numeric-width;
       padding-top: 0;
       padding-bottom: 6px;
+      padding-left: $input-numeric-padding;
     }
     .mat-form-field-label-wrapper {
       padding-top: 0;
@@ -64,12 +75,14 @@ $input-numeric-padding: 8px;
     }
     .mat-form-field-subscript-wrapper {
       margin-top: 5px;
+      overflow: visible;
     }
     .mat-error {
       font-family: $font-family-basic;
       font-size: $tiny-font-size;
       color: $supportive-alert-500;
       line-height: 12px;
+      white-space: nowrap;
     }
 
     // disabled
@@ -87,6 +100,7 @@ $input-numeric-padding: 8px;
       .mat-form-field-underline {
         box-shadow: inset 0px -1px 0px $supportive-alert-500;
       }
+      &.mat-form-field .mat-form-field-flex:hover~.mat-form-field-underline,
       &.mat-form-field.mat-focused .mat-form-field-underline {
         box-shadow: inset 0px -1px 0px $supportive-alert-700;
       }
@@ -94,10 +108,11 @@ $input-numeric-padding: 8px;
 
     // readonly
     &.p-input-numeric-readonly {
+      &:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover~.mat-form-field-underline,
+
       .mat-form-field-underline {
         box-shadow: none;
       }
     }
   }
-
 }

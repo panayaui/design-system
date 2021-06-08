@@ -1,0 +1,260 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+import {InputNumericComponent} from 'projects/design-system-lib/src/public-api';
+import {InputNumericSizeEnum} from 'projects/design-system-lib/src/public-api';
+import {CommonModule} from '@angular/common';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ReactiveFormsModule, Validators} from '@angular/forms';
+import {CustomErrorStateMatcher} from './custom-error-state-matcher'
+
+<Meta title='Components/Input/Numeric/Medium' component={InputNumericComponent}
+decorators={[
+  moduleMetadata({
+    imports: [CommonModule,
+            MatInputModule,
+            BrowserAnimationsModule,
+            MatFormFieldModule,
+            ReactiveFormsModule]
+        })
+]} />
+
+# Numeric Input - Medium
+
+export const Template = (args) => <InputNumericComponent {...args} />
+
+###### Selector
+
+```html
+  <p-input-numeric [size]="InputNumericSizeEnum.Medium"></p-input-numeric>
+```
+
+###### Default
+<Canvas>
+  <p className="story-title">Label First</p>
+  <p className="story-title">Label Last</p>
+  <p className="story-title">No Label</p>
+  <Story name="Medium Label First"
+    args={{
+        label: 'Label',
+        ariaLabel: 'Label',
+        value: 100,
+        validators: Validators.required,
+        size: InputNumericSizeEnum.Medium
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Medium Label Last"
+    args={{
+       label: 'Label',
+       ariaLabel: 'Label',
+       value: 100,
+       validators: Validators.required,
+       size: InputNumericSizeEnum.Medium,
+       labelLast: true
+    }}>
+  {Template.bind({})}
+  </Story>
+  <Story name="Medium No Label"
+    args={{
+        ariaLabel: 'Label',
+        value: 100,
+        validators: Validators.required,
+        size: InputNumericSizeEnum.Medium
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Disabled
+<Canvas>
+  <p className="story-title">Label First</p>
+  <p className="story-title">Label Last</p>
+  <p className="story-title">No Label</p>
+  <Story name="Medium Label First Disabled"
+    args={{
+      label: 'Label',
+      ariaLabel: 'Label',
+      value: 100,
+      validators: Validators.required,
+      size: InputNumericSizeEnum.Medium,
+      disabled: true
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Medium Label Last Disabled"
+    args={{
+      label: 'Label',
+      ariaLabel: 'Label',
+      value: 100,
+      validators: Validators.required,
+      size: InputNumericSizeEnum.Medium,
+      labelLast: true,
+      disabled: true
+    }}>
+  {Template.bind({})}
+  </Story>
+  <Story name="Medium No Label Disabled"
+    args={{
+      ariaLabel: 'Label',
+      value: 100,
+      validators: Validators.required,
+      size: InputNumericSizeEnum.Medium,
+      disabled: true
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Readonly
+<Canvas>
+  <p className="story-title">Label First</p>
+  <p className="story-title">Label Last</p>
+  <p className="story-title">No Label</p>
+  <Story name="Medium Label First Readonly"
+    args={{
+      label: 'Label',
+      ariaLabel: 'Label',
+      value: 100,
+      validators: Validators.required,
+      size: InputNumericSizeEnum.Medium,
+      readonly: true
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Medium Label Last Readonly"
+    args={{
+      label: 'Label',
+      ariaLabel: 'Label',
+      value: 100,
+      validators: Validators.required,
+      size: InputNumericSizeEnum.Medium,
+      labelLast: true,
+      readonly: true
+    }}>
+  {Template.bind({})}
+  </Story>
+  <Story name="Medium No Label Readonly"
+    args={{
+      ariaLabel: 'Label',
+      value: 100,
+      validators: Validators.required,
+      size: InputNumericSizeEnum.Medium,
+      readonly: true
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Error State
+<Canvas>
+  <p className="story-title">Label First</p>
+  <p className="story-title">Label Last</p>
+  <p className="story-title">No Label</p>
+  <Story name="Medium Label First Error State"
+    args={{
+      label: 'Label',
+      ariaLabel: 'Label',
+      value: null,
+      validators: Validators.required,
+      size: InputNumericSizeEnum.Medium
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Medium Label Last Error State"
+    args={{
+      label: 'Label',
+      ariaLabel: 'Label',
+      value: null,
+      validators: Validators.required,
+      size: InputNumericSizeEnum.Medium,
+      labelLast: true
+    }}>
+  {Template.bind({})}
+  </Story>
+  <Story name="Medium No Label Error State"
+    args={{
+      ariaLabel: 'Label',
+      value: null,
+      validators: Validators.required,
+      size: InputNumericSizeEnum.Medium
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Error Message
+<Canvas>
+  <p className="story-title">Label First</p>
+  <p className="story-title">Label Last</p>
+  <p className="story-title">No Label</p>
+  <Story name="Medium Label First Error Message"
+    args={{
+      label: 'Label',
+      ariaLabel: 'Label',
+      value: null,
+      validators: Validators.required,
+      size: InputNumericSizeEnum.Medium,
+      errorMessage: 'Validation text',
+      matcher: new CustomErrorStateMatcher()
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Medium Label Last Error Message"
+    args={{
+      label: 'Label',
+      ariaLabel: 'Label',
+      value: null,
+      validators: Validators.required,
+      size: InputNumericSizeEnum.Medium,
+      labelLast: true,
+      errorMessage: 'Validation text',
+      matcher: new CustomErrorStateMatcher()
+    }}>
+  {Template.bind({})}
+  </Story>
+  <Story name="Medium No Label Error Message"
+    args={{
+      ariaLabel: 'Label',
+      value: null,
+      validators: Validators.required,
+      size: InputNumericSizeEnum.Medium,
+      errorMessage: 'Validation text',
+      matcher: new CustomErrorStateMatcher()
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Component
+```ts
+export class InputNumericComponent implements OnInit {
+  @Input() type: string = 'number';
+  @Input() label: string;
+  @Input() ariaLabel: string; // required
+  @Input() placeholder: number;
+  @Input() errorMessage: string;
+  @Input() disabled: boolean = false;
+  @Input() readonly: boolean = false;
+  @Input() value: number;
+  @Input() validators: ValidatorFn[];
+  @Input() labelLast: boolean = false;
+  @Input() size: InputNumericSizeEnum = InputNumericSizeEnum.Large;
+  @Input() matcher: ErrorStateMatcher;
+  public formFieldControl: FormControl;
+
+  public get classes(): string[] {
+    const classParams = [];
+    this.readonly ? classParams.push('p-input-numeric-readonly') : null;
+    classParams.push(`p-input-numeric-${this.size}`);
+    return classParams;
+  }
+
+  ngOnInit(): void {
+    this.formFieldControl = new FormControl(
+      {value: this.value, disabled: this.disabled},
+      this.validators);
+  }
+```
+
