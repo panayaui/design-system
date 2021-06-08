@@ -58,7 +58,7 @@ p {
   }
 }
 
-#label-status-small ~ .sbdocs .innerZoomElementWrapper > div {
+#label-status-sub ~ .sbdocs .innerZoomElementWrapper > div {
   $label-width: 150px;
   width: $label-width;
   &:nth-child(3n){
