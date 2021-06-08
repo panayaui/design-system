@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {LabelMainComponent} from './label-main/label-main.component';
-import {LabelSmallComponent} from './label-small/label-small.component';
+import {LabelSubComponent} from './label-sub/label-sub.component';
 import {CommonModule} from '@angular/common';
 
 @NgModule({
@@ -9,11 +9,11 @@ import {CommonModule} from '@angular/common';
   ],
   declarations: [
     LabelMainComponent,
-    LabelSmallComponent
+    LabelSubComponent
   ],
   exports: [
     LabelMainComponent,
-    LabelSmallComponent
+    LabelSubComponent
   ]
 })
 export class LabelModule { }
