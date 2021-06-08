@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormControl, ValidatorFn} from '@angular/forms';
 import {InputNumericSizeEnum} from './input-numeric-size.enum';
+import {ErrorStateMatcher} from '@angular/material/core';
 
 @Component({
   selector: 'p-input-numeric',
@@ -19,8 +20,8 @@ export class InputNumericComponent implements OnInit {
   @Input() validators: ValidatorFn[];
   @Input() labelLast: boolean = false;
   @Input() size: InputNumericSizeEnum = InputNumericSizeEnum.Large;
+  @Input() matcher: ErrorStateMatcher;
   public formFieldControl: FormControl;
-
 
   public get classes(): string[] {
     const classParams = [];

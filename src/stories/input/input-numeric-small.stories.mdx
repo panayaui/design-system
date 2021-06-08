@@ -7,6 +7,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ReactiveFormsModule, Validators} from '@angular/forms';
+import {CustomErrorStateMatcher} from './custom-error-state-matcher'
 
 <Meta title='Components/Input/Numeric/Small' component={InputNumericComponent}
 decorators={[
@@ -178,6 +179,49 @@ export const Template = (args) => <InputNumericComponent {...args} />
       value: null,
       validators: Validators.required,
       size: InputNumericSizeEnum.Small
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Error Message
+<Canvas>
+  <p className="story-title">Label First</p>
+  <p className="story-title">Label Last</p>
+  <p className="story-title">No Label</p>
+  <Story name="Small Label First Error Message"
+    args={{
+      label: 'Label',
+      ariaLabel: 'Label',
+      value: null,
+      validators: Validators.required,
+      size: InputNumericSizeEnum.Small,
+      errorMessage: 'Validation text',
+      matcher: new CustomErrorStateMatcher()
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Small Label Last Error Message"
+    args={{
+      label: 'Label',
+      ariaLabel: 'Label',
+      value: null,
+      validators: Validators.required,
+      size: InputNumericSizeEnum.Small,
+      labelLast: true,
+      errorMessage: 'Validation text',
+      matcher: new CustomErrorStateMatcher()
+    }}>
+  {Template.bind({})}
+  </Story>
+  <Story name="Small No Label Error Message"
+    args={{
+      ariaLabel: 'Label',
+      value: null,
+      validators: Validators.required,
+      size: InputNumericSizeEnum.Small,
+      errorMessage: 'Validation text',
+      matcher: new CustomErrorStateMatcher()
     }}>
     {Template.bind({})}
   </Story>

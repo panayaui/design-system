@@ -21,6 +21,7 @@
            [readonly]="readonly"
            attr.aria-label="{{ariaLabel}}"
            [formControl]="formFieldControl"
+           [errorStateMatcher]="matcher"
            onfocus="this.select()"
            class="p-input-numeric-input">
     <mat-error *ngIf="formFieldControl.invalid"
