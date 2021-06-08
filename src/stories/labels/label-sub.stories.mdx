@@ -1,20 +1,20 @@
 import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
 import {moduleMetadata} from '@storybook/angular';
-import {LabelSmallComponent} from 'projects/design-system-lib/src/public-api';
+import {LabelSubComponent} from 'projects/design-system-lib/src/public-api';
 import {LabelTypesEnum} from 'projects/design-system-lib/src/public-api';
 
-<Meta title='Components/Label (Status)/Small'
-  component={LabelSmallComponent}
+<Meta title='Components/Label (Status)/Sub'
+  component={LabelSubComponent}
  />
 
-# Label (Status) Small
+# Label (Status) Sub
 
-export const Template = (args) => <LabelSmallComponent {...args} />
+export const Template = (args) => <LabelSubComponent {...args} />
 
 ###### Selector
 
 ```html
-  <p-label-main></p-label-main>
+  <p-label-sub></p-label-sub>
 ```
 ###### Types
 <Canvas>
@@ -115,7 +115,7 @@ export const Template = (args) => <LabelSmallComponent {...args} />
 
 ###### Component
 ```ts
-export class LabelSmallComponent {
+export class LabelSubComponent {
   @Input() label: string;
   @Input() ariaLabel: string; // required if there is no label
   @Input() type: LabelTypesEnum;

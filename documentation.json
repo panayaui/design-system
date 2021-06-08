@@ -1393,21 +1393,21 @@
             "templateData": "<div class=\"p-label-main\"\r\n     [ngClass]=\"'p-label-main-' + type\">\r\n  {{label}}\r\n</div>\r\n\r\n\r\n"
         },
         {
-            "name": "LabelSmallComponent",
-            "id": "component-LabelSmallComponent-38eb97bc93b48660ccfbf19872809e93",
-            "file": "projects/design-system-lib/src/lib/labels/label-small/label-small.component.ts",
+            "name": "LabelSubComponent",
+            "id": "component-LabelSubComponent-7b0f5227aa28c83dd32c0d644440c81c",
+            "file": "projects/design-system-lib/src/lib/labels/label-sub/label-sub.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "p-label-small",
+            "selector": "p-label-sub",
             "styleUrls": [
-                "./label-small.component.scss"
+                "./label-sub.component.scss"
             ],
             "styles": [],
             "templateUrl": [
-                "./label-small.component.html"
+                "./label-sub.component.html"
             ],
             "viewProviders": [],
             "inputsClass": [
@@ -1435,12 +1435,12 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {LabelTypesEnum} from '../label-types.enum';\r\n\r\n@Component({\r\n  selector: 'p-label-small',\r\n  templateUrl: './label-small.component.html',\r\n  styleUrls: ['./label-small.component.scss'],\r\n})\r\nexport class LabelSmallComponent {\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string; // required if there is no label\r\n  @Input() type: LabelTypesEnum;\r\n}\r\n",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {LabelTypesEnum} from '../label-types.enum';\r\n\r\n@Component({\r\n  selector: 'p-label-sub',\r\n  templateUrl: './label-sub.component.html',\r\n  styleUrls: ['./label-sub.component.scss'],\r\n})\r\nexport class LabelSubComponent {\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string; // required if there is no label\r\n  @Input() type: LabelTypesEnum;\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
                     "data": "@import \"../../assets/styles/custom\";\r\n\r\n.p-label-small {\r\n  display: inline-flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n\r\n  &-text {\r\n    font-family: $font-family-basic;\r\n    font-weight: 600;\r\n    font-size: $tiny-font-size;\r\n    color: $primary-a-900;\r\n    margin-left: 4px;\r\n  }\r\n\r\n  &-indicator {\r\n    width: 6px;\r\n    height: 16px;\r\n    border-radius: 6px;\r\n\r\n    &-critical {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n\r\n    &-danger {\r\n      background-color: $supportive-alert-500;\r\n    }\r\n\r\n    &-success {\r\n      background-color: $supportive-success-400;\r\n    }\r\n\r\n    &-medium {\r\n      background-color: $supportive-orange-300;\r\n    }\r\n\r\n    &-low {\r\n      background-color: $supportive-yellow-300;\r\n    }\r\n\r\n    &-lightGray {\r\n      background-color: $gray-scale-400;\r\n    }\r\n\r\n    &-darkGray {\r\n      background-color: $gray-scale-800;\r\n    }\r\n\r\n    &-dev1 {\r\n      background-color: $supportive-dev-a;\r\n    }\r\n\r\n    &-dev2 {\r\n      background-color: $supportive-dev-b;\r\n    }\r\n\r\n    &-dev3 {\r\n      background-color: $secondary-a-700;\r\n    }\r\n  }\r\n}\r\n",
-                    "styleUrl": "./label-small.component.scss"
+                    "styleUrl": "./label-sub.component.scss"
                 }
             ],
             "stylesData": "",
@@ -2121,7 +2121,7 @@
                             "name": "LabelMainComponent"
                         },
                         {
-                            "name": "LabelSmallComponent"
+                            "name": "LabelSubComponent"
                         }
                     ]
                 },
@@ -2136,7 +2136,7 @@
                             "name": "LabelMainComponent"
                         },
                         {
-                            "name": "LabelSmallComponent"
+                            "name": "LabelSubComponent"
                         }
                     ]
                 },
@@ -2167,7 +2167,11 @@
                 },
                 {
                     "type": "imports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "IconModule"
+                        }
+                    ]
                 },
                 {
                     "type": "exports",
@@ -2322,17 +2326,17 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
-                "type": "Story<CheckboxGroupPageComponent>",
-                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
+                "type": "Story<CheckboxGroupComponent>",
+                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
-                "type": "Story<CheckboxGroupComponent>",
-                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "Story<CheckboxGroupPageComponent>",
+                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -2346,17 +2350,17 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input-text/input-text-table-layout/input-text-table-layout.stories.ts",
-                "type": "Story<InputTextTableLayoutComponent>",
-                "defaultValue": "(args: InputTextTableLayoutComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
+                "type": "Story<InputTextPageComponent>",
+                "defaultValue": "(args: InputTextPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
-                "type": "Story<InputTextPageComponent>",
-                "defaultValue": "(args: InputTextPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/input-text/input-text-table-layout/input-text-table-layout.stories.ts",
+                "type": "Story<InputTextTableLayoutComponent>",
+                "defaultValue": "(args: InputTextTableLayoutComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -2424,17 +2428,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/icons/icon.stories.ts",
-                "type": "Story<IconComponent>",
-                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/colors/Color-palette.stories.ts",
+                "type": "Story<ColorPaletteComponent>",
+                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/colors/Color-palette.stories.ts",
-                "type": "Story<ColorPaletteComponent>",
-                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/icons/icon.stories.ts",
+                "type": "Story<IconComponent>",
+                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -3074,10 +3078,10 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/design-system-lib/src/lib/labels/label-small/label-small.component.ts",
+                "filePath": "projects/design-system-lib/src/lib/labels/label-sub/label-sub.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "LabelSmallComponent",
+                "name": "LabelSubComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/4",
                 "status": "low"
