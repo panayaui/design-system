@@ -77,8 +77,7 @@ $input-text-padding: 8px;
 
     // readonly
     &.p-input-text-readonly {
-      &:not(.mat-form-field-disabled):not(.mat-form-field-invalid)
-      .mat-form-field-flex:hover~.mat-form-field-underline,
+      &:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover~.mat-form-field-underline,
 
       .mat-form-field-underline {
         box-shadow: none;
