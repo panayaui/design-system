@@ -75,12 +75,14 @@ $input-numeric-padding: 8px;
     }
     .mat-form-field-subscript-wrapper {
       margin-top: 5px;
+      overflow: visible;
     }
     .mat-error {
       font-family: $font-family-basic;
       font-size: $tiny-font-size;
       color: $supportive-alert-500;
       line-height: 12px;
+      white-space: nowrap;
     }
 
     // disabled

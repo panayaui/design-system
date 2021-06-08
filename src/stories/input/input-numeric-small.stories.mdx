@@ -241,6 +241,7 @@ export class InputNumericComponent implements OnInit {
   @Input() validators: ValidatorFn[];
   @Input() labelLast: boolean = false;
   @Input() size: InputNumericSizeEnum = InputNumericSizeEnum.Large;
+  @Input() matcher: ErrorStateMatcher;
   public formFieldControl: FormControl;
 
   public get classes(): string[] {
