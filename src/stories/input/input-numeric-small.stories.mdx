@@ -1,0 +1,215 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+import {InputNumericComponent} from 'projects/design-system-lib/src/public-api';
+import {InputNumericSizeEnum} from 'projects/design-system-lib/src/public-api';
+import {CommonModule} from '@angular/common';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ReactiveFormsModule, Validators} from '@angular/forms';
+
+<Meta title='Components/Input/Numeric/Small' component={InputNumericComponent}
+decorators={[
+  moduleMetadata({
+    imports: [CommonModule,
+            MatInputModule,
+            BrowserAnimationsModule,
+            MatFormFieldModule,
+            ReactiveFormsModule]
+        })
+]} />
+
+# Numeric Input - Small
+
+export const Template = (args) => <InputNumericComponent {...args} />
+
+###### Selector
+
+```html
+  <p-input-numeric [size]="InputNumericSizeEnum.Small"></p-input-numeric>
+```
+
+###### Default
+<Canvas>
+  <p className="story-title">Label First</p>
+  <p className="story-title">Label Last</p>
+  <p className="story-title">No Label</p>
+  <Story name="Small Label First"
+    args={{
+        label: 'Label',
+        ariaLabel: 'Label',
+        value: 100,
+        validators: Validators.required,
+        size: InputNumericSizeEnum.Small
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Small Label Last"
+    args={{
+       label: 'Label',
+       ariaLabel: 'Label',
+       value: 100,
+       validators: Validators.required,
+       size: InputNumericSizeEnum.Small,
+       labelLast: true
+    }}>
+  {Template.bind({})}
+  </Story>
+  <Story name="Small No Label"
+    args={{
+        ariaLabel: 'Label',
+        value: 100,
+        validators: Validators.required,
+        size: InputNumericSizeEnum.Small
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Disabled
+<Canvas>
+  <p className="story-title">Label First</p>
+  <p className="story-title">Label Last</p>
+  <p className="story-title">No Label</p>
+  <Story name="Small Label First Disabled"
+    args={{
+      label: 'Label',
+      ariaLabel: 'Label',
+      value: 100,
+      validators: Validators.required,
+      size: InputNumericSizeEnum.Small,
+      disabled: true
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Small Label Last Disabled"
+    args={{
+      label: 'Label',
+      ariaLabel: 'Label',
+      value: 100,
+      validators: Validators.required,
+      size: InputNumericSizeEnum.Small,
+      labelLast: true,
+      disabled: true
+    }}>
+  {Template.bind({})}
+  </Story>
+  <Story name="Small No Label Disabled"
+    args={{
+      ariaLabel: 'Label',
+      value: 100,
+      validators: Validators.required,
+      size: InputNumericSizeEnum.Small,
+      disabled: true
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Readonly
+<Canvas>
+  <p className="story-title">Label First</p>
+  <p className="story-title">Label Last</p>
+  <p className="story-title">No Label</p>
+  <Story name="Small Label First Readonly"
+    args={{
+      label: 'Label',
+      ariaLabel: 'Label',
+      value: 100,
+      validators: Validators.required,
+      size: InputNumericSizeEnum.Small,
+      readonly: true
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Small Label Last Readonly"
+    args={{
+      label: 'Label',
+      ariaLabel: 'Label',
+      value: 100,
+      validators: Validators.required,
+      size: InputNumericSizeEnum.Small,
+      labelLast: true,
+      readonly: true
+    }}>
+  {Template.bind({})}
+  </Story>
+  <Story name="Small No Label Readonly"
+    args={{
+      ariaLabel: 'Label',
+      value: 100,
+      validators: Validators.required,
+      size: InputNumericSizeEnum.Small,
+      readonly: true
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Error State
+<Canvas>
+  <p className="story-title">Label First</p>
+  <p className="story-title">Label Last</p>
+  <p className="story-title">No Label</p>
+  <Story name="Small Label First Error State"
+    args={{
+      label: 'Label',
+      ariaLabel: 'Label',
+      value: null,
+      validators: Validators.required,
+      size: InputNumericSizeEnum.Small
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Small Label Last Error State"
+    args={{
+      label: 'Label',
+      ariaLabel: 'Label',
+      value: null,
+      validators: Validators.required,
+      size: InputNumericSizeEnum.Small,
+      labelLast: true
+    }}>
+  {Template.bind({})}
+  </Story>
+  <Story name="Small No Label Error State"
+    args={{
+      ariaLabel: 'Label',
+      value: null,
+      validators: Validators.required,
+      size: InputNumericSizeEnum.Small
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Component
+```ts
+export class InputNumericComponent implements OnInit {
+  @Input() type: string = 'number';
+  @Input() label: string;
+  @Input() ariaLabel: string; // required
+  @Input() placeholder: number;
+  @Input() errorMessage: string;
+  @Input() disabled: boolean = false;
+  @Input() readonly: boolean = false;
+  @Input() value: number;
+  @Input() validators: ValidatorFn[];
+  @Input() labelLast: boolean = false;
+  @Input() size: InputNumericSizeEnum = InputNumericSizeEnum.Large;
+  public formFieldControl: FormControl;
+
+  public get classes(): string[] {
+    const classParams = [];
+    this.readonly ? classParams.push('p-input-numeric-readonly') : null;
+    classParams.push(`p-input-numeric-${this.size}`);
+    return classParams;
+  }
+
+  ngOnInit(): void {
+    this.formFieldControl = new FormControl(
+      {value: this.value, disabled: this.disabled},
+      this.validators);
+  }
+```
+

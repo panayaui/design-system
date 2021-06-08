@@ -69,6 +69,7 @@ $input-text-padding: 8px;
       .mat-form-field-underline {
         box-shadow: inset 0px -1px 0px $supportive-alert-500;
       }
+      &.mat-form-field .mat-form-field-flex:hover~.mat-form-field-underline,
       &.mat-form-field.mat-focused .mat-form-field-underline {
         box-shadow: inset 0px -1px 0px $supportive-alert-700;
       }
