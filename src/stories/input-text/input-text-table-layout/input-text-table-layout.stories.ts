@@ -8,6 +8,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
 import {ReactiveFormsModule, Validators} from '@angular/forms';
+import {IconModule} from 'projects/design-system-lib/src/public-api';
 
 export default {
   title: 'Components/Input/Table',
@@ -21,7 +22,8 @@ export default {
         MatInputModule,
         BrowserAnimationsModule,
         MatFormFieldModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        IconModule
       ],
     }),
   ],

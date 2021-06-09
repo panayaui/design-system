@@ -1,0 +1,36 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+import {AlertTriggerComponent} from './alert-trigger.component';
+// import {AlertEnum} from 'projects/hgdesign-system-lib/src/public-api';
+
+<Meta title='Alert'
+  component={AlertTriggerComponent}
+ />
+
+# Action right
+
+export const Template = (args) => <AlertTriggerComponent {...args} />
+
+###### Selector
+
+```html
+  <p-alert></p-alert>
+```
+###### Types
+<Canvas>
+  <p className="story-title hidden-text">type</p>
+  <p className="story-title">Close on</p>
+  <p className="story-title">Close off</p>
+  <p className="story-title">critical</p>
+  
+</Canvas>
+
+###### Component
+```ts
+
+```
+
+###### Types Enum
+```ts
+ 
+```

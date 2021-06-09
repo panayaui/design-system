@@ -5,6 +5,7 @@ import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {ButtonModule, InputModule} from 'projects/design-system-lib/src/public-api';
+import {AlertModule} from 'projects/design-system-lib/src/lib/alert/alert.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {ButtonModule, InputModule} from 'projects/design-system-lib/src/public-a
     AppRoutingModule,
     BrowserAnimationsModule,
     ButtonModule,
-    InputModule
+    InputModule,
+    AlertModule
   ],
   providers: [],
   bootstrap: [AppComponent]

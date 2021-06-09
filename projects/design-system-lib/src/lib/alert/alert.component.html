@@ -1,0 +1,29 @@
+<div class="p-alert"
+     [ngClass]="'p-alert' + data?.type">
+  <p-icon *ngIf="data?.icon"
+          class="p-alert-icon"
+          [iconName]="data.icon?.iconName"
+          [width]="data.icon?.width"
+          [height]="data.icon?.height"
+          [fill]="data.icon?.fill"
+          [stroke]="data.icon?.stroke"
+          [strokeWidth]="data.icon?.strokeWidth"
+          [strokeLinecap]="data.icon?.strokeLinecap"
+          [strokeLinejoin]="data.icon?.strokeLinejoin"></p-icon>
+  <span class="alert-message-main" *ngIf="data?.messageMain">
+    {{data.messageMain}}
+  </span>
+  <button class="alert-message-main" *ngIf="data?.actionName"
+          (click)="onAction()">
+    {{data.actionName}}
+  </button>
+  <span class="alert-message-main" *ngIf="data?.messageSub">
+    {{data.messageSub}}
+  </span>
+  <button class="alert-message-main" *ngIf="data?.closeBtnName"
+          (click)="dismiss()">
+    {{data.closeBtnName}}
+  </button>
+</div>
+
+
