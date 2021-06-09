@@ -1,7 +1,7 @@
 import {IIcon} from '../icon/icon.interface';
 import {AlertEnum} from './alert.enum';
 
-export interface IAlert {
+export interface IAlertData {
   type: AlertEnum;
   icon?: IIcon;
   messageMain?: string;

@@ -1,10 +1,27 @@
 import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
 import {moduleMetadata} from '@storybook/angular';
 import {AlertTriggerComponent} from './alert-trigger.component';
-// import {AlertEnum} from 'projects/hgdesign-system-lib/src/public-api';
+import {AlertModule} from 'projects/design-system-lib/src/public-api';
+import {AlertComponent} from 'projects/design-system-lib/src/public-api';
+import {AlertEnum} from 'projects/design-system-lib/src/public-api';
+import {CommonModule} from '@angular/common';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {IconModule} from 'projects/design-system-lib/src/lib/icon/icon.module';
 
 <Meta title='Alert'
-  component={AlertTriggerComponent}
+    component={AlertTriggerComponent}
+    decorators={[
+        moduleMetadata({
+            imports: [
+                CommonModule,
+                MatSnackBarModule,
+                BrowserAnimationsModule,
+                AlertModule,
+                IconModule
+            ]
+        })
+    ]}  
  />
 
 # Action right
@@ -22,7 +39,12 @@ export const Template = (args) => <AlertTriggerComponent {...args} />
   <p className="story-title">Close on</p>
   <p className="story-title">Close off</p>
   <p className="story-title">critical</p>
-  
+  <Story name="Critical"
+      args={{ 
+        
+     }}>
+    {Template.bind({})}
+  </Story>
 </Canvas>
 
 ###### Component
