@@ -1,8 +1,88 @@
 @import "../assets/styles/custom";
 
-.p-alert {
-  display: block;
-  width: 300px;
-  height: 300px;
-  background-color: #9A4CB6;
+$alert-height: 43px;
+$alert-padding: 12px;
+$alert-elements-gap: 11px;
+
+::ng-deep .p-alert {
+  display: flex;
+  align-items: center;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  color: $primary-a-900;
+  height: $alert-height;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  border: 1px solid;
+  &-primary {
+    color: $gray-scale-1;
+    background-color: $primary-a-900;
+  }
+  &-secondary {
+    background-color: $secondary-a-100;
+  }
+  &-warning {
+    background-color: $supportive-alert-50;
+  }
+  &-orange {
+    background-color: $supportive-orange-50;
+  }
+  &-success {
+    background-color: $supportive-success-50;
+  }
+
+  &-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-right: $alert-padding;
+    padding-left: $alert-padding;
+    white-space: nowrap;
+  }
+
+  &-icon,
+  &-message-main,
+  &-message-sub,
+  &-action {
+    & + & {
+      margin-left: $alert-elements-gap;
+    }
+  }
+
+  &-icon {
+
+  }
+
+  &-message-main,
+  &-message-sub {
+    font-family: $font-family-basic;
+    font-size: $small-font-size;
+  }
+
+  &-action {
+    @include resetLink;
+    font-family: $font-family-basic;
+    font-size: $small-font-size;
+    color: $secondary-a-500;
+  }
+
+  &-close {
+    @include resetButton;
+    font-size: 0;
+    width: 20px;
+    height: 20px;
+    margin-right: -5px;
+    margin-bottom: 8px;
+    margin-left: $alert-elements-gap - 5px;
+    background-image: url('../assets/images/x.svg');
+    background-repeat: no-repeat;
+    background-size: 10px;
+    background-position: center;
+  }
 }
+
+

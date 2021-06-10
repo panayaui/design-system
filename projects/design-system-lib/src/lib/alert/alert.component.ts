@@ -13,7 +13,7 @@ export class AlertComponent {
               @Inject(MAT_SNACK_BAR_DATA) public data: any){}
 
   onAction(): void {
-    alert('The snack-bar action was triggered!');
+    alert('Alert action was triggered!');
   }
 
   dismiss(): void {

@@ -1,7 +1,7 @@
 export enum AlertEnum {
   Primary = 'primary',
   Secondary = 'secondary',
-  Alert = 'Alert',
-  Orange = 'Orange',
-  Success = 'Success'
+  Warning = 'warning',
+  Orange = 'orange',
+  Success = 'success'
 }

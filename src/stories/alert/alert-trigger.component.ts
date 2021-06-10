@@ -12,27 +12,25 @@ import {Observable} from 'rxjs';
 })
 export class AlertTriggerComponent {
   @Input() data = {
-    type: AlertEnum.Primary,
     icon: { iconName: 'bell'},
     messageMain: 'Notification message.',
     actionName: 'Action',
     closeBtnName: 'Close'
   };
-  @Input() duration: number = 5000;
+  @Input() type: AlertEnum = AlertEnum.Primary; // required
   @Input() horizontalPosition: any = 'center';
   @Input() verticalPosition: any = 'bottom';
-  @Input() panelClass: string | string[] = 'p-alert-container';
+  @Input() panelClass: string | string[];
 
   constructor(private snackBar: MatSnackBar) {}
 
-  showAlert(): void {
-    alert("hkjlkj");
+  triggerAlert(): void {
+    this.panelClass = ['p-alert', 'p-alert-' + this.type];
     this.snackBar.openFromComponent(AlertComponent, {
       data: this.data,
-      // duration: this.duration,
+      panelClass: this.panelClass, // required
       horizontalPosition: this.horizontalPosition,
       verticalPosition: this.verticalPosition,
-      panelClass: this.panelClass
     });
   }
 }
