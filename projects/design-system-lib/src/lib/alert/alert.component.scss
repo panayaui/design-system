@@ -15,7 +15,6 @@ $alert-elements-gap: 11px;
   background: transparent;
   border-radius: 0;
   box-shadow: none;
-  border: 1px solid;
   &-primary {
     color: $gray-scale-1;
     background-color: $primary-a-900;
@@ -53,10 +52,6 @@ $alert-elements-gap: 11px;
     }
   }
 
-  &-icon {
-
-  }
-
   &-message-main,
   &-message-sub {
     font-family: $font-family-basic;
@@ -67,21 +62,21 @@ $alert-elements-gap: 11px;
     @include resetLink;
     font-family: $font-family-basic;
     font-size: $small-font-size;
-    color: $secondary-a-500;
+    color: $secondary-a-700;
+    ::ng-deep .p-alert-primary & {
+      color: $secondary-a-500;
+    }
   }
 
   &-close {
     @include resetButton;
+    display: inline-block;
     font-size: 0;
     width: 20px;
     height: 20px;
     margin-right: -5px;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     margin-left: $alert-elements-gap - 5px;
-    background-image: url('../assets/images/x.svg');
-    background-repeat: no-repeat;
-    background-size: 10px;
-    background-position: center;
   }
 }
 

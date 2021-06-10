@@ -3,7 +3,6 @@ import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition}
 import {AlertComponent} from 'projects/design-system-lib/src/lib/alert/alert.component';
 import {IAlertData} from 'projects/design-system-lib/src/lib/alert/alert.interface';
 import {AlertEnum} from 'projects/design-system-lib/src/lib/alert/alert.enum';
-import {Observable} from 'rxjs';
 
 @Component({
   selector: 'alert-trigger',
@@ -12,12 +11,13 @@ import {Observable} from 'rxjs';
 })
 export class AlertTriggerComponent {
   @Input() data = {
-    icon: { iconName: 'bell'},
-    messageMain: 'Notification message.',
-    actionName: 'Action',
-    closeBtnName: 'Close'
-  };
-  @Input() type: AlertEnum = AlertEnum.Primary; // required
+        icon: { iconName: 'bell'},
+        messageMain: 'Notification message.',
+        actionName: 'Action',
+        messageSub: 'Notification message.',
+        closeBtnName: 'Close'
+      };
+  @Input() type: AlertEnum = AlertEnum.Secondary; // required
   @Input() horizontalPosition: any = 'center';
   @Input() verticalPosition: any = 'bottom';
   @Input() panelClass: string | string[];

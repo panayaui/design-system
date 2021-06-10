@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {AlertComponent} from '../../projects/design-system-lib/src/lib/alert/alert.component';
+import {AlertEnum} from '../../projects/design-system-lib/src/lib/alert/alert.enum';
 
 @Component({
   selector: 'app-root',
@@ -8,20 +9,27 @@ import {AlertComponent} from '../../projects/design-system-lib/src/lib/alert/ale
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  durationInSeconds = 5;
-  data = {
+  @Input() data = {
     icon: { iconName: 'bell'},
     messageMain: 'Notification message.',
     actionName: 'Action',
+    messageSub: 'Notification message.',
     closeBtnName: 'Close'
   };
+  @Input() type: AlertEnum = AlertEnum.Primary; // required
+  @Input() horizontalPosition: any = 'center';
+  @Input() verticalPosition: any = 'bottom';
+  @Input() panelClass: string | string[];
 
-  constructor(private _snackBar: MatSnackBar) {}
+  constructor(private snackBar: MatSnackBar) {}
 
-  openSnackBar() {
-    this._snackBar.openFromComponent(AlertComponent, {
+  triggerAlert(): void {
+    this.panelClass = ['p-alert', 'p-alert-' + this.type];
+    this.snackBar.openFromComponent(AlertComponent, {
       data: this.data,
-      duration: this.durationInSeconds * 1000
+      panelClass: this.panelClass, // required
+      horizontalPosition: this.horizontalPosition,
+      verticalPosition: this.verticalPosition,
     });
   }
 }
