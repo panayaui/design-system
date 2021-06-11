@@ -10,6 +10,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {IconModule} from 'projects/design-system-lib/src/lib/icon/icon.module';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {APP_INITIALIZER} from '@angular/core';
+import {initAlertFactory} from './initAlertFactory';
 
 export default {
   title: 'Alerts',
@@ -27,30 +28,17 @@ export default {
   ],
 } as Meta;
 
-const data = {
-  icon: { iconName: 'bell'},
-  messageMain: 'Notification message.',
-  actionName: 'Action',
-  messageSub: 'Notification message.',
-  closeBtnName: 'Close'
-};
-
-function initPricingFactory(snackBar: MatSnackBar) {
-  return () => snackBar.openFromComponent(AlertComponent, {data: data});
-}
-
 const PageTemplate: Story<AlertTriggerComponent> = (args: AlertTriggerComponent) => ({
   moduleMetadata: {
     providers: [
       {
         provide: APP_INITIALIZER,
-        useFactory: initPricingFactory,
+        useFactory: initAlertFactory,
         multi: true,
         deps: [MatSnackBar]
       }
     ]
   },
-  component: AlertTriggerComponent,
   props: args,
 });
 
