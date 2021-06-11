@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {ButtonTypeEnum} from './button-type.enum';
 
 @Component({
@@ -17,6 +17,7 @@ export class ButtonComponent {
   @Input() iconAfterWidth: string = 'auto';
   @Input() iconAfterHeight: string = 'auto';
   @Input() buttonType: ButtonTypeEnum = ButtonTypeEnum.Primary;
+  @Output() onClickTask: EventEmitter<any> = new EventEmitter();
 
   public get classes(): string[] {
     const classParams = [];

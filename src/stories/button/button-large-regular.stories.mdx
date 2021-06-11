@@ -34,7 +34,11 @@ export const Template = (args) => <ButtonComponent {...args} />
     args={{
       label: 'Label',
       large: true,
-      buttonType: ButtonTypeEnum.Primary
+      buttonType: ButtonTypeEnum.Primary,
+      onClickTask: e => { 
+        e.preventDefault();
+        console.log(e.target);
+      }
     }}>
     {Template.bind({})}
   </Story>

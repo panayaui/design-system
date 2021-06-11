@@ -1,4 +1,5 @@
-<button class="p-btn" [ngClass]="classes" [disabled]="disabled">
+<button class="p-btn" [ngClass]="classes" [disabled]="disabled"
+        (click)="onClickTask.emit($event)">
   <p-icon *ngIf="iconBefore"
           class="p-btn-icon-pre"
           [iconName]="iconBefore"
