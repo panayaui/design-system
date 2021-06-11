@@ -13,6 +13,10 @@ import {IconModule} from 'projects/design-system-lib/src/lib/icon/icon.module';
       imports: [IconModule]
     })
   ]}  
+  args={{ onClickTask: e => { 
+        e.preventDefault();
+        console.log(e.target);
+      } }}
 />
 
 export const Template = (args) => <ButtonComponent {...args} />
@@ -34,11 +38,7 @@ export const Template = (args) => <ButtonComponent {...args} />
     args={{
       label: 'Label',
       large: true,
-      buttonType: ButtonTypeEnum.Primary,
-      onClickTask: e => { 
-        e.preventDefault();
-        console.log(e.target);
-      }
+      buttonType: ButtonTypeEnum.Primary
     }}>
     {Template.bind({})}
   </Story>
