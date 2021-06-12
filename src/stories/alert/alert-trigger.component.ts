@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from '@angular/material/snack-bar';
 import {AlertComponent} from 'projects/design-system-lib/src/lib/alert/alert.component';
 import {IAlertData} from 'projects/design-system-lib/src/lib/alert/alert.interface';
@@ -11,13 +11,13 @@ import {AlertEnum} from 'projects/design-system-lib/src/lib/alert/alert.enum';
 })
 export class AlertTriggerComponent {
   @Input() data = {
-        icon: { iconName: 'bell'},
+        icon: {iconName: 'bell'},
         messageMain: 'Notification message.',
         actionName: 'Action',
         messageSub: 'Notification message.',
         closeBtnName: 'Close'
       };
-  @Input() type: AlertEnum = AlertEnum.Secondary; // required
+  @Input() type: AlertEnum = AlertEnum.Primary; // required
   @Input() horizontalPosition: any = 'center';
   @Input() verticalPosition: any = 'bottom';
   @Input() panelClass: string | string[];
@@ -30,7 +30,7 @@ export class AlertTriggerComponent {
       data: this.data,
       panelClass: this.panelClass, // required
       horizontalPosition: this.horizontalPosition,
-      verticalPosition: this.verticalPosition,
+      verticalPosition: this.verticalPosition
     });
   }
 }

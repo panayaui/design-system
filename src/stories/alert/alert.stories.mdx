@@ -9,38 +9,42 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {IconModule} from 'projects/design-system-lib/src/lib/icon/icon.module';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {initAlertFactory} from './initAlertFactory';
+import {APP_INITIALIZER} from '@angular/core';
 
 <Meta title='Alert'
     component={AlertTriggerComponent}
     decorators={[
-        moduleMetadata({
-            imports: [
-                CommonModule,
-                MatSnackBarModule,
-                BrowserAnimationsModule,
-                AlertModule,
-                IconModule
-            ]
-        })
-    ]}  
+      moduleMetadata({
+          imports: [
+              CommonModule,
+              MatSnackBarModule,
+              BrowserAnimationsModule,
+              AlertModule,
+              IconModule
+          ],
+          providers: [
+            {
+              provide: APP_INITIALIZER,
+              useFactory: initAlertFactory,
+              multi: true,
+              deps: [MatSnackBar]
+            }
+          ]
+      })
+    ]}    
  />
 
-# Action right
+# Alert
 
 export const Template = (args) => <AlertTriggerComponent {...args} />
 
 ###### Selector
-
 ```html
   <p-alert></p-alert>
 ```
-###### Types
 <Canvas>
-  <p className="story-title hidden-text">type</p>
-  <p className="story-title">Close on</p>
-  <p className="story-title">Close off</p>
-  <p className="story-title">critical</p>
-  <Story name="Critical"
+  <Story name="Show Alert"
       args={{ 
         
      }}>
@@ -48,12 +52,32 @@ export const Template = (args) => <AlertTriggerComponent {...args} />
   </Story>
 </Canvas>
 
-###### Component
+###### Usage
 ```ts
+ export class AlertTriggerComponent {
+  @Input() data = {
+        icon: {iconName: 'bell'},
+        messageMain: 'Notification message.',
+        actionName: 'Action',
+        messageSub: 'Notification message.',
+        closeBtnName: 'Close'
+      };
+  @Input() type: AlertEnum = AlertEnum.Secondary; // required
+  @Input() horizontalPosition: any = 'center';
+  @Input() verticalPosition: any = 'bottom';
+  @Input() panelClass: string | string[];
 
-```
+  constructor(public snackBar: MatSnackBar) {}
 
-###### Types Enum
-```ts
- 
+  triggerAlert(): void {
+    this.panelClass = ['p-alert', 'p-alert-' + this.type];
+    this.snackBar.openFromComponent(AlertComponent, {
+      data: this.data,
+      panelClass: this.panelClass, // required
+      horizontalPosition: this.horizontalPosition,
+      verticalPosition: this.verticalPosition
+    });
+  }
+}
+
 ```
