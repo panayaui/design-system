@@ -10,7 +10,7 @@ import {IAlertData} from './alert.interface';
 
 export class AlertComponent {
   constructor(private snackBarRef: MatSnackBarRef<AlertComponent>,
-              @Inject(MAT_SNACK_BAR_DATA) public data: any){}
+              @Inject(MAT_SNACK_BAR_DATA) public data: IAlertData){}
 
   onAction(): void {
     alert('Alert action was triggered!');

@@ -360,6 +360,114 @@ p {
   line-height: 20px;
 }
 
+.p-btn {
+  @include resetButton;
+  font-family: $font-family-basic;
+  font-size: $small-font-size;
+  font-weight: 500;
+  line-height: 19px;
+  min-width: 80px;
+  padding-right: 23px;
+  padding-left: 23px;
+  border-radius: 2px;
+  white-space: nowrap;
+  transition: all 400ms;
+
+  &-large {
+    height: 40px;
+  }
+
+  &-small {
+    height: 30px;
+  }
+
+  &:disabled {
+    pointer-events: none;
+  }
+
+  &-primary {
+    color: $gray-scale-1;
+    background-color: $secondary-a-700;
+    &:hover {
+      background-color: $secondary-a-800;
+    }
+    &:focus {
+      background-color: $secondary-a-800;
+    }
+    &:disabled {
+      color: $gray-scale-600;
+      background-color: $secondary-a-50;
+    }
+  }
+
+  &-secondary {
+    color: $secondary-a-700;
+    background-color: $gray-scale-1;
+    border: 1px solid $secondary-a-700;
+    &:hover {
+      background-color: $primary-c-50;
+    }
+    &:focus {
+      background-color: $primary-c-50;
+    }
+    &:disabled {
+      color: $gray-scale-600;
+      border-color: $secondary-a-500;
+    }
+  }
+
+  &-tertiary {
+    color: $secondary-a-700;
+    background-color: $gray-scale-1;
+    &:hover {
+      background-color: $primary-c-50;
+    }
+    &:focus {
+      background-color: $primary-c-50;
+    }
+    &:disabled {
+      color: $gray-scale-600;
+    }
+  }
+
+  &-distructive {
+    color: $gray-scale-1;
+    background-color: $supportive-alert-500;
+    &:hover {
+      background-color: $supportive-alert-700;
+    }
+    &:focus {
+      background-color: $supportive-alert-700;
+    }
+    &:disabled {
+      color: $gray-scale-600;
+      background-color: $supportive-alert-50;
+    }
+  }
+
+  // class of the button
+  &-icon-before {
+    padding-left: 17px;
+    .p-btn-label {
+      margin-left: 11px;
+    }
+  }
+  // class of the button
+  &-icon-after {
+    padding-right: 17px;
+    .p-btn-label {
+      margin-right: 11px;
+    }
+  }
+
+  // class of the icon
+  &-icon-pre,
+  &-icon-post {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
 
 @import 'icons';
 

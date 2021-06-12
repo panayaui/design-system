@@ -1,8 +1,8 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from '@angular/material/snack-bar';
 import {AlertComponent} from 'projects/design-system-lib/src/lib/alert/alert.component';
-import {IAlertData} from 'projects/design-system-lib/src/lib/alert/alert.interface';
 import {AlertEnum} from 'projects/design-system-lib/src/lib/alert/alert.enum';
+import {IAlertData} from 'projects/design-system-lib/src/lib/alert/alert.interface';
 
 @Component({
   selector: 'alert-trigger',
@@ -10,17 +10,12 @@ import {AlertEnum} from 'projects/design-system-lib/src/lib/alert/alert.enum';
   styleUrls: ['./alert-trigger.component.scss']
 })
 export class AlertTriggerComponent {
-  @Input() data = {
-        icon: {iconName: 'bell'},
-        messageMain: 'Notification message.',
-        actionName: 'Action',
-        messageSub: 'Notification message.',
-        closeBtnName: 'Close'
-      };
+  @Input() data: IAlertData;
   @Input() type: AlertEnum = AlertEnum.Primary; // required
-  @Input() horizontalPosition: any = 'center';
-  @Input() verticalPosition: any = 'bottom';
+  @Input() horizontalPosition: MatSnackBarHorizontalPosition = 'center';
+  @Input() verticalPosition: MatSnackBarVerticalPosition = 'bottom';
   @Input() panelClass: string | string[];
+  @Input() triggerBtnName: string;
 
   constructor(private snackBar: MatSnackBar) {}
 

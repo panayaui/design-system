@@ -22,17 +22,18 @@ import {APP_INITIALIZER} from '@angular/core';
               BrowserAnimationsModule,
               AlertModule,
               IconModule
-          ],
-          providers: [
-            {
-              provide: APP_INITIALIZER,
-              useFactory: initAlertFactory,
-              multi: true,
-              deps: [MatSnackBar]
-            }
           ]
       })
-    ]}    
+    ]}  
+    args={{
+      data: {
+        icon: {iconName: 'bell'},
+        messageMain: 'Notification message.',
+        actionName: 'Action',
+        messageSub: 'Notification message.',
+        closeBtnName: 'Close'
+      }
+    }}  
  />
 
 # Alert
@@ -43,11 +44,251 @@ export const Template = (args) => <AlertTriggerComponent {...args} />
 ```html
   <p-alert></p-alert>
 ```
+
+###### Action Right
 <Canvas>
-  <Story name="Show Alert"
-      args={{ 
-        
-     }}>
+  <Story name="Action Right Primary"
+    args={{ 
+      type: AlertEnum.Primary,
+      data: {
+        icon: {iconName: 'bell'},
+        messageMain: 'Notification message.',
+        actionName: 'Action',
+        closeBtnName: 'Close'
+      },
+      triggerBtnName: "Primary"
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Action Right Secondary"
+    args={{ 
+      type: AlertEnum.Secondary,
+      data: {
+        icon: {iconName: 'bell'},
+        messageMain: 'Notification message.',
+        actionName: 'Action',
+        closeBtnName: 'Close'
+      },
+      triggerBtnName: "Secondary"
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Action Right Warning"
+    args={{ 
+      type: AlertEnum.Warning,
+      data: {
+        icon: {iconName: 'bell'},
+        messageMain: 'Notification message.',
+        actionName: 'Action',
+        closeBtnName: 'Close'
+      },
+      triggerBtnName: "Warning"
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Action Right Orange"
+    args={{ 
+      type: AlertEnum.Orange,
+      data: {
+        icon: {iconName: 'bell'},
+        messageMain: 'Notification message.',
+        actionName: 'Action',
+        closeBtnName: 'Close'
+      },
+      triggerBtnName: "Orange"
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Action Right Success"
+    args={{ 
+      type: AlertEnum.Success,
+      data: {
+        icon: {iconName: 'check-circle'},
+        messageMain: 'Notification message.',
+        actionName: 'Action',
+        closeBtnName: 'Close'
+      },
+      triggerBtnName: "Success"
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Action Middle
+<Canvas>
+  <Story name="Action Middle Primary"
+    args={{ 
+      type: AlertEnum.Primary,    
+      triggerBtnName: "Primary"
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Action Middle Secondary"
+    args={{ 
+      type: AlertEnum.Secondary,   
+      triggerBtnName: "Secondary"
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Action Middle Warning"
+    args={{ 
+      type: AlertEnum.Warning,     
+      triggerBtnName: "Warning"
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Action Middle Orange"
+    args={{ 
+      type: AlertEnum.Orange,      
+      triggerBtnName: "Orange"
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Action Middle Success"
+    args={{ 
+      type: AlertEnum.Success,  
+       data: {
+        icon: {iconName: 'check-circle'},
+        messageMain: 'Notification message.',
+        actionName: 'Action',
+        messageSub: 'Notification message.',
+        closeBtnName: 'Close'
+      },   
+      triggerBtnName: "Success"
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Action Left
+<Canvas>
+  <Story name="Action Left Primary"
+    args={{ 
+      type: AlertEnum.Primary,
+      data: {
+        icon: {iconName: 'bell'},
+        messageSub: 'Notification message.',
+        actionName: 'Action',
+        closeBtnName: 'Close'
+      },
+      triggerBtnName: "Primary"
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Action Left Secondary"
+    args={{ 
+      type: AlertEnum.Secondary,
+      data: {
+        icon: {iconName: 'bell'},
+        messageSub: 'Notification message.',
+        actionName: 'Action',
+        closeBtnName: 'Close'
+      },
+      triggerBtnName: "Secondary"
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Action Left Warning"
+    args={{ 
+      type: AlertEnum.Warning,
+      data: {
+        icon: {iconName: 'bell'},
+        messageSub: 'Notification message.',
+        actionName: 'Action',
+        closeBtnName: 'Close'
+      },
+      triggerBtnName: "Warning"
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Action Left Orange"
+    args={{ 
+      type: AlertEnum.Orange,
+      data: {
+        icon: {iconName: 'bell'},
+        messageSub: 'Notification message.',
+        actionName: 'Action',
+        closeBtnName: 'Close'
+      },
+      triggerBtnName: "Orange"
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Action Left Success"
+    args={{ 
+      type: AlertEnum.Success,
+      data: {
+        icon: {iconName: 'check-circle'},
+        messageSub: 'Notification message.',
+        actionName: 'Action',
+        closeBtnName: 'Close'
+      },
+      triggerBtnName: "Success"
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### No Action
+<Canvas>
+  <Story name="No Action Primary"
+    args={{ 
+      type: AlertEnum.Primary,
+      data: {
+        icon: {iconName: 'bell'},
+        messageMain: 'Notification message.',
+        closeBtnName: 'Close'
+      },
+      triggerBtnName: "Primary"
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="No Action Secondary"
+    args={{ 
+      type: AlertEnum.Secondary,
+      data: {
+        icon: {iconName: 'bell'},
+        messageMain: 'Notification message.',
+        closeBtnName: 'Close'
+      },
+      triggerBtnName: "Secondary"
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="No Action Warning"
+    args={{ 
+      type: AlertEnum.Warning,
+      data: {
+        icon: {iconName: 'bell'},
+        messageMain: 'Notification message.',
+        closeBtnName: 'Close'
+      },
+      triggerBtnName: "Warning"
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="No Action Orange"
+    args={{ 
+      type: AlertEnum.Orange,
+      data: {
+        icon: {iconName: 'bell'},
+        messageMain: 'Notification message.',
+        closeBtnName: 'Close'
+      },
+      triggerBtnName: "Orange"
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="No Action Success"
+    args={{ 
+      type: AlertEnum.Success,
+      data: {
+        icon: {iconName: 'bell'},
+        messageMain: 'Notification message.',
+        closeBtnName: 'Close'
+      },
+      triggerBtnName: "Success"
+    }}>
     {Template.bind({})}
   </Story>
 </Canvas>
@@ -55,13 +296,7 @@ export const Template = (args) => <AlertTriggerComponent {...args} />
 ###### Usage
 ```ts
  export class AlertTriggerComponent {
-  @Input() data = {
-        icon: {iconName: 'bell'},
-        messageMain: 'Notification message.',
-        actionName: 'Action',
-        messageSub: 'Notification message.',
-        closeBtnName: 'Close'
-      };
+  @Input() data: IAlertData; 
   @Input() type: AlertEnum = AlertEnum.Secondary; // required
   @Input() horizontalPosition: any = 'center';
   @Input() verticalPosition: any = 'bottom';
@@ -79,5 +314,42 @@ export const Template = (args) => <AlertTriggerComponent {...args} />
     });
   }
 }
+```
 
+###### Component
+```ts
+export class AlertComponent {
+  constructor(private snackBarRef: MatSnackBarRef<AlertComponent>,
+              @Inject(MAT_SNACK_BAR_DATA) public data: IAlert){}
+
+  onAction(): void {
+    alert('Alert action was triggered!');
+  }
+
+  dismiss(): void {
+    this.snackBarRef.dismiss();
+  }
+}
+```
+
+###### IAlertData
+```ts
+export interface IAlertData {
+  icon: IIcon;
+  messageMain: string;
+  actionName: string;
+  messageSub: string;
+  closeBtnName: string;
+}
+```
+
+###### AlertEnum
+```ts
+export enum AlertEnum {
+  Primary = 'primary',
+  Secondary = 'secondary',
+  Warning = 'warning',
+  Orange = 'orange',
+  Success = 'success'
+}
 ```
