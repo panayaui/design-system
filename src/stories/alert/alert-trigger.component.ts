@@ -13,7 +13,7 @@ export class AlertTriggerComponent {
   @Input() data: IAlertData;
   @Input() type: AlertEnum = AlertEnum.Primary; // required
   @Input() horizontalPosition: MatSnackBarHorizontalPosition = 'center';
-  @Input() verticalPosition: MatSnackBarVerticalPosition = 'bottom';
+  @Input() verticalPosition: MatSnackBarVerticalPosition = 'top';
   @Input() panelClass: string | string[];
   @Input() triggerBtnName: string;
 
