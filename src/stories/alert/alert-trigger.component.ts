@@ -14,6 +14,7 @@ export class AlertTriggerComponent {
   @Input() type: AlertEnum = AlertEnum.Primary; // required
   @Input() horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   @Input() verticalPosition: MatSnackBarVerticalPosition = 'top';
+  @Input() duration: number;
   @Input() panelClass: string | string[];
   @Input() triggerBtnName: string;
 
@@ -25,7 +26,8 @@ export class AlertTriggerComponent {
       data: this.data,
       panelClass: this.panelClass, // required
       horizontalPosition: this.horizontalPosition,
-      verticalPosition: this.verticalPosition
+      verticalPosition: this.verticalPosition,
+      duration: this.duration
     });
   }
 }

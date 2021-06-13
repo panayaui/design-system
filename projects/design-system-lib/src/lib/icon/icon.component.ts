@@ -32,7 +32,7 @@ export class IconComponent implements OnInit {
     !this.height ? this.height = 'auto' : null;
     !this.fill ? this.fill = 'none' : null;
     !this.stroke ? this.stroke = 'currentColor' : null;
-    !this.strokeWidth ? this.strokeWidth = 1 : null;
+    !this.strokeWidth ? this.strokeWidth = 1.5 : null;
     !this.strokeLinecap ? this.strokeLinecap = 'round' : null;
     !this.strokeLinejoin ? this.strokeLinejoin = 'round' : null;
   }

@@ -2,7 +2,7 @@
 
 $alert-height: 43px;
 $alert-padding: 12px;
-$alert-elements-gap: 11px;
+$alert-elements-gap: 5px;
 
 ::ng-deep .p-alert {
   display: flex;
@@ -63,6 +63,9 @@ $alert-elements-gap: 11px;
     font-family: $font-family-basic;
     font-size: $small-font-size;
     color: $secondary-a-700;
+    &:hover {
+      text-decoration: underline;
+    }
     ::ng-deep .p-alert-primary & {
       color: $secondary-a-500;
     }
@@ -76,7 +79,7 @@ $alert-elements-gap: 11px;
     height: 20px;
     margin-right: -5px;
     margin-bottom: 10px;
-    margin-left: $alert-elements-gap - 5px;
+    margin-left: 6px;
   }
 }
 
