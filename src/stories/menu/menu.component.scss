@@ -1,8 +1,10 @@
-@import "../../../projects/design-system-lib/src/lib/assets/styles/params/custom";
+@import "../../../projects/design-system-lib/src/lib/assets/styles/custom";
+
+$menu-item-height: 36px;
 
 ::ng-deep .p-menu.mat-menu-panel {
   min-width: 230px;
-  //background-color: $gray-scale-1;
+  background-color: $gray-scale-1;
   border-radius: 0;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1),
               0 2px 6px rgba(0, 0, 0, 0.04),
@@ -11,16 +13,20 @@
     padding: 8px;
   }
 
-  .mat-menu-item {
+  %menu-item {
     font-family: $font-family-basic;
-    font-size: $small-font-size;
+
     color: $primary-a-900;
-    height: 36px;
-    line-height: 36px;
+    height: $menu-item-height;
+    line-height: $menu-item-height;
     padding: 0 8px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+  .mat-menu-item {
+    @extend %menu-item;
+    font-size: $small-font-size;
     &:hover,
     &.cdk-focused {
       background-color: $secondary-a-100;
@@ -29,4 +35,11 @@
       color: $gray-scale-600;
     }
   }
+}
+
+.p-menu-group-title {
+  @extend %menu-item;
+  font-size: $tiny-font-size;
+  font-weight: 700;
+  text-transform: uppercase;
 }

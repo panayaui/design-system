@@ -4,8 +4,9 @@ import {MenuComponent} from './menu.component';
 import {CommonModule} from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatMenuModule} from '@angular/material/menu';
+import {stateGroups} from './stateGroups';
 
-<Meta title='Menu'
+<Meta title='Components/Menu'
     component={MenuComponent}
     decorators={[
       moduleMetadata({
@@ -17,6 +18,7 @@ import {MatMenuModule} from '@angular/material/menu';
       })
     ]}  
     args={{
+      menuTriggerName: 'Single select',
       menuList: [
         { name: 'Menu item',
           disabled: false
@@ -29,19 +31,13 @@ import {MatMenuModule} from '@angular/material/menu';
         },
         { name: 'Menu item',
           disabled: false
-        }],
-      menuTriggerName: 'Single select'
+        }]
     }}  
  />
 
 # Menu
 
 export const Template = (args) => <MenuComponent {...args} />
-
-###### Selector
-```html
-  <p-menu></p-menu>
-```
 
 ###### Simple Menu
 <Canvas>
@@ -50,67 +46,30 @@ export const Template = (args) => <MenuComponent {...args} />
     }}>
     {Template.bind({})}
   </Story>
+   <Story name="Simple Menu with Group"
+    args={{ 
+      menuTriggerName: 'Select with Groups',
+      groupTitle: true,
+      menuList: stateGroups
+    }}>
+    {Template.bind({})}
+  </Story>
 </Canvas>
 
 ###### Usage
 ```ts
- export class AlertTriggerComponent {
-  @Input() data: IAlertData; 
-  @Input() type: AlertEnum = AlertEnum.Secondary; // required
-  @Input() horizontalPosition: MatSnackBarHorizontalPosition = 'center';
-  @Input() verticalPosition: MatSnackBarVerticalPosition = 'top';
-  @Input() duration: number;
-  @Input() panelClass: string | string[];
-
-  constructor(public snackBar: MatSnackBar) {}
-
-  triggerAlert(): void {
-    this.panelClass = ['p-alert', 'p-alert-' + this.type];
-    this.snackBar.openFromComponent(AlertComponent, {
-      data: this.data,
-      panelClass: this.panelClass, // required
-      horizontalPosition: this.horizontalPosition,
-      verticalPosition: this.verticalPosition,
-      duration: this.duration
-    });
-  }
-}
+import {MatMenuModule} from '@angular/material/menu';
 ```
-
-###### Component
-```ts
-export class AlertComponent {
-  constructor(private snackBarRef: MatSnackBarRef<AlertComponent>,
-              @Inject(MAT_SNACK_BAR_DATA) public data: IAlert){}
-
-  onAction(): void {
-    alert('Alert action was triggered!');
-  }
-
-  dismiss(): void {
-    this.snackBarRef.dismiss();
-  }
-}
-```
-
-###### IAlertData
-```ts
-export interface IAlertData {
-  icon: IIcon;
-  messageMain: string;
-  actionName: string;
-  messageSub: string;
-  closeBtnName: string;
-}
-```
-
-###### AlertEnum
-```ts
-export enum AlertEnum {
-  Primary = 'primary',
-  Secondary = 'secondary',
-  Warning = 'warning',
-  Orange = 'orange',
-  Success = 'success'
-}
+```html
+<mat-menu #menu="matMenu" class="p-menu">
+  <ng-container *ngFor="let group of menuList">
+    <h6 class="p-menu-group-title">{{group.letter}}</h6>
+    <button *ngFor="let item of group.names"
+            mat-menu-item
+            [disabled]="item.disabled"
+            [disableRipple]="true">
+      {{item.name}}
+    </button>
+  </ng-container>
+</mat-menu>
 ```

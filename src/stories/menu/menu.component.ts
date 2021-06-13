@@ -8,4 +8,5 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 export class MenuComponent {
   @Input() menuTriggerName: string;
   @Input() menuList: any[];
+  @Input() groupTitle: boolean = false; //if there is a group title
 }
