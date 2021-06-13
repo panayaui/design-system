@@ -298,8 +298,8 @@ export const Template = (args) => <AlertTriggerComponent {...args} />
  export class AlertTriggerComponent {
   @Input() data: IAlertData; 
   @Input() type: AlertEnum = AlertEnum.Secondary; // required
-  @Input() horizontalPosition: any = 'center';
-  @Input() verticalPosition: any = 'bottom';
+  @Input() horizontalPosition: MatSnackBarHorizontalPosition = 'center';
+  @Input() verticalPosition: MatSnackBarVerticalPosition = 'top';
   @Input() panelClass: string | string[];
 
   constructor(public snackBar: MatSnackBar) {}
