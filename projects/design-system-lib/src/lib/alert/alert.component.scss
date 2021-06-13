@@ -63,6 +63,9 @@ $alert-elements-gap: 5px;
     font-family: $font-family-basic;
     font-size: $small-font-size;
     color: $secondary-a-700;
+    &:hover {
+      text-decoration: underline;
+    }
     ::ng-deep .p-alert-primary & {
       color: $secondary-a-500;
     }

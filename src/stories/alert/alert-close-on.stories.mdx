@@ -9,10 +9,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {IconModule} from 'projects/design-system-lib/src/lib/icon/icon.module';
 import {MatSnackBar} from '@angular/material/snack-bar';
-import {initAlertFactory} from './initAlertFactory';
-import {APP_INITIALIZER} from '@angular/core';
 
-<Meta title='Components/Alert'
+<Meta title='Components/Alert/Close On'
     component={AlertTriggerComponent}
     decorators={[
       moduleMetadata({
@@ -32,7 +30,8 @@ import {APP_INITIALIZER} from '@angular/core';
         actionName: 'Action',
         messageSub: 'Notification message.',
         closeBtnName: 'Close'
-      }
+      },
+      duration: 2500
     }}  
  />
 
@@ -300,6 +299,7 @@ export const Template = (args) => <AlertTriggerComponent {...args} />
   @Input() type: AlertEnum = AlertEnum.Secondary; // required
   @Input() horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   @Input() verticalPosition: MatSnackBarVerticalPosition = 'top';
+  @Input() duration: number;
   @Input() panelClass: string | string[];
 
   constructor(public snackBar: MatSnackBar) {}
@@ -310,7 +310,8 @@ export const Template = (args) => <AlertTriggerComponent {...args} />
       data: this.data,
       panelClass: this.panelClass, // required
       horizontalPosition: this.horizontalPosition,
-      verticalPosition: this.verticalPosition
+      verticalPosition: this.verticalPosition,
+      duration: this.duration
     });
   }
 }
