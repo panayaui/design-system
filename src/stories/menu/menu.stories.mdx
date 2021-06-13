@@ -1,0 +1,116 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+import {MenuComponent} from './menu.component';
+import {CommonModule} from '@angular/common';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatMenuModule} from '@angular/material/menu';
+
+<Meta title='Menu'
+    component={MenuComponent}
+    decorators={[
+      moduleMetadata({
+          imports: [
+              CommonModule,            
+              BrowserAnimationsModule,
+              MatMenuModule
+          ]
+      })
+    ]}  
+    args={{
+      menuList: [
+        { name: 'Menu item',
+          disabled: false
+        },
+        { name: 'Menu item disabled',
+          disabled: true
+        },
+        { name: 'Menu item',
+          disabled: false
+        },
+        { name: 'Menu item',
+          disabled: false
+        }],
+      menuTriggerName: 'Single select'
+    }}  
+ />
+
+# Menu
+
+export const Template = (args) => <MenuComponent {...args} />
+
+###### Selector
+```html
+  <p-menu></p-menu>
+```
+
+###### Simple Menu
+<Canvas>
+  <Story name="Simple Menu"
+    args={{ 
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Usage
+```ts
+ export class AlertTriggerComponent {
+  @Input() data: IAlertData; 
+  @Input() type: AlertEnum = AlertEnum.Secondary; // required
+  @Input() horizontalPosition: MatSnackBarHorizontalPosition = 'center';
+  @Input() verticalPosition: MatSnackBarVerticalPosition = 'top';
+  @Input() duration: number;
+  @Input() panelClass: string | string[];
+
+  constructor(public snackBar: MatSnackBar) {}
+
+  triggerAlert(): void {
+    this.panelClass = ['p-alert', 'p-alert-' + this.type];
+    this.snackBar.openFromComponent(AlertComponent, {
+      data: this.data,
+      panelClass: this.panelClass, // required
+      horizontalPosition: this.horizontalPosition,
+      verticalPosition: this.verticalPosition,
+      duration: this.duration
+    });
+  }
+}
+```
+
+###### Component
+```ts
+export class AlertComponent {
+  constructor(private snackBarRef: MatSnackBarRef<AlertComponent>,
+              @Inject(MAT_SNACK_BAR_DATA) public data: IAlert){}
+
+  onAction(): void {
+    alert('Alert action was triggered!');
+  }
+
+  dismiss(): void {
+    this.snackBarRef.dismiss();
+  }
+}
+```
+
+###### IAlertData
+```ts
+export interface IAlertData {
+  icon: IIcon;
+  messageMain: string;
+  actionName: string;
+  messageSub: string;
+  closeBtnName: string;
+}
+```
+
+###### AlertEnum
+```ts
+export enum AlertEnum {
+  Primary = 'primary',
+  Secondary = 'secondary',
+  Warning = 'warning',
+  Orange = 'orange',
+  Success = 'success'
+}
+```

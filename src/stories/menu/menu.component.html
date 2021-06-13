@@ -1,0 +1,13 @@
+<button mat-button [matMenuTriggerFor]="menu"
+        class="p-btn p-btn-small p-btn-primary">
+  {{menuTriggerName}}
+</button>
+
+<mat-menu #menu="matMenu"
+          class="p-menu">
+  <button *ngFor="let item of menuList"
+          mat-menu-item
+          [disabled]="item.disabled">
+    {{item.name}}
+  </button>
+</mat-menu>
