@@ -1,7 +1,5 @@
-// Roboto font
-@import 'font';
 // Custom system
-@import 'variables';
-@import 'colors';
-@import 'reset';
-@import 'mixins';
+@import 'params/variables';
+@import 'params/colors';
+@import 'params/reset';
+@import 'params/mixins';

@@ -3,8 +3,7 @@ import {TooltipPosition} from '@angular/material/tooltip';
 
 @Component({
   selector: 'p-tooltip',
-  templateUrl: './tooltip.component.html',
-  styleUrls: ['./tooltip.component.scss'],
+  templateUrl: './tooltip.component.html'
 })
 export default class TooltipComponent {
   @Input() message: string; // matTooltip

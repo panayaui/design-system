@@ -1,0 +1,8 @@
+{
+  "bundlerOptions": {
+    "entryFile": "./projects/design-system-lib/src/lib/assets/styles/entry.scss",
+    "outFile": "./projects/design-system-lib/src/lib/assets/styles/p-styles.scss",
+    "ignoreImports": ["~@angular/.*"],
+    "logLevel": "silent"
+  }
+}
