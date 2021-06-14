@@ -16,6 +16,7 @@ export class MenuComponent implements OnInit, OnDestroy{
   private sub: SubscriptionLike;
 
   ngOnInit(): void {
+    this.filteredList = this.menuList;
     if (this.filter) {
       this.formFieldControl = new FormControl('');
       this.sub = this.formFieldControl.valueChanges.subscribe((value: string) => {
@@ -32,17 +33,12 @@ export class MenuComponent implements OnInit, OnDestroy{
   }
 
   alterList(value: string): void {
-    this.filteredList = this.menuList.filter(group => {
-        let res = group.names.filter( name => name.name.toLowerCase().indexOf(value.toLowerCase()) > -1);
-        console.log(res);
-        return res;
+    this.filteredList = [];
+    this.menuList.forEach(group => {
+      const filteredGroup = group.names.filter( name => name.name.toLowerCase().indexOf(value.toLowerCase()) > -1);
+      if (filteredGroup.length > 0) {
+        this.filteredList.push(Object.assign({}, group, group.names = filteredGroup));
       }
-    );
-
-    // const filterItems = (query) => {
-    //   return fruits.filter((el) =>
-    //     el.toLowerCase().indexOf(query.toLowerCase()) > -1
-    //   );
-    // }
+    });
   }
 }

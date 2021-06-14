@@ -34,7 +34,7 @@
 
   <!--groupTitle === true-->
   <ng-template [ngIf]="groupTitle" [ngIfElse]="noGroupTitle">
-    <ng-container *ngFor="let group of menuList">
+    <ng-container *ngFor="let group of filteredList">
       <h6 class="p-menu-group-title">{{group.letter}}</h6>
       <ng-container [ngTemplateOutlet]="menuLine"
                     [ngTemplateOutletContext] ="{itemsList: group.names}"></ng-container>
