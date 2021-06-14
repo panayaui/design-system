@@ -5,6 +5,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ReactiveFormsModule} from '@angular/forms';
+import {InputTextComponent} from './text/input-text.component';
 
 @NgModule({
   imports: [
@@ -15,10 +16,12 @@ import {ReactiveFormsModule} from '@angular/forms';
     ReactiveFormsModule
   ],
   declarations: [
-    InputNumericComponent
+    InputNumericComponent,
+    InputTextComponent
   ],
   exports: [
-    InputNumericComponent
+    InputNumericComponent,
+    InputTextComponent
   ]
 })
 export class InputModule { }

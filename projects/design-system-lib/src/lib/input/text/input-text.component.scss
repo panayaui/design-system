@@ -1,0 +1,88 @@
+@import "../../assets/styles/custom";
+
+$input-text-width: 220px;
+$input-text-padding: 8px;
+
+.p-input-text {
+  &-label {
+    font-family: $font-family-basic;
+    font-weight: 500;
+    font-size: $tiny-font-size;
+    text-transform: capitalize;
+    line-height: 19px;
+    color: $gray-scale-700;
+  }
+
+  ::ng-deep & {
+    // material styles override
+    .mat-input-element {
+      font-family: $font-family-basic;
+      font-size: $base-font-size;
+      max-width: $input-text-width - $input-text-padding;
+      line-height: 20px;
+      color: $primary-a-900;
+      padding-left: $input-text-padding;
+      caret-color: $primary-a-900;
+    }
+    .mat-form-field-infix {
+      width: $input-text-width;
+      padding-bottom: 6px;
+    }
+    &.mat-form-field-appearance-standard .mat-form-field-flex {
+      padding-top: 0;
+    }
+    &.mat-form-field-appearance-standard .mat-form-field-underline {
+      background-color: transparent;
+      box-shadow: inset 0px -1px 0px $gray-scale-600;
+    }
+    &.mat-form-field.mat-focused .mat-form-field-underline,
+    &:not(.mat-form-field-disabled):not(.mat-form-field-invalid)
+            .mat-form-field-flex:hover~.mat-form-field-underline {
+      background-color: transparent;
+      box-shadow: inset 0px -1px 0px $primary-a-900;
+    }
+    .mat-form-field-ripple {
+      display: none;
+    }
+    .mat-form-field-subscript-wrapper {
+      margin-top: 5px;
+    }
+    .mat-error {
+      font-family: $font-family-basic;
+      font-size: $tiny-font-size;
+      color: $supportive-alert-500;
+      line-height: 12px;
+    }
+
+    // disabled
+    &.mat-form-field-disabled {
+      .mat-input-element {
+        color: $gray-scale-600;
+      }
+      .mat-form-field-underline {
+        box-shadow: inset 0px -1px 0px $gray-scale-400;
+      }
+    }
+
+    // error state
+    &.ng-invalid {
+      .mat-form-field-underline {
+        box-shadow: inset 0px -1px 0px $supportive-alert-500;
+      }
+      &.mat-form-field .mat-form-field-flex:hover~.mat-form-field-underline,
+      &.mat-form-field.mat-focused .mat-form-field-underline {
+        box-shadow: inset 0px -1px 0px $supportive-alert-700;
+      }
+    }
+
+    // readonly
+    &.p-input-text-readonly {
+      &:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover~.mat-form-field-underline,
+
+      .mat-form-field-underline {
+        box-shadow: none;
+      }
+    }
+  }
+
+}

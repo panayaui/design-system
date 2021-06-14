@@ -15,6 +15,23 @@
 
 <!--menu window-->
 <mat-menu #menu="matMenu" class="p-menu" [overlapTrigger]="false">
+  <!--<p-input-text *ngIf="filter"-->
+                <!--aria-label="Search Label"-->
+                <!--[placeholder]="'Find label'"-->
+                <!--(click)="$event.stopPropagation();"-->
+  <!--&gt;</p-input-text>-->
+
+  <mat-form-field *ngIf="filter"
+                  class="p-input-text"
+                  appearance="standard"
+                  floatLabel="always"
+                  (click)="$event.stopPropagation();">
+    <input matInput
+           [type]="'text'"
+           [formControl]="formFieldControl"
+           class="p-input-text-input">
+  </mat-form-field>
+
   <!--groupTitle === true-->
   <ng-template [ngIf]="groupTitle" [ngIfElse]="noGroupTitle">
     <ng-container *ngFor="let group of menuList">

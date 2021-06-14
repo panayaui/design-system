@@ -18,8 +18,12 @@ export * from './lib/input/input.module';
 export * from './lib/input/numeric/input-numeric.component';
 export * from './lib/input/numeric/input-numeric.interface';
 export * from './lib/input/numeric/input-numeric-size.enum';
+export * from './lib/input/text/input-text.component';
 
 export * from './lib/alert/alert.module';
 export * from './lib/alert/alert.component';
 export * from './lib/alert/alert.interface';
 export * from './lib/alert/alert.enum';
+
+export * from './lib/menu/menu.module';
+export * from './lib/menu/menu.component';
