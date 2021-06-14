@@ -3,26 +3,31 @@
   {{menuTriggerName}}
 </button>
 
+<!--menu line template-->
+<ng-template #menuLine let-itemsList="itemsList">
+  <button *ngFor="let item of itemsList"
+          mat-menu-item
+          [disabled]="item.disabled"
+          [disableRipple]="true">
+    {{item.name}}
+  </button>
+</ng-template>
+
+<!--menu window-->
 <mat-menu #menu="matMenu"
           class="p-menu">
+  <!--groupTitle === true-->
   <ng-template [ngIf]="groupTitle" [ngIfElse]="noGroupTitle">
     <ng-container *ngFor="let group of menuList">
       <h6 class="p-menu-group-title">{{group.letter}}</h6>
-      <button *ngFor="let item of group.names"
-              mat-menu-item
-              [disabled]="item.disabled"
-              [disableRipple]="true">
-        {{item.name}}
-      </button>
+      <ng-container [ngTemplateOutlet]="menuLine"
+                    [ngTemplateOutletContext] ="{itemsList: group.names}"></ng-container>
     </ng-container>
   </ng-template>
 
+  <!--groupTitle === false-->
   <ng-template #noGroupTitle>
-    <button *ngFor="let item of menuList"
-            mat-menu-item
-            [disabled]="item.disabled"
-            [disableRipple]="true">
-      {{item.name}}
-    </button>
+    <ng-container [ngTemplateOutlet]="menuLine"
+                  [ngTemplateOutletContext] ="{itemsList: menuList}"></ng-container>
   </ng-template>
 </mat-menu>
