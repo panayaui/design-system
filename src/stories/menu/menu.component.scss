@@ -4,6 +4,7 @@ $menu-item-height: 36px;
 
 ::ng-deep .p-menu.mat-menu-panel {
   min-width: 230px;
+  max-height: 75vh;
   background-color: $gray-scale-1;
   border-radius: 0;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1),

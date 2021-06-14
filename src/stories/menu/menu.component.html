@@ -14,8 +14,7 @@
 </ng-template>
 
 <!--menu window-->
-<mat-menu #menu="matMenu"
-          class="p-menu">
+<mat-menu #menu="matMenu" class="p-menu" [overlapTrigger]="false">
   <!--groupTitle === true-->
   <ng-template [ngIf]="groupTitle" [ngIfElse]="noGroupTitle">
     <ng-container *ngFor="let group of menuList">
