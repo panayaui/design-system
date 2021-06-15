@@ -11,3 +11,13 @@
   justify-content: center;
   align-items: center;
 }
+
+// custom icons
+.p-icon-custom {
+  background-repeat: no-repeat;
+  background-size: contain;
+  &-eraser {
+    background-image: url('../assets/images/icons/eraser.svg');
+  }
+
+}

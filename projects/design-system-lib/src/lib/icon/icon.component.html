@@ -1,4 +1,14 @@
-<i-feather [name]="iconName"
-           [ngStyle]="iconStyles"
-           class="p-icon">
-</i-feather>
+<ng-template [ngIf]="!customIcon" [ngIfElse]="customIconTemplate">
+  <i-feather [name]="iconName"
+             [ngStyle]="iconStyles"
+             class="p-icon">
+  </i-feather>
+</ng-template>
+
+<ng-template #customIconTemplate>
+  <i class="p-icon p-icon-custom"
+     [ngClass]="'p-icon-custom-' + iconName"
+     [ngStyle]="iconStyles"></i>
+</ng-template>
+
+

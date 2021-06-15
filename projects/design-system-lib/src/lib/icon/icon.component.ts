@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import { allIcons } from 'angular-feather/icons';
 
 @Component({
   selector: 'p-icon',
@@ -14,6 +15,7 @@ export class IconComponent implements OnInit {
   @Input() strokeWidth: number = 1; // line width in pixels
   @Input() strokeLinecap: string = 'round'; // line end
   @Input() strokeLinejoin: string = 'round'; // two lines join
+  public customIcon: boolean;
 
   public get iconStyles(): any {
     return {
@@ -28,6 +30,8 @@ export class IconComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    allIcons[this.capitalizeName()] ? this.customIcon = false : this.customIcon = true;
+
     !this.width ? this.width = '16' : null;
     !this.height ? this.height = 'auto' : null;
     !this.fill ? this.fill = 'none' : null;
@@ -35,5 +39,11 @@ export class IconComponent implements OnInit {
     !this.strokeWidth ? this.strokeWidth = 1.5 : null;
     !this.strokeLinecap ? this.strokeLinecap = 'round' : null;
     !this.strokeLinejoin ? this.strokeLinejoin = 'round' : null;
+  }
+
+  capitalizeName(): string {
+    let iconNameCap = '';
+    this.iconName.split('-').forEach( str => iconNameCap += str.charAt(0).toUpperCase() + str.slice(1));
+    return iconNameCap;
   }
 }
