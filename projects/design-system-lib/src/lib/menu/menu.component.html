@@ -1,4 +1,4 @@
-<button mat-button [matMenuTriggerFor]="menu"
+<button [matMenuTriggerFor]="menu"
         class="p-btn p-btn-small p-btn-primary">
   {{menuTriggerName}}
 </button>
@@ -6,44 +6,66 @@
 <!--menu line template-->
 <ng-template #menuLine let-itemsList="itemsList">
   <button *ngFor="let item of itemsList"
-          mat-menu-item
-          [disabled]="item.disabled"
-          [disableRipple]="true">
-    {{item.name}}
-  </button>
+                  mat-menu-item
+                  [disabled]="item.disabled"
+                  [disableRipple]="true">
+  {{item.name}}
+</button>
 </ng-template>
 
 <!--menu window-->
 <mat-menu #menu="matMenu" class="p-menu" [overlapTrigger]="false">
-  <!--<p-input-text *ngIf="filter"-->
-                <!--aria-label="Search Label"-->
-                <!--[placeholder]="'Find label'"-->
-                <!--(click)="$event.stopPropagation();"-->
-  <!--&gt;</p-input-text>-->
+  <div class="p-menu-header" *ngIf="filter">
+    <mat-form-field class="p-menu-form-field"
+                    appearance="outline"
+                    floatLabel="always"
+                    (click)="$event.stopPropagation();">
+      <input matInput
+             type="text"
+             [placeholder]="inputPlaceholder"
+             attr.aria-label="{{inputAriaLabel}}"
+             [formControl]="formFieldControl"
+             onfocus="this.select()"
+             class="p-menu-input">
+    </mat-form-field>
+  </div>
 
-  <mat-form-field *ngIf="filter"
-                  class="p-input-text"
-                  appearance="standard"
-                  floatLabel="always"
-                  (click)="$event.stopPropagation();">
-    <input matInput
-           [type]="'text'"
-           [formControl]="formFieldControl"
-           class="p-input-text-input">
-  </mat-form-field>
+  <div class="p-menu-body">
+    <!--groupTitle === true-->
+    <ng-template [ngIf]="groupTitle" [ngIfElse]="noGroupTitle">
+      <ng-container *ngFor="let group of filteredList">
+        <h6 class="p-menu-group-title">{{group.letter}}</h6>
+        <ng-container [ngTemplateOutlet]="menuLine"
+                      [ngTemplateOutletContext] ="{itemsList: group.names}"></ng-container>
+      </ng-container>
+    </ng-template>
 
-  <!--groupTitle === true-->
-  <ng-template [ngIf]="groupTitle" [ngIfElse]="noGroupTitle">
-    <ng-container *ngFor="let group of filteredList">
-      <h6 class="p-menu-group-title">{{group.letter}}</h6>
+    <!--groupTitle === false-->
+    <ng-template #noGroupTitle>
       <ng-container [ngTemplateOutlet]="menuLine"
-                    [ngTemplateOutletContext] ="{itemsList: group.names}"></ng-container>
-    </ng-container>
-  </ng-template>
+                    [ngTemplateOutletContext] ="{itemsList: menuList}"></ng-container>
+    </ng-template>
+  </div>
 
-  <!--groupTitle === false-->
-  <ng-template #noGroupTitle>
-    <ng-container [ngTemplateOutlet]="menuLine"
-                  [ngTemplateOutletContext] ="{itemsList: menuList}"></ng-container>
-  </ng-template>
+  <div class="p-menu-footer" *ngIf="filter">
+    <p-button class="p-menu-footer-btn-line"
+              [label]="buttonFirst.label"
+              [iconBefore]="buttonFirst.icon.iconName"
+              [iconBeforeWidth]="buttonFirst.icon.width"
+              [iconBeforeHeight]="buttonFirst.icon.height"
+              [buttonType]="buttonFirst.buttonType"></p-button>
+    <!--<button class="p-btn p-btn-small p-btn-tertiary p-menu-footer-btn-line">-->
+      <!--<p-icon class="p-btn-icon-pre"-->
+              <!--[iconName]="'eraser'"-->
+              <!--[width]="19"-->
+              <!--[height]="auto"></p-icon>-->
+      <!--Share-->
+    <!--</button>-->
+    <p-button class="p-menu-footer-btn-line"
+              [label]="buttonLast.label"
+              [iconBefore]="buttonLast.icon.iconName"
+              [iconBeforeWidth]="buttonLast.icon.width"
+              [iconBeforeHeight]="buttonLast.icon.height"
+              [buttonType]="buttonLast.buttonType"></p-button>
+  </div>
 </mat-menu>

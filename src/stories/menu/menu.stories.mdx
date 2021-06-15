@@ -7,6 +7,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {ButtonModule} from 'projects/design-system-lib/src/lib/button/button.module';
+import {ButtonTypeEnum} from 'projects/design-system-lib/src/lib/button/button-type.enum';
+import {IconModule} from 'projects/design-system-lib/src/lib/icon/icon.module';
 import {ReactiveFormsModule} from '@angular/forms';
 import {stateGroups} from './stateGroups';
 
@@ -21,7 +24,8 @@ import {stateGroups} from './stateGroups';
               InputModule,
               MatInputModule,
               MatFormFieldModule,
-              ReactiveFormsModule
+              ReactiveFormsModule,
+              ButtonModule
           ]
       })
     ]}  
@@ -67,7 +71,26 @@ export const Template = (args) => <MenuComponent {...args} />
       menuTriggerName: 'Menu with Filter',
       menuList: stateGroups,
       groupTitle: true,
-      filter: true
+      filter: true,
+      inputPlaceholder: 'Find Label',
+      buttonFirst: {
+        label: 'Share',
+        buttonType: ButtonTypeEnum.Tertiary,
+        icon: {
+          iconName: 'eraser',
+          width: '15',
+          height: '15'
+        }
+      },
+      buttonLast: {
+        label: 'Reset',
+        buttonType: ButtonTypeEnum.Tertiary,
+        icon: {
+          iconName: 'eraser',
+          width: '15',
+          height: '15'
+        }
+      }
     }}>
     {Template.bind({})}
   </Story>
