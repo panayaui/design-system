@@ -10,6 +10,7 @@ import {IconModule} from 'projects/design-system-lib/src/public-api';
 import {CommonModule} from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatListModule} from '@angular/material/list';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {ReactiveFormsModule} from '@angular/forms';
@@ -24,6 +25,7 @@ import {stateGroups} from './stateGroups';
               CommonModule,            
               BrowserAnimationsModule,
               MatMenuModule,
+              MatListModule,
               InputModule,
               MatInputModule,
               MatFormFieldModule,
@@ -33,7 +35,7 @@ import {stateGroups} from './stateGroups';
       })
     ]}  
     args={{
-      menuTriggerName: 'Single select',
+      menuTriggerName: 'Multi select',
       menuList: [
         { name: 'Menu item',
           disabled: false
@@ -42,11 +44,30 @@ import {stateGroups} from './stateGroups';
           disabled: true
         },
         { name: 'Menu item',
+          disabled: false,
+          selected: true
+        },
+        { name: 'Menu item',
           disabled: false
         },
         { name: 'Menu item',
           disabled: false
-        }]
+        },
+        { name: 'Menu item disabled selected',
+          disabled: true,
+          selected: true
+        },
+        { name: 'Menu item',
+          disabled: false
+        }],
+      buttonFirst: {
+        label: 'Done',
+        buttonType: ButtonTypeEnum.Primary
+      },
+      buttonLast: {
+        label: 'Cancel',
+        buttonType: ButtonTypeEnum.Secondary
+      }
     }}  
  />
 
@@ -58,42 +79,6 @@ export const Template = (args) => <MenuMultiSelectComponent {...args} />
 <Canvas>
   <Story name="Simple Menu"
     args={{ 
-    }}>
-    {Template.bind({})}
-  </Story>
-  <Story name="Simple Menu with Group"
-    args={{ 
-      menuTriggerName: 'Select with Groups',
-      groupTitle: true,
-      menuList: stateGroups
-    }}>
-    {Template.bind({})}
-  </Story>
-  <Story name="Menu with Filter"
-    args={{ 
-      menuTriggerName: 'Menu with Filter',
-      menuList: stateGroups,
-      groupTitle: true,
-      filter: true,
-      inputPlaceholder: 'Find Label',
-      buttonFirst: {
-        label: 'Share',
-        buttonType: ButtonTypeEnum.Tertiary,
-        icon: {
-          iconName: 'eraser',
-          width: '15',
-          height: '15'
-        }
-      },
-      buttonLast: {
-        label: 'Reset',
-        buttonType: ButtonTypeEnum.Tertiary,
-        icon: {
-          iconName: 'eraser',
-          width: '15',
-          height: '15'
-        }
-      }
     }}>
     {Template.bind({})}
   </Story>

@@ -1,8 +1,9 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, Input, OnDestroy, OnInit, QueryList, ViewChild, ViewChildren} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {SubscriptionLike} from 'rxjs';
 import {IIcon} from '../../icon/icon.interface';
 import {ButtonTypeEnum} from '../../button/button-type.enum';
+import {MatMenuTrigger} from '@angular/material/menu';
 
 interface IMenuButton {
   label: string;
@@ -15,45 +16,29 @@ interface IMenuButton {
   templateUrl: './menu-multi-select.component.html',
   styleUrls: ['./menu-multi-select.component.scss'],
 })
-export class MenuMultiSelectComponent implements OnInit, OnDestroy{
+export class MenuMultiSelectComponent implements OnInit, OnDestroy, AfterViewInit{
   @Input() menuList: any[];
-  @Input() groupTitle: boolean = false; // if there is a group title
-  @Input() filter: boolean = false; // if there is a search and buttons
-  @Input() inputPlaceholder: string;
-  @Input() inputAriaLabel: string;
   @Input() buttonFirst: IMenuButton;
   @Input() buttonLast: IMenuButton;
-  public filteredList: any[];
-  public formFieldControl: FormControl;
-  private sub: SubscriptionLike;
+  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;
 
   ngOnInit(): void {
-    this.filteredList = this.menuList;
-    if (this.filter) {
-      this.formFieldControl = new FormControl('');
-      this.sub = this.formFieldControl.valueChanges.subscribe((value: string) => {
-        this.alterList(value);
-      });
-    }
-    if (!this.inputAriaLabel && this.inputPlaceholder) {
-      this.inputAriaLabel = this.inputPlaceholder;
-    }
+
+  }
+
+  ngAfterViewInit(): void {
+
   }
 
   ngOnDestroy(): void {
-    if (this.filter && this.sub) {
-      this.sub.unsubscribe();
-      this.sub = null;
-    }
+
   }
 
-  alterList(value: string): void {
-    this.filteredList = [];
-    this.menuList.forEach(group => {
-      const filteredGroup = group.names.filter( name => name.name.toLowerCase().indexOf(value.toLowerCase()) > -1);
-      if (filteredGroup.length > 0) {
-        this.filteredList.push(Object.assign({}, group, group.names = filteredGroup));
-      }
-    });
+  onDone(): void {
+    this.menuTrigger.closeMenu();
+  }
+
+  onCancel(): void {
+    this.menuTrigger.closeMenu();
   }
 }

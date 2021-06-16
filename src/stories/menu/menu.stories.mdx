@@ -16,7 +16,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 
 import {stateGroups} from './stateGroups';
 
-<Meta title='Components/Menu'
+<Meta title='Components/Menu/Single Select'
     component={MenuComponent}
     decorators={[
       moduleMetadata({
@@ -41,8 +41,9 @@ import {stateGroups} from './stateGroups';
         { name: 'Menu item disabled',
           disabled: true
         },
-        { name: 'Menu item',
-          disabled: false
+        { name: 'Menu item Selected',
+          disabled: false,
+          selected: true
         },
         { name: 'Menu item',
           disabled: false
