@@ -2,7 +2,8 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatMenuModule} from '@angular/material/menu';
-import {MenuComponent} from './menu.component';
+import {MenuComponent} from './menu/menu.component';
+import {MenuMultiSelectComponent} from './menu-multi-select/menu-multi-select.component';
 
 @NgModule({
   imports: [
@@ -11,10 +12,12 @@ import {MenuComponent} from './menu.component';
     MatMenuModule
   ],
   declarations: [
-    MenuComponent
+    MenuComponent,
+    MenuMultiSelectComponent
   ],
   exports: [
-    MenuComponent
+    MenuComponent,
+    MenuMultiSelectComponent
   ]
 })
 export class MenuModule { }

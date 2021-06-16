@@ -1,7 +1,7 @@
 import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
 import {moduleMetadata} from '@storybook/angular';
 
-import {MenuComponent} from 'projects/design-system-lib/src/public-api';
+import {MenuMultiSelectComponent} from 'projects/design-system-lib/src/public-api';
 import {InputModule} from 'projects/design-system-lib/src/public-api';
 import {ButtonModule} from 'projects/design-system-lib/src/public-api';
 import {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';
@@ -16,8 +16,8 @@ import {ReactiveFormsModule} from '@angular/forms';
 
 import {stateGroups} from './stateGroups';
 
-<Meta title='Components/Menu'
-    component={MenuComponent}
+<Meta title='Menu'
+    component={MenuMultiSelectComponent}
     decorators={[
       moduleMetadata({
           imports: [
@@ -52,7 +52,7 @@ import {stateGroups} from './stateGroups';
 
 # Menu
 
-export const Template = (args) => <MenuComponent {...args} />
+export const Template = (args) => <MenuMultiSelectComponent {...args} />
 
 ###### Simple Menu
 <Canvas>

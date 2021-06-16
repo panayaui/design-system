@@ -26,4 +26,5 @@ export * from './lib/alert/alert.interface';
 export * from './lib/alert/alert.enum';
 
 export * from './lib/menu/menu.module';
-export * from './lib/menu/menu.component';
+export * from './lib/menu/menu/menu.component';
+export * from './lib/menu/menu-multi-select/menu-multi-select.component';

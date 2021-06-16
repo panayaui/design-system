@@ -1,4 +1,4 @@
-@import "../assets/styles/custom";
+@import "../../assets/styles/custom";
 
 $menu-padding: 8px;
 $menu-item-height: 36px;
@@ -7,9 +7,9 @@ $input-text-height: 32px;
 $input-text-padding: 8px;
 $menu-header-height: $input-text-height + $menu-padding + $menu-padding;
 $menu-footer-height: $menu-padding * 2 + $menu-item-height * 2;
+$menu-body-height: 103px;
 $menu-min-width: 230px;
 $menu-max-height: 75vh;
-$menu-mix-height: $menu-header-height + $menu-footer-height + 103px;
 
 %menu-item {
   font-family: $font-family-basic;
@@ -17,9 +17,7 @@ $menu-mix-height: $menu-header-height + $menu-footer-height + 103px;
   height: $menu-item-height;
   line-height: $menu-item-height;
   padding: 0 8px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  @include ellipsis;
   & + & {
     margin-top: 4px;
   }
@@ -28,7 +26,6 @@ $menu-mix-height: $menu-header-height + $menu-footer-height + 103px;
 ::ng-deep .p-menu.mat-menu-panel {
   min-width: $menu-min-width;
   max-height: $menu-max-height;
-  min-height: $menu-mix-height;
   background-color: $menu-background;
   border-radius: 0;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1),
@@ -40,6 +37,7 @@ $menu-mix-height: $menu-header-height + $menu-footer-height + 103px;
     padding: 0;
     position: relative;
   }
+
   .mat-menu-item {
     @extend %menu-item;
     font-size: $small-font-size;
@@ -68,18 +66,21 @@ $menu-mix-height: $menu-header-height + $menu-footer-height + 103px;
     ::placeholder {
       color: $gray-scale-700;
     }
+
     .mat-input-element {
       font-family: $font-family-basic;
       font-size: $base-font-size;
-      max-width: calc(100% - #{$input-text-padding} * 2);
-      height: 100%;
+      max-width: calc(100% - #{$input-text-padding} * 2 - 2px);
+      height: $input-text-height - 3px;
       color: $primary-a-900;
       padding-left: $input-text-padding;
       padding-right: $input-text-padding;
       caret-color: $primary-a-900;
     }
+
     &.mat-form-field-appearance-outline {
       &:hover {
+        .mat-form-field-outline,
         .mat-form-field-outline-thick {
           color: $primary-a-900;
         }
@@ -99,7 +100,10 @@ $menu-mix-height: $menu-header-height + $menu-footer-height + 103px;
         top: 0;
       }
       .mat-form-field-infix {
-        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: $input-text-height;
         padding: 0;
         border-top: none;
       }
@@ -109,6 +113,7 @@ $menu-mix-height: $menu-header-height + $menu-footer-height + 103px;
       .mat-form-field-outline-end {
         border-radius: 0 2px 2px 0;
       }
+      .mat-form-field-outline,
       .mat-form-field-outline-thick {
         color: $gray-scale-400;
         .mat-form-field-outline-start,
@@ -117,8 +122,11 @@ $menu-mix-height: $menu-header-height + $menu-footer-height + 103px;
           border-width: 1px;
         }
       }
-      &.mat-focused .mat-form-field-outline-thick {
-        color: $primary-a-900;
+      &.mat-focused {
+        .mat-form-field-outline,
+        .mat-form-field-outline-thick {
+          color: $primary-a-900;
+        }
       }
     }
   }
@@ -137,6 +145,7 @@ $menu-mix-height: $menu-header-height + $menu-footer-height + 103px;
     padding: $menu-padding;
     .p-menu-header + & {
       height: calc(100% - #{$menu-footer-height});
+      min-height: $menu-header-height + $menu-body-height + $menu-footer-height;
       padding-top: $menu-header-height;
       padding-bottom: 0;
       overflow: auto;
