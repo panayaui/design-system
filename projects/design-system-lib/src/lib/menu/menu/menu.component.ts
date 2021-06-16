@@ -1,8 +1,8 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {SubscriptionLike} from 'rxjs';
-import {IIcon} from '../icon/icon.interface';
-import {ButtonTypeEnum} from '../button/button-type.enum';
+import {IIcon} from '../../icon/icon.interface';
+import {ButtonTypeEnum} from '../../button/button-type.enum';
 
 interface IMenuButton {
   label: string;

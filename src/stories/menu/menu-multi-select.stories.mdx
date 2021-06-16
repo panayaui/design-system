@@ -1,0 +1,118 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+
+import {MenuMultiSelectComponent} from 'projects/design-system-lib/src/public-api';
+import {InputModule} from 'projects/design-system-lib/src/public-api';
+import {ButtonModule} from 'projects/design-system-lib/src/public-api';
+import {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';
+import {IconModule} from 'projects/design-system-lib/src/public-api';
+
+import {CommonModule} from '@angular/common';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {ReactiveFormsModule} from '@angular/forms';
+
+import {stateGroups} from './stateGroups';
+
+<Meta title='Menu'
+    component={MenuMultiSelectComponent}
+    decorators={[
+      moduleMetadata({
+          imports: [
+              CommonModule,            
+              BrowserAnimationsModule,
+              MatMenuModule,
+              InputModule,
+              MatInputModule,
+              MatFormFieldModule,
+              ReactiveFormsModule,
+              ButtonModule
+          ]
+      })
+    ]}  
+    args={{
+      menuTriggerName: 'Single select',
+      menuList: [
+        { name: 'Menu item',
+          disabled: false
+        },
+        { name: 'Menu item disabled',
+          disabled: true
+        },
+        { name: 'Menu item',
+          disabled: false
+        },
+        { name: 'Menu item',
+          disabled: false
+        }]
+    }}  
+ />
+
+# Menu
+
+export const Template = (args) => <MenuMultiSelectComponent {...args} />
+
+###### Simple Menu
+<Canvas>
+  <Story name="Simple Menu"
+    args={{ 
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Simple Menu with Group"
+    args={{ 
+      menuTriggerName: 'Select with Groups',
+      groupTitle: true,
+      menuList: stateGroups
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Menu with Filter"
+    args={{ 
+      menuTriggerName: 'Menu with Filter',
+      menuList: stateGroups,
+      groupTitle: true,
+      filter: true,
+      inputPlaceholder: 'Find Label',
+      buttonFirst: {
+        label: 'Share',
+        buttonType: ButtonTypeEnum.Tertiary,
+        icon: {
+          iconName: 'eraser',
+          width: '15',
+          height: '15'
+        }
+      },
+      buttonLast: {
+        label: 'Reset',
+        buttonType: ButtonTypeEnum.Tertiary,
+        icon: {
+          iconName: 'eraser',
+          width: '15',
+          height: '15'
+        }
+      }
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Usage
+```ts
+import {MatMenuModule} from '@angular/material/menu';
+```
+```html
+<mat-menu #menu="matMenu" class="p-menu">
+  <ng-container *ngFor="let group of menuList">
+    <h6 class="p-menu-group-title">{{group.letter}}</h6>
+    <button *ngFor="let item of group.names"
+            mat-menu-item
+            [disabled]="item.disabled"
+            [disableRipple]="true">
+      {{item.name}}
+    </button>
+  </ng-container>
+</mat-menu>
+```
