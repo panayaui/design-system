@@ -1,177 +1,101 @@
 @import "../../assets/styles/custom";
 
 $menu-padding: 8px;
-$menu-item-height: 36px;
+$menu-item-height: 32px;
 $menu-background: $gray-scale-1;
+$menu-item-margin-top: 4px;
 $input-text-height: 32px;
 $input-text-padding: 8px;
 $menu-header-height: $input-text-height + $menu-padding + $menu-padding;
-$menu-footer-height: $menu-padding * 2 + $menu-item-height * 2;
+$menu-footer-height: 54px + $menu-padding;
 $menu-body-height: 103px;
 $menu-min-width: 230px;
 $menu-max-height: 75vh;
 
-%menu-item {
-  font-family: $font-family-basic;
-  color: $primary-a-900;
-  height: $menu-item-height;
-  line-height: $menu-item-height;
-  padding: 0 8px;
-  @include ellipsis;
-  & + & {
-    margin-top: 4px;
-  }
-}
-
-::ng-deep .p-menu.mat-menu-panel {
+::ng-deep .p-menu-multiple.mat-menu-panel {
   min-width: $menu-min-width;
   max-height: $menu-max-height;
   background-color: $menu-background;
   border-radius: 0;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1),
-              0 2px 6px rgba(0, 0, 0, 0.04),
-              0 -3px 6px rgba(0, 0, 0, 0.04);
+  0 2px 6px rgba(0, 0, 0, 0.04),
+  0 -3px 6px rgba(0, 0, 0, 0.04);
   overflow: hidden;
   .mat-menu-content {
     height: 100%;
     padding: 0;
     position: relative;
   }
+}
 
-  .mat-menu-item {
-    @extend %menu-item;
-    font-size: $small-font-size;
-    &:hover,
-    &.cdk-focused {
+::ng-deep .p-menu-multiple-item.mat-list-option.mat-list-item {
+  font-family: $font-family-basic;
+  font-size: $small-font-size;
+  color: $primary-a-900;
+  height: $menu-item-height;
+  line-height: $menu-item-height;
+  padding: 0 8px;
+  @include ellipsis;
+  & + & {
+    margin-top: $menu-item-margin-top;
+  }
+  &:hover,
+  &.cdk-focused {
+    background-color: $primary-c-50;
+  }
+  &[disabled] {
+    color: $gray-scale-600;
+  }
+  .mat-list-item-content.mat-list-item-content-reverse {
+    flex-direction: row;
+    padding: 0;
+    .mat-list-text {
+      padding-left: 8px;
+      padding-right: 0;
+    }
+  }
+
+  .mat-pseudo-checkbox:not(.mat-pseudo-checkbox-checked) {
+    border: 1px solid $gray-scale-400;
+    background-color: $gray-scale-1;
+  }
+
+  // checked
+  .mat-pseudo-checkbox-checked {
+    background-color: $secondary-a-700;
+    &:after {
+      width: 7px;
+      height: 2px;
+      top: 3.4px;
+      left: 1.5px;
+    }
+  }
+
+  // disabled
+  &.mat-list-item-disabled {
+    background-color: transparent;
+    .mat-pseudo-checkbox:not(.mat-pseudo-checkbox-checked) {
+      background-color: $primary-c-50;
+      border-color: $gray-scale-400;
+    }
+    .mat-pseudo-checkbox-checked {
       background-color: $secondary-a-100;
     }
-    &[disabled] {
+    .mat-list-text {
       color: $gray-scale-600;
     }
   }
 }
 
-.p-menu-group-title {
-  @extend %menu-item;
-  font-size: $tiny-font-size;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-// search field
-::ng-deep .p-menu {
-  &-form-field {
-    width: 100%;
-    height: $input-text-height;
-    ::placeholder {
-      color: $gray-scale-700;
-    }
-
-    .mat-input-element {
-      font-family: $font-family-basic;
-      font-size: $base-font-size;
-      max-width: calc(100% - #{$input-text-padding} * 2 - 2px);
-      height: $input-text-height - 3px;
-      color: $primary-a-900;
-      padding-left: $input-text-padding;
-      padding-right: $input-text-padding;
-      caret-color: $primary-a-900;
-    }
-
-    &.mat-form-field-appearance-outline {
-      &:hover {
-        .mat-form-field-outline,
-        .mat-form-field-outline-thick {
-          color: $primary-a-900;
-        }
-      }
-      .mat-form-field-wrapper {
-        height: 100%;
-        margin-top: 0;
-        margin-bottom: 0;
-        padding-bottom: 0;
-      }
-      .mat-form-field-flex {
-        height: 100%;
-        padding: 0;
-        margin-top: 0;
-      }
-      .mat-form-field-outline {
-        top: 0;
-      }
-      .mat-form-field-infix {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: $input-text-height;
-        padding: 0;
-        border-top: none;
-      }
-      .mat-form-field-outline-start {
-        border-radius: 2px 0 0 2px;
-      }
-      .mat-form-field-outline-end {
-        border-radius: 0 2px 2px 0;
-      }
-      .mat-form-field-outline,
-      .mat-form-field-outline-thick {
-        color: $gray-scale-400;
-        .mat-form-field-outline-start,
-        .mat-form-field-outline-end,
-        .mat-form-field-outline-gap {
-          border-width: 1px;
-        }
-      }
-      &.mat-focused {
-        .mat-form-field-outline,
-        .mat-form-field-outline-thick {
-          color: $primary-a-900;
-        }
-      }
-    }
-  }
-}
-
-.p-menu {
-  &-header {
-    width: 100%;
-    padding: $menu-padding;
-    background-color: $menu-background;
-    position: absolute;
-    z-index: 1;
-  }
-
-  &-body {
-    padding: $menu-padding;
-    .p-menu-header + & {
-      height: calc(100% - #{$menu-footer-height});
-      min-height: $menu-header-height + $menu-body-height + $menu-footer-height;
-      padding-top: $menu-header-height;
-      padding-bottom: 0;
-      overflow: auto;
-    }
-  }
-
-  &-footer {
-    width: 100%;
-    padding-top: $menu-padding;
-    padding-bottom: $menu-padding;
-    background-color: $menu-background;
-    border-top: 1px solid $gray-scale-400;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-
-    &-btn-line {
-      display: block;
-      width: 100%;
-      height: $menu-item-height;
-      ::ng-deep .p-btn {
-        width: 100%;
-        height: 100%;
-        justify-content: flex-start;
-      }
+.p-menu-multiple-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $menu-footer-height;
+  padding-top: $menu-padding;
+  &-btn {
+    & + & {
+      margin-left: $menu-padding;
     }
   }
 }
