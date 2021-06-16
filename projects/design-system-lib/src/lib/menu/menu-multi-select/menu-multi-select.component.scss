@@ -87,6 +87,10 @@ $menu-max-height: 75vh;
   }
 }
 
+.p-menu-multiple-body {
+  padding: $menu-padding;
+}
+
 .p-menu-multiple-footer {
   display: flex;
   justify-content: center;
@@ -99,3 +103,4 @@ $menu-max-height: 75vh;
     }
   }
 }
+

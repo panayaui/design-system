@@ -3,6 +3,7 @@ import {FormControl} from '@angular/forms';
 import {SubscriptionLike} from 'rxjs';
 import {IIcon} from '../../icon/icon.interface';
 import {ButtonTypeEnum} from '../../button/button-type.enum';
+import {MatMenuTrigger} from '@angular/material/menu';
 
 interface IMenuButton {
   label: string;
@@ -19,6 +20,7 @@ export class MenuMultiSelectComponent implements OnInit, OnDestroy, AfterViewIni
   @Input() menuList: any[];
   @Input() buttonFirst: IMenuButton;
   @Input() buttonLast: IMenuButton;
+  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;
 
   ngOnInit(): void {
 
@@ -30,5 +32,13 @@ export class MenuMultiSelectComponent implements OnInit, OnDestroy, AfterViewIni
 
   ngOnDestroy(): void {
 
+  }
+
+  onDone(): void {
+    this.menuTrigger.closeMenu();
+  }
+
+  onCancel(): void {
+    this.menuTrigger.closeMenu();
   }
 }

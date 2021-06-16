@@ -1,4 +1,5 @@
 <button [matMenuTriggerFor]="menu"
+        #menuTrigger="matMenuTrigger"
         class="p-btn p-btn-small p-btn-tertiary">
   {{menuTriggerName}}
 </button>
@@ -7,7 +8,8 @@
 <mat-menu #menu="matMenu" class="p-menu-multiple" [overlapTrigger]="false">
   <div class="p-menu-container" (click)="$event.stopPropagation()"
                                 (keydown)="$event.stopPropagation()">
-    <mat-selection-list #selectionList class="p-menu-body">
+
+    <mat-selection-list #selectionList class="p-menu-multiple-body">
       <mat-list-option class="p-menu-multiple-item"
                        *ngFor="let item of menuList"
                        [disableRipple]="true"
@@ -21,11 +23,11 @@
       <p-button class="p-menu-multiple-footer-btn"
                 [label]="buttonFirst.label"
                 [buttonType]="buttonFirst.buttonType"
-                (click)="$event.stopPropagation()"></p-button>
+                (click)="onDone()"></p-button>
       <p-button class="p-menu-multiple-footer-btn"
                 [label]="buttonLast.label"
                 [buttonType]="buttonLast.buttonType"
-                (click)="$event.stopPropagation()"></p-button>
+                (click)="onCancel()"></p-button>
     </div>
   </div>
 </mat-menu>
