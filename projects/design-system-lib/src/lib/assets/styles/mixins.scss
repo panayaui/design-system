@@ -51,3 +51,9 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: $lines;
 }
+
+@mixin ellipsis() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
