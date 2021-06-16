@@ -7,6 +7,7 @@
 <ng-template #menuLine let-itemsList="itemsList">
   <button *ngFor="let item of itemsList"
                   mat-menu-item
+                  [class.p-menu-item-selected]="item.selected"
                   [disabled]="item.disabled"
                   [disableRipple]="true">
   {{item.name}}

@@ -1,9 +1,9 @@
 export const stateGroups = [{
   letter: 'States A',
-  names: [ {name: 'Alabama'}, {name: 'Alaska'}, {name: 'Arizona'}, {name: 'Arkansas'}]
+  names: [ {name: 'Alabama'}, {name: 'Alaska', disabled: true}, {name: 'Arizona'}, {name: 'Arkansas'}]
 }, {
   letter: 'States C',
-  names: [{name: 'California'}, {name: 'Colorado'}, {name: 'Connecticut'}]
+  names: [{name: 'California', selected: true}, {name: 'Colorado'}, {name: 'Connecticut'}]
 }, {
   letter: 'States D',
   names: [{name: 'Delaware'}]
@@ -17,24 +17,24 @@ export const stateGroups = [{
   letter: 'States H',
   names: [{name: 'Hawaii'}]
 }, {
-  letter: 'I',
+  letter: 'States I',
   names: [{name: 'Idaho'}, {name: 'Illinois'}, {name: 'Indiana'}, {name: 'Iowa'}]
 }, {
-  letter: 'K',
+  letter: 'States K',
   names: [{name: 'Kansas'}, {name: 'Kentucky'}]
 }, {
-  letter: 'L',
+  letter: 'States L',
   names: [{name: 'Louisiana'}]
 }, {
-  letter: 'M',
+  letter: 'States M',
   names: [{name: 'Maine'}, {name: 'Maryland'}, {name: 'Massachusetts'}, {name: 'Michigan'},
     {name: 'Minnesota'}, {name: 'Mississippi'}, {name: 'Missouri'}, {name: 'Montana'}]
 }, {
-  letter: 'N',
+  letter: 'States N',
   names: [{name: 'Nebraska'}, {name: 'Nevada'}, {name: 'New Hampshire'}, {name: 'New Jersey'},
     {name: 'New Mexico'}, {name: 'New York'}, {name: 'North Carolina'}, {name: 'North Dakota'}]
 }, {
-  letter: 'O',
+  letter: 'States O',
   names: [{name: 'Ohio'}, {name: 'Oklahoma'}, {name: 'Oregon'}]
 }
 ];

@@ -1,12 +1,13 @@
 @import "../../assets/styles/custom";
 
 $menu-padding: 8px;
-$menu-item-height: 36px;
+$menu-item-height: 32px;
 $menu-background: $gray-scale-1;
+$menu-item-margin-top: 4px;
 $input-text-height: 32px;
 $input-text-padding: 8px;
 $menu-header-height: $input-text-height + $menu-padding + $menu-padding;
-$menu-footer-height: $menu-padding * 2 + $menu-item-height * 2;
+$menu-footer-height: $menu-padding * 3 + $menu-item-height * 2;
 $menu-body-height: 103px;
 $menu-min-width: 230px;
 $menu-max-height: 75vh;
@@ -19,7 +20,7 @@ $menu-max-height: 75vh;
   padding: 0 8px;
   @include ellipsis;
   & + & {
-    margin-top: 4px;
+    margin-top: $menu-item-margin-top;
   }
 }
 
@@ -43,10 +44,13 @@ $menu-max-height: 75vh;
     font-size: $small-font-size;
     &:hover,
     &.cdk-focused {
-      background-color: $secondary-a-100;
+      background-color: $primary-c-50;
     }
     &[disabled] {
       color: $gray-scale-600;
+    }
+    &.p-menu-item-selected {
+      background-color: $secondary-a-100;
     }
   }
 }
@@ -64,15 +68,16 @@ $menu-max-height: 75vh;
     width: 100%;
     height: $input-text-height;
     ::placeholder {
+      font-style: italic;
       color: $gray-scale-700;
     }
 
     .mat-input-element {
       font-family: $font-family-basic;
-      font-size: $base-font-size;
+      font-size: $small-font-size;
+      color: $primary-a-900;
       max-width: calc(100% - #{$input-text-padding} * 2 - 2px);
       height: $input-text-height - 3px;
-      color: $primary-a-900;
       padding-left: $input-text-padding;
       padding-right: $input-text-padding;
       caret-color: $primary-a-900;
@@ -125,7 +130,7 @@ $menu-max-height: 75vh;
       &.mat-focused {
         .mat-form-field-outline,
         .mat-form-field-outline-thick {
-          color: $primary-a-900;
+          color: $primary-c-50;
         }
       }
     }
@@ -172,6 +177,16 @@ $menu-max-height: 75vh;
         height: 100%;
         justify-content: flex-start;
       }
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: $menu-padding;
+      background-color: $menu-background;
+      position: absolute;
+      top: -$menu-padding - 1px;
     }
   }
 }
