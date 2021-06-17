@@ -6,6 +6,7 @@ import {InputModule} from 'projects/design-system-lib/src/public-api';
 import {ButtonModule} from 'projects/design-system-lib/src/public-api';
 import {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';
 import {IconModule} from 'projects/design-system-lib/src/public-api';
+import {CheckboxModule} from 'projects/design-system-lib/src/public-api';
 
 import {CommonModule} from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -30,7 +31,8 @@ import {stateGroups} from './stateGroups';
               MatInputModule,
               MatFormFieldModule,
               ReactiveFormsModule,
-              ButtonModule
+              ButtonModule,
+              CheckboxModule
           ]
       })
     ]}  
@@ -144,6 +146,36 @@ export const Template = (args) => <MenuMultiSelectComponent {...args} />
       },
       headerBtnLast: {
         label: 'Not equal to'
+      }
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Multiselect with Filter & Buttons Disabled"
+    args={{ 
+      menuTriggerName: 'Multi With Filter',
+      inputAriaLabel: 'Find Label',
+      filterPlaceholder: 'Find Label',
+      footerBtnFirst: {
+        label: 'Done',
+        buttonType: ButtonTypeEnum.Primary
+      },
+      footerBtnLast: {
+        label: 'Cancel',
+        buttonType: ButtonTypeEnum.Secondary
+      },
+      headerBtnFirst: {
+        label: 'Clear selected',
+        buttonType: ButtonTypeEnum.Tertiary,
+        icon: {
+          iconName: 'eraser',
+          width: '15',
+          height: '15'
+        },
+        disabled: true
+      },
+      headerBtnLast: {
+        label: 'Not equal to',
+        disabled: true
       }
     }}>
     {Template.bind({})}

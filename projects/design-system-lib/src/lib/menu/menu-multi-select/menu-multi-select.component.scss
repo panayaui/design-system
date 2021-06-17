@@ -6,11 +6,18 @@ $menu-background: $gray-scale-1;
 $menu-item-margin-top: 4px;
 $input-text-height: 32px;
 $input-text-padding: 8px;
-$menu-header-height: $input-text-height + $menu-padding + $menu-padding;
+$menu-header-height: $input-text-height + ($menu-padding * 4.5) + ($menu-item-height * 2) + 1px;
 $menu-footer-height: $btn-small-height + $menu-padding * 4;
 $menu-body-height: 103px;
 $menu-min-width: 230px;
 $menu-max-height: 75vh;
+
+%btn-line {
+  width: 100%;
+  height: 100%;
+  padding-right: $menu-padding;
+  padding-left: $menu-padding;
+}
 
 ::ng-deep .p-menu-multiple.mat-menu-panel {
   min-width: $menu-min-width;
@@ -185,8 +192,16 @@ $menu-max-height: 75vh;
     width: 100%;
     padding: $menu-padding;
     background-color: $menu-background;
+    border-bottom: 1px solid $gray-scale-400;
     position: absolute;
     z-index: 1;
+
+    .p-menu-form-field + .p-menu-btn-line {
+      margin-top: $menu-padding;
+    }
+    .p-menu-btn-line + .p-menu-btn-line {
+      margin-top: 4px;
+    }
   }
 
   &-body {
@@ -225,9 +240,16 @@ $menu-max-height: 75vh;
     width: 100%;
     height: $menu-item-height;
     ::ng-deep .p-btn {
-      width: 100%;
-      height: 100%;
+      @extend %btn-line;
       justify-content: flex-start;
+    }
+    ::ng-deep .p-checkbox {
+      display: inline-flex;
+      align-items: center;
+      @extend %btn-line;
+      &:hover {
+        background-color: $primary-c-50;
+      }
     }
   }
 }

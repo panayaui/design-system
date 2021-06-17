@@ -168,16 +168,6 @@ $menu-max-height: 75vh;
     bottom: 0;
     left: 0;
     z-index: 1;
-
-    &:before {
-      content: '';
-      display: block;
-      width: 100%;
-      height: $menu-padding;
-      background-color: $menu-background;
-      position: absolute;
-      top: -$menu-padding - 1px;
-    }
   }
 
   &-btn-line {

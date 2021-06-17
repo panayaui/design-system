@@ -32,17 +32,18 @@
       </mat-form-field>
 
       <p-button *ngIf="headerBtnFirst"
-                class="p-menu-header-btn-line"
+                class="p-menu-btn-line"
                 [label]="headerBtnFirst.label"
                 [iconBefore]="headerBtnFirst.icon.iconName"
                 [iconBeforeWidth]="headerBtnFirst.icon.width"
                 [iconBeforeHeight]="headerBtnFirst.icon.height"
-                [buttonType]="headerBtnFirst.buttonType"></p-button>
-      <!--<p-checkbox *ngIf="headerBtnFirst"-->
-                  <!--class="p-menu-header-btn-line"-->
-                  <!--[label]="headerBtnLast.label"-->
-                  <!--[checked]="headerBtnLast.checked"-->
-                  <!--[disabled]="headerBtnLast.disabled"></p-checkbox>-->
+                [buttonType]="headerBtnFirst.buttonType"
+                [disabled]="headerBtnFirst.disabled"></p-button>
+      <p-checkbox *ngIf="headerBtnFirst"
+                  class="p-menu-btn-line"
+                  [label]="headerBtnLast.label"
+                  [checked]="headerBtnLast.checked"
+                  [disabled]="headerBtnLast.disabled"></p-checkbox>
     </div>
 
     <mat-selection-list class="p-menu-body ">
