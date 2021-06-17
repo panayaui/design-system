@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import ICheckbox from '../checkbox.interface';
+import ICheckbox from '../../../../projects/design-system-lib/src/lib/checkbox/checkbox.interface';
 
 @Component({
   selector: 'p-checkbox-group',

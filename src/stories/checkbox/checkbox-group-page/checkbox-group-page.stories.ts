@@ -2,7 +2,7 @@ import {moduleMetadata} from '@storybook/angular';
 import {CommonModule} from '@angular/common';
 import {Story, Meta} from '@storybook/angular/types-6-0';
 import CheckboxGroupPageComponent from './checkbox-group-page.component';
-import CheckboxComponent from '../checkbox.component';
+import {CheckboxComponent} from 'projects/design-system-lib/src/public-api';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import * as CheckboxGroupStories from '../checkbox-group/checkbox-group.stories';
 import CheckboxGroupComponent from '../checkbox-group/checkbox-group.component';
