@@ -28,16 +28,22 @@ interface IMenuButton {
   styleUrls: ['./menu-multi-select.component.scss'],
 })
 export class MenuMultiSelectComponent {
+  @Input() menuTriggerName: string;
   @Input() menuList: any[];
   @Input() buttonFirst: IMenuButton;
   @Input() buttonLast: IMenuButton;
   @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;
+  private selectedList: any[] = [];
+  public selectedShown: any[] = [];
 
-  onOptionSelected(event, item): void {
+  onOptionSelected(item): void {
     console.log("onOptionSelected", item);
+    this.selectedList.push(item);
+    console.log(this.selectedList);
   }
 
   selectCompleted(event): void {
+    this.selectedShown = this.selectedList;
     this.menuTrigger.closeMenu();
   }
 

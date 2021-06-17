@@ -104,3 +104,13 @@ $menu-max-height: 75vh;
   }
 }
 
+.p-menu-trigger-result {
+  & + & {
+    margin-left: 5px;
+  }
+  &:not(:last-child):after {
+    content: ',';
+    display: inline;
+  }
+}
+
