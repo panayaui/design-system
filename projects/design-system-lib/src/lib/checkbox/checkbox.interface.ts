@@ -1,4 +1,4 @@
-export default interface ICheckbox {
+export interface ICheckbox {
   label: string;
   ariaLabel: string;
   checked: boolean;

@@ -9,7 +9,7 @@ import {FormControl} from '@angular/forms';
 import {SubscriptionLike} from 'rxjs';
 import {MatMenuTrigger} from '@angular/material/menu';
 import {IMenuButton} from '../menu-button.interface';
-import ICheckbox from '../../checkbox/checkbox.interface';
+import {ICheckbox} from '../../checkbox/checkbox.interface';
 
 @Component({
   selector: 'p-menu-multi-select',
