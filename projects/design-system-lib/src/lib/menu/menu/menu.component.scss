@@ -77,7 +77,8 @@ $menu-max-height: 75vh;
       font-size: $small-font-size;
       color: $primary-a-900;
       max-width: calc(100% - #{$input-text-padding} * 2 - 2px);
-      height: $input-text-height - 3px;
+      height: $input-text-height - 2px;
+      margin-top: 1px;
       padding-left: $input-text-padding;
       padding-right: $input-text-padding;
       caret-color: $primary-a-900;
@@ -130,7 +131,7 @@ $menu-max-height: 75vh;
       &.mat-focused {
         .mat-form-field-outline,
         .mat-form-field-outline-thick {
-          color: $primary-c-50;
+          color: $primary-a-900;
         }
       }
     }
