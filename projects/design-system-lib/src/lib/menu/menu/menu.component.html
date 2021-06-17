@@ -16,7 +16,7 @@
 
 <!--menu window-->
 <mat-menu #menu="matMenu" class="p-menu" [overlapTrigger]="false">
-  <div class="p-menu-header" *ngIf="filter">
+  <div class="p-menu-header" *ngIf="filterPlaceholder">
     <mat-form-field class="p-menu-form-field"
                     appearance="outline"
                     floatLabel="always"
@@ -24,7 +24,7 @@
                     (keydown)="$event.stopPropagation()">
       <input matInput
              type="text"
-             [placeholder]="inputPlaceholder"
+             [placeholder]="filterPlaceholder"
              attr.aria-label="{{inputAriaLabel}}"
              [formControl]="formFieldControl"
              onfocus="this.select()"
@@ -49,7 +49,7 @@
     </ng-template>
   </div>
 
-  <div class="p-menu-footer" *ngIf="filter">
+  <div class="p-menu-footer" *ngIf="filterPlaceholder">
     <p-button class="p-menu-footer-btn-line"
               [label]="buttonFirst.label"
               [iconBefore]="buttonFirst.icon.iconName"

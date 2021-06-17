@@ -37,26 +37,48 @@ import {stateGroups} from './stateGroups';
     args={{
       menuTriggerName: 'Multi select',
       menuList: [
-        { name: 'Item 1',
+        { name: 'Alabama',
           disabled: false
         },
-        { name: 'Item 2 disabled',
+        { name: 'Alaska disabled',
           disabled: true
         },
-        { name: 'Item 3',
+        { name: 'California',
           disabled: false
         },
-        { name: 'Item 4',
+        { name: 'Colorado',
           disabled: false
         },
-        { name: 'Item 5',
+        { name: 'Delaware',
           disabled: false
         },
-        { name: 'Item 6 disabled selected',
+        { name: 'Florida selected disabled',
           disabled: true,
           selected: true
         },
-        { name: 'Item 7',
+        { name: 'Georgia',
+          disabled: false
+        },
+        { name: 'Hawaii',
+          disabled: false
+        },
+        { name: 'Idaho',
+          disabled: true
+        },
+        { name: 'Illinois',
+          disabled: false
+        },
+        { name: 'Indiana',
+          disabled: false
+        },
+        { name: 'Iowa',
+          disabled: false
+        },
+        { name: 'Kansas',
+          disabled: true,
+          selected: true
+        },
+        { name: 'Kentucky',
           disabled: false
         }],
       buttonFirst: {
@@ -76,8 +98,24 @@ export const Template = (args) => <MenuMultiSelectComponent {...args} />
 
 ###### Simple Menu
 <Canvas>
-  <Story name="Simple Menu"
+  <Story name="Simple Multiselect"
     args={{ 
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Multiselect with Filter"
+    args={{ 
+      menuTriggerName: 'Multi With Filter',
+      inputAriaLabel: 'Find Label',
+      filterPlaceholder: 'Find Label',
+      buttonFirst: {
+        label: 'Done',
+        buttonType: ButtonTypeEnum.Primary
+      },
+      buttonLast: {
+        label: 'Cancel',
+        buttonType: ButtonTypeEnum.Secondary
+      }
     }}>
     {Template.bind({})}
   </Story>

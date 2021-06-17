@@ -18,8 +18,7 @@ interface IMenuButton {
 export class MenuComponent implements OnInit, OnDestroy {
   @Input() menuList: any[];
   @Input() groupTitle: boolean = false; // if there is a group title
-  @Input() filter: boolean = false; // if there is a search and buttons
-  @Input() inputPlaceholder: string;
+  @Input() filterPlaceholder: string; // if there is a search and buttons
   @Input() inputAriaLabel: string;
   @Input() buttonFirst: IMenuButton;
   @Input() buttonLast: IMenuButton;
@@ -29,19 +28,19 @@ export class MenuComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.filteredList = this.menuList;
-    if (this.filter) {
+    if (this.filterPlaceholder) {
       this.formFieldControl = new FormControl('');
       this.sub = this.formFieldControl.valueChanges.subscribe((value: string) => {
         this.alterList(value);
       });
     }
-    if (!this.inputAriaLabel && this.inputPlaceholder) {
-      this.inputAriaLabel = this.inputPlaceholder;
+    if (!this.inputAriaLabel && this.filterPlaceholder) {
+      this.inputAriaLabel = this.filterPlaceholder;
     }
   }
 
   ngOnDestroy(): void {
-    if (this.filter && this.sub) {
+    if (this.filterPlaceholder && this.sub) {
       this.sub.unsubscribe();
       this.sub = null;
     }
