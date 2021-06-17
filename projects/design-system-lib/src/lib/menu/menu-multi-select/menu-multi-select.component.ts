@@ -1,26 +1,15 @@
 import {
-  AfterViewInit,
   Component,
-  ElementRef,
-  HostListener,
   Input,
   OnDestroy,
   OnInit,
-  QueryList,
-  ViewChild,
-  ViewChildren
+  ViewChild
 } from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {SubscriptionLike} from 'rxjs';
-import {IIcon} from '../../icon/icon.interface';
-import {ButtonTypeEnum} from '../../button/button-type.enum';
 import {MatMenuTrigger} from '@angular/material/menu';
-
-interface IMenuButton {
-  label: string;
-  buttonType: ButtonTypeEnum;
-  icon: IIcon;
-}
+import {IMenuButton} from '../menu-button.interface';
+import ICheckbox from '../../../../../../src/stories/checkbox/checkbox.interface';
 
 @Component({
   selector: 'p-menu-multi-select',
@@ -31,9 +20,11 @@ export class MenuMultiSelectComponent implements OnInit, OnDestroy {
   @Input() menuTriggerName: string;
   @Input() menuList: any[];
   @Input() filterPlaceholder: string; // if there is a search and buttons
-  @Input() inputAriaLabel: string;
-  @Input() buttonFirst: IMenuButton;
-  @Input() buttonLast: IMenuButton;
+  @Input() filterAriaLabel: string;
+  @Input() headerBtnFirst: IMenuButton;
+  @Input() headerBtnLast: ICheckbox;
+  @Input() footerBtnFirst: IMenuButton;
+  @Input() footerBtnLast: IMenuButton;
   @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;
   private selectedList: any[] = [];
   public selectedShown: any[] = [];
@@ -49,8 +40,8 @@ export class MenuMultiSelectComponent implements OnInit, OnDestroy {
         this.alterList(value);
       });
     }
-    if (!this.inputAriaLabel && this.filterPlaceholder) {
-      this.inputAriaLabel = this.filterPlaceholder;
+    if (!this.filterAriaLabel && this.filterPlaceholder) {
+      this.filterAriaLabel = this.filterPlaceholder;
     }
   }
 

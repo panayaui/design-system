@@ -25,7 +25,7 @@
       <input matInput
              type="text"
              [placeholder]="filterPlaceholder"
-             attr.aria-label="{{inputAriaLabel}}"
+             attr.aria-label="{{filterAriaLabel}}"
              [formControl]="formFieldControl"
              onfocus="this.select()"
              class="p-menu-input">
@@ -50,13 +50,13 @@
   </div>
 
   <div class="p-menu-footer" *ngIf="filterPlaceholder">
-    <p-button class="p-menu-footer-btn-line"
+    <p-button class="p-menu-btn-line"
               [label]="buttonFirst.label"
               [iconBefore]="buttonFirst.icon.iconName"
               [iconBeforeWidth]="buttonFirst.icon.width"
               [iconBeforeHeight]="buttonFirst.icon.height"
               [buttonType]="buttonFirst.buttonType"></p-button>
-    <p-button class="p-menu-footer-btn-line"
+    <p-button class="p-menu-btn-line"
               [label]="buttonLast.label"
               [iconBefore]="buttonLast.icon.iconName"
               [iconBeforeWidth]="buttonLast.icon.width"

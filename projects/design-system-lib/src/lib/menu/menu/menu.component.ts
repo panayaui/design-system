@@ -1,14 +1,7 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {SubscriptionLike} from 'rxjs';
-import {IIcon} from '../../icon/icon.interface';
-import {ButtonTypeEnum} from '../../button/button-type.enum';
-
-interface IMenuButton {
-  label: string;
-  buttonType: ButtonTypeEnum;
-  icon: IIcon;
-}
+import {IMenuButton} from '../menu-button.interface';
 
 @Component({
   selector: 'p-menu',
@@ -19,7 +12,7 @@ export class MenuComponent implements OnInit, OnDestroy {
   @Input() menuList: any[];
   @Input() groupTitle: boolean = false; // if there is a group title
   @Input() filterPlaceholder: string; // if there is a search and buttons
-  @Input() inputAriaLabel: string;
+  @Input() filterAriaLabel: string;
   @Input() buttonFirst: IMenuButton;
   @Input() buttonLast: IMenuButton;
   public filteredList: any[];
@@ -34,8 +27,8 @@ export class MenuComponent implements OnInit, OnDestroy {
         this.alterList(value);
       });
     }
-    if (!this.inputAriaLabel && this.filterPlaceholder) {
-      this.inputAriaLabel = this.filterPlaceholder;
+    if (!this.filterAriaLabel && this.filterPlaceholder) {
+      this.filterAriaLabel = this.filterPlaceholder;
     }
   }
 

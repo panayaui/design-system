@@ -219,6 +219,17 @@ $menu-max-height: 75vh;
       }
     }
   }
+
+  &-btn-line {
+    display: block;
+    width: 100%;
+    height: $menu-item-height;
+    ::ng-deep .p-btn {
+      width: 100%;
+      height: 100%;
+      justify-content: flex-start;
+    }
+  }
 }
 
 

@@ -25,11 +25,24 @@
         <input matInput
                type="text"
                [placeholder]="filterPlaceholder"
-               attr.aria-label="{{inputAriaLabel}}"
+               attr.aria-label="{{filterAriaLabel}}"
                [formControl]="formFieldControl"
                onfocus="this.select()"
                class="p-menu-input">
       </mat-form-field>
+
+      <p-button *ngIf="headerBtnFirst"
+                class="p-menu-header-btn-line"
+                [label]="headerBtnFirst.label"
+                [iconBefore]="headerBtnFirst.icon.iconName"
+                [iconBeforeWidth]="headerBtnFirst.icon.width"
+                [iconBeforeHeight]="headerBtnFirst.icon.height"
+                [buttonType]="headerBtnFirst.buttonType"></p-button>
+      <!--<p-checkbox *ngIf="headerBtnFirst"-->
+                  <!--class="p-menu-header-btn-line"-->
+                  <!--[label]="headerBtnLast.label"-->
+                  <!--[checked]="headerBtnLast.checked"-->
+                  <!--[disabled]="headerBtnLast.disabled"></p-checkbox>-->
     </div>
 
     <mat-selection-list class="p-menu-body ">
@@ -45,12 +58,12 @@
 
     <div class="p-menu-footer">
       <p-button class="p-menu-footer-btn"
-                [label]="buttonFirst.label"
-                [buttonType]="buttonFirst.buttonType"
+                [label]="footerBtnFirst.label"
+                [buttonType]="footerBtnFirst.buttonType"
                 (click)="selectCompleted()"></p-button>
       <p-button class="p-menu-footer-btn"
-                [label]="buttonLast.label"
-                [buttonType]="buttonLast.buttonType"
+                [label]="footerBtnLast.label"
+                [buttonType]="footerBtnLast.buttonType"
                 (click)="selectCanceled()"></p-button>
     </div>
   </div>

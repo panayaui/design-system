@@ -80,12 +80,13 @@ import {stateGroups} from './stateGroups';
         },
         { name: 'Kentucky',
           disabled: false
-        }],
-      buttonFirst: {
+        }
+      ],
+      footerBtnFirst: {
         label: 'Done',
         buttonType: ButtonTypeEnum.Primary
       },
-      buttonLast: {
+      footerBtnLast: {
         label: 'Cancel',
         buttonType: ButtonTypeEnum.Secondary
       }
@@ -108,13 +109,41 @@ export const Template = (args) => <MenuMultiSelectComponent {...args} />
       menuTriggerName: 'Multi With Filter',
       inputAriaLabel: 'Find Label',
       filterPlaceholder: 'Find Label',
-      buttonFirst: {
+      footerBtnFirst: {
         label: 'Done',
         buttonType: ButtonTypeEnum.Primary
       },
-      buttonLast: {
+      footerBtnLast: {
         label: 'Cancel',
         buttonType: ButtonTypeEnum.Secondary
+      }
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Multiselect with Filter & Buttons"
+    args={{ 
+      menuTriggerName: 'Multi With Filter',
+      inputAriaLabel: 'Find Label',
+      filterPlaceholder: 'Find Label',
+      footerBtnFirst: {
+        label: 'Done',
+        buttonType: ButtonTypeEnum.Primary
+      },
+      footerBtnLast: {
+        label: 'Cancel',
+        buttonType: ButtonTypeEnum.Secondary
+      },
+      headerBtnFirst: {
+        label: 'Clear selected',
+        buttonType: ButtonTypeEnum.Tertiary,
+        icon: {
+          iconName: 'eraser',
+          width: '15',
+          height: '15'
+        }
+      },
+      headerBtnLast: {
+        label: 'Not equal to'
       }
     }}>
     {Template.bind({})}
