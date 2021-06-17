@@ -1,4 +1,15 @@
-import {AfterViewInit, Component, ElementRef, Input, OnDestroy, OnInit, QueryList, ViewChild, ViewChildren} from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  HostListener,
+  Input,
+  OnDestroy,
+  OnInit,
+  QueryList,
+  ViewChild,
+  ViewChildren
+} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {SubscriptionLike} from 'rxjs';
 import {IIcon} from '../../icon/icon.interface';
@@ -16,29 +27,21 @@ interface IMenuButton {
   templateUrl: './menu-multi-select.component.html',
   styleUrls: ['./menu-multi-select.component.scss'],
 })
-export class MenuMultiSelectComponent implements OnInit, OnDestroy, AfterViewInit{
+export class MenuMultiSelectComponent {
   @Input() menuList: any[];
   @Input() buttonFirst: IMenuButton;
   @Input() buttonLast: IMenuButton;
   @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;
 
-  ngOnInit(): void {
-
+  onOptionSelected(event, item): void {
+    console.log("onOptionSelected", item);
   }
 
-  ngAfterViewInit(): void {
-
-  }
-
-  ngOnDestroy(): void {
-
-  }
-
-  onDone(): void {
+  selectCompleted(event): void {
     this.menuTrigger.closeMenu();
   }
 
-  onCancel(): void {
+  selectCanceled(event): void {
     this.menuTrigger.closeMenu();
   }
 }

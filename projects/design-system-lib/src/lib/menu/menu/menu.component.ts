@@ -15,7 +15,7 @@ interface IMenuButton {
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss'],
 })
-export class MenuComponent implements OnInit, OnDestroy{
+export class MenuComponent implements OnInit, OnDestroy {
   @Input() menuList: any[];
   @Input() groupTitle: boolean = false; // if there is a group title
   @Input() filter: boolean = false; // if there is a search and buttons

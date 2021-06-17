@@ -14,7 +14,8 @@
                        *ngFor="let item of menuList"
                        [disableRipple]="true"
                        [disabled]="item.disabled"
-                       [selected]="item.selected">
+                       [selected]="item.selected"
+                       (click)="onOptionSelected($event, item)">
         {{item.name}}
       </mat-list-option>
     </mat-selection-list>
@@ -23,11 +24,11 @@
       <p-button class="p-menu-multiple-footer-btn"
                 [label]="buttonFirst.label"
                 [buttonType]="buttonFirst.buttonType"
-                (click)="onDone()"></p-button>
+                (click)="selectCompleted()"></p-button>
       <p-button class="p-menu-multiple-footer-btn"
                 [label]="buttonLast.label"
                 [buttonType]="buttonLast.buttonType"
-                (click)="onCancel()"></p-button>
+                (click)="selectCanceled()"></p-button>
     </div>
   </div>
 </mat-menu>
