@@ -263,7 +263,7 @@ $menu-max-height: 75vh;
       display: inline-flex;
       align-items: center;
       @extend %btn-line;
-      &:hover {
+      &:not(.mat-checkbox-disabled):hover {
         background-color: $primary-c-50;
       }
     }
