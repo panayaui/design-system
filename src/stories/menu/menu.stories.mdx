@@ -103,17 +103,86 @@ export const Template = (args) => <MenuComponent {...args} />
 ###### Usage
 ```ts
 import {MatMenuModule} from '@angular/material/menu';
+
+export class MenuComponent implements OnInit, OnDestroy {
+  @Input() menuList: any[];
+  @Input() groupTitle: boolean = false; // if there is a group title
+  @Input() filterPlaceholder: string; // if there is a search and buttons
+  @Input() filterAriaLabel: string;
+  @Input() buttonFirst: IMenuButton;
+  @Input() buttonLast: IMenuButton;
+  public filteredList: any[];
+  public formFieldControl: FormControl;
+  private sub: SubscriptionLike;
+}
 ```
 ```html
-<mat-menu #menu="matMenu" class="p-menu">
-  <ng-container *ngFor="let group of menuList">
-    <h6 class="p-menu-group-title">{{group.letter}}</h6>
-    <button *ngFor="let item of group.names"
-            mat-menu-item
-            [disabled]="item.disabled"
-            [disableRipple]="true">
-      {{item.name}}
-    </button>
-  </ng-container>
+<button [matMenuTriggerFor]="menu"
+        class="p-btn p-btn-small p-btn-primary">
+  {{menuTriggerName}}
+</button>
+
+<!--menu line template-->
+<ng-template #menuLine let-itemsList="itemsList">
+  <button *ngFor="let item of itemsList"
+                  mat-menu-item
+                  [class.p-menu-item-selected]="item.selected"
+                  [disabled]="item.disabled"
+                  [disableRipple]="true">
+  {{item.name}}
+</button>
+</ng-template>
+
+<!--menu window-->
+<mat-menu #menu="matMenu" class="p-menu" [overlapTrigger]="false">
+  <div class="p-menu-header" *ngIf="filterPlaceholder">
+    <mat-form-field class="p-menu-form-field"
+                    appearance="outline"
+                    floatLabel="always"
+                    (click)="$event.stopPropagation()"
+                    (keydown)="$event.stopPropagation()">
+      <input matInput
+             type="text"
+             [placeholder]="filterPlaceholder"
+             attr.aria-label="{{filterAriaLabel}}"
+             [formControl]="formFieldControl"
+             onfocus="this.select()"
+             class="p-menu-input">
+    </mat-form-field>
+  </div>
+
+  <div class="p-menu-body">
+    <div class="p-menu-body-container">
+      <!--groupTitle === true-->
+      <ng-template [ngIf]="groupTitle" [ngIfElse]="noGroupTitle">
+        <ng-container *ngFor="let group of filteredList">
+          <h6 class="p-menu-group-title">{{group.letter}}</h6>
+          <ng-container [ngTemplateOutlet]="menuLine"
+                        [ngTemplateOutletContext] ="{itemsList: group.names}"></ng-container>
+        </ng-container>
+      </ng-template>
+
+      <!--groupTitle === false-->
+      <ng-template #noGroupTitle>
+        <ng-container [ngTemplateOutlet]="menuLine"
+                      [ngTemplateOutletContext] ="{itemsList: menuList}"></ng-container>
+      </ng-template>
+    </div>
+  </div>
+
+  <div class="p-menu-footer" *ngIf="filterPlaceholder">
+    <p-button class="p-menu-btn-line"
+              [label]="buttonFirst.label"
+              [iconBefore]="buttonFirst.icon.iconName"
+              [iconBeforeWidth]="buttonFirst.icon.width"
+              [iconBeforeHeight]="buttonFirst.icon.height"
+              [buttonType]="buttonFirst.buttonType"></p-button>
+    <p-button class="p-menu-btn-line"
+              [label]="buttonLast.label"
+              [iconBefore]="buttonLast.icon.iconName"
+              [iconBeforeWidth]="buttonLast.icon.width"
+              [iconBeforeHeight]="buttonLast.icon.height"
+              [buttonType]="buttonLast.buttonType"></p-button>
+  </div>
 </mat-menu>
 ```

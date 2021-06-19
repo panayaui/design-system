@@ -6,7 +6,8 @@ $menu-background: $gray-scale-1;
 $menu-item-margin-top: 4px;
 $input-text-height: 32px;
 $input-text-padding: 8px;
-$menu-header-height: $input-text-height + ($menu-padding * 4.5) + ($menu-item-height * 2) + 1px;
+$menu-header-height: $input-text-height + $menu-padding * 3 + 1px;
+$menu-header-extended-height: $input-text-height + ($menu-padding * 4.5) + ($menu-item-height * 2) + 1px;
 $menu-footer-height: $btn-small-height + $menu-padding * 4;
 $menu-body-height: 103px;
 $menu-min-width: 230px;
@@ -205,12 +206,27 @@ $menu-max-height: 75vh;
   }
 
   &-body {
+    height: calc(100% - #{$menu-footer-height});
     padding: $menu-padding;
     .p-menu-header + & {
-      height: calc(100% - #{$menu-footer-height});
+      min-height: $menu-header-height + $menu-body-height + $menu-footer-height;
+      padding-bottom: 0;
+    }
+
+    // no buttons after input
+    .p-menu-header:not(.extended) + & {
       min-height: $menu-header-height + $menu-body-height + $menu-footer-height;
       padding-top: $menu-header-height;
-      padding-bottom: 0;
+    }
+    // there are buttons after input
+    .p-menu-header.extended + & {
+      min-height: $menu-header-extended-height + $menu-body-height + $menu-footer-height;
+      padding-top: $menu-header-extended-height;
+    }
+
+    &-container {
+      height: 100%;
+      padding-top: 0;
       overflow: auto;
     }
   }

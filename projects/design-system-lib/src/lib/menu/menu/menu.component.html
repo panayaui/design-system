@@ -33,20 +33,22 @@
   </div>
 
   <div class="p-menu-body">
-    <!--groupTitle === true-->
-    <ng-template [ngIf]="groupTitle" [ngIfElse]="noGroupTitle">
-      <ng-container *ngFor="let group of filteredList">
-        <h6 class="p-menu-group-title">{{group.letter}}</h6>
-        <ng-container [ngTemplateOutlet]="menuLine"
-                      [ngTemplateOutletContext] ="{itemsList: group.names}"></ng-container>
-      </ng-container>
-    </ng-template>
+    <div class="p-menu-body-container">
+      <!--groupTitle === true-->
+      <ng-template [ngIf]="groupTitle" [ngIfElse]="noGroupTitle">
+        <ng-container *ngFor="let group of filteredList">
+          <h6 class="p-menu-group-title">{{group.letter}}</h6>
+          <ng-container [ngTemplateOutlet]="menuLine"
+                        [ngTemplateOutletContext] ="{itemsList: group.names}"></ng-container>
+        </ng-container>
+      </ng-template>
 
-    <!--groupTitle === false-->
-    <ng-template #noGroupTitle>
-      <ng-container [ngTemplateOutlet]="menuLine"
-                    [ngTemplateOutletContext] ="{itemsList: menuList}"></ng-container>
-    </ng-template>
+      <!--groupTitle === false-->
+      <ng-template #noGroupTitle>
+        <ng-container [ngTemplateOutlet]="menuLine"
+                      [ngTemplateOutletContext] ="{itemsList: menuList}"></ng-container>
+      </ng-template>
+    </div>
   </div>
 
   <div class="p-menu-footer" *ngIf="filterPlaceholder">

@@ -148,12 +148,17 @@ $menu-max-height: 75vh;
   }
 
   &-body {
+    height: 100%;
     padding: $menu-padding;
     .p-menu-header + & {
       height: calc(100% - #{$menu-footer-height});
       min-height: $menu-header-height + $menu-body-height + $menu-footer-height;
       padding-top: $menu-header-height;
       padding-bottom: 0;
+    }
+
+    &-container {
+      height: 100%;
       overflow: auto;
     }
   }
