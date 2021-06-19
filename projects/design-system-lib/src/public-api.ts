@@ -25,6 +25,11 @@ export * from './lib/alert/alert.component';
 export * from './lib/alert/alert.interface';
 export * from './lib/alert/alert.enum';
 
+export * from './lib/checkbox/checkbox.module';
+export * from './lib/checkbox/checkbox.component';
+export * from './lib/checkbox/checkbox.interface';
+
 export * from './lib/menu/menu.module';
+export * from './lib/menu/menu-button.interface';
 export * from './lib/menu/menu/menu.component';
 export * from './lib/menu/menu-multi-select/menu-multi-select.component';

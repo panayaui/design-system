@@ -5,7 +5,7 @@ import {Component, Input} from '@angular/core';
   templateUrl: './checkbox.component.html',
   styleUrls: ['./checkbox.component.scss'],
 })
-export default class CheckboxComponent {
+export class CheckboxComponent {
   @Input() label: string;
   @Input() ariaLabel: string;
   @Input() checked: boolean = false;

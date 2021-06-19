@@ -15,6 +15,7 @@ export class IconComponent implements OnInit {
   @Input() strokeWidth: number = 1; // line width in pixels
   @Input() strokeLinecap: string = 'round'; // line end
   @Input() strokeLinejoin: string = 'round'; // two lines join
+  @Input() disabled: boolean = false;
   public customIcon: boolean;
 
   public get iconStyles(): any {
@@ -27,6 +28,10 @@ export class IconComponent implements OnInit {
       strokeLinecap: this.strokeLinecap,
       strokeLinejoin: this.strokeLinejoin
     };
+  }
+
+  public get customName(): string {
+    return this.disabled ? `p-icon-custom-${this.iconName}-disabled` : `p-icon-custom-${this.iconName}`;
   }
 
   ngOnInit(): void {

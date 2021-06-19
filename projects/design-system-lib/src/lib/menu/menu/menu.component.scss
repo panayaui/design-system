@@ -77,7 +77,8 @@ $menu-max-height: 75vh;
       font-size: $small-font-size;
       color: $primary-a-900;
       max-width: calc(100% - #{$input-text-padding} * 2 - 2px);
-      height: $input-text-height - 3px;
+      height: $input-text-height - 2px;
+      margin-top: 1px;
       padding-left: $input-text-padding;
       padding-right: $input-text-padding;
       caret-color: $primary-a-900;
@@ -130,7 +131,7 @@ $menu-max-height: 75vh;
       &.mat-focused {
         .mat-form-field-outline,
         .mat-form-field-outline-thick {
-          color: $primary-c-50;
+          color: $primary-a-900;
         }
       }
     }
@@ -147,12 +148,17 @@ $menu-max-height: 75vh;
   }
 
   &-body {
+    height: 100%;
     padding: $menu-padding;
     .p-menu-header + & {
       height: calc(100% - #{$menu-footer-height});
       min-height: $menu-header-height + $menu-body-height + $menu-footer-height;
       padding-top: $menu-header-height;
       padding-bottom: 0;
+    }
+
+    &-container {
+      height: 100%;
       overflow: auto;
     }
   }
@@ -167,26 +173,16 @@ $menu-max-height: 75vh;
     bottom: 0;
     left: 0;
     z-index: 1;
+  }
 
-    &-btn-line {
-      display: block;
+  &-btn-line {
+    display: block;
+    width: 100%;
+    height: $menu-item-height;
+    ::ng-deep .p-btn {
       width: 100%;
-      height: $menu-item-height;
-      ::ng-deep .p-btn {
-        width: 100%;
-        height: 100%;
-        justify-content: flex-start;
-      }
-    }
-
-    &:before {
-      content: '';
-      display: block;
-      width: 100%;
-      height: $menu-padding;
-      background-color: $menu-background;
-      position: absolute;
-      top: -$menu-padding - 1px;
+      height: 100%;
+      justify-content: flex-start;
     }
   }
 }

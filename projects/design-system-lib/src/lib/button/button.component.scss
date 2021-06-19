@@ -14,11 +14,11 @@
   transition: all 400ms;
 
   &-large {
-    height: 40px;
+    height: $btn-large-height;
   }
 
   &-small {
-    height: 30px;
+    height: $btn-small-height;
   }
 
   &:disabled {

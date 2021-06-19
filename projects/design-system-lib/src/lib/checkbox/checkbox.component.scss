@@ -1,11 +1,10 @@
-@import "../assets/styles/custom";
+@import "../../../../../src/stories/assets/styles/custom";
 
 ::ng-deep.p-checkbox {
   // material styles override
   .mat-checkbox-label {
     font-family: $font-family-basic;
     font-size: $small-font-size;
-    font-weight: 500;
   }
   .mat-checkbox-frame {
     background-color: $gray-scale-1;
