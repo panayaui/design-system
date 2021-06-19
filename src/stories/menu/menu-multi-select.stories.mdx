@@ -18,7 +18,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 
 import {stateGroups} from './stateGroups';
 
-<Meta title='Menu'
+<Meta title='Components/Menu/Multi Select'
     component={MenuMultiSelectComponent}
     decorators={[
       moduleMetadata({
@@ -201,6 +201,12 @@ export class MenuMultiSelectComponent implements OnInit, OnDestroy {
   public filteredList: any[];
   public formFieldControl: FormControl;
   private sub: SubscriptionLike;
+}
+
+export interface IMenuButton {
+  label: string;
+  buttonType: ButtonTypeEnum;
+  icon: IIcon;
 }
 ```
 ```html

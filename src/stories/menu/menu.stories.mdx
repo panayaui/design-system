@@ -115,6 +115,12 @@ export class MenuComponent implements OnInit, OnDestroy {
   public formFieldControl: FormControl;
   private sub: SubscriptionLike;
 }
+
+export interface IMenuButton {
+  label: string;
+  buttonType: ButtonTypeEnum;
+  icon: IIcon;
+}
 ```
 ```html
 <button [matMenuTriggerFor]="menu"
