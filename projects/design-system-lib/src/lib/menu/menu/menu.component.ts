@@ -9,6 +9,7 @@ import {IMenuButton} from '../menu-button.interface';
   styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent implements OnInit, OnDestroy {
+  @Input() menuTriggerName: string;
   @Input() menuList: any[];
   @Input() groupTitle: boolean = false; // if there is a group title
   @Input() filterPlaceholder: string; // if there is a search and buttons

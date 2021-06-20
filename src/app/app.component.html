@@ -1,15 +1,20 @@
-<p-button [label]="'Label'"
-          [iconBefore]="'eye'"
-          [iconBeforeWidth]="'17'"
-          [iconAfter]="'chevron-down'"
-          [iconAfterWidth]="'17'">
-</p-button>
+<!--<p-button [label]="'Label'"-->
+          <!--[iconBefore]="'eye'"-->
+          <!--[iconBeforeWidth]="'17'"-->
+          <!--[iconAfter]="'chevron-down'"-->
+          <!--[iconAfterWidth]="'17'">-->
+<!--</p-button>-->
 
-<p-input-numeric></p-input-numeric>
+<!--<p-input-numeric></p-input-numeric>-->
 
-<p-input-text [placeholder]="'Find'"></p-input-text>
-
-<button (click)="triggerAlert()">
-  Show Alert
-</button>
+<div>
+  <p-menu-multi-select [menuTriggerName]="menuTriggerName"
+                       [menuList]="menuList"
+                       [footerBtnFirst]="footerBtnFirst"
+                       [footerBtnLast]="footerBtnLast"
+                       [filterAriaLabel]="filterAriaLabel"
+                       [filterPlaceholder]="filterPlaceholder"
+                       [headerBtnFirst]="headerBtnFirst"
+                       [headerBtnLast]="headerBtnLast"></p-menu-multi-select>
+</div>
 

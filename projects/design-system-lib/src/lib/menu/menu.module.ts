@@ -7,6 +7,8 @@ import {MenuComponent} from './menu/menu.component';
 import {MenuMultiSelectComponent} from './menu-multi-select/menu-multi-select.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {ReactiveFormsModule} from '@angular/forms';
+import {ButtonModule} from '../button/button.module';
+import {IconModule} from '../icon/icon.module';
 
 @NgModule({
   imports: [
@@ -15,7 +17,9 @@ import {ReactiveFormsModule} from '@angular/forms';
     MatFormFieldModule,
     ReactiveFormsModule,
     MatMenuModule,
-    MatListModule
+    MatListModule,
+    ButtonModule,
+    IconModule
   ],
   declarations: [
     MenuComponent,
