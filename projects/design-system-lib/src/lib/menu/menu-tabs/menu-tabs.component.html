@@ -13,7 +13,7 @@
 </button>
 
 <!--menu window-->
-<mat-menu #menu="matMenu" class="p-menu" [overlapTrigger]="false">
+<mat-menu #menu="matMenu" class="p-menu tabs" [overlapTrigger]="false">
   <div class="p-menu-container" (click)="$event.stopPropagation()"
                                 (keydown)="$event.stopPropagation()">
     <mat-tab-group mat-align-tabs="center"
@@ -21,7 +21,7 @@
                    [disableRipple]="true"
                    class="p-menu-tabs">
       <mat-tab [label]="tabSpecificName">
-        <div class="p-menu-panel specific">
+        <div class="p-menu-tabs-panel specific">
           <div class="p-menu-header" *ngIf="filterPlaceholder"
                [class.extended]="headerBtnFirst && headerBtnLast">
             <mat-form-field class="p-menu-form-field"
@@ -29,11 +29,11 @@
                             floatLabel="always"
                             (click)="$event.stopPropagation()"
                             (keydown)="$event.stopPropagation()">
-              <input matInput
+              <input matInput *ngIf="filterPlaceholder"
                      type="text"
                      [placeholder]="filterPlaceholder"
                      attr.aria-label="{{filterAriaLabel}}"
-                     [formControl]="formFieldControl"
+                     [formControl]="customControl"
                      autocomplete="off"
                      onfocus="this.select()"
                      class="p-menu-input"/>
@@ -66,24 +66,36 @@
               </mat-list-option>
             </mat-selection-list>
           </div>
-
-          <div class="p-menu-footer">
-            <p-button class="p-menu-footer-btn"
-                      [label]="footerBtnFirst.label"
-                      [buttonType]="footerBtnFirst.buttonType"
-                      (click)="selectCompleted()"></p-button>
-            <p-button class="p-menu-footer-btn"
-                      [label]="footerBtnLast.label"
-                      [buttonType]="footerBtnLast.buttonType"
-                      (click)="selectCanceled()"></p-button>
-          </div>
         </div>
       </mat-tab>
       <mat-tab [label]="tabRelativeName">
-        <div class="p-menu-tab relative">
+        <ul class="p-menu-tabs-panel relative" *ngIf="checkboxList?.length">
+          <li class="p-menu-check-item" *ngFor="let checkLine of checkboxList">
+            <p-checkbox class="p-menu-check-checkbox"
+                        [label]="checkLine.checkbox.label"
+                        [checked]="checkLine.checkbox.checked"
+                        [disabled]="checkLine.checkbox.disabled"></p-checkbox>
+            <p-input-numeric class="p-menu-check-input"
+                             [label]="checkLine.inputNum.label"
+                             [value]="checkLine.inputNum.value"
+                             [disabled]="checkLine.inputNum.disabled"
+                             [readonly]="checkLine.inputNum.readonly"
+                             [size]="inputNumericSize.Small"
+                             [labelLast]="true"></p-input-numeric>
+          </li>
           Relative
-        </div>
+        </ul>
       </mat-tab>
     </mat-tab-group>
+    <div class="p-menu-footer">
+      <p-button class="p-menu-footer-btn"
+                [label]="footerBtnFirst.label"
+                [buttonType]="footerBtnFirst.buttonType"
+                (click)="selectCompleted()"></p-button>
+      <p-button class="p-menu-footer-btn"
+                [label]="footerBtnLast.label"
+                [buttonType]="footerBtnLast.buttonType"
+                (click)="selectCanceled()"></p-button>
+    </div>
   </div>
 </mat-menu>

@@ -1,8 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {MatSnackBar} from '@angular/material/snack-bar';
-import {AlertComponent} from '../../projects/design-system-lib/src/lib/alert/alert.component';
-import {AlertEnum} from '../../projects/design-system-lib/src/lib/alert/alert.enum';
-import {ButtonTypeEnum} from '../../projects/design-system-lib/src/lib/button/button-type.enum';
+import {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';
+import {InputNumericSizeEnum} from 'projects/design-system-lib/src/public-api';
 
 @Component({
   selector: 'app-root',
@@ -25,6 +23,7 @@ export class AppComponent implements OnInit {
   filterPlaceholder: string;
   headerBtnFirst: any;
   headerBtnLast: any;
+  checkboxList: any;
 
   constructor() {}
 
@@ -99,5 +98,27 @@ export class AppComponent implements OnInit {
     this.headerBtnLast = {
       label: 'Not equal to'
     };
+    this.checkboxList = [
+      {
+        checkbox: { label: 'Last'},
+        inputNum: { label: 'Release(s)', value: 1}
+      },
+      {
+        checkbox: { label: 'Last'},
+        inputNum: { label: 'Release(s)', value: 1}
+      },
+      {
+        checkbox: { label: 'Last'},
+        inputNum: { label: 'Release(s)', value: 1}
+      },
+      {
+        checkbox: { label: 'Last'},
+        inputNum: { label: 'Release(s)', value: 1}
+      },
+      {
+        checkbox: { label: 'Next'},
+        inputNum: { label: 'Release(s)', value: 1}
+      }
+    ];
   }
 }

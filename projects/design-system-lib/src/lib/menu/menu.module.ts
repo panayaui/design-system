@@ -13,6 +13,7 @@ import {MenuTabsComponent} from './menu-tabs/menu-tabs.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {CheckboxModule} from '../checkbox/checkbox.module';
 import {MatInputModule} from '@angular/material/input';
+import {InputModule} from '../input/input.module';
 
 @NgModule({
   imports: [
@@ -26,7 +27,8 @@ import {MatInputModule} from '@angular/material/input';
     MatTabsModule,
     ButtonModule,
     IconModule,
-    CheckboxModule
+    CheckboxModule,
+    InputModule
   ],
   declarations: [
     MenuSingleSelectComponent,
