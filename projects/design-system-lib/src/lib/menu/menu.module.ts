@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatListModule} from '@angular/material/list';
-import {MenuComponent} from './menu/menu.component';
+import {MenuSingleSelectComponent} from './menu-single-select/menu-single-select.component';
 import {MenuMultiSelectComponent} from './menu-multi-select/menu-multi-select.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {ReactiveFormsModule} from '@angular/forms';
@@ -23,12 +23,12 @@ import {MenuTabsComponent} from './menu-tabs/menu-tabs.component';
     IconModule
   ],
   declarations: [
-    MenuComponent,
+    MenuSingleSelectComponent,
     MenuMultiSelectComponent,
     MenuTabsComponent
   ],
   exports: [
-    MenuComponent,
+    MenuSingleSelectComponent,
     MenuMultiSelectComponent,
     MenuTabsComponent
   ]

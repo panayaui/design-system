@@ -4,11 +4,11 @@ import {SubscriptionLike} from 'rxjs';
 import {IMenuButton} from '../menu-button.interface';
 
 @Component({
-  selector: 'p-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss'],
+  selector: 'p-menu-single-select',
+  templateUrl: './menu-single-select.component.html',
+  styleUrls: ['./menu-single-select.component.scss'],
 })
-export class MenuComponent implements OnInit, OnDestroy {
+export class MenuSingleSelectComponent implements OnInit, OnDestroy {
   @Input() menuTriggerName: string;
   @Input() menuList: any[];
   @Input() groupTitle: boolean = false; // if there is a group title

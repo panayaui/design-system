@@ -3,7 +3,7 @@
   {{menuTriggerName}}
 </button>
 
-<!--menu line template-->
+<!--menu-single-select line template-->
 <ng-template #menuLine let-itemsList="itemsList">
   <button *ngFor="let item of itemsList"
                   mat-menu-item
@@ -14,7 +14,7 @@
 </button>
 </ng-template>
 
-<!--menu window-->
+<!--menu-single-select window-->
 <mat-menu #menu="matMenu" class="p-menu" [overlapTrigger]="false">
   <div class="p-menu-header" *ngIf="filterPlaceholder">
     <mat-form-field class="p-menu-form-field"
