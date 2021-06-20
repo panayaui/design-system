@@ -88,6 +88,8 @@ import {stateGroups} from './stateGroups';
           disabled: false
         }
       ],
+      filterAriaLabel: 'Find Label',
+      filterPlaceholder: 'Find Label',
       footerBtnFirst: {
         label: 'Done',
         buttonType: ButtonTypeEnum.Primary
@@ -95,6 +97,18 @@ import {stateGroups} from './stateGroups';
       footerBtnLast: {
         label: 'Cancel',
         buttonType: ButtonTypeEnum.Secondary
+      },
+      headerBtnFirst: {
+        label: 'Clear selected',
+        buttonType: ButtonTypeEnum.Tertiary,
+        icon: {
+          iconName: 'eraser',
+          width: '15',
+          height: '15'
+        }
+      },
+      headerBtnLast: {
+        label: 'Not equal to'
       }
     }}  
  />

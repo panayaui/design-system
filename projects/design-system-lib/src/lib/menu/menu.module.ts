@@ -12,6 +12,7 @@ import {IconModule} from '../icon/icon.module';
 import {MenuTabsComponent} from './menu-tabs/menu-tabs.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {CheckboxModule} from '../checkbox/checkbox.module';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import {CheckboxModule} from '../checkbox/checkbox.module';
     BrowserAnimationsModule,
     MatFormFieldModule,
     ReactiveFormsModule,
+    MatInputModule,
     MatMenuModule,
     MatListModule,
     MatTabsModule,
