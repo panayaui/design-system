@@ -12,11 +12,11 @@ import {IMenuButton} from '../menu-button.interface';
 import {ICheckbox} from '../../checkbox/checkbox.interface';
 
 @Component({
-  selector: 'p-menu-tabs',
-  templateUrl: './menu-tabs.component.html',
-  styleUrls: ['./menu-tabs.component.scss'],
+  selector: 'p-menu-multi-select',
+  templateUrl: './menu-multi-select.component.html',
+  styleUrls: ['./menu-multi-select.component.scss'],
 })
-export class MenuTabsComponent implements OnInit, OnDestroy {
+export class MenuMultiSelectComponent implements OnInit, OnDestroy {
   @Input() menuTriggerName: string;
   @Input() menuList: any[];
   @Input() filterPlaceholder: string; // if there is a search and buttons
@@ -31,8 +31,6 @@ export class MenuTabsComponent implements OnInit, OnDestroy {
   public filteredList: any[];
   public formFieldControl: FormControl;
   private sub: SubscriptionLike;
-  public tabSpecificName: string;
-  public tabRelativeName: string;
 
   ngOnInit(): void {
     this.filteredList = this.menuList;
@@ -45,8 +43,6 @@ export class MenuTabsComponent implements OnInit, OnDestroy {
     if (!this.filterAriaLabel && this.filterPlaceholder) {
       this.filterAriaLabel = this.filterPlaceholder;
     }
-    this.tabSpecificName = 'Specific';
-    this.tabRelativeName = 'Relative';
   }
 
   ngOnDestroy(): void {

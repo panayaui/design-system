@@ -10,6 +10,8 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {ButtonModule} from '../button/button.module';
 import {IconModule} from '../icon/icon.module';
 import {MenuTabsComponent} from './menu-tabs/menu-tabs.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import {CheckboxModule} from '../checkbox/checkbox.module';
 
 @NgModule({
   imports: [
@@ -19,8 +21,10 @@ import {MenuTabsComponent} from './menu-tabs/menu-tabs.component';
     ReactiveFormsModule,
     MatMenuModule,
     MatListModule,
+    MatTabsModule,
     ButtonModule,
-    IconModule
+    IconModule,
+    CheckboxModule
   ],
   declarations: [
     MenuSingleSelectComponent,

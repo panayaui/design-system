@@ -1,0 +1,121 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+
+import {MenuTabsComponent} from 'projects/design-system-lib/src/public-api';
+import {InputModule} from 'projects/design-system-lib/src/public-api';
+import {ButtonModule} from 'projects/design-system-lib/src/public-api';
+import {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';
+import {IconModule} from 'projects/design-system-lib/src/public-api';
+import {CheckboxModule} from 'projects/design-system-lib/src/public-api';
+import {MenuModule} from 'projects/design-system-lib/src/public-api';
+
+import {CommonModule} from '@angular/common';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatListModule} from '@angular/material/list';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {ReactiveFormsModule} from '@angular/forms';
+
+import {stateGroups} from './stateGroups';
+
+<Meta title='Menu'
+    component={MenuTabsComponent}
+    decorators={[
+      moduleMetadata({
+          imports: [
+              CommonModule,            
+              BrowserAnimationsModule,
+              MatMenuModule,
+              MatListModule,
+              MatTabsModule,
+              InputModule,
+              MatInputModule,
+              MatFormFieldModule,
+              ReactiveFormsModule,
+              ButtonModule,
+              CheckboxModule,
+              MenuModule
+          ]
+      })
+    ]}  
+    args={{
+      menuTriggerName: 'Tabs select',
+      menuList: [
+        { name: 'Alabama',
+          disabled: false
+        },
+        { name: 'Alaska disabled',
+          disabled: true
+        },
+        { name: 'California',
+          disabled: false
+        },
+        { name: 'Colorado',
+          disabled: false
+        },
+        { name: 'Delaware',
+          disabled: false
+        },
+        { name: 'Florida selected disabled',
+          disabled: true,
+          selected: true
+        },
+        { name: 'Georgia',
+          disabled: false
+        },
+        { name: 'Hawaii',
+          disabled: false
+        },
+        { name: 'Idaho',
+          disabled: true
+        },
+        { name: 'Illinois',
+          disabled: false
+        },
+        { name: 'Indiana',
+          disabled: false
+        },
+        { name: 'Iowa',
+          disabled: false
+        },
+        { name: 'Kansas',
+          disabled: true,
+          selected: true
+        },
+        { name: 'Kentucky',
+          disabled: false
+        }
+      ],
+      footerBtnFirst: {
+        label: 'Done',
+        buttonType: ButtonTypeEnum.Primary
+      },
+      footerBtnLast: {
+        label: 'Cancel',
+        buttonType: ButtonTypeEnum.Secondary
+      }
+    }}  
+ />
+
+# Menu
+
+export const Template = (args) => <MenuTabsComponent {...args} />
+
+###### Simple Menu
+<Canvas>
+  <Story name="Tabs Select"
+    args={{ 
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Usage
+```ts
+
+```
+```html
+
+```
