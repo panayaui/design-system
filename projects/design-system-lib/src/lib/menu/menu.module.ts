@@ -9,6 +9,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {ReactiveFormsModule} from '@angular/forms';
 import {ButtonModule} from '../button/button.module';
 import {IconModule} from '../icon/icon.module';
+import {MenuTabsComponent} from './menu-tabs/menu-tabs.component';
 
 @NgModule({
   imports: [
@@ -23,11 +24,13 @@ import {IconModule} from '../icon/icon.module';
   ],
   declarations: [
     MenuComponent,
-    MenuMultiSelectComponent
+    MenuMultiSelectComponent,
+    MenuTabsComponent
   ],
   exports: [
     MenuComponent,
-    MenuMultiSelectComponent
+    MenuMultiSelectComponent,
+    MenuTabsComponent
   ]
 })
 export class MenuModule { }
