@@ -1,12 +1,3 @@
-<!--<p-button [label]="'Label'"-->
-          <!--[iconBefore]="'eye'"-->
-          <!--[iconBeforeWidth]="'17'"-->
-          <!--[iconAfter]="'chevron-down'"-->
-          <!--[iconAfterWidth]="'17'">-->
-<!--</p-button>-->
-
-<!--<p-input-numeric></p-input-numeric>-->
-
 <div>
   <p-menu-tabs [menuTriggerName]="menuTriggerName"
                [menuList]="menuList"
@@ -19,3 +10,12 @@
                [checkboxList]="checkboxList"></p-menu-tabs>
 </div>
 
+<button #tooltip="matTooltip"
+        [matTooltip]="'message'"
+        [matTooltipClass]="'p-tooltip'"
+        class="p-btn p-btn-small p-btn-primary"
+>
+  Hover
+</button>
+
+<p class="paragraph-3-semibold">some words</p>

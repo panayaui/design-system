@@ -1,7 +1,4 @@
-// Theme variables, must be included before the libraries to allow overriding defaults
-@import './theme-variables';
-
-@import 'custom';
+@import '../assets/styles/custom';
 
 body {
   font-family: $font-family-basic;

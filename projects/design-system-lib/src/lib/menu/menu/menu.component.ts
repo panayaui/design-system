@@ -12,11 +12,11 @@ import {IMenuButton} from '../menu-button.interface';
 import {ICheckbox} from '../../checkbox/checkbox.interface';
 
 @Component({
-  selector: 'p-menu-multi-select',
-  templateUrl: './menu-multi-select.component.html',
-  styleUrls: ['./menu-multi-select.component.scss'],
+  selector: 'p-menu',
+  templateUrl: './menu.component.html',
+  styleUrls: ['./menu.component.scss'],
 })
-export class MenuMultiSelectComponent implements OnInit, OnDestroy {
+export class MenuComponent implements OnInit, OnDestroy {
   @Input() menuTriggerName: string;
   @Input() menuList: any[];
   @Input() filterPlaceholder: string; // if there is a search and buttons
