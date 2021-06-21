@@ -1,6 +1,6 @@
 @import "../assets/styles/custom";
 
-.p-btn {
+::ng-deep .p-btn {
   @include resetButton;
   font-family: $font-family-basic;
   font-size: $small-font-size;

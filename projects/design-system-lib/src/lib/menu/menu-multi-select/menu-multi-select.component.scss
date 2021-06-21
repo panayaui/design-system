@@ -207,12 +207,10 @@ $menu-max-height: 75vh;
 
   &-body {
     height: calc(100% - #{$menu-footer-height});
-    padding: $menu-padding;
-    .p-menu-header + & {
-      min-height: $menu-header-height + $menu-body-height + $menu-footer-height;
-      padding-bottom: 0;
-    }
-
+    padding-top: $menu-padding;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: $menu-padding;
     // no buttons after input
     .p-menu-header:not(.extended) + & {
       min-height: $menu-header-height + $menu-body-height + $menu-footer-height;
@@ -227,18 +225,17 @@ $menu-max-height: 75vh;
     &-container {
       height: 100%;
       padding-top: 0;
+      padding-right: $menu-padding;
       overflow: auto;
     }
   }
 
   &-footer {
     display: flex;
-    justify-content: center;
     align-items: center;
     width: 100%;
     height: $menu-footer-height;
-    padding-top: $menu-padding * 2;
-    padding-bottom: $menu-padding * 2;
+    padding: $menu-padding * 2;
     background-color: $menu-background;
     position: absolute;
     bottom: 0;
@@ -258,6 +255,12 @@ $menu-max-height: 75vh;
     ::ng-deep .p-btn {
       @extend %btn-line;
       justify-content: flex-start;
+    }
+    ::ng-deep .p-btn-icon-before {
+      padding-left: $menu-padding;
+      .p-btn-label {
+        margin-left: $menu-padding;
+      }
     }
     ::ng-deep .p-checkbox {
       display: inline-flex;
