@@ -174,8 +174,130 @@ export const Template = (args) => <MenuTabsComponent {...args} />
 
 ###### Usage
 ```ts
-
+export class MenuTabsComponent implements OnInit, OnDestroy {
+  @Input() menuTriggerName: string;
+  @Input() menuList: any[];
+  @Input() filterPlaceholder: string; // if there is a search and buttons
+  @Input() filterAriaLabel: string;
+  @Input() headerBtnFirst: IMenuButton;
+  @Input() headerBtnLast: ICheckbox;
+  @Input() footerBtnFirst: IMenuButton;
+  @Input() footerBtnLast: IMenuButton;
+  @Input() checkboxList: {
+    checkbox: ICheckbox,
+    inputNum: IInputNumeric
+  }[];
+  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;
+  private selectedList: any[] = [];
+  public selectedShown: any[] = [];
+  public filteredList: any[];
+  public customControl: FormControl;
+  private sub: SubscriptionLike;
+  public tabSpecificName: string;
+  public tabRelativeName: string;
+  public inputNumericSize = InputNumericSizeEnum;
+}
 ```
 ```html
+<button [matMenuTriggerFor]="menu"
+        #menuTrigger="matMenuTrigger"
+        class="p-btn p-btn-small p-btn-tertiary">
+   <ng-template [ngIf]="!selectedShown?.length" [ngIfElse]="selectedItems">
+    {{menuTriggerName}}
+  </ng-template>
+
+  <ng-template #selectedItems>
+    <ng-container *ngFor="let item of selectedShown">
+      <span class="p-menu-trigger-result">{{item.name}}</span>
+    </ng-container>
+  </ng-template>
+</button>
+
+<!--menu window-->
+<mat-menu #menu="matMenu" class="p-menu tabs" [overlapTrigger]="false">
+  <div class="p-menu-container" (click)="$event.stopPropagation()"
+                                (keydown)="$event.stopPropagation()">
+    <mat-tab-group mat-align-tabs="center"
+                   [disablePagination]="true"
+                   [disableRipple]="true"
+                   class="p-menu-tabs">
+      <mat-tab [label]="tabSpecificName">
+        <div class="p-menu-tabs-panel specific">
+          <div class="p-menu-header" *ngIf="filterPlaceholder"
+               [class.extended]="headerBtnFirst && headerBtnLast">
+            <mat-form-field class="p-menu-form-field"
+                            appearance="outline"
+                            floatLabel="always">
+              <input matInput *ngIf="filterPlaceholder"
+                     type="text"
+                     [placeholder]="filterPlaceholder"
+                     attr.aria-label="{{filterAriaLabel}}"
+                     [formControl]="customControl"
+                     autocomplete="off"
+                     onfocus="this.select()"
+                     class="p-menu-input"/>
+            </mat-form-field>
+
+            <p-button *ngIf="headerBtnFirst"
+                      class="p-menu-btn-line"
+                      [label]="headerBtnFirst.label"
+                      [iconBefore]="headerBtnFirst.icon.iconName"
+                      [iconBeforeWidth]="headerBtnFirst.icon.width"
+                      [iconBeforeHeight]="headerBtnFirst.icon.height"
+                      [buttonType]="headerBtnFirst.buttonType"
+                      [disabled]="headerBtnFirst.disabled"></p-button>
+            <p-checkbox *ngIf="headerBtnFirst"
+                        class="p-menu-btn-line"
+                        [label]="headerBtnLast.label"
+                        [checked]="headerBtnLast.checked"
+                        [disabled]="headerBtnLast.disabled"></p-checkbox>
+          </div>
+
+          <div class="p-menu-body">
+            <mat-selection-list class="p-menu-body-container">
+              <mat-list-option class="p-menu-multiple-item"
+                               *ngFor="let item of filteredList"
+                               [disableRipple]="true"
+                               [disabled]="item.disabled"
+                               [selected]="item.selected"
+                               (click)="onOptionSelected(item)">
+                {{item.name}}
+              </mat-list-option>
+            </mat-selection-list>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab [label]="tabRelativeName">
+        <div class="p-menu-tabs-panel relative">
+          <ul class="p-menu-check-list" *ngIf="checkboxList?.length">
+            <li class="p-menu-check-item" *ngFor="let checkLine of checkboxList">
+              <p-checkbox class="p-menu-check-checkbox"
+                          [label]="checkLine.checkbox.label"
+                          [checked]="checkLine.checkbox.checked"
+                          [disabled]="checkLine.checkbox.disabled"></p-checkbox>
+              <p-input-numeric class="p-menu-check-input"
+                               [label]="checkLine.inputNum.label"
+                               [value]="checkLine.inputNum.value"
+                               [disabled]="checkLine.inputNum.disabled"
+                               [readonly]="checkLine.inputNum.readonly"
+                               [size]="inputNumericSize.Small"
+                               [labelLast]="true"></p-input-numeric>
+            </li>
+          </ul>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+    <div class="p-menu-footer">
+      <p-button class="p-menu-footer-btn"
+                [label]="footerBtnFirst.label"
+                [buttonType]="footerBtnFirst.buttonType"
+                (click)="selectCompleted()"></p-button>
+      <p-button class="p-menu-footer-btn"
+                [label]="footerBtnLast.label"
+                [buttonType]="footerBtnLast.buttonType"
+                (click)="selectCanceled()"></p-button>
+    </div>
+  </div>
+</mat-menu>
 
 ```
