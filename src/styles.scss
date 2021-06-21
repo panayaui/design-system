@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-//Angular Material styles
+// Angular Material styles
 html,
 body {
   height: 100%;
@@ -8,7 +8,9 @@ body {
 
 body {
   margin: 0;
-  //font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+// End of Material styles
 
+// design-system global styles
+// compiled by scss-bundle -c scss-bundle.config.json
 @import "../projects/design-system-lib/src/lib/assets/styles/p-styles.scss";
