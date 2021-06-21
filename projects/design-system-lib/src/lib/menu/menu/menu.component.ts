@@ -1,38 +1,35 @@
-import {
-  Component,
-  Input,
-  OnDestroy,
-  OnInit,
-  ViewChild
-} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {SubscriptionLike} from 'rxjs';
-import {MatMenuTrigger} from '@angular/material/menu';
 import {IMenuButton} from '../menu-button.interface';
-import {ICheckbox} from '../../checkbox/checkbox.interface';
 
 @Component({
-  selector: 'p-menu-multi-select',
-  templateUrl: './menu-multi-select.component.html',
-  styleUrls: ['./menu-multi-select.component.scss'],
+  selector: 'p-menu',
+  templateUrl: './menu.component.html',
+  styleUrls: ['./menu.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
-export class MenuMultiSelectComponent implements OnInit, OnDestroy {
+export class MenuComponent implements OnInit, OnDestroy {
   @Input() menuTriggerName: string;
   @Input() menuList: any[];
+  @Input() groupTitle: boolean = false; // if there is a group title
   @Input() filterPlaceholder: string; // if there is a search and buttons
   @Input() filterAriaLabel: string;
-  @Input() headerBtnFirst: IMenuButton;
-  @Input() headerBtnLast: ICheckbox;
-  @Input() footerBtnFirst: IMenuButton;
-  @Input() footerBtnLast: IMenuButton;
-  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;
-  private selectedList: any[] = [];
-  public selectedShown: any[] = [];
+  @Input() buttonFirst: IMenuButton;
+  @Input() buttonLast: IMenuButton;
   public filteredList: any[];
   public formFieldControl: FormControl;
-  private sub: SubscriptionLike;
+  public sub: SubscriptionLike;
 
   ngOnInit(): void {
+    this.initComp();
+  }
+
+  ngOnDestroy(): void {
+    this.destroyComp();
+  }
+
+  initComp(): void {
     this.filteredList = this.menuList;
     if (this.filterPlaceholder) {
       this.formFieldControl = new FormControl('');
@@ -45,7 +42,7 @@ export class MenuMultiSelectComponent implements OnInit, OnDestroy {
     }
   }
 
-  ngOnDestroy(): void {
+  destroyComp(): void {
     if (this.filterPlaceholder && this.sub) {
       this.sub.unsubscribe();
       this.sub = null;
@@ -53,19 +50,12 @@ export class MenuMultiSelectComponent implements OnInit, OnDestroy {
   }
 
   alterList(value: string): void {
-    this.filteredList = this.menuList.filter( item => item.name.toLowerCase().indexOf(value.toLowerCase()) > -1);
-  }
-
-  onOptionSelected(item): void {
-    this.selectedList.push(item);
-  }
-
-  selectCompleted(): void {
-    this.selectedShown = this.selectedList;
-    this.menuTrigger.closeMenu();
-  }
-
-  selectCanceled(): void {
-    this.menuTrigger.closeMenu();
+    this.filteredList = [];
+    this.menuList.forEach(group => {
+      const filteredGroup = group.names.filter( name => name.name.toLowerCase().indexOf(value.toLowerCase()) > -1);
+      if (filteredGroup.length > 0) {
+        this.filteredList.push(Object.assign({}, group, group.names = filteredGroup));
+      }
+    });
   }
 }
