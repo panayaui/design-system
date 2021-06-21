@@ -218,17 +218,10 @@ $menu-tabs-min-width: 250px;
 
   &-body {
     height: calc(100% - #{$menu-footer-height});
-    padding: $menu-padding;
-    .p-menu-header + & {
-      min-height: $menu-header-height + $menu-body-height + $menu-footer-height;
-      padding-bottom: 0;
-    }
-
-    // no buttons after input
-    .p-menu-header:not(.extended) + & {
-      min-height: $menu-header-height + $menu-body-height + $menu-footer-height;
-      padding-top: $menu-header-height;
-    }
+    padding-top: $menu-padding;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: $menu-padding;
     // there are buttons after input
     .p-menu-header.extended + & {
       min-height: $menu-header-extended-height + $menu-body-height + $menu-footer-height;
@@ -290,7 +283,6 @@ $menu-tabs-min-width: 250px;
     height: $tabs-header-height;
   }
   .mat-tab-header {
-    margin-bottom: $menu-padding;
     border-color: $gray-scale-400;
   }
   .mat-tab-labels {
@@ -341,17 +333,24 @@ $menu-tabs-min-width: 250px;
     display: none;
   }
 
-  &-panel.relative {
-    @include resetUl;
-    height: calc(100% - #{$tabs-header-height});
-    padding-right: $menu-padding;
-    padding-left: $menu-padding;
-    overflow: auto;
+  &-panel {
+    height: 100%;
+    &.relative {
+      height: calc(100% - #{$tabs-header-height});
+      padding-top: $menu-padding;
+      padding-left: $menu-padding;
+    }
   }
 }
 
 // relative panel styles
 .p-menu-check {
+  &-list {
+    @include resetUl;
+    height: 100%;
+    padding-right: $menu-padding;
+    overflow: auto;
+  }
   &-item {
     display: flex;
     align-items: center;

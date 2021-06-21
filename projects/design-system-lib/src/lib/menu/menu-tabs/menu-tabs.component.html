@@ -55,7 +55,7 @@
           <div class="p-menu-body">
             <mat-selection-list class="p-menu-body-container">
               <mat-list-option class="p-menu-multiple-item"
-                               *ngFor="let item of filteredList"
+                               *ngFor="let item of menuList"
                                [disableRipple]="true"
                                [disabled]="item.disabled"
                                [selected]="item.selected"
@@ -67,21 +67,23 @@
         </div>
       </mat-tab>
       <mat-tab [label]="tabRelativeName">
-        <ul class="p-menu-tabs-panel relative" *ngIf="checkboxList?.length">
-          <li class="p-menu-check-item" *ngFor="let checkLine of checkboxList">
-            <p-checkbox class="p-menu-check-checkbox"
-                        [label]="checkLine.checkbox.label"
-                        [checked]="checkLine.checkbox.checked"
-                        [disabled]="checkLine.checkbox.disabled"></p-checkbox>
-            <p-input-numeric class="p-menu-check-input"
-                             [label]="checkLine.inputNum.label"
-                             [value]="checkLine.inputNum.value"
-                             [disabled]="checkLine.inputNum.disabled"
-                             [readonly]="checkLine.inputNum.readonly"
-                             [size]="inputNumericSize.Small"
-                             [labelLast]="true"></p-input-numeric>
-          </li>
-        </ul>
+        <div class="p-menu-tabs-panel relative">
+          <ul class="p-menu-check-list" *ngIf="checkboxList?.length">
+            <li class="p-menu-check-item" *ngFor="let checkLine of checkboxList">
+              <p-checkbox class="p-menu-check-checkbox"
+                          [label]="checkLine.checkbox.label"
+                          [checked]="checkLine.checkbox.checked"
+                          [disabled]="checkLine.checkbox.disabled"></p-checkbox>
+              <p-input-numeric class="p-menu-check-input"
+                               [label]="checkLine.inputNum.label"
+                               [value]="checkLine.inputNum.value"
+                               [disabled]="checkLine.inputNum.disabled"
+                               [readonly]="checkLine.inputNum.readonly"
+                               [size]="inputNumericSize.Small"
+                               [labelLast]="true"></p-input-numeric>
+            </li>
+          </ul>
+        </div>
       </mat-tab>
     </mat-tab-group>
     <div class="p-menu-footer">
