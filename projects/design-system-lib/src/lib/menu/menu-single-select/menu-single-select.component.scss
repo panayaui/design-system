@@ -149,7 +149,10 @@ $menu-max-height: 75vh;
 
   &-body {
     height: 100%;
-    padding: $menu-padding;
+    padding-top: $menu-padding;
+    padding-right: 0;
+    padding-bottom: $menu-padding;
+    padding-left: $menu-padding;
     .p-menu-header + & {
       height: calc(100% - #{$menu-footer-height});
       min-height: $menu-header-height + $menu-body-height + $menu-footer-height;
@@ -159,6 +162,7 @@ $menu-max-height: 75vh;
 
     &-container {
       height: 100%;
+      padding-right: $menu-padding;
       overflow: auto;
     }
   }
@@ -166,7 +170,9 @@ $menu-max-height: 75vh;
   &-footer {
     width: 100%;
     padding-top: $menu-padding;
+    padding-right: $menu-padding;
     padding-bottom: $menu-padding;
+    padding-left: $menu-padding;
     background-color: $menu-background;
     border-top: 1px solid $gray-scale-400;
     position: absolute;
