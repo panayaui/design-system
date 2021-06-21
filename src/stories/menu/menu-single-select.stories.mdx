@@ -1,7 +1,7 @@
 import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
 import {moduleMetadata} from '@storybook/angular';
 
-import {MenuComponent} from 'projects/design-system-lib/src/public-api';
+import {MenuSingleSelectComponent} from 'projects/design-system-lib/src/public-api';
 import {InputModule} from 'projects/design-system-lib/src/public-api';
 import {ButtonModule} from 'projects/design-system-lib/src/public-api';
 import {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';
@@ -17,7 +17,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {stateGroups} from './stateGroups';
 
 <Meta title='Components/Menu/Single Select'
-    component={MenuComponent}
+    component={MenuSingleSelectComponent}
     decorators={[
       moduleMetadata({
           imports: [
@@ -53,7 +53,7 @@ import {stateGroups} from './stateGroups';
 
 # Menu
 
-export const Template = (args) => <MenuComponent {...args} />
+export const Template = (args) => <MenuSingleSelectComponent {...args} />
 
 ###### Simple Menu
 <Canvas>
@@ -104,7 +104,7 @@ export const Template = (args) => <MenuComponent {...args} />
 ```ts
 import {MatMenuModule} from '@angular/material/menu';
 
-export class MenuComponent implements OnInit, OnDestroy {
+export class MenuSingleSelectComponent implements OnInit, OnDestroy {
   @Input() menuTriggerName: string;
   @Input() menuList: any[];
   @Input() groupTitle: boolean = false; // if there is a group title

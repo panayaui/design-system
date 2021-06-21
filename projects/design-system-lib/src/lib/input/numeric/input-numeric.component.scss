@@ -23,10 +23,9 @@ $input-numeric-padding: 8px;
     font-family: $font-family-basic;
     font-weight: 400;
     font-size: $small-font-size;
-    text-transform: capitalize;
     line-height: 19px;
     color: $primary-a-900;
-    padding-bottom: 15px;
+    padding-bottom: 13px;
     &.disabled {
       color: $gray-scale-600;
     }

@@ -6,110 +6,60 @@ $menu-background: $gray-scale-1;
 $menu-item-margin-top: 4px;
 $input-text-height: 32px;
 $input-text-padding: 8px;
-$menu-header-height: $input-text-height + $menu-padding * 3 + 1px;
-$menu-header-extended-height: $input-text-height + ($menu-padding * 4.5) + ($menu-item-height * 2) + 1px;
-$menu-footer-height: $btn-small-height + $menu-padding * 4;
+$menu-header-height: $input-text-height + $menu-padding + $menu-padding;
+$menu-footer-height: $menu-padding * 3 + $menu-item-height * 2;
 $menu-body-height: 103px;
 $menu-min-width: 230px;
 $menu-max-height: 75vh;
 
-%btn-line {
-  width: 100%;
-  height: 100%;
-  padding-right: $menu-padding;
-  padding-left: $menu-padding;
+%menu-item {
+  font-family: $font-family-basic;
+  color: $primary-a-900;
+  height: $menu-item-height;
+  line-height: $menu-item-height;
+  padding: 0 8px;
+  @include ellipsis;
+  & + & {
+    margin-top: $menu-item-margin-top;
+  }
 }
 
-::ng-deep .p-menu-multiple.mat-menu-panel {
+::ng-deep .p-menu.mat-menu-panel {
   min-width: $menu-min-width;
   max-height: $menu-max-height;
   background-color: $menu-background;
   border-radius: 0;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1),
-  0 2px 6px rgba(0, 0, 0, 0.04),
-  0 -3px 6px rgba(0, 0, 0, 0.04);
+              0 2px 6px rgba(0, 0, 0, 0.04),
+              0 -3px 6px rgba(0, 0, 0, 0.04);
   overflow: hidden;
   .mat-menu-content {
     height: 100%;
     padding: 0;
     position: relative;
   }
-}
 
-// container of the multiple selection menu
-.p-menu-multiple-container {
-  height: 100%;
-}
-
-::ng-deep .p-menu-multiple-item.mat-list-option.mat-list-item {
-  font-family: $font-family-basic;
-  font-size: $small-font-size;
-  color: $primary-a-900;
-  height: $menu-item-height;
-  line-height: $menu-item-height;
-  padding: 0 8px;
-  & + & {
-    margin-top: $menu-item-margin-top;
-  }
-  &:hover,
-  &.cdk-focused {
-    background-color: $primary-c-50;
-  }
-  &[disabled] {
-    color: $gray-scale-600;
-  }
-  .mat-list-item-content.mat-list-item-content-reverse {
-    flex-direction: row;
-    padding: 0;
-    .mat-list-text {
-      display: inline;
-      padding-left: 8px;
-      padding-right: 0;
-      @include ellipsis;
-    }
-  }
-
-  .mat-pseudo-checkbox:not(.mat-pseudo-checkbox-checked) {
-    border: 1px solid $gray-scale-400;
-    background-color: $gray-scale-1;
-  }
-
-  // checked
-  .mat-pseudo-checkbox-checked {
-    background-color: $secondary-a-700;
-    &:after {
-      width: 7px;
-      height: 2px;
-      top: 3.4px;
-      left: 1.5px;
-    }
-  }
-
-  // disabled
-  &.mat-list-item-disabled {
-    background-color: transparent;
-    .mat-pseudo-checkbox:not(.mat-pseudo-checkbox-checked) {
+  .mat-menu-item {
+    @extend %menu-item;
+    font-size: $small-font-size;
+    &:hover,
+    &.cdk-focused {
       background-color: $primary-c-50;
-      border-color: $gray-scale-400;
     }
-    .mat-pseudo-checkbox-checked {
-      background-color: $secondary-a-100;
-    }
-    .mat-list-text {
+    &[disabled] {
       color: $gray-scale-600;
     }
+    &.p-menu-item-selected {
+      background-color: $secondary-a-100;
+    }
   }
 }
 
-// results on the trigger
-.p-menu-trigger-result {
-  & + & {
-    margin-left: 5px;
-  }
-  &:not(:last-child):after {
-    content: ',';
-    display: inline;
-  }
+.p-menu-group-title {
+  @extend %menu-item;
+  font-size: $tiny-font-size;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 // search field
@@ -193,59 +143,42 @@ $menu-max-height: 75vh;
     width: 100%;
     padding: $menu-padding;
     background-color: $menu-background;
-    border-bottom: 1px solid $gray-scale-400;
     position: absolute;
     z-index: 1;
-
-    .p-menu-form-field + .p-menu-btn-line {
-      margin-top: $menu-padding;
-    }
-    .p-menu-btn-line + .p-menu-btn-line {
-      margin-top: 4px;
-    }
   }
 
   &-body {
-    height: calc(100% - #{$menu-footer-height});
+    height: 100%;
     padding-top: $menu-padding;
     padding-right: 0;
-    padding-bottom: 0;
+    padding-bottom: $menu-padding;
     padding-left: $menu-padding;
-    // no buttons after input
-    .p-menu-header:not(.extended) + & {
+    .p-menu-header + & {
+      height: calc(100% - #{$menu-footer-height});
       min-height: $menu-header-height + $menu-body-height + $menu-footer-height;
       padding-top: $menu-header-height;
-    }
-    // there are buttons after input
-    .p-menu-header.extended + & {
-      min-height: $menu-header-extended-height + $menu-body-height + $menu-footer-height;
-      padding-top: $menu-header-extended-height;
+      padding-bottom: 0;
     }
 
     &-container {
       height: 100%;
-      padding-top: 0;
       padding-right: $menu-padding;
       overflow: auto;
     }
   }
 
   &-footer {
-    display: flex;
-    align-items: center;
     width: 100%;
-    height: $menu-footer-height;
-    padding: $menu-padding * 2;
+    padding-top: $menu-padding;
+    padding-right: $menu-padding;
+    padding-bottom: $menu-padding;
+    padding-left: $menu-padding;
     background-color: $menu-background;
+    border-top: 1px solid $gray-scale-400;
     position: absolute;
     bottom: 0;
     left: 0;
     z-index: 1;
-    &-btn {
-      & + & {
-        margin-left: $menu-padding;
-      }
-    }
   }
 
   &-btn-line {
@@ -253,7 +186,8 @@ $menu-max-height: 75vh;
     width: 100%;
     height: $menu-item-height;
     ::ng-deep .p-btn {
-      @extend %btn-line;
+      width: 100%;
+      height: 100%;
       justify-content: flex-start;
     }
     ::ng-deep .p-btn-icon-before {
@@ -262,15 +196,5 @@ $menu-max-height: 75vh;
         margin-left: $menu-padding;
       }
     }
-    ::ng-deep .p-checkbox {
-      display: inline-flex;
-      align-items: center;
-      @extend %btn-line;
-      &:not(.mat-checkbox-disabled):hover {
-        background-color: $primary-c-50;
-      }
-    }
   }
 }
-
-

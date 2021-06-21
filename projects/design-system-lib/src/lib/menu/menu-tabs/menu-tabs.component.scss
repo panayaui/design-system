@@ -6,12 +6,16 @@ $menu-background: $gray-scale-1;
 $menu-item-margin-top: 4px;
 $input-text-height: 32px;
 $input-text-padding: 8px;
+$tabs-width: 84px;
+$tabs-height: 28px;
+$tabs-header-height: 60px;
 $menu-header-height: $input-text-height + $menu-padding * 3 + 1px;
 $menu-header-extended-height: $input-text-height + ($menu-padding * 4.5) + ($menu-item-height * 2) + 1px;
 $menu-footer-height: $btn-small-height + $menu-padding * 4;
 $menu-body-height: 103px;
 $menu-min-width: 230px;
 $menu-max-height: 75vh;
+$menu-tabs-min-width: 250px;
 
 %btn-line {
   width: 100%;
@@ -20,28 +24,7 @@ $menu-max-height: 75vh;
   padding-left: $menu-padding;
 }
 
-::ng-deep .p-menu-multiple.mat-menu-panel {
-  min-width: $menu-min-width;
-  max-height: $menu-max-height;
-  background-color: $menu-background;
-  border-radius: 0;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1),
-  0 2px 6px rgba(0, 0, 0, 0.04),
-  0 -3px 6px rgba(0, 0, 0, 0.04);
-  overflow: hidden;
-  .mat-menu-content {
-    height: 100%;
-    padding: 0;
-    position: relative;
-  }
-}
-
-// container of the multiple selection menu
-.p-menu-multiple-container {
-  height: 100%;
-}
-
-::ng-deep .p-menu-multiple-item.mat-list-option.mat-list-item {
+%menu-item {
   font-family: $font-family-basic;
   font-size: $small-font-size;
   color: $primary-a-900;
@@ -58,6 +41,34 @@ $menu-max-height: 75vh;
   &[disabled] {
     color: $gray-scale-600;
   }
+}
+
+::ng-deep .p-menu.mat-menu-panel {
+  min-width: $menu-min-width;
+  max-height: $menu-max-height;
+  background-color: $menu-background;
+  border-radius: 0;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1),
+  0 2px 6px rgba(0, 0, 0, 0.04),
+  0 -3px 6px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  &.tabs {
+    min-width: $menu-tabs-min-width;
+  }
+  .mat-menu-content {
+    height: 100%;
+    padding: 0;
+    position: relative;
+  }
+}
+
+// container of the multiple selection menu
+.p-menu-container {
+  height: 100%;
+}
+
+::ng-deep .p-menu-multiple-item.mat-list-option.mat-list-item {
+  @extend %menu-item;
   .mat-list-item-content.mat-list-item-content-reverse {
     flex-direction: row;
     padding: 0;
@@ -211,11 +222,6 @@ $menu-max-height: 75vh;
     padding-right: 0;
     padding-bottom: 0;
     padding-left: $menu-padding;
-    // no buttons after input
-    .p-menu-header:not(.extended) + & {
-      min-height: $menu-header-height + $menu-body-height + $menu-footer-height;
-      padding-top: $menu-header-height;
-    }
     // there are buttons after input
     .p-menu-header.extended + & {
       min-height: $menu-header-extended-height + $menu-body-height + $menu-footer-height;
@@ -225,17 +231,18 @@ $menu-max-height: 75vh;
     &-container {
       height: 100%;
       padding-top: 0;
-      padding-right: $menu-padding;
       overflow: auto;
     }
   }
 
   &-footer {
     display: flex;
+    justify-content: center;
     align-items: center;
     width: 100%;
     height: $menu-footer-height;
-    padding: $menu-padding * 2;
+    padding-top: $menu-padding * 2;
+    padding-bottom: $menu-padding * 2;
     background-color: $menu-background;
     position: absolute;
     bottom: 0;
@@ -256,12 +263,6 @@ $menu-max-height: 75vh;
       @extend %btn-line;
       justify-content: flex-start;
     }
-    ::ng-deep .p-btn-icon-before {
-      padding-left: $menu-padding;
-      .p-btn-label {
-        margin-left: $menu-padding;
-      }
-    }
     ::ng-deep .p-checkbox {
       display: inline-flex;
       align-items: center;
@@ -270,6 +271,98 @@ $menu-max-height: 75vh;
         background-color: $primary-c-50;
       }
     }
+  }
+}
+
+// tabs
+::ng-deep .p-menu-tabs {
+  max-height: $menu-max-height;
+  height: 100%;
+  .mat-tab-list {
+    width: 100%;
+    height: $tabs-header-height;
+  }
+  .mat-tab-header {
+    border-color: $gray-scale-400;
+  }
+  .mat-tab-labels {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  .mat-tab-label {
+    font-family: $font-family-basic;
+    font-size: $small-font-size;
+    font-weight: 500;
+    width: $tabs-width;
+    height: $tabs-height;
+    min-width: unset;
+    padding: 0;
+    opacity: 1;
+    transition: all 400ms;
+    &-active {
+      color: $gray-scale-1;
+      background-color: $secondary-a-700;
+      font-weight: 600;
+      &:hover ,
+      &:focus {
+        background-color: $secondary-a-800;
+      }
+      &:disabled {
+        color: $gray-scale-600;
+        background-color: $secondary-a-50;
+      }
+    }
+    &:not(.mat-tab-label-active) {
+      color: $secondary-a-700;
+      background-color: $gray-scale-1;
+      border: 1px solid $secondary-a-700;
+      font-weight: 400;
+      &:hover,
+      &:focus {
+        background-color: $primary-c-50;
+      }
+      &:disabled {
+        color: $gray-scale-600;
+        border-color: $secondary-a-500;
+      }
+    }
+  }
+  .mat-ink-bar {
+    display: none;
+  }
+
+  &-panel {
+    height: 100%;
+    &.relative {
+      height: calc(100% - #{$tabs-header-height});
+      padding-top: $menu-padding;
+      padding-left: $menu-padding;
+    }
+  }
+}
+
+// relative panel styles
+.p-menu-check {
+  &-list {
+    @include resetUl;
+    height: 100%;
+    padding-right: $menu-padding;
+    overflow: auto;
+  }
+  &-item {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    @extend %menu-item;
+    ::ng-deep .p-checkbox {
+      display: inline-flex;
+    }
+  }
+  &-input {
+    margin-left: 20px;
+    margin-top: 13px;
   }
 }
 

@@ -31,5 +31,6 @@ export * from './lib/checkbox/checkbox.interface';
 
 export * from './lib/menu/menu.module';
 export * from './lib/menu/menu-button.interface';
-export * from './lib/menu/menu/menu.component';
+export * from './lib/menu/menu-single-select/menu-single-select.component';
 export * from './lib/menu/menu-multi-select/menu-multi-select.component';
+export * from './lib/menu/menu-tabs/menu-tabs.component';

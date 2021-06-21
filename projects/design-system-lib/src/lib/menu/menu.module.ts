@@ -3,12 +3,17 @@ import {CommonModule} from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatListModule} from '@angular/material/list';
-import {MenuComponent} from './menu/menu.component';
+import {MenuSingleSelectComponent} from './menu-single-select/menu-single-select.component';
 import {MenuMultiSelectComponent} from './menu-multi-select/menu-multi-select.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {ReactiveFormsModule} from '@angular/forms';
 import {ButtonModule} from '../button/button.module';
 import {IconModule} from '../icon/icon.module';
+import {MenuTabsComponent} from './menu-tabs/menu-tabs.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import {CheckboxModule} from '../checkbox/checkbox.module';
+import {MatInputModule} from '@angular/material/input';
+import {InputModule} from '../input/input.module';
 
 @NgModule({
   imports: [
@@ -16,18 +21,24 @@ import {IconModule} from '../icon/icon.module';
     BrowserAnimationsModule,
     MatFormFieldModule,
     ReactiveFormsModule,
+    MatInputModule,
     MatMenuModule,
     MatListModule,
+    MatTabsModule,
     ButtonModule,
-    IconModule
+    IconModule,
+    CheckboxModule,
+    InputModule
   ],
   declarations: [
-    MenuComponent,
-    MenuMultiSelectComponent
+    MenuSingleSelectComponent,
+    MenuMultiSelectComponent,
+    MenuTabsComponent
   ],
   exports: [
-    MenuComponent,
-    MenuMultiSelectComponent
+    MenuSingleSelectComponent,
+    MenuMultiSelectComponent,
+    MenuTabsComponent
   ]
 })
 export class MenuModule { }

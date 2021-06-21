@@ -10,13 +10,15 @@ import {SubscriptionLike} from 'rxjs';
 import {MatMenuTrigger} from '@angular/material/menu';
 import {IMenuButton} from '../menu-button.interface';
 import {ICheckbox} from '../../checkbox/checkbox.interface';
+import {IInputNumeric} from '../../input/numeric/input-numeric.interface';
+import {InputNumericSizeEnum} from '../../input/numeric/input-numeric-size.enum';
 
 @Component({
-  selector: 'p-menu-multi-select',
-  templateUrl: './menu-multi-select.component.html',
-  styleUrls: ['./menu-multi-select.component.scss'],
+  selector: 'p-menu-tabs',
+  templateUrl: './menu-tabs.component.html',
+  styleUrls: ['./menu-tabs.component.scss'],
 })
-export class MenuMultiSelectComponent implements OnInit, OnDestroy {
+export class MenuTabsComponent implements OnInit, OnDestroy {
   @Input() menuTriggerName: string;
   @Input() menuList: any[];
   @Input() filterPlaceholder: string; // if there is a search and buttons
@@ -25,24 +27,33 @@ export class MenuMultiSelectComponent implements OnInit, OnDestroy {
   @Input() headerBtnLast: ICheckbox;
   @Input() footerBtnFirst: IMenuButton;
   @Input() footerBtnLast: IMenuButton;
+  @Input() checkboxList: {
+    checkbox: ICheckbox,
+    inputNum: IInputNumeric
+  }[];
   @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;
   private selectedList: any[] = [];
   public selectedShown: any[] = [];
   public filteredList: any[];
-  public formFieldControl: FormControl;
+  public customControl: FormControl;
   private sub: SubscriptionLike;
+  public tabSpecificName: string;
+  public tabRelativeName: string;
+  public inputNumericSize = InputNumericSizeEnum;
 
   ngOnInit(): void {
     this.filteredList = this.menuList;
     if (this.filterPlaceholder) {
-      this.formFieldControl = new FormControl('');
-      this.sub = this.formFieldControl.valueChanges.subscribe((value: string) => {
+      this.customControl = new FormControl('');
+      this.sub = this.customControl.valueChanges.subscribe((value: string) => {
         this.alterList(value);
       });
     }
     if (!this.filterAriaLabel && this.filterPlaceholder) {
       this.filterAriaLabel = this.filterPlaceholder;
     }
+    this.tabSpecificName = 'Specific';
+    this.tabRelativeName = 'Relative';
   }
 
   ngOnDestroy(): void {
