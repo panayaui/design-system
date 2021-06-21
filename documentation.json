@@ -50,50 +50,50 @@
         },
         {
             "name": "ICheckbox",
-            "id": "interface-ICheckbox-fb62af5d1c72b56155b92ea9023e484d",
+            "id": "interface-ICheckbox-87c8abbba1bc727e297ed9f6e239d12e",
             "file": "projects/design-system-lib/src/lib/checkbox/checkbox.interface.ts",
             "type": "interface",
-            "sourceCode": "export interface ICheckbox {\r\n  label?: string;\r\n  ariaLabel?: string;\r\n  checked?: boolean;\r\n  disabled?: boolean;\r\n  selectAll?: boolean;\r\n  indeterminate?: boolean;\r\n}\r\n",
+            "sourceCode": "export interface ICheckbox {\r\n  label: string;\r\n  ariaLabel: string;\r\n  checked: boolean;\r\n  disabled: boolean;\r\n  selectAll: boolean;\r\n  indeterminate: boolean;\r\n}\r\n",
             "properties": [
                 {
                     "name": "ariaLabel",
                     "type": "string",
-                    "optional": true,
+                    "optional": false,
                     "description": "",
                     "line": 3
                 },
                 {
                     "name": "checked",
                     "type": "boolean",
-                    "optional": true,
+                    "optional": false,
                     "description": "",
                     "line": 4
                 },
                 {
                     "name": "disabled",
                     "type": "boolean",
-                    "optional": true,
+                    "optional": false,
                     "description": "",
                     "line": 5
                 },
                 {
                     "name": "indeterminate",
                     "type": "boolean",
-                    "optional": true,
+                    "optional": false,
                     "description": "",
                     "line": 7
                 },
                 {
                     "name": "label",
                     "type": "string",
-                    "optional": true,
+                    "optional": false,
                     "description": "",
                     "line": 2
                 },
                 {
                     "name": "selectAll",
                     "type": "boolean",
-                    "optional": true,
+                    "optional": false,
                     "description": "",
                     "line": 6
                 }
@@ -205,94 +205,80 @@
         },
         {
             "name": "IInputNumeric",
-            "id": "interface-IInputNumeric-551faabe7b8cee396af63ba1e2df9942",
+            "id": "interface-IInputNumeric-8eb41984e34c3db0a2342011e0235111",
             "file": "projects/design-system-lib/src/lib/input/numeric/input-numeric.interface.ts",
             "type": "interface",
-            "sourceCode": "import {ValidatorFn} from '@angular/forms';\r\nimport {InputNumericSizeEnum} from './input-numeric-size.enum';\r\nimport {ErrorStateMatcher} from '@angular/material/core';\r\n\r\nexport interface IInputNumeric {\r\n  type?: string;\r\n  label?: string;\r\n  ariaLabel?: string;\r\n  placeholder?: number;\r\n  errorMessage?: string;\r\n  disabled?: boolean;\r\n  readonly?: boolean;\r\n  value?: number;\r\n  validators?: ValidatorFn[];\r\n  labelLast?: boolean;\r\n  size?: InputNumericSizeEnum;\r\n  matcher?: ErrorStateMatcher;\r\n}\r\n",
+            "sourceCode": "import {ValidatorFn} from '@angular/forms';\r\n\r\nexport interface IInputNumeric {\r\n  type: string;\r\n  label: string;\r\n  ariaLabel: string;\r\n  placeholder: number;\r\n  errorMessage: string;\r\n  disabled: boolean;\r\n  readonly: boolean;\r\n  value: number;\r\n  validators: ValidatorFn[];\r\n  labelLast: boolean;\r\n}\r\n",
             "properties": [
                 {
                     "name": "ariaLabel",
                     "type": "string",
-                    "optional": true,
-                    "description": "",
-                    "line": 8
-                },
-                {
-                    "name": "disabled",
-                    "type": "boolean",
-                    "optional": true,
-                    "description": "",
-                    "line": 11
-                },
-                {
-                    "name": "errorMessage",
-                    "type": "string",
-                    "optional": true,
-                    "description": "",
-                    "line": 10
-                },
-                {
-                    "name": "label",
-                    "type": "string",
-                    "optional": true,
-                    "description": "",
-                    "line": 7
-                },
-                {
-                    "name": "labelLast",
-                    "type": "boolean",
-                    "optional": true,
-                    "description": "",
-                    "line": 15
-                },
-                {
-                    "name": "matcher",
-                    "type": "ErrorStateMatcher",
-                    "optional": true,
-                    "description": "",
-                    "line": 17
-                },
-                {
-                    "name": "placeholder",
-                    "type": "number",
-                    "optional": true,
-                    "description": "",
-                    "line": 9
-                },
-                {
-                    "name": "readonly",
-                    "type": "boolean",
-                    "optional": true,
-                    "description": "",
-                    "line": 12
-                },
-                {
-                    "name": "size",
-                    "type": "InputNumericSizeEnum",
-                    "optional": true,
-                    "description": "",
-                    "line": 16
-                },
-                {
-                    "name": "type",
-                    "type": "string",
-                    "optional": true,
+                    "optional": false,
                     "description": "",
                     "line": 6
                 },
                 {
+                    "name": "disabled",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                },
+                {
+                    "name": "errorMessage",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 8
+                },
+                {
+                    "name": "label",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "labelLast",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                },
+                {
+                    "name": "placeholder",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                },
+                {
+                    "name": "readonly",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                },
+                {
+                    "name": "type",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
                     "name": "validators",
                     "type": "ValidatorFn[]",
-                    "optional": true,
+                    "optional": false,
                     "description": "",
-                    "line": 14
+                    "line": 12
                 },
                 {
                     "name": "value",
                     "type": "number",
-                    "optional": true,
+                    "optional": false,
                     "description": "",
-                    "line": 13
+                    "line": 11
                 }
             ],
             "indexSignatures": [],
@@ -870,7 +856,7 @@
         },
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-921c24d66285b4023c97fb8d2de6f535",
+            "id": "component-AppComponent-63cf0a0e7b61f38521e425b64b69a340",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -890,73 +876,66 @@
                 {
                     "name": "data",
                     "defaultValue": "{\r\n    icon: { iconName: 'bell'},\r\n    messageMain: 'Notification message.',\r\n    actionName: 'Action',\r\n    messageSub: 'Notification message.',\r\n    closeBtnName: 'Close'\r\n  }",
-                    "line": 11
+                    "line": 13
                 }
             ],
             "outputsClass": [],
             "propertiesClass": [
                 {
-                    "name": "checkboxList",
-                    "type": "any",
-                    "optional": false,
-                    "description": "",
-                    "line": 26
-                },
-                {
                     "name": "filterAriaLabel",
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 22
+                    "line": 24
                 },
                 {
                     "name": "filterPlaceholder",
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 23
+                    "line": 25
                 },
                 {
                     "name": "footerBtnFirst",
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 20
+                    "line": 22
                 },
                 {
                     "name": "footerBtnLast",
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 21
+                    "line": 23
                 },
                 {
                     "name": "headerBtnFirst",
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 24
+                    "line": 26
                 },
                 {
                     "name": "headerBtnLast",
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 25
+                    "line": 27
                 },
                 {
                     "name": "menuList",
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 19
+                    "line": 21
                 },
                 {
                     "name": "menuTriggerName",
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 18
+                    "line": 20
                 }
             ],
             "methodsClass": [
@@ -966,7 +945,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 30
+                    "line": 31
                 }
             ],
             "hostBindings": [],
@@ -974,7 +953,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';\r\nimport {InputNumericSizeEnum} from 'projects/design-system-lib/src/public-api';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.scss']\r\n})\r\nexport class AppComponent implements OnInit {\r\n  @Input() data = {\r\n    icon: { iconName: 'bell'},\r\n    messageMain: 'Notification message.',\r\n    actionName: 'Action',\r\n    messageSub: 'Notification message.',\r\n    closeBtnName: 'Close'\r\n  };\r\n  menuTriggerName: 'Multi select';\r\n  menuList: any;\r\n  footerBtnFirst: any;\r\n  footerBtnLast: any;\r\n  filterAriaLabel: string;\r\n  filterPlaceholder: string;\r\n  headerBtnFirst: any;\r\n  headerBtnLast: any;\r\n  checkboxList: any;\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {\r\n    this.menuList = [\r\n      { name: 'Alabama',\r\n        disabled: false\r\n      },\r\n      { name: 'Alaska disabled',\r\n        disabled: true\r\n      },\r\n      { name: 'California',\r\n        disabled: false\r\n      },\r\n      { name: 'Colorado',\r\n        disabled: false\r\n      },\r\n      { name: 'Delaware',\r\n        disabled: false\r\n      },\r\n      { name: 'Florida selected disabled',\r\n        disabled: true,\r\n        selected: true\r\n      },\r\n      { name: 'Georgia',\r\n        disabled: false\r\n      },\r\n      { name: 'Hawaii',\r\n        disabled: false\r\n      },\r\n      { name: 'Idaho',\r\n        disabled: true\r\n      },\r\n      { name: 'Illinois',\r\n        disabled: false\r\n      },\r\n      { name: 'Indiana',\r\n        disabled: false\r\n      },\r\n      { name: 'Iowa',\r\n        disabled: false\r\n      },\r\n      { name: 'Kansas',\r\n        disabled: true,\r\n        selected: true\r\n      },\r\n      { name: 'Kentucky',\r\n        disabled: false\r\n      }\r\n    ];\r\n\r\n    this.footerBtnFirst = {\r\n      label: 'Done',\r\n      buttonType: ButtonTypeEnum.Primary\r\n    };\r\n    this.footerBtnLast = {\r\n      label: 'Cancel',\r\n      buttonType: ButtonTypeEnum.Secondary\r\n    };\r\n    this.filterAriaLabel = 'Find Label';\r\n    this.filterPlaceholder = 'Find Label';\r\n\r\n    this.headerBtnFirst = {\r\n      label: 'Clear selected',\r\n        buttonType: ButtonTypeEnum.Tertiary,\r\n        icon: {\r\n        iconName: 'eraser',\r\n          width: '15',\r\n          height: '15'\r\n      }\r\n    };\r\n    this.headerBtnLast = {\r\n      label: 'Not equal to'\r\n    };\r\n    this.checkboxList = [\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Next'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      }\r\n    ];\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport {MatSnackBar} from '@angular/material/snack-bar';\r\nimport {AlertComponent} from '../../projects/design-system-lib/src/lib/alert/alert.component';\r\nimport {AlertEnum} from '../../projects/design-system-lib/src/lib/alert/alert.enum';\r\nimport {ButtonTypeEnum} from '../../projects/design-system-lib/src/lib/button/button-type.enum';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.scss']\r\n})\r\nexport class AppComponent implements OnInit {\r\n  @Input() data = {\r\n    icon: { iconName: 'bell'},\r\n    messageMain: 'Notification message.',\r\n    actionName: 'Action',\r\n    messageSub: 'Notification message.',\r\n    closeBtnName: 'Close'\r\n  };\r\n  menuTriggerName: 'Multi select';\r\n  menuList: any;\r\n  footerBtnFirst: any;\r\n  footerBtnLast: any;\r\n  filterAriaLabel: string;\r\n  filterPlaceholder: string;\r\n  headerBtnFirst: any;\r\n  headerBtnLast: any;\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {\r\n    this.menuList = [\r\n      { name: 'Alabama',\r\n        disabled: false\r\n      },\r\n      { name: 'Alaska disabled',\r\n        disabled: true\r\n      },\r\n      { name: 'California',\r\n        disabled: false\r\n      },\r\n      { name: 'Colorado',\r\n        disabled: false\r\n      },\r\n      { name: 'Delaware',\r\n        disabled: false\r\n      },\r\n      { name: 'Florida selected disabled',\r\n        disabled: true,\r\n        selected: true\r\n      },\r\n      { name: 'Georgia',\r\n        disabled: false\r\n      },\r\n      { name: 'Hawaii',\r\n        disabled: false\r\n      },\r\n      { name: 'Idaho',\r\n        disabled: true\r\n      },\r\n      { name: 'Illinois',\r\n        disabled: false\r\n      },\r\n      { name: 'Indiana',\r\n        disabled: false\r\n      },\r\n      { name: 'Iowa',\r\n        disabled: false\r\n      },\r\n      { name: 'Kansas',\r\n        disabled: true,\r\n        selected: true\r\n      },\r\n      { name: 'Kentucky',\r\n        disabled: false\r\n      }\r\n    ];\r\n\r\n    this.footerBtnFirst = {\r\n      label: 'Done',\r\n      buttonType: ButtonTypeEnum.Primary\r\n    };\r\n    this.footerBtnLast = {\r\n      label: 'Cancel',\r\n      buttonType: ButtonTypeEnum.Secondary\r\n    };\r\n    this.filterAriaLabel = 'Find Label';\r\n    this.filterPlaceholder = 'Find Label';\r\n\r\n    this.headerBtnFirst = {\r\n      label: 'Clear selected',\r\n        buttonType: ButtonTypeEnum.Tertiary,\r\n        icon: {\r\n        iconName: 'eraser',\r\n          width: '15',\r\n          height: '15'\r\n      }\r\n    };\r\n    this.headerBtnLast = {\r\n      label: 'Not equal to'\r\n    };\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -987,12 +966,12 @@
                 "name": "constructor",
                 "description": "",
                 "args": [],
-                "line": 26
+                "line": 27
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<!--<p-button [label]=\"'Label'\"-->\r\n          <!--[iconBefore]=\"'eye'\"-->\r\n          <!--[iconBeforeWidth]=\"'17'\"-->\r\n          <!--[iconAfter]=\"'chevron-down'\"-->\r\n          <!--[iconAfterWidth]=\"'17'\">-->\r\n<!--</p-button>-->\r\n\r\n<!--<p-input-numeric></p-input-numeric>-->\r\n\r\n<div>\r\n  <p-menu-tabs [menuTriggerName]=\"menuTriggerName\"\r\n               [menuList]=\"menuList\"\r\n               [footerBtnFirst]=\"footerBtnFirst\"\r\n               [footerBtnLast]=\"footerBtnLast\"\r\n               [filterAriaLabel]=\"filterAriaLabel\"\r\n               [filterPlaceholder]=\"filterPlaceholder\"\r\n               [headerBtnFirst]=\"headerBtnFirst\"\r\n               [headerBtnLast]=\"headerBtnLast\"\r\n               [checkboxList]=\"checkboxList\"></p-menu-tabs>\r\n</div>\r\n\r\n"
+            "templateData": "<!--<p-button [label]=\"'Label'\"-->\r\n          <!--[iconBefore]=\"'eye'\"-->\r\n          <!--[iconBeforeWidth]=\"'17'\"-->\r\n          <!--[iconAfter]=\"'chevron-down'\"-->\r\n          <!--[iconAfterWidth]=\"'17'\">-->\r\n<!--</p-button>-->\r\n\r\n<!--<p-input-numeric></p-input-numeric>-->\r\n\r\n<div>\r\n  <p-menu-tabs [menuTriggerName]=\"menuTriggerName\"\r\n                       [menuList]=\"menuList\"\r\n                       [footerBtnFirst]=\"footerBtnFirst\"\r\n                       [footerBtnLast]=\"footerBtnLast\"\r\n                       [filterAriaLabel]=\"filterAriaLabel\"\r\n                       [filterPlaceholder]=\"filterPlaceholder\"\r\n                       [headerBtnFirst]=\"headerBtnFirst\"\r\n                       [headerBtnLast]=\"headerBtnLast\"></p-menu-tabs>\r\n</div>\r\n\r\n"
         },
         {
             "name": "ButtonComponent",
@@ -1090,7 +1069,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n::ng-deep .p-btn {\r\n  @include resetButton;\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  font-weight: 500;\r\n  line-height: 19px;\r\n  min-width: 80px;\r\n  padding-right: 23px;\r\n  padding-left: 23px;\r\n  border-radius: 2px;\r\n  white-space: nowrap;\r\n  transition: all 400ms;\r\n\r\n  &-large {\r\n    height: $btn-large-height;\r\n  }\r\n\r\n  &-small {\r\n    height: $btn-small-height;\r\n  }\r\n\r\n  &:disabled {\r\n    pointer-events: none;\r\n  }\r\n\r\n  &-primary {\r\n    color: $gray-scale-1;\r\n    background-color: $secondary-a-700;\r\n    &:hover {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:focus {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      background-color: $secondary-a-50;\r\n    }\r\n  }\r\n\r\n  &-secondary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    border: 1px solid $secondary-a-700;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      border-color: $secondary-a-500;\r\n    }\r\n  }\r\n\r\n  &-tertiary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n    }\r\n  }\r\n\r\n  &-distructive {\r\n    color: $gray-scale-1;\r\n    background-color: $supportive-alert-500;\r\n    &:hover {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:focus {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      background-color: $supportive-alert-50;\r\n    }\r\n  }\r\n\r\n  // class of the button\r\n  &-icon-before {\r\n    padding-left: 17px;\r\n    .p-btn-label {\r\n      margin-left: 11px;\r\n    }\r\n  }\r\n  // class of the button\r\n  &-icon-after {\r\n    padding-right: 17px;\r\n    .p-btn-label {\r\n      margin-right: 11px;\r\n    }\r\n  }\r\n\r\n  // class of the icon\r\n  &-icon-pre,\r\n  &-icon-post {\r\n    display: inline-flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n  }\r\n}\r\n\r\n\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n.p-btn {\r\n  @include resetButton;\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  font-weight: 500;\r\n  line-height: 19px;\r\n  min-width: 80px;\r\n  padding-right: 23px;\r\n  padding-left: 23px;\r\n  border-radius: 2px;\r\n  white-space: nowrap;\r\n  transition: all 400ms;\r\n\r\n  &-large {\r\n    height: $btn-large-height;\r\n  }\r\n\r\n  &-small {\r\n    height: $btn-small-height;\r\n  }\r\n\r\n  &:disabled {\r\n    pointer-events: none;\r\n  }\r\n\r\n  &-primary {\r\n    color: $gray-scale-1;\r\n    background-color: $secondary-a-700;\r\n    &:hover {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:focus {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      background-color: $secondary-a-50;\r\n    }\r\n  }\r\n\r\n  &-secondary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    border: 1px solid $secondary-a-700;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      border-color: $secondary-a-500;\r\n    }\r\n  }\r\n\r\n  &-tertiary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n    }\r\n  }\r\n\r\n  &-distructive {\r\n    color: $gray-scale-1;\r\n    background-color: $supportive-alert-500;\r\n    &:hover {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:focus {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      background-color: $supportive-alert-50;\r\n    }\r\n  }\r\n\r\n  // class of the button\r\n  &-icon-before {\r\n    padding-left: 17px;\r\n    .p-btn-label {\r\n      margin-left: 11px;\r\n    }\r\n  }\r\n  // class of the button\r\n  &-icon-after {\r\n    padding-right: 17px;\r\n    .p-btn-label {\r\n      margin-right: 11px;\r\n    }\r\n  }\r\n\r\n  // class of the icon\r\n  &-icon-pre,\r\n  &-icon-post {\r\n    display: inline-flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n  }\r\n}\r\n\r\n\r\n",
                     "styleUrl": "./button.component.scss"
                 }
             ],
@@ -1658,7 +1637,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$input-numeric-width: 55px;\r\n$input-numeric-padding: 8px;\r\n\r\n.p-input-numeric {\r\n  &-small {\r\n    width: 56px;\r\n  }\r\n  &-medium {\r\n    width: 112px;\r\n  }\r\n  &-large {\r\n    width: 224px;\r\n  }\r\n\r\n  &-container {\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n\r\n  &-label {\r\n    font-family: $font-family-basic;\r\n    font-weight: 400;\r\n    font-size: $small-font-size;\r\n    line-height: 19px;\r\n    color: $primary-a-900;\r\n    padding-bottom: 13px;\r\n    &.disabled {\r\n      color: $gray-scale-600;\r\n    }\r\n    &.first {\r\n      margin-right: 8px;\r\n    }\r\n    &.last {\r\n      margin-left: 8px;\r\n    }\r\n  }\r\n\r\n  ::ng-deep & {\r\n    // material styles override\r\n    .mat-input-element {\r\n      font-family: $font-family-basic;\r\n      font-size: $base-font-size;\r\n      width: 100%;\r\n      line-height: 20px;\r\n      color: $primary-a-900;\r\n      caret-color: $primary-a-900;\r\n    }\r\n    .mat-form-field-infix {\r\n      width: $input-numeric-width;\r\n      padding-top: 0;\r\n      padding-bottom: 6px;\r\n      padding-left: $input-numeric-padding;\r\n    }\r\n    .mat-form-field-label-wrapper {\r\n      padding-top: 0;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-flex {\r\n      padding-top: 0;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $gray-scale-600;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-underline,\r\n    &:not(.mat-form-field-disabled):not(.mat-form-field-invalid)\r\n            .mat-form-field-flex:hover~.mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $primary-a-900;\r\n    }\r\n    .mat-form-field-ripple {\r\n      display: none;\r\n    }\r\n    .mat-form-field-subscript-wrapper {\r\n      margin-top: 5px;\r\n      overflow: visible;\r\n    }\r\n    .mat-error {\r\n      font-family: $font-family-basic;\r\n      font-size: $tiny-font-size;\r\n      color: $supportive-alert-500;\r\n      line-height: 12px;\r\n      white-space: nowrap;\r\n    }\r\n\r\n    // disabled\r\n    &.mat-form-field-disabled {\r\n      .mat-input-element {\r\n        color: $gray-scale-600;\r\n      }\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $gray-scale-400;\r\n      }\r\n    }\r\n\r\n    // error state\r\n    &.ng-invalid {\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-500;\r\n      }\r\n      &.mat-form-field .mat-form-field-flex:hover~.mat-form-field-underline,\r\n      &.mat-form-field.mat-focused .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-700;\r\n      }\r\n    }\r\n\r\n    // readonly\r\n    &.p-input-numeric-readonly {\r\n      &:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover~.mat-form-field-underline,\r\n\r\n      .mat-form-field-underline {\r\n        box-shadow: none;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$input-numeric-width: 55px;\r\n$input-numeric-padding: 8px;\r\n\r\n.p-input-numeric {\r\n  &-small {\r\n    width: 56px;\r\n  }\r\n  &-medium {\r\n    width: 112px;\r\n  }\r\n  &-large {\r\n    width: 224px;\r\n  }\r\n\r\n  &-container {\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n\r\n  &-label {\r\n    font-family: $font-family-basic;\r\n    font-weight: 400;\r\n    font-size: $small-font-size;\r\n    text-transform: capitalize;\r\n    line-height: 19px;\r\n    color: $primary-a-900;\r\n    padding-bottom: 15px;\r\n    &.disabled {\r\n      color: $gray-scale-600;\r\n    }\r\n    &.first {\r\n      margin-right: 8px;\r\n    }\r\n    &.last {\r\n      margin-left: 8px;\r\n    }\r\n  }\r\n\r\n  ::ng-deep & {\r\n    // material styles override\r\n    .mat-input-element {\r\n      font-family: $font-family-basic;\r\n      font-size: $base-font-size;\r\n      width: 100%;\r\n      line-height: 20px;\r\n      color: $primary-a-900;\r\n      caret-color: $primary-a-900;\r\n    }\r\n    .mat-form-field-infix {\r\n      width: $input-numeric-width;\r\n      padding-top: 0;\r\n      padding-bottom: 6px;\r\n      padding-left: $input-numeric-padding;\r\n    }\r\n    .mat-form-field-label-wrapper {\r\n      padding-top: 0;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-flex {\r\n      padding-top: 0;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $gray-scale-600;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-underline,\r\n    &:not(.mat-form-field-disabled):not(.mat-form-field-invalid)\r\n            .mat-form-field-flex:hover~.mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $primary-a-900;\r\n    }\r\n    .mat-form-field-ripple {\r\n      display: none;\r\n    }\r\n    .mat-form-field-subscript-wrapper {\r\n      margin-top: 5px;\r\n      overflow: visible;\r\n    }\r\n    .mat-error {\r\n      font-family: $font-family-basic;\r\n      font-size: $tiny-font-size;\r\n      color: $supportive-alert-500;\r\n      line-height: 12px;\r\n      white-space: nowrap;\r\n    }\r\n\r\n    // disabled\r\n    &.mat-form-field-disabled {\r\n      .mat-input-element {\r\n        color: $gray-scale-600;\r\n      }\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $gray-scale-400;\r\n      }\r\n    }\r\n\r\n    // error state\r\n    &.ng-invalid {\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-500;\r\n      }\r\n      &.mat-form-field .mat-form-field-flex:hover~.mat-form-field-underline,\r\n      &.mat-form-field.mat-focused .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-700;\r\n      }\r\n    }\r\n\r\n    // readonly\r\n    &.p-input-numeric-readonly {\r\n      &:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover~.mat-form-field-underline,\r\n\r\n      .mat-form-field-underline {\r\n        box-shadow: none;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "./input-numeric.component.scss"
                 }
             ],
@@ -2134,173 +2113,6 @@
             "templateData": "<div class=\"p-label-small\">\r\n  <span class=\"p-label-small-indicator\"\r\n        [ngClass]=\"'p-label-small-indicator-' + type\"\r\n        attr.aria-label=\"{{ariaLabel}}\"></span>\r\n  <span class=\"p-label-small-text\">{{label}}</span>\r\n</div>\r\n\r\n\r\n"
         },
         {
-            "name": "MenuComponent",
-            "id": "component-MenuComponent-3d080f1227df283c7aa4909dbc13f2c7",
-            "file": "projects/design-system-lib/src/lib/menu/menu/menu.component.ts",
-            "encapsulation": [
-                "ViewEncapsulation.None"
-            ],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "p-menu",
-            "styleUrls": [
-                "./menu.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./menu.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [
-                {
-                    "name": "buttonFirst",
-                    "line": 18,
-                    "type": "IMenuButton"
-                },
-                {
-                    "name": "buttonLast",
-                    "line": 19,
-                    "type": "IMenuButton"
-                },
-                {
-                    "name": "filterAriaLabel",
-                    "line": 17,
-                    "type": "string"
-                },
-                {
-                    "name": "filterPlaceholder",
-                    "line": 16,
-                    "type": "string"
-                },
-                {
-                    "name": "groupTitle",
-                    "defaultValue": "false",
-                    "line": 15,
-                    "type": "boolean"
-                },
-                {
-                    "name": "menuList",
-                    "line": 14,
-                    "type": "any[]"
-                },
-                {
-                    "name": "menuTriggerName",
-                    "line": 13,
-                    "type": "string"
-                }
-            ],
-            "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "filteredList",
-                    "type": "any[]",
-                    "optional": false,
-                    "description": "",
-                    "line": 20,
-                    "modifierKind": [
-                        114
-                    ]
-                },
-                {
-                    "name": "formFieldControl",
-                    "type": "FormControl",
-                    "optional": false,
-                    "description": "",
-                    "line": 21,
-                    "modifierKind": [
-                        114
-                    ]
-                },
-                {
-                    "name": "sub",
-                    "type": "SubscriptionLike",
-                    "optional": false,
-                    "description": "",
-                    "line": 22,
-                    "modifierKind": [
-                        114
-                    ]
-                }
-            ],
-            "methodsClass": [
-                {
-                    "name": "alterList",
-                    "args": [
-                        {
-                            "name": "value",
-                            "type": "string"
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 52,
-                    "jsdoctags": [
-                        {
-                            "name": "value",
-                            "type": "string",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "destroyComp",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 45
-                },
-                {
-                    "name": "initComp",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 32
-                },
-                {
-                    "name": "ngOnDestroy",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 28
-                },
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 24
-                }
-            ],
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "",
-            "type": "component",
-            "sourceCode": "import {Component, Input, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';\r\nimport {FormControl} from '@angular/forms';\r\nimport {SubscriptionLike} from 'rxjs';\r\nimport {IMenuButton} from '../menu-button.interface';\r\n\r\n@Component({\r\n  selector: 'p-menu',\r\n  templateUrl: './menu.component.html',\r\n  styleUrls: ['./menu.component.scss'],\r\n  encapsulation: ViewEncapsulation.None\r\n})\r\nexport class MenuComponent implements OnInit, OnDestroy {\r\n  @Input() menuTriggerName: string;\r\n  @Input() menuList: any[];\r\n  @Input() groupTitle: boolean = false; // if there is a group title\r\n  @Input() filterPlaceholder: string; // if there is a search and buttons\r\n  @Input() filterAriaLabel: string;\r\n  @Input() buttonFirst: IMenuButton;\r\n  @Input() buttonLast: IMenuButton;\r\n  public filteredList: any[];\r\n  public formFieldControl: FormControl;\r\n  public sub: SubscriptionLike;\r\n\r\n  ngOnInit(): void {\r\n    this.initComp();\r\n  }\r\n\r\n  ngOnDestroy(): void {\r\n    this.destroyComp();\r\n  }\r\n\r\n  initComp(): void {\r\n    this.filteredList = this.menuList;\r\n    if (this.filterPlaceholder) {\r\n      this.formFieldControl = new FormControl('');\r\n      this.sub = this.formFieldControl.valueChanges.subscribe((value: string) => {\r\n        this.alterList(value);\r\n      });\r\n    }\r\n    if (!this.filterAriaLabel && this.filterPlaceholder) {\r\n      this.filterAriaLabel = this.filterPlaceholder;\r\n    }\r\n  }\r\n\r\n  destroyComp(): void {\r\n    if (this.filterPlaceholder && this.sub) {\r\n      this.sub.unsubscribe();\r\n      this.sub = null;\r\n    }\r\n  }\r\n\r\n  alterList(value: string): void {\r\n    this.filteredList = [];\r\n    this.menuList.forEach(group => {\r\n      const filteredGroup = group.names.filter( name => name.name.toLowerCase().indexOf(value.toLowerCase()) > -1);\r\n      if (filteredGroup.length > 0) {\r\n        this.filteredList.push(Object.assign({}, group, group.names = filteredGroup));\r\n      }\r\n    });\r\n  }\r\n}\r\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$menu-padding: 8px;\r\n$menu-item-height: 32px;\r\n$menu-background: $gray-scale-1;\r\n$menu-item-margin-top: 4px;\r\n$input-text-height: 32px;\r\n$input-text-padding: 8px;\r\n$menu-header-height: $input-text-height + $menu-padding + $menu-padding;\r\n$menu-footer-height: $menu-padding * 3 + $menu-item-height * 2;\r\n$menu-body-height: 103px;\r\n$menu-min-width: 230px;\r\n$menu-max-height: 75vh;\r\n\r\n%menu-item {\r\n  font-family: $font-family-basic;\r\n  color: $primary-a-900;\r\n  height: $menu-item-height;\r\n  line-height: $menu-item-height;\r\n  padding: 0 8px;\r\n  @include ellipsis;\r\n  & + & {\r\n    margin-top: $menu-item-margin-top;\r\n  }\r\n}\r\n\r\n::ng-deep .p-menu.mat-menu-panel {\r\n  min-width: $menu-min-width;\r\n  max-height: $menu-max-height;\r\n  background-color: $menu-background;\r\n  border-radius: 0;\r\n  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1),\r\n  0 2px 6px rgba(0, 0, 0, 0.04),\r\n  0 -3px 6px rgba(0, 0, 0, 0.04);\r\n  overflow: hidden;\r\n  .mat-menu-content {\r\n    height: 100%;\r\n    padding: 0;\r\n    position: relative;\r\n  }\r\n\r\n  .mat-menu-item {\r\n    @extend %menu-item;\r\n    font-size: $small-font-size;\r\n    &:hover,\r\n    &.cdk-focused {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &[disabled] {\r\n      color: $gray-scale-600;\r\n    }\r\n    &.p-menu-item-selected {\r\n      background-color: $secondary-a-100;\r\n    }\r\n  }\r\n}\r\n\r\n.p-menu-group-title {\r\n  @extend %menu-item;\r\n  font-size: $tiny-font-size;\r\n  font-weight: 700;\r\n  text-transform: uppercase;\r\n}\r\n\r\n// search field\r\n::ng-deep .p-menu {\r\n  &-form-field {\r\n    width: 100%;\r\n    height: $input-text-height;\r\n    ::placeholder {\r\n      font-style: italic;\r\n      color: $gray-scale-700;\r\n    }\r\n\r\n    .mat-input-element {\r\n      font-family: $font-family-basic;\r\n      font-size: $small-font-size;\r\n      color: $primary-a-900;\r\n      max-width: calc(100% - #{$input-text-padding} * 2 - 2px);\r\n      height: $input-text-height - 2px;\r\n      margin-top: 1px;\r\n      padding-left: $input-text-padding;\r\n      padding-right: $input-text-padding;\r\n      caret-color: $primary-a-900;\r\n    }\r\n\r\n    &.mat-form-field-appearance-outline {\r\n      &:hover {\r\n        .mat-form-field-outline,\r\n        .mat-form-field-outline-thick {\r\n          color: $primary-a-900;\r\n        }\r\n      }\r\n      .mat-form-field-wrapper {\r\n        height: 100%;\r\n        margin-top: 0;\r\n        margin-bottom: 0;\r\n        padding-bottom: 0;\r\n      }\r\n      .mat-form-field-flex {\r\n        height: 100%;\r\n        padding: 0;\r\n        margin-top: 0;\r\n      }\r\n      .mat-form-field-outline {\r\n        top: 0;\r\n      }\r\n      .mat-form-field-infix {\r\n        display: flex;\r\n        justify-content: center;\r\n        align-items: center;\r\n        height: $input-text-height;\r\n        padding: 0;\r\n        border-top: none;\r\n      }\r\n      .mat-form-field-outline-start {\r\n        border-radius: 2px 0 0 2px;\r\n      }\r\n      .mat-form-field-outline-end {\r\n        border-radius: 0 2px 2px 0;\r\n      }\r\n      .mat-form-field-outline,\r\n      .mat-form-field-outline-thick {\r\n        color: $gray-scale-400;\r\n        .mat-form-field-outline-start,\r\n        .mat-form-field-outline-end,\r\n        .mat-form-field-outline-gap {\r\n          border-width: 1px;\r\n        }\r\n      }\r\n      &.mat-focused {\r\n        .mat-form-field-outline,\r\n        .mat-form-field-outline-thick {\r\n          color: $primary-a-900;\r\n        }\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n.p-menu {\r\n  &-header {\r\n    width: 100%;\r\n    padding: $menu-padding;\r\n    background-color: $menu-background;\r\n    position: absolute;\r\n    z-index: 1;\r\n  }\r\n\r\n  &-body {\r\n    height: 100%;\r\n    padding-top: $menu-padding;\r\n    padding-right: 0;\r\n    padding-bottom: $menu-padding;\r\n    padding-left: $menu-padding;\r\n    .p-menu-header + & {\r\n      height: calc(100% - #{$menu-footer-height});\r\n      min-height: $menu-header-height + $menu-body-height + $menu-footer-height;\r\n      padding-top: $menu-header-height;\r\n      padding-bottom: 0;\r\n    }\r\n\r\n    &-container {\r\n      height: 100%;\r\n      padding-right: $menu-padding;\r\n      overflow: auto;\r\n    }\r\n  }\r\n\r\n  &-footer {\r\n    width: 100%;\r\n    padding-top: $menu-padding;\r\n    padding-right: $menu-padding;\r\n    padding-bottom: $menu-padding;\r\n    padding-left: $menu-padding;\r\n    background-color: $menu-background;\r\n    border-top: 1px solid $gray-scale-400;\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 0;\r\n    z-index: 1;\r\n  }\r\n\r\n  &-btn-line {\r\n    display: block;\r\n    width: 100%;\r\n    height: $menu-item-height;\r\n    ::ng-deep .p-btn {\r\n      width: 100%;\r\n      height: 100%;\r\n      justify-content: flex-start;\r\n    }\r\n    ::ng-deep .p-btn-icon-before {\r\n      padding-left: $menu-padding;\r\n      .p-btn-label {\r\n        margin-left: $menu-padding;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
-                    "styleUrl": "./menu.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "implements": [
-                "OnInit",
-                "OnDestroy"
-            ],
-            "templateData": "<button [matMenuTriggerFor]=\"menu\"\r\n        class=\"p-btn p-btn-small p-btn-primary\">\r\n  {{menuTriggerName}}\r\n</button>\r\n\r\n<!--menu-single-select line template-->\r\n<ng-template #menuLine let-itemsList=\"itemsList\">\r\n  <button *ngFor=\"let item of itemsList\"\r\n          mat-menu-item\r\n          [class.p-menu-item-selected]=\"item.selected\"\r\n          [disabled]=\"item.disabled\"\r\n          [disableRipple]=\"true\">\r\n    {{item.name}}\r\n  </button>\r\n</ng-template>\r\n\r\n<!--menu-single-select window-->\r\n<mat-menu #menu=\"matMenu\" class=\"p-menu\" [overlapTrigger]=\"false\">\r\n  <div class=\"p-menu-header\" *ngIf=\"filterPlaceholder\">\r\n    <mat-form-field class=\"p-menu-form-field\"\r\n                    appearance=\"outline\"\r\n                    floatLabel=\"always\"\r\n                    (click)=\"$event.stopPropagation()\"\r\n                    (keydown)=\"$event.stopPropagation()\">\r\n      <input matInput\r\n             type=\"text\"\r\n             [placeholder]=\"filterPlaceholder\"\r\n             attr.aria-label=\"{{filterAriaLabel}}\"\r\n             [formControl]=\"formFieldControl\"\r\n             onfocus=\"this.select()\"\r\n             class=\"p-menu-input\">\r\n    </mat-form-field>\r\n  </div>\r\n\r\n  <div class=\"p-menu-body\">\r\n    <div class=\"p-menu-body-container\">\r\n      <!--groupTitle === true-->\r\n      <ng-template [ngIf]=\"groupTitle\" [ngIfElse]=\"noGroupTitle\">\r\n        <ng-container *ngFor=\"let group of filteredList\">\r\n          <h6 class=\"p-menu-group-title\">{{group.letter}}</h6>\r\n          <ng-container [ngTemplateOutlet]=\"menuLine\"\r\n                        [ngTemplateOutletContext] =\"{itemsList: group.names}\"></ng-container>\r\n        </ng-container>\r\n      </ng-template>\r\n\r\n      <!--groupTitle === false-->\r\n      <ng-template #noGroupTitle>\r\n        <ng-container [ngTemplateOutlet]=\"menuLine\"\r\n                      [ngTemplateOutletContext] =\"{itemsList: menuList}\"></ng-container>\r\n      </ng-template>\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"p-menu-footer\" *ngIf=\"filterPlaceholder\">\r\n    <p-button class=\"p-menu-btn-line\"\r\n              [label]=\"buttonFirst.label\"\r\n              [iconBefore]=\"buttonFirst.icon.iconName\"\r\n              [iconBeforeWidth]=\"buttonFirst.icon.width\"\r\n              [iconBeforeHeight]=\"buttonFirst.icon.height\"\r\n              [buttonType]=\"buttonFirst.buttonType\"></p-button>\r\n    <p-button class=\"p-menu-btn-line\"\r\n              [label]=\"buttonLast.label\"\r\n              [iconBefore]=\"buttonLast.icon.iconName\"\r\n              [iconBeforeWidth]=\"buttonLast.icon.width\"\r\n              [iconBeforeHeight]=\"buttonLast.icon.height\"\r\n              [buttonType]=\"buttonLast.buttonType\"></p-button>\r\n  </div>\r\n</mat-menu>\r\n"
-        },
-        {
             "name": "MenuMultiSelectComponent",
             "id": "component-MenuMultiSelectComponent-38699c7c1231dbfee7811d28e0184da4",
             "file": "projects/design-system-lib/src/lib/menu/menu-multi-select/menu-multi-select.component.ts",
@@ -2515,7 +2327,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$menu-padding: 8px;\r\n$menu-item-height: 32px;\r\n$menu-background: $gray-scale-1;\r\n$menu-item-margin-top: 4px;\r\n$input-text-height: 32px;\r\n$input-text-padding: 8px;\r\n$menu-header-height: $input-text-height + $menu-padding * 3 + 1px;\r\n$menu-header-extended-height: $input-text-height + ($menu-padding * 4.5) + ($menu-item-height * 2) + 1px;\r\n$menu-footer-height: $btn-small-height + $menu-padding * 4;\r\n$menu-body-height: 103px;\r\n$menu-min-width: 230px;\r\n$menu-max-height: 75vh;\r\n\r\n%btn-line {\r\n  width: 100%;\r\n  height: 100%;\r\n  padding-right: $menu-padding;\r\n  padding-left: $menu-padding;\r\n}\r\n\r\n::ng-deep .p-menu-multiple.mat-menu-panel {\r\n  min-width: $menu-min-width;\r\n  max-height: $menu-max-height;\r\n  background-color: $menu-background;\r\n  border-radius: 0;\r\n  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1),\r\n  0 2px 6px rgba(0, 0, 0, 0.04),\r\n  0 -3px 6px rgba(0, 0, 0, 0.04);\r\n  overflow: hidden;\r\n  .mat-menu-content {\r\n    height: 100%;\r\n    padding: 0;\r\n    position: relative;\r\n  }\r\n}\r\n\r\n// container of the multiple selection menu\r\n.p-menu-multiple-container {\r\n  height: 100%;\r\n}\r\n\r\n::ng-deep .p-menu-multiple-item.mat-list-option.mat-list-item {\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  color: $primary-a-900;\r\n  height: $menu-item-height;\r\n  line-height: $menu-item-height;\r\n  padding: 0 8px;\r\n  & + & {\r\n    margin-top: $menu-item-margin-top;\r\n  }\r\n  &:hover,\r\n  &.cdk-focused {\r\n    background-color: $primary-c-50;\r\n  }\r\n  &[disabled] {\r\n    color: $gray-scale-600;\r\n  }\r\n  .mat-list-item-content.mat-list-item-content-reverse {\r\n    flex-direction: row;\r\n    padding: 0;\r\n    .mat-list-text {\r\n      display: inline;\r\n      padding-left: 8px;\r\n      padding-right: 0;\r\n      @include ellipsis;\r\n    }\r\n  }\r\n\r\n  .mat-pseudo-checkbox:not(.mat-pseudo-checkbox-checked) {\r\n    border: 1px solid $gray-scale-400;\r\n    background-color: $gray-scale-1;\r\n  }\r\n\r\n  // checked\r\n  .mat-pseudo-checkbox-checked {\r\n    background-color: $secondary-a-700;\r\n    &:after {\r\n      width: 7px;\r\n      height: 2px;\r\n      top: 3.4px;\r\n      left: 1.5px;\r\n    }\r\n  }\r\n\r\n  // disabled\r\n  &.mat-list-item-disabled {\r\n    background-color: transparent;\r\n    .mat-pseudo-checkbox:not(.mat-pseudo-checkbox-checked) {\r\n      background-color: $primary-c-50;\r\n      border-color: $gray-scale-400;\r\n    }\r\n    .mat-pseudo-checkbox-checked {\r\n      background-color: $secondary-a-100;\r\n    }\r\n    .mat-list-text {\r\n      color: $gray-scale-600;\r\n    }\r\n  }\r\n}\r\n\r\n// results on the trigger\r\n.p-menu-trigger-result {\r\n  & + & {\r\n    margin-left: 5px;\r\n  }\r\n  &:not(:last-child):after {\r\n    content: ',';\r\n    display: inline;\r\n  }\r\n}\r\n\r\n// search field\r\n::ng-deep .p-menu {\r\n  &-form-field {\r\n    width: 100%;\r\n    height: $input-text-height;\r\n    ::placeholder {\r\n      font-style: italic;\r\n      color: $gray-scale-700;\r\n    }\r\n\r\n    .mat-input-element {\r\n      font-family: $font-family-basic;\r\n      font-size: $small-font-size;\r\n      color: $primary-a-900;\r\n      max-width: calc(100% - #{$input-text-padding} * 2 - 2px);\r\n      height: $input-text-height - 2px;\r\n      margin-top: 1px;\r\n      padding-left: $input-text-padding;\r\n      padding-right: $input-text-padding;\r\n      caret-color: $primary-a-900;\r\n    }\r\n\r\n    &.mat-form-field-appearance-outline {\r\n      &:hover {\r\n        .mat-form-field-outline,\r\n        .mat-form-field-outline-thick {\r\n          color: $primary-a-900;\r\n        }\r\n      }\r\n      .mat-form-field-wrapper {\r\n        height: 100%;\r\n        margin-top: 0;\r\n        margin-bottom: 0;\r\n        padding-bottom: 0;\r\n      }\r\n      .mat-form-field-flex {\r\n        height: 100%;\r\n        padding: 0;\r\n        margin-top: 0;\r\n      }\r\n      .mat-form-field-outline {\r\n        top: 0;\r\n      }\r\n      .mat-form-field-infix {\r\n        display: flex;\r\n        justify-content: center;\r\n        align-items: center;\r\n        height: $input-text-height;\r\n        padding: 0;\r\n        border-top: none;\r\n      }\r\n      .mat-form-field-outline-start {\r\n        border-radius: 2px 0 0 2px;\r\n      }\r\n      .mat-form-field-outline-end {\r\n        border-radius: 0 2px 2px 0;\r\n      }\r\n      .mat-form-field-outline,\r\n      .mat-form-field-outline-thick {\r\n        color: $gray-scale-400;\r\n        .mat-form-field-outline-start,\r\n        .mat-form-field-outline-end,\r\n        .mat-form-field-outline-gap {\r\n          border-width: 1px;\r\n        }\r\n      }\r\n      &.mat-focused {\r\n        .mat-form-field-outline,\r\n        .mat-form-field-outline-thick {\r\n          color: $primary-a-900;\r\n        }\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n.p-menu {\r\n  &-header {\r\n    width: 100%;\r\n    padding: $menu-padding;\r\n    background-color: $menu-background;\r\n    border-bottom: 1px solid $gray-scale-400;\r\n    position: absolute;\r\n    z-index: 1;\r\n\r\n    .p-menu-form-field + .p-menu-btn-line {\r\n      margin-top: $menu-padding;\r\n    }\r\n    .p-menu-btn-line + .p-menu-btn-line {\r\n      margin-top: 4px;\r\n    }\r\n  }\r\n\r\n  &-body {\r\n    height: calc(100% - #{$menu-footer-height});\r\n    padding-top: $menu-padding;\r\n    padding-right: 0;\r\n    padding-bottom: 0;\r\n    padding-left: $menu-padding;\r\n    // no buttons after input\r\n    .p-menu-header:not(.extended) + & {\r\n      min-height: $menu-header-height + $menu-body-height + $menu-footer-height;\r\n      padding-top: $menu-header-height;\r\n    }\r\n    // there are buttons after input\r\n    .p-menu-header.extended + & {\r\n      min-height: $menu-header-extended-height + $menu-body-height + $menu-footer-height;\r\n      padding-top: $menu-header-extended-height;\r\n    }\r\n\r\n    &-container {\r\n      height: 100%;\r\n      padding-top: 0;\r\n      padding-right: $menu-padding;\r\n      overflow: auto;\r\n    }\r\n  }\r\n\r\n  &-footer {\r\n    display: flex;\r\n    align-items: center;\r\n    width: 100%;\r\n    height: $menu-footer-height;\r\n    padding: $menu-padding * 2;\r\n    background-color: $menu-background;\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 0;\r\n    z-index: 1;\r\n    &-btn {\r\n      & + & {\r\n        margin-left: $menu-padding;\r\n      }\r\n    }\r\n  }\r\n\r\n  &-btn-line {\r\n    display: block;\r\n    width: 100%;\r\n    height: $menu-item-height;\r\n    ::ng-deep .p-btn {\r\n      @extend %btn-line;\r\n      justify-content: flex-start;\r\n    }\r\n    ::ng-deep .p-btn-icon-before {\r\n      padding-left: $menu-padding;\r\n      .p-btn-label {\r\n        margin-left: $menu-padding;\r\n      }\r\n    }\r\n    ::ng-deep .p-checkbox {\r\n      display: inline-flex;\r\n      align-items: center;\r\n      @extend %btn-line;\r\n      &:not(.mat-checkbox-disabled):hover {\r\n        background-color: $primary-c-50;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n\r\n",
+                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$menu-padding: 8px;\r\n$menu-item-height: 32px;\r\n$menu-background: $gray-scale-1;\r\n$menu-item-margin-top: 4px;\r\n$input-text-height: 32px;\r\n$input-text-padding: 8px;\r\n$menu-header-height: $input-text-height + $menu-padding * 3 + 1px;\r\n$menu-header-extended-height: $input-text-height + ($menu-padding * 4.5) + ($menu-item-height * 2) + 1px;\r\n$menu-footer-height: $btn-small-height + $menu-padding * 4;\r\n$menu-body-height: 103px;\r\n$menu-min-width: 230px;\r\n$menu-max-height: 75vh;\r\n\r\n%btn-line {\r\n  width: 100%;\r\n  height: 100%;\r\n  padding-right: $menu-padding;\r\n  padding-left: $menu-padding;\r\n}\r\n\r\n::ng-deep .p-menu-multiple.mat-menu-panel {\r\n  min-width: $menu-min-width;\r\n  max-height: $menu-max-height;\r\n  background-color: $menu-background;\r\n  border-radius: 0;\r\n  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1),\r\n  0 2px 6px rgba(0, 0, 0, 0.04),\r\n  0 -3px 6px rgba(0, 0, 0, 0.04);\r\n  overflow: hidden;\r\n  .mat-menu-content {\r\n    height: 100%;\r\n    padding: 0;\r\n    position: relative;\r\n  }\r\n}\r\n\r\n// container of the multiple selection menu-single-select\r\n.p-menu-multiple-container {\r\n  height: 100%;\r\n}\r\n\r\n::ng-deep .p-menu-multiple-item.mat-list-option.mat-list-item {\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  color: $primary-a-900;\r\n  height: $menu-item-height;\r\n  line-height: $menu-item-height;\r\n  padding: 0 8px;\r\n  & + & {\r\n    margin-top: $menu-item-margin-top;\r\n  }\r\n  &:hover,\r\n  &.cdk-focused {\r\n    background-color: $primary-c-50;\r\n  }\r\n  &[disabled] {\r\n    color: $gray-scale-600;\r\n  }\r\n  .mat-list-item-content.mat-list-item-content-reverse {\r\n    flex-direction: row;\r\n    padding: 0;\r\n    .mat-list-text {\r\n      display: inline;\r\n      padding-left: 8px;\r\n      padding-right: 0;\r\n      @include ellipsis;\r\n    }\r\n  }\r\n\r\n  .mat-pseudo-checkbox:not(.mat-pseudo-checkbox-checked) {\r\n    border: 1px solid $gray-scale-400;\r\n    background-color: $gray-scale-1;\r\n  }\r\n\r\n  // checked\r\n  .mat-pseudo-checkbox-checked {\r\n    background-color: $secondary-a-700;\r\n    &:after {\r\n      width: 7px;\r\n      height: 2px;\r\n      top: 3.4px;\r\n      left: 1.5px;\r\n    }\r\n  }\r\n\r\n  // disabled\r\n  &.mat-list-item-disabled {\r\n    background-color: transparent;\r\n    .mat-pseudo-checkbox:not(.mat-pseudo-checkbox-checked) {\r\n      background-color: $primary-c-50;\r\n      border-color: $gray-scale-400;\r\n    }\r\n    .mat-pseudo-checkbox-checked {\r\n      background-color: $secondary-a-100;\r\n    }\r\n    .mat-list-text {\r\n      color: $gray-scale-600;\r\n    }\r\n  }\r\n}\r\n\r\n// results on the trigger\r\n.p-menu-trigger-result {\r\n  & + & {\r\n    margin-left: 5px;\r\n  }\r\n  &:not(:last-child):after {\r\n    content: ',';\r\n    display: inline;\r\n  }\r\n}\r\n\r\n// search field\r\n::ng-deep .p-menu {\r\n  &-form-field {\r\n    width: 100%;\r\n    height: $input-text-height;\r\n    ::placeholder {\r\n      font-style: italic;\r\n      color: $gray-scale-700;\r\n    }\r\n\r\n    .mat-input-element {\r\n      font-family: $font-family-basic;\r\n      font-size: $small-font-size;\r\n      color: $primary-a-900;\r\n      max-width: calc(100% - #{$input-text-padding} * 2 - 2px);\r\n      height: $input-text-height - 2px;\r\n      margin-top: 1px;\r\n      padding-left: $input-text-padding;\r\n      padding-right: $input-text-padding;\r\n      caret-color: $primary-a-900;\r\n    }\r\n\r\n    &.mat-form-field-appearance-outline {\r\n      &:hover {\r\n        .mat-form-field-outline,\r\n        .mat-form-field-outline-thick {\r\n          color: $primary-a-900;\r\n        }\r\n      }\r\n      .mat-form-field-wrapper {\r\n        height: 100%;\r\n        margin-top: 0;\r\n        margin-bottom: 0;\r\n        padding-bottom: 0;\r\n      }\r\n      .mat-form-field-flex {\r\n        height: 100%;\r\n        padding: 0;\r\n        margin-top: 0;\r\n      }\r\n      .mat-form-field-outline {\r\n        top: 0;\r\n      }\r\n      .mat-form-field-infix {\r\n        display: flex;\r\n        justify-content: center;\r\n        align-items: center;\r\n        height: $input-text-height;\r\n        padding: 0;\r\n        border-top: none;\r\n      }\r\n      .mat-form-field-outline-start {\r\n        border-radius: 2px 0 0 2px;\r\n      }\r\n      .mat-form-field-outline-end {\r\n        border-radius: 0 2px 2px 0;\r\n      }\r\n      .mat-form-field-outline,\r\n      .mat-form-field-outline-thick {\r\n        color: $gray-scale-400;\r\n        .mat-form-field-outline-start,\r\n        .mat-form-field-outline-end,\r\n        .mat-form-field-outline-gap {\r\n          border-width: 1px;\r\n        }\r\n      }\r\n      &.mat-focused {\r\n        .mat-form-field-outline,\r\n        .mat-form-field-outline-thick {\r\n          color: $primary-a-900;\r\n        }\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n.p-menu {\r\n  &-header {\r\n    width: 100%;\r\n    padding: $menu-padding;\r\n    background-color: $menu-background;\r\n    border-bottom: 1px solid $gray-scale-400;\r\n    position: absolute;\r\n    z-index: 1;\r\n\r\n    .p-menu-form-field + .p-menu-btn-line {\r\n      margin-top: $menu-padding;\r\n    }\r\n    .p-menu-btn-line + .p-menu-btn-line {\r\n      margin-top: 4px;\r\n    }\r\n  }\r\n\r\n  &-body {\r\n    height: calc(100% - #{$menu-footer-height});\r\n    padding: $menu-padding;\r\n    .p-menu-header + & {\r\n      min-height: $menu-header-height + $menu-body-height + $menu-footer-height;\r\n      padding-bottom: 0;\r\n    }\r\n\r\n    // no buttons after input\r\n    .p-menu-header:not(.extended) + & {\r\n      min-height: $menu-header-height + $menu-body-height + $menu-footer-height;\r\n      padding-top: $menu-header-height;\r\n    }\r\n    // there are buttons after input\r\n    .p-menu-header.extended + & {\r\n      min-height: $menu-header-extended-height + $menu-body-height + $menu-footer-height;\r\n      padding-top: $menu-header-extended-height;\r\n    }\r\n\r\n    &-container {\r\n      height: 100%;\r\n      padding-top: 0;\r\n      overflow: auto;\r\n    }\r\n  }\r\n\r\n  &-footer {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    width: 100%;\r\n    height: $menu-footer-height;\r\n    padding-top: $menu-padding * 2;\r\n    padding-bottom: $menu-padding * 2;\r\n    background-color: $menu-background;\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 0;\r\n    z-index: 1;\r\n    &-btn {\r\n      & + & {\r\n        margin-left: $menu-padding;\r\n      }\r\n    }\r\n  }\r\n\r\n  &-btn-line {\r\n    display: block;\r\n    width: 100%;\r\n    height: $menu-item-height;\r\n    ::ng-deep .p-btn {\r\n      @extend %btn-line;\r\n      justify-content: flex-start;\r\n    }\r\n    ::ng-deep .p-checkbox {\r\n      display: inline-flex;\r\n      align-items: center;\r\n      @extend %btn-line;\r\n      &:not(.mat-checkbox-disabled):hover {\r\n        background-color: $primary-c-50;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n\r\n",
                     "styleUrl": "./menu-multi-select.component.scss"
                 }
             ],
@@ -2524,11 +2336,11 @@
                 "OnInit",
                 "OnDestroy"
             ],
-            "templateData": "<button [matMenuTriggerFor]=\"menu\"\r\n        #menuTrigger=\"matMenuTrigger\"\r\n        class=\"p-btn p-btn-small p-btn-tertiary\">\r\n   <ng-template [ngIf]=\"!selectedShown?.length\" [ngIfElse]=\"selectedItems\">\r\n    {{menuTriggerName}}\r\n  </ng-template>\r\n\r\n  <ng-template #selectedItems>\r\n    <ng-container *ngFor=\"let item of selectedShown\">\r\n      <span class=\"p-menu-trigger-result\">{{item.name}}</span>\r\n    </ng-container>\r\n  </ng-template>\r\n</button>\r\n\r\n<!--menu window-->\r\n<mat-menu #menu=\"matMenu\" class=\"p-menu-multiple\" [overlapTrigger]=\"false\">\r\n  <div class=\"p-menu-multiple-container\" (click)=\"$event.stopPropagation()\"\r\n                                (keydown)=\"$event.stopPropagation()\">\r\n    <div class=\"p-menu-header\" *ngIf=\"filterPlaceholder\"\r\n          [class.extended]=\"headerBtnFirst && headerBtnLast\">\r\n      <mat-form-field class=\"p-menu-form-field\"\r\n                      appearance=\"outline\"\r\n                      floatLabel=\"always\">\r\n        <input matInput\r\n               type=\"text\"\r\n               [placeholder]=\"filterPlaceholder\"\r\n               attr.aria-label=\"{{filterAriaLabel}}\"\r\n               [formControl]=\"formFieldControl\"\r\n               onfocus=\"this.select()\"\r\n               class=\"p-menu-input\">\r\n      </mat-form-field>\r\n\r\n      <p-button *ngIf=\"headerBtnFirst\"\r\n                class=\"p-menu-btn-line\"\r\n                [label]=\"headerBtnFirst.label\"\r\n                [iconBefore]=\"headerBtnFirst.icon.iconName\"\r\n                [iconBeforeWidth]=\"headerBtnFirst.icon.width\"\r\n                [iconBeforeHeight]=\"headerBtnFirst.icon.height\"\r\n                [buttonType]=\"headerBtnFirst.buttonType\"\r\n                [disabled]=\"headerBtnFirst.disabled\"></p-button>\r\n      <p-checkbox *ngIf=\"headerBtnFirst\"\r\n                  class=\"p-menu-btn-line\"\r\n                  [label]=\"headerBtnLast.label\"\r\n                  [checked]=\"headerBtnLast.checked\"\r\n                  [disabled]=\"headerBtnLast.disabled\"></p-checkbox>\r\n    </div>\r\n\r\n    <div class=\"p-menu-body\">\r\n      <mat-selection-list class=\"p-menu-body-container\">\r\n        <mat-list-option class=\"p-menu-multiple-item\"\r\n                         *ngFor=\"let item of filteredList\"\r\n                         [disableRipple]=\"true\"\r\n                         [disabled]=\"item.disabled\"\r\n                         [selected]=\"item.selected\"\r\n                         (click)=\"onOptionSelected(item)\">\r\n          {{item.name}}\r\n        </mat-list-option>\r\n      </mat-selection-list>\r\n    </div>\r\n\r\n    <div class=\"p-menu-footer\">\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnFirst.label\"\r\n                [buttonType]=\"footerBtnFirst.buttonType\"\r\n                (click)=\"selectCompleted()\"></p-button>\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnLast.label\"\r\n                [buttonType]=\"footerBtnLast.buttonType\"\r\n                (click)=\"selectCanceled()\"></p-button>\r\n    </div>\r\n  </div>\r\n</mat-menu>\r\n"
+            "templateData": "<button [matMenuTriggerFor]=\"menu\"\r\n        #menuTrigger=\"matMenuTrigger\"\r\n        class=\"p-btn p-btn-small p-btn-tertiary\">\r\n   <ng-template [ngIf]=\"!selectedShown?.length\" [ngIfElse]=\"selectedItems\">\r\n    {{menuTriggerName}}\r\n  </ng-template>\r\n\r\n  <ng-template #selectedItems>\r\n    <ng-container *ngFor=\"let item of selectedShown\">\r\n      <span class=\"p-menu-trigger-result\">{{item.name}}</span>\r\n    </ng-container>\r\n  </ng-template>\r\n</button>\r\n\r\n<!--menu-single-select window-->\r\n<mat-menu #menu=\"matMenu\" class=\"p-menu-multiple\" [overlapTrigger]=\"false\">\r\n  <div class=\"p-menu-multiple-container\" (click)=\"$event.stopPropagation()\"\r\n                                (keydown)=\"$event.stopPropagation()\">\r\n    <div class=\"p-menu-header\" *ngIf=\"filterPlaceholder\"\r\n          [class.extended]=\"headerBtnFirst && headerBtnLast\">\r\n      <mat-form-field class=\"p-menu-form-field\"\r\n                      appearance=\"outline\"\r\n                      floatLabel=\"always\"\r\n                      (click)=\"$event.stopPropagation()\"\r\n                      (keydown)=\"$event.stopPropagation()\">\r\n        <input matInput\r\n               type=\"text\"\r\n               [placeholder]=\"filterPlaceholder\"\r\n               attr.aria-label=\"{{filterAriaLabel}}\"\r\n               [formControl]=\"formFieldControl\"\r\n               autocomplete=\"off\"\r\n               onfocus=\"this.select()\"\r\n               class=\"p-menu-input\">\r\n      </mat-form-field>\r\n\r\n      <p-button *ngIf=\"headerBtnFirst\"\r\n                class=\"p-menu-btn-line\"\r\n                [label]=\"headerBtnFirst.label\"\r\n                [iconBefore]=\"headerBtnFirst.icon.iconName\"\r\n                [iconBeforeWidth]=\"headerBtnFirst.icon.width\"\r\n                [iconBeforeHeight]=\"headerBtnFirst.icon.height\"\r\n                [buttonType]=\"headerBtnFirst.buttonType\"\r\n                [disabled]=\"headerBtnFirst.disabled\"></p-button>\r\n      <p-checkbox *ngIf=\"headerBtnFirst\"\r\n                  class=\"p-menu-btn-line\"\r\n                  [label]=\"headerBtnLast.label\"\r\n                  [checked]=\"headerBtnLast.checked\"\r\n                  [disabled]=\"headerBtnLast.disabled\"></p-checkbox>\r\n    </div>\r\n\r\n    <div class=\"p-menu-body\">\r\n      <mat-selection-list class=\"p-menu-body-container\">\r\n        <mat-list-option class=\"p-menu-multiple-item\"\r\n                         *ngFor=\"let item of filteredList\"\r\n                         [disableRipple]=\"true\"\r\n                         [disabled]=\"item.disabled\"\r\n                         [selected]=\"item.selected\"\r\n                         (click)=\"onOptionSelected(item)\">\r\n          {{item.name}}\r\n        </mat-list-option>\r\n      </mat-selection-list>\r\n    </div>\r\n\r\n    <div class=\"p-menu-footer\">\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnFirst.label\"\r\n                [buttonType]=\"footerBtnFirst.buttonType\"\r\n                (click)=\"selectCompleted()\"></p-button>\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnLast.label\"\r\n                [buttonType]=\"footerBtnLast.buttonType\"\r\n                (click)=\"selectCanceled()\"></p-button>\r\n    </div>\r\n  </div>\r\n</mat-menu>\r\n"
         },
         {
             "name": "MenuSingleSelectComponent",
-            "id": "component-MenuSingleSelectComponent-bbd08098992066875d42bbc64465e8e8",
+            "id": "component-MenuSingleSelectComponent-98304adffe16b930a037d803e028393e",
             "file": "projects/design-system-lib/src/lib/menu/menu-single-select/menu-single-select.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2547,60 +2359,39 @@
             "inputsClass": [
                 {
                     "name": "buttonFirst",
-                    "line": 18,
-                    "type": "IMenuButton",
-                    "inheritance": {
-                        "file": "MenuComponent"
-                    }
+                    "line": 17,
+                    "type": "IMenuButton"
                 },
                 {
                     "name": "buttonLast",
-                    "line": 19,
-                    "type": "IMenuButton",
-                    "inheritance": {
-                        "file": "MenuComponent"
-                    }
+                    "line": 18,
+                    "type": "IMenuButton"
                 },
                 {
                     "name": "filterAriaLabel",
-                    "line": 17,
-                    "type": "string",
-                    "inheritance": {
-                        "file": "MenuComponent"
-                    }
+                    "line": 16,
+                    "type": "string"
                 },
                 {
                     "name": "filterPlaceholder",
-                    "line": 16,
-                    "type": "string",
-                    "inheritance": {
-                        "file": "MenuComponent"
-                    }
+                    "line": 15,
+                    "type": "string"
                 },
                 {
                     "name": "groupTitle",
                     "defaultValue": "false",
-                    "line": 15,
-                    "type": "boolean",
-                    "inheritance": {
-                        "file": "MenuComponent"
-                    }
+                    "line": 14,
+                    "type": "boolean"
                 },
                 {
                     "name": "menuList",
-                    "line": 14,
-                    "type": "any[]",
-                    "inheritance": {
-                        "file": "MenuComponent"
-                    }
+                    "line": 13,
+                    "type": "any[]"
                 },
                 {
                     "name": "menuTriggerName",
-                    "line": 13,
-                    "type": "string",
-                    "inheritance": {
-                        "file": "MenuComponent"
-                    }
+                    "line": 12,
+                    "type": "string"
                 }
             ],
             "outputsClass": [],
@@ -2610,58 +2401,33 @@
                     "type": "any[]",
                     "optional": false,
                     "description": "",
-                    "line": 20,
+                    "line": 19,
                     "modifierKind": [
                         114
-                    ],
-                    "inheritance": {
-                        "file": "MenuComponent"
-                    }
+                    ]
                 },
                 {
                     "name": "formFieldControl",
                     "type": "FormControl",
                     "optional": false,
                     "description": "",
-                    "line": 21,
+                    "line": 20,
                     "modifierKind": [
                         114
-                    ],
-                    "inheritance": {
-                        "file": "MenuComponent"
-                    }
+                    ]
                 },
                 {
                     "name": "sub",
                     "type": "SubscriptionLike",
                     "optional": false,
                     "description": "",
-                    "line": 22,
+                    "line": 21,
                     "modifierKind": [
-                        114
-                    ],
-                    "inheritance": {
-                        "file": "MenuComponent"
-                    }
+                        112
+                    ]
                 }
             ],
             "methodsClass": [
-                {
-                    "name": "ngOnDestroy",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 19
-                },
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 15
-                },
                 {
                     "name": "alterList",
                     "args": [
@@ -2673,7 +2439,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 52,
+                    "line": 43,
                     "jsdoctags": [
                         {
                             "name": "value",
@@ -2682,32 +2448,7 @@
                                 "text": "param"
                             }
                         }
-                    ],
-                    "inheritance": {
-                        "file": "MenuComponent"
-                    }
-                },
-                {
-                    "name": "destroyComp",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 45,
-                    "inheritance": {
-                        "file": "MenuComponent"
-                    }
-                },
-                {
-                    "name": "initComp",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 32,
-                    "inheritance": {
-                        "file": "MenuComponent"
-                    }
+                    ]
                 },
                 {
                     "name": "ngOnDestroy",
@@ -2715,10 +2456,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 28,
-                    "inheritance": {
-                        "file": "MenuComponent"
-                    }
+                    "line": 36
                 },
                 {
                     "name": "ngOnInit",
@@ -2726,10 +2464,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 24,
-                    "inheritance": {
-                        "file": "MenuComponent"
-                    }
+                    "line": 23
                 }
             ],
             "hostBindings": [],
@@ -2737,22 +2472,15 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, OnDestroy, OnInit} from '@angular/core';\r\nimport {MenuComponent} from '../menu/menu.component';\r\n\r\n@Component({\r\n  selector: 'p-menu-single-select',\r\n  templateUrl: './menu-single-select.component.html',\r\n  styleUrls: ['./menu-single-select.component.scss'],\r\n})\r\nexport class MenuSingleSelectComponent extends MenuComponent implements OnInit, OnDestroy {\r\n\r\n  constructor() {\r\n    super();\r\n  }\r\n\r\n  ngOnInit(): void {\r\n    this.initComp();\r\n  }\r\n\r\n  ngOnDestroy(): void {\r\n    this.destroyComp();\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import {Component, Input, OnDestroy, OnInit} from '@angular/core';\r\nimport {FormControl} from '@angular/forms';\r\nimport {SubscriptionLike} from 'rxjs';\r\nimport {IMenuButton} from '../menu-button.interface';\r\n\r\n@Component({\r\n  selector: 'p-menu-single-select',\r\n  templateUrl: './menu-single-select.component.html',\r\n  styleUrls: ['./menu-single-select.component.scss'],\r\n})\r\nexport class MenuSingleSelectComponent implements OnInit, OnDestroy {\r\n  @Input() menuTriggerName: string;\r\n  @Input() menuList: any[];\r\n  @Input() groupTitle: boolean = false; // if there is a group title\r\n  @Input() filterPlaceholder: string; // if there is a search and buttons\r\n  @Input() filterAriaLabel: string;\r\n  @Input() buttonFirst: IMenuButton;\r\n  @Input() buttonLast: IMenuButton;\r\n  public filteredList: any[];\r\n  public formFieldControl: FormControl;\r\n  private sub: SubscriptionLike;\r\n\r\n  ngOnInit(): void {\r\n    this.filteredList = this.menuList;\r\n    if (this.filterPlaceholder) {\r\n      this.formFieldControl = new FormControl('');\r\n      this.sub = this.formFieldControl.valueChanges.subscribe((value: string) => {\r\n        this.alterList(value);\r\n      });\r\n    }\r\n    if (!this.filterAriaLabel && this.filterPlaceholder) {\r\n      this.filterAriaLabel = this.filterPlaceholder;\r\n    }\r\n  }\r\n\r\n  ngOnDestroy(): void {\r\n    if (this.filterPlaceholder && this.sub) {\r\n      this.sub.unsubscribe();\r\n      this.sub = null;\r\n    }\r\n  }\r\n\r\n  alterList(value: string): void {\r\n    this.filteredList = [];\r\n    this.menuList.forEach(group => {\r\n      const filteredGroup = group.names.filter( name => name.name.toLowerCase().indexOf(value.toLowerCase()) > -1);\r\n      if (filteredGroup.length > 0) {\r\n        this.filteredList.push(Object.assign({}, group, group.names = filteredGroup));\r\n      }\r\n    });\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "//@import \"../../assets/styles/custom\";\r\n//\r\n//$menu-padding: 8px;\r\n//$menu-item-height: 32px;\r\n//$menu-background: $gray-scale-1;\r\n//$menu-item-margin-top: 4px;\r\n//$input-text-height: 32px;\r\n//$input-text-padding: 8px;\r\n//$menu-header-height: $input-text-height + $menu-padding + $menu-padding;\r\n//$menu-footer-height: $menu-padding * 3 + $menu-item-height * 2;\r\n//$menu-body-height: 103px;\r\n//$menu-min-width: 230px;\r\n//$menu-max-height: 75vh;\r\n//\r\n//%menu-item {\r\n//  font-family: $font-family-basic;\r\n//  color: $primary-a-900;\r\n//  height: $menu-item-height;\r\n//  line-height: $menu-item-height;\r\n//  padding: 0 8px;\r\n//  @include ellipsis;\r\n//  & + & {\r\n//    margin-top: $menu-item-margin-top;\r\n//  }\r\n//}\r\n//\r\n//::ng-deep .p-menu.mat-menu-panel {\r\n//  min-width: $menu-min-width;\r\n//  max-height: $menu-max-height;\r\n//  background-color: $menu-background;\r\n//  border-radius: 0;\r\n//  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1),\r\n//              0 2px 6px rgba(0, 0, 0, 0.04),\r\n//              0 -3px 6px rgba(0, 0, 0, 0.04);\r\n//  overflow: hidden;\r\n//  .mat-menu-content {\r\n//    height: 100%;\r\n//    padding: 0;\r\n//    position: relative;\r\n//  }\r\n//\r\n//  .mat-menu-item {\r\n//    @extend %menu-item;\r\n//    font-size: $small-font-size;\r\n//    &:hover,\r\n//    &.cdk-focused {\r\n//      background-color: $primary-c-50;\r\n//    }\r\n//    &[disabled] {\r\n//      color: $gray-scale-600;\r\n//    }\r\n//    &.p-menu-item-selected {\r\n//      background-color: $secondary-a-100;\r\n//    }\r\n//  }\r\n//}\r\n//\r\n//.p-menu-group-title {\r\n//  @extend %menu-item;\r\n//  font-size: $tiny-font-size;\r\n//  font-weight: 700;\r\n//  text-transform: uppercase;\r\n//}\r\n//\r\n//// search field\r\n//::ng-deep .p-menu {\r\n//  &-form-field {\r\n//    width: 100%;\r\n//    height: $input-text-height;\r\n//    ::placeholder {\r\n//      font-style: italic;\r\n//      color: $gray-scale-700;\r\n//    }\r\n//\r\n//    .mat-input-element {\r\n//      font-family: $font-family-basic;\r\n//      font-size: $small-font-size;\r\n//      color: $primary-a-900;\r\n//      max-width: calc(100% - #{$input-text-padding} * 2 - 2px);\r\n//      height: $input-text-height - 2px;\r\n//      margin-top: 1px;\r\n//      padding-left: $input-text-padding;\r\n//      padding-right: $input-text-padding;\r\n//      caret-color: $primary-a-900;\r\n//    }\r\n//\r\n//    &.mat-form-field-appearance-outline {\r\n//      &:hover {\r\n//        .mat-form-field-outline,\r\n//        .mat-form-field-outline-thick {\r\n//          color: $primary-a-900;\r\n//        }\r\n//      }\r\n//      .mat-form-field-wrapper {\r\n//        height: 100%;\r\n//        margin-top: 0;\r\n//        margin-bottom: 0;\r\n//        padding-bottom: 0;\r\n//      }\r\n//      .mat-form-field-flex {\r\n//        height: 100%;\r\n//        padding: 0;\r\n//        margin-top: 0;\r\n//      }\r\n//      .mat-form-field-outline {\r\n//        top: 0;\r\n//      }\r\n//      .mat-form-field-infix {\r\n//        display: flex;\r\n//        justify-content: center;\r\n//        align-items: center;\r\n//        height: $input-text-height;\r\n//        padding: 0;\r\n//        border-top: none;\r\n//      }\r\n//      .mat-form-field-outline-start {\r\n//        border-radius: 2px 0 0 2px;\r\n//      }\r\n//      .mat-form-field-outline-end {\r\n//        border-radius: 0 2px 2px 0;\r\n//      }\r\n//      .mat-form-field-outline,\r\n//      .mat-form-field-outline-thick {\r\n//        color: $gray-scale-400;\r\n//        .mat-form-field-outline-start,\r\n//        .mat-form-field-outline-end,\r\n//        .mat-form-field-outline-gap {\r\n//          border-width: 1px;\r\n//        }\r\n//      }\r\n//      &.mat-focused {\r\n//        .mat-form-field-outline,\r\n//        .mat-form-field-outline-thick {\r\n//          color: $primary-a-900;\r\n//        }\r\n//      }\r\n//    }\r\n//  }\r\n//}\r\n//\r\n//.p-menu {\r\n//  &-header {\r\n//    width: 100%;\r\n//    padding: $menu-padding;\r\n//    background-color: $menu-background;\r\n//    position: absolute;\r\n//    z-index: 1;\r\n//  }\r\n//\r\n//  &-body {\r\n//    height: 100%;\r\n//    padding-top: $menu-padding;\r\n//    padding-right: 0;\r\n//    padding-bottom: $menu-padding;\r\n//    padding-left: $menu-padding;\r\n//    .p-menu-header + & {\r\n//      height: calc(100% - #{$menu-footer-height});\r\n//      min-height: $menu-header-height + $menu-body-height + $menu-footer-height;\r\n//      padding-top: $menu-header-height;\r\n//      padding-bottom: 0;\r\n//    }\r\n//\r\n//    &-container {\r\n//      height: 100%;\r\n//      padding-right: $menu-padding;\r\n//      overflow: auto;\r\n//    }\r\n//  }\r\n//\r\n//  &-footer {\r\n//    width: 100%;\r\n//    padding-top: $menu-padding;\r\n//    padding-right: $menu-padding;\r\n//    padding-bottom: $menu-padding;\r\n//    padding-left: $menu-padding;\r\n//    background-color: $menu-background;\r\n//    border-top: 1px solid $gray-scale-400;\r\n//    position: absolute;\r\n//    bottom: 0;\r\n//    left: 0;\r\n//    z-index: 1;\r\n//  }\r\n//\r\n//  &-btn-line {\r\n//    display: block;\r\n//    width: 100%;\r\n//    height: $menu-item-height;\r\n//    ::ng-deep .p-btn {\r\n//      width: 100%;\r\n//      height: 100%;\r\n//      justify-content: flex-start;\r\n//    }\r\n//    ::ng-deep .p-btn-icon-before {\r\n//      padding-left: $menu-padding;\r\n//      .p-btn-label {\r\n//        margin-left: $menu-padding;\r\n//      }\r\n//    }\r\n//  }\r\n//}\r\n",
+                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$menu-padding: 8px;\r\n$menu-item-height: 32px;\r\n$menu-background: $gray-scale-1;\r\n$menu-item-margin-top: 4px;\r\n$input-text-height: 32px;\r\n$input-text-padding: 8px;\r\n$menu-header-height: $input-text-height + $menu-padding + $menu-padding;\r\n$menu-footer-height: $menu-padding * 3 + $menu-item-height * 2;\r\n$menu-body-height: 103px;\r\n$menu-min-width: 230px;\r\n$menu-max-height: 75vh;\r\n\r\n%menu-item {\r\n  font-family: $font-family-basic;\r\n  color: $primary-a-900;\r\n  height: $menu-item-height;\r\n  line-height: $menu-item-height;\r\n  padding: 0 8px;\r\n  @include ellipsis;\r\n  & + & {\r\n    margin-top: $menu-item-margin-top;\r\n  }\r\n}\r\n\r\n::ng-deep .p-menu.mat-menu-panel {\r\n  min-width: $menu-min-width;\r\n  max-height: $menu-max-height;\r\n  background-color: $menu-background;\r\n  border-radius: 0;\r\n  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1),\r\n              0 2px 6px rgba(0, 0, 0, 0.04),\r\n              0 -3px 6px rgba(0, 0, 0, 0.04);\r\n  overflow: hidden;\r\n  .mat-menu-content {\r\n    height: 100%;\r\n    padding: 0;\r\n    position: relative;\r\n  }\r\n\r\n  .mat-menu-item {\r\n    @extend %menu-item;\r\n    font-size: $small-font-size;\r\n    &:hover,\r\n    &.cdk-focused {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &[disabled] {\r\n      color: $gray-scale-600;\r\n    }\r\n    &.p-menu-item-selected {\r\n      background-color: $secondary-a-100;\r\n    }\r\n  }\r\n}\r\n\r\n.p-menu-group-title {\r\n  @extend %menu-item;\r\n  font-size: $tiny-font-size;\r\n  font-weight: 700;\r\n  text-transform: uppercase;\r\n}\r\n\r\n// search field\r\n::ng-deep .p-menu {\r\n  &-form-field {\r\n    width: 100%;\r\n    height: $input-text-height;\r\n    ::placeholder {\r\n      font-style: italic;\r\n      color: $gray-scale-700;\r\n    }\r\n\r\n    .mat-input-element {\r\n      font-family: $font-family-basic;\r\n      font-size: $small-font-size;\r\n      color: $primary-a-900;\r\n      max-width: calc(100% - #{$input-text-padding} * 2 - 2px);\r\n      height: $input-text-height - 2px;\r\n      margin-top: 1px;\r\n      padding-left: $input-text-padding;\r\n      padding-right: $input-text-padding;\r\n      caret-color: $primary-a-900;\r\n    }\r\n\r\n    &.mat-form-field-appearance-outline {\r\n      &:hover {\r\n        .mat-form-field-outline,\r\n        .mat-form-field-outline-thick {\r\n          color: $primary-a-900;\r\n        }\r\n      }\r\n      .mat-form-field-wrapper {\r\n        height: 100%;\r\n        margin-top: 0;\r\n        margin-bottom: 0;\r\n        padding-bottom: 0;\r\n      }\r\n      .mat-form-field-flex {\r\n        height: 100%;\r\n        padding: 0;\r\n        margin-top: 0;\r\n      }\r\n      .mat-form-field-outline {\r\n        top: 0;\r\n      }\r\n      .mat-form-field-infix {\r\n        display: flex;\r\n        justify-content: center;\r\n        align-items: center;\r\n        height: $input-text-height;\r\n        padding: 0;\r\n        border-top: none;\r\n      }\r\n      .mat-form-field-outline-start {\r\n        border-radius: 2px 0 0 2px;\r\n      }\r\n      .mat-form-field-outline-end {\r\n        border-radius: 0 2px 2px 0;\r\n      }\r\n      .mat-form-field-outline,\r\n      .mat-form-field-outline-thick {\r\n        color: $gray-scale-400;\r\n        .mat-form-field-outline-start,\r\n        .mat-form-field-outline-end,\r\n        .mat-form-field-outline-gap {\r\n          border-width: 1px;\r\n        }\r\n      }\r\n      &.mat-focused {\r\n        .mat-form-field-outline,\r\n        .mat-form-field-outline-thick {\r\n          color: $primary-a-900;\r\n        }\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n.p-menu {\r\n  &-header {\r\n    width: 100%;\r\n    padding: $menu-padding;\r\n    background-color: $menu-background;\r\n    position: absolute;\r\n    z-index: 1;\r\n  }\r\n\r\n  &-body {\r\n    height: 100%;\r\n    padding: $menu-padding;\r\n    .p-menu-header + & {\r\n      height: calc(100% - #{$menu-footer-height});\r\n      min-height: $menu-header-height + $menu-body-height + $menu-footer-height;\r\n      padding-top: $menu-header-height;\r\n      padding-bottom: 0;\r\n    }\r\n\r\n    &-container {\r\n      height: 100%;\r\n      overflow: auto;\r\n    }\r\n  }\r\n\r\n  &-footer {\r\n    width: 100%;\r\n    padding-top: $menu-padding;\r\n    padding-bottom: $menu-padding;\r\n    background-color: $menu-background;\r\n    border-top: 1px solid $gray-scale-400;\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 0;\r\n    z-index: 1;\r\n  }\r\n\r\n  &-btn-line {\r\n    display: block;\r\n    width: 100%;\r\n    height: $menu-item-height;\r\n    ::ng-deep .p-btn {\r\n      width: 100%;\r\n      height: 100%;\r\n      justify-content: flex-start;\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "./menu-single-select.component.scss"
                 }
             ],
             "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "args": [],
-                "line": 9
-            },
-            "extends": "MenuComponent",
             "implements": [
                 "OnInit",
                 "OnDestroy"
@@ -2761,7 +2489,7 @@
         },
         {
             "name": "MenuTabsComponent",
-            "id": "component-MenuTabsComponent-f450ffd064271acb4266f2115d8fe162",
+            "id": "component-MenuTabsComponent-9e55aafeb5b1f74e5a9c9772d13ac8ed",
             "file": "projects/design-system-lib/src/lib/menu/menu-tabs/menu-tabs.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2779,80 +2507,64 @@
             "viewProviders": [],
             "inputsClass": [
                 {
-                    "name": "checkboxList",
-                    "line": 30,
-                    "type": "literal type[]"
-                },
-                {
                     "name": "filterAriaLabel",
-                    "line": 25,
+                    "line": 23,
                     "type": "string"
                 },
                 {
                     "name": "filterPlaceholder",
-                    "line": 24,
+                    "line": 22,
                     "type": "string"
                 },
                 {
                     "name": "footerBtnFirst",
-                    "line": 28,
-                    "type": "IMenuButton"
-                },
-                {
-                    "name": "footerBtnLast",
-                    "line": 29,
-                    "type": "IMenuButton"
-                },
-                {
-                    "name": "headerBtnFirst",
                     "line": 26,
                     "type": "IMenuButton"
                 },
                 {
-                    "name": "headerBtnLast",
+                    "name": "footerBtnLast",
                     "line": 27,
+                    "type": "IMenuButton"
+                },
+                {
+                    "name": "headerBtnFirst",
+                    "line": 24,
+                    "type": "IMenuButton"
+                },
+                {
+                    "name": "headerBtnLast",
+                    "line": 25,
                     "type": "ICheckbox"
                 },
                 {
                     "name": "menuList",
-                    "line": 23,
+                    "line": 21,
                     "type": "any[]"
                 },
                 {
                     "name": "menuTriggerName",
-                    "line": 22,
+                    "line": 20,
                     "type": "string"
                 }
             ],
             "outputsClass": [],
             "propertiesClass": [
                 {
-                    "name": "customControl",
-                    "type": "FormControl",
-                    "optional": false,
-                    "description": "",
-                    "line": 38,
-                    "modifierKind": [
-                        114
-                    ]
-                },
-                {
                     "name": "filteredList",
                     "type": "any[]",
                     "optional": false,
                     "description": "",
-                    "line": 37,
+                    "line": 31,
                     "modifierKind": [
                         114
                     ]
                 },
                 {
-                    "name": "inputNumericSize",
-                    "defaultValue": "InputNumericSizeEnum",
-                    "type": "",
+                    "name": "formFieldControl",
+                    "type": "FormControl",
                     "optional": false,
                     "description": "",
-                    "line": 42,
+                    "line": 32,
                     "modifierKind": [
                         114
                     ]
@@ -2862,7 +2574,7 @@
                     "type": "MatMenuTrigger",
                     "optional": false,
                     "description": "",
-                    "line": 34,
+                    "line": 28,
                     "decorators": [
                         {
                             "name": "ViewChild",
@@ -2876,7 +2588,7 @@
                     "type": "any[]",
                     "optional": false,
                     "description": "",
-                    "line": 35,
+                    "line": 29,
                     "modifierKind": [
                         112
                     ]
@@ -2887,7 +2599,7 @@
                     "type": "any[]",
                     "optional": false,
                     "description": "",
-                    "line": 36,
+                    "line": 30,
                     "modifierKind": [
                         114
                     ]
@@ -2897,29 +2609,9 @@
                     "type": "SubscriptionLike",
                     "optional": false,
                     "description": "",
-                    "line": 39,
+                    "line": 33,
                     "modifierKind": [
                         112
-                    ]
-                },
-                {
-                    "name": "tabRelativeName",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 41,
-                    "modifierKind": [
-                        114
-                    ]
-                },
-                {
-                    "name": "tabSpecificName",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 40,
-                    "modifierKind": [
-                        114
                     ]
                 }
             ],
@@ -2935,7 +2627,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 66,
+                    "line": 55,
                     "jsdoctags": [
                         {
                             "name": "value",
@@ -2952,7 +2644,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 59
+                    "line": 48
                 },
                 {
                     "name": "ngOnInit",
@@ -2960,7 +2652,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 44
+                    "line": 35
                 },
                 {
                     "name": "onOptionSelected",
@@ -2973,7 +2665,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 70,
+                    "line": 59,
                     "jsdoctags": [
                         {
                             "name": "item",
@@ -2990,7 +2682,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 79
+                    "line": 68
                 },
                 {
                     "name": "selectCompleted",
@@ -2998,7 +2690,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 74
+                    "line": 63
                 }
             ],
             "hostBindings": [],
@@ -3006,11 +2698,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {\r\n  Component,\r\n  Input,\r\n  OnDestroy,\r\n  OnInit,\r\n  ViewChild\r\n} from '@angular/core';\r\nimport {FormControl} from '@angular/forms';\r\nimport {SubscriptionLike} from 'rxjs';\r\nimport {MatMenuTrigger} from '@angular/material/menu';\r\nimport {IMenuButton} from '../menu-button.interface';\r\nimport {ICheckbox} from '../../checkbox/checkbox.interface';\r\nimport {IInputNumeric} from '../../input/numeric/input-numeric.interface';\r\nimport {InputNumericSizeEnum} from '../../input/numeric/input-numeric-size.enum';\r\n\r\n@Component({\r\n  selector: 'p-menu-tabs',\r\n  templateUrl: './menu-tabs.component.html',\r\n  styleUrls: ['./menu-tabs.component.scss'],\r\n})\r\nexport class MenuTabsComponent implements OnInit, OnDestroy {\r\n  @Input() menuTriggerName: string;\r\n  @Input() menuList: any[];\r\n  @Input() filterPlaceholder: string; // if there is a search and buttons\r\n  @Input() filterAriaLabel: string;\r\n  @Input() headerBtnFirst: IMenuButton;\r\n  @Input() headerBtnLast: ICheckbox;\r\n  @Input() footerBtnFirst: IMenuButton;\r\n  @Input() footerBtnLast: IMenuButton;\r\n  @Input() checkboxList: {\r\n    checkbox: ICheckbox,\r\n    inputNum: IInputNumeric\r\n  }[];\r\n  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;\r\n  private selectedList: any[] = [];\r\n  public selectedShown: any[] = [];\r\n  public filteredList: any[];\r\n  public customControl: FormControl;\r\n  private sub: SubscriptionLike;\r\n  public tabSpecificName: string;\r\n  public tabRelativeName: string;\r\n  public inputNumericSize = InputNumericSizeEnum;\r\n\r\n  ngOnInit(): void {\r\n    this.filteredList = this.menuList;\r\n    if (this.filterPlaceholder) {\r\n      this.customControl = new FormControl('');\r\n      this.sub = this.customControl.valueChanges.subscribe((value: string) => {\r\n        this.alterList(value);\r\n      });\r\n    }\r\n    if (!this.filterAriaLabel && this.filterPlaceholder) {\r\n      this.filterAriaLabel = this.filterPlaceholder;\r\n    }\r\n    this.tabSpecificName = 'Specific';\r\n    this.tabRelativeName = 'Relative';\r\n  }\r\n\r\n  ngOnDestroy(): void {\r\n    if (this.filterPlaceholder && this.sub) {\r\n      this.sub.unsubscribe();\r\n      this.sub = null;\r\n    }\r\n  }\r\n\r\n  alterList(value: string): void {\r\n    this.filteredList = this.menuList.filter( item => item.name.toLowerCase().indexOf(value.toLowerCase()) > -1);\r\n  }\r\n\r\n  onOptionSelected(item): void {\r\n    this.selectedList.push(item);\r\n  }\r\n\r\n  selectCompleted(): void {\r\n    this.selectedShown = this.selectedList;\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  selectCanceled(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n}\r\n",
+            "sourceCode": "import {\r\n  Component,\r\n  Input,\r\n  OnDestroy,\r\n  OnInit,\r\n  ViewChild\r\n} from '@angular/core';\r\nimport {FormControl} from '@angular/forms';\r\nimport {SubscriptionLike} from 'rxjs';\r\nimport {MatMenuTrigger} from '@angular/material/menu';\r\nimport {IMenuButton} from '../menu-button.interface';\r\nimport {ICheckbox} from '../../checkbox/checkbox.interface';\r\n\r\n@Component({\r\n  selector: 'p-menu-tabs',\r\n  templateUrl: './menu-tabs.component.html',\r\n  styleUrls: ['./menu-tabs.component.scss'],\r\n})\r\nexport class MenuTabsComponent implements OnInit, OnDestroy {\r\n  @Input() menuTriggerName: string;\r\n  @Input() menuList: any[];\r\n  @Input() filterPlaceholder: string; // if there is a search and buttons\r\n  @Input() filterAriaLabel: string;\r\n  @Input() headerBtnFirst: IMenuButton;\r\n  @Input() headerBtnLast: ICheckbox;\r\n  @Input() footerBtnFirst: IMenuButton;\r\n  @Input() footerBtnLast: IMenuButton;\r\n  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;\r\n  private selectedList: any[] = [];\r\n  public selectedShown: any[] = [];\r\n  public filteredList: any[];\r\n  public formFieldControl: FormControl;\r\n  private sub: SubscriptionLike;\r\n\r\n  ngOnInit(): void {\r\n    this.filteredList = this.menuList;\r\n    if (this.filterPlaceholder) {\r\n      this.formFieldControl = new FormControl('');\r\n      this.sub = this.formFieldControl.valueChanges.subscribe((value: string) => {\r\n        this.alterList(value);\r\n      });\r\n    }\r\n    if (!this.filterAriaLabel && this.filterPlaceholder) {\r\n      this.filterAriaLabel = this.filterPlaceholder;\r\n    }\r\n  }\r\n\r\n  ngOnDestroy(): void {\r\n    if (this.filterPlaceholder && this.sub) {\r\n      this.sub.unsubscribe();\r\n      this.sub = null;\r\n    }\r\n  }\r\n\r\n  alterList(value: string): void {\r\n    this.filteredList = this.menuList.filter( item => item.name.toLowerCase().indexOf(value.toLowerCase()) > -1);\r\n  }\r\n\r\n  onOptionSelected(item): void {\r\n    this.selectedList.push(item);\r\n  }\r\n\r\n  selectCompleted(): void {\r\n    this.selectedShown = this.selectedList;\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  selectCanceled(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$menu-padding: 8px;\r\n$menu-item-height: 32px;\r\n$menu-background: $gray-scale-1;\r\n$menu-item-margin-top: 4px;\r\n$input-text-height: 32px;\r\n$input-text-padding: 8px;\r\n$tabs-width: 84px;\r\n$tabs-height: 28px;\r\n$tabs-header-height: 60px;\r\n$menu-header-height: $input-text-height + $menu-padding * 3 + 1px;\r\n$menu-header-extended-height: $input-text-height + ($menu-padding * 4.5) + ($menu-item-height * 2) + 1px;\r\n$menu-footer-height: $btn-small-height + $menu-padding * 4;\r\n$menu-body-height: 103px;\r\n$menu-min-width: 230px;\r\n$menu-max-height: 75vh;\r\n$menu-tabs-min-width: 250px;\r\n\r\n%btn-line {\r\n  width: 100%;\r\n  height: 100%;\r\n  padding-right: $menu-padding;\r\n  padding-left: $menu-padding;\r\n}\r\n\r\n%menu-item {\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  color: $primary-a-900;\r\n  height: $menu-item-height;\r\n  line-height: $menu-item-height;\r\n  padding: 0 8px;\r\n  & + & {\r\n    margin-top: $menu-item-margin-top;\r\n  }\r\n  &:hover,\r\n  &.cdk-focused {\r\n    background-color: $primary-c-50;\r\n  }\r\n  &[disabled] {\r\n    color: $gray-scale-600;\r\n  }\r\n}\r\n\r\n::ng-deep .p-menu.mat-menu-panel {\r\n  min-width: $menu-min-width;\r\n  max-height: $menu-max-height;\r\n  background-color: $menu-background;\r\n  border-radius: 0;\r\n  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1),\r\n  0 2px 6px rgba(0, 0, 0, 0.04),\r\n  0 -3px 6px rgba(0, 0, 0, 0.04);\r\n  overflow: hidden;\r\n  &.tabs {\r\n    min-width: $menu-tabs-min-width;\r\n  }\r\n  .mat-menu-content {\r\n    height: 100%;\r\n    padding: 0;\r\n    position: relative;\r\n  }\r\n}\r\n\r\n// container of the multiple selection menu\r\n.p-menu-container {\r\n  height: 100%;\r\n}\r\n\r\n::ng-deep .p-menu-multiple-item.mat-list-option.mat-list-item {\r\n  @extend %menu-item;\r\n  .mat-list-item-content.mat-list-item-content-reverse {\r\n    flex-direction: row;\r\n    padding: 0;\r\n    .mat-list-text {\r\n      display: inline;\r\n      padding-left: 8px;\r\n      padding-right: 0;\r\n      @include ellipsis;\r\n    }\r\n  }\r\n\r\n  .mat-pseudo-checkbox:not(.mat-pseudo-checkbox-checked) {\r\n    border: 1px solid $gray-scale-400;\r\n    background-color: $gray-scale-1;\r\n  }\r\n\r\n  // checked\r\n  .mat-pseudo-checkbox-checked {\r\n    background-color: $secondary-a-700;\r\n    &:after {\r\n      width: 7px;\r\n      height: 2px;\r\n      top: 3.4px;\r\n      left: 1.5px;\r\n    }\r\n  }\r\n\r\n  // disabled\r\n  &.mat-list-item-disabled {\r\n    background-color: transparent;\r\n    .mat-pseudo-checkbox:not(.mat-pseudo-checkbox-checked) {\r\n      background-color: $primary-c-50;\r\n      border-color: $gray-scale-400;\r\n    }\r\n    .mat-pseudo-checkbox-checked {\r\n      background-color: $secondary-a-100;\r\n    }\r\n    .mat-list-text {\r\n      color: $gray-scale-600;\r\n    }\r\n  }\r\n}\r\n\r\n// results on the trigger\r\n.p-menu-trigger-result {\r\n  & + & {\r\n    margin-left: 5px;\r\n  }\r\n  &:not(:last-child):after {\r\n    content: ',';\r\n    display: inline;\r\n  }\r\n}\r\n\r\n// search field\r\n::ng-deep .p-menu {\r\n  &-form-field {\r\n    width: 100%;\r\n    height: $input-text-height;\r\n    ::placeholder {\r\n      font-style: italic;\r\n      color: $gray-scale-700;\r\n    }\r\n\r\n    .mat-input-element {\r\n      font-family: $font-family-basic;\r\n      font-size: $small-font-size;\r\n      color: $primary-a-900;\r\n      max-width: calc(100% - #{$input-text-padding} * 2 - 2px);\r\n      height: $input-text-height - 2px;\r\n      margin-top: 1px;\r\n      padding-left: $input-text-padding;\r\n      padding-right: $input-text-padding;\r\n      caret-color: $primary-a-900;\r\n    }\r\n\r\n    &.mat-form-field-appearance-outline {\r\n      &:hover {\r\n        .mat-form-field-outline,\r\n        .mat-form-field-outline-thick {\r\n          color: $primary-a-900;\r\n        }\r\n      }\r\n      .mat-form-field-wrapper {\r\n        height: 100%;\r\n        margin-top: 0;\r\n        margin-bottom: 0;\r\n        padding-bottom: 0;\r\n      }\r\n      .mat-form-field-flex {\r\n        height: 100%;\r\n        padding: 0;\r\n        margin-top: 0;\r\n      }\r\n      .mat-form-field-outline {\r\n        top: 0;\r\n      }\r\n      .mat-form-field-infix {\r\n        display: flex;\r\n        justify-content: center;\r\n        align-items: center;\r\n        height: $input-text-height;\r\n        padding: 0;\r\n        border-top: none;\r\n      }\r\n      .mat-form-field-outline-start {\r\n        border-radius: 2px 0 0 2px;\r\n      }\r\n      .mat-form-field-outline-end {\r\n        border-radius: 0 2px 2px 0;\r\n      }\r\n      .mat-form-field-outline,\r\n      .mat-form-field-outline-thick {\r\n        color: $gray-scale-400;\r\n        .mat-form-field-outline-start,\r\n        .mat-form-field-outline-end,\r\n        .mat-form-field-outline-gap {\r\n          border-width: 1px;\r\n        }\r\n      }\r\n      &.mat-focused {\r\n        .mat-form-field-outline,\r\n        .mat-form-field-outline-thick {\r\n          color: $primary-a-900;\r\n        }\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n.p-menu {\r\n  &-header {\r\n    width: 100%;\r\n    padding: $menu-padding;\r\n    background-color: $menu-background;\r\n    border-bottom: 1px solid $gray-scale-400;\r\n    position: absolute;\r\n    z-index: 1;\r\n\r\n    .p-menu-form-field + .p-menu-btn-line {\r\n      margin-top: $menu-padding;\r\n    }\r\n    .p-menu-btn-line + .p-menu-btn-line {\r\n      margin-top: 4px;\r\n    }\r\n  }\r\n\r\n  &-body {\r\n    height: calc(100% - #{$menu-footer-height});\r\n    padding-top: $menu-padding;\r\n    padding-right: 0;\r\n    padding-bottom: 0;\r\n    padding-left: $menu-padding;\r\n    // there are buttons after input\r\n    .p-menu-header.extended + & {\r\n      min-height: $menu-header-extended-height + $menu-body-height + $menu-footer-height;\r\n      padding-top: $menu-header-extended-height;\r\n    }\r\n\r\n    &-container {\r\n      height: 100%;\r\n      padding-top: 0;\r\n      overflow: auto;\r\n    }\r\n  }\r\n\r\n  &-footer {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    width: 100%;\r\n    height: $menu-footer-height;\r\n    padding-top: $menu-padding * 2;\r\n    padding-bottom: $menu-padding * 2;\r\n    background-color: $menu-background;\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 0;\r\n    z-index: 1;\r\n    &-btn {\r\n      & + & {\r\n        margin-left: $menu-padding;\r\n      }\r\n    }\r\n  }\r\n\r\n  &-btn-line {\r\n    display: block;\r\n    width: 100%;\r\n    height: $menu-item-height;\r\n    ::ng-deep .p-btn {\r\n      @extend %btn-line;\r\n      justify-content: flex-start;\r\n    }\r\n    ::ng-deep .p-checkbox {\r\n      display: inline-flex;\r\n      align-items: center;\r\n      @extend %btn-line;\r\n      &:not(.mat-checkbox-disabled):hover {\r\n        background-color: $primary-c-50;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n// tabs\r\n::ng-deep .p-menu-tabs {\r\n  max-height: $menu-max-height;\r\n  height: 100%;\r\n  .mat-tab-list {\r\n    width: 100%;\r\n    height: $tabs-header-height;\r\n  }\r\n  .mat-tab-header {\r\n    border-color: $gray-scale-400;\r\n  }\r\n  .mat-tab-labels {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    height: 100%;\r\n  }\r\n  .mat-tab-label {\r\n    font-family: $font-family-basic;\r\n    font-size: $small-font-size;\r\n    font-weight: 500;\r\n    width: $tabs-width;\r\n    height: $tabs-height;\r\n    min-width: unset;\r\n    padding: 0;\r\n    opacity: 1;\r\n    transition: all 400ms;\r\n    &-active {\r\n      color: $gray-scale-1;\r\n      background-color: $secondary-a-700;\r\n      font-weight: 600;\r\n      &:hover ,\r\n      &:focus {\r\n        background-color: $secondary-a-800;\r\n      }\r\n      &:disabled {\r\n        color: $gray-scale-600;\r\n        background-color: $secondary-a-50;\r\n      }\r\n    }\r\n    &:not(.mat-tab-label-active) {\r\n      color: $secondary-a-700;\r\n      background-color: $gray-scale-1;\r\n      border: 1px solid $secondary-a-700;\r\n      font-weight: 400;\r\n      &:hover,\r\n      &:focus {\r\n        background-color: $primary-c-50;\r\n      }\r\n      &:disabled {\r\n        color: $gray-scale-600;\r\n        border-color: $secondary-a-500;\r\n      }\r\n    }\r\n  }\r\n  .mat-ink-bar {\r\n    display: none;\r\n  }\r\n\r\n  &-panel {\r\n    height: 100%;\r\n    &.relative {\r\n      height: calc(100% - #{$tabs-header-height});\r\n      padding-top: $menu-padding;\r\n      padding-left: $menu-padding;\r\n    }\r\n  }\r\n}\r\n\r\n// relative panel styles\r\n.p-menu-check {\r\n  &-list {\r\n    @include resetUl;\r\n    height: 100%;\r\n    padding-right: $menu-padding;\r\n    overflow: auto;\r\n  }\r\n  &-item {\r\n    display: flex;\r\n    align-items: center;\r\n    overflow: hidden;\r\n    @extend %menu-item;\r\n    ::ng-deep .p-checkbox {\r\n      display: inline-flex;\r\n    }\r\n  }\r\n  &-input {\r\n    margin-left: 20px;\r\n    margin-top: 13px;\r\n  }\r\n}\r\n\r\n\r\n",
+                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$menu-padding: 8px;\r\n$menu-item-height: 32px;\r\n$menu-background: $gray-scale-1;\r\n$menu-item-margin-top: 4px;\r\n$input-text-height: 32px;\r\n$input-text-padding: 8px;\r\n$menu-header-height: $input-text-height + $menu-padding * 3 + 1px;\r\n$menu-header-extended-height: $input-text-height + ($menu-padding * 4.5) + ($menu-item-height * 2) + 1px;\r\n$menu-footer-height: $btn-small-height + $menu-padding * 4;\r\n$menu-body-height: 103px;\r\n$menu-min-width: 230px;\r\n$menu-max-height: 75vh;\r\n\r\n%btn-line {\r\n  width: 100%;\r\n  height: 100%;\r\n  padding-right: $menu-padding;\r\n  padding-left: $menu-padding;\r\n}\r\n\r\n::ng-deep .p-menu-multiple.mat-menu-panel {\r\n  min-width: $menu-min-width;\r\n  max-height: $menu-max-height;\r\n  background-color: $menu-background;\r\n  border-radius: 0;\r\n  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1),\r\n  0 2px 6px rgba(0, 0, 0, 0.04),\r\n  0 -3px 6px rgba(0, 0, 0, 0.04);\r\n  overflow: hidden;\r\n  .mat-menu-content {\r\n    height: 100%;\r\n    padding: 0;\r\n    position: relative;\r\n  }\r\n}\r\n\r\n// container of the multiple selection menu-single-select\r\n.p-menu-multiple-container {\r\n  height: 100%;\r\n}\r\n\r\n::ng-deep .p-menu-multiple-item.mat-list-option.mat-list-item {\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  color: $primary-a-900;\r\n  height: $menu-item-height;\r\n  line-height: $menu-item-height;\r\n  padding: 0 8px;\r\n  & + & {\r\n    margin-top: $menu-item-margin-top;\r\n  }\r\n  &:hover,\r\n  &.cdk-focused {\r\n    background-color: $primary-c-50;\r\n  }\r\n  &[disabled] {\r\n    color: $gray-scale-600;\r\n  }\r\n  .mat-list-item-content.mat-list-item-content-reverse {\r\n    flex-direction: row;\r\n    padding: 0;\r\n    .mat-list-text {\r\n      display: inline;\r\n      padding-left: 8px;\r\n      padding-right: 0;\r\n      @include ellipsis;\r\n    }\r\n  }\r\n\r\n  .mat-pseudo-checkbox:not(.mat-pseudo-checkbox-checked) {\r\n    border: 1px solid $gray-scale-400;\r\n    background-color: $gray-scale-1;\r\n  }\r\n\r\n  // checked\r\n  .mat-pseudo-checkbox-checked {\r\n    background-color: $secondary-a-700;\r\n    &:after {\r\n      width: 7px;\r\n      height: 2px;\r\n      top: 3.4px;\r\n      left: 1.5px;\r\n    }\r\n  }\r\n\r\n  // disabled\r\n  &.mat-list-item-disabled {\r\n    background-color: transparent;\r\n    .mat-pseudo-checkbox:not(.mat-pseudo-checkbox-checked) {\r\n      background-color: $primary-c-50;\r\n      border-color: $gray-scale-400;\r\n    }\r\n    .mat-pseudo-checkbox-checked {\r\n      background-color: $secondary-a-100;\r\n    }\r\n    .mat-list-text {\r\n      color: $gray-scale-600;\r\n    }\r\n  }\r\n}\r\n\r\n// results on the trigger\r\n.p-menu-trigger-result {\r\n  & + & {\r\n    margin-left: 5px;\r\n  }\r\n  &:not(:last-child):after {\r\n    content: ',';\r\n    display: inline;\r\n  }\r\n}\r\n\r\n// search field\r\n::ng-deep .p-menu {\r\n  &-form-field {\r\n    width: 100%;\r\n    height: $input-text-height;\r\n    ::placeholder {\r\n      font-style: italic;\r\n      color: $gray-scale-700;\r\n    }\r\n\r\n    .mat-input-element {\r\n      font-family: $font-family-basic;\r\n      font-size: $small-font-size;\r\n      color: $primary-a-900;\r\n      max-width: calc(100% - #{$input-text-padding} * 2 - 2px);\r\n      height: $input-text-height - 2px;\r\n      margin-top: 1px;\r\n      padding-left: $input-text-padding;\r\n      padding-right: $input-text-padding;\r\n      caret-color: $primary-a-900;\r\n    }\r\n\r\n    &.mat-form-field-appearance-outline {\r\n      &:hover {\r\n        .mat-form-field-outline,\r\n        .mat-form-field-outline-thick {\r\n          color: $primary-a-900;\r\n        }\r\n      }\r\n      .mat-form-field-wrapper {\r\n        height: 100%;\r\n        margin-top: 0;\r\n        margin-bottom: 0;\r\n        padding-bottom: 0;\r\n      }\r\n      .mat-form-field-flex {\r\n        height: 100%;\r\n        padding: 0;\r\n        margin-top: 0;\r\n      }\r\n      .mat-form-field-outline {\r\n        top: 0;\r\n      }\r\n      .mat-form-field-infix {\r\n        display: flex;\r\n        justify-content: center;\r\n        align-items: center;\r\n        height: $input-text-height;\r\n        padding: 0;\r\n        border-top: none;\r\n      }\r\n      .mat-form-field-outline-start {\r\n        border-radius: 2px 0 0 2px;\r\n      }\r\n      .mat-form-field-outline-end {\r\n        border-radius: 0 2px 2px 0;\r\n      }\r\n      .mat-form-field-outline,\r\n      .mat-form-field-outline-thick {\r\n        color: $gray-scale-400;\r\n        .mat-form-field-outline-start,\r\n        .mat-form-field-outline-end,\r\n        .mat-form-field-outline-gap {\r\n          border-width: 1px;\r\n        }\r\n      }\r\n      &.mat-focused {\r\n        .mat-form-field-outline,\r\n        .mat-form-field-outline-thick {\r\n          color: $primary-a-900;\r\n        }\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n.p-menu {\r\n  &-header {\r\n    width: 100%;\r\n    padding: $menu-padding;\r\n    background-color: $menu-background;\r\n    border-bottom: 1px solid $gray-scale-400;\r\n    position: absolute;\r\n    z-index: 1;\r\n\r\n    .p-menu-form-field + .p-menu-btn-line {\r\n      margin-top: $menu-padding;\r\n    }\r\n    .p-menu-btn-line + .p-menu-btn-line {\r\n      margin-top: 4px;\r\n    }\r\n  }\r\n\r\n  &-body {\r\n    height: calc(100% - #{$menu-footer-height});\r\n    padding: $menu-padding;\r\n    .p-menu-header + & {\r\n      min-height: $menu-header-height + $menu-body-height + $menu-footer-height;\r\n      padding-bottom: 0;\r\n    }\r\n\r\n    // no buttons after input\r\n    .p-menu-header:not(.extended) + & {\r\n      min-height: $menu-header-height + $menu-body-height + $menu-footer-height;\r\n      padding-top: $menu-header-height;\r\n    }\r\n    // there are buttons after input\r\n    .p-menu-header.extended + & {\r\n      min-height: $menu-header-extended-height + $menu-body-height + $menu-footer-height;\r\n      padding-top: $menu-header-extended-height;\r\n    }\r\n\r\n    &-container {\r\n      height: 100%;\r\n      padding-top: 0;\r\n      overflow: auto;\r\n    }\r\n  }\r\n\r\n  &-footer {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    width: 100%;\r\n    height: $menu-footer-height;\r\n    padding-top: $menu-padding * 2;\r\n    padding-bottom: $menu-padding * 2;\r\n    background-color: $menu-background;\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 0;\r\n    z-index: 1;\r\n    &-btn {\r\n      & + & {\r\n        margin-left: $menu-padding;\r\n      }\r\n    }\r\n  }\r\n\r\n  &-btn-line {\r\n    display: block;\r\n    width: 100%;\r\n    height: $menu-item-height;\r\n    ::ng-deep .p-btn {\r\n      @extend %btn-line;\r\n      justify-content: flex-start;\r\n    }\r\n    ::ng-deep .p-checkbox {\r\n      display: inline-flex;\r\n      align-items: center;\r\n      @extend %btn-line;\r\n      &:not(.mat-checkbox-disabled):hover {\r\n        background-color: $primary-c-50;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n\r\n",
                     "styleUrl": "./menu-tabs.component.scss"
                 }
             ],
@@ -3019,7 +2711,7 @@
                 "OnInit",
                 "OnDestroy"
             ],
-            "templateData": "<button [matMenuTriggerFor]=\"menu\"\r\n        #menuTrigger=\"matMenuTrigger\"\r\n        class=\"p-btn p-btn-small p-btn-tertiary\">\r\n   <ng-template [ngIf]=\"!selectedShown?.length\" [ngIfElse]=\"selectedItems\">\r\n    {{menuTriggerName}}\r\n  </ng-template>\r\n\r\n  <ng-template #selectedItems>\r\n    <ng-container *ngFor=\"let item of selectedShown\">\r\n      <span class=\"p-menu-trigger-result\">{{item.name}}</span>\r\n    </ng-container>\r\n  </ng-template>\r\n</button>\r\n\r\n<!--menu window-->\r\n<mat-menu #menu=\"matMenu\" class=\"p-menu tabs\" [overlapTrigger]=\"false\">\r\n  <div class=\"p-menu-container\" (click)=\"$event.stopPropagation()\"\r\n                                (keydown)=\"$event.stopPropagation()\">\r\n    <mat-tab-group mat-align-tabs=\"center\"\r\n                   [disablePagination]=\"true\"\r\n                   [disableRipple]=\"true\"\r\n                   class=\"p-menu-tabs\">\r\n      <mat-tab [label]=\"tabSpecificName\">\r\n        <div class=\"p-menu-tabs-panel specific\">\r\n          <div class=\"p-menu-header\" *ngIf=\"filterPlaceholder\"\r\n               [class.extended]=\"headerBtnFirst && headerBtnLast\">\r\n            <mat-form-field class=\"p-menu-form-field\"\r\n                            appearance=\"outline\"\r\n                            floatLabel=\"always\">\r\n              <input matInput *ngIf=\"filterPlaceholder\"\r\n                     type=\"text\"\r\n                     [placeholder]=\"filterPlaceholder\"\r\n                     attr.aria-label=\"{{filterAriaLabel}}\"\r\n                     [formControl]=\"customControl\"\r\n                     autocomplete=\"off\"\r\n                     onfocus=\"this.select()\"\r\n                     class=\"p-menu-input\"/>\r\n            </mat-form-field>\r\n\r\n            <p-button *ngIf=\"headerBtnFirst\"\r\n                      class=\"p-menu-btn-line\"\r\n                      [label]=\"headerBtnFirst.label\"\r\n                      [iconBefore]=\"headerBtnFirst.icon.iconName\"\r\n                      [iconBeforeWidth]=\"headerBtnFirst.icon.width\"\r\n                      [iconBeforeHeight]=\"headerBtnFirst.icon.height\"\r\n                      [buttonType]=\"headerBtnFirst.buttonType\"\r\n                      [disabled]=\"headerBtnFirst.disabled\"></p-button>\r\n            <p-checkbox *ngIf=\"headerBtnFirst\"\r\n                        class=\"p-menu-btn-line\"\r\n                        [label]=\"headerBtnLast.label\"\r\n                        [checked]=\"headerBtnLast.checked\"\r\n                        [disabled]=\"headerBtnLast.disabled\"></p-checkbox>\r\n          </div>\r\n\r\n          <div class=\"p-menu-body\">\r\n            <mat-selection-list class=\"p-menu-body-container\">\r\n              <mat-list-option class=\"p-menu-multiple-item\"\r\n                               *ngFor=\"let item of menuList\"\r\n                               [disableRipple]=\"true\"\r\n                               [disabled]=\"item.disabled\"\r\n                               [selected]=\"item.selected\"\r\n                               (click)=\"onOptionSelected(item)\">\r\n                {{item.name}}\r\n              </mat-list-option>\r\n            </mat-selection-list>\r\n          </div>\r\n        </div>\r\n      </mat-tab>\r\n      <mat-tab [label]=\"tabRelativeName\">\r\n        <div class=\"p-menu-tabs-panel relative\">\r\n          <ul class=\"p-menu-check-list\" *ngIf=\"checkboxList?.length\">\r\n            <li class=\"p-menu-check-item\" *ngFor=\"let checkLine of checkboxList\">\r\n              <p-checkbox class=\"p-menu-check-checkbox\"\r\n                          [label]=\"checkLine.checkbox.label\"\r\n                          [checked]=\"checkLine.checkbox.checked\"\r\n                          [disabled]=\"checkLine.checkbox.disabled\"></p-checkbox>\r\n              <p-input-numeric class=\"p-menu-check-input\"\r\n                               [label]=\"checkLine.inputNum.label\"\r\n                               [value]=\"checkLine.inputNum.value\"\r\n                               [disabled]=\"checkLine.inputNum.disabled\"\r\n                               [readonly]=\"checkLine.inputNum.readonly\"\r\n                               [size]=\"inputNumericSize.Small\"\r\n                               [labelLast]=\"true\"></p-input-numeric>\r\n            </li>\r\n          </ul>\r\n        </div>\r\n      </mat-tab>\r\n    </mat-tab-group>\r\n    <div class=\"p-menu-footer\">\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnFirst.label\"\r\n                [buttonType]=\"footerBtnFirst.buttonType\"\r\n                (click)=\"selectCompleted()\"></p-button>\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnLast.label\"\r\n                [buttonType]=\"footerBtnLast.buttonType\"\r\n                (click)=\"selectCanceled()\"></p-button>\r\n    </div>\r\n  </div>\r\n</mat-menu>\r\n"
+            "templateData": "<button [matMenuTriggerFor]=\"menu\"\r\n        #menuTrigger=\"matMenuTrigger\"\r\n        class=\"p-btn p-btn-small p-btn-tertiary\">\r\n   <ng-template [ngIf]=\"!selectedShown?.length\" [ngIfElse]=\"selectedItems\">\r\n    {{menuTriggerName}}\r\n  </ng-template>\r\n\r\n  <ng-template #selectedItems>\r\n    <ng-container *ngFor=\"let item of selectedShown\">\r\n      <span class=\"p-menu-trigger-result\">{{item.name}}</span>\r\n    </ng-container>\r\n  </ng-template>\r\n</button>\r\n\r\n<!--menu-single-select window-->\r\n<mat-menu #menu=\"matMenu\" class=\"p-menu-multiple\" [overlapTrigger]=\"false\">\r\n  <div class=\"p-menu-multiple-container\" (click)=\"$event.stopPropagation()\"\r\n                                (keydown)=\"$event.stopPropagation()\">\r\n    <!--<div class=\"p-menu-single-select-header\" *ngIf=\"filterPlaceholder\"-->\r\n          <!--[class.extended]=\"headerBtnFirst && headerBtnLast\">-->\r\n      <!--<mat-form-field class=\"p-menu-single-select-form-field\"-->\r\n                      <!--appearance=\"outline\"-->\r\n                      <!--floatLabel=\"always\"-->\r\n                      <!--(click)=\"$event.stopPropagation()\"-->\r\n                      <!--(keydown)=\"$event.stopPropagation()\">-->\r\n        <!--<input matInput-->\r\n               <!--type=\"text\"-->\r\n               <!--[placeholder]=\"filterPlaceholder\"-->\r\n               <!--attr.aria-label=\"{{filterAriaLabel}}\"-->\r\n               <!--[formControl]=\"formFieldControl\"-->\r\n               <!--autocomplete=\"off\"-->\r\n               <!--onfocus=\"this.select()\"-->\r\n               <!--class=\"p-menu-single-select-input\">-->\r\n      <!--</mat-form-field>-->\r\n\r\n      <!--<p-button *ngIf=\"headerBtnFirst\"-->\r\n                <!--class=\"p-menu-single-select-btn-line\"-->\r\n                <!--[label]=\"headerBtnFirst.label\"-->\r\n                <!--[iconBefore]=\"headerBtnFirst.icon.iconName\"-->\r\n                <!--[iconBeforeWidth]=\"headerBtnFirst.icon.width\"-->\r\n                <!--[iconBeforeHeight]=\"headerBtnFirst.icon.height\"-->\r\n                <!--[buttonType]=\"headerBtnFirst.buttonType\"-->\r\n                <!--[disabled]=\"headerBtnFirst.disabled\"></p-button>-->\r\n      <!--<p-checkbox *ngIf=\"headerBtnFirst\"-->\r\n                  <!--class=\"p-menu-single-select-btn-line\"-->\r\n                  <!--[label]=\"headerBtnLast.label\"-->\r\n                  <!--[checked]=\"headerBtnLast.checked\"-->\r\n                  <!--[disabled]=\"headerBtnLast.disabled\"></p-checkbox>-->\r\n    <!--</div>-->\r\n\r\n    <div class=\"p-menu-body\">\r\n      <mat-selection-list class=\"p-menu-body-container\">\r\n        <mat-list-option class=\"p-menu-multiple-item\"\r\n                         *ngFor=\"let item of filteredList\"\r\n                         [disableRipple]=\"true\"\r\n                         [disabled]=\"item.disabled\"\r\n                         [selected]=\"item.selected\"\r\n                         (click)=\"onOptionSelected(item)\">\r\n          {{item.name}}\r\n        </mat-list-option>\r\n      </mat-selection-list>\r\n    </div>\r\n\r\n    <div class=\"p-menu-footer\">\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnFirst.label\"\r\n                [buttonType]=\"footerBtnFirst.buttonType\"\r\n                (click)=\"selectCompleted()\"></p-button>\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnLast.label\"\r\n                [buttonType]=\"footerBtnLast.buttonType\"\r\n                (click)=\"selectCanceled()\"></p-button>\r\n    </div>\r\n  </div>\r\n</mat-menu>\r\n"
         },
         {
             "name": "RadioButtonComponent",
@@ -3465,7 +3157,7 @@
         },
         {
             "name": "TypographyStylesComponent",
-            "id": "component-TypographyStylesComponent-00e530185f8f83d22f0b99d04f608c38",
+            "id": "component-TypographyStylesComponent-137b4e7fe9ada52032b42829b1866a98",
             "file": "src/stories/typography/styles/typography-styles.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3518,7 +3210,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component} from '@angular/core';\r\nimport {KeyValue} from '@angular/common';\r\n\r\n// class' properties are defined in classes-typography.scss\r\nconst typographyStyles = {\r\n  h1: {\r\n    title: 'Headline 1',\r\n    description: 'page header level 1',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold',\r\n      size: '18px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Page titles - level 1'\r\n    },\r\n    classes: ['headline-1-bold', 'headline-1-bold headline-contrast']\r\n  },\r\n  h1sub: {\r\n    title: 'Headline 1-sub',\r\n    description: 'page header level 2',\r\n    sets: {\r\n      family: 'Inter - SemiBold',\r\n      size: '16px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Page titles - level 2'\r\n    },\r\n    classes: ['headline-1-sub-semibold']\r\n  },\r\n  h2: {\r\n    title: 'Headline 2',\r\n    description: 'masthead menu',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold + SemiBold',\r\n      size: '15px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Masthead items. SemiBold for default text, Bold for selected, Bold green for Hover.',\r\n    },\r\n    classes: ['headline-2-bold', 'headline-2-semibold', 'headline-2-bold headline-contrast']\r\n  },\r\n  h3: {\r\n    title: 'Headline 3',\r\n    description: 'masthead sub menu',\r\n    sets: {\r\n      family: 'Source Sans Pro - Regular + SemiBold',\r\n      size: '15px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Masthead sub menu items. Regular for default text, SemiBold green for hover and selected.'\r\n    },\r\n    classes: ['headline-3-regular', 'headline-3-semibold headline-contrast']\r\n  },\r\n  h4: {\r\n    title: 'Headline 4',\r\n    description: 'table header, status labels',\r\n    sets: {\r\n      family: 'Inter - Bold',\r\n      size: '12px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Table header row (black), Status labels (white)'\r\n    },\r\n    classes: ['headline-4-bold']\r\n  },\r\n  h5: {\r\n    title: 'Headline 5',\r\n    description: 'expansion panel title',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold',\r\n      size: '15px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Expansion panel title',\r\n    },\r\n    classes: ['headline-5-bold']\r\n  },\r\n  h6: {\r\n    title: 'Headline 6',\r\n    description: 'tabs',\r\n    family: 'Inter Bold / Semi Bold',\r\n    sets: {\r\n      size: '12px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Default tab - Bold, Selected tab - SemiBold'\r\n    },\r\n    classes: ['headline-6-bold', 'headline-3-semibold']\r\n  },\r\n  h7: {\r\n    title: 'Headline 7',\r\n    description: 'modal title',\r\n    sets: {\r\n      family: 'Inter Bold',\r\n      size: '22px',\r\n      letterSpacing: '0%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Modal title',\r\n    },\r\n    classes: ['headline-7-bold']\r\n  },\r\n  p1: {\r\n    title: 'Paragraph 1',\r\n    description: '',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '14px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Paragraphs, Input text',\r\n    },\r\n    classes: ['paragraph-1-default', 'paragraph-1-link', 'paragraph-1-large-label']\r\n  },\r\n  p2: {\r\n    title: 'Paragraph 2',\r\n    description: '',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '13px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Buttons, Actions, Filter, Drop down menu items, Notifications',\r\n    },\r\n    classes: ['paragraph-2-default', 'paragraph-2-link', 'paragraph-2-actions']\r\n  },\r\n  p3: {\r\n    title: 'Paragraph 3',\r\n    description: 'table content',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '12px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Table content, Input top label',\r\n    },\r\n    classes: ['paragraph-3-default', 'paragraph-3-link', 'paragraph-3-medium', 'paragraph-3-semibold']\r\n  }\r\n};\r\n\r\n\r\n@Component({\r\n  selector: 'p-typography-styles',\r\n  templateUrl: './typography-styles.component.html',\r\n  styleUrls: ['./typography-styles.component.scss'],\r\n})\r\nexport default class TypographyStylesComponent {\r\n  public typographyStyles = typographyStyles;\r\n\r\n  originalOrder = (a: KeyValue<number, string>, b: KeyValue<number, string>): number => {\r\n    return 0;\r\n  }\r\n\r\n  reverseKeyOrder = (a: KeyValue<number, string>, b: KeyValue<number, string>): number => {\r\n    return -1;\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component} from '@angular/core';\r\nimport {KeyValue} from '@angular/common';\r\n\r\n// class' properties are defined in classes-typography.scss\r\nconst typographyStyles = {\r\n  h1: {\r\n    title: 'Headline 1',\r\n    description: 'page header level 1',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold',\r\n      size: '18px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Page titles - level 1'\r\n    },\r\n    classes: ['headline-1-bold', 'headline-1-bold headline-contrast']\r\n  },\r\n  h1sub: {\r\n    title: 'Headline 1-sub',\r\n    description: 'page header level 2',\r\n    sets: {\r\n      family: 'Inter - SemiBold',\r\n      size: '16px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Page titles - level 2'\r\n    },\r\n    classes: ['headline-1-sub-semibold']\r\n  },\r\n  h2: {\r\n    title: 'Headline 2',\r\n    description: 'masthead menu-single-select',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold + SemiBold',\r\n      size: '15px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Masthead items. SemiBold for default text, Bold for selected, Bold green for Hover.',\r\n    },\r\n    classes: ['headline-2-bold', 'headline-2-semibold', 'headline-2-bold headline-contrast']\r\n  },\r\n  h3: {\r\n    title: 'Headline 3',\r\n    description: 'masthead sub menu-single-select',\r\n    sets: {\r\n      family: 'Source Sans Pro - Regular + SemiBold',\r\n      size: '15px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Masthead sub menu-single-select items. Regular for default text, SemiBold green for hover and selected.'\r\n    },\r\n    classes: ['headline-3-regular', 'headline-3-semibold headline-contrast']\r\n  },\r\n  h4: {\r\n    title: 'Headline 4',\r\n    description: 'table header, status labels',\r\n    sets: {\r\n      family: 'Inter - Bold',\r\n      size: '12px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Table header row (black), Status labels (white)'\r\n    },\r\n    classes: ['headline-4-bold']\r\n  },\r\n  h5: {\r\n    title: 'Headline 5',\r\n    description: 'expansion panel title',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold',\r\n      size: '15px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Expansion panel title',\r\n    },\r\n    classes: ['headline-5-bold']\r\n  },\r\n  h6: {\r\n    title: 'Headline 6',\r\n    description: 'tabs',\r\n    family: 'Inter Bold / Semi Bold',\r\n    sets: {\r\n      size: '12px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Default tab - Bold, Selected tab - SemiBold'\r\n    },\r\n    classes: ['headline-6-bold', 'headline-3-semibold']\r\n  },\r\n  h7: {\r\n    title: 'Headline 7',\r\n    description: 'modal title',\r\n    sets: {\r\n      family: 'Inter Bold',\r\n      size: '22px',\r\n      letterSpacing: '0%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Modal title',\r\n    },\r\n    classes: ['headline-7-bold']\r\n  },\r\n  p1: {\r\n    title: 'Paragraph 1',\r\n    description: '',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '14px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Paragraphs, Input text',\r\n    },\r\n    classes: ['paragraph-1-default', 'paragraph-1-link', 'paragraph-1-large-label']\r\n  },\r\n  p2: {\r\n    title: 'Paragraph 2',\r\n    description: '',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '13px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Buttons, Actions, Filter, Drop down menu-single-select items, Notifications',\r\n    },\r\n    classes: ['paragraph-2-default', 'paragraph-2-link', 'paragraph-2-actions']\r\n  },\r\n  p3: {\r\n    title: 'Paragraph 3',\r\n    description: 'table content',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '12px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Table content, Input top label',\r\n    },\r\n    classes: ['paragraph-3-default', 'paragraph-3-link', 'paragraph-3-medium', 'paragraph-3-semibold']\r\n  }\r\n};\r\n\r\n\r\n@Component({\r\n  selector: 'p-typography-styles',\r\n  templateUrl: './typography-styles.component.html',\r\n  styleUrls: ['./typography-styles.component.scss'],\r\n})\r\nexport default class TypographyStylesComponent {\r\n  public typographyStyles = typographyStyles;\r\n\r\n  originalOrder = (a: KeyValue<number, string>, b: KeyValue<number, string>): number => {\r\n    return 0;\r\n  }\r\n\r\n  reverseKeyOrder = (a: KeyValue<number, string>, b: KeyValue<number, string>): number => {\r\n    return -1;\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3590,6 +3282,9 @@
                 {
                     "type": "imports",
                     "elements": [
+                        {
+                            "name": "InputModule"
+                        },
                         {
                             "name": "MenuModule"
                         }
@@ -3868,13 +3563,7 @@
                             "name": "ButtonModule"
                         },
                         {
-                            "name": "CheckboxModule"
-                        },
-                        {
                             "name": "IconModule"
-                        },
-                        {
-                            "name": "InputModule"
                         }
                     ]
                 },
@@ -4086,14 +3775,6 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
-                "type": "Story<CheckboxGroupPageComponent>",
-                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "PageTemplate",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
                 "type": "Story<CheckboxPageComponent>",
                 "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
@@ -4102,9 +3783,9 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
-                "type": "Story<InputTextPageComponent>",
-                "defaultValue": "(args: InputTextPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "Story<CheckboxGroupPageComponent>",
+                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -4113,6 +3794,14 @@
                 "file": "src/stories/input-text/input-text-table-layout/input-text-table-layout.stories.ts",
                 "type": "Story<InputTextTableLayoutComponent>",
                 "defaultValue": "(args: InputTextTableLayoutComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "PageTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
+                "type": "Story<InputTextPageComponent>",
+                "defaultValue": "(args: InputTextPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -4238,7 +3927,7 @@
                 "subtype": "variable",
                 "file": "src/stories/typography/styles/typography-styles.component.ts",
                 "type": "object",
-                "defaultValue": "{\r\n  h1: {\r\n    title: 'Headline 1',\r\n    description: 'page header level 1',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold',\r\n      size: '18px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Page titles - level 1'\r\n    },\r\n    classes: ['headline-1-bold', 'headline-1-bold headline-contrast']\r\n  },\r\n  h1sub: {\r\n    title: 'Headline 1-sub',\r\n    description: 'page header level 2',\r\n    sets: {\r\n      family: 'Inter - SemiBold',\r\n      size: '16px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Page titles - level 2'\r\n    },\r\n    classes: ['headline-1-sub-semibold']\r\n  },\r\n  h2: {\r\n    title: 'Headline 2',\r\n    description: 'masthead menu',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold + SemiBold',\r\n      size: '15px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Masthead items. SemiBold for default text, Bold for selected, Bold green for Hover.',\r\n    },\r\n    classes: ['headline-2-bold', 'headline-2-semibold', 'headline-2-bold headline-contrast']\r\n  },\r\n  h3: {\r\n    title: 'Headline 3',\r\n    description: 'masthead sub menu',\r\n    sets: {\r\n      family: 'Source Sans Pro - Regular + SemiBold',\r\n      size: '15px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Masthead sub menu items. Regular for default text, SemiBold green for hover and selected.'\r\n    },\r\n    classes: ['headline-3-regular', 'headline-3-semibold headline-contrast']\r\n  },\r\n  h4: {\r\n    title: 'Headline 4',\r\n    description: 'table header, status labels',\r\n    sets: {\r\n      family: 'Inter - Bold',\r\n      size: '12px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Table header row (black), Status labels (white)'\r\n    },\r\n    classes: ['headline-4-bold']\r\n  },\r\n  h5: {\r\n    title: 'Headline 5',\r\n    description: 'expansion panel title',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold',\r\n      size: '15px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Expansion panel title',\r\n    },\r\n    classes: ['headline-5-bold']\r\n  },\r\n  h6: {\r\n    title: 'Headline 6',\r\n    description: 'tabs',\r\n    family: 'Inter Bold / Semi Bold',\r\n    sets: {\r\n      size: '12px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Default tab - Bold, Selected tab - SemiBold'\r\n    },\r\n    classes: ['headline-6-bold', 'headline-3-semibold']\r\n  },\r\n  h7: {\r\n    title: 'Headline 7',\r\n    description: 'modal title',\r\n    sets: {\r\n      family: 'Inter Bold',\r\n      size: '22px',\r\n      letterSpacing: '0%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Modal title',\r\n    },\r\n    classes: ['headline-7-bold']\r\n  },\r\n  p1: {\r\n    title: 'Paragraph 1',\r\n    description: '',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '14px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Paragraphs, Input text',\r\n    },\r\n    classes: ['paragraph-1-default', 'paragraph-1-link', 'paragraph-1-large-label']\r\n  },\r\n  p2: {\r\n    title: 'Paragraph 2',\r\n    description: '',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '13px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Buttons, Actions, Filter, Drop down menu items, Notifications',\r\n    },\r\n    classes: ['paragraph-2-default', 'paragraph-2-link', 'paragraph-2-actions']\r\n  },\r\n  p3: {\r\n    title: 'Paragraph 3',\r\n    description: 'table content',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '12px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Table content, Input top label',\r\n    },\r\n    classes: ['paragraph-3-default', 'paragraph-3-link', 'paragraph-3-medium', 'paragraph-3-semibold']\r\n  }\r\n}"
+                "defaultValue": "{\r\n  h1: {\r\n    title: 'Headline 1',\r\n    description: 'page header level 1',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold',\r\n      size: '18px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Page titles - level 1'\r\n    },\r\n    classes: ['headline-1-bold', 'headline-1-bold headline-contrast']\r\n  },\r\n  h1sub: {\r\n    title: 'Headline 1-sub',\r\n    description: 'page header level 2',\r\n    sets: {\r\n      family: 'Inter - SemiBold',\r\n      size: '16px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Page titles - level 2'\r\n    },\r\n    classes: ['headline-1-sub-semibold']\r\n  },\r\n  h2: {\r\n    title: 'Headline 2',\r\n    description: 'masthead menu-single-select',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold + SemiBold',\r\n      size: '15px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Masthead items. SemiBold for default text, Bold for selected, Bold green for Hover.',\r\n    },\r\n    classes: ['headline-2-bold', 'headline-2-semibold', 'headline-2-bold headline-contrast']\r\n  },\r\n  h3: {\r\n    title: 'Headline 3',\r\n    description: 'masthead sub menu-single-select',\r\n    sets: {\r\n      family: 'Source Sans Pro - Regular + SemiBold',\r\n      size: '15px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Masthead sub menu-single-select items. Regular for default text, SemiBold green for hover and selected.'\r\n    },\r\n    classes: ['headline-3-regular', 'headline-3-semibold headline-contrast']\r\n  },\r\n  h4: {\r\n    title: 'Headline 4',\r\n    description: 'table header, status labels',\r\n    sets: {\r\n      family: 'Inter - Bold',\r\n      size: '12px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Table header row (black), Status labels (white)'\r\n    },\r\n    classes: ['headline-4-bold']\r\n  },\r\n  h5: {\r\n    title: 'Headline 5',\r\n    description: 'expansion panel title',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold',\r\n      size: '15px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Expansion panel title',\r\n    },\r\n    classes: ['headline-5-bold']\r\n  },\r\n  h6: {\r\n    title: 'Headline 6',\r\n    description: 'tabs',\r\n    family: 'Inter Bold / Semi Bold',\r\n    sets: {\r\n      size: '12px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Default tab - Bold, Selected tab - SemiBold'\r\n    },\r\n    classes: ['headline-6-bold', 'headline-3-semibold']\r\n  },\r\n  h7: {\r\n    title: 'Headline 7',\r\n    description: 'modal title',\r\n    sets: {\r\n      family: 'Inter Bold',\r\n      size: '22px',\r\n      letterSpacing: '0%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Modal title',\r\n    },\r\n    classes: ['headline-7-bold']\r\n  },\r\n  p1: {\r\n    title: 'Paragraph 1',\r\n    description: '',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '14px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Paragraphs, Input text',\r\n    },\r\n    classes: ['paragraph-1-default', 'paragraph-1-link', 'paragraph-1-large-label']\r\n  },\r\n  p2: {\r\n    title: 'Paragraph 2',\r\n    description: '',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '13px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Buttons, Actions, Filter, Drop down menu-single-select items, Notifications',\r\n    },\r\n    classes: ['paragraph-2-default', 'paragraph-2-link', 'paragraph-2-actions']\r\n  },\r\n  p3: {\r\n    title: 'Paragraph 3',\r\n    description: 'table content',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '12px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Table content, Input top label',\r\n    },\r\n    classes: ['paragraph-3-default', 'paragraph-3-link', 'paragraph-3-medium', 'paragraph-3-semibold']\r\n  }\r\n}"
             },
             {
                 "name": "WithLabel",
@@ -4747,7 +4436,7 @@
                     "subtype": "variable",
                     "file": "src/stories/typography/styles/typography-styles.component.ts",
                     "type": "object",
-                    "defaultValue": "{\r\n  h1: {\r\n    title: 'Headline 1',\r\n    description: 'page header level 1',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold',\r\n      size: '18px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Page titles - level 1'\r\n    },\r\n    classes: ['headline-1-bold', 'headline-1-bold headline-contrast']\r\n  },\r\n  h1sub: {\r\n    title: 'Headline 1-sub',\r\n    description: 'page header level 2',\r\n    sets: {\r\n      family: 'Inter - SemiBold',\r\n      size: '16px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Page titles - level 2'\r\n    },\r\n    classes: ['headline-1-sub-semibold']\r\n  },\r\n  h2: {\r\n    title: 'Headline 2',\r\n    description: 'masthead menu',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold + SemiBold',\r\n      size: '15px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Masthead items. SemiBold for default text, Bold for selected, Bold green for Hover.',\r\n    },\r\n    classes: ['headline-2-bold', 'headline-2-semibold', 'headline-2-bold headline-contrast']\r\n  },\r\n  h3: {\r\n    title: 'Headline 3',\r\n    description: 'masthead sub menu',\r\n    sets: {\r\n      family: 'Source Sans Pro - Regular + SemiBold',\r\n      size: '15px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Masthead sub menu items. Regular for default text, SemiBold green for hover and selected.'\r\n    },\r\n    classes: ['headline-3-regular', 'headline-3-semibold headline-contrast']\r\n  },\r\n  h4: {\r\n    title: 'Headline 4',\r\n    description: 'table header, status labels',\r\n    sets: {\r\n      family: 'Inter - Bold',\r\n      size: '12px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Table header row (black), Status labels (white)'\r\n    },\r\n    classes: ['headline-4-bold']\r\n  },\r\n  h5: {\r\n    title: 'Headline 5',\r\n    description: 'expansion panel title',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold',\r\n      size: '15px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Expansion panel title',\r\n    },\r\n    classes: ['headline-5-bold']\r\n  },\r\n  h6: {\r\n    title: 'Headline 6',\r\n    description: 'tabs',\r\n    family: 'Inter Bold / Semi Bold',\r\n    sets: {\r\n      size: '12px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Default tab - Bold, Selected tab - SemiBold'\r\n    },\r\n    classes: ['headline-6-bold', 'headline-3-semibold']\r\n  },\r\n  h7: {\r\n    title: 'Headline 7',\r\n    description: 'modal title',\r\n    sets: {\r\n      family: 'Inter Bold',\r\n      size: '22px',\r\n      letterSpacing: '0%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Modal title',\r\n    },\r\n    classes: ['headline-7-bold']\r\n  },\r\n  p1: {\r\n    title: 'Paragraph 1',\r\n    description: '',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '14px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Paragraphs, Input text',\r\n    },\r\n    classes: ['paragraph-1-default', 'paragraph-1-link', 'paragraph-1-large-label']\r\n  },\r\n  p2: {\r\n    title: 'Paragraph 2',\r\n    description: '',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '13px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Buttons, Actions, Filter, Drop down menu items, Notifications',\r\n    },\r\n    classes: ['paragraph-2-default', 'paragraph-2-link', 'paragraph-2-actions']\r\n  },\r\n  p3: {\r\n    title: 'Paragraph 3',\r\n    description: 'table content',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '12px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Table content, Input top label',\r\n    },\r\n    classes: ['paragraph-3-default', 'paragraph-3-link', 'paragraph-3-medium', 'paragraph-3-semibold']\r\n  }\r\n}"
+                    "defaultValue": "{\r\n  h1: {\r\n    title: 'Headline 1',\r\n    description: 'page header level 1',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold',\r\n      size: '18px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Page titles - level 1'\r\n    },\r\n    classes: ['headline-1-bold', 'headline-1-bold headline-contrast']\r\n  },\r\n  h1sub: {\r\n    title: 'Headline 1-sub',\r\n    description: 'page header level 2',\r\n    sets: {\r\n      family: 'Inter - SemiBold',\r\n      size: '16px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Page titles - level 2'\r\n    },\r\n    classes: ['headline-1-sub-semibold']\r\n  },\r\n  h2: {\r\n    title: 'Headline 2',\r\n    description: 'masthead menu-single-select',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold + SemiBold',\r\n      size: '15px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Masthead items. SemiBold for default text, Bold for selected, Bold green for Hover.',\r\n    },\r\n    classes: ['headline-2-bold', 'headline-2-semibold', 'headline-2-bold headline-contrast']\r\n  },\r\n  h3: {\r\n    title: 'Headline 3',\r\n    description: 'masthead sub menu-single-select',\r\n    sets: {\r\n      family: 'Source Sans Pro - Regular + SemiBold',\r\n      size: '15px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Masthead sub menu-single-select items. Regular for default text, SemiBold green for hover and selected.'\r\n    },\r\n    classes: ['headline-3-regular', 'headline-3-semibold headline-contrast']\r\n  },\r\n  h4: {\r\n    title: 'Headline 4',\r\n    description: 'table header, status labels',\r\n    sets: {\r\n      family: 'Inter - Bold',\r\n      size: '12px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Table header row (black), Status labels (white)'\r\n    },\r\n    classes: ['headline-4-bold']\r\n  },\r\n  h5: {\r\n    title: 'Headline 5',\r\n    description: 'expansion panel title',\r\n    sets: {\r\n      family: 'Source Sans Pro - Bold',\r\n      size: '15px',\r\n      letterSpacing: '5%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Expansion panel title',\r\n    },\r\n    classes: ['headline-5-bold']\r\n  },\r\n  h6: {\r\n    title: 'Headline 6',\r\n    description: 'tabs',\r\n    family: 'Inter Bold / Semi Bold',\r\n    sets: {\r\n      size: '12px',\r\n      letterSpacing: '8%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'Yes',\r\n      useCase: 'Default tab - Bold, Selected tab - SemiBold'\r\n    },\r\n    classes: ['headline-6-bold', 'headline-3-semibold']\r\n  },\r\n  h7: {\r\n    title: 'Headline 7',\r\n    description: 'modal title',\r\n    sets: {\r\n      family: 'Inter Bold',\r\n      size: '22px',\r\n      letterSpacing: '0%',\r\n      lineHeight: 'Auto',\r\n      capitals: 'No',\r\n      useCase: 'Modal title',\r\n    },\r\n    classes: ['headline-7-bold']\r\n  },\r\n  p1: {\r\n    title: 'Paragraph 1',\r\n    description: '',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '14px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Paragraphs, Input text',\r\n    },\r\n    classes: ['paragraph-1-default', 'paragraph-1-link', 'paragraph-1-large-label']\r\n  },\r\n  p2: {\r\n    title: 'Paragraph 2',\r\n    description: '',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '13px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Buttons, Actions, Filter, Drop down menu-single-select items, Notifications',\r\n    },\r\n    classes: ['paragraph-2-default', 'paragraph-2-link', 'paragraph-2-actions']\r\n  },\r\n  p3: {\r\n    title: 'Paragraph 3',\r\n    description: 'table content',\r\n    sets: {\r\n      family: 'Inter - Regular',\r\n      size: '12px',\r\n      letterSpacing: '0%',\r\n      lineHeight: '20px',\r\n      capitals: 'No',\r\n      useCase: 'Table content, Input top label',\r\n    },\r\n    classes: ['paragraph-3-default', 'paragraph-3-link', 'paragraph-3-medium', 'paragraph-3-semibold']\r\n  }\r\n}"
                 }
             ]
         },
@@ -4980,7 +4669,7 @@
                 "linktype": "interface",
                 "name": "IInputNumeric",
                 "coveragePercent": 0,
-                "coverageCount": "0/13",
+                "coverageCount": "0/11",
                 "status": "low"
             },
             {
@@ -5043,7 +4732,7 @@
                 "linktype": "component",
                 "name": "MenuSingleSelectComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/19",
+                "coverageCount": "0/14",
                 "status": "low"
             },
             {
@@ -5052,16 +4741,7 @@
                 "linktype": "component",
                 "name": "MenuTabsComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/25",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/design-system-lib/src/lib/menu/menu/menu.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "MenuComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/16",
+                "coverageCount": "0/21",
                 "status": "low"
             },
             {
@@ -5108,7 +4788,7 @@
                 "linktype": "component",
                 "name": "AppComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/13",
+                "coverageCount": "0/12",
                 "status": "low"
             },
             {
