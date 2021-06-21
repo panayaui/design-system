@@ -12,13 +12,15 @@ import {MatListModule} from '@angular/material/list';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {ReactiveFormsModule} from '@angular/forms';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    MenuModule
+    MenuModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
