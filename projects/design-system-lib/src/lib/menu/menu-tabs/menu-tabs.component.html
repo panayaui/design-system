@@ -55,7 +55,7 @@
           <div class="p-menu-body">
             <mat-selection-list class="p-menu-body-container">
               <mat-list-option class="p-menu-multiple-item"
-                               *ngFor="let item of menuList"
+                               *ngFor="let item of filteredList"
                                [disableRipple]="true"
                                [disabled]="item.disabled"
                                [selected]="item.selected"
