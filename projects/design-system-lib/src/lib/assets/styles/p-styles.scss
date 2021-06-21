@@ -511,3 +511,24 @@ p {
   border-radius: 4px;
 }
 
+//scrollbar in Firefox
+* {
+  scrollbar-width: thin;
+  scrollbar-color: $gray-scale-50 transparent;
+}
+
+//scrollbar in webkit based browsers
+::-webkit-scrollbar {
+  width: 14px;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: $gray-scale-50;
+  border-right: 8px solid $gray-scale-1;
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+}
+
