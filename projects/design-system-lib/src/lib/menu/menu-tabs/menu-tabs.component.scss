@@ -6,7 +6,7 @@ $menu-background: $gray-scale-1;
 $menu-item-margin-top: 4px;
 $input-text-height: 32px;
 $input-text-padding: 8px;
-$tabs-width: 83px;
+$tabs-width: 84px;
 $tabs-height: 28px;
 $tabs-header-height: 60px;
 $menu-header-height: $input-text-height + $menu-padding * 3 + 1px;
@@ -289,6 +289,10 @@ $menu-tabs-min-width: 250px;
     width: 100%;
     height: $tabs-header-height;
   }
+  .mat-tab-header {
+    margin-bottom: $menu-padding;
+    border-color: $gray-scale-400;
+  }
   .mat-tab-labels {
     display: flex;
     justify-content: center;
@@ -339,9 +343,10 @@ $menu-tabs-min-width: 250px;
 
   &-panel.relative {
     @include resetUl;
-    height: 100%;
+    height: calc(100% - #{$tabs-header-height});
+    padding-right: $menu-padding;
+    padding-left: $menu-padding;
     overflow: auto;
-    padding: $menu-padding;
   }
 }
 
@@ -350,6 +355,7 @@ $menu-tabs-min-width: 250px;
   &-item {
     display: flex;
     align-items: center;
+    overflow: hidden;
     @extend %menu-item;
     ::ng-deep .p-checkbox {
       display: inline-flex;
