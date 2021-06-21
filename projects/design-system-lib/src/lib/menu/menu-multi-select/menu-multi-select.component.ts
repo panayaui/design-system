@@ -56,7 +56,7 @@ export class MenuMultiSelectComponent implements OnInit, OnDestroy {
     this.filteredList = this.menuList.filter( item => item.name.toLowerCase().indexOf(value.toLowerCase()) > -1);
   }
 
-  onOptSelected(item): void {
+  onOptionSelected(item): void {
     console.log(item);
     this.selectedList.push(item);
   }
