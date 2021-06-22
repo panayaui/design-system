@@ -13,9 +13,11 @@ export class ButtonComponent {
   @Input() iconBefore: string;
   @Input() iconBeforeWidth: string = 'auto';
   @Input() iconBeforeHeight: string = 'auto';
+  @Input() iconBeforeStrokeWidth: number;
   @Input() iconAfter: string;
   @Input() iconAfterWidth: string = 'auto';
   @Input() iconAfterHeight: string = 'auto';
+  @Input() iconAfterStrokeWidth: number;
   @Input() buttonType: ButtonTypeEnum = ButtonTypeEnum.Primary;
   @Output() onClickTask: EventEmitter<any> = new EventEmitter();
 
