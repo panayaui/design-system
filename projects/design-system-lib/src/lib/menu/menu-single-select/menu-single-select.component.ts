@@ -2,6 +2,7 @@ import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {SubscriptionLike} from 'rxjs';
 import {IMenuButton} from '../menu-button.interface';
+import {ButtonTypeEnum} from '../../button/button-type.enum';
 
 @Component({
   selector: 'p-menu-single-select',
@@ -19,6 +20,7 @@ export class MenuSingleSelectComponent implements OnInit, OnDestroy {
   public filteredList: any[];
   public formFieldControl: FormControl;
   private sub: SubscriptionLike;
+  public buttonTypeEnum: ButtonTypeEnum;
 
   ngOnInit(): void {
     this.filteredList = this.menuList;

@@ -1,0 +1,22 @@
+@import "../../../../../../src/stories/assets/styles/custom";
+
+.p-radio-group {
+  display: flex;
+  flex-direction: column;
+  &-label {
+    font-family: $font-family-basic;
+    font-size: $tiny-font-size;
+    font-weight: 700;
+    line-height: 18px;
+  }
+  &-option {
+    margin-top: 10px;
+  }
+  &-error {
+    font-family: $font-family-basic;
+    font-size: $tiny-font-size;
+    line-height: 18px;
+    color: $supportive-alert-500;
+    margin-top: 10px;
+  }
+}

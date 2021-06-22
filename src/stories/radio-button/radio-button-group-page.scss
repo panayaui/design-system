@@ -1,0 +1,5 @@
+#radio-button-group {
+  & ~ .sbdocs .innerZoomElementWrapper > div:not(:first-child) {
+    margin-left: 50px;
+  }
+}

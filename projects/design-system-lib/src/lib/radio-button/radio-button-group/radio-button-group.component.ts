@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import IRadioButton from '../radio-button.interface';
+import {IRadioButton} from 'projects/design-system-lib/src/lib/radio-button/radio-button.interface';
 import {FormControl, ValidatorFn} from '@angular/forms';
 
 @Component({
@@ -7,11 +7,11 @@ import {FormControl, ValidatorFn} from '@angular/forms';
   templateUrl: './radio-button-group.component.html',
   styleUrls: ['./radio-button-group.component.scss'],
 })
-export default class RadioButtonGroup implements OnInit {
+export class RadioButtonGroupComponent implements OnInit {
   @Input() label: string;
   @Input() optionsList: IRadioButton[];
   @Input() errorMessage: string;
-  @Input() value: any;
+  @Input() groupValue: any;
   @Input() selected: any;
   @Input() disabled: boolean = false;
   @Input() required: boolean = false;
@@ -20,7 +20,7 @@ export default class RadioButtonGroup implements OnInit {
 
   ngOnInit(): void {
     this.fieldFormControl = new FormControl(
-      {value: this.value, disabled: this.disabled},
+      {value: this.groupValue, disabled: this.disabled},
       this.validators);
   }
 }
