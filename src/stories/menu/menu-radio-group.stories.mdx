@@ -1,0 +1,288 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+
+import {MenuRadioGroupComponent} from 'projects/design-system-lib/src/public-api';
+import {InputModule} from 'projects/design-system-lib/src/public-api';
+import {ButtonModule} from 'projects/design-system-lib/src/public-api';
+import {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';
+import {IconModule} from 'projects/design-system-lib/src/public-api';
+import {CheckboxModule} from 'projects/design-system-lib/src/public-api';
+
+import {CommonModule} from '@angular/common';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatListModule} from '@angular/material/list';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {ReactiveFormsModule} from '@angular/forms';
+
+import {stateGroups} from './stateGroups';
+
+<Meta title='Components/Menu/Radio Group'
+    component={MenuRadioGroupComponent}
+    decorators={[
+      moduleMetadata({
+          imports: [
+              CommonModule,            
+              BrowserAnimationsModule,
+              MatMenuModule,
+              MatListModule,
+              InputModule,
+              MatInputModule,
+              MatFormFieldModule,
+              ReactiveFormsModule,
+              ButtonModule,
+              CheckboxModule
+          ]
+      })
+    ]}  
+    args={{
+      menuTriggerName: 'Multi select',
+      menuList: [
+        { name: 'Alabama',
+          disabled: false
+        },
+        { name: 'Alaska disabled',
+          disabled: true
+        },
+        { name: 'California',
+          disabled: false
+        },
+        { name: 'Colorado',
+          disabled: false
+        },
+        { name: 'Delaware',
+          disabled: false
+        },
+        { name: 'Florida selected disabled',
+          disabled: true,
+          selected: true
+        },
+        { name: 'Georgia',
+          disabled: false
+        },
+        { name: 'Hawaii',
+          disabled: false
+        },
+        { name: 'Idaho',
+          disabled: true
+        },
+        { name: 'Illinois',
+          disabled: false
+        },
+        { name: 'Indiana',
+          disabled: false
+        },
+        { name: 'Iowa',
+          disabled: false
+        },
+        { name: 'Kansas',
+          disabled: true,
+          selected: true
+        },
+        { name: 'Kentucky',
+          disabled: false
+        }
+      ],
+      footerBtnFirst: {
+        label: 'Done',
+        buttonType: ButtonTypeEnum.Primary
+      },
+      footerBtnLast: {
+        label: 'Cancel',
+        buttonType: ButtonTypeEnum.Secondary
+      }
+    }}  
+ />
+
+# Menu
+
+export const Template = (args) => <MenuRadioGroupComponent {...args} />
+
+###### Simple Menu
+<Canvas>
+  <Story name="Simple Multiselect"
+    args={{ 
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Multiselect with Filter"
+    args={{ 
+      menuTriggerName: 'Multi With Filter',
+      filterAriaLabel: 'Find Label',
+      filterPlaceholder: 'Find Label',
+      footerBtnFirst: {
+        label: 'Done',
+        buttonType: ButtonTypeEnum.Primary
+      },
+      footerBtnLast: {
+        label: 'Cancel',
+        buttonType: ButtonTypeEnum.Secondary
+      }
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Multiselect with Filter & Buttons"
+    args={{ 
+      menuTriggerName: 'Multi With Filter & Buttons',
+      filterAriaLabel: 'Find Label',
+      filterPlaceholder: 'Find Label',
+      footerBtnFirst: {
+        label: 'Done',
+        buttonType: ButtonTypeEnum.Primary
+      },
+      footerBtnLast: {
+        label: 'Cancel',
+        buttonType: ButtonTypeEnum.Secondary
+      },
+      headerBtnFirst: {
+        label: 'Clear selected',
+        buttonType: ButtonTypeEnum.Tertiary,
+        icon: {
+          iconName: 'eraser',
+          width: '15',
+          height: '15'
+        }
+      },
+      headerBtnLast: {
+        label: 'Not equal to'
+      }
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Multiselect with Filter & Disabled Buttons"
+    args={{ 
+      menuTriggerName: 'Multi With Filter & Disabled Buttons',
+      filterAriaLabel: 'Find Label',
+      filterPlaceholder: 'Find Label',
+      footerBtnFirst: {
+        label: 'Done',
+        buttonType: ButtonTypeEnum.Primary
+      },
+      footerBtnLast: {
+        label: 'Cancel',
+        buttonType: ButtonTypeEnum.Secondary
+      },
+      headerBtnFirst: {
+        label: 'Clear selected',
+        buttonType: ButtonTypeEnum.Tertiary,
+        icon: {
+          iconName: 'eraser',
+          width: '15',
+          height: '15'
+        },
+        disabled: true
+      },
+      headerBtnLast: {
+        label: 'Not equal to',
+        disabled: true
+      }
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Usage
+```ts
+import {MatMenuModule} from '@angular/material/menu';
+
+export class MenuMultiSelectComponent implements OnInit, OnDestroy {
+  @Input() menuTriggerName: string;
+  @Input() menuList: any[];
+  @Input() filterPlaceholder: string; // if there is a search and buttons
+  @Input() filterAriaLabel: string;
+  @Input() headerBtnFirst: IMenuButton;
+  @Input() headerBtnLast: ICheckbox;
+  @Input() footerBtnFirst: IMenuButton;
+  @Input() footerBtnLast: IMenuButton;
+  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;
+  private selectedList: any[] = [];
+  public selectedShown: any[] = [];
+  public filteredList: any[];
+  public formFieldControl: FormControl;
+  private sub: SubscriptionLike;
+}
+
+export interface IMenuButton {
+  label: string;
+  buttonType: ButtonTypeEnum;
+  icon: IIcon;
+}
+```
+```html
+<button [matMenuTriggerFor]="menu"
+        #menuTrigger="matMenuTrigger"
+        class="p-btn p-btn-small p-btn-tertiary">
+   <ng-template [ngIf]="!selectedShown?.length" [ngIfElse]="selectedItems">
+    {{menuTriggerName}}
+  </ng-template>
+
+  <ng-template #selectedItems>
+    <ng-container *ngFor="let item of selectedShown">
+      <span class="p-menu-trigger-result">{{item.name}}</span>
+    </ng-container>
+  </ng-template>
+</button>
+
+<!--menu window-->
+<mat-menu #menu="matMenu" class="p-menu-multiple" [overlapTrigger]="false">
+  <div class="p-menu-multiple-container" (click)="$event.stopPropagation()"
+                                (keydown)="$event.stopPropagation()">
+    <div class="p-menu-header" *ngIf="filterPlaceholder"
+          [class.extended]="headerBtnFirst && headerBtnLast">
+      <mat-form-field class="p-menu-form-field"
+                      appearance="outline"
+                      floatLabel="always"
+                      (click)="$event.stopPropagation()"
+                      (keydown)="$event.stopPropagation()">
+        <input matInput
+               type="text"
+               [placeholder]="filterPlaceholder"
+               attr.aria-label="{{filterAriaLabel}}"
+               [formControl]="formFieldControl"
+               autocomplete="off"
+               onfocus="this.select()"
+               class="p-menu-input">
+      </mat-form-field>
+
+      <p-button *ngIf="headerBtnFirst"
+                class="p-menu-btn-line"
+                [label]="headerBtnFirst.label"
+                [iconBefore]="headerBtnFirst.icon.iconName"
+                [iconBeforeWidth]="headerBtnFirst.icon.width"
+                [iconBeforeHeight]="headerBtnFirst.icon.height"
+                [buttonType]="headerBtnFirst.buttonType"
+                [disabled]="headerBtnFirst.disabled"></p-button>
+      <p-checkbox *ngIf="headerBtnFirst"
+                  class="p-menu-btn-line"
+                  [label]="headerBtnLast.label"
+                  [checked]="headerBtnLast.checked"
+                  [disabled]="headerBtnLast.disabled"></p-checkbox>
+    </div>
+
+    <div class="p-menu-body">
+      <mat-selection-list class="p-menu-body-container">
+        <mat-list-option class="p-menu-multiple-item"
+                         *ngFor="let item of filteredList"
+                         [disableRipple]="true"
+                         [disabled]="item.disabled"
+                         [selected]="item.selected"
+                         (click)="onOptionSelected(item)">
+          {{item.name}}
+        </mat-list-option>
+      </mat-selection-list>
+    </div>
+
+    <div class="p-menu-footer">
+      <p-button class="p-menu-footer-btn"
+                [label]="footerBtnFirst.label"
+                [buttonType]="footerBtnFirst.buttonType"
+                (click)="selectCompleted()"></p-button>
+      <p-button class="p-menu-footer-btn"
+                [label]="footerBtnLast.label"
+                [buttonType]="footerBtnLast.buttonType"
+                (click)="selectCanceled()"></p-button>
+    </div>
+  </div>
+</mat-menu>
+```

@@ -14,6 +14,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {CheckboxModule} from '../checkbox/checkbox.module';
 import {MatInputModule} from '@angular/material/input';
 import {InputModule} from '../input/input.module';
+import {MenuRadioGroupComponent} from './menu-radio-group/menu-radio-group.component';
 
 @NgModule({
   imports: [
@@ -33,12 +34,14 @@ import {InputModule} from '../input/input.module';
   declarations: [
     MenuSingleSelectComponent,
     MenuMultiSelectComponent,
-    MenuTabsComponent
+    MenuTabsComponent,
+    MenuRadioGroupComponent
   ],
   exports: [
     MenuSingleSelectComponent,
     MenuMultiSelectComponent,
-    MenuTabsComponent
+    MenuTabsComponent,
+    MenuRadioGroupComponent
   ]
 })
 export class MenuModule { }
