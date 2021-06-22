@@ -1,0 +1,105 @@
+import {Meta, Story, Canvas, Preview} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+import {CommonModule} from '@angular/common';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {ReactiveFormsModule, Validators} from '@angular/forms';
+import {RadioButtonGroupComponent} from './radio-button-group.component';
+import {RadioButtonModule} from 'projects/design-system-lib/src/public-api';
+
+<Meta title='Components/Radio Button/Group' component={RadioButtonGroupComponent}
+      decorators={[
+        moduleMetadata({
+          imports: [RadioButtonModule,
+                  MatRadioModule,
+                  MatFormFieldModule,
+                  ReactiveFormsModule]
+              })
+      ]}
+      args={{
+        label: 'Group Label',
+        optionsList: [
+          {label: 'Label'},
+          {label: 'Label'},
+          {label: 'Label'}
+        ]
+      }}
+/>
+
+# Radio Button / Group
+
+export const Template = (args) => <RadioButtonGroupComponent {...args} />
+
+###### Selector
+```html
+  <p-radio-group></p-radio-group>
+```
+###### Radio Button Group
+<Canvas>
+  <Story name="Default"
+    args={{
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Option Checked"
+    args={{
+      optionsList: [
+        {label: 'Label'},
+        {label: 'Label'},
+        {label: 'Label', checked: true}
+      ]
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Group Disabled"
+    args={{
+      disabled: true,
+      optionsList: [
+        {label: 'Label'},
+        {label: 'Label'},
+        {label: 'Label', checked: true}
+      ]
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Validation Error"
+    args={{
+      validators: Validators.required,
+      errorMessage: 'Validation text'
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Component
+```ts
+export class RadioButtonGroupComponent implements OnInit {
+  @Input() label: string;
+  @Input() optionsList: IRadioButton[];
+  @Input() errorMessage: string;
+  @Input() groupValue: any;
+  @Input() selected: any;
+  @Input() disabled: boolean = false;
+  @Input() required: boolean = false;
+  @Input() validators: ValidatorFn[];
+  public fieldFormControl: FormControl;
+
+  ngOnInit(): void {
+    this.fieldFormControl = new FormControl(
+      {value: this.groupValue, disabled: this.disabled},
+      this.validators);
+  }
+}
+```
+
+###### Interface IRadioButton
+```ts
+export interface IRadioButton {
+  value: any;
+  label?: string;
+  ariaLabel?: string;
+  checked?: boolean;
+  disabled?: boolean;
+}
+```
+

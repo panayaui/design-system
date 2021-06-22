@@ -1,95 +1,22 @@
 @import "../../assets/styles/custom";
 
-$radio-button-size: 16px;
-
-::ng-deep .p-radio-button {
-  // material styles override
-  .mat-radio-label-content {
+.p-radio-group {
+  display: flex;
+  flex-direction: column;
+  &-label {
     font-family: $font-family-basic;
-    font-weight: 400;
-    font-size: $small-font-size;
-    text-transform: capitalize;
-    color: $primary-a-900;
+    font-size: $tiny-font-size;
+    font-weight: 700;
+    line-height: 18px;
   }
-
-  .mat-radio-container {
-    width: $radio-button-size;
-    height: $radio-button-size;
+  &-option {
+    margin-top: 10px;
   }
-
-  .mat-radio-outer-circle {
-    width: $radio-button-size;
-    height: $radio-button-size;
-    background-color: $gray-scale-1;
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 50%;
-    border-color: $gray-scale-400;
-  }
-
-  .mat-radio-ripple {
-    display: none;
-  }
-
-  // hover
-  &:hover {
-    .mat-radio-outer-circle {
-      border-color: $secondary-a-700;
-    }
-  }
-
-  // focus
-  &.cdk-focused {
-    .mat-radio-outer-circle {
-      border-color: $secondary-a-700;
-    }
-  }
-
-  // disabled
-  &.mat-radio-button.mat-radio-disabled {
-    .mat-radio-outer-circle {
-      background-color: $primary-c-50;
-      border-color: $gray-scale-400;
-    }
-    .mat-radio-label-content {
-      color: $gray-scale-600;
-    }
-  }
-
-  // checked
-  &.mat-radio-button.mat-accent.mat-radio-checked {
-    .mat-radio-outer-circle {
-      border-color: $secondary-a-700;
-    }
-    .mat-radio-inner-circle {
-      height: $radio-button-size;
-      width: $radio-button-size;
-      background-color: $secondary-a-700;
-    }
-
-    // checked + hover
-    &:hover {
-      .mat-radio-inner-circle {
-        background-color: $secondary-a-800;
-      }
-    }
-
-    // checked + focus
-    &.cdk-focused {
-      .mat-radio-inner-circle {
-        background-color: $secondary-a-800;
-      }
-    }
-
-    // checked + disabled
-    &.mat-radio-disabled {
-      .mat-radio-outer-circle {
-        background-color: $gray-scale-1;
-        border-color: $secondary-a-100;
-      }
-      .mat-radio-inner-circle {
-        background-color: $secondary-a-100;
-      }
-    }
+  &-error {
+    font-family: $font-family-basic;
+    font-size: $tiny-font-size;
+    line-height: 18px;
+    color: $supportive-alert-500;
+    margin-top: 10px;
   }
 }

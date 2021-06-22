@@ -1,16 +1,16 @@
 <mat-radio-group class="p-radio-group"
-                 [formControl]="fieldFormControl"
-                 [class.invalid-field]="fieldFormControl.invalid && (fieldFormControl.touched || formControlHost.submitted)">
+                 [formControl]="fieldFormControl">
   <label class="p-radio-group-label">{{label}}</label>
   <p-radio-button class="p-radio-group-option"
                   *ngFor="let option of optionsList"
                   [value]="option"
-                  [label]="label"
-                  [ariaLabel]="ariaLabel"
+                  [label]="option.label"
+                  [ariaLabel]="option.ariaLabel"
                   [checked]="checked"
-                  [disabled]="disabled">
+                  [disabled]="option.disabled">
   </p-radio-button>
-  <mat-error *ngIf="fieldFormControl.errors">
+  <mat-error *ngIf="fieldFormControl.errors"
+              class="p-radio-group-error">
     {{errorMessage}}
   </mat-error>
 </mat-radio-group>

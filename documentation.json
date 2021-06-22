@@ -487,36 +487,36 @@
         },
         {
             "name": "IRadioButton",
-            "id": "interface-IRadioButton-575f61d51480040b16ac79d3fc959966",
-            "file": "src/stories/radio-button/radio-button.interface.ts",
+            "id": "interface-IRadioButton-5f07fcc5f8ba64c3734041af19e3ad8d",
+            "file": "projects/design-system-lib/src/lib/radio-button/radio-button.interface.ts",
             "type": "interface",
-            "sourceCode": "export default interface IRadioButton {\r\n  value: any;\r\n  label: string;\r\n  ariaLabel: string;\r\n  checked: boolean;\r\n  disabled: boolean;\r\n}\r\n",
+            "sourceCode": "export interface IRadioButton {\r\n  value: any;\r\n  label?: string;\r\n  ariaLabel?: string;\r\n  checked?: boolean;\r\n  disabled?: boolean;\r\n}\r\n",
             "properties": [
                 {
                     "name": "ariaLabel",
                     "type": "string",
-                    "optional": false,
+                    "optional": true,
                     "description": "",
                     "line": 4
                 },
                 {
                     "name": "checked",
                     "type": "boolean",
-                    "optional": false,
+                    "optional": true,
                     "description": "",
                     "line": 5
                 },
                 {
                     "name": "disabled",
                     "type": "boolean",
-                    "optional": false,
+                    "optional": true,
                     "description": "",
                     "line": 6
                 },
                 {
                     "name": "label",
                     "type": "string",
-                    "optional": false,
+                    "optional": true,
                     "description": "",
                     "line": 3
                 },
@@ -2998,8 +2998,8 @@
         },
         {
             "name": "RadioButtonComponent",
-            "id": "component-RadioButtonComponent-7541bda88f3d6a7eb3331cff580487be",
-            "file": "src/stories/radio-button/radio-button.component.ts",
+            "id": "component-RadioButtonComponent-4867504d7fc1334b23be9b71c8fb58d5",
+            "file": "projects/design-system-lib/src/lib/radio-button/radio-button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -3017,25 +3017,30 @@
             "inputsClass": [
                 {
                     "name": "ariaLabel",
-                    "line": 10,
+                    "line": 11,
                     "type": "string"
                 },
                 {
                     "name": "checked",
                     "defaultValue": "false",
-                    "line": 11,
+                    "line": 12,
                     "type": "boolean"
                 },
                 {
                     "name": "disabled",
                     "defaultValue": "false",
-                    "line": 12,
+                    "line": 13,
                     "type": "boolean"
                 },
                 {
                     "name": "label",
-                    "line": 9,
+                    "line": 10,
                     "type": "string"
+                },
+                {
+                    "name": "value",
+                    "line": 9,
+                    "type": "any"
                 }
             ],
             "outputsClass": [],
@@ -3046,11 +3051,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'p-radio-button',\r\n  templateUrl: './radio-button.component.html',\r\n  styleUrls: ['./radio-button.component.scss'],\r\n})\r\nexport default class RadioButtonComponent {\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string;\r\n  @Input() checked: boolean = false;\r\n  @Input() disabled: boolean = false;\r\n}\r\n",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'p-radio-button',\r\n  templateUrl: './radio-button.component.html',\r\n  styleUrls: ['./radio-button.component.scss'],\r\n})\r\nexport class RadioButtonComponent {\r\n  @Input() value: any;\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string;\r\n  @Input() checked: boolean = false;\r\n  @Input() disabled: boolean = false;\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$radio-button-size: 16px;\r\n\r\n::ng-deep .p-radio-button {\r\n  // material styles override\r\n  .mat-radio-label-content {\r\n    font-family: $font-family-basic;\r\n    font-weight: 400;\r\n    font-size: $small-font-size;\r\n    text-transform: capitalize;\r\n    color: $primary-a-900;\r\n  }\r\n\r\n  .mat-radio-container {\r\n    width: $radio-button-size;\r\n    height: $radio-button-size;\r\n  }\r\n\r\n  .mat-radio-outer-circle {\r\n    width: $radio-button-size;\r\n    height: $radio-button-size;\r\n    background-color: $gray-scale-1;\r\n    border-width: 1px;\r\n    border-style: solid;\r\n    border-radius: 50%;\r\n    border-color: $gray-scale-400;\r\n  }\r\n\r\n  .mat-radio-ripple {\r\n    display: none;\r\n  }\r\n\r\n  // hover\r\n  &:hover {\r\n    .mat-radio-outer-circle {\r\n      border-color: $secondary-a-700;\r\n    }\r\n  }\r\n\r\n  // focus\r\n  &.cdk-focused {\r\n    .mat-radio-outer-circle {\r\n      border-color: $secondary-a-700;\r\n    }\r\n  }\r\n\r\n  // disabled\r\n  &.mat-radio-button.mat-radio-disabled {\r\n    .mat-radio-outer-circle {\r\n      background-color: $primary-c-50;\r\n      border-color: $gray-scale-400;\r\n    }\r\n    .mat-radio-label-content {\r\n      color: $gray-scale-600;\r\n    }\r\n  }\r\n\r\n  // checked\r\n  &.mat-radio-button.mat-accent.mat-radio-checked {\r\n    .mat-radio-outer-circle {\r\n      border-color: $secondary-a-700;\r\n    }\r\n    .mat-radio-inner-circle {\r\n      height: $radio-button-size;\r\n      width: $radio-button-size;\r\n      background-color: $secondary-a-700;\r\n    }\r\n\r\n    // checked + hover\r\n    &:hover {\r\n      .mat-radio-inner-circle {\r\n        background-color: $secondary-a-800;\r\n      }\r\n    }\r\n\r\n    // checked + focus\r\n    &.cdk-focused {\r\n      .mat-radio-inner-circle {\r\n        background-color: $secondary-a-800;\r\n      }\r\n    }\r\n\r\n    // checked + disabled\r\n    &.mat-radio-disabled {\r\n      .mat-radio-outer-circle {\r\n        background-color: $gray-scale-1;\r\n        border-color: $secondary-a-100;\r\n      }\r\n      .mat-radio-inner-circle {\r\n        background-color: $secondary-a-100;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+                    "data": "@import \"../../../../../src/stories/assets/styles/custom\";\r\n\r\n$radio-button-size: 16px;\r\n\r\n::ng-deep .p-radio-button {\r\n  // material styles override\r\n  .mat-radio-label-content {\r\n    font-family: $font-family-basic;\r\n    font-weight: 400;\r\n    font-size: $small-font-size;\r\n    color: $primary-a-900;\r\n  }\r\n\r\n  .mat-radio-container {\r\n    width: $radio-button-size;\r\n    height: $radio-button-size;\r\n  }\r\n\r\n  .mat-radio-outer-circle {\r\n    width: $radio-button-size;\r\n    height: $radio-button-size;\r\n    background-color: $gray-scale-1;\r\n    border-width: 1px;\r\n    border-style: solid;\r\n    border-radius: 50%;\r\n    border-color: $gray-scale-400;\r\n  }\r\n\r\n  .mat-radio-ripple {\r\n    display: none;\r\n  }\r\n\r\n  // hover\r\n  &:hover {\r\n    .mat-radio-outer-circle {\r\n      border-color: $secondary-a-700;\r\n    }\r\n  }\r\n\r\n  // focus\r\n  &.cdk-focused {\r\n    .mat-radio-outer-circle {\r\n      border-color: $secondary-a-700;\r\n    }\r\n  }\r\n\r\n  // disabled\r\n  &.mat-radio-button.mat-radio-disabled {\r\n    .mat-radio-outer-circle {\r\n      background-color: $primary-c-50;\r\n      border-color: $gray-scale-400;\r\n    }\r\n    .mat-radio-label-content {\r\n      color: $gray-scale-600;\r\n    }\r\n  }\r\n\r\n  // checked\r\n  &.mat-radio-button.mat-accent.mat-radio-checked {\r\n    .mat-radio-outer-circle {\r\n      border-color: $secondary-a-700;\r\n    }\r\n    .mat-radio-inner-circle {\r\n      height: $radio-button-size;\r\n      width: $radio-button-size;\r\n      background-color: $secondary-a-700;\r\n    }\r\n\r\n    // checked + hover\r\n    &:hover {\r\n      .mat-radio-inner-circle {\r\n        background-color: $secondary-a-800;\r\n      }\r\n    }\r\n\r\n    // checked + focus\r\n    &.cdk-focused {\r\n      .mat-radio-inner-circle {\r\n        background-color: $secondary-a-800;\r\n      }\r\n    }\r\n\r\n    // checked + disabled\r\n    &.mat-radio-disabled {\r\n      .mat-radio-outer-circle {\r\n        background-color: $gray-scale-1;\r\n        border-color: $secondary-a-100;\r\n      }\r\n      .mat-radio-inner-circle {\r\n        background-color: $secondary-a-100;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "./radio-button.component.scss"
                 }
             ],
@@ -3058,8 +3063,8 @@
             "templateData": "<mat-radio-button class=\"p-radio-button\"\r\n                  [value]=\"value\"\r\n                  [disabled]=\"disabled\"\r\n                  [checked]=\"checked\">\r\n  {{label}}\r\n</mat-radio-button>\r\n"
         },
         {
-            "name": "RadioButtonGroup",
-            "id": "component-RadioButtonGroup-5d9092649e1467ddefa9714a6e86732f",
+            "name": "RadioButtonGroupComponent",
+            "id": "component-RadioButtonGroupComponent-04728ee36f26cfb2ed70fcc764ec50eb",
             "file": "src/stories/radio-button/radio-button-group/radio-button-group.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3088,6 +3093,11 @@
                     "type": "string"
                 },
                 {
+                    "name": "groupValue",
+                    "line": 14,
+                    "type": "any"
+                },
+                {
                     "name": "label",
                     "line": 11,
                     "type": "string"
@@ -3112,11 +3122,6 @@
                     "name": "validators",
                     "line": 18,
                     "type": "ValidatorFn[]"
-                },
-                {
-                    "name": "value",
-                    "line": 14,
-                    "type": "any"
                 }
             ],
             "outputsClass": [],
@@ -3147,11 +3152,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport IRadioButton from '../radio-button.interface';\r\nimport {FormControl, ValidatorFn} from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'p-radio-group',\r\n  templateUrl: './radio-button-group.component.html',\r\n  styleUrls: ['./radio-button-group.component.scss'],\r\n})\r\nexport default class RadioButtonGroup implements OnInit {\r\n  @Input() label: string;\r\n  @Input() optionsList: IRadioButton[];\r\n  @Input() errorMessage: string;\r\n  @Input() value: any;\r\n  @Input() selected: any;\r\n  @Input() disabled: boolean = false;\r\n  @Input() required: boolean = false;\r\n  @Input() validators: ValidatorFn[];\r\n  public fieldFormControl: FormControl;\r\n\r\n  ngOnInit(): void {\r\n    this.fieldFormControl = new FormControl(\r\n      {value: this.value, disabled: this.disabled},\r\n      this.validators);\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport {IRadioButton} from 'projects/design-system-lib/src/lib/radio-button/radio-button.interface';\r\nimport {FormControl, ValidatorFn} from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'p-radio-group',\r\n  templateUrl: './radio-button-group.component.html',\r\n  styleUrls: ['./radio-button-group.component.scss'],\r\n})\r\nexport class RadioButtonGroupComponent implements OnInit {\r\n  @Input() label: string;\r\n  @Input() optionsList: IRadioButton[];\r\n  @Input() errorMessage: string;\r\n  @Input() groupValue: any;\r\n  @Input() selected: any;\r\n  @Input() disabled: boolean = false;\r\n  @Input() required: boolean = false;\r\n  @Input() validators: ValidatorFn[];\r\n  public fieldFormControl: FormControl;\r\n\r\n  ngOnInit(): void {\r\n    this.fieldFormControl = new FormControl(\r\n      {value: this.groupValue, disabled: this.disabled},\r\n      this.validators);\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$radio-button-size: 16px;\r\n\r\n::ng-deep .p-radio-button {\r\n  // material styles override\r\n  .mat-radio-label-content {\r\n    font-family: $font-family-basic;\r\n    font-weight: 400;\r\n    font-size: $small-font-size;\r\n    text-transform: capitalize;\r\n    color: $primary-a-900;\r\n  }\r\n\r\n  .mat-radio-container {\r\n    width: $radio-button-size;\r\n    height: $radio-button-size;\r\n  }\r\n\r\n  .mat-radio-outer-circle {\r\n    width: $radio-button-size;\r\n    height: $radio-button-size;\r\n    background-color: $gray-scale-1;\r\n    border-width: 1px;\r\n    border-style: solid;\r\n    border-radius: 50%;\r\n    border-color: $gray-scale-400;\r\n  }\r\n\r\n  .mat-radio-ripple {\r\n    display: none;\r\n  }\r\n\r\n  // hover\r\n  &:hover {\r\n    .mat-radio-outer-circle {\r\n      border-color: $secondary-a-700;\r\n    }\r\n  }\r\n\r\n  // focus\r\n  &.cdk-focused {\r\n    .mat-radio-outer-circle {\r\n      border-color: $secondary-a-700;\r\n    }\r\n  }\r\n\r\n  // disabled\r\n  &.mat-radio-button.mat-radio-disabled {\r\n    .mat-radio-outer-circle {\r\n      background-color: $primary-c-50;\r\n      border-color: $gray-scale-400;\r\n    }\r\n    .mat-radio-label-content {\r\n      color: $gray-scale-600;\r\n    }\r\n  }\r\n\r\n  // checked\r\n  &.mat-radio-button.mat-accent.mat-radio-checked {\r\n    .mat-radio-outer-circle {\r\n      border-color: $secondary-a-700;\r\n    }\r\n    .mat-radio-inner-circle {\r\n      height: $radio-button-size;\r\n      width: $radio-button-size;\r\n      background-color: $secondary-a-700;\r\n    }\r\n\r\n    // checked + hover\r\n    &:hover {\r\n      .mat-radio-inner-circle {\r\n        background-color: $secondary-a-800;\r\n      }\r\n    }\r\n\r\n    // checked + focus\r\n    &.cdk-focused {\r\n      .mat-radio-inner-circle {\r\n        background-color: $secondary-a-800;\r\n      }\r\n    }\r\n\r\n    // checked + disabled\r\n    &.mat-radio-disabled {\r\n      .mat-radio-outer-circle {\r\n        background-color: $gray-scale-1;\r\n        border-color: $secondary-a-100;\r\n      }\r\n      .mat-radio-inner-circle {\r\n        background-color: $secondary-a-100;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n.p-radio-group {\r\n  display: flex;\r\n  flex-direction: column;\r\n  &-label {\r\n    font-family: $font-family-basic;\r\n    font-size: $tiny-font-size;\r\n    font-weight: 700;\r\n    line-height: 18px;\r\n  }\r\n  &-option {\r\n    margin-top: 10px;\r\n  }\r\n  &-error {\r\n    font-family: $font-family-basic;\r\n    font-size: $tiny-font-size;\r\n    line-height: 18px;\r\n    color: $supportive-alert-500;\r\n    margin-top: 10px;\r\n  }\r\n}\r\n",
                     "styleUrl": "./radio-button-group.component.scss"
                 }
             ],
@@ -3159,7 +3164,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<mat-radio-group class=\"p-radio-group\"\r\n                 [formControl]=\"fieldFormControl\"\r\n                 [class.invalid-field]=\"fieldFormControl.invalid && (fieldFormControl.touched || formControlHost.submitted)\">\r\n  <label class=\"p-radio-group-label\">{{label}}</label>\r\n  <p-radio-button class=\"p-radio-group-option\"\r\n                  *ngFor=\"let option of optionsList\"\r\n                  [value]=\"option\"\r\n                  [label]=\"label\"\r\n                  [ariaLabel]=\"ariaLabel\"\r\n                  [checked]=\"checked\"\r\n                  [disabled]=\"disabled\">\r\n  </p-radio-button>\r\n  <mat-error *ngIf=\"fieldFormControl.errors\">\r\n    {{errorMessage}}\r\n  </mat-error>\r\n</mat-radio-group>\r\n"
+            "templateData": "<mat-radio-group class=\"p-radio-group\"\r\n                 [formControl]=\"fieldFormControl\">\r\n  <label class=\"p-radio-group-label\">{{label}}</label>\r\n  <p-radio-button class=\"p-radio-group-option\"\r\n                  *ngFor=\"let option of optionsList\"\r\n                  [value]=\"option\"\r\n                  [label]=\"option.label\"\r\n                  [ariaLabel]=\"option.ariaLabel\"\r\n                  [checked]=\"checked\"\r\n                  [disabled]=\"option.disabled\">\r\n  </p-radio-button>\r\n  <mat-error *ngIf=\"fieldFormControl.errors\"\r\n              class=\"p-radio-group-error\">\r\n    {{errorMessage}}\r\n  </mat-error>\r\n</mat-radio-group>\r\n"
         },
         {
             "name": "SlideToggleComponent",
@@ -3871,6 +3876,43 @@
             ]
         },
         {
+            "name": "RadioButtonModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "RadioButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "RadioButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "ToggleModule",
             "children": [
                 {
@@ -4046,9 +4088,9 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
-                "type": "Story<CheckboxPageComponent>",
-                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
+                "type": "Story<CheckboxGroupComponent>",
+                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -4062,17 +4104,9 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
-                "type": "Story<CheckboxGroupComponent>",
-                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "PageTemplate",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
-                "type": "Story<InputTextPageComponent>",
-                "defaultValue": "(args: InputTextPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "Story<CheckboxPageComponent>",
+                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -4081,6 +4115,14 @@
                 "file": "src/stories/input-text/input-text-table-layout/input-text-table-layout.stories.ts",
                 "type": "Story<InputTextTableLayoutComponent>",
                 "defaultValue": "(args: InputTextTableLayoutComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "PageTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
+                "type": "Story<InputTextPageComponent>",
+                "defaultValue": "(args: InputTextPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -4156,9 +4198,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input-text/input-text.stories.ts",
-                "type": "Story<InputTextComponent>",
-                "defaultValue": "(args: InputTextComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/colors/Color-palette.stories.ts",
+                "type": "Story<ColorPaletteComponent>",
+                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -4172,9 +4214,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/colors/Color-palette.stories.ts",
-                "type": "Story<ColorPaletteComponent>",
-                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/input-text/input-text.stories.ts",
+                "type": "Story<InputTextComponent>",
+                "defaultValue": "(args: InputTextComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -5033,6 +5075,24 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/design-system-lib/src/lib/radio-button/radio-button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "RadioButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/radio-button/radio-button.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "IRadioButton",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/design-system-lib/src/lib/toggle/toggle.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -5442,27 +5502,9 @@
                 "filePath": "src/stories/radio-button/radio-button-group/radio-button-group.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "RadioButtonGroup",
+                "name": "RadioButtonGroupComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/11",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/radio-button/radio-button.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "RadioButtonComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/5",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/radio-button/radio-button.interface.ts",
-                "type": "interface",
-                "linktype": "interface",
-                "name": "IRadioButton",
-                "coveragePercent": 0,
-                "coverageCount": "0/6",
                 "status": "low"
             },
             {
