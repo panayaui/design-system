@@ -4,16 +4,13 @@ import {CommonModule} from '@angular/common';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {ReactiveFormsModule, Validators} from '@angular/forms';
-import {RadioButtonGroupComponent} from './radio-button-group.component';
+import {RadioButtonGroupComponent} from 'projects/design-system-lib/src/public-api';
 import {RadioButtonModule} from 'projects/design-system-lib/src/public-api';
 
 <Meta title='Components/Radio Button/Group' component={RadioButtonGroupComponent}
       decorators={[
         moduleMetadata({
-          imports: [RadioButtonModule,
-                  MatRadioModule,
-                  MatFormFieldModule,
-                  ReactiveFormsModule]
+          imports: [RadioButtonModule]
               })
       ]}
       args={{

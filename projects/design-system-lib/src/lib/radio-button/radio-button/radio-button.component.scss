@@ -1,4 +1,4 @@
-@import "../../../../../src/stories/assets/styles/custom";
+@import "../../../../../../src/stories/assets/styles/custom";
 
 $radio-button-size: 16px;
 
@@ -60,6 +60,10 @@ $radio-button-size: 16px;
     .mat-radio-outer-circle {
       border-color: $secondary-a-700;
     }
+  }
+
+  &.mat-radio-button.mat-accent,
+  &.mat-radio-button.mat-accent.mat-radio-checked {
     .mat-radio-inner-circle {
       height: $radio-button-size;
       width: $radio-button-size;

@@ -36,5 +36,6 @@ export * from './lib/menu/menu-multi-select/menu-multi-select.component';
 export * from './lib/menu/menu-tabs/menu-tabs.component';
 
 export * from './lib/radio-button/radio-button.module';
-export * from './lib/radio-button/radio-button.component';
+export * from './lib/radio-button/radio-button/radio-button.component';
+export * from './lib/radio-button/radio-button-group/radio-button-group.component';
 export * from './lib/radio-button/radio-button.interface';

@@ -2999,7 +2999,7 @@
         {
             "name": "RadioButtonComponent",
             "id": "component-RadioButtonComponent-4867504d7fc1334b23be9b71c8fb58d5",
-            "file": "projects/design-system-lib/src/lib/radio-button/radio-button.component.ts",
+            "file": "projects/design-system-lib/src/lib/radio-button/radio-button/radio-button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -3055,7 +3055,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../../../src/stories/assets/styles/custom\";\r\n\r\n$radio-button-size: 16px;\r\n\r\n::ng-deep .p-radio-button {\r\n  // material styles override\r\n  .mat-radio-label-content {\r\n    font-family: $font-family-basic;\r\n    font-weight: 400;\r\n    font-size: $small-font-size;\r\n    color: $primary-a-900;\r\n  }\r\n\r\n  .mat-radio-container {\r\n    width: $radio-button-size;\r\n    height: $radio-button-size;\r\n  }\r\n\r\n  .mat-radio-outer-circle {\r\n    width: $radio-button-size;\r\n    height: $radio-button-size;\r\n    background-color: $gray-scale-1;\r\n    border-width: 1px;\r\n    border-style: solid;\r\n    border-radius: 50%;\r\n    border-color: $gray-scale-400;\r\n  }\r\n\r\n  .mat-radio-ripple {\r\n    display: none;\r\n  }\r\n\r\n  // hover\r\n  &:hover {\r\n    .mat-radio-outer-circle {\r\n      border-color: $secondary-a-700;\r\n    }\r\n  }\r\n\r\n  // focus\r\n  &.cdk-focused {\r\n    .mat-radio-outer-circle {\r\n      border-color: $secondary-a-700;\r\n    }\r\n  }\r\n\r\n  // disabled\r\n  &.mat-radio-button.mat-radio-disabled {\r\n    .mat-radio-outer-circle {\r\n      background-color: $primary-c-50;\r\n      border-color: $gray-scale-400;\r\n    }\r\n    .mat-radio-label-content {\r\n      color: $gray-scale-600;\r\n    }\r\n  }\r\n\r\n  // checked\r\n  &.mat-radio-button.mat-accent.mat-radio-checked {\r\n    .mat-radio-outer-circle {\r\n      border-color: $secondary-a-700;\r\n    }\r\n    .mat-radio-inner-circle {\r\n      height: $radio-button-size;\r\n      width: $radio-button-size;\r\n      background-color: $secondary-a-700;\r\n    }\r\n\r\n    // checked + hover\r\n    &:hover {\r\n      .mat-radio-inner-circle {\r\n        background-color: $secondary-a-800;\r\n      }\r\n    }\r\n\r\n    // checked + focus\r\n    &.cdk-focused {\r\n      .mat-radio-inner-circle {\r\n        background-color: $secondary-a-800;\r\n      }\r\n    }\r\n\r\n    // checked + disabled\r\n    &.mat-radio-disabled {\r\n      .mat-radio-outer-circle {\r\n        background-color: $gray-scale-1;\r\n        border-color: $secondary-a-100;\r\n      }\r\n      .mat-radio-inner-circle {\r\n        background-color: $secondary-a-100;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+                    "data": "@import \"../../../../../../src/stories/assets/styles/custom\";\r\n\r\n$radio-button-size: 16px;\r\n\r\n::ng-deep .p-radio-button {\r\n  // material styles override\r\n  .mat-radio-label-content {\r\n    font-family: $font-family-basic;\r\n    font-weight: 400;\r\n    font-size: $small-font-size;\r\n    color: $primary-a-900;\r\n  }\r\n\r\n  .mat-radio-container {\r\n    width: $radio-button-size;\r\n    height: $radio-button-size;\r\n  }\r\n\r\n  .mat-radio-outer-circle {\r\n    width: $radio-button-size;\r\n    height: $radio-button-size;\r\n    background-color: $gray-scale-1;\r\n    border-width: 1px;\r\n    border-style: solid;\r\n    border-radius: 50%;\r\n    border-color: $gray-scale-400;\r\n  }\r\n\r\n  .mat-radio-ripple {\r\n    display: none;\r\n  }\r\n\r\n  // hover\r\n  &:hover {\r\n    .mat-radio-outer-circle {\r\n      border-color: $secondary-a-700;\r\n    }\r\n  }\r\n\r\n  // focus\r\n  &.cdk-focused {\r\n    .mat-radio-outer-circle {\r\n      border-color: $secondary-a-700;\r\n    }\r\n  }\r\n\r\n  // disabled\r\n  &.mat-radio-button.mat-radio-disabled {\r\n    .mat-radio-outer-circle {\r\n      background-color: $primary-c-50;\r\n      border-color: $gray-scale-400;\r\n    }\r\n    .mat-radio-label-content {\r\n      color: $gray-scale-600;\r\n    }\r\n  }\r\n\r\n  // checked\r\n  &.mat-radio-button.mat-accent.mat-radio-checked {\r\n    .mat-radio-outer-circle {\r\n      border-color: $secondary-a-700;\r\n    }\r\n    .mat-radio-inner-circle {\r\n      height: $radio-button-size;\r\n      width: $radio-button-size;\r\n      background-color: $secondary-a-700;\r\n    }\r\n\r\n    // checked + hover\r\n    &:hover {\r\n      .mat-radio-inner-circle {\r\n        background-color: $secondary-a-800;\r\n      }\r\n    }\r\n\r\n    // checked + focus\r\n    &.cdk-focused {\r\n      .mat-radio-inner-circle {\r\n        background-color: $secondary-a-800;\r\n      }\r\n    }\r\n\r\n    // checked + disabled\r\n    &.mat-radio-disabled {\r\n      .mat-radio-outer-circle {\r\n        background-color: $gray-scale-1;\r\n        border-color: $secondary-a-100;\r\n      }\r\n      .mat-radio-inner-circle {\r\n        background-color: $secondary-a-100;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "./radio-button.component.scss"
                 }
             ],
@@ -3065,7 +3065,7 @@
         {
             "name": "RadioButtonGroupComponent",
             "id": "component-RadioButtonGroupComponent-04728ee36f26cfb2ed70fcc764ec50eb",
-            "file": "src/stories/radio-button/radio-button-group/radio-button-group.component.ts",
+            "file": "projects/design-system-lib/src/lib/radio-button/radio-button-group/radio-button-group.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -3156,7 +3156,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n.p-radio-group {\r\n  display: flex;\r\n  flex-direction: column;\r\n  &-label {\r\n    font-family: $font-family-basic;\r\n    font-size: $tiny-font-size;\r\n    font-weight: 700;\r\n    line-height: 18px;\r\n  }\r\n  &-option {\r\n    margin-top: 10px;\r\n  }\r\n  &-error {\r\n    font-family: $font-family-basic;\r\n    font-size: $tiny-font-size;\r\n    line-height: 18px;\r\n    color: $supportive-alert-500;\r\n    margin-top: 10px;\r\n  }\r\n}\r\n",
+                    "data": "@import \"../../../../../../src/stories/assets/styles/custom\";\r\n\r\n.p-radio-group {\r\n  display: flex;\r\n  flex-direction: column;\r\n  &-label {\r\n    font-family: $font-family-basic;\r\n    font-size: $tiny-font-size;\r\n    font-weight: 700;\r\n    line-height: 18px;\r\n  }\r\n  &-option {\r\n    margin-top: 10px;\r\n  }\r\n  &-error {\r\n    font-family: $font-family-basic;\r\n    font-size: $tiny-font-size;\r\n    line-height: 18px;\r\n    color: $supportive-alert-500;\r\n    margin-top: 10px;\r\n  }\r\n}\r\n",
                     "styleUrl": "./radio-button-group.component.scss"
                 }
             ],
@@ -3887,6 +3887,9 @@
                     "elements": [
                         {
                             "name": "RadioButtonComponent"
+                        },
+                        {
+                            "name": "RadioButtonGroupComponent"
                         }
                     ]
                 },
@@ -3899,6 +3902,9 @@
                     "elements": [
                         {
                             "name": "RadioButtonComponent"
+                        },
+                        {
+                            "name": "RadioButtonGroupComponent"
                         }
                     ]
                 },
@@ -4056,17 +4062,17 @@
                 "name": "NoLabel",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox.stories.ts",
+                "file": "src/stories/input-text/input-text.stories.ts",
                 "type": "",
-                "defaultValue": "CheckboxTemplate.bind({})"
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "NoLabel",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input-text/input-text.stories.ts",
+                "file": "src/stories/checkbox/checkbox.stories.ts",
                 "type": "",
-                "defaultValue": "Template.bind({})"
+                "defaultValue": "CheckboxTemplate.bind({})"
             },
             {
                 "name": "NoLabel",
@@ -4088,25 +4094,9 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
-                "type": "Story<CheckboxGroupComponent>",
-                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "PageTemplate",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
-                "type": "Story<CheckboxGroupPageComponent>",
-                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "PageTemplate",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
-                "type": "Story<CheckboxPageComponent>",
-                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
+                "type": "Story<InputTextPageComponent>",
+                "defaultValue": "(args: InputTextPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -4120,9 +4110,25 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
-                "type": "Story<InputTextPageComponent>",
-                "defaultValue": "(args: InputTextPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
+                "type": "Story<CheckboxGroupComponent>",
+                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "PageTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "Story<CheckboxPageComponent>",
+                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "PageTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "Story<CheckboxGroupPageComponent>",
+                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -4254,17 +4260,17 @@
                 "name": "WithLabel",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox.stories.ts",
+                "file": "src/stories/input-text/input-text.stories.ts",
                 "type": "",
-                "defaultValue": "CheckboxTemplate.bind({})"
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "WithLabel",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input-text/input-text.stories.ts",
+                "file": "src/stories/checkbox/checkbox.stories.ts",
                 "type": "",
-                "defaultValue": "Template.bind({})"
+                "defaultValue": "CheckboxTemplate.bind({})"
             },
             {
                 "name": "WithLabel",
@@ -5075,12 +5081,12 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/design-system-lib/src/lib/radio-button/radio-button.component.ts",
+                "filePath": "projects/design-system-lib/src/lib/radio-button/radio-button-group/radio-button-group.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "RadioButtonComponent",
+                "name": "RadioButtonGroupComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/6",
+                "coverageCount": "0/11",
                 "status": "low"
             },
             {
@@ -5088,6 +5094,15 @@
                 "type": "interface",
                 "linktype": "interface",
                 "name": "IRadioButton",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/radio-button/radio-button/radio-button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "RadioButtonComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/6",
                 "status": "low"
@@ -5496,15 +5511,6 @@
                 "name": "stateGroups",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/radio-button/radio-button-group/radio-button-group.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "RadioButtonGroupComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/11",
                 "status": "low"
             },
             {
