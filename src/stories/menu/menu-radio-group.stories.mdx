@@ -7,6 +7,7 @@ import {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';
 import {IconModule} from 'projects/design-system-lib/src/public-api';
 import {MenuModule} from 'projects/design-system-lib/src/public-api';
 import {RadioButtonModule} from 'projects/design-system-lib/src/public-api';
+import {MenuRadioOptionEnum} from 'projects/design-system-lib/src/public-api';
 
 import {CommonModule} from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -35,49 +36,49 @@ import {MatRadioModule} from '@angular/material/radio';
     args={{
       menuTriggerName: 'Action',
       menuList: [
-        { name: 'Alabama',
-          disabled: false
+       { label: 'All',
+          optionType: MenuRadioOptionEnum.Regular
         },
-        { name: 'Alaska disabled',
-          disabled: true
+        { label: 'Today',
+          optionType: MenuRadioOptionEnum.Regular
         },
-        { name: 'California',
-          disabled: false
+        { label: 'Yesterday',
+          optionType: MenuRadioOptionEnum.Regular
         },
-        { name: 'Colorado',
-          disabled: false
+        { label: 'Tomorrow',
+          optionType: MenuRadioOptionEnum.MenuTrigger
         },
-        { name: 'Delaware',
-          disabled: false
+        { label: 'This',
+          optionType: MenuRadioOptionEnum.MenuTrigger,
+          menuList: [
+             { name: 'week (Starts Sunday)', selected: true},
+             { name: 'week (Starts Monday)'},
+             { name: 'month'},
+             { name: 'year'}
+          ]
         },
-        { name: 'Florida selected disabled',
-          disabled: true,
-          selected: true
+        { label: 'Last',
+          optionType: MenuRadioOptionEnum.MenuTrigger,
+          numericInputValue: 1,
+          menuList: [
+            { name: 'Day(s)', selected: true},
+            { name: 'Week(s)'},
+            { name: 'Month(s)'},
+            { name: 'Year(s)'}
+          ]
         },
-        { name: 'Georgia',
-          disabled: false
+        { label: 'Next',
+          optionType: MenuRadioOptionEnum.Regular,
+          numericInputValue: 1,
+           menuList: [
+            { name: 'Day(s)', selected: true},
+            { name: 'Week(s)'},
+            { name: 'Month(s)'},
+            { name: 'Year(s)'}
+          ]
         },
-        { name: 'Hawaii',
-          disabled: false
-        },
-        { name: 'Idaho',
-          disabled: true
-        },
-        { name: 'Illinois',
-          disabled: false
-        },
-        { name: 'Indiana',
-          disabled: false
-        },
-        { name: 'Iowa',
-          disabled: false
-        },
-        { name: 'Kansas',
-          disabled: true,
-          selected: true
-        },
-        { name: 'Kentucky',
-          disabled: false
+        { label: 'Blanks',
+          optionType: MenuRadioOptionEnum.Regular
         }
       ],
       footerBtnFirst: {

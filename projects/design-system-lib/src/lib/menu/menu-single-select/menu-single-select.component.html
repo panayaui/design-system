@@ -1,7 +1,11 @@
-<button [matMenuTriggerFor]="menu"
-        class="p-btn p-btn-small p-btn-primary">
-  {{menuTriggerName}}
-</button>
+<div class="p-menu-trigger" [matMenuTriggerFor]="menu">
+  <p-button iconAfter="chevron-down"
+            iconAfterWidth="17"
+            iconAfterHeight="17"
+            [label]="menuTriggerName"
+            [iconAfterStrokeWidth]="1.5"
+            [buttonType]="'tertiary'" ></p-button>
+</div>
 
 <!--menu-single-select line template-->
 <ng-template #menuLine let-itemsList="itemsList">
