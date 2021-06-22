@@ -1,15 +1,12 @@
 import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
 import {moduleMetadata} from '@storybook/angular';
-import {CommonModule} from '@angular/common';
-import {MatRadioModule} from '@angular/material/radio';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import RadioButtonComponent from './radio-button.component';
+import {RadioButtonModule} from 'projects/design-system-lib/src/public-api';
+import {RadioButtonComponent} from 'projects/design-system-lib/src/public-api';
 
 <Meta title='Components/Radio Button/Base' component={RadioButtonComponent}
 decorators={[
   moduleMetadata({
-    imports: [CommonModule,
-            MatRadioModule]
+    imports: [RadioButtonModule]
         })
 ]} />
 

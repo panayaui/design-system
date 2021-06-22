@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import IRadioButton from '../radio-button.interface';
+import {IRadioButton} from 'projects/design-system-lib/src/lib/radio-button/radio-button.interface';
 import {FormControl, ValidatorFn} from '@angular/forms';
 
 @Component({
