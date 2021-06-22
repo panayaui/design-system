@@ -17,7 +17,17 @@
   <div class="p-menu-multiple-container" (click)="$event.stopPropagation()"
                                 (keydown)="$event.stopPropagation()">
     <div class="p-menu-body">
-      bla
+      <mat-radio-group class="p-radio-group"
+                       [formControl]="fieldFormControl">
+        <p-radio-button class="p-radio-group-option"
+                        *ngFor="let option of menuList"
+                        [value]="option"
+                        [label]="option.label"
+                        [ariaLabel]="option.ariaLabel"
+                        [checked]="option.checked"
+                        [disabled]="option.disabled">
+        </p-radio-button>
+      </mat-radio-group>
     </div>
     <div class="p-menu-footer">
       <p-button class="p-menu-footer-btn"

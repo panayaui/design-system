@@ -2,21 +2,18 @@ import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
 import {moduleMetadata} from '@storybook/angular';
 
 import {MenuRadioGroupComponent} from 'projects/design-system-lib/src/public-api';
-import {InputModule} from 'projects/design-system-lib/src/public-api';
 import {ButtonModule} from 'projects/design-system-lib/src/public-api';
 import {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';
 import {IconModule} from 'projects/design-system-lib/src/public-api';
-import {CheckboxModule} from 'projects/design-system-lib/src/public-api';
+import {MenuModule} from 'projects/design-system-lib/src/public-api';
+import {RadioButtonModule} from 'projects/design-system-lib/src/public-api';
 
 import {CommonModule} from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatMenuModule} from '@angular/material/menu';
-import {MatListModule} from '@angular/material/list';
-import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {ReactiveFormsModule} from '@angular/forms';
-
-import {stateGroups} from './stateGroups';
+import {MatRadioModule} from '@angular/material/radio';
 
 <Meta title='Components/Menu/Radio Group'
     component={MenuRadioGroupComponent}
@@ -26,13 +23,12 @@ import {stateGroups} from './stateGroups';
               CommonModule,            
               BrowserAnimationsModule,
               MatMenuModule,
-              MatListModule,
-              InputModule,
-              MatInputModule,
               MatFormFieldModule,
               ReactiveFormsModule,
+              MatRadioModule,
               ButtonModule,
-              CheckboxModule
+              MenuModule,
+              RadioButtonModule
           ]
       })
     ]}  

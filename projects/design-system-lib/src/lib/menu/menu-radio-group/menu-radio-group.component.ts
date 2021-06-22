@@ -1,68 +1,44 @@
 import {
   Component,
   Input,
-  OnDestroy,
   OnInit,
   ViewChild
 } from '@angular/core';
-import {FormControl} from '@angular/forms';
-import {SubscriptionLike} from 'rxjs';
+import {FormControl, ValidatorFn} from '@angular/forms';
 import {MatMenuTrigger} from '@angular/material/menu';
 import {IMenuButton} from '../menu-button.interface';
-import {ICheckbox} from '../../checkbox/checkbox.interface';
+import {IRadioButton} from '../../radio-button/radio-button.interface';
+import {MenuRadioOptionEnum} from './menu-radio-option.enum';
+
+interface IMenuRadioOption extends IRadioButton {
+  optionType: MenuRadioOptionEnum;
+}
 
 @Component({
   selector: 'p-menu-radio-group',
   templateUrl: './menu-radio-group.component.html',
   styleUrls: ['./menu-radio-group.component.scss'],
 })
-export class MenuRadioGroupComponent implements OnInit, OnDestroy {
+export class MenuRadioGroupComponent implements OnInit {
   @Input() menuTriggerName: string;
-  @Input() menuList: any[];
-  @Input() filterPlaceholder: string; // if there is a search and buttons
-  @Input() filterAriaLabel: string;
-  @Input() headerBtnFirst: IMenuButton;
-  @Input() headerBtnLast: ICheckbox;
+  @Input() menuList: IMenuRadioOption[];
   @Input() footerBtnFirst: IMenuButton;
   @Input() footerBtnLast: IMenuButton;
+  @Input() groupValue: any;
+  @Input() selected: any;
+  @Input() disabled: boolean = false;
+  @Input() required: boolean = false;
+  @Input() validators: ValidatorFn[];
   @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;
-  private selectedList: any[] = [];
-  public selectedShown: any[] = [];
-  public filteredList: any[];
-  public formFieldControl: FormControl;
-  private sub: SubscriptionLike;
+  public fieldFormControl: FormControl;
 
   ngOnInit(): void {
-    this.filteredList = this.menuList;
-    if (this.filterPlaceholder) {
-      this.formFieldControl = new FormControl('');
-      this.sub = this.formFieldControl.valueChanges.subscribe((value: string) => {
-        this.alterList(value);
-      });
-    }
-    if (!this.filterAriaLabel && this.filterPlaceholder) {
-      this.filterAriaLabel = this.filterPlaceholder;
-    }
-  }
-
-  ngOnDestroy(): void {
-    if (this.filterPlaceholder && this.sub) {
-      this.sub.unsubscribe();
-      this.sub = null;
-    }
-  }
-
-  alterList(value: string): void {
-    this.filteredList = this.menuList.filter( item => item.name.toLowerCase().indexOf(value.toLowerCase()) > -1);
-  }
-
-  onOptSelected(item): void {
-    console.log(item);
-    this.selectedList.push(item);
+    this.fieldFormControl = new FormControl(
+      {value: this.groupValue, disabled: this.disabled},
+      this.validators);
   }
 
   selectCompleted(): void {
-    this.selectedShown = this.selectedList;
     this.menuTrigger.closeMenu();
   }
 

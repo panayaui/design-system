@@ -15,6 +15,8 @@ import {CheckboxModule} from '../checkbox/checkbox.module';
 import {MatInputModule} from '@angular/material/input';
 import {InputModule} from '../input/input.module';
 import {MenuRadioGroupComponent} from './menu-radio-group/menu-radio-group.component';
+import {MatRadioModule} from '@angular/material/radio';
+import {RadioButtonModule} from '../radio-button/radio-button.module';
 
 @NgModule({
   imports: [
@@ -26,10 +28,12 @@ import {MenuRadioGroupComponent} from './menu-radio-group/menu-radio-group.compo
     MatMenuModule,
     MatListModule,
     MatTabsModule,
+    MatRadioModule,
     ButtonModule,
     IconModule,
     CheckboxModule,
-    InputModule
+    InputModule,
+    RadioButtonModule
   ],
   declarations: [
     MenuSingleSelectComponent,
