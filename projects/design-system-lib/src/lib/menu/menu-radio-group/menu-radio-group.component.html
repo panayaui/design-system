@@ -13,51 +13,12 @@
 </button>
 
 <!--menu window-->
-<mat-menu #menu="matMenu" class="p-menu-multiple" [overlapTrigger]="false">
+<mat-menu #menu="matMenu" class="p-menu-radio" [overlapTrigger]="false">
   <div class="p-menu-multiple-container" (click)="$event.stopPropagation()"
                                 (keydown)="$event.stopPropagation()">
-    <div class="p-menu-header" *ngIf="filterPlaceholder"
-          [class.extended]="headerBtnFirst && headerBtnLast">
-      <mat-form-field class="p-menu-form-field"
-                      appearance="outline"
-                      floatLabel="always">
-        <input matInput
-               type="text"
-               [placeholder]="filterPlaceholder"
-               attr.aria-label="{{filterAriaLabel}}"
-               [formControl]="formFieldControl"
-               onfocus="this.select()"
-               class="p-menu-input">
-      </mat-form-field>
-
-      <p-button *ngIf="headerBtnFirst"
-                class="p-menu-btn-line"
-                [label]="headerBtnFirst.label"
-                [iconBefore]="headerBtnFirst.icon.iconName"
-                [iconBeforeWidth]="headerBtnFirst.icon.width"
-                [iconBeforeHeight]="headerBtnFirst.icon.height"
-                [buttonType]="headerBtnFirst.buttonType"
-                [disabled]="headerBtnFirst.disabled"></p-button>
-      <p-checkbox *ngIf="headerBtnFirst"
-                  class="p-menu-btn-line"
-                  [label]="headerBtnLast.label"
-                  [checked]="headerBtnLast.checked"
-                  [disabled]="headerBtnLast.disabled"></p-checkbox>
-    </div>
-
     <div class="p-menu-body">
-      <mat-selection-list class="p-menu-body-container">
-        <mat-list-option class="p-menu-multiple-item"
-                         *ngFor="let item of filteredList"
-                         [disableRipple]="true"
-                         [disabled]="item.disabled"
-                         [selected]="item.selected"
-                         (click)="onOptSelected(item)">
-          {{item.name}}
-        </mat-list-option>
-      </mat-selection-list>
+      bla
     </div>
-
     <div class="p-menu-footer">
       <p-button class="p-menu-footer-btn"
                 [label]="footerBtnFirst.label"
