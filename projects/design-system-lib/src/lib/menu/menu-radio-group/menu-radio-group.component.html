@@ -17,17 +17,19 @@
                         [disabled]="option.disabled">
         </p-radio-button>
 
-        <!--<p-input-numeric *ngIf="option.numericInputValue"-->
-                          <!--class="p-menu-option-input"-->
-                          <!--[size]="inputNumericSize.Small"-->
-                          <!--[value]="option.numericInputValue"></p-input-numeric>-->
+        <p-input-numeric *ngIf="option.numericInputValue"
+                          class="p-menu-option-input"
+                          [size]="inputNumericSize.Small"
+                          [value]="option.numericInputValue"
+                          [noErrorPlanned]="true">
+        </p-input-numeric>
 
-        <!--<div class="p-menu-option-link" *ngIf="option.menuList">-->
-          <!--<p-menu-single-select class="p-menu-option-submenu"-->
-                                <!--[menuTriggerName]="findMenuTriggerName(option.menuList)"-->
-                                <!--[menuList]="option.menuList">-->
-          <!--</p-menu-single-select>-->
-        <!--</div>-->
+        <div class="p-menu-option-link" *ngIf="option.menuList">
+          <p-menu-single-select class="p-menu-option-submenu"
+                                [menuTriggerName]="findMenuTriggerName(option.menuList)"
+                                [menuList]="option.menuList">
+          </p-menu-single-select>
+        </div>
 
         <div class="p-menu-option-dates" *ngIf="option.dateStart && option.dateEnd">
           <p-datepicker class="p-menu-option-datepicker start"

@@ -15,4 +15,5 @@ export interface IInputNumeric {
   labelLast?: boolean;
   size?: InputNumericSizeEnum;
   matcher?: ErrorStateMatcher;
+  noErrorPlanned?: boolean;
 }

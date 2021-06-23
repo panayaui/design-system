@@ -22,18 +22,13 @@ interface IMenuRadioOption extends IRadioButton {
   templateUrl: './menu-radio-group.component.html',
   styleUrls: ['./menu-radio-group.component.scss'],
 })
-export class MenuRadioGroupComponent implements OnInit {
+export class MenuRadioGroupComponent {
   @Input() menuTriggerName: string;
   @Input() menuList: IMenuRadioOption[];
   @Input() footerBtnFirst: IMenuButton;
   @Input() footerBtnLast: IMenuButton;
-
   @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;
   public inputNumericSize = InputNumericSizeEnum;
-
-  ngOnInit(): void {
-
-  }
 
   findMenuTriggerName(menuList): void {
     return menuList.find( item => item.selected === true).name;

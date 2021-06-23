@@ -17,5 +17,13 @@
       opacity: 1;
     }
   }
+  ::ng-deep .cdk-program-focused {
+    .mat-button-focus-overlay {
+      opacity: 0;
+    }
+  }
+  ::ng-deep .mat-button-ripple {
+    display: none;
+  }
 }
 

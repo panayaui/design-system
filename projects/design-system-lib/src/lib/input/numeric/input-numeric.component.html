@@ -12,6 +12,7 @@
 
 <ng-template #noLabel>
   <mat-form-field class="p-input-numeric"
+                  [class.no-error-planned]="noErrorPlanned"
                   appearance="standard"
                   [ngClass]="classes"
                   floatLabel="always">

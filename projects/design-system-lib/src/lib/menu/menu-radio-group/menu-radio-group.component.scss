@@ -44,8 +44,11 @@ $menu-max-height: 75vh;
     padding-bottom: $menu-footer-height;
     padding-left: 24px;
     &-item {
+      display: flex;
+      align-items: center;
+      height: 30px;
       & + & {
-        margin-top: 24px;
+        margin-top: $menu-padding;
       }
     }
   }
