@@ -1,0 +1,13 @@
+@import "../../assets/styles/custom";
+@import '../text/input-text.component';
+
+::ng-deep .p-datepicker {
+  &.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon-button {
+    width: 30px;
+    height: 30px;
+  }
+  .p-datepicker-icon {
+    font-size: 15px;
+  }
+}
+

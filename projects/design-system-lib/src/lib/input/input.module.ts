@@ -6,6 +6,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ReactiveFormsModule} from '@angular/forms';
 import {InputTextComponent} from './text/input-text.component';
+import {DatepickerComponent} from './datepicker/datepicker.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   imports: [
@@ -13,15 +17,20 @@ import {InputTextComponent} from './text/input-text.component';
     MatInputModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatIconModule
   ],
   declarations: [
     InputNumericComponent,
-    InputTextComponent
+    InputTextComponent,
+    DatepickerComponent
   ],
   exports: [
     InputNumericComponent,
-    InputTextComponent
+    InputTextComponent,
+    DatepickerComponent
   ]
 })
 export class InputModule { }

@@ -302,81 +302,6 @@
         {
             "name": "IInputText",
             "id": "interface-IInputText-8c282e88a7dfda980351670b8aadbccd",
-            "file": "src/stories/input-text/input-text.interface.ts",
-            "type": "interface",
-            "sourceCode": "import {ValidatorFn} from '@angular/forms';\r\n\r\nexport default interface IInputText {\r\n  type: string;\r\n  label: string;\r\n  ariaLabel: string;\r\n  placeholder: string;\r\n  errorMessage: string;\r\n  disabled: boolean;\r\n  readonly: boolean;\r\n  value: string;\r\n  validators: ValidatorFn[];\r\n}\r\n",
-            "properties": [
-                {
-                    "name": "ariaLabel",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 6
-                },
-                {
-                    "name": "disabled",
-                    "type": "boolean",
-                    "optional": false,
-                    "description": "",
-                    "line": 9
-                },
-                {
-                    "name": "errorMessage",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 8
-                },
-                {
-                    "name": "label",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 5
-                },
-                {
-                    "name": "placeholder",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 7
-                },
-                {
-                    "name": "readonly",
-                    "type": "boolean",
-                    "optional": false,
-                    "description": "",
-                    "line": 10
-                },
-                {
-                    "name": "type",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 4
-                },
-                {
-                    "name": "validators",
-                    "type": "ValidatorFn[]",
-                    "optional": false,
-                    "description": "",
-                    "line": 12
-                },
-                {
-                    "name": "value",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 11
-                }
-            ],
-            "indexSignatures": [],
-            "kind": 150,
-            "methods": []
-        },
-        {
-            "name": "IInputText",
-            "id": "interface-IInputText-8c282e88a7dfda980351670b8aadbccd-1",
             "file": "projects/design-system-lib/src/lib/input/text/input-text.interface.ts",
             "type": "interface",
             "sourceCode": "import {ValidatorFn} from '@angular/forms';\r\n\r\nexport default interface IInputText {\r\n  type: string;\r\n  label: string;\r\n  ariaLabel: string;\r\n  placeholder: string;\r\n  errorMessage: string;\r\n  disabled: boolean;\r\n  readonly: boolean;\r\n  value: string;\r\n  validators: ValidatorFn[];\r\n}\r\n",
@@ -447,10 +372,7 @@
             ],
             "indexSignatures": [],
             "kind": 150,
-            "methods": [],
-            "isDuplicate": true,
-            "duplicateId": 1,
-            "duplicateName": "IInputText-1"
+            "methods": []
         },
         {
             "name": "IMenuButton",
@@ -1030,7 +952,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-93ba354b24b107d080567d9e3d147dd9",
+            "id": "component-ButtonComponent-a96bbbcda00691d47175c3942789394e",
             "file": "projects/design-system-lib/src/lib/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1050,7 +972,7 @@
                 {
                     "name": "buttonType",
                     "defaultValue": "ButtonTypeEnum.Primary",
-                    "line": 19,
+                    "line": 21,
                     "type": "ButtonTypeEnum"
                 },
                 {
@@ -1061,19 +983,24 @@
                 },
                 {
                     "name": "iconAfter",
-                    "line": 16,
+                    "line": 17,
                     "type": "string"
                 },
                 {
                     "name": "iconAfterHeight",
                     "defaultValue": "'auto'",
-                    "line": 18,
+                    "line": 19,
                     "type": "string"
+                },
+                {
+                    "name": "iconAfterStrokeWidth",
+                    "line": 20,
+                    "type": "number"
                 },
                 {
                     "name": "iconAfterWidth",
                     "defaultValue": "'auto'",
-                    "line": 17,
+                    "line": 18,
                     "type": "string"
                 },
                 {
@@ -1086,6 +1013,11 @@
                     "defaultValue": "'auto'",
                     "line": 15,
                     "type": "string"
+                },
+                {
+                    "name": "iconBeforeStrokeWidth",
+                    "line": 16,
+                    "type": "number"
                 },
                 {
                     "name": "iconBeforeWidth",
@@ -1109,7 +1041,7 @@
                 {
                     "name": "onClickTask",
                     "defaultValue": "new EventEmitter()",
-                    "line": 20,
+                    "line": 22,
                     "type": "EventEmitter<any>"
                 }
             ],
@@ -1120,11 +1052,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, EventEmitter, Input, Output} from '@angular/core';\r\nimport {ButtonTypeEnum} from './button-type.enum';\r\n\r\n@Component({\r\n  selector: 'p-button',\r\n  templateUrl: './button.component.html',\r\n  styleUrls: ['./button.component.scss'],\r\n})\r\nexport class ButtonComponent {\r\n  @Input() label: string;\r\n  @Input() large: boolean = false;\r\n  @Input() disabled: boolean = false;\r\n  @Input() iconBefore: string;\r\n  @Input() iconBeforeWidth: string = 'auto';\r\n  @Input() iconBeforeHeight: string = 'auto';\r\n  @Input() iconAfter: string;\r\n  @Input() iconAfterWidth: string = 'auto';\r\n  @Input() iconAfterHeight: string = 'auto';\r\n  @Input() buttonType: ButtonTypeEnum = ButtonTypeEnum.Primary;\r\n  @Output() onClickTask: EventEmitter<any> = new EventEmitter();\r\n\r\n  public get classes(): string[] {\r\n    const classParams = [];\r\n    this.large ? classParams.push('p-btn-large') : classParams.push('p-btn-small');\r\n    this.iconBefore ? classParams.push('p-btn-icon-before') : null;\r\n    this.iconAfter ? classParams.push('p-btn-icon-after') : null;\r\n    classParams.push(`p-btn-${this.buttonType}`);\r\n    return classParams;\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, EventEmitter, Input, Output} from '@angular/core';\r\nimport {ButtonTypeEnum} from './button-type.enum';\r\n\r\n@Component({\r\n  selector: 'p-button',\r\n  templateUrl: './button.component.html',\r\n  styleUrls: ['./button.component.scss'],\r\n})\r\nexport class ButtonComponent {\r\n  @Input() label: string;\r\n  @Input() large: boolean = false;\r\n  @Input() disabled: boolean = false;\r\n  @Input() iconBefore: string;\r\n  @Input() iconBeforeWidth: string = 'auto';\r\n  @Input() iconBeforeHeight: string = 'auto';\r\n  @Input() iconBeforeStrokeWidth: number;\r\n  @Input() iconAfter: string;\r\n  @Input() iconAfterWidth: string = 'auto';\r\n  @Input() iconAfterHeight: string = 'auto';\r\n  @Input() iconAfterStrokeWidth: number;\r\n  @Input() buttonType: ButtonTypeEnum = ButtonTypeEnum.Primary;\r\n  @Output() onClickTask: EventEmitter<any> = new EventEmitter();\r\n\r\n  public get classes(): string[] {\r\n    const classParams = [];\r\n    this.large ? classParams.push('p-btn-large') : classParams.push('p-btn-small');\r\n    this.iconBefore ? classParams.push('p-btn-icon-before') : null;\r\n    this.iconAfter ? classParams.push('p-btn-icon-after') : null;\r\n    classParams.push(`p-btn-${this.buttonType}`);\r\n    return classParams;\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n::ng-deep .p-btn {\r\n  @include resetButton;\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  font-weight: 500;\r\n  line-height: 19px;\r\n  min-width: 80px;\r\n  padding-right: 23px;\r\n  padding-left: 23px;\r\n  border-radius: 2px;\r\n  white-space: nowrap;\r\n  transition: all 400ms;\r\n\r\n  &-large {\r\n    height: $btn-large-height;\r\n  }\r\n\r\n  &-small {\r\n    height: $btn-small-height;\r\n  }\r\n\r\n  &:disabled {\r\n    pointer-events: none;\r\n  }\r\n\r\n  &-primary {\r\n    color: $gray-scale-1;\r\n    background-color: $secondary-a-700;\r\n    &:hover {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:focus {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      background-color: $secondary-a-50;\r\n    }\r\n  }\r\n\r\n  &-secondary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    border: 1px solid $secondary-a-700;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      border-color: $secondary-a-500;\r\n    }\r\n  }\r\n\r\n  &-tertiary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n    }\r\n  }\r\n\r\n  &-distructive {\r\n    color: $gray-scale-1;\r\n    background-color: $supportive-alert-500;\r\n    &:hover {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:focus {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      background-color: $supportive-alert-50;\r\n    }\r\n  }\r\n\r\n  // class of the button\r\n  &-icon-before {\r\n    padding-left: 17px;\r\n    .p-btn-label {\r\n      margin-left: 11px;\r\n    }\r\n  }\r\n  // class of the button\r\n  &-icon-after {\r\n    padding-right: 17px;\r\n    .p-btn-label {\r\n      margin-right: 11px;\r\n    }\r\n  }\r\n\r\n  // class of the icon\r\n  &-icon-pre,\r\n  &-icon-post {\r\n    display: inline-flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n  }\r\n}\r\n\r\n\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n::ng-deep .p-btn {\r\n  @include resetButton;\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  font-weight: 500;\r\n  line-height: 19px;\r\n  min-width: 80px;\r\n  padding-right: 23px;\r\n  padding-left: 23px;\r\n  border-radius: 2px;\r\n  white-space: nowrap;\r\n  transition: all 400ms;\r\n\r\n  &-large {\r\n    height: $btn-large-height;\r\n  }\r\n\r\n  &-small {\r\n    height: $btn-small-height;\r\n  }\r\n\r\n  &:disabled {\r\n    pointer-events: none;\r\n  }\r\n\r\n  &-primary {\r\n    color: $gray-scale-1;\r\n    background-color: $secondary-a-700;\r\n    &:hover {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:focus {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      background-color: $secondary-a-50;\r\n    }\r\n  }\r\n\r\n  &-secondary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    border: 1px solid $secondary-a-700;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      border-color: $secondary-a-500;\r\n    }\r\n  }\r\n\r\n  &-tertiary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n    }\r\n  }\r\n\r\n  &-distructive {\r\n    color: $gray-scale-1;\r\n    background-color: $supportive-alert-500;\r\n    &:hover {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:focus {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      background-color: $supportive-alert-50;\r\n    }\r\n  }\r\n\r\n  // class of the button\r\n  &-icon-before {\r\n    padding-left: 16px;\r\n    .p-btn-label {\r\n      margin-left: 8px;\r\n    }\r\n  }\r\n  // class of the button\r\n  &-icon-after {\r\n    padding-right: 16px;\r\n    .p-btn-label {\r\n      margin-right: 8px;\r\n    }\r\n  }\r\n\r\n  // class of the icon\r\n  &-icon-pre,\r\n  &-icon-post {\r\n    display: inline-flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n  }\r\n}\r\n\r\n\r\n",
                     "styleUrl": "./button.component.scss"
                 }
             ],
@@ -1136,11 +1068,11 @@
                         "name": "classes",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 22
+                        "line": 24
                     }
                 }
             },
-            "templateData": "<button class=\"p-btn\" [ngClass]=\"classes\" [disabled]=\"disabled\"\r\n        (click)=\"onClickTask.emit($event)\">\r\n  <p-icon *ngIf=\"iconBefore\"\r\n          class=\"p-btn-icon-pre\"\r\n          [iconName]=\"iconBefore\"\r\n          [width]=\"iconBeforeWidth\"\r\n          [height]=\"iconBeforeHeight\"\r\n          [disabled]=\"disabled\"></p-icon>\r\n  <span class=\"p-btn-label\">{{label}}</span>\r\n  <p-icon *ngIf=\"iconAfter\"\r\n          class=\"p-btn-icon-post\"\r\n          [iconName]=\"iconAfter\"\r\n          [width]=\"iconAfterWidth\"\r\n          [height]=\"iconAfterHeight\"\r\n          [disabled]=\"disabled\"></p-icon>\r\n</button>\r\n"
+            "templateData": "<button class=\"p-btn\" [ngClass]=\"classes\" [disabled]=\"disabled\"\r\n        (click)=\"onClickTask.emit($event)\">\r\n  <p-icon *ngIf=\"iconBefore\"\r\n          class=\"p-btn-icon-pre\"\r\n          [iconName]=\"iconBefore\"\r\n          [width]=\"iconBeforeWidth\"\r\n          [height]=\"iconBeforeHeight\"\r\n          [strokeWidth]=\"iconBeforeStrokeWidth\"\r\n          [disabled]=\"disabled\"></p-icon>\r\n  <span class=\"p-btn-label\">{{label}}</span>\r\n  <p-icon *ngIf=\"iconAfter\"\r\n          class=\"p-btn-icon-post\"\r\n          [iconName]=\"iconAfter\"\r\n          [width]=\"iconAfterWidth\"\r\n          [height]=\"iconAfterHeight\"\r\n          [strokeWidth]=\"iconAfterStrokeWidth\"\r\n          [disabled]=\"disabled\"></p-icon>\r\n</button>\r\n"
         },
         {
             "name": "CheckboxComponent",
@@ -1433,6 +1365,116 @@
             "templateData": "<div class=\"page\">\r\n  <header class=\"page-header\">\r\n    <h1 class=\"page-title\">Colors / <span class=\"page-title-highlighted\">Scheme</span></h1>\r\n  </header>\r\n\r\n  <main class=\"page-main\">\r\n    <div *ngIf=\"palette\" class=\"color-scheme\">\r\n      <div *ngFor=\"let group of palette | keyvalue: originalOrder\"\r\n           class=\"color-scheme-group {{group.key}}\">\r\n        <ng-template [ngIf]=\"group.key === 'gray'\" [ngIfElse]=\"regularTitle\">\r\n          <h2 class=\"color-scheme-title\">Grayscale</h2>\r\n        </ng-template>\r\n\r\n        <ng-template #regularTitle>\r\n          <h2 class=\"color-scheme-title\">{{group.key}}</h2>\r\n        </ng-template>\r\n\r\n        <div class=\"color-scheme-container\">\r\n          <div *ngFor=\"let column of group.value | keyvalue: originalOrder\"\r\n               class=\"color-column color-{{group.key}}-{{column.key}}\">\r\n            <div *ngFor=\"let box of column.value | keyvalue: reverseKeyOrder\"\r\n                 class=\"color-box {{group.key}}-{{column.key}}-{{box.key}} {{box.value.labelColor}}\">\r\n              <p class=\"color-box-class\">${{group.key}}-{{column.key}}-{{box.key}}</p>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </main>\r\n</div>\r\n"
         },
         {
+            "name": "DatepickerComponent",
+            "id": "component-DatepickerComponent-465c135c860e93f4b9734404d3790925",
+            "file": "projects/design-system-lib/src/lib/input/datepicker/datepicker.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-datepicker",
+            "styleUrls": [
+                "./datepicker.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./datepicker.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "ariaLabel",
+                    "line": 12,
+                    "type": "string"
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "line": 15,
+                    "type": "boolean"
+                },
+                {
+                    "name": "errorMessage",
+                    "line": 14,
+                    "type": "string"
+                },
+                {
+                    "name": "label",
+                    "line": 11,
+                    "type": "string"
+                },
+                {
+                    "name": "placeholder",
+                    "line": 13,
+                    "type": "string"
+                },
+                {
+                    "name": "readonly",
+                    "defaultValue": "false",
+                    "line": 16,
+                    "type": "boolean"
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'text'",
+                    "line": 10,
+                    "type": "string"
+                },
+                {
+                    "name": "validators",
+                    "line": 18,
+                    "type": "ValidatorFn[]"
+                },
+                {
+                    "name": "value",
+                    "line": 17,
+                    "type": "string"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "formFieldControl",
+                    "type": "FormControl",
+                    "optional": false,
+                    "description": "",
+                    "line": 19,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 21
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport {FormControl, ValidatorFn} from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'p-datepicker',\r\n  templateUrl: './datepicker.component.html',\r\n  styleUrls: ['./datepicker.component.scss'],\r\n})\r\nexport class DatepickerComponent implements OnInit {\r\n  @Input() type: string = 'text';\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string;\r\n  @Input() placeholder: string;\r\n  @Input() errorMessage: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() readonly: boolean = false;\r\n  @Input() value: string;\r\n  @Input() validators: ValidatorFn[];\r\n  public formFieldControl: FormControl;\r\n\r\n  ngOnInit(): void {\r\n    this.formFieldControl = new FormControl(\r\n      {value: this.value, disabled: this.disabled},\r\n      this.validators);\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../../assets/styles/custom\";\r\n@import '../text/input-text.component';\r\n\r\n",
+                    "styleUrl": "./datepicker.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<!--<mat-form-field class=\"p-input-text\"-->\r\n                <!--appearance=\"standard\"-->\r\n                <!--[ngClass]=\"{'p-input-text-readonly' : readonly}\"-->\r\n                <!--floatLabel=\"always\">-->\r\n  <!--<mat-label class=\"p-input-text-label\">{{label}}</mat-label>-->\r\n  <!--<input matInput-->\r\n         <!--[type]=\"type\"-->\r\n         <!--[placeholder]=\"placeholder\"-->\r\n         <!--[readonly]=\"readonly\"-->\r\n         <!--attr.aria-label=\"{{ariaLabel}}\"-->\r\n         <!--[formControl]=\"formFieldControl\"-->\r\n         <!--onfocus=\"this.select()\"-->\r\n         <!--class=\"p-input-text-input\">-->\r\n  <!--<mat-error *ngIf=\"formFieldControl.invalid\"-->\r\n             <!--class=\"p-input-text-error\">-->\r\n    <!--{{errorMessage}}-->\r\n  <!--</mat-error>-->\r\n<!--</mat-form-field>-->\r\n\r\n<mat-form-field class=\"p-input-text\" appearance=\"standard\">\r\n  <input matInput [matDatepicker]=\"picker\">\r\n  <mat-datepicker-toggle matSuffix [for]=\"picker\">\r\n    <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>\r\n  </mat-datepicker-toggle>\r\n  <mat-datepicker #picker></mat-datepicker>\r\n</mat-form-field>\r\n"
+        },
+        {
             "name": "IconComponent",
             "id": "component-IconComponent-0f7d4ef229aa79c63838f476028325aa",
             "file": "projects/design-system-lib/src/lib/icon/icon.component.ts",
@@ -1715,117 +1757,7 @@
         },
         {
             "name": "InputTextComponent",
-            "id": "component-InputTextComponent-8886783e6f8de6a419bcb8e2acee9eeb",
-            "file": "src/stories/input-text/input-text.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "p-input-text",
-            "styleUrls": [
-                "./input-text.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./input-text.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [
-                {
-                    "name": "ariaLabel",
-                    "line": 12,
-                    "type": "string"
-                },
-                {
-                    "name": "disabled",
-                    "defaultValue": "false",
-                    "line": 15,
-                    "type": "boolean"
-                },
-                {
-                    "name": "errorMessage",
-                    "line": 14,
-                    "type": "string"
-                },
-                {
-                    "name": "label",
-                    "line": 11,
-                    "type": "string"
-                },
-                {
-                    "name": "placeholder",
-                    "line": 13,
-                    "type": "string"
-                },
-                {
-                    "name": "readonly",
-                    "defaultValue": "false",
-                    "line": 16,
-                    "type": "boolean"
-                },
-                {
-                    "name": "type",
-                    "defaultValue": "'text'",
-                    "line": 10,
-                    "type": "string"
-                },
-                {
-                    "name": "validators",
-                    "line": 18,
-                    "type": "ValidatorFn[]"
-                },
-                {
-                    "name": "value",
-                    "line": 17,
-                    "type": "string"
-                }
-            ],
-            "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "formFieldControl",
-                    "type": "FormControl",
-                    "optional": false,
-                    "description": "",
-                    "line": 19,
-                    "modifierKind": [
-                        114
-                    ]
-                }
-            ],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 21
-                }
-            ],
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "",
-            "type": "component",
-            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport {FormControl, ValidatorFn} from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'p-input-text',\r\n  templateUrl: './input-text.component.html',\r\n  styleUrls: ['./input-text.component.scss'],\r\n})\r\nexport default class InputTextComponent implements OnInit {\r\n  @Input() type: string = 'text';\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string;\r\n  @Input() placeholder: string;\r\n  @Input() errorMessage: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() readonly: boolean = false;\r\n  @Input() value: string;\r\n  @Input() validators: ValidatorFn[];\r\n  public formFieldControl: FormControl;\r\n\r\n  ngOnInit(): void {\r\n    this.formFieldControl = new FormControl(\r\n      {value: this.value, disabled: this.disabled},\r\n      this.validators);\r\n  }\r\n}\r\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$input-text-width: 220px;\r\n$input-text-padding: 8px;\r\n\r\n.p-input-text {\r\n  &-label {\r\n    font-family: $font-family-basic;\r\n    font-weight: 500;\r\n    font-size: $tiny-font-size;\r\n    text-transform: capitalize;\r\n    line-height: 19px;\r\n    color: $gray-scale-700;\r\n  }\r\n\r\n  ::ng-deep & {\r\n    // material styles override\r\n    .mat-input-element {\r\n      font-family: $font-family-basic;\r\n      font-size: $base-font-size;\r\n      max-width: $input-text-width - $input-text-padding;\r\n      line-height: 20px;\r\n      color: $primary-a-900;\r\n      padding-left: $input-text-padding;\r\n      caret-color: $primary-a-900;\r\n    }\r\n    .mat-form-field-infix {\r\n      width: $input-text-width;\r\n      padding-bottom: 6px;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-flex {\r\n      padding-top: 0;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $gray-scale-600;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-underline,\r\n    &:not(.mat-form-field-disabled):not(.mat-form-field-invalid)\r\n            .mat-form-field-flex:hover~.mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $primary-a-900;\r\n    }\r\n    .mat-form-field-ripple {\r\n      display: none;\r\n    }\r\n    .mat-form-field-subscript-wrapper {\r\n      margin-top: 5px;\r\n    }\r\n    .mat-error {\r\n      font-family: $font-family-basic;\r\n      font-size: $tiny-font-size;\r\n      color: $supportive-alert-500;\r\n      line-height: 12px;\r\n    }\r\n\r\n    // disabled\r\n    &.mat-form-field-disabled {\r\n      .mat-input-element {\r\n        color: $gray-scale-600;\r\n      }\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $gray-scale-400;\r\n      }\r\n    }\r\n\r\n    // error state\r\n    &.ng-invalid {\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-500;\r\n      }\r\n      &.mat-form-field .mat-form-field-flex:hover~.mat-form-field-underline,\r\n      &.mat-form-field.mat-focused .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-700;\r\n      }\r\n    }\r\n\r\n    // readonly\r\n    &.p-input-text-readonly {\r\n      &:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover~.mat-form-field-underline,\r\n\r\n      .mat-form-field-underline {\r\n        box-shadow: none;\r\n      }\r\n    }\r\n  }\r\n\r\n}\r\n",
-                    "styleUrl": "./input-text.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<mat-form-field class=\"p-input-text\"\r\n                appearance=\"standard\"\r\n                [ngClass]=\"{'p-input-text-readonly' : readonly}\"\r\n                floatLabel=\"always\">\r\n  <mat-label class=\"p-input-text-label\">{{label}}</mat-label>\r\n  <input matInput\r\n         [type]=\"type\"\r\n         [placeholder]=\"placeholder\"\r\n         [readonly]=\"readonly\"\r\n         attr.aria-label=\"{{ariaLabel}}\"\r\n         [formControl]=\"formFieldControl\"\r\n         onfocus=\"this.select()\"\r\n         class=\"p-input-text-input\">\r\n  <mat-error *ngIf=\"formFieldControl.invalid\"\r\n             class=\"p-input-text-error\">\r\n    {{errorMessage}}\r\n  </mat-error>\r\n</mat-form-field>\r\n"
-        },
-        {
-            "name": "InputTextComponent",
-            "id": "component-InputTextComponent-38593d05d9ff8da867b9d975105f3d21-1",
+            "id": "component-InputTextComponent-38593d05d9ff8da867b9d975105f3d21",
             "file": "projects/design-system-lib/src/lib/input/text/input-text.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1923,7 +1855,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$input-text-width: 220px;\r\n$input-text-padding: 8px;\r\n\r\n.p-input-text {\r\n  &-label {\r\n    font-family: $font-family-basic;\r\n    font-weight: 500;\r\n    font-size: $tiny-font-size;\r\n    text-transform: capitalize;\r\n    line-height: 19px;\r\n    color: $gray-scale-700;\r\n  }\r\n\r\n  ::ng-deep & {\r\n    // material styles override\r\n    .mat-input-element {\r\n      font-family: $font-family-basic;\r\n      font-size: $base-font-size;\r\n      max-width: $input-text-width - $input-text-padding;\r\n      line-height: 20px;\r\n      color: $primary-a-900;\r\n      padding-left: $input-text-padding;\r\n      caret-color: $primary-a-900;\r\n    }\r\n    .mat-form-field-infix {\r\n      width: $input-text-width;\r\n      padding-bottom: 6px;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-flex {\r\n      padding-top: 0;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $gray-scale-600;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-underline,\r\n    &:not(.mat-form-field-disabled):not(.mat-form-field-invalid)\r\n            .mat-form-field-flex:hover~.mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $primary-a-900;\r\n    }\r\n    .mat-form-field-ripple {\r\n      display: none;\r\n    }\r\n    .mat-form-field-subscript-wrapper {\r\n      margin-top: 5px;\r\n    }\r\n    .mat-error {\r\n      font-family: $font-family-basic;\r\n      font-size: $tiny-font-size;\r\n      color: $supportive-alert-500;\r\n      line-height: 12px;\r\n    }\r\n\r\n    // disabled\r\n    &.mat-form-field-disabled {\r\n      .mat-input-element {\r\n        color: $gray-scale-600;\r\n      }\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $gray-scale-400;\r\n      }\r\n    }\r\n\r\n    // error state\r\n    &.ng-invalid {\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-500;\r\n      }\r\n      &.mat-form-field .mat-form-field-flex:hover~.mat-form-field-underline,\r\n      &.mat-form-field.mat-focused .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-700;\r\n      }\r\n    }\r\n\r\n    // readonly\r\n    &.p-input-text-readonly {\r\n      &:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover~.mat-form-field-underline,\r\n\r\n      .mat-form-field-underline {\r\n        box-shadow: none;\r\n      }\r\n    }\r\n  }\r\n\r\n}\r\n",
+                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$input-text-width: 220px;\r\n$input-text-padding: 8px;\r\n\r\n.p-input-text {\r\n  &-label {\r\n    font-family: $font-family-basic;\r\n    font-weight: 500;\r\n    font-size: $tiny-font-size;\r\n    text-transform: capitalize;\r\n    line-height: 19px;\r\n    color: $gray-scale-700;\r\n  }\r\n\r\n  ::ng-deep & {\r\n    // material styles override\r\n    .mat-input-element {\r\n      font-family: $font-family-basic;\r\n      font-size: $base-font-size;\r\n      max-width: $input-text-width - $input-text-padding;\r\n      line-height: 20px;\r\n      color: $primary-a-900;\r\n      padding-left: $input-text-padding;\r\n      caret-color: $primary-a-900;\r\n    }\r\n    .mat-form-field-infix {\r\n      width: $input-text-width;\r\n      padding-bottom: 6px;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-flex {\r\n      padding-top: 0;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $gray-scale-600;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-underline,\r\n    &:not(.mat-form-field-disabled):not(.mat-form-field-invalid)\r\n            .mat-form-field-flex:hover~.mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $primary-a-900;\r\n    }\r\n    .mat-form-field-ripple {\r\n      display: none;\r\n    }\r\n    .mat-form-field-subscript-wrapper {\r\n      margin-top: 5px;\r\n    }\r\n    .mat-error {\r\n      font-family: $font-family-basic;\r\n      font-size: $tiny-font-size;\r\n      color: $supportive-alert-500;\r\n      line-height: 12px;\r\n    }\r\n\r\n    // disabled\r\n    &.mat-form-field-disabled {\r\n      .mat-input-element {\r\n        color: $gray-scale-600;\r\n      }\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $gray-scale-400;\r\n      }\r\n    }\r\n\r\n    // error state\r\n    &.ng-invalid {\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-500;\r\n      }\r\n      &.mat-form-field .mat-form-field-flex:hover~.mat-form-field-underline,\r\n      &.mat-form-field.mat-focused .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-700;\r\n      }\r\n    }\r\n\r\n    // readonly\r\n    &.p-input-text-readonly {\r\n      &:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover~.mat-form-field-underline,\r\n\r\n      .mat-form-field-underline {\r\n        box-shadow: none;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "./input-text.component.scss"
                 }
             ],
@@ -1931,9 +1863,6 @@
             "implements": [
                 "OnInit"
             ],
-            "isDuplicate": true,
-            "duplicateId": 1,
-            "duplicateName": "InputTextComponent-1",
             "templateData": "<mat-form-field class=\"p-input-text\"\r\n                appearance=\"standard\"\r\n                [ngClass]=\"{'p-input-text-readonly' : readonly}\"\r\n                floatLabel=\"always\">\r\n  <mat-label class=\"p-input-text-label\">{{label}}</mat-label>\r\n  <input matInput\r\n         [type]=\"type\"\r\n         [placeholder]=\"placeholder\"\r\n         [readonly]=\"readonly\"\r\n         attr.aria-label=\"{{ariaLabel}}\"\r\n         [formControl]=\"formFieldControl\"\r\n         onfocus=\"this.select()\"\r\n         class=\"p-input-text-input\">\r\n  <mat-error *ngIf=\"formFieldControl.invalid\"\r\n             class=\"p-input-text-error\">\r\n    {{errorMessage}}\r\n  </mat-error>\r\n</mat-form-field>\r\n"
         },
         {
@@ -2743,7 +2672,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$menu-padding: 8px;\r\n$menu-item-height: 32px;\r\n$menu-background: $gray-scale-1;\r\n$menu-item-margin-top: 4px;\r\n$input-text-height: 32px;\r\n$input-text-padding: 8px;\r\n$menu-header-height: $input-text-height + $menu-padding * 3 + 1px;\r\n$menu-header-extended-height: $input-text-height + ($menu-padding * 4.5) + ($menu-item-height * 2) + 1px;\r\n$menu-footer-height: $btn-small-height + $menu-padding * 4;\r\n$menu-body-height: 103px;\r\n$menu-min-width: 480px;\r\n$menu-max-height: 75vh;\r\n\r\n// mat-menu-panel\r\n::ng-deep .p-menu-radio.mat-menu-panel {\r\n  min-width: $menu-min-width;\r\n  max-height: $menu-max-height;\r\n  background-color: $menu-background;\r\n  border-radius: 0;\r\n  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1),\r\n  0 2px 6px rgba(0, 0, 0, 0.04),\r\n  0 -3px 6px rgba(0, 0, 0, 0.04);\r\n  overflow: hidden;\r\n  .mat-menu-content {\r\n    height: 100%;\r\n    padding: 0;\r\n    position: relative;\r\n  }\r\n}\r\n\r\n// container of the multiple selection menu (stopPropagation)\r\n.p-menu-multiple-container {\r\n  height: 100%;\r\n}\r\n\r\n.p-menu {\r\n  &-body {\r\n    @include resetUl;\r\n    height: calc(100%);\r\n    padding-top: 24px;\r\n    padding-right: 24px;\r\n    padding-bottom: $menu-footer-height;\r\n    padding-left: 24px;\r\n    &-item {\r\n      & + & {\r\n        margin-top: 24px;\r\n      }\r\n    }\r\n  }\r\n\r\n  &-footer {\r\n    display: flex;\r\n    align-items: center;\r\n    width: 100%;\r\n    height: $menu-footer-height;\r\n    padding: $menu-padding * 2;\r\n    background-color: $menu-background;\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 0;\r\n    z-index: 1;\r\n    &-btn {\r\n      & + & {\r\n        margin-left: $menu-padding;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n// every option\r\n.p-menu-option {\r\n  &-submenu {\r\n    ::ng-deep .mat-menu-trigger{\r\n      padding-left: 4px;\r\n      padding-right: 4px;\r\n      &:hover {\r\n        background-color: transparent;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n\r\n",
+                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$menu-padding: 8px;\r\n$menu-item-height: 32px;\r\n$menu-background: $gray-scale-1;\r\n$menu-item-margin-top: 4px;\r\n$input-text-height: 32px;\r\n$input-text-padding: 8px;\r\n$menu-header-height: $input-text-height + $menu-padding * 3 + 1px;\r\n$menu-header-extended-height: $input-text-height + ($menu-padding * 4.5) + ($menu-item-height * 2) + 1px;\r\n$menu-footer-height: $btn-small-height + $menu-padding * 4;\r\n$menu-body-height: 103px;\r\n$menu-min-width: 480px;\r\n$menu-max-height: 75vh;\r\n\r\n// mat-menu-panel\r\n::ng-deep .p-menu-radio.mat-menu-panel {\r\n  min-width: $menu-min-width;\r\n  max-height: $menu-max-height;\r\n  background-color: $menu-background;\r\n  border-radius: 0;\r\n  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1),\r\n  0 2px 6px rgba(0, 0, 0, 0.04),\r\n  0 -3px 6px rgba(0, 0, 0, 0.04);\r\n  overflow: hidden;\r\n  .mat-menu-content {\r\n    height: 100%;\r\n    padding: 0;\r\n    position: relative;\r\n  }\r\n}\r\n\r\n// container of the multiple selection menu (stopPropagation)\r\n.p-menu-multiple-container {\r\n  height: 100%;\r\n}\r\n\r\n.p-menu {\r\n  &-body {\r\n    @include resetUl;\r\n    height: calc(100%);\r\n    padding-top: 24px;\r\n    padding-right: 24px;\r\n    padding-bottom: $menu-footer-height;\r\n    padding-left: 24px;\r\n    &-item {\r\n      & + & {\r\n        margin-top: 24px;\r\n      }\r\n    }\r\n  }\r\n\r\n  &-footer {\r\n    display: flex;\r\n    align-items: center;\r\n    width: 100%;\r\n    height: $menu-footer-height;\r\n    padding: $menu-padding * 2;\r\n    background-color: $menu-background;\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 0;\r\n    z-index: 1;\r\n    &-btn {\r\n      & + & {\r\n        margin-left: $menu-padding;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n// every option\r\n.p-menu-option {\r\n  &-input {\r\n    margin-left: 29px;\r\n  }\r\n  &-link {\r\n    display: inline-flex;\r\n    color: $secondary-a-700;\r\n\r\n    ::ng-deep .p-btn {\r\n      min-width: unset;\r\n      padding-left: 5px;\r\n      padding-right: 5px;\r\n      &:hover,\r\n      &:focus {\r\n        background-color: transparent;\r\n        .p-btn-icon-post {\r\n          opacity: 1;\r\n        }\r\n      }\r\n    }\r\n    ::ng-deep .p-btn-label {\r\n      margin-right: 3px;\r\n    }\r\n    ::ng-deep .p-btn-icon-post {\r\n      opacity: 0;\r\n      transition: opacity 280ms;\r\n    }\r\n  }\r\n}\r\n\r\n\r\n",
                     "styleUrl": "./menu-radio-group.component.scss"
                 }
             ],
@@ -2751,7 +2680,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<button [matMenuTriggerFor]=\"menu\"\r\n        #menuTrigger=\"matMenuTrigger\"\r\n        class=\"p-btn p-btn-small p-btn-tertiary\">\r\n    {{menuTriggerName}}\r\n</button>\r\n\r\n<!--menu window-->\r\n<mat-menu #menu=\"matMenu\" class=\"p-menu-radio\" [overlapTrigger]=\"false\">\r\n  <div class=\"p-menu-multiple-container\" (click)=\"$event.stopPropagation()\"\r\n                                (keydown)=\"$event.stopPropagation()\">\r\n    <ul class=\"p-menu-body\">\r\n      <li class=\"p-menu-body-item\" *ngFor=\"let option of menuList\">\r\n        <p-radio-button class=\"p-menu-option-radio\"\r\n                        [value]=\"option\"\r\n                        [label]=\"option.label\"\r\n                        [checked]=\"option.checked\"\r\n                        [disabled]=\"option.disabled\">\r\n        </p-radio-button>\r\n\r\n        <p-input-numeric *ngIf=\"option.numericInputValue\"\r\n                          class=\"p-menu-option-input\"\r\n                          [size]=\"inputNumericSize.Small\"\r\n                          [value]=\"option.numericInputValue\"></p-input-numeric>\r\n\r\n        <div class=\"p-menu-option-link\" *ngIf=\"option.menuList\">\r\n          <p-menu-single-select class=\"p-menu-option-submenu\"\r\n                                [menuTriggerName]=\"findMenuTriggerName(option.menuList)\"\r\n                                [menuList]=\"option.menuList\">\r\n          </p-menu-single-select>\r\n        </div>\r\n\r\n\r\n      </li>\r\n    </ul>\r\n    <div class=\"p-menu-footer\">\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnFirst.label\"\r\n                [buttonType]=\"footerBtnFirst.buttonType\"\r\n                (click)=\"selectCompleted()\"></p-button>\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnLast.label\"\r\n                [buttonType]=\"footerBtnLast.buttonType\"\r\n                (click)=\"selectCanceled()\"></p-button>\r\n    </div>\r\n  </div>\r\n</mat-menu>\r\n"
+            "templateData": "<button [matMenuTriggerFor]=\"menu\"\r\n        #menuTrigger=\"matMenuTrigger\"\r\n        class=\"p-btn p-btn-small p-btn-tertiary\">\r\n    {{menuTriggerName}}\r\n</button>\r\n\r\n<!--menu window-->\r\n<mat-menu #menu=\"matMenu\" class=\"p-menu-radio\" [overlapTrigger]=\"false\">\r\n  <div class=\"p-menu-multiple-container\" (click)=\"$event.stopPropagation()\"\r\n                                (keydown)=\"$event.stopPropagation()\">\r\n    <ul class=\"p-menu-body\">\r\n      <li class=\"p-menu-body-item\" *ngFor=\"let option of menuList\">\r\n        <p-radio-button class=\"p-menu-option-radio\"\r\n                        [value]=\"option\"\r\n                        [label]=\"option.label\"\r\n                        [checked]=\"option.checked\"\r\n                        [disabled]=\"option.disabled\">\r\n        </p-radio-button>\r\n\r\n        <p-input-numeric *ngIf=\"option.numericInputValue\"\r\n                          class=\"p-menu-option-input\"\r\n                          [size]=\"inputNumericSize.Small\"\r\n                          [value]=\"option.numericInputValue\"></p-input-numeric>\r\n\r\n        <div class=\"p-menu-option-link\" >\r\n          <p-menu-single-select *ngIf=\"option.menuList\"\r\n                                class=\"p-menu-option-submenu\"\r\n                                [menuTriggerName]=\"findMenuTriggerName(option.menuList)\"\r\n                                [menuList]=\"option.menuList\">\r\n          </p-menu-single-select>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n    <div class=\"p-menu-footer\">\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnFirst.label\"\r\n                [buttonType]=\"footerBtnFirst.buttonType\"\r\n                (click)=\"selectCompleted()\"></p-button>\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnLast.label\"\r\n                [buttonType]=\"footerBtnLast.buttonType\"\r\n                (click)=\"selectCanceled()\"></p-button>\r\n    </div>\r\n  </div>\r\n</mat-menu>\r\n"
         },
         {
             "name": "MenuSingleSelectComponent",
@@ -2910,7 +2839,7 @@
                 "OnInit",
                 "OnDestroy"
             ],
-            "templateData": "<!--<button [matMenuTriggerFor]=\"menu\"-->\r\n        <!--class=\"p-btn p-btn-small p-btn-tertiary\">-->\r\n  <!--{{menuTriggerName}}-->\r\n<!--</button>-->\r\n<div class=\"p-menu-trigger\" [matMenuTriggerFor]=\"menu\">\r\n  <p-button iconAfter=\"chevron-down\"\r\n            iconBeforeWidth=\"17\"\r\n            iconBeforeHeight=\"17\"\r\n            [label]=\"menuTriggerName\"\r\n            [buttonType]=\"buttonTypeEnum.Tertiary\" ></p-button>\r\n</div>\r\n\r\n<!--menu-single-select line template-->\r\n<ng-template #menuLine let-itemsList=\"itemsList\">\r\n  <button *ngFor=\"let item of itemsList\"\r\n                  mat-menu-item\r\n                  [class.p-menu-item-selected]=\"item.selected\"\r\n                  [disabled]=\"item.disabled\"\r\n                  [disableRipple]=\"true\">\r\n  {{item.name}}\r\n</button>\r\n</ng-template>\r\n\r\n<!--menu-single-select window-->\r\n<mat-menu #menu=\"matMenu\" class=\"p-menu\" [overlapTrigger]=\"false\">\r\n  <div class=\"p-menu-header\" *ngIf=\"filterPlaceholder\">\r\n    <mat-form-field class=\"p-menu-form-field\"\r\n                    appearance=\"outline\"\r\n                    floatLabel=\"always\"\r\n                    (click)=\"$event.stopPropagation()\"\r\n                    (keydown)=\"$event.stopPropagation()\">\r\n      <input matInput\r\n             type=\"text\"\r\n             [placeholder]=\"filterPlaceholder\"\r\n             attr.aria-label=\"{{filterAriaLabel}}\"\r\n             [formControl]=\"formFieldControl\"\r\n             onfocus=\"this.select()\"\r\n             class=\"p-menu-input\">\r\n    </mat-form-field>\r\n  </div>\r\n\r\n  <div class=\"p-menu-body\">\r\n    <div class=\"p-menu-body-container\">\r\n      <!--groupTitle === true-->\r\n      <ng-template [ngIf]=\"groupTitle\" [ngIfElse]=\"noGroupTitle\">\r\n        <ng-container *ngFor=\"let group of filteredList\">\r\n          <h6 class=\"p-menu-group-title\">{{group.letter}}</h6>\r\n          <ng-container [ngTemplateOutlet]=\"menuLine\"\r\n                        [ngTemplateOutletContext] =\"{itemsList: group.names}\"></ng-container>\r\n        </ng-container>\r\n      </ng-template>\r\n\r\n      <!--groupTitle === false-->\r\n      <ng-template #noGroupTitle>\r\n        <ng-container [ngTemplateOutlet]=\"menuLine\"\r\n                      [ngTemplateOutletContext] =\"{itemsList: menuList}\"></ng-container>\r\n      </ng-template>\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"p-menu-footer\" *ngIf=\"filterPlaceholder\">\r\n    <p-button class=\"p-menu-btn-line\"\r\n              [label]=\"buttonFirst.label\"\r\n              [iconBefore]=\"buttonFirst.icon.iconName\"\r\n              [iconBeforeWidth]=\"buttonFirst.icon.width\"\r\n              [iconBeforeHeight]=\"buttonFirst.icon.height\"\r\n              [buttonType]=\"buttonFirst.buttonType\"></p-button>\r\n    <p-button class=\"p-menu-btn-line\"\r\n              [label]=\"buttonLast.label\"\r\n              [iconBefore]=\"buttonLast.icon.iconName\"\r\n              [iconBeforeWidth]=\"buttonLast.icon.width\"\r\n              [iconBeforeHeight]=\"buttonLast.icon.height\"\r\n              [buttonType]=\"buttonLast.buttonType\"></p-button>\r\n  </div>\r\n</mat-menu>\r\n"
+            "templateData": "<div class=\"p-menu-trigger\" [matMenuTriggerFor]=\"menu\">\r\n  <p-button iconAfter=\"chevron-down\"\r\n            iconAfterWidth=\"17\"\r\n            iconAfterHeight=\"17\"\r\n            [label]=\"menuTriggerName\"\r\n            [iconAfterStrokeWidth]=\"1.5\"\r\n            [buttonType]=\"'tertiary'\" ></p-button>\r\n</div>\r\n\r\n<!--menu-single-select line template-->\r\n<ng-template #menuLine let-itemsList=\"itemsList\">\r\n  <button *ngFor=\"let item of itemsList\"\r\n                  mat-menu-item\r\n                  [class.p-menu-item-selected]=\"item.selected\"\r\n                  [disabled]=\"item.disabled\"\r\n                  [disableRipple]=\"true\">\r\n  {{item.name}}\r\n</button>\r\n</ng-template>\r\n\r\n<!--menu-single-select window-->\r\n<mat-menu #menu=\"matMenu\" class=\"p-menu\" [overlapTrigger]=\"false\">\r\n  <div class=\"p-menu-header\" *ngIf=\"filterPlaceholder\">\r\n    <mat-form-field class=\"p-menu-form-field\"\r\n                    appearance=\"outline\"\r\n                    floatLabel=\"always\"\r\n                    (click)=\"$event.stopPropagation()\"\r\n                    (keydown)=\"$event.stopPropagation()\">\r\n      <input matInput\r\n             type=\"text\"\r\n             [placeholder]=\"filterPlaceholder\"\r\n             attr.aria-label=\"{{filterAriaLabel}}\"\r\n             [formControl]=\"formFieldControl\"\r\n             onfocus=\"this.select()\"\r\n             class=\"p-menu-input\">\r\n    </mat-form-field>\r\n  </div>\r\n\r\n  <div class=\"p-menu-body\">\r\n    <div class=\"p-menu-body-container\">\r\n      <!--groupTitle === true-->\r\n      <ng-template [ngIf]=\"groupTitle\" [ngIfElse]=\"noGroupTitle\">\r\n        <ng-container *ngFor=\"let group of filteredList\">\r\n          <h6 class=\"p-menu-group-title\">{{group.letter}}</h6>\r\n          <ng-container [ngTemplateOutlet]=\"menuLine\"\r\n                        [ngTemplateOutletContext] =\"{itemsList: group.names}\"></ng-container>\r\n        </ng-container>\r\n      </ng-template>\r\n\r\n      <!--groupTitle === false-->\r\n      <ng-template #noGroupTitle>\r\n        <ng-container [ngTemplateOutlet]=\"menuLine\"\r\n                      [ngTemplateOutletContext] =\"{itemsList: menuList}\"></ng-container>\r\n      </ng-template>\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"p-menu-footer\" *ngIf=\"filterPlaceholder\">\r\n    <p-button class=\"p-menu-btn-line\"\r\n              [label]=\"buttonFirst.label\"\r\n              [iconBefore]=\"buttonFirst.icon.iconName\"\r\n              [iconBeforeWidth]=\"buttonFirst.icon.width\"\r\n              [iconBeforeHeight]=\"buttonFirst.icon.height\"\r\n              [buttonType]=\"buttonFirst.buttonType\"></p-button>\r\n    <p-button class=\"p-menu-btn-line\"\r\n              [label]=\"buttonLast.label\"\r\n              [iconBefore]=\"buttonLast.icon.iconName\"\r\n              [iconBeforeWidth]=\"buttonLast.icon.width\"\r\n              [iconBeforeHeight]=\"buttonLast.icon.height\"\r\n              [buttonType]=\"buttonLast.buttonType\"></p-button>\r\n  </div>\r\n</mat-menu>\r\n"
         },
         {
             "name": "MenuTabsComponent",
@@ -3919,6 +3848,9 @@
                     "type": "declarations",
                     "elements": [
                         {
+                            "name": "DatepickerComponent"
+                        },
+                        {
                             "name": "InputNumericComponent"
                         },
                         {
@@ -3928,13 +3860,23 @@
                 },
                 {
                     "type": "imports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "IconModule"
+                        }
+                    ]
                 },
                 {
                     "type": "exports",
                     "elements": [
                         {
+                            "name": "DatepickerComponent"
+                        },
+                        {
                             "name": "InputNumericComponent"
+                        },
+                        {
+                            "name": "InputTextComponent"
                         }
                     ]
                 },
@@ -4281,17 +4223,17 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
-                "type": "Story<CheckboxGroupComponent>",
-                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "Story<CheckboxGroupPageComponent>",
+                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
-                "type": "Story<CheckboxGroupPageComponent>",
-                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
+                "type": "Story<CheckboxGroupComponent>",
+                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -4305,17 +4247,17 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input-text/input-text-table-layout/input-text-table-layout.stories.ts",
-                "type": "Story<InputTextTableLayoutComponent>",
-                "defaultValue": "(args: InputTextTableLayoutComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
+                "type": "Story<InputTextPageComponent>",
+                "defaultValue": "(args: InputTextPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
-                "type": "Story<InputTextPageComponent>",
-                "defaultValue": "(args: InputTextPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/input-text/input-text-table-layout/input-text-table-layout.stories.ts",
+                "type": "Story<InputTextTableLayoutComponent>",
+                "defaultValue": "(args: InputTextTableLayoutComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -4415,17 +4357,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
-                "type": "Story<TypographyFontFamilyComponent>",
-                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/styles/typography-styles.stories.ts",
+                "type": "Story<TypographyStylesComponent>",
+                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/styles/typography-styles.stories.ts",
-                "type": "Story<TypographyStylesComponent>",
-                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
+                "type": "Story<TypographyFontFamilyComponent>",
+                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Toggles",
@@ -5173,7 +5115,7 @@
                 "linktype": "component",
                 "name": "ButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/12",
+                "coverageCount": "0/14",
                 "status": "low"
             },
             {
@@ -5210,6 +5152,15 @@
                 "name": "IIcon",
                 "coveragePercent": 0,
                 "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/input/datepicker/datepicker.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DatepickerComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/12",
                 "status": "low"
             },
             {
@@ -5673,24 +5624,6 @@
                 "name": "Table",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/input-text/input-text.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "InputTextComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/12",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/input-text/input-text.interface.ts",
-                "type": "interface",
-                "linktype": "interface",
-                "name": "IInputText",
-                "coveragePercent": 0,
-                "coverageCount": "0/10",
                 "status": "low"
             },
             {
