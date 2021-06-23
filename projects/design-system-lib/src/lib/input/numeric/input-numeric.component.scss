@@ -114,4 +114,17 @@ $input-numeric-padding: 8px;
       }
     }
   }
+
+  ::ng-deep &.no-error-planned {
+    .mat-form-field-wrapper {
+      padding-bottom: 0;
+    }
+    .mat-form-field-infix {
+      border-top: 0;
+    }
+    .mat-form-field-underline {
+      color: red;
+      position: static;
+    }
+  }
 }

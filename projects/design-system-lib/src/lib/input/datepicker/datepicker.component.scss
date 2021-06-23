@@ -1,0 +1,161 @@
+@import "../../assets/styles/custom";
+@import '../text/input-text.component';
+
+$date-cell-selector: ".mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover, .cdk-keyboard-focused .mat-calendar-body-active, .cdk-program-focused .mat-calendar-body-active";
+$date-content-selector: ".mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical)";
+
+// input trigger & icon
+.p-datepicker {
+  ::ng-deep &.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon-button {
+    width: 30px;
+    height: 30px;
+  }
+  .p-datepicker-icon {
+    font-size: 15px;
+    color: $primary-a-900;
+    opacity: 0;
+    transition: opacity 280ms;
+  }
+  ::ng-deep .mat-form-field-flex:hover {
+    .p-datepicker-icon {
+      opacity: 1;
+    }
+  }
+  ::ng-deep .cdk-program-focused,
+  ::ng-deep .cdk-keyboard-focused {
+    .mat-button-focus-overlay {
+      opacity: 0;
+    }
+  }
+  ::ng-deep .mat-button-ripple {
+    display: none;
+  }
+}
+
+// datepicker window
+::ng-deep .mat-datepicker-content .p-datepicker-panel.mat-calendar {
+  width: 296px;
+  height: 306px;
+}
+
+::ng-deep .p-datepicker-panel {
+
+  // header buttons
+  .mat-calendar-controls {
+    margin: 0;
+    justify-content: space-between;
+  }
+  .mat-calendar-period-button {
+    font-family: $font-family-basic;
+    font-size: $small-font-size;
+    color: $secondary-a-700;
+    order: 2;
+    &:hover,
+    &:focus {
+      background-color: $primary-c-50;
+    }
+  }
+  .mat-calendar-previous-button,
+  .mat-calendar-next-button {
+    &:after {
+      margin: 17px;
+      border-color: $primary-a-900;
+      border-top-width: 1.5px;
+    }
+    &:hover,
+    &:focus {
+      background-color: $primary-c-50;
+    }
+  }
+
+  .mat-calendar-previous-button {
+    order: 1;
+    &:after {
+      border-left-width: 1.5px;
+    }
+  }
+  .mat-calendar-next-button {
+    order: 3;
+    &:after {
+      border-right-width: 1.5px;
+    }
+  }
+  .mat-calendar-spacer {
+    display: none;
+  }
+  .mat-calendar-arrow {
+    display: none;
+  }
+  // hover
+  .mat-button:hover:not(.mat-button-disabled),
+  .mat-calendar-controls .mat-icon-button {
+    .mat-button-focus-overlay {
+      display: none;
+    }
+  }
+
+  // days of week
+  .mat-calendar-table-header th {
+    font-family: $font-family-basic;
+    font-size: $base-font-size;
+    color: $gray-scale-800;
+  }
+
+  // divider line
+  .mat-calendar-table-header-divider {
+    display: none;
+  }
+
+  // current month indication
+  tr:first-child .mat-calendar-body-label {
+    display: none;
+  }
+
+  // dates
+  .mat-calendar-body-cell-content {
+    font-family: $font-family-basic;
+    font-size: $small-font-size;
+    color: $primary-a-900;
+  }
+
+  // hover & focus
+  #{$date-cell-selector} {
+    &>#{$date-content-selector}:not(.mat-calendar-body-today) {
+      background-color: $secondary-a-50;
+    }
+  }
+
+  // today
+  .mat-calendar-body-today:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
+    background-color: $secondary-a-200;
+    border: none;
+  }
+
+  // today on hover & focus
+  #{$date-cell-selector} {
+    &>.mat-calendar-body-today#{$date-content-selector} {
+      background-color: $secondary-a-200;
+    }
+  }
+
+  // selected
+  .mat-calendar-body-selected {
+    color: $gray-scale-1;
+    background-color: $secondary-a-700;
+    box-shadow: none;
+  }
+
+  #{$date-cell-selector} {
+    &>.mat-calendar-body-selected {
+      color: $gray-scale-1;
+      background-color: $secondary-a-800;
+    }
+  }
+
+  // years
+  mat-multi-year-view .mat-calendar-body-cell-content {
+    height: 51px;
+    width: 51px;
+  }
+}
+

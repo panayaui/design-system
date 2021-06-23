@@ -1,0 +1,15 @@
+<mat-form-field class="p-datepicker p-input-text" appearance="standard">
+  <input matInput
+         [matDatepicker]="picker"
+         class="p-input-text-input"
+         attr.aria-label="{{ariaLabel}}"
+         onfocus="this.select()">
+  <mat-datepicker-toggle matSuffix [for]="picker" class="p-datepicker-toggle">
+    <mat-icon matDatepickerToggleIcon
+              class="p-datepicker-icon">
+      calendar_today
+    </mat-icon>
+  </mat-datepicker-toggle>
+  <mat-datepicker #picker
+                  panelClass="p-datepicker-panel"></mat-datepicker>
+</mat-form-field>

@@ -19,6 +19,8 @@ export * from './lib/input/numeric/input-numeric.component';
 export * from './lib/input/numeric/input-numeric.interface';
 export * from './lib/input/numeric/input-numeric-size.enum';
 export * from './lib/input/text/input-text.component';
+export * from './lib/input/text/input-text.interface';
+export * from './lib/input/datepicker/datepicker.component';
 
 export * from './lib/alert/alert.module';
 export * from './lib/alert/alert.component';
@@ -35,7 +37,6 @@ export * from './lib/menu/menu-single-select/menu-single-select.component';
 export * from './lib/menu/menu-multi-select/menu-multi-select.component';
 export * from './lib/menu/menu-tabs/menu-tabs.component';
 export * from './lib/menu/menu-radio-group/menu-radio-group.component';
-export * from './lib/menu/menu-radio-group/menu-radio-option.enum';
 
 export * from './lib/radio-button/radio-button.module';
 export * from './lib/radio-button/radio-button/radio-button.component';
