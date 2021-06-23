@@ -1,6 +1,10 @@
 @import "../../assets/styles/custom";
 @import '../text/input-text.component';
 
+$date-cell-selector: ".mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover, .cdk-keyboard-focused .mat-calendar-body-active, .cdk-program-focused .mat-calendar-body-active";
+$date-content-selector: ".mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical)";
+
+// input trigger & icon
 .p-datepicker {
   ::ng-deep &.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon-button {
     width: 30px;
@@ -17,13 +21,57 @@
       opacity: 1;
     }
   }
-  ::ng-deep .cdk-program-focused {
+  ::ng-deep .cdk-program-focused,
+  ::ng-deep .cdk-keyboard-focused {
     .mat-button-focus-overlay {
       opacity: 0;
     }
   }
   ::ng-deep .mat-button-ripple {
     display: none;
+  }
+}
+
+// datepicker window
+::ng-deep .p-datepicker-panel {
+  .mat-calendar-body-cell-content {
+    font-family: $font-family-basic;
+    font-size: $small-font-size;
+    color: $primary-a-900;
+  }
+
+  // hover & focus
+  #{$date-cell-selector} {
+    &>#{$date-content-selector}:not(.mat-calendar-body-today) {
+      background-color: $secondary-a-50;
+    }
+  }
+
+  // today
+  .mat-calendar-body-today:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
+    background-color: $secondary-a-200;
+    border: none;
+  }
+
+  // today on hover & focus
+  #{$date-cell-selector} {
+    &>.mat-calendar-body-today#{$date-content-selector} {
+      background-color: $secondary-a-200;
+    }
+  }
+
+  // selected
+  .mat-calendar-body-selected {
+    color: $gray-scale-1;
+    background-color: $secondary-a-700;
+    box-shadow: none;
+  }
+
+  #{$date-cell-selector} {
+    &>.mat-calendar-body-selected {
+      color: $gray-scale-1;
+      background-color: $secondary-a-800;
+    }
   }
 }
 
