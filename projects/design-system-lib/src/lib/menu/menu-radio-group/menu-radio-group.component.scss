@@ -98,6 +98,16 @@ $menu-max-height: 75vh;
       transition: opacity 280ms;
     }
   }
+  &-dates {
+    display: inline-block;
+    ::ng-deep .p-datepicker {
+      width: 124px;
+    }
+  }
+  &-datepicker,
+  &-dates-ampersand {
+    margin-left: 16px;
+  }
 }
 
 

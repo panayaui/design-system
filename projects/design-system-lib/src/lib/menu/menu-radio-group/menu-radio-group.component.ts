@@ -4,17 +4,17 @@ import {
   OnInit,
   ViewChild
 } from '@angular/core';
-import {FormControl, ValidatorFn} from '@angular/forms';
 import {MatMenuTrigger} from '@angular/material/menu';
 import {IMenuButton} from '../menu-button.interface';
 import {IRadioButton} from '../../radio-button/radio-button.interface';
-import {MenuRadioOptionEnum} from './menu-radio-option.enum';
 import {InputNumericSizeEnum} from '../../input/numeric/input-numeric-size.enum';
+import {IDatepicker} from '../../input/datepicker/datepicker.interface';
 
 interface IMenuRadioOption extends IRadioButton {
-  optionType: MenuRadioOptionEnum;
-  numericInputValue: number;
-  menuList: any[];
+  numericInputValue?: number;
+  menuList?: any[];
+  dateStart?: IDatepicker;
+  dateEnd?: IDatepicker;
 }
 
 @Component({

@@ -7,7 +7,6 @@ import {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';
 import {IconModule} from 'projects/design-system-lib/src/public-api';
 import {MenuModule} from 'projects/design-system-lib/src/public-api';
 import {RadioButtonModule} from 'projects/design-system-lib/src/public-api';
-import {MenuRadioOptionEnum} from 'projects/design-system-lib/src/public-api';
 
 import {CommonModule} from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -36,20 +35,11 @@ import {MatRadioModule} from '@angular/material/radio';
     args={{
       menuTriggerName: 'Action',
       menuList: [
-       { label: 'All',
-          optionType: MenuRadioOptionEnum.Regular
-        },
-        { label: 'Today',
-          optionType: MenuRadioOptionEnum.Regular
-        },
-        { label: 'Yesterday',
-          optionType: MenuRadioOptionEnum.Regular
-        },
-        { label: 'Tomorrow',
-          optionType: MenuRadioOptionEnum.MenuTrigger
-        },
+       { label: 'All' },
+        { label: 'Today' },
+        { label: 'Yesterday' },
+        { label: 'Tomorrow' },
         { label: 'This',
-          optionType: MenuRadioOptionEnum.MenuTrigger,
           menuList: [
              { name: 'week (Starts Sunday)', selected: true},
              { name: 'week (Starts Monday)'},
@@ -58,7 +48,6 @@ import {MatRadioModule} from '@angular/material/radio';
           ]
         },
         { label: 'Last',
-          optionType: MenuRadioOptionEnum.MenuTrigger,
           numericInputValue: 1,
           menuList: [
             { name: 'Day(s)', selected: true},
@@ -68,17 +57,22 @@ import {MatRadioModule} from '@angular/material/radio';
           ]
         },
         { label: 'Next',
-          optionType: MenuRadioOptionEnum.Regular,
           numericInputValue: 1,
-           menuList: [
+          menuList: [
             { name: 'Day(s)', selected: true},
             { name: 'Week(s)'},
             { name: 'Month(s)'},
             { name: 'Year(s)'}
           ]
         },
-        { label: 'Blanks',
-          optionType: MenuRadioOptionEnum.Regular
+        { label: 'Blanks' },
+        { label: 'Between',
+          dateStart: {
+            ariaLabel: 'date start'
+          },
+          dateEnd: {
+            ariaLabel: 'date start'
+          }
         }
       ],
       footerBtnFirst: {

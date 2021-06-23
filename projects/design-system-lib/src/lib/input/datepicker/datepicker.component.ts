@@ -1,26 +1,16 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {FormControl, ValidatorFn} from '@angular/forms';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'p-datepicker',
   templateUrl: './datepicker.component.html',
   styleUrls: ['./datepicker.component.scss'],
 })
-export class DatepickerComponent implements OnInit {
-  @Input() type: string = 'text';
-  @Input() label: string;
+export class DatepickerComponent {
   @Input() ariaLabel: string;
   @Input() placeholder: string;
-  @Input() errorMessage: string;
   @Input() disabled: boolean = false;
   @Input() readonly: boolean = false;
   @Input() value: string;
-  @Input() validators: ValidatorFn[];
-  public formFieldControl: FormControl;
-
-  ngOnInit(): void {
-    this.formFieldControl = new FormControl(
-      {value: this.value, disabled: this.disabled},
-      this.validators);
-  }
+  @Output() dateChange: EventEmitter<any> = new EventEmitter();
+  @Output() dateInput: EventEmitter<any> = new EventEmitter();
 }

@@ -1,13 +1,21 @@
 @import "../../assets/styles/custom";
 @import '../text/input-text.component';
 
-::ng-deep .p-datepicker {
-  &.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon-button {
+.p-datepicker {
+  ::ng-deep &.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon-button {
     width: 30px;
     height: 30px;
   }
   .p-datepicker-icon {
     font-size: 15px;
+    color: $primary-a-900;
+    opacity: 0;
+    transition: opacity 280ms;
+  }
+  ::ng-deep .mat-form-field-flex:hover {
+    .p-datepicker-icon {
+      opacity: 1;
+    }
   }
 }
 

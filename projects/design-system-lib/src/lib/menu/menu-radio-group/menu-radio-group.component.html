@@ -17,17 +17,34 @@
                         [disabled]="option.disabled">
         </p-radio-button>
 
-        <p-input-numeric *ngIf="option.numericInputValue"
-                          class="p-menu-option-input"
-                          [size]="inputNumericSize.Small"
-                          [value]="option.numericInputValue"></p-input-numeric>
+        <!--<p-input-numeric *ngIf="option.numericInputValue"-->
+                          <!--class="p-menu-option-input"-->
+                          <!--[size]="inputNumericSize.Small"-->
+                          <!--[value]="option.numericInputValue"></p-input-numeric>-->
 
-        <div class="p-menu-option-link" >
-          <p-menu-single-select *ngIf="option.menuList"
-                                class="p-menu-option-submenu"
-                                [menuTriggerName]="findMenuTriggerName(option.menuList)"
-                                [menuList]="option.menuList">
-          </p-menu-single-select>
+        <!--<div class="p-menu-option-link" *ngIf="option.menuList">-->
+          <!--<p-menu-single-select class="p-menu-option-submenu"-->
+                                <!--[menuTriggerName]="findMenuTriggerName(option.menuList)"-->
+                                <!--[menuList]="option.menuList">-->
+          <!--</p-menu-single-select>-->
+        <!--</div>-->
+
+        <div class="p-menu-option-dates" *ngIf="option.dateStart && option.dateEnd">
+          <p-datepicker class="p-menu-option-datepicker start"
+                        [ariaLabel]="option.dateStart.ariaLabel"
+                        [placeholder]="option.dateStart.placeholder"
+                        [disabled]="option.dateStart.disabled"
+                        [readonly]="option.dateStart.readonly"
+                        [value]="option.dateStart.value">
+          </p-datepicker>
+          <span class="p-menu-option-dates-ampersand paragraph-2-default">and</span>
+          <p-datepicker class="p-menu-option-datepicker end"
+                        [ariaLabel]="option.dateEnd.ariaLabel"
+                        [placeholder]="option.dateEnd.placeholder"
+                        [disabled]="option.dateEnd.disabled"
+                        [readonly]="option.dateEnd.readonly"
+                        [value]="option.dateEnd.value">
+          </p-datepicker>
         </div>
       </li>
     </ul>
