@@ -252,10 +252,10 @@
         },
         {
             "name": "IInputNumeric",
-            "id": "interface-IInputNumeric-551faabe7b8cee396af63ba1e2df9942",
+            "id": "interface-IInputNumeric-624c53b0521c555a64a5dda2f2a4a82e",
             "file": "projects/design-system-lib/src/lib/input/numeric/input-numeric.interface.ts",
             "type": "interface",
-            "sourceCode": "import {ValidatorFn} from '@angular/forms';\r\nimport {InputNumericSizeEnum} from './input-numeric-size.enum';\r\nimport {ErrorStateMatcher} from '@angular/material/core';\r\n\r\nexport interface IInputNumeric {\r\n  type?: string;\r\n  label?: string;\r\n  ariaLabel?: string;\r\n  placeholder?: number;\r\n  errorMessage?: string;\r\n  disabled?: boolean;\r\n  readonly?: boolean;\r\n  value?: number;\r\n  validators?: ValidatorFn[];\r\n  labelLast?: boolean;\r\n  size?: InputNumericSizeEnum;\r\n  matcher?: ErrorStateMatcher;\r\n}\r\n",
+            "sourceCode": "import {ValidatorFn} from '@angular/forms';\r\nimport {InputNumericSizeEnum} from './input-numeric-size.enum';\r\nimport {ErrorStateMatcher} from '@angular/material/core';\r\n\r\nexport interface IInputNumeric {\r\n  type?: string;\r\n  label?: string;\r\n  ariaLabel?: string;\r\n  placeholder?: number;\r\n  errorMessage?: string;\r\n  disabled?: boolean;\r\n  readonly?: boolean;\r\n  value?: number;\r\n  validators?: ValidatorFn[];\r\n  labelLast?: boolean;\r\n  size?: InputNumericSizeEnum;\r\n  matcher?: ErrorStateMatcher;\r\n  noErrorPlanned?: boolean;\r\n}\r\n",
             "properties": [
                 {
                     "name": "ariaLabel",
@@ -298,6 +298,13 @@
                     "optional": true,
                     "description": "",
                     "line": 17
+                },
+                {
+                    "name": "noErrorPlanned",
+                    "type": "boolean",
+                    "optional": true,
+                    "description": "",
+                    "line": 18
                 },
                 {
                     "name": "placeholder",
@@ -456,10 +463,10 @@
         },
         {
             "name": "IMenuRadioOption",
-            "id": "interface-IMenuRadioOption-5285b41ca6adca6288e00e8e660721d2",
+            "id": "interface-IMenuRadioOption-a2e8e80fd705ac0c0609cac362c75c8e",
             "file": "projects/design-system-lib/src/lib/menu/menu-radio-group/menu-radio-group.component.ts",
             "type": "interface",
-            "sourceCode": "import {\r\n  Component,\r\n  Input,\r\n  OnInit,\r\n  ViewChild\r\n} from '@angular/core';\r\nimport {MatMenuTrigger} from '@angular/material/menu';\r\nimport {IMenuButton} from '../menu-button.interface';\r\nimport {IRadioButton} from '../../radio-button/radio-button.interface';\r\nimport {InputNumericSizeEnum} from '../../input/numeric/input-numeric-size.enum';\r\nimport {IDatepicker} from '../../input/datepicker/datepicker.interface';\r\n\r\ninterface IMenuRadioOption extends IRadioButton {\r\n  numericInputValue?: number;\r\n  menuList?: any[];\r\n  dateStart?: IDatepicker;\r\n  dateEnd?: IDatepicker;\r\n}\r\n\r\n@Component({\r\n  selector: 'p-menu-radio-group',\r\n  templateUrl: './menu-radio-group.component.html',\r\n  styleUrls: ['./menu-radio-group.component.scss'],\r\n})\r\nexport class MenuRadioGroupComponent implements OnInit {\r\n  @Input() menuTriggerName: string;\r\n  @Input() menuList: IMenuRadioOption[];\r\n  @Input() footerBtnFirst: IMenuButton;\r\n  @Input() footerBtnLast: IMenuButton;\r\n\r\n  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;\r\n  public inputNumericSize = InputNumericSizeEnum;\r\n\r\n  ngOnInit(): void {\r\n\r\n  }\r\n\r\n  findMenuTriggerName(menuList): void {\r\n    return menuList.find( item => item.selected === true).name;\r\n  }\r\n\r\n  selectCompleted(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  selectCanceled(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n}\r\n",
+            "sourceCode": "import {\r\n  Component,\r\n  Input,\r\n  OnInit,\r\n  ViewChild\r\n} from '@angular/core';\r\nimport {MatMenuTrigger} from '@angular/material/menu';\r\nimport {IMenuButton} from '../menu-button.interface';\r\nimport {IRadioButton} from '../../radio-button/radio-button.interface';\r\nimport {InputNumericSizeEnum} from '../../input/numeric/input-numeric-size.enum';\r\nimport {IDatepicker} from '../../input/datepicker/datepicker.interface';\r\n\r\ninterface IMenuRadioOption extends IRadioButton {\r\n  numericInputValue?: number;\r\n  menuList?: any[];\r\n  dateStart?: IDatepicker;\r\n  dateEnd?: IDatepicker;\r\n}\r\n\r\n@Component({\r\n  selector: 'p-menu-radio-group',\r\n  templateUrl: './menu-radio-group.component.html',\r\n  styleUrls: ['./menu-radio-group.component.scss'],\r\n})\r\nexport class MenuRadioGroupComponent {\r\n  @Input() menuTriggerName: string;\r\n  @Input() menuList: IMenuRadioOption[];\r\n  @Input() footerBtnFirst: IMenuButton;\r\n  @Input() footerBtnLast: IMenuButton;\r\n  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;\r\n  public inputNumericSize = InputNumericSizeEnum;\r\n\r\n  findMenuTriggerName(menuList): void {\r\n    return menuList.find( item => item.selected === true).name;\r\n  }\r\n\r\n  selectCompleted(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  selectCanceled(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n}\r\n",
             "properties": [
                 {
                     "name": "dateEnd",
@@ -1420,7 +1427,7 @@
         },
         {
             "name": "DatepickerComponent",
-            "id": "component-DatepickerComponent-e02e3fa751b45f8d2b26b513d5895498",
+            "id": "component-DatepickerComponent-e1f91575d6ae36d385d6b3a9e0b7a6cf",
             "file": "projects/design-system-lib/src/lib/input/datepicker/datepicker.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1486,16 +1493,16 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'p-datepicker',\r\n  templateUrl: './datepicker.component.html',\r\n  styleUrls: ['./datepicker.component.scss'],\r\n})\r\nexport class DatepickerComponent {\r\n  @Input() ariaLabel: string;\r\n  @Input() placeholder: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() readonly: boolean = false;\r\n  @Input() value: string;\r\n  @Output() dateChange: EventEmitter<any> = new EventEmitter();\r\n  @Output() dateInput: EventEmitter<any> = new EventEmitter();\r\n}\r\n",
+            "sourceCode": "import {Component, EventEmitter, Input, Output} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'p-datepicker',\r\n  templateUrl: './datepicker.component.html',\r\n  styleUrls: ['./datepicker.component.scss'],\r\n})\r\nexport class DatepickerComponent {\r\n  @Input() ariaLabel: string;\r\n  @Input() placeholder: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() readonly: boolean = false;\r\n  @Input() value: string;\r\n  @Output() dateChange: EventEmitter<any> = new EventEmitter();\r\n  @Output() dateInput: EventEmitter<any> = new EventEmitter();\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../assets/styles/custom\";\r\n@import '../text/input-text.component';\r\n\r\n::ng-deep .p-datepicker {\r\n  &.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon-button {\r\n    width: 30px;\r\n    height: 30px;\r\n  }\r\n  .p-datepicker-icon {\r\n    font-size: 15px;\r\n  }\r\n}\r\n\r\n",
+                    "data": "@import \"../../assets/styles/custom\";\r\n@import '../text/input-text.component';\r\n\r\n$date-cell-selector: \".mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover, .cdk-keyboard-focused .mat-calendar-body-active, .cdk-program-focused .mat-calendar-body-active\";\r\n$date-content-selector: \".mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical)\";\r\n\r\n// input trigger & icon\r\n.p-datepicker {\r\n  ::ng-deep &.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon-button {\r\n    width: 30px;\r\n    height: 30px;\r\n  }\r\n  .p-datepicker-icon {\r\n    font-size: 15px;\r\n    color: $primary-a-900;\r\n    opacity: 0;\r\n    transition: opacity 280ms;\r\n  }\r\n  ::ng-deep .mat-form-field-flex:hover {\r\n    .p-datepicker-icon {\r\n      opacity: 1;\r\n    }\r\n  }\r\n  ::ng-deep .cdk-program-focused,\r\n  ::ng-deep .cdk-keyboard-focused {\r\n    .mat-button-focus-overlay {\r\n      opacity: 0;\r\n    }\r\n  }\r\n  ::ng-deep .mat-button-ripple {\r\n    display: none;\r\n  }\r\n}\r\n\r\n// datepicker window\r\n::ng-deep .mat-datepicker-content .p-datepicker-panel.mat-calendar {\r\n  width: 296px;\r\n  height: 306px;\r\n}\r\n\r\n::ng-deep .p-datepicker-panel {\r\n\r\n  // header buttons\r\n  .mat-calendar-controls {\r\n    margin: 0;\r\n    justify-content: space-between;\r\n  }\r\n  .mat-calendar-period-button {\r\n    font-family: $font-family-basic;\r\n    font-size: $small-font-size;\r\n    color: $secondary-a-700;\r\n    order: 2;\r\n    &:hover,\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n  }\r\n  .mat-calendar-previous-button,\r\n  .mat-calendar-next-button {\r\n    &:after {\r\n      margin: 17px;\r\n      border-color: $primary-a-900;\r\n      border-top-width: 1.5px;\r\n    }\r\n    &:hover,\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n  }\r\n\r\n  .mat-calendar-previous-button {\r\n    order: 1;\r\n    &:after {\r\n      border-left-width: 1.5px;\r\n    }\r\n  }\r\n  .mat-calendar-next-button {\r\n    order: 3;\r\n    &:after {\r\n      border-right-width: 1.5px;\r\n    }\r\n  }\r\n  .mat-calendar-spacer {\r\n    display: none;\r\n  }\r\n  .mat-calendar-arrow {\r\n    display: none;\r\n  }\r\n  // hover\r\n  .mat-button:hover:not(.mat-button-disabled),\r\n  .mat-calendar-controls .mat-icon-button {\r\n    .mat-button-focus-overlay {\r\n      display: none;\r\n    }\r\n  }\r\n\r\n  // days of week\r\n  .mat-calendar-table-header th {\r\n    font-family: $font-family-basic;\r\n    font-size: $base-font-size;\r\n    color: $gray-scale-800;\r\n  }\r\n\r\n  // divider line\r\n  .mat-calendar-table-header-divider {\r\n    display: none;\r\n  }\r\n\r\n  // current month indication\r\n  tr:first-child .mat-calendar-body-label {\r\n    display: none;\r\n  }\r\n\r\n  // dates\r\n  .mat-calendar-body-cell-content {\r\n    font-family: $font-family-basic;\r\n    font-size: $small-font-size;\r\n    color: $primary-a-900;\r\n  }\r\n\r\n  // hover & focus\r\n  #{$date-cell-selector} {\r\n    &>#{$date-content-selector}:not(.mat-calendar-body-today) {\r\n      background-color: $secondary-a-50;\r\n    }\r\n  }\r\n\r\n  // today\r\n  .mat-calendar-body-today:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {\r\n    background-color: $secondary-a-200;\r\n    border: none;\r\n  }\r\n\r\n  // today on hover & focus\r\n  #{$date-cell-selector} {\r\n    &>.mat-calendar-body-today#{$date-content-selector} {\r\n      background-color: $secondary-a-200;\r\n    }\r\n  }\r\n\r\n  // selected\r\n  .mat-calendar-body-selected {\r\n    color: $gray-scale-1;\r\n    background-color: $secondary-a-700;\r\n    box-shadow: none;\r\n  }\r\n\r\n  #{$date-cell-selector} {\r\n    &>.mat-calendar-body-selected {\r\n      color: $gray-scale-1;\r\n      background-color: $secondary-a-800;\r\n    }\r\n  }\r\n\r\n  // years\r\n  mat-multi-year-view .mat-calendar-body-cell-content {\r\n    height: 51px;\r\n    width: 51px;\r\n  }\r\n}\r\n\r\n",
                     "styleUrl": "./datepicker.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<mat-form-field class=\"p-datepicker p-input-text\" appearance=\"standard\">\r\n  <input matInput\r\n         [matDatepicker]=\"picker\"\r\n         class=\"p-input-text-input\"\r\n         attr.aria-label=\"{{ariaLabel}}\"\r\n         onfocus=\"this.select()\">\r\n  <mat-datepicker-toggle matSuffix [for]=\"picker\" class=\"p-datepicker-toggle\">\r\n    <mat-icon matDatepickerToggleIcon\r\n              class=\"p-datepicker-icon\">\r\n      calendar_today\r\n    </mat-icon>\r\n  </mat-datepicker-toggle>\r\n  <mat-datepicker #picker></mat-datepicker>\r\n</mat-form-field>\r\n"
+            "templateData": "<mat-form-field class=\"p-datepicker p-input-text\" appearance=\"standard\">\r\n  <input matInput\r\n         [matDatepicker]=\"picker\"\r\n         class=\"p-input-text-input\"\r\n         attr.aria-label=\"{{ariaLabel}}\"\r\n         onfocus=\"this.select()\">\r\n  <mat-datepicker-toggle matSuffix [for]=\"picker\" class=\"p-datepicker-toggle\">\r\n    <mat-icon matDatepickerToggleIcon\r\n              class=\"p-datepicker-icon\">\r\n      calendar_today\r\n    </mat-icon>\r\n  </mat-datepicker-toggle>\r\n  <mat-datepicker #picker\r\n                  panelClass=\"p-datepicker-panel\"></mat-datepicker>\r\n</mat-form-field>\r\n"
         },
         {
             "name": "IconComponent",
@@ -1642,7 +1649,7 @@
         },
         {
             "name": "InputNumericComponent",
-            "id": "component-InputNumericComponent-0a5dff7835f31e0ef6e38e5ff551c8a6",
+            "id": "component-InputNumericComponent-c3bad848b4db0b92be140838018db378",
             "file": "projects/design-system-lib/src/lib/input/numeric/input-numeric.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1692,6 +1699,12 @@
                     "type": "ErrorStateMatcher"
                 },
                 {
+                    "name": "noErrorPlanned",
+                    "defaultValue": "false",
+                    "line": 24,
+                    "type": "boolean"
+                },
+                {
                     "name": "placeholder",
                     "line": 15,
                     "type": "number"
@@ -1732,7 +1745,7 @@
                     "type": "FormControl",
                     "optional": false,
                     "description": "",
-                    "line": 24,
+                    "line": 25,
                     "modifierKind": [
                         114
                     ]
@@ -1745,7 +1758,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 33
+                    "line": 34
                 }
             ],
             "hostBindings": [],
@@ -1753,11 +1766,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport {FormControl, ValidatorFn} from '@angular/forms';\r\nimport {InputNumericSizeEnum} from './input-numeric-size.enum';\r\nimport {ErrorStateMatcher} from '@angular/material/core';\r\n\r\n@Component({\r\n  selector: 'p-input-numeric',\r\n  templateUrl: './input-numeric.component.html',\r\n  styleUrls: ['./input-numeric.component.scss'],\r\n})\r\nexport class InputNumericComponent implements OnInit {\r\n  @Input() type: string = 'number';\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string; // required\r\n  @Input() placeholder: number;\r\n  @Input() errorMessage: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() readonly: boolean = false;\r\n  @Input() value: number;\r\n  @Input() validators: ValidatorFn[];\r\n  @Input() labelLast: boolean = false;\r\n  @Input() size: InputNumericSizeEnum = InputNumericSizeEnum.Large;\r\n  @Input() matcher: ErrorStateMatcher;\r\n  public formFieldControl: FormControl;\r\n\r\n  public get classes(): string[] {\r\n    const classParams = [];\r\n    this.readonly ? classParams.push('p-input-numeric-readonly') : null;\r\n    classParams.push(`p-input-numeric-${this.size}`);\r\n    return classParams;\r\n  }\r\n\r\n  ngOnInit(): void {\r\n    this.formFieldControl = new FormControl(\r\n      {value: this.value, disabled: this.disabled},\r\n      this.validators);\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport {FormControl, ValidatorFn} from '@angular/forms';\r\nimport {InputNumericSizeEnum} from './input-numeric-size.enum';\r\nimport {ErrorStateMatcher} from '@angular/material/core';\r\n\r\n@Component({\r\n  selector: 'p-input-numeric',\r\n  templateUrl: './input-numeric.component.html',\r\n  styleUrls: ['./input-numeric.component.scss'],\r\n})\r\nexport class InputNumericComponent implements OnInit {\r\n  @Input() type: string = 'number';\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string; // required\r\n  @Input() placeholder: number;\r\n  @Input() errorMessage: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() readonly: boolean = false;\r\n  @Input() value: number;\r\n  @Input() validators: ValidatorFn[];\r\n  @Input() labelLast: boolean = false;\r\n  @Input() size: InputNumericSizeEnum = InputNumericSizeEnum.Large;\r\n  @Input() matcher: ErrorStateMatcher;\r\n  @Input() noErrorPlanned: boolean = false;\r\n  public formFieldControl: FormControl;\r\n\r\n  public get classes(): string[] {\r\n    const classParams = [];\r\n    this.readonly ? classParams.push('p-input-numeric-readonly') : null;\r\n    classParams.push(`p-input-numeric-${this.size}`);\r\n    return classParams;\r\n  }\r\n\r\n  ngOnInit(): void {\r\n    this.formFieldControl = new FormControl(\r\n      {value: this.value, disabled: this.disabled},\r\n      this.validators);\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$input-numeric-width: 55px;\r\n$input-numeric-padding: 8px;\r\n\r\n.p-input-numeric {\r\n  &-small {\r\n    width: 56px;\r\n  }\r\n  &-medium {\r\n    width: 112px;\r\n  }\r\n  &-large {\r\n    width: 224px;\r\n  }\r\n\r\n  &-container {\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n\r\n  &-label {\r\n    font-family: $font-family-basic;\r\n    font-weight: 400;\r\n    font-size: $small-font-size;\r\n    line-height: 19px;\r\n    color: $primary-a-900;\r\n    padding-bottom: 13px;\r\n    &.disabled {\r\n      color: $gray-scale-600;\r\n    }\r\n    &.first {\r\n      margin-right: 8px;\r\n    }\r\n    &.last {\r\n      margin-left: 8px;\r\n    }\r\n  }\r\n\r\n  ::ng-deep & {\r\n    // material styles override\r\n    .mat-input-element {\r\n      font-family: $font-family-basic;\r\n      font-size: $base-font-size;\r\n      width: 100%;\r\n      line-height: 20px;\r\n      color: $primary-a-900;\r\n      caret-color: $primary-a-900;\r\n    }\r\n    .mat-form-field-infix {\r\n      width: $input-numeric-width;\r\n      padding-top: 0;\r\n      padding-bottom: 6px;\r\n      padding-left: $input-numeric-padding;\r\n    }\r\n    .mat-form-field-label-wrapper {\r\n      padding-top: 0;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-flex {\r\n      padding-top: 0;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $gray-scale-600;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-underline,\r\n    &:not(.mat-form-field-disabled):not(.mat-form-field-invalid)\r\n            .mat-form-field-flex:hover~.mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $primary-a-900;\r\n    }\r\n    .mat-form-field-ripple {\r\n      display: none;\r\n    }\r\n    .mat-form-field-subscript-wrapper {\r\n      margin-top: 5px;\r\n      overflow: visible;\r\n    }\r\n    .mat-error {\r\n      font-family: $font-family-basic;\r\n      font-size: $tiny-font-size;\r\n      color: $supportive-alert-500;\r\n      line-height: 12px;\r\n      white-space: nowrap;\r\n    }\r\n\r\n    // disabled\r\n    &.mat-form-field-disabled {\r\n      .mat-input-element {\r\n        color: $gray-scale-600;\r\n      }\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $gray-scale-400;\r\n      }\r\n    }\r\n\r\n    // error state\r\n    &.ng-invalid {\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-500;\r\n      }\r\n      &.mat-form-field .mat-form-field-flex:hover~.mat-form-field-underline,\r\n      &.mat-form-field.mat-focused .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-700;\r\n      }\r\n    }\r\n\r\n    // readonly\r\n    &.p-input-numeric-readonly {\r\n      &:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover~.mat-form-field-underline,\r\n\r\n      .mat-form-field-underline {\r\n        box-shadow: none;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$input-numeric-width: 55px;\r\n$input-numeric-padding: 8px;\r\n\r\n.p-input-numeric {\r\n  &-small {\r\n    width: 56px;\r\n  }\r\n  &-medium {\r\n    width: 112px;\r\n  }\r\n  &-large {\r\n    width: 224px;\r\n  }\r\n\r\n  &-container {\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n\r\n  &-label {\r\n    font-family: $font-family-basic;\r\n    font-weight: 400;\r\n    font-size: $small-font-size;\r\n    line-height: 19px;\r\n    color: $primary-a-900;\r\n    padding-bottom: 13px;\r\n    &.disabled {\r\n      color: $gray-scale-600;\r\n    }\r\n    &.first {\r\n      margin-right: 8px;\r\n    }\r\n    &.last {\r\n      margin-left: 8px;\r\n    }\r\n  }\r\n\r\n  ::ng-deep & {\r\n    // material styles override\r\n    .mat-input-element {\r\n      font-family: $font-family-basic;\r\n      font-size: $base-font-size;\r\n      width: 100%;\r\n      line-height: 20px;\r\n      color: $primary-a-900;\r\n      caret-color: $primary-a-900;\r\n    }\r\n    .mat-form-field-infix {\r\n      width: $input-numeric-width;\r\n      padding-top: 0;\r\n      padding-bottom: 6px;\r\n      padding-left: $input-numeric-padding;\r\n    }\r\n    .mat-form-field-label-wrapper {\r\n      padding-top: 0;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-flex {\r\n      padding-top: 0;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $gray-scale-600;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-underline,\r\n    &:not(.mat-form-field-disabled):not(.mat-form-field-invalid)\r\n            .mat-form-field-flex:hover~.mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $primary-a-900;\r\n    }\r\n    .mat-form-field-ripple {\r\n      display: none;\r\n    }\r\n    .mat-form-field-subscript-wrapper {\r\n      margin-top: 5px;\r\n      overflow: visible;\r\n    }\r\n    .mat-error {\r\n      font-family: $font-family-basic;\r\n      font-size: $tiny-font-size;\r\n      color: $supportive-alert-500;\r\n      line-height: 12px;\r\n      white-space: nowrap;\r\n    }\r\n\r\n    // disabled\r\n    &.mat-form-field-disabled {\r\n      .mat-input-element {\r\n        color: $gray-scale-600;\r\n      }\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $gray-scale-400;\r\n      }\r\n    }\r\n\r\n    // error state\r\n    &.ng-invalid {\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-500;\r\n      }\r\n      &.mat-form-field .mat-form-field-flex:hover~.mat-form-field-underline,\r\n      &.mat-form-field.mat-focused .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-700;\r\n      }\r\n    }\r\n\r\n    // readonly\r\n    &.p-input-numeric-readonly {\r\n      &:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover~.mat-form-field-underline,\r\n\r\n      .mat-form-field-underline {\r\n        box-shadow: none;\r\n      }\r\n    }\r\n  }\r\n\r\n  ::ng-deep &.no-error-planned {\r\n    .mat-form-field-wrapper {\r\n      padding-bottom: 0;\r\n    }\r\n    .mat-form-field-infix {\r\n      border-top: 0;\r\n    }\r\n    .mat-form-field-underline {\r\n      color: red;\r\n      position: static;\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "./input-numeric.component.scss"
                 }
             ],
@@ -1772,11 +1785,11 @@
                         "name": "classes",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 26
+                        "line": 27
                     }
                 }
             },
-            "templateData": "<ng-template [ngIf]=\"label\" [ngIfElse]=\"noLabel\">\r\n  <div class=\"p-input-numeric-container\">\r\n    <label *ngIf=\"!labelLast\" class=\"p-input-numeric-label first\" [ngClass]=\"{'disabled' : disabled}\">\r\n      {{label}}\r\n    </label>\r\n    <ng-container *ngTemplateOutlet=\"noLabel\"></ng-container>\r\n    <label *ngIf=\"labelLast\" class=\"p-input-numeric-label last\" [ngClass]=\"{'disabled' : disabled}\">\r\n      {{label}}\r\n    </label>\r\n  </div>\r\n</ng-template>\r\n\r\n<ng-template #noLabel>\r\n  <mat-form-field class=\"p-input-numeric\"\r\n                  appearance=\"standard\"\r\n                  [ngClass]=\"classes\"\r\n                  floatLabel=\"always\">\r\n    <input matInput\r\n           [type]=\"type\"\r\n           [placeholder]=\"placeholder\"\r\n           [readonly]=\"readonly\"\r\n           attr.aria-label=\"{{ariaLabel}}\"\r\n           [formControl]=\"formFieldControl\"\r\n           [errorStateMatcher]=\"matcher\"\r\n           onfocus=\"this.select()\"\r\n           class=\"p-input-numeric-input\">\r\n    <mat-error *ngIf=\"formFieldControl.invalid\"\r\n               class=\"p-input-numeric-error\">\r\n      {{errorMessage}}\r\n    </mat-error>\r\n  </mat-form-field>\r\n</ng-template>\r\n"
+            "templateData": "<ng-template [ngIf]=\"label\" [ngIfElse]=\"noLabel\">\r\n  <div class=\"p-input-numeric-container\">\r\n    <label *ngIf=\"!labelLast\" class=\"p-input-numeric-label first\" [ngClass]=\"{'disabled' : disabled}\">\r\n      {{label}}\r\n    </label>\r\n    <ng-container *ngTemplateOutlet=\"noLabel\"></ng-container>\r\n    <label *ngIf=\"labelLast\" class=\"p-input-numeric-label last\" [ngClass]=\"{'disabled' : disabled}\">\r\n      {{label}}\r\n    </label>\r\n  </div>\r\n</ng-template>\r\n\r\n<ng-template #noLabel>\r\n  <mat-form-field class=\"p-input-numeric\"\r\n                  [class.no-error-planned]=\"noErrorPlanned\"\r\n                  appearance=\"standard\"\r\n                  [ngClass]=\"classes\"\r\n                  floatLabel=\"always\">\r\n    <input matInput\r\n           [type]=\"type\"\r\n           [placeholder]=\"placeholder\"\r\n           [readonly]=\"readonly\"\r\n           attr.aria-label=\"{{ariaLabel}}\"\r\n           [formControl]=\"formFieldControl\"\r\n           [errorStateMatcher]=\"matcher\"\r\n           onfocus=\"this.select()\"\r\n           class=\"p-input-numeric-input\">\r\n    <mat-error *ngIf=\"formFieldControl.invalid\"\r\n               class=\"p-input-numeric-error\">\r\n      {{errorMessage}}\r\n    </mat-error>\r\n  </mat-form-field>\r\n</ng-template>\r\n"
         },
         {
             "name": "InputTextComponent",
@@ -2573,7 +2586,7 @@
         },
         {
             "name": "MenuRadioGroupComponent",
-            "id": "component-MenuRadioGroupComponent-5285b41ca6adca6288e00e8e660721d2",
+            "id": "component-MenuRadioGroupComponent-a2e8e80fd705ac0c0609cac362c75c8e",
             "file": "projects/design-system-lib/src/lib/menu/menu-radio-group/menu-radio-group.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2619,7 +2632,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 32,
+                    "line": 31,
                     "modifierKind": [
                         114
                     ]
@@ -2629,7 +2642,7 @@
                     "type": "MatMenuTrigger",
                     "optional": false,
                     "description": "",
-                    "line": 31,
+                    "line": 30,
                     "decorators": [
                         {
                             "name": "ViewChild",
@@ -2650,7 +2663,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 38,
+                    "line": 33,
                     "jsdoctags": [
                         {
                             "name": "menuList",
@@ -2662,20 +2675,12 @@
                     ]
                 },
                 {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 34
-                },
-                {
                     "name": "selectCanceled",
                     "args": [],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 46
+                    "line": 41
                 },
                 {
                     "name": "selectCompleted",
@@ -2683,7 +2688,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 42
+                    "line": 37
                 }
             ],
             "hostBindings": [],
@@ -2691,19 +2696,16 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {\r\n  Component,\r\n  Input,\r\n  OnInit,\r\n  ViewChild\r\n} from '@angular/core';\r\nimport {MatMenuTrigger} from '@angular/material/menu';\r\nimport {IMenuButton} from '../menu-button.interface';\r\nimport {IRadioButton} from '../../radio-button/radio-button.interface';\r\nimport {InputNumericSizeEnum} from '../../input/numeric/input-numeric-size.enum';\r\nimport {IDatepicker} from '../../input/datepicker/datepicker.interface';\r\n\r\ninterface IMenuRadioOption extends IRadioButton {\r\n  numericInputValue?: number;\r\n  menuList?: any[];\r\n  dateStart?: IDatepicker;\r\n  dateEnd?: IDatepicker;\r\n}\r\n\r\n@Component({\r\n  selector: 'p-menu-radio-group',\r\n  templateUrl: './menu-radio-group.component.html',\r\n  styleUrls: ['./menu-radio-group.component.scss'],\r\n})\r\nexport class MenuRadioGroupComponent implements OnInit {\r\n  @Input() menuTriggerName: string;\r\n  @Input() menuList: IMenuRadioOption[];\r\n  @Input() footerBtnFirst: IMenuButton;\r\n  @Input() footerBtnLast: IMenuButton;\r\n\r\n  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;\r\n  public inputNumericSize = InputNumericSizeEnum;\r\n\r\n  ngOnInit(): void {\r\n\r\n  }\r\n\r\n  findMenuTriggerName(menuList): void {\r\n    return menuList.find( item => item.selected === true).name;\r\n  }\r\n\r\n  selectCompleted(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  selectCanceled(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n}\r\n",
+            "sourceCode": "import {\r\n  Component,\r\n  Input,\r\n  OnInit,\r\n  ViewChild\r\n} from '@angular/core';\r\nimport {MatMenuTrigger} from '@angular/material/menu';\r\nimport {IMenuButton} from '../menu-button.interface';\r\nimport {IRadioButton} from '../../radio-button/radio-button.interface';\r\nimport {InputNumericSizeEnum} from '../../input/numeric/input-numeric-size.enum';\r\nimport {IDatepicker} from '../../input/datepicker/datepicker.interface';\r\n\r\ninterface IMenuRadioOption extends IRadioButton {\r\n  numericInputValue?: number;\r\n  menuList?: any[];\r\n  dateStart?: IDatepicker;\r\n  dateEnd?: IDatepicker;\r\n}\r\n\r\n@Component({\r\n  selector: 'p-menu-radio-group',\r\n  templateUrl: './menu-radio-group.component.html',\r\n  styleUrls: ['./menu-radio-group.component.scss'],\r\n})\r\nexport class MenuRadioGroupComponent {\r\n  @Input() menuTriggerName: string;\r\n  @Input() menuList: IMenuRadioOption[];\r\n  @Input() footerBtnFirst: IMenuButton;\r\n  @Input() footerBtnLast: IMenuButton;\r\n  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;\r\n  public inputNumericSize = InputNumericSizeEnum;\r\n\r\n  findMenuTriggerName(menuList): void {\r\n    return menuList.find( item => item.selected === true).name;\r\n  }\r\n\r\n  selectCompleted(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  selectCanceled(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$menu-padding: 8px;\r\n$menu-item-height: 32px;\r\n$menu-background: $gray-scale-1;\r\n$menu-item-margin-top: 4px;\r\n$input-text-height: 32px;\r\n$input-text-padding: 8px;\r\n$menu-header-height: $input-text-height + $menu-padding * 3 + 1px;\r\n$menu-header-extended-height: $input-text-height + ($menu-padding * 4.5) + ($menu-item-height * 2) + 1px;\r\n$menu-footer-height: $btn-small-height + $menu-padding * 4;\r\n$menu-body-height: 103px;\r\n$menu-min-width: 480px;\r\n$menu-max-height: 75vh;\r\n\r\n// mat-menu-panel\r\n::ng-deep .p-menu-radio.mat-menu-panel {\r\n  min-width: $menu-min-width;\r\n  max-height: $menu-max-height;\r\n  background-color: $menu-background;\r\n  border-radius: 0;\r\n  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1),\r\n  0 2px 6px rgba(0, 0, 0, 0.04),\r\n  0 -3px 6px rgba(0, 0, 0, 0.04);\r\n  overflow: hidden;\r\n  .mat-menu-content {\r\n    height: 100%;\r\n    padding: 0;\r\n    position: relative;\r\n  }\r\n}\r\n\r\n// container of the multiple selection menu (stopPropagation)\r\n.p-menu-multiple-container {\r\n  height: 100%;\r\n}\r\n\r\n.p-menu {\r\n  &-body {\r\n    @include resetUl;\r\n    height: calc(100%);\r\n    padding-top: 24px;\r\n    padding-right: 24px;\r\n    padding-bottom: $menu-footer-height;\r\n    padding-left: 24px;\r\n    &-item {\r\n      & + & {\r\n        margin-top: 24px;\r\n      }\r\n    }\r\n  }\r\n\r\n  &-footer {\r\n    display: flex;\r\n    align-items: center;\r\n    width: 100%;\r\n    height: $menu-footer-height;\r\n    padding: $menu-padding * 2;\r\n    background-color: $menu-background;\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 0;\r\n    z-index: 1;\r\n    &-btn {\r\n      & + & {\r\n        margin-left: $menu-padding;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n// every option\r\n.p-menu-option {\r\n  &-input {\r\n    margin-left: 29px;\r\n  }\r\n  &-link {\r\n    display: inline-flex;\r\n    color: $secondary-a-700;\r\n\r\n    ::ng-deep .p-btn {\r\n      min-width: unset;\r\n      padding-left: 5px;\r\n      padding-right: 5px;\r\n      &:hover,\r\n      &:focus {\r\n        background-color: transparent;\r\n        .p-btn-icon-post {\r\n          opacity: 1;\r\n        }\r\n      }\r\n    }\r\n    ::ng-deep .p-btn-label {\r\n      margin-right: 3px;\r\n    }\r\n    ::ng-deep .p-btn-icon-post {\r\n      opacity: 0;\r\n      transition: opacity 280ms;\r\n    }\r\n  }\r\n}\r\n\r\n\r\n",
+                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$menu-padding: 8px;\r\n$menu-item-height: 32px;\r\n$menu-background: $gray-scale-1;\r\n$menu-item-margin-top: 4px;\r\n$input-text-height: 32px;\r\n$input-text-padding: 8px;\r\n$menu-header-height: $input-text-height + $menu-padding * 3 + 1px;\r\n$menu-header-extended-height: $input-text-height + ($menu-padding * 4.5) + ($menu-item-height * 2) + 1px;\r\n$menu-footer-height: $btn-small-height + $menu-padding * 4;\r\n$menu-body-height: 103px;\r\n$menu-min-width: 480px;\r\n$menu-max-height: 75vh;\r\n\r\n// mat-menu-panel\r\n::ng-deep .p-menu-radio.mat-menu-panel {\r\n  min-width: $menu-min-width;\r\n  max-height: $menu-max-height;\r\n  background-color: $menu-background;\r\n  border-radius: 0;\r\n  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1),\r\n  0 2px 6px rgba(0, 0, 0, 0.04),\r\n  0 -3px 6px rgba(0, 0, 0, 0.04);\r\n  overflow: hidden;\r\n  .mat-menu-content {\r\n    height: 100%;\r\n    padding: 0;\r\n    position: relative;\r\n  }\r\n}\r\n\r\n// container of the multiple selection menu (stopPropagation)\r\n.p-menu-multiple-container {\r\n  height: 100%;\r\n}\r\n\r\n.p-menu {\r\n  &-body {\r\n    @include resetUl;\r\n    height: calc(100%);\r\n    padding-top: 24px;\r\n    padding-right: 24px;\r\n    padding-bottom: $menu-footer-height;\r\n    padding-left: 24px;\r\n    &-item {\r\n      display: flex;\r\n      align-items: center;\r\n      height: 30px;\r\n      & + & {\r\n        margin-top: $menu-padding;\r\n      }\r\n    }\r\n  }\r\n\r\n  &-footer {\r\n    display: flex;\r\n    align-items: center;\r\n    width: 100%;\r\n    height: $menu-footer-height;\r\n    padding: $menu-padding * 2;\r\n    background-color: $menu-background;\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 0;\r\n    z-index: 1;\r\n    &-btn {\r\n      & + & {\r\n        margin-left: $menu-padding;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n// every option\r\n.p-menu-option {\r\n  &-input {\r\n    margin-left: 29px;\r\n  }\r\n  &-link {\r\n    display: inline-flex;\r\n    color: $secondary-a-700;\r\n\r\n    ::ng-deep .p-btn {\r\n      min-width: unset;\r\n      padding-left: 5px;\r\n      padding-right: 5px;\r\n      &:hover,\r\n      &:focus {\r\n        background-color: transparent;\r\n        .p-btn-icon-post {\r\n          opacity: 1;\r\n        }\r\n      }\r\n    }\r\n    ::ng-deep .p-btn-label {\r\n      margin-right: 3px;\r\n    }\r\n    ::ng-deep .p-btn-icon-post {\r\n      opacity: 0;\r\n      transition: opacity 280ms;\r\n    }\r\n  }\r\n  &-dates {\r\n    display: inline-block;\r\n    ::ng-deep .p-datepicker {\r\n      width: 124px;\r\n    }\r\n  }\r\n  &-datepicker,\r\n  &-dates-ampersand {\r\n    margin-left: 16px;\r\n  }\r\n}\r\n\r\n\r\n",
                     "styleUrl": "./menu-radio-group.component.scss"
                 }
             ],
             "stylesData": "",
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<button [matMenuTriggerFor]=\"menu\"\r\n        #menuTrigger=\"matMenuTrigger\"\r\n        class=\"p-btn p-btn-small p-btn-tertiary\">\r\n    {{menuTriggerName}}\r\n</button>\r\n\r\n<!--menu window-->\r\n<mat-menu #menu=\"matMenu\" class=\"p-menu-radio\" [overlapTrigger]=\"false\">\r\n  <div class=\"p-menu-multiple-container\" (click)=\"$event.stopPropagation()\"\r\n                                (keydown)=\"$event.stopPropagation()\">\r\n    <ul class=\"p-menu-body\">\r\n      <li class=\"p-menu-body-item\" *ngFor=\"let option of menuList\">\r\n        <p-radio-button class=\"p-menu-option-radio\"\r\n                        [value]=\"option\"\r\n                        [label]=\"option.label\"\r\n                        [checked]=\"option.checked\"\r\n                        [disabled]=\"option.disabled\">\r\n        </p-radio-button>\r\n\r\n        <!--<p-input-numeric *ngIf=\"option.numericInputValue\"-->\r\n                          <!--class=\"p-menu-option-input\"-->\r\n                          <!--[size]=\"inputNumericSize.Small\"-->\r\n                          <!--[value]=\"option.numericInputValue\"></p-input-numeric>-->\r\n\r\n        <!--<div class=\"p-menu-option-link\" *ngIf=\"option.menuList\">-->\r\n          <!--<p-menu-single-select class=\"p-menu-option-submenu\"-->\r\n                                <!--[menuTriggerName]=\"findMenuTriggerName(option.menuList)\"-->\r\n                                <!--[menuList]=\"option.menuList\">-->\r\n          <!--</p-menu-single-select>-->\r\n        <!--</div>-->\r\n\r\n        <div class=\"p-menu-option-dates\" *ngIf=\"option.dateStart && option.dateEnd\">\r\n          <p-datepicker class=\"p-menu-option-datepicker start\"\r\n                        [ariaLabel]=\"option.dateStart.ariaLabel\"\r\n                        [placeholder]=\"option.dateStart.placeholder\"\r\n                        [disabled]=\"option.dateStart.disabled\"\r\n                        [readonly]=\"option.dateStart.readonly\"\r\n                        [value]=\"option.dateStart.value\">\r\n          </p-datepicker>\r\n          <span class=\"p-menu-option-dates-ampersand\">and</span>\r\n          <p-datepicker class=\"p-menu-option-datepicker end\"\r\n                        [ariaLabel]=\"option.dateEnd.ariaLabel\"\r\n                        [placeholder]=\"option.dateEnd.placeholder\"\r\n                        [disabled]=\"option.dateEnd.disabled\"\r\n                        [readonly]=\"option.dateEnd.readonly\"\r\n                        [value]=\"option.dateEnd.value\">\r\n          </p-datepicker>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n    <div class=\"p-menu-footer\">\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnFirst.label\"\r\n                [buttonType]=\"footerBtnFirst.buttonType\"\r\n                (click)=\"selectCompleted()\"></p-button>\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnLast.label\"\r\n                [buttonType]=\"footerBtnLast.buttonType\"\r\n                (click)=\"selectCanceled()\"></p-button>\r\n    </div>\r\n  </div>\r\n</mat-menu>\r\n"
+            "templateData": "<button [matMenuTriggerFor]=\"menu\"\r\n        #menuTrigger=\"matMenuTrigger\"\r\n        class=\"p-btn p-btn-small p-btn-tertiary\">\r\n    {{menuTriggerName}}\r\n</button>\r\n\r\n<!--menu window-->\r\n<mat-menu #menu=\"matMenu\" class=\"p-menu-radio\" [overlapTrigger]=\"false\">\r\n  <div class=\"p-menu-multiple-container\" (click)=\"$event.stopPropagation()\"\r\n                                (keydown)=\"$event.stopPropagation()\">\r\n    <ul class=\"p-menu-body\">\r\n      <li class=\"p-menu-body-item\" *ngFor=\"let option of menuList\">\r\n        <p-radio-button class=\"p-menu-option-radio\"\r\n                        [value]=\"option\"\r\n                        [label]=\"option.label\"\r\n                        [checked]=\"option.checked\"\r\n                        [disabled]=\"option.disabled\">\r\n        </p-radio-button>\r\n\r\n        <p-input-numeric *ngIf=\"option.numericInputValue\"\r\n                          class=\"p-menu-option-input\"\r\n                          [size]=\"inputNumericSize.Small\"\r\n                          [value]=\"option.numericInputValue\"\r\n                          [noErrorPlanned]=\"true\">\r\n        </p-input-numeric>\r\n\r\n        <div class=\"p-menu-option-link\" *ngIf=\"option.menuList\">\r\n          <p-menu-single-select class=\"p-menu-option-submenu\"\r\n                                [menuTriggerName]=\"findMenuTriggerName(option.menuList)\"\r\n                                [menuList]=\"option.menuList\">\r\n          </p-menu-single-select>\r\n        </div>\r\n\r\n        <div class=\"p-menu-option-dates\" *ngIf=\"option.dateStart && option.dateEnd\">\r\n          <p-datepicker class=\"p-menu-option-datepicker start\"\r\n                        [ariaLabel]=\"option.dateStart.ariaLabel\"\r\n                        [placeholder]=\"option.dateStart.placeholder\"\r\n                        [disabled]=\"option.dateStart.disabled\"\r\n                        [readonly]=\"option.dateStart.readonly\"\r\n                        [value]=\"option.dateStart.value\">\r\n          </p-datepicker>\r\n          <span class=\"p-menu-option-dates-ampersand paragraph-2-default\">and</span>\r\n          <p-datepicker class=\"p-menu-option-datepicker end\"\r\n                        [ariaLabel]=\"option.dateEnd.ariaLabel\"\r\n                        [placeholder]=\"option.dateEnd.placeholder\"\r\n                        [disabled]=\"option.dateEnd.disabled\"\r\n                        [readonly]=\"option.dateEnd.readonly\"\r\n                        [value]=\"option.dateEnd.value\">\r\n          </p-datepicker>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n    <div class=\"p-menu-footer\">\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnFirst.label\"\r\n                [buttonType]=\"footerBtnFirst.buttonType\"\r\n                (click)=\"selectCompleted()\"></p-button>\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnLast.label\"\r\n                [buttonType]=\"footerBtnLast.buttonType\"\r\n                (click)=\"selectCanceled()\"></p-button>\r\n    </div>\r\n  </div>\r\n</mat-menu>\r\n"
         },
         {
             "name": "MenuSingleSelectComponent",
@@ -4274,17 +4276,17 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts",
-                "type": "Story<SlideTogglePageComponent>",
-                "defaultValue": "(args: SlideTogglePageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/input-text/input-text-table-layout/input-text-table-layout.stories.ts",
+                "type": "Story<InputTextTableLayoutComponent>",
+                "defaultValue": "(args: InputTextTableLayoutComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input-text/input-text-table-layout/input-text-table-layout.stories.ts",
-                "type": "Story<InputTextTableLayoutComponent>",
-                "defaultValue": "(args: InputTextTableLayoutComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts",
+                "type": "Story<SlideTogglePageComponent>",
+                "defaultValue": "(args: SlideTogglePageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "palette",
@@ -4352,9 +4354,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/icons/icon.stories.ts",
-                "type": "Story<IconComponent>",
-                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/input-text/input-text.stories.ts",
+                "type": "Story<InputTextComponent>",
+                "defaultValue": "(args: InputTextComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -4368,9 +4370,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input-text/input-text.stories.ts",
-                "type": "Story<InputTextComponent>",
-                "defaultValue": "(args: InputTextComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/icons/icon.stories.ts",
+                "type": "Story<IconComponent>",
+                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -5153,7 +5155,7 @@
                 "linktype": "component",
                 "name": "InputNumericComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/15",
+                "coverageCount": "0/16",
                 "status": "low"
             },
             {
@@ -5162,7 +5164,7 @@
                 "linktype": "interface",
                 "name": "IInputNumeric",
                 "coveragePercent": 0,
-                "coverageCount": "0/13",
+                "coverageCount": "0/14",
                 "status": "low"
             },
             {
@@ -5225,7 +5227,7 @@
                 "linktype": "component",
                 "name": "MenuRadioGroupComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/11",
+                "coverageCount": "0/10",
                 "status": "low"
             },
             {
