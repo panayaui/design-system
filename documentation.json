@@ -1427,7 +1427,7 @@
         },
         {
             "name": "DatepickerComponent",
-            "id": "component-DatepickerComponent-e1f91575d6ae36d385d6b3a9e0b7a6cf",
+            "id": "component-DatepickerComponent-78623243a902192e63fbdad2e1badd19",
             "file": "projects/design-system-lib/src/lib/input/datepicker/datepicker.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1446,29 +1446,29 @@
             "inputsClass": [
                 {
                     "name": "ariaLabel",
-                    "line": 9,
+                    "line": 35,
                     "type": "string"
                 },
                 {
                     "name": "disabled",
                     "defaultValue": "false",
-                    "line": 11,
+                    "line": 37,
                     "type": "boolean"
                 },
                 {
                     "name": "placeholder",
-                    "line": 10,
+                    "line": 36,
                     "type": "string"
                 },
                 {
                     "name": "readonly",
                     "defaultValue": "false",
-                    "line": 12,
+                    "line": 38,
                     "type": "boolean"
                 },
                 {
                     "name": "value",
-                    "line": 13,
+                    "line": 39,
                     "type": "string"
                 }
             ],
@@ -1476,13 +1476,13 @@
                 {
                     "name": "dateChange",
                     "defaultValue": "new EventEmitter()",
-                    "line": 14,
+                    "line": 40,
                     "type": "EventEmitter<any>"
                 },
                 {
                     "name": "dateInput",
                     "defaultValue": "new EventEmitter()",
-                    "line": 15,
+                    "line": 41,
                     "type": "EventEmitter<any>"
                 }
             ],
@@ -1493,7 +1493,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, EventEmitter, Input, Output} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'p-datepicker',\r\n  templateUrl: './datepicker.component.html',\r\n  styleUrls: ['./datepicker.component.scss'],\r\n})\r\nexport class DatepickerComponent {\r\n  @Input() ariaLabel: string;\r\n  @Input() placeholder: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() readonly: boolean = false;\r\n  @Input() value: string;\r\n  @Output() dateChange: EventEmitter<any> = new EventEmitter();\r\n  @Output() dateInput: EventEmitter<any> = new EventEmitter();\r\n}\r\n",
+            "sourceCode": "import {Component, EventEmitter, Input, Output} from '@angular/core';\r\nimport {formatDate } from '@angular/common';\r\nimport {DateAdapter, MAT_DATE_FORMATS, NativeDateAdapter} from '@angular/material/core';\r\n\r\n// export const PICK_FORMATS = {\r\n//   parse: {dateInput: {month: 'short', year: 'numeric', day: 'numeric'}},\r\n//   display: {\r\n//     dateInput: 'input',\r\n//     monthYearLabel: {year: 'numeric', month: 'short'},\r\n//     dateA11yLabel: {year: 'numeric', month: 'long', day: 'numeric'},\r\n//     monthYearA11yLabel: {year: 'numeric', month: 'long'}\r\n//   }\r\n// };\r\n//\r\n// class PickDateAdapter extends NativeDateAdapter {\r\n//   format(date: Date, displayFormat: Object): string {\r\n//     if (displayFormat === 'input') {\r\n//       return formatDate(date,'dd-MMM-yyyy', this.locale);\r\n//     } else {\r\n//       return date.toDateString();\r\n//     }\r\n//   }\r\n// }\r\n\r\n@Component({\r\n  selector: 'p-datepicker',\r\n  templateUrl: './datepicker.component.html',\r\n  styleUrls: ['./datepicker.component.scss'],\r\n  // providers: [\r\n  //   {provide: DateAdapter, useClass: PickDateAdapter},\r\n  //   {provide: MAT_DATE_FORMATS, useValue: PICK_FORMATS}\r\n  // ]\r\n})\r\nexport class DatepickerComponent {\r\n  @Input() ariaLabel: string;\r\n  @Input() placeholder: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() readonly: boolean = false;\r\n  @Input() value: string;\r\n  @Output() dateChange: EventEmitter<any> = new EventEmitter();\r\n  @Output() dateInput: EventEmitter<any> = new EventEmitter();\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2359,6 +2359,118 @@
             "templateData": "<button [matMenuTriggerFor]=\"menu\"\r\n        #menuTrigger=\"matMenuTrigger\"\r\n        class=\"p-btn p-btn-small p-btn-tertiary\">\r\n   <ng-template [ngIf]=\"!selectedShown?.length\" [ngIfElse]=\"selectedItems\">\r\n    {{menuTriggerName}}\r\n  </ng-template>\r\n\r\n  <ng-template #selectedItems>\r\n    <ng-container *ngFor=\"let item of selectedShown\">\r\n      <span class=\"p-menu-trigger-result\">{{item.name}}</span>\r\n    </ng-container>\r\n  </ng-template>\r\n</button>\r\n\r\n<!--menu window-->\r\n<mat-menu #menu=\"matMenu\" class=\"p-menu-multiple\" [overlapTrigger]=\"false\">\r\n  <div class=\"p-menu-multiple-container\" (click)=\"$event.stopPropagation()\"\r\n                                (keydown)=\"$event.stopPropagation()\">\r\n    <div class=\"p-menu-header\" *ngIf=\"filterPlaceholder\"\r\n          [class.extended]=\"headerBtnFirst && headerBtnLast\">\r\n      <mat-form-field class=\"p-menu-form-field\"\r\n                      appearance=\"outline\"\r\n                      floatLabel=\"always\"\r\n                      (click)=\"$event.stopPropagation()\"\r\n                      (keydown)=\"$event.stopPropagation()\">\r\n        <input matInput\r\n               type=\"text\"\r\n               [placeholder]=\"filterPlaceholder\"\r\n               attr.aria-label=\"{{filterAriaLabel}}\"\r\n               [formControl]=\"formFieldControl\"\r\n               autocomplete=\"off\"\r\n               onfocus=\"this.select()\"\r\n               class=\"p-menu-input\">\r\n      </mat-form-field>\r\n\r\n      <p-button *ngIf=\"headerBtnFirst\"\r\n                class=\"p-menu-btn-line\"\r\n                [label]=\"headerBtnFirst.label\"\r\n                [iconBefore]=\"headerBtnFirst.icon.iconName\"\r\n                [iconBeforeWidth]=\"headerBtnFirst.icon.width\"\r\n                [iconBeforeHeight]=\"headerBtnFirst.icon.height\"\r\n                [buttonType]=\"headerBtnFirst.buttonType\"\r\n                [disabled]=\"headerBtnFirst.disabled\"></p-button>\r\n      <p-checkbox *ngIf=\"headerBtnFirst\"\r\n                  class=\"p-menu-btn-line\"\r\n                  [label]=\"headerBtnLast.label\"\r\n                  [checked]=\"headerBtnLast.checked\"\r\n                  [disabled]=\"headerBtnLast.disabled\"></p-checkbox>\r\n    </div>\r\n\r\n    <div class=\"p-menu-body\">\r\n      <mat-selection-list class=\"p-menu-body-container\">\r\n        <mat-list-option class=\"p-menu-multiple-item\"\r\n                         *ngFor=\"let item of filteredList\"\r\n                         [disableRipple]=\"true\"\r\n                         [disabled]=\"item.disabled\"\r\n                         [selected]=\"item.selected\"\r\n                         (click)=\"onOptionSelected(item)\">\r\n          {{item.name}}\r\n        </mat-list-option>\r\n      </mat-selection-list>\r\n    </div>\r\n\r\n    <div class=\"p-menu-footer\">\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnFirst.label\"\r\n                [buttonType]=\"footerBtnFirst.buttonType\"\r\n                (click)=\"selectCompleted()\"></p-button>\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnLast.label\"\r\n                [buttonType]=\"footerBtnLast.buttonType\"\r\n                (click)=\"selectCanceled()\"></p-button>\r\n    </div>\r\n  </div>\r\n</mat-menu>\r\n"
         },
         {
+            "name": "MenuFreeTextComponent",
+            "id": "component-MenuFreeTextComponent-1dfd4b59e1257ec957ccc524c4bb9b38",
+            "file": "projects/design-system-lib/src/lib/menu/menu-free-text/menu-free-text.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-menu-free-text",
+            "styleUrls": [
+                "./menu-free-text.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./menu-free-text.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "footerBtnFirst",
+                    "line": 17,
+                    "type": "IMenuButton"
+                },
+                {
+                    "name": "footerBtnLast",
+                    "line": 18,
+                    "type": "IMenuButton"
+                },
+                {
+                    "name": "menuList",
+                    "line": 16,
+                    "type": "any[]"
+                },
+                {
+                    "name": "menuTriggerName",
+                    "line": 15,
+                    "type": "string"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "menuTrigger",
+                    "type": "MatMenuTrigger",
+                    "optional": false,
+                    "description": "",
+                    "line": 19,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'menuTrigger'"
+                        }
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "findMenuTriggerName",
+                    "args": [
+                        {
+                            "name": "menuList",
+                            "type": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 21,
+                    "jsdoctags": [
+                        {
+                            "name": "menuList",
+                            "type": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "selectCanceled",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 29
+                },
+                {
+                    "name": "selectCompleted",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 25
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {\r\n  Component,\r\n  Input,\r\n  ViewChild\r\n} from '@angular/core';\r\nimport {MatMenuTrigger} from '@angular/material/menu';\r\nimport {IMenuButton} from '../menu-button.interface';\r\n\r\n@Component({\r\n  selector: 'p-menu-free-text',\r\n  templateUrl: './menu-free-text.component.html',\r\n  styleUrls: ['./menu-free-text.component.scss'],\r\n})\r\nexport class MenuFreeTextComponent {\r\n  @Input() menuTriggerName: string;\r\n  @Input() menuList: any[];\r\n  @Input() footerBtnFirst: IMenuButton;\r\n  @Input() footerBtnLast: IMenuButton;\r\n  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;\r\n\r\n  findMenuTriggerName(menuList): void {\r\n    return menuList.find( item => item.selected === true).name;\r\n  }\r\n\r\n  selectCompleted(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  selectCanceled(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$menu-padding: 8px;\r\n$menu-item-height: 32px;\r\n$menu-background: $gray-scale-1;\r\n$menu-item-margin-top: 4px;\r\n$input-text-height: 32px;\r\n$input-text-padding: 8px;\r\n$menu-header-height: $input-text-height + $menu-padding * 3 + 1px;\r\n$menu-header-extended-height: $input-text-height + ($menu-padding * 4.5) + ($menu-item-height * 2) + 1px;\r\n$menu-footer-height: $btn-small-height + $menu-padding * 4;\r\n$menu-body-height: 103px;\r\n$menu-min-width: 480px;\r\n$menu-max-height: 75vh;\r\n\r\n// mat-menu-panel\r\n::ng-deep .p-menu-radio.mat-menu-panel {\r\n  min-width: $menu-min-width;\r\n  max-height: $menu-max-height;\r\n  background-color: $menu-background;\r\n  border-radius: 0;\r\n  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1),\r\n  0 2px 6px rgba(0, 0, 0, 0.04),\r\n  0 -3px 6px rgba(0, 0, 0, 0.04);\r\n  overflow: hidden;\r\n  .mat-menu-content {\r\n    height: 100%;\r\n    padding: 0;\r\n    position: relative;\r\n  }\r\n}\r\n\r\n// container of the multiple selection menu (stopPropagation)\r\n.p-menu-multiple-container {\r\n  height: 100%;\r\n}\r\n\r\n.p-menu {\r\n  &-body {\r\n    @include resetUl;\r\n    height: calc(100%);\r\n    padding-top: 24px;\r\n    padding-right: 24px;\r\n    padding-bottom: $menu-footer-height;\r\n    padding-left: 24px;\r\n    &-item {\r\n      display: flex;\r\n      align-items: center;\r\n      height: 30px;\r\n      & + & {\r\n        margin-top: $menu-padding;\r\n      }\r\n    }\r\n  }\r\n\r\n  &-footer {\r\n    display: flex;\r\n    align-items: center;\r\n    width: 100%;\r\n    height: $menu-footer-height;\r\n    padding: $menu-padding * 2;\r\n    background-color: $menu-background;\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 0;\r\n    z-index: 1;\r\n    &-btn {\r\n      & + & {\r\n        margin-left: $menu-padding;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n// every option\r\n.p-menu-option {\r\n  &-input {\r\n    margin-left: 29px;\r\n  }\r\n  &-link {\r\n    display: inline-flex;\r\n    color: $secondary-a-700;\r\n\r\n    ::ng-deep .p-btn {\r\n      min-width: unset;\r\n      padding-left: 5px;\r\n      padding-right: 5px;\r\n      &:hover,\r\n      &:focus {\r\n        background-color: transparent;\r\n        .p-btn-icon-post {\r\n          opacity: 1;\r\n        }\r\n      }\r\n    }\r\n    ::ng-deep .p-btn-label {\r\n      margin-right: 3px;\r\n    }\r\n    ::ng-deep .p-btn-icon-post {\r\n      opacity: 0;\r\n      transition: opacity 280ms;\r\n    }\r\n  }\r\n  &-dates {\r\n    display: inline-block;\r\n    ::ng-deep .p-datepicker {\r\n      width: 124px;\r\n    }\r\n  }\r\n  &-datepicker,\r\n  &-dates-ampersand {\r\n    margin-left: 16px;\r\n  }\r\n}\r\n\r\n\r\n",
+                    "styleUrl": "./menu-free-text.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<button [matMenuTriggerFor]=\"menu\"\r\n        #menuTrigger=\"matMenuTrigger\"\r\n        class=\"p-btn p-btn-small p-btn-tertiary\">\r\n    {{menuTriggerName}}\r\n</button>\r\n\r\n<!--menu window-->\r\n<mat-menu #menu=\"matMenu\" class=\"p-menu-radio\" [overlapTrigger]=\"false\">\r\n  <div class=\"p-menu-multiple-container\" (click)=\"$event.stopPropagation()\"\r\n                                        (keydown)=\"$event.stopPropagation()\">\r\n    <div class=\"p-menu-body\">\r\n      <p-menu-single-select class=\"p-menu-option-submenu\"\r\n                            [menuTriggerName]=\"findMenuTriggerName(menuList)\"\r\n                            [menuList]=\"menuList\">\r\n      </p-menu-single-select>\r\n    </div>\r\n    <div class=p-menu-footer\">\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnFirst.label\"\r\n                [buttonType]=\"footerBtnFirst.buttonType\"\r\n                (click)=\"selectCompleted()\"></p-button>\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnLast.label\"\r\n                [buttonType]=\"footerBtnLast.buttonType\"\r\n                (click)=\"selectCanceled()\"></p-button>\r\n    </div>\r\n  </div>\r\n</mat-menu>\r\n"
+        },
+        {
             "name": "MenuMultiSelectComponent",
             "id": "component-MenuMultiSelectComponent-51f16ae64bdbb5fa3ef0586e3f50cc82",
             "file": "projects/design-system-lib/src/lib/menu/menu-multi-select/menu-multi-select.component.ts",
@@ -2700,7 +2812,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$menu-padding: 8px;\r\n$menu-item-height: 32px;\r\n$menu-background: $gray-scale-1;\r\n$menu-item-margin-top: 4px;\r\n$input-text-height: 32px;\r\n$input-text-padding: 8px;\r\n$menu-header-height: $input-text-height + $menu-padding * 3 + 1px;\r\n$menu-header-extended-height: $input-text-height + ($menu-padding * 4.5) + ($menu-item-height * 2) + 1px;\r\n$menu-footer-height: $btn-small-height + $menu-padding * 4;\r\n$menu-body-height: 103px;\r\n$menu-min-width: 480px;\r\n$menu-max-height: 75vh;\r\n\r\n// mat-menu-panel\r\n::ng-deep .p-menu-radio.mat-menu-panel {\r\n  min-width: $menu-min-width;\r\n  max-height: $menu-max-height;\r\n  background-color: $menu-background;\r\n  border-radius: 0;\r\n  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1),\r\n  0 2px 6px rgba(0, 0, 0, 0.04),\r\n  0 -3px 6px rgba(0, 0, 0, 0.04);\r\n  overflow: hidden;\r\n  .mat-menu-content {\r\n    height: 100%;\r\n    padding: 0;\r\n    position: relative;\r\n  }\r\n}\r\n\r\n// container of the multiple selection menu (stopPropagation)\r\n.p-menu-multiple-container {\r\n  height: 100%;\r\n}\r\n\r\n.p-menu {\r\n  &-body {\r\n    @include resetUl;\r\n    height: calc(100%);\r\n    padding-top: 24px;\r\n    padding-right: 24px;\r\n    padding-bottom: $menu-footer-height;\r\n    padding-left: 24px;\r\n    &-item {\r\n      display: flex;\r\n      align-items: center;\r\n      height: 30px;\r\n      & + & {\r\n        margin-top: $menu-padding;\r\n      }\r\n    }\r\n  }\r\n\r\n  &-footer {\r\n    display: flex;\r\n    align-items: center;\r\n    width: 100%;\r\n    height: $menu-footer-height;\r\n    padding: $menu-padding * 2;\r\n    background-color: $menu-background;\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 0;\r\n    z-index: 1;\r\n    &-btn {\r\n      & + & {\r\n        margin-left: $menu-padding;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n// every option\r\n.p-menu-option {\r\n  &-input {\r\n    margin-left: 29px;\r\n  }\r\n  &-link {\r\n    display: inline-flex;\r\n    color: $secondary-a-700;\r\n\r\n    ::ng-deep .p-btn {\r\n      min-width: unset;\r\n      padding-left: 5px;\r\n      padding-right: 5px;\r\n      &:hover,\r\n      &:focus {\r\n        background-color: transparent;\r\n        .p-btn-icon-post {\r\n          opacity: 1;\r\n        }\r\n      }\r\n    }\r\n    ::ng-deep .p-btn-label {\r\n      margin-right: 3px;\r\n    }\r\n    ::ng-deep .p-btn-icon-post {\r\n      opacity: 0;\r\n      transition: opacity 280ms;\r\n    }\r\n  }\r\n  &-dates {\r\n    display: inline-block;\r\n    ::ng-deep .p-datepicker {\r\n      width: 124px;\r\n    }\r\n  }\r\n  &-datepicker,\r\n  &-dates-ampersand {\r\n    margin-left: 16px;\r\n  }\r\n}\r\n\r\n\r\n",
+                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$menu-padding: 8px;\r\n$menu-item-height: 32px;\r\n$menu-background: $gray-scale-1;\r\n$menu-item-margin-top: 4px;\r\n$input-text-height: 32px;\r\n$input-text-padding: 8px;\r\n$menu-header-height: $input-text-height + $menu-padding * 3 + 1px;\r\n$menu-header-extended-height: $input-text-height + ($menu-padding * 4.5) + ($menu-item-height * 2) + 1px;\r\n$menu-footer-height: $btn-small-height + $menu-padding * 4;\r\n$menu-body-height: 103px;\r\n$menu-min-width: 480px;\r\n$menu-max-height: 75vh;\r\n\r\n// mat-menu-panel\r\n::ng-deep .p-menu-radio.mat-menu-panel {\r\n  min-width: $menu-min-width;\r\n  max-height: $menu-max-height;\r\n  background-color: $menu-background;\r\n  border-radius: 0;\r\n  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1),\r\n  0 2px 6px rgba(0, 0, 0, 0.04),\r\n  0 -3px 6px rgba(0, 0, 0, 0.04);\r\n  overflow: hidden;\r\n  .mat-menu-content {\r\n    height: 100%;\r\n    padding: 0;\r\n    position: relative;\r\n  }\r\n}\r\n\r\n// container of the multiple selection menu (stopPropagation)\r\n.p-menu-multiple-container {\r\n  height: 100%;\r\n}\r\n\r\n.p-menu {\r\n  &-body {\r\n    @include resetUl;\r\n    height: calc(100%);\r\n    padding-top: 24px;\r\n    padding-right: 24px;\r\n    padding-bottom: $menu-footer-height;\r\n    padding-left: 24px;\r\n    &-item {\r\n      display: flex;\r\n      align-items: center;\r\n      height: 30px;\r\n      & + & {\r\n        margin-top: $menu-padding;\r\n      }\r\n    }\r\n  }\r\n\r\n  &-footer {\r\n    display: flex;\r\n    align-items: center;\r\n    width: 100%;\r\n    height: $menu-footer-height;\r\n    padding: $menu-padding * 2;\r\n    background-color: $menu-background;\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 0;\r\n    z-index: 1;\r\n    &-btn {\r\n      & + & {\r\n        margin-left: $menu-padding;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n// every option\r\n.p-menu-option {\r\n  &-input {\r\n    margin-left: 29px;\r\n  }\r\n  &-link {\r\n    display: inline-flex;\r\n    color: $secondary-a-700;\r\n\r\n    ::ng-deep .p-btn {\r\n      min-width: unset;\r\n      padding-top: 2.5px;\r\n      padding-left: 5px;\r\n      padding-right: 5px;\r\n      &:hover,\r\n      &:focus {\r\n        background-color: transparent;\r\n        .p-btn-icon-post {\r\n          opacity: 1;\r\n        }\r\n      }\r\n    }\r\n    ::ng-deep .p-btn-label {\r\n      margin-right: 3px;\r\n    }\r\n    ::ng-deep .p-btn-icon-post {\r\n      opacity: 0;\r\n      transition: opacity 280ms;\r\n    }\r\n  }\r\n  &-dates {\r\n    display: inline-block;\r\n    ::ng-deep .p-datepicker {\r\n      width: 124px;\r\n    }\r\n  }\r\n  &-datepicker,\r\n  &-dates-ampersand {\r\n    margin-left: 16px;\r\n  }\r\n}\r\n\r\n\r\n",
                     "styleUrl": "./menu-radio-group.component.scss"
                 }
             ],
@@ -3965,6 +4077,9 @@
                     "type": "declarations",
                     "elements": [
                         {
+                            "name": "MenuFreeTextComponent"
+                        },
+                        {
                             "name": "MenuMultiSelectComponent"
                         },
                         {
@@ -4001,6 +4116,9 @@
                 {
                     "type": "exports",
                     "elements": [
+                        {
+                            "name": "MenuFreeTextComponent"
+                        },
                         {
                             "name": "MenuMultiSelectComponent"
                         },
@@ -4164,17 +4282,17 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
+                "file": "src/environments/environment.prod.ts",
                 "type": "object",
-                "defaultValue": "{\r\n  production: false\r\n}"
+                "defaultValue": "{\r\n  production: true\r\n}"
             },
             {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
+                "file": "src/environments/environment.ts",
                 "type": "object",
-                "defaultValue": "{\r\n  production: true\r\n}"
+                "defaultValue": "{\r\n  production: false\r\n}"
             },
             {
                 "name": "ErrorMessage",
@@ -4354,14 +4472,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input-text/input-text.stories.ts",
-                "type": "Story<InputTextComponent>",
-                "defaultValue": "(args: InputTextComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/colors/Color-palette.stories.ts",
                 "type": "Story<ColorPaletteComponent>",
                 "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
@@ -4378,9 +4488,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/styles/typography-styles.stories.ts",
-                "type": "Story<TypographyStylesComponent>",
-                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/input-text/input-text.stories.ts",
+                "type": "Story<InputTextComponent>",
+                "defaultValue": "(args: InputTextComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -4389,6 +4499,14 @@
                 "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
                 "type": "Story<TypographyFontFamilyComponent>",
                 "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/typography/styles/typography-styles.stories.ts",
+                "type": "Story<TypographyStylesComponent>",
+                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Toggles",
@@ -4674,16 +4792,6 @@
                     "type": "literal type"
                 }
             ],
-            "src/environments/environment.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.ts",
-                    "type": "object",
-                    "defaultValue": "{\r\n  production: false\r\n}"
-                }
-            ],
             "src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -4692,6 +4800,16 @@
                     "file": "src/environments/environment.prod.ts",
                     "type": "object",
                     "defaultValue": "{\r\n  production: true\r\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: false\r\n}"
                 }
             ],
             "src/stories/input-text/input-text.stories.ts": [
@@ -5210,6 +5328,15 @@
                 "name": "IMenuButton",
                 "coveragePercent": 0,
                 "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/menu/menu-free-text/menu-free-text.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MenuFreeTextComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
                 "status": "low"
             },
             {

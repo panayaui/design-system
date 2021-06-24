@@ -33,47 +33,12 @@ import {MatRadioModule} from '@angular/material/radio';
       })
     ]}  
     args={{
-      menuTriggerName: 'Action',
+      menuTriggerName: 'Free Text Menu',
       menuList: [
-       { label: 'All' },
-        { label: 'Today' },
-        { label: 'Yesterday' },
-        { label: 'Tomorrow' },
-        { label: 'This',
-          menuList: [
-             { name: 'week (Starts Sunday)', selected: true},
-             { name: 'week (Starts Monday)'},
-             { name: 'month'},
-             { name: 'year'}
-          ]
-        },
-        { label: 'Last',
-          numericInputValue: 1,
-          menuList: [
-            { name: 'Day(s)', selected: true},
-            { name: 'Week(s)'},
-            { name: 'Month(s)'},
-            { name: 'Year(s)'}
-          ]
-        },
-        { label: 'Next',
-          numericInputValue: 1,
-          menuList: [
-            { name: 'Day(s)', selected: true},
-            { name: 'Week(s)'},
-            { name: 'Month(s)'},
-            { name: 'Year(s)'}
-          ]
-        },
-        { label: 'Blanks' },
-        { label: 'Between',
-          dateStart: {
-            ariaLabel: 'date start'
-          },
-          dateEnd: {
-            ariaLabel: 'date start'
-          }
-        }
+        { name: 'Contains', inputValue: '', selected: true },
+        { name: 'Not contains', inputValue: 'smth' },
+        { name: 'Empty' },
+        { name: 'Not empty' }
       ],
       footerBtnFirst: {
         label: 'Done',
@@ -92,7 +57,7 @@ export const Template = (args) => <MenuRadioGroupComponent {...args} />
 
 ###### Radio Group Menu
 <Canvas>
-  <Story name="Radio"
+  <Story name="Free Text"
     args={{ 
     }}>
     {Template.bind({})}
