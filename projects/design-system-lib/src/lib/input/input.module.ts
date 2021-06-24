@@ -10,6 +10,7 @@ import {DatepickerComponent} from './datepicker/datepicker.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatIconModule} from '@angular/material/icon';
+import {InputOutlineComponent} from './outline/input-outline.component';
 
 @NgModule({
   imports: [
@@ -25,11 +26,13 @@ import {MatIconModule} from '@angular/material/icon';
   declarations: [
     InputNumericComponent,
     InputTextComponent,
+    InputOutlineComponent,
     DatepickerComponent
   ],
   exports: [
     InputNumericComponent,
     InputTextComponent,
+    InputOutlineComponent,
     DatepickerComponent
   ]
 })

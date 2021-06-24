@@ -462,6 +462,39 @@
             "methods": []
         },
         {
+            "name": "IMenuFreeTextItem",
+            "id": "interface-IMenuFreeTextItem-4d8c33c07b2d3f2b1b3e31deea79a34e",
+            "file": "projects/design-system-lib/src/lib/menu/menu-free-text/menu-free-text.component.ts",
+            "type": "interface",
+            "sourceCode": "import {\r\n  Component,\r\n  Input, OnInit,\r\n  ViewChild\r\n} from '@angular/core';\r\nimport {MatMenuTrigger} from '@angular/material/menu';\r\nimport {IMenuButton} from '../menu-button.interface';\r\n\r\ninterface IMenuFreeTextItem {\r\n  name: string;\r\n  inputValue?: string;\r\n  selected?: boolean;\r\n}\r\n\r\n@Component({\r\n  selector: 'p-menu-free-text',\r\n  templateUrl: './menu-free-text.component.html',\r\n  styleUrls: ['./menu-free-text.component.scss'],\r\n})\r\nexport class MenuFreeTextComponent implements OnInit{\r\n  @Input() menuTriggerName: string;\r\n  @Input() menuList: IMenuFreeTextItem[];\r\n  @Input() footerBtnFirst: IMenuButton;\r\n  @Input() footerBtnLast: IMenuButton;\r\n  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;\r\n  public subMenuTriggerName: string;\r\n\r\n  ngOnInit(): void {\r\n    this.subMenuTriggerName = this.menuList.find( item => item.selected).name;\r\n  }\r\n\r\n  selectCompleted(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  selectCanceled(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "inputValue",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 11
+                },
+                {
+                    "name": "name",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                },
+                {
+                    "name": "selected",
+                    "type": "boolean",
+                    "optional": true,
+                    "description": "",
+                    "line": 12
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
             "name": "IMenuRadioOption",
             "id": "interface-IMenuRadioOption-a2e8e80fd705ac0c0609cac362c75c8e",
             "file": "projects/design-system-lib/src/lib/menu/menu-radio-group/menu-radio-group.component.ts",
@@ -1792,6 +1825,116 @@
             "templateData": "<ng-template [ngIf]=\"label\" [ngIfElse]=\"noLabel\">\r\n  <div class=\"p-input-numeric-container\">\r\n    <label *ngIf=\"!labelLast\" class=\"p-input-numeric-label first\" [ngClass]=\"{'disabled' : disabled}\">\r\n      {{label}}\r\n    </label>\r\n    <ng-container *ngTemplateOutlet=\"noLabel\"></ng-container>\r\n    <label *ngIf=\"labelLast\" class=\"p-input-numeric-label last\" [ngClass]=\"{'disabled' : disabled}\">\r\n      {{label}}\r\n    </label>\r\n  </div>\r\n</ng-template>\r\n\r\n<ng-template #noLabel>\r\n  <mat-form-field class=\"p-input-numeric\"\r\n                  [class.no-error-planned]=\"noErrorPlanned\"\r\n                  appearance=\"standard\"\r\n                  [ngClass]=\"classes\"\r\n                  floatLabel=\"always\">\r\n    <input matInput\r\n           [type]=\"type\"\r\n           [placeholder]=\"placeholder\"\r\n           [readonly]=\"readonly\"\r\n           attr.aria-label=\"{{ariaLabel}}\"\r\n           [formControl]=\"formFieldControl\"\r\n           [errorStateMatcher]=\"matcher\"\r\n           onfocus=\"this.select()\"\r\n           class=\"p-input-numeric-input\">\r\n    <mat-error *ngIf=\"formFieldControl.invalid\"\r\n               class=\"p-input-numeric-error\">\r\n      {{errorMessage}}\r\n    </mat-error>\r\n  </mat-form-field>\r\n</ng-template>\r\n"
         },
         {
+            "name": "InputOutlineComponent",
+            "id": "component-InputOutlineComponent-35255bc7e5fc14e239d2be60a1234d45",
+            "file": "projects/design-system-lib/src/lib/input/outline/input-outline.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-input-outline",
+            "styleUrls": [
+                "./input-outline.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./input-outline.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "ariaLabel",
+                    "line": 12,
+                    "type": "string"
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "line": 15,
+                    "type": "boolean"
+                },
+                {
+                    "name": "errorMessage",
+                    "line": 14,
+                    "type": "string"
+                },
+                {
+                    "name": "label",
+                    "line": 11,
+                    "type": "string"
+                },
+                {
+                    "name": "placeholder",
+                    "line": 13,
+                    "type": "string"
+                },
+                {
+                    "name": "readonly",
+                    "defaultValue": "false",
+                    "line": 16,
+                    "type": "boolean"
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'text'",
+                    "line": 10,
+                    "type": "string"
+                },
+                {
+                    "name": "validators",
+                    "line": 18,
+                    "type": "ValidatorFn[]"
+                },
+                {
+                    "name": "value",
+                    "line": 17,
+                    "type": "string"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "formFieldControl",
+                    "type": "FormControl",
+                    "optional": false,
+                    "description": "",
+                    "line": 19,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 21
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport {FormControl, ValidatorFn} from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'p-input-outline',\r\n  templateUrl: './input-outline.component.html',\r\n  styleUrls: ['./input-outline.component.scss'],\r\n})\r\nexport class InputOutlineComponent implements OnInit {\r\n  @Input() type: string = 'text';\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string;\r\n  @Input() placeholder: string;\r\n  @Input() errorMessage: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() readonly: boolean = false;\r\n  @Input() value: string;\r\n  @Input() validators: ValidatorFn[];\r\n  public formFieldControl: FormControl;\r\n\r\n  ngOnInit(): void {\r\n    this.formFieldControl = new FormControl(\r\n      {value: this.value, disabled: this.disabled},\r\n      this.validators);\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$input-text-width: 220px;\r\n$input-text-padding: 8px;\r\n\r\n.p-input-text {\r\n  &-label {\r\n    font-family: $font-family-basic;\r\n    font-weight: 500;\r\n    font-size: $tiny-font-size;\r\n    text-transform: capitalize;\r\n    line-height: 19px;\r\n    color: $gray-scale-700;\r\n  }\r\n\r\n  ::ng-deep & {\r\n    // material styles override\r\n    .mat-input-element {\r\n      font-family: $font-family-basic;\r\n      font-size: $base-font-size;\r\n      max-width: $input-text-width - $input-text-padding;\r\n      line-height: 20px;\r\n      color: $primary-a-900;\r\n      padding-left: $input-text-padding;\r\n      caret-color: $primary-a-900;\r\n    }\r\n    .mat-form-field-infix {\r\n      width: $input-text-width;\r\n      padding-bottom: 6px;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-flex {\r\n      padding-top: 0;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $gray-scale-600;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-underline,\r\n    &:not(.mat-form-field-disabled):not(.mat-form-field-invalid)\r\n            .mat-form-field-flex:hover~.mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $primary-a-900;\r\n    }\r\n    .mat-form-field-ripple {\r\n      display: none;\r\n    }\r\n    .mat-form-field-subscript-wrapper {\r\n      margin-top: 5px;\r\n    }\r\n    .mat-error {\r\n      font-family: $font-family-basic;\r\n      font-size: $tiny-font-size;\r\n      color: $supportive-alert-500;\r\n      line-height: 12px;\r\n    }\r\n\r\n    // disabled\r\n    &.mat-form-field-disabled {\r\n      .mat-input-element {\r\n        color: $gray-scale-600;\r\n      }\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $gray-scale-400;\r\n      }\r\n    }\r\n\r\n    // error state\r\n    &.ng-invalid {\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-500;\r\n      }\r\n      &.mat-form-field .mat-form-field-flex:hover~.mat-form-field-underline,\r\n      &.mat-form-field.mat-focused .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-700;\r\n      }\r\n    }\r\n\r\n    // readonly\r\n    &.p-input-text-readonly {\r\n      &:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover~.mat-form-field-underline,\r\n\r\n      .mat-form-field-underline {\r\n        box-shadow: none;\r\n      }\r\n    }\r\n  }\r\n\r\n}\r\n",
+                    "styleUrl": "./input-outline.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<mat-form-field class=\"p-input-text\"\r\n                appearance=\"outline\"\r\n                [ngClass]=\"{'p-input-text-readonly' : readonly}\"\r\n                floatLabel=\"always\">\r\n  <mat-label class=\"p-input-text-label\">{{label}}</mat-label>\r\n  <input matInput\r\n         [type]=\"type\"\r\n         [placeholder]=\"placeholder\"\r\n         [readonly]=\"readonly\"\r\n         attr.aria-label=\"{{ariaLabel}}\"\r\n         [formControl]=\"formFieldControl\"\r\n         onfocus=\"this.select()\"\r\n         class=\"p-input-text-input\">\r\n  <mat-error *ngIf=\"formFieldControl.invalid\"\r\n             class=\"p-input-text-error\">\r\n    {{errorMessage}}\r\n  </mat-error>\r\n</mat-form-field>\r\n"
+        },
+        {
             "name": "InputTextComponent",
             "id": "component-InputTextComponent-38593d05d9ff8da867b9d975105f3d21",
             "file": "projects/design-system-lib/src/lib/input/text/input-text.component.ts",
@@ -2360,7 +2503,7 @@
         },
         {
             "name": "MenuFreeTextComponent",
-            "id": "component-MenuFreeTextComponent-1dfd4b59e1257ec957ccc524c4bb9b38",
+            "id": "component-MenuFreeTextComponent-4d8c33c07b2d3f2b1b3e31deea79a34e",
             "file": "projects/design-system-lib/src/lib/menu/menu-free-text/menu-free-text.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2379,22 +2522,22 @@
             "inputsClass": [
                 {
                     "name": "footerBtnFirst",
-                    "line": 17,
+                    "line": 23,
                     "type": "IMenuButton"
                 },
                 {
                     "name": "footerBtnLast",
-                    "line": 18,
+                    "line": 24,
                     "type": "IMenuButton"
                 },
                 {
                     "name": "menuList",
-                    "line": 16,
-                    "type": "any[]"
+                    "line": 22,
+                    "type": "IMenuFreeTextItem[]"
                 },
                 {
                     "name": "menuTriggerName",
-                    "line": 15,
+                    "line": 21,
                     "type": "string"
                 }
             ],
@@ -2405,37 +2548,33 @@
                     "type": "MatMenuTrigger",
                     "optional": false,
                     "description": "",
-                    "line": 19,
+                    "line": 25,
                     "decorators": [
                         {
                             "name": "ViewChild",
                             "stringifiedArguments": "'menuTrigger'"
                         }
                     ]
+                },
+                {
+                    "name": "subMenuTriggerName",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 26,
+                    "modifierKind": [
+                        114
+                    ]
                 }
             ],
             "methodsClass": [
                 {
-                    "name": "findMenuTriggerName",
-                    "args": [
-                        {
-                            "name": "menuList",
-                            "type": ""
-                        }
-                    ],
+                    "name": "ngOnInit",
+                    "args": [],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 21,
-                    "jsdoctags": [
-                        {
-                            "name": "menuList",
-                            "type": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
+                    "line": 28
                 },
                 {
                     "name": "selectCanceled",
@@ -2443,7 +2582,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 29
+                    "line": 36
                 },
                 {
                     "name": "selectCompleted",
@@ -2451,7 +2590,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 25
+                    "line": 32
                 }
             ],
             "hostBindings": [],
@@ -2459,7 +2598,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {\r\n  Component,\r\n  Input,\r\n  ViewChild\r\n} from '@angular/core';\r\nimport {MatMenuTrigger} from '@angular/material/menu';\r\nimport {IMenuButton} from '../menu-button.interface';\r\n\r\n@Component({\r\n  selector: 'p-menu-free-text',\r\n  templateUrl: './menu-free-text.component.html',\r\n  styleUrls: ['./menu-free-text.component.scss'],\r\n})\r\nexport class MenuFreeTextComponent {\r\n  @Input() menuTriggerName: string;\r\n  @Input() menuList: any[];\r\n  @Input() footerBtnFirst: IMenuButton;\r\n  @Input() footerBtnLast: IMenuButton;\r\n  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;\r\n\r\n  findMenuTriggerName(menuList): void {\r\n    return menuList.find( item => item.selected === true).name;\r\n  }\r\n\r\n  selectCompleted(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  selectCanceled(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n}\r\n",
+            "sourceCode": "import {\r\n  Component,\r\n  Input, OnInit,\r\n  ViewChild\r\n} from '@angular/core';\r\nimport {MatMenuTrigger} from '@angular/material/menu';\r\nimport {IMenuButton} from '../menu-button.interface';\r\n\r\ninterface IMenuFreeTextItem {\r\n  name: string;\r\n  inputValue?: string;\r\n  selected?: boolean;\r\n}\r\n\r\n@Component({\r\n  selector: 'p-menu-free-text',\r\n  templateUrl: './menu-free-text.component.html',\r\n  styleUrls: ['./menu-free-text.component.scss'],\r\n})\r\nexport class MenuFreeTextComponent implements OnInit{\r\n  @Input() menuTriggerName: string;\r\n  @Input() menuList: IMenuFreeTextItem[];\r\n  @Input() footerBtnFirst: IMenuButton;\r\n  @Input() footerBtnLast: IMenuButton;\r\n  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;\r\n  public subMenuTriggerName: string;\r\n\r\n  ngOnInit(): void {\r\n    this.subMenuTriggerName = this.menuList.find( item => item.selected).name;\r\n  }\r\n\r\n  selectCompleted(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  selectCanceled(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2468,7 +2607,10 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<button [matMenuTriggerFor]=\"menu\"\r\n        #menuTrigger=\"matMenuTrigger\"\r\n        class=\"p-btn p-btn-small p-btn-tertiary\">\r\n    {{menuTriggerName}}\r\n</button>\r\n\r\n<!--menu window-->\r\n<mat-menu #menu=\"matMenu\" class=\"p-menu-radio\" [overlapTrigger]=\"false\">\r\n  <div class=\"p-menu-multiple-container\" (click)=\"$event.stopPropagation()\"\r\n                                        (keydown)=\"$event.stopPropagation()\">\r\n    <div class=\"p-menu-body\">\r\n      <p-menu-single-select class=\"p-menu-option-submenu\"\r\n                            [menuTriggerName]=\"findMenuTriggerName(menuList)\"\r\n                            [menuList]=\"menuList\">\r\n      </p-menu-single-select>\r\n    </div>\r\n    <div class=p-menu-footer\">\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnFirst.label\"\r\n                [buttonType]=\"footerBtnFirst.buttonType\"\r\n                (click)=\"selectCompleted()\"></p-button>\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnLast.label\"\r\n                [buttonType]=\"footerBtnLast.buttonType\"\r\n                (click)=\"selectCanceled()\"></p-button>\r\n    </div>\r\n  </div>\r\n</mat-menu>\r\n"
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<button [matMenuTriggerFor]=\"menu\"\r\n        #menuTrigger=\"matMenuTrigger\"\r\n        class=\"p-btn p-btn-small p-btn-tertiary\">\r\n    {{menuTriggerName}}\r\n</button>\r\n\r\n<!--menu window-->\r\n<mat-menu #menu=\"matMenu\" class=\"p-menu-radio\" [overlapTrigger]=\"false\">\r\n  <div class=\"p-menu-multiple-container\" (click)=\"$event.stopPropagation()\"\r\n                                (keydown)=\"$event.stopPropagation()\">\r\n    <div class=\"p-menu-body\">\r\n      <p-menu-single-select class=\"p-menu-option-submenu\"\r\n                            [menuTriggerName]=\"subMenuTriggerName\"\r\n                            [menuList]=\"menuList\">\r\n      </p-menu-single-select>\r\n\r\n\r\n    </div>\r\n    <div class=\"p-menu-footer\">\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnFirst.label\"\r\n                [buttonType]=\"footerBtnFirst.buttonType\"\r\n                (click)=\"selectCompleted()\"></p-button>\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnLast.label\"\r\n                [buttonType]=\"footerBtnLast.buttonType\"\r\n                (click)=\"selectCanceled()\"></p-button>\r\n    </div>\r\n  </div>\r\n</mat-menu>\r\n"
         },
         {
             "name": "MenuMultiSelectComponent",
@@ -3991,6 +4133,9 @@
                             "name": "InputNumericComponent"
                         },
                         {
+                            "name": "InputOutlineComponent"
+                        },
+                        {
                             "name": "InputTextComponent"
                         }
                     ]
@@ -4007,6 +4152,9 @@
                         },
                         {
                             "name": "InputNumericComponent"
+                        },
+                        {
+                            "name": "InputOutlineComponent"
                         },
                         {
                             "name": "InputTextComponent"
@@ -4362,6 +4510,14 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "Story<CheckboxGroupPageComponent>",
+                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "PageTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
                 "type": "Story<CheckboxGroupComponent>",
                 "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
@@ -4378,9 +4534,9 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
-                "type": "Story<CheckboxGroupPageComponent>",
-                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/input-text/input-text-table-layout/input-text-table-layout.stories.ts",
+                "type": "Story<InputTextTableLayoutComponent>",
+                "defaultValue": "(args: InputTextTableLayoutComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -4389,14 +4545,6 @@
                 "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
                 "type": "Story<InputTextPageComponent>",
                 "defaultValue": "(args: InputTextPageComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "PageTemplate",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/input-text/input-text-table-layout/input-text-table-layout.stories.ts",
-                "type": "Story<InputTextTableLayoutComponent>",
-                "defaultValue": "(args: InputTextTableLayoutComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -4496,17 +4644,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
-                "type": "Story<TypographyFontFamilyComponent>",
-                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/styles/typography-styles.stories.ts",
+                "type": "Story<TypographyStylesComponent>",
+                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/styles/typography-styles.stories.ts",
-                "type": "Story<TypographyStylesComponent>",
-                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
+                "type": "Story<TypographyFontFamilyComponent>",
+                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Toggles",
@@ -5286,6 +5434,15 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/design-system-lib/src/lib/input/outline/input-outline.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "InputOutlineComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/12",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/design-system-lib/src/lib/input/text/input-text.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -5336,7 +5493,16 @@
                 "linktype": "component",
                 "name": "MenuFreeTextComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/9",
+                "coverageCount": "0/10",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/menu/menu-free-text/menu-free-text.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "IMenuFreeTextItem",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
