@@ -48,7 +48,7 @@ export const Template = (args) => <InputOutlineComponent {...args} />
   <Story name="Error State"
     args={{
         ariaLabel: 'Label',
-        value: 'Input text',
+        value: null,
         validators: Validators.required
     }}>
     {Template.bind({})}
@@ -56,7 +56,7 @@ export const Template = (args) => <InputOutlineComponent {...args} />
   <Story name="Error Message"
     args={{
         ariaLabel: 'Label',
-        value: 'Input text',
+        value: null,
         validators: Validators.required,
         errorMessage: 'Validation text',
         matcher: new CustomErrorStateMatcher()
@@ -73,33 +73,15 @@ export const Template = (args) => <InputOutlineComponent {...args} />
     }}>
   {Template.bind({})}
   </Story>
-  <Story name="Error State Disabled"
-    args={{
-        ariaLabel: 'Label',
-        value: 'Input text',
-        validators: Validators.required,
-        disabled: true
-    }}>
-  {Template.bind({})}
-  </Story>
-  <Story name="Error Message Disabled" 
-    args={{
-        ariaLabel: 'Label',
-        value: 'Input text',
-        validators: Validators.required,
-        errorMessage: 'Validation text',
-        matcher: new CustomErrorStateMatcher(),
-        disabled: true
-    }}>
-  {Template.bind({})}
-  </Story>
+  <p className="story-title hidden-text">placeholder</p>
+  <p className="story-title hidden-text">placeholder</p>
   <p className="story-title">Readonly</p>
   <Story name="Regular Readonly"
     args={{
         ariaLabel: 'Label',
-        value: 100,
+        value: 'Input text',
         validators: Validators.required,
-        size: InputNumericSizeEnum.Small
+        readonly: true
     }}>
     {Template.bind({})}
   </Story>

@@ -1,6 +1,6 @@
 <mat-form-field class="p-input-outline"
                 appearance="outline"
-                [ngClass]="{'p-input-text-readonly' : readonly}"
+                [ngClass]="{'p-input-outline-readonly' : readonly, 'no-error-message': !errorMessage}"
                 floatLabel="always">
   <mat-label class="p-input-text-label">{{label}}</mat-label>
   <input matInput
@@ -9,6 +9,7 @@
          [readonly]="readonly"
          attr.aria-label="{{ariaLabel}}"
          [formControl]="formFieldControl"
+         autocomplete="off"
          onfocus="this.select()"
          class="p-input-text-input">
   <mat-error *ngIf="formFieldControl.invalid"

@@ -7,7 +7,7 @@ $input-text-height: 32px;
 ::ng-deep .p-input-outline {
   width: 100%;
   max-width: 220px;
-  height: $input-text-height;
+  //height: $input-text-height;
   ::placeholder {
     font-style: italic;
     color: $gray-scale-700;
@@ -26,18 +26,11 @@ $input-text-height: 32px;
   }
 
   &.mat-form-field-appearance-outline {
-    &:hover {
-      .mat-form-field-outline,
-      .mat-form-field-outline-thick {
-        color: $primary-a-900;
-      }
-    }
     .mat-form-field-wrapper {
-      color: blue;
       height: 100%;
       margin-top: 0;
       margin-bottom: 0;
-      padding-bottom: 0;
+      //padding-bottom: 0;
     }
     .mat-form-field-flex {
       height: 100%;
@@ -70,11 +63,75 @@ $input-text-height: 32px;
         border-width: 1px;
       }
     }
-    &.mat-focused {
+    // hover
+    &:not(.mat-form-field-disabled):not(.mat-form-field-invalid):not(.ng-invalid):not(.p-input-outline-readonly):hover {
       .mat-form-field-outline,
       .mat-form-field-outline-thick {
         color: $primary-a-900;
       }
+    }
+    // focus
+    &.mat-focused {
+      &~.mat-form-field-outline,
+      &~.mat-form-field-outline-thick {
+        color: $primary-a-900;
+      }
+    }
+  }
+
+  // error state
+  &.ng-invalid {
+    .mat-form-field-outline,
+    .mat-form-field-outline-thick {
+      color: $supportive-alert-500;
+    }
+    // error state on hover & in focus
+    &:hover,
+    &.mat-focused {
+      .mat-form-field-outline,
+      .mat-form-field-outline-thick {
+        color: $supportive-alert-700;
+      }
+    }
+  }
+
+  //error message
+  .mat-error {
+    font-family: "Inter", "Arial", sans-serif;
+    font-size: 12px;
+    color: #E11731;
+    line-height: 12px;
+    white-space: nowrap;
+  }
+  &.mat-form-field-appearance-outline .mat-form-field-subscript-wrapper {
+    margin-top: 5px;
+    padding: 0;
+  }
+
+  //disabled
+  &.mat-form-field-disabled {
+    .mat-input-element {
+      color: $gray-scale-600;
+    }
+    .mat-form-field-outline,
+    .mat-form-field-outline-thick {
+      color: $gray-scale-400;
+    }
+  }
+
+  //readonly
+  &.p-input-outline-readonly {
+    .mat-form-field-outline,
+    .mat-form-field-outline-thick {
+      color: transparent;
+    }
+  }
+
+  // in case no error message below the input expected
+  // padding-bottom takes additional 22px
+  &.no-error-message {
+    .mat-form-field-wrapper {
+      padding-bottom: 0;
     }
   }
 }
