@@ -2,87 +2,79 @@
 
 $input-text-width: 220px;
 $input-text-padding: 8px;
+$input-text-height: 32px;
 
-.p-input-text {
-  &-label {
-    font-family: $font-family-basic;
-    font-weight: 500;
-    font-size: $tiny-font-size;
-    text-transform: capitalize;
-    line-height: 19px;
+::ng-deep .p-input-outline {
+  width: 100%;
+  max-width: 220px;
+  height: $input-text-height;
+  ::placeholder {
+    font-style: italic;
     color: $gray-scale-700;
   }
 
-  ::ng-deep & {
-    // material styles override
-    .mat-input-element {
-      font-family: $font-family-basic;
-      font-size: $base-font-size;
-      max-width: $input-text-width - $input-text-padding;
-      line-height: 20px;
-      color: $primary-a-900;
-      padding-left: $input-text-padding;
-      caret-color: $primary-a-900;
+  .mat-input-element {
+    font-family: $font-family-basic;
+    font-size: $small-font-size;
+    color: $primary-a-900;
+    max-width: calc(100% - #{$input-text-padding} * 2 - 2px);
+    height: $input-text-height - 2px;
+    margin-top: 1px;
+    padding-left: $input-text-padding;
+    padding-right: $input-text-padding;
+    caret-color: $primary-a-900;
+  }
+
+  &.mat-form-field-appearance-outline {
+    &:hover {
+      .mat-form-field-outline,
+      .mat-form-field-outline-thick {
+        color: $primary-a-900;
+      }
+    }
+    .mat-form-field-wrapper {
+      color: blue;
+      height: 100%;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .mat-form-field-flex {
+      height: 100%;
+      padding: 0;
+      margin-top: 0;
+    }
+    .mat-form-field-outline {
+      top: 0;
     }
     .mat-form-field-infix {
-      width: $input-text-width;
-      padding-bottom: 6px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: $input-text-height;
+      padding: 0;
+      border-top: none;
     }
-    &.mat-form-field-appearance-standard .mat-form-field-flex {
-      padding-top: 0;
+    .mat-form-field-outline-start {
+      border-radius: 2px 0 0 2px;
     }
-    &.mat-form-field-appearance-standard .mat-form-field-underline {
-      background-color: transparent;
-      box-shadow: inset 0px -1px 0px $gray-scale-600;
+    .mat-form-field-outline-end {
+      border-radius: 0 2px 2px 0;
     }
-    &.mat-form-field.mat-focused .mat-form-field-underline,
-    &:not(.mat-form-field-disabled):not(.mat-form-field-invalid)
-            .mat-form-field-flex:hover~.mat-form-field-underline {
-      background-color: transparent;
-      box-shadow: inset 0px -1px 0px $primary-a-900;
-    }
-    .mat-form-field-ripple {
-      display: none;
-    }
-    .mat-form-field-subscript-wrapper {
-      margin-top: 5px;
-    }
-    .mat-error {
-      font-family: $font-family-basic;
-      font-size: $tiny-font-size;
-      color: $supportive-alert-500;
-      line-height: 12px;
-    }
-
-    // disabled
-    &.mat-form-field-disabled {
-      .mat-input-element {
-        color: $gray-scale-600;
-      }
-      .mat-form-field-underline {
-        box-shadow: inset 0px -1px 0px $gray-scale-400;
+    .mat-form-field-outline,
+    .mat-form-field-outline-thick {
+      color: $gray-scale-400;
+      .mat-form-field-outline-start,
+      .mat-form-field-outline-end,
+      .mat-form-field-outline-gap {
+        border-width: 1px;
       }
     }
-
-    // error state
-    &.ng-invalid {
-      .mat-form-field-underline {
-        box-shadow: inset 0px -1px 0px $supportive-alert-500;
-      }
-      &.mat-form-field .mat-form-field-flex:hover~.mat-form-field-underline,
-      &.mat-form-field.mat-focused .mat-form-field-underline {
-        box-shadow: inset 0px -1px 0px $supportive-alert-700;
-      }
-    }
-
-    // readonly
-    &.p-input-text-readonly {
-      &:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover~.mat-form-field-underline,
-
-      .mat-form-field-underline {
-        box-shadow: none;
+    &.mat-focused {
+      .mat-form-field-outline,
+      .mat-form-field-outline-thick {
+        color: $primary-a-900;
       }
     }
   }
-
 }

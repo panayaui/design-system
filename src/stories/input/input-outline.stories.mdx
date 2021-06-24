@@ -7,6 +7,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ReactiveFormsModule, Validators} from '@angular/forms';
+import {CustomErrorStateMatcher} from './custom-error-state-matcher'
 
 <Meta title='Components/Input/Outline' component={InputOutlineComponent}
 decorators={[
@@ -29,76 +30,71 @@ export const Template = (args) => <InputOutlineComponent {...args} />
   <p-input-outline></p-input-outline>
 ```
 
-###### Size
+###### No Label
 <Canvas>
   <p className="story-title hidden-text">size</p>
-  <p className="story-title">Small</p>
-  <p className="story-title">Medium</p>
-  <p className="story-title">Large</p>
-  <p className="story-title">Label First</p>
-  <Story name="Small Label First"
+  <p className="story-title">Regular</p>
+  <p className="story-title">Error</p>
+  <p className="story-title">Error Message</p>
+  <p className="story-title">Default</p>
+  <Story name="Default"
      args={{
-         label: 'Label',
          ariaLabel: 'Label',
-         value: 100,
+         value: 'Input text',
          validators: Validators.required
      }}>
      {Template.bind({})}
   </Story>
-  <Story name="Medium Label First"
+  <Story name="Error State"
     args={{
-        label: 'Label',
         ariaLabel: 'Label',
-        value: 100,
+        value: 'Input text',
         validators: Validators.required
     }}>
     {Template.bind({})}
   </Story>
-  <Story name="Large Label First"
+  <Story name="Error Message"
     args={{
-        label: 'Label',
         ariaLabel: 'Label',
-        value: 100,
-        validators: Validators.required
+        value: 'Input text',
+        validators: Validators.required,
+        errorMessage: 'Validation text',
+        matcher: new CustomErrorStateMatcher()
     }}>
     {Template.bind({})}
   </Story>
-  <p className="story-title">Label Last</p>
-  <Story name="Small Label Last"
+  <p className="story-title">Disabled</p>
+  <Story name="Regular Disabled"
     args={{
-       label: 'Label',
-       ariaLabel: 'Label',
-       value: 100,
-       validators: Validators.required,
-       size: InputNumericSizeEnum.Small,
-       labelLast: true
+        ariaLabel: 'Label',
+        value: 'Input text',
+        validators: Validators.required,
+        disabled: true
     }}>
   {Template.bind({})}
   </Story>
-  <Story name="Medium Label Last"
+  <Story name="Error State Disabled"
     args={{
-       label: 'Label',
-       ariaLabel: 'Label',
-       value: 100,
-       validators: Validators.required,
-       size: InputNumericSizeEnum.Medium,
-       labelLast: true
+        ariaLabel: 'Label',
+        value: 'Input text',
+        validators: Validators.required,
+        disabled: true
     }}>
   {Template.bind({})}
   </Story>
-  <Story name="Large Label Last"
+  <Story name="Error Message Disabled" 
     args={{
-       label: 'Label',
-       ariaLabel: 'Label',
-       value: 100,
-       validators: Validators.required,
-       size: InputNumericSizeEnum.Large,
-       labelLast: true
+        ariaLabel: 'Label',
+        value: 'Input text',
+        validators: Validators.required,
+        errorMessage: 'Validation text',
+        matcher: new CustomErrorStateMatcher(),
+        disabled: true
     }}>
   {Template.bind({})}
   </Story>
-  <p className="story-title">No Label</p>
-  <Story name="Small No Label"
+  <p className="story-title">Readonly</p>
+  <Story name="Regular Readonly"
     args={{
         ariaLabel: 'Label',
         value: 100,
@@ -107,63 +103,11 @@ export const Template = (args) => <InputOutlineComponent {...args} />
     }}>
     {Template.bind({})}
   </Story>
-  <Story name="Medium No Label"
-    args={{
-        ariaLabel: 'Label',
-        value: 100,
-        validators: Validators.required,
-        size: InputNumericSizeEnum.Medium
-    }}>
-    {Template.bind({})}
-  </Story>
-  <Story name="Large No Label"
-    args={{
-        ariaLabel: 'Label',
-        value: 100,
-        validators: Validators.required,
-        size: InputNumericSizeEnum.Large
-    }}>
-    {Template.bind({})}
-  </Story>
 </Canvas>
 
 ###### Component
 ```ts
-export class InputNumericComponent implements OnInit {
-  @Input() type: string = 'number';
-  @Input() label: string;
-  @Input() ariaLabel: string; // required
-  @Input() placeholder: number;
-  @Input() errorMessage: string;
-  @Input() disabled: boolean = false;
-  @Input() readonly: boolean = false;
-  @Input() value: number;
-  @Input() validators: ValidatorFn[];
-  @Input() labelLast: boolean = false;
-  @Input() size: InputNumericSizeEnum = InputNumericSizeEnum.Large;
-  @Input() matcher: ErrorStateMatcher;
-  public customControl: FormControl;
 
-  public get classes(): string[] {
-    const classParams = [];
-    this.readonly ? classParams.push('p-input-numeric-readonly') : null;
-    classParams.push(`p-input-numeric-${this.size}`);
-    return classParams;
-  }
+```
 
-  ngOnInit(): void {
-    this.customControl = new FormControl(
-      {value: this.value, disabled: this.disabled},
-      this.validators);
-  }
-}
-```
-###### Size Enum
-```ts
-export enum InputNumericSizeEnum {
-  Small = 'small',
-  Medium = 'medium',
-  Large = 'large'
-}
-```
 
