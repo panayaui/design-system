@@ -9,8 +9,8 @@ import {InputTextComponent} from './text/input-text.component';
 import {DatepickerComponent} from './datepicker/datepicker.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
-import {MatIconModule} from '@angular/material/icon';
 import {InputOutlineComponent} from './outline/input-outline.component';
+import {IconModule} from '../icon/icon.module';
 
 @NgModule({
   imports: [
@@ -21,7 +21,7 @@ import {InputOutlineComponent} from './outline/input-outline.component';
     ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatIconModule
+    IconModule
   ],
   declarations: [
     InputNumericComponent,

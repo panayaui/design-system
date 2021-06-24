@@ -5,10 +5,13 @@
          attr.aria-label="{{ariaLabel}}"
          onfocus="this.select()">
   <mat-datepicker-toggle matSuffix [for]="picker" class="p-datepicker-toggle">
-    <mat-icon matDatepickerToggleIcon
-              class="p-datepicker-icon">
-      calendar_today
-    </mat-icon>
+    <p-icon class="p-datepicker-icon"
+            matDatepickerToggleIcon
+            iconName="calendar"
+            width="16"
+            height="auto"
+            strokeWidth="1.5">
+    </p-icon>
   </mat-datepicker-toggle>
   <mat-datepicker #picker
                   panelClass="p-datepicker-panel"></mat-datepicker>
