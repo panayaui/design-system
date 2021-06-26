@@ -17,6 +17,7 @@ export class MenuSingleSelectComponent implements OnInit, OnDestroy {
   @Input() filterAriaLabel: string;
   @Input() buttonFirst: IMenuButton;
   @Input() buttonLast: IMenuButton;
+  @Input() isSubMenu: boolean = false;
   public filteredList: any[];
   public formFieldControl: FormControl;
   private sub: SubscriptionLike;
@@ -50,5 +51,9 @@ export class MenuSingleSelectComponent implements OnInit, OnDestroy {
         this.filteredList.push(Object.assign({}, group, group.names = filteredGroup));
       }
     });
+  }
+
+  onItemSelected(item): void {
+    console.log(item);
   }
 }
