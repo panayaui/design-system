@@ -1,0 +1,154 @@
+@import "../../assets/styles/custom";
+
+$input-text-width: 220px;
+$input-text-padding: 8px;
+$input-text-height: 32px;
+
+::ng-deep .p-input-outline {
+  width: 100%;
+
+  ::placeholder {
+    font-style: italic;
+    color: $gray-scale-700;
+  }
+
+  //label
+  .mat-form-field-label-wrapper {
+    top: -15px;
+  }
+
+  .p-input-text-label {
+    font-family: $font-family-basic;
+    font-size: $tiny-font-size;
+    font-weight: 500;
+    color: $gray-scale-700;
+  }
+
+  //input
+  .mat-input-element {
+    font-family: $font-family-basic;
+    font-size: $small-font-size;
+    color: $primary-a-900;
+    max-width: calc(100% - #{$input-text-padding} * 2 - 2px);
+    height: $input-text-height - 2px;
+    margin-top: 1px;
+    padding-left: $input-text-padding;
+    padding-right: $input-text-padding;
+    caret-color: $primary-a-900;
+  }
+
+  &.mat-form-field-appearance-outline {
+    .mat-form-field-wrapper {
+      height: 100%;
+      margin-top: 0;
+      margin-bottom: 0;
+      //padding-bottom: 0;
+    }
+    .mat-form-field-flex {
+      height: 100%;
+      padding: 0;
+      margin-top: 0;
+    }
+    .mat-form-field-outline {
+      top: 0;
+    }
+    .mat-form-field-infix {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: $input-text-height;
+      padding: 0;
+      border-top: none;
+    }
+    .mat-form-field-outline-start {
+      border-radius: 2px 0 0 2px;
+    }
+    .mat-form-field-outline-end {
+      border-radius: 0 2px 2px 0;
+    }
+    .mat-form-field-outline,
+    .mat-form-field-outline-thick {
+      color: $gray-scale-400;
+      .mat-form-field-outline-start,
+      .mat-form-field-outline-end {
+        border-width: 1px;
+      }
+    }
+    .mat-form-field-outline-gap {
+      display: none;
+    }
+    // hover
+    &:not(.mat-form-field-disabled):not(.mat-form-field-invalid):not(.ng-invalid):not(.p-input-outline-readonly):hover {
+      .mat-form-field-outline,
+      .mat-form-field-outline-thick {
+        color: $primary-a-900;
+      }
+    }
+    // focus
+    &.mat-focused {
+      &~.mat-form-field-outline,
+      &~.mat-form-field-outline-thick {
+        color: $primary-a-900;
+      }
+    }
+  }
+
+  // error state
+  &.ng-invalid {
+    .mat-form-field-outline,
+    .mat-form-field-outline-thick {
+      color: $supportive-alert-500;
+    }
+    // error state on hover & in focus
+    &:hover,
+    &.mat-focused {
+      .mat-form-field-outline,
+      .mat-form-field-outline-thick {
+        color: $supportive-alert-700;
+      }
+    }
+  }
+
+  //error message
+  .mat-error {
+    font-family: "Inter", "Arial", sans-serif;
+    font-size: 12px;
+    color: #E11731;
+    line-height: 12px;
+    white-space: nowrap;
+  }
+  &.mat-form-field-appearance-outline .mat-form-field-subscript-wrapper {
+    margin-top: 5px;
+    padding: 0;
+  }
+
+  //disabled
+  &.mat-form-field-disabled {
+    .p-input-text-label {
+      color: $gray-scale-600;
+    }
+    .mat-input-element {
+      color: $gray-scale-600;
+    }
+    .mat-form-field-outline,
+    .mat-form-field-outline-thick {
+      color: $gray-scale-400;
+    }
+  }
+
+  //readonly
+  &.p-input-outline-readonly {
+    .mat-form-field-outline,
+    .mat-form-field-outline-thick {
+      color: transparent;
+    }
+  }
+
+  // in case no error message below the input expected
+  // padding-bottom takes additional 22px
+  &.no-error-message {
+    .mat-form-field-wrapper {
+      padding-bottom: 0;
+    }
+  }
+}

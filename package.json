@@ -13,7 +13,8 @@
     "build-storybook": "npm run docs:json && build-storybook --no-dll -o docs-build -s ./src/stories/assets",
     "lib:build": "ng build design-system-lib",
     "lib:watch": "ng build design-system-lib --watch",
-    "lib:publish": "npm run lib:build && cd dist/test-lib && npm pack npm publish"
+    "lib:publish": "npm run lib:build && cd dist/test-lib && npm pack npm publish",
+    "scss": "scss-bundle -c scss-bundle.config.json"
   },
   "private": true,
   "dependencies": {

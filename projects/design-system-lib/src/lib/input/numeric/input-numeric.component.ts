@@ -21,7 +21,6 @@ export class InputNumericComponent implements OnInit {
   @Input() labelLast: boolean = false;
   @Input() size: InputNumericSizeEnum = InputNumericSizeEnum.Large;
   @Input() matcher: ErrorStateMatcher;
-  @Input() noErrorPlanned: boolean = false;
   public formFieldControl: FormControl;
 
   public get classes(): string[] {

@@ -1,0 +1,35 @@
+<button [matMenuTriggerFor]="menu"
+        #menuTrigger="matMenuTrigger"
+        class="p-btn p-btn-small p-btn-tertiary">
+    {{menuTriggerName}}
+</button>
+
+<!--menu window-->
+<mat-menu #menu="matMenu" class="p-menu" [overlapTrigger]="false">
+  <div class="p-menu-container" (click)="$event.stopPropagation()"
+                                (keydown)="$event.stopPropagation()">
+    <div class="p-menu-body">
+      <p-menu-single-select class="p-menu-submenu"
+                            [menuTriggerName]="selectedItem?.name"
+                            [menuList]="menuList"
+                            (onClickTask)="setSelectedItem($event)">
+      </p-menu-single-select>
+      <p-input-outline *ngIf="isInputShown"
+                       class="p-menu-text-input"
+                       ariaLabel="Free text"
+                       placeholder="Type here"
+                       [value]="inputValue">
+      </p-input-outline>
+    </div>
+    <div class="p-menu-footer">
+      <p-button class="p-menu-footer-btn"
+                [label]="footerBtnFirst.label"
+                [buttonType]="footerBtnFirst.buttonType"
+                (click)="selectCompleted()"></p-button>
+      <p-button class="p-menu-footer-btn"
+                [label]="footerBtnLast.label"
+                [buttonType]="footerBtnLast.buttonType"
+                (click)="selectCanceled()"></p-button>
+    </div>
+  </div>
+</mat-menu>

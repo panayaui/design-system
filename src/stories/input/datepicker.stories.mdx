@@ -19,16 +19,15 @@ decorators={[
         })
 ]} />
 
-# Datepicker
-
 export const Template = (args) => <DatepickerComponent {...args} />
 
-###### Selector
+# Datepicker
 
+###### Selector
 ```html
   <p-datepicker></p-datepicker>
 ```
-
+###### Example
 <Canvas>
   <Story name="Datepicker"
      args={{
@@ -43,10 +42,40 @@ export const Template = (args) => <DatepickerComponent {...args} />
 
 ###### Component
 ```ts
-
+export class DatepickerComponent {
+  @Input() ariaLabel: string;
+  @Input() placeholder: string;
+  @Input() disabled: boolean = false;
+  @Input() readonly: boolean = false;
+  @Input() value: string;
+  @Output() dateChange: EventEmitter<any> = new EventEmitter();
+  @Output() dateInput: EventEmitter<any> = new EventEmitter();
+}
 ```
-###### 
-```ts
+```html
+<mat-form-field class="p-datepicker p-input-text" appearance="standard">
+  <input matInput
+         [matDatepicker]="picker"
+         class="p-input-text-input"
+         attr.aria-label="{{ariaLabel}}"
+         onfocus="this.select()">
+  <mat-datepicker-toggle matSuffix [for]="picker" class="p-datepicker-toggle">
+    <mat-icon matDatepickerToggleIcon
+              class="p-datepicker-icon">
+      calendar_today
+    </mat-icon>
+  </mat-datepicker-toggle>
+  <mat-datepicker #picker
+                  panelClass="p-datepicker-panel"></mat-datepicker>
+</mat-form-field>
 
+<!--<p class="p-datepicker-preview paragraph-2-link">-->
+  <!--Tuesday, March 16, 2021-->
+<!--</p>-->
 ```
 
+Element "p-datepicker-preview" has all neccessary properties according to Figma.
+It could be added into the custom header of MatDatePicker. In this case remove comment from the property "transform: translateY(300px)" in datepicker.component.scss. 
+```html
+<mat-datepicker #picker [calendarHeaderComponent]="exampleHeader"></mat-datepicker>
+```

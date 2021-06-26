@@ -20,7 +20,7 @@ import {MatRadioModule} from '@angular/material/radio';
     decorators={[
       moduleMetadata({
           imports: [
-              CommonModule,            
+              CommonModule,
               BrowserAnimationsModule,
               MatMenuModule,
               MatFormFieldModule,
@@ -31,7 +31,7 @@ import {MatRadioModule} from '@angular/material/radio';
               RadioButtonModule
           ]
       })
-    ]}  
+    ]}
     args={{
       menuTriggerName: 'Action',
       menuList: [
@@ -83,7 +83,7 @@ import {MatRadioModule} from '@angular/material/radio';
         label: 'Cancel',
         buttonType: ButtonTypeEnum.Secondary
       }
-    }}  
+    }}
  />
 
 # Menu
@@ -93,7 +93,7 @@ export const Template = (args) => <MenuRadioGroupComponent {...args} />
 ###### Radio Group Menu
 <Canvas>
   <Story name="Radio"
-    args={{ 
+    args={{
     }}>
     {Template.bind({})}
   </Story>
@@ -154,8 +154,7 @@ interface IMenuRadioOption extends IRadioButton {
         <p-input-numeric *ngIf="option.numericInputValue"
                           class="p-menu-option-input"
                           [size]="inputNumericSize.Small"
-                          [value]="option.numericInputValue"
-                          [noErrorPlanned]="true">
+                          [value]="option.numericInputValue">
         </p-input-numeric>
 
         <div class="p-menu-option-link" *ngIf="option.menuList">

@@ -17,6 +17,7 @@ import {InputModule} from '../input/input.module';
 import {MenuRadioGroupComponent} from './menu-radio-group/menu-radio-group.component';
 import {MatRadioModule} from '@angular/material/radio';
 import {RadioButtonModule} from '../radio-button/radio-button.module';
+import {MenuFreeTextComponent} from './menu-free-text/menu-free-text.component';
 
 @NgModule({
   imports: [
@@ -39,13 +40,15 @@ import {RadioButtonModule} from '../radio-button/radio-button.module';
     MenuSingleSelectComponent,
     MenuMultiSelectComponent,
     MenuTabsComponent,
-    MenuRadioGroupComponent
+    MenuRadioGroupComponent,
+    MenuFreeTextComponent
   ],
   exports: [
     MenuSingleSelectComponent,
     MenuMultiSelectComponent,
     MenuTabsComponent,
-    MenuRadioGroupComponent
+    MenuRadioGroupComponent,
+    MenuFreeTextComponent
   ]
 })
 export class MenuModule { }
