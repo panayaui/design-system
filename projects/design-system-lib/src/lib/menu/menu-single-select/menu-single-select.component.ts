@@ -1,8 +1,9 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {SubscriptionLike} from 'rxjs';
 import {IMenuButton} from '../menu-button.interface';
 import {ButtonTypeEnum} from '../../button/button-type.enum';
+import {MatMenuTrigger} from '@angular/material/menu';
 
 @Component({
   selector: 'p-menu-single-select',
@@ -17,7 +18,8 @@ export class MenuSingleSelectComponent implements OnInit, OnDestroy {
   @Input() filterAriaLabel: string;
   @Input() buttonFirst: IMenuButton;
   @Input() buttonLast: IMenuButton;
-  @Input() isSubMenu: boolean = false;
+  @Output() onClickTask: EventEmitter<any> = new EventEmitter();
+  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;
   public filteredList: any[];
   public formFieldControl: FormControl;
   private sub: SubscriptionLike;
@@ -53,7 +55,12 @@ export class MenuSingleSelectComponent implements OnInit, OnDestroy {
     });
   }
 
-  onItemSelected(item): void {
-    console.log(item);
+  selectCompleted(): void {
+    this.menuTrigger.closeMenu();
+  }
+
+  onSelectedItem($event, item): void {
+    this.onClickTask.emit(item);
+    this.selectCompleted();
   }
 }

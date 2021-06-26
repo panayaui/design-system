@@ -1,4 +1,6 @@
-<div class="p-menu-trigger" [matMenuTriggerFor]="menu">
+<div class="p-menu-trigger"
+     [matMenuTriggerFor]="menu"
+     #menuTrigger="matMenuTrigger">
   <p-button iconAfter="chevron-down"
             iconAfterWidth="17"
             iconAfterHeight="17"
@@ -10,74 +12,61 @@
 
 <!--menu-single-select window-->
 <mat-menu #menu="matMenu" class="p-menu" [overlapTrigger]="false">
-  <!--in case the menu should be closed after click-->
-  <ng-template [ngIf]="!isSubMenu" [ngIfElse]="subMenu">
-    <ng-container [ngTemplateOutlet]="closedOnSingleClick"></ng-container>
-  </ng-template>
-
-  <!--in case this menu is submenu and should not close the main menu-->
-  <ng-template #subMenu>
-    <div class="p-menu-container" (click)="$event.stopPropagation()"
-         (keydown)="$event.stopPropagation()">
-      <ng-container [ngTemplateOutlet]="closedOnSingleClick"></ng-container>
+  <div class="p-menu-container" (click)="$event.stopPropagation()"
+       (keydown)="$event.stopPropagation()">
+    <div class="p-menu-header" *ngIf="filterPlaceholder">
+      <mat-form-field class="p-menu-form-field"
+                      appearance="outline"
+                      floatLabel="always"
+                      (click)="$event.stopPropagation()"
+                      (keydown)="$event.stopPropagation()">
+        <input matInput
+               type="text"
+               [placeholder]="filterPlaceholder"
+               attr.aria-label="{{filterAriaLabel}}"
+               [formControl]="formFieldControl"
+               autocomplete="off"
+               onfocus="this.select()"
+               class="p-menu-input">
+      </mat-form-field>
     </div>
-  </ng-template>
+
+    <div class="p-menu-body">
+      <div class="p-menu-body-container">
+        <!--groupTitle === true-->
+        <ng-template [ngIf]="groupTitle" [ngIfElse]="noGroupTitle">
+          <ng-container *ngFor="let group of filteredList">
+            <h6 class="p-menu-group-title">{{group.letter}}</h6>
+            <ng-container [ngTemplateOutlet]="menuLine"
+                          [ngTemplateOutletContext] ="{itemsList: group.names}"></ng-container>
+          </ng-container>
+        </ng-template>
+
+        <!--groupTitle === false-->
+        <ng-template #noGroupTitle>
+          <ng-container [ngTemplateOutlet]="menuLine"
+                        [ngTemplateOutletContext] ="{itemsList: menuList}"></ng-container>
+        </ng-template>
+      </div>
+    </div>
+
+    <div class="p-menu-footer" *ngIf="filterPlaceholder">
+      <p-button class="p-menu-btn-line"
+                [label]="buttonFirst.label"
+                [iconBefore]="buttonFirst.icon.iconName"
+                [iconBeforeWidth]="buttonFirst.icon.width"
+                [iconBeforeHeight]="buttonFirst.icon.height"
+                [buttonType]="buttonFirst.buttonType"></p-button>
+      <p-button class="p-menu-btn-line"
+                [label]="buttonLast.label"
+                [iconBefore]="buttonLast.icon.iconName"
+                [iconBeforeWidth]="buttonLast.icon.width"
+                [iconBeforeHeight]="buttonLast.icon.height"
+                [buttonType]="buttonLast.buttonType"></p-button>
+    </div>
+  </div>
 </mat-menu>
 
-
-<!--menu is closed after option is selected / clicked-->
-<ng-template #closedOnSingleClick>
-  <div class="p-menu-header" *ngIf="filterPlaceholder">
-    <mat-form-field class="p-menu-form-field"
-                    appearance="outline"
-                    floatLabel="always"
-                    (click)="$event.stopPropagation()"
-                    (keydown)="$event.stopPropagation()">
-      <input matInput
-             type="text"
-             [placeholder]="filterPlaceholder"
-             attr.aria-label="{{filterAriaLabel}}"
-             [formControl]="formFieldControl"
-             autocomplete="off"
-             onfocus="this.select()"
-             class="p-menu-input">
-    </mat-form-field>
-  </div>
-
-  <div class="p-menu-body">
-    <div class="p-menu-body-container">
-      <!--groupTitle === true-->
-      <ng-template [ngIf]="groupTitle" [ngIfElse]="noGroupTitle">
-        <ng-container *ngFor="let group of filteredList">
-          <h6 class="p-menu-group-title">{{group.letter}}</h6>
-          <ng-container [ngTemplateOutlet]="menuLine"
-                        [ngTemplateOutletContext] ="{itemsList: group.names}"></ng-container>
-        </ng-container>
-      </ng-template>
-
-      <!--groupTitle === false-->
-      <ng-template #noGroupTitle>
-        <ng-container [ngTemplateOutlet]="menuLine"
-                      [ngTemplateOutletContext] ="{itemsList: menuList}"></ng-container>
-      </ng-template>
-    </div>
-  </div>
-
-  <div class="p-menu-footer" *ngIf="filterPlaceholder">
-    <p-button class="p-menu-btn-line"
-              [label]="buttonFirst.label"
-              [iconBefore]="buttonFirst.icon.iconName"
-              [iconBeforeWidth]="buttonFirst.icon.width"
-              [iconBeforeHeight]="buttonFirst.icon.height"
-              [buttonType]="buttonFirst.buttonType"></p-button>
-    <p-button class="p-menu-btn-line"
-              [label]="buttonLast.label"
-              [iconBefore]="buttonLast.icon.iconName"
-              [iconBeforeWidth]="buttonLast.icon.width"
-              [iconBeforeHeight]="buttonLast.icon.height"
-              [buttonType]="buttonLast.buttonType"></p-button>
-  </div>
-</ng-template>
 
 
 <!--menu-single-select line template-->
@@ -87,7 +76,7 @@
           [class.p-menu-item-selected]="item.selected"
           [disabled]="item.disabled"
           [disableRipple]="true"
-          (click)="onItemSelected(item)">
+          (click)="onSelectedItem($event, item)">
     {{item.name}}
   </button>
 </ng-template>

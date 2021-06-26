@@ -23,10 +23,11 @@ export class MenuFreeTextComponent implements OnInit{
   @Input() footerBtnFirst: IMenuButton;
   @Input() footerBtnLast: IMenuButton;
   @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;
-  public subMenuTriggerName: string;
+  public selectedItem: IMenuFreeTextItem;
+  public isInputShown: boolean;
 
   ngOnInit(): void {
-    this.subMenuTriggerName = this.menuList.find( item => item.selected).name;
+    this.findSelectedItem();
   }
 
   selectCompleted(): void {
@@ -35,5 +36,16 @@ export class MenuFreeTextComponent implements OnInit{
 
   selectCanceled(): void {
     this.menuTrigger.closeMenu();
+  }
+
+  findSelectedItem(): void {
+    this.selectedItem = this.menuList.find( item => item.selected );
+    this.isInputShown = this.selectedItem.hasOwnProperty('inputValue');
+  }
+
+  setSelectedItem(newSelectedItem): void {
+    this.selectedItem.selected = false;
+    newSelectedItem.selected = true;
+    this.findSelectedItem();
   }
 }

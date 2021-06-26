@@ -14,7 +14,7 @@ $menu-min-width: 480px;
 $menu-max-height: 75vh;
 
 // mat-menu-panel
-::ng-deep .p-menu-radio.mat-menu-panel {
+::ng-deep .p-menu-text.mat-menu-panel {
   min-width: $menu-min-width;
   max-height: $menu-max-height;
   background-color: $menu-background;
@@ -28,11 +28,6 @@ $menu-max-height: 75vh;
     padding: 0;
     position: relative;
   }
-}
-
-// container of the multiple selection menu (stopPropagation)
-.p-menu-multiple-container {
-  height: 100%;
 }
 
 .p-menu {
