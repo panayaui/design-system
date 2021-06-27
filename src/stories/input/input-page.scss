@@ -38,3 +38,17 @@
 #input-outline ~ div .p-input-outline {
   max-width: 220px;
 }
+
+#page-head-input {
+  &~ .sbdocs .innerZoomElementWrapper {
+    & > div {
+      width: 100%;
+      &:nth-child(even) {
+        margin-bottom: 40px;
+      }
+    }
+    .story-title {
+      line-height: 24px;
+    }
+  }
+}

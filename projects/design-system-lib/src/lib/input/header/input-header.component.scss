@@ -1,0 +1,28 @@
+@import "../outline/input-outline-base";
+
+.p-input-header {
+  //readonly
+  &.p-input-readonly {
+    //input
+    ::ng-deep .mat-input-element {
+      font-size: $big-font-size;
+      font-weight: 600;
+    }
+
+    &:hover {
+      ::ng-deep .mat-form-field-outline,
+      ::ng-deep .mat-form-field-outline-thick {
+        color: $gray-scale-400;
+      }
+      .p-input-outline-icon {
+        opacity: 1;
+        margin-right: 7px;
+      }
+    }
+  }
+}
+
+.p-input-outline-icon {
+  opacity: 0;
+  //transition: opacity 280ms;
+}

@@ -1,6 +1,6 @@
 <mat-form-field class="p-input-outline"
                 appearance="outline"
-                [ngClass]="{'p-input-outline-readonly' : readonly, 'no-error-message': !errorMessage}"
+                [ngClass]="{'p-input-readonly' : readonly, 'no-error-message': !errorMessage}"
                 floatLabel="always">
 
   <mat-label class="p-input-text-label">{{label}}</mat-label>
@@ -31,7 +31,7 @@
   </button>
 
   <p-icon *ngIf="!formFieldControl.value"
-          class="p-input-outline-icon-search"
+          class="p-input-outline-icon"
           matSuffix
           iconName="search"
           width="16"

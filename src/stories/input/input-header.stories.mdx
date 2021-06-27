@@ -1,0 +1,62 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+import {InputHeaderComponent} from 'projects/design-system-lib/src/public-api';
+import {InputModule} from 'projects/design-system-lib/src/public-api';
+import {Validators} from '@angular/forms';
+
+<Meta title='Components/Input/Page Head' 
+  component={InputHeaderComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [InputModule]
+    })
+  ]} 
+  args={{
+    ariaLabel: 'Label',
+    value: 'Header title in Default state'
+  }}
+/>
+
+export const Template = (args) => <InputHeaderComponent {...args} />
+
+# Page Head Input
+
+###### Selector
+
+```html
+  <p-input-header></p-input-header>
+```
+
+###### States 
+<Canvas>
+  <p className="story-title">Default (Readonly)</p>
+  <Story name="Page Head"
+    args={{ 
+    }}>
+    {Template.bind({})}
+  </Story>
+  <p className="story-title">Focused (Editable)</p>
+  <Story name="Focused"
+    args={{
+      readonlyState: false
+    }}>
+    {Template.bind({})}
+  </Story>
+  <p className="story-title">Error (Invalid)</p>
+  <Story name="Error Message"
+    args={{
+      value: '',
+      validators: Validators.required
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+
+###### Component
+```ts
+
+```
+
+

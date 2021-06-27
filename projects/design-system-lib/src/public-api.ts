@@ -21,6 +21,7 @@ export * from './lib/input/numeric/input-numeric-size.enum';
 export * from './lib/input/text/input-text.component';
 export * from './lib/input/text/input-text.interface';
 export * from './lib/input/outline/input-outline.component';
+export * from './lib/input/header/input-header.component';
 export * from './lib/input/datepicker/datepicker.component';
 
 export * from './lib/alert/alert.module';

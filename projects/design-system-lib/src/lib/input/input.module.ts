@@ -12,6 +12,7 @@ import {MatNativeDateModule} from '@angular/material/core';
 import {InputOutlineComponent} from './outline/input-outline.component';
 import {IconModule} from '../icon/icon.module';
 import {MatIconModule} from '@angular/material/icon';
+import {InputHeaderComponent} from './header/input-header.component';
 
 @NgModule({
   imports: [
@@ -29,12 +30,14 @@ import {MatIconModule} from '@angular/material/icon';
     InputNumericComponent,
     InputTextComponent,
     InputOutlineComponent,
+    InputHeaderComponent,
     DatepickerComponent
   ],
   exports: [
     InputNumericComponent,
     InputTextComponent,
     InputOutlineComponent,
+    InputHeaderComponent,
     DatepickerComponent
   ]
 })

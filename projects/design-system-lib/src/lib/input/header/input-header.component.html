@@ -1,0 +1,28 @@
+<mat-form-field class="p-input-outline p-input-header"
+                appearance="outline"
+                [class.p-input-readonly]="readonlyState"
+                floatLabel="always">
+
+  <input matInput
+         [type]="type"
+         [value]="value"
+         [placeholder]="placeholder"
+         [readonly]="readonlyState"
+         attr.aria-label="{{ariaLabel}}"
+         [formControl]="headerControl"
+         [errorStateMatcher]="matcher"
+         autocomplete="off"
+         (focus)="readonlyState = false"
+         (blur)="readonlyState = true"
+         class="p-input-text-input"
+         [class.readonly]="readonlyState">
+
+  <p-icon class="p-input-outline-icon"
+          matSuffix
+          iconName="edit-3"
+          width="18"
+          height="auto"
+          strokeWidth="1.5">
+  </p-icon>
+
+</mat-form-field>
