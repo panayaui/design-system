@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormControl, ValidatorFn} from '@angular/forms';
+import {ErrorStateMatcher} from '@angular/material/core';
 
 @Component({
   selector: 'p-input-outline',
@@ -16,11 +17,18 @@ export class InputOutlineComponent implements OnInit {
   @Input() readonly: boolean = false;
   @Input() value: string;
   @Input() validators: ValidatorFn[];
+  @Input() matcher: ErrorStateMatcher;
+  @Input() isSearch: boolean = false;
+  @Input() iconName: string;
   public formFieldControl: FormControl;
 
   ngOnInit(): void {
     this.formFieldControl = new FormControl(
       {value: this.value, disabled: this.disabled},
       this.validators);
+  }
+
+  clearValue(): void {
+    this.formFieldControl.setValue('');
   }
 }

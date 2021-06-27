@@ -23,6 +23,7 @@
            attr.aria-label="{{ariaLabel}}"
            [formControl]="formFieldControl"
            [errorStateMatcher]="matcher"
+           autocomplete="off"
            onfocus="this.select()"
            class="p-input-numeric-input">
     <mat-error *ngIf="formFieldControl.invalid"

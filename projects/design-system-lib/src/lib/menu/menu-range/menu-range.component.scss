@@ -3,12 +3,12 @@
 $menu-padding: $gap-base;
 $menu-background: $gray-scale-1;
 $menu-footer-height: $btn-small-height + $menu-padding * 3;
-$menu-width: 250px;
+$menu-width: 230px;
 
 // mat-menu-panel
 ::ng-deep .p-menu {
   //panel
-  &.p-menu-text.mat-menu-panel {
+  &.p-menu-range.mat-menu-panel {
     width: $menu-width;
     background-color: $menu-background;
     border-radius: 0;
@@ -24,7 +24,7 @@ $menu-width: 250px;
   }
 
   &-body {
-    padding: $menu-padding $menu-padding 0 $menu-padding;
+    padding: $menu-padding * 2;
   }
 
   &-footer {
@@ -32,7 +32,7 @@ $menu-width: 250px;
     align-items: center;
     width: 100%;
     height: $menu-footer-height;
-    padding: $menu-padding $menu-padding * 2 $menu-padding * 2 $menu-padding * 2;
+    padding: 0 $menu-padding * 2 $menu-padding * 2 $menu-padding * 2;
     background-color: $menu-background;
     &-btn {
       & + & {
@@ -41,14 +41,8 @@ $menu-width: 250px;
     }
   }
   // every option
-  ::ng-deep .p-btn {
-    padding-right: $menu-padding;
-    padding-left: $menu-padding;
-  }
-
-  ::ng-deep .p-input-outline {
-    margin-top: $menu-padding;
-    margin-bottom: $menu-padding * 2;
+  ::ng-deep .p-menu-range-max .p-input-numeric-container {
+    margin-top: 12px;
   }
 }
 

@@ -1,0 +1,103 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+import {InputHeaderComponent} from 'projects/design-system-lib/src/public-api';
+import {InputModule} from 'projects/design-system-lib/src/public-api';
+import {Validators} from '@angular/forms';
+import {CustomErrorStateMatcher} from './custom-error-state-matcher'
+
+<Meta title='Components/Input/Page Head' 
+  component={InputHeaderComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [InputModule]
+    })
+  ]} 
+  args={{
+    ariaLabel: 'Label',
+    value: 'Header title in Default state'
+  }}
+/>
+
+export const Template = (args) => <InputHeaderComponent {...args} />
+
+# Page Head Input
+
+###### Selector
+
+```html
+  <p-input-header></p-input-header>
+```
+
+###### States 
+<Canvas>
+  <p className="story-title">Default (Readonly)</p>
+  <Story name="Default"
+    args={{ 
+    }}>
+    {Template.bind({})}
+  </Story>
+  <p className="story-title">Focused (Editable)</p>
+  <Story name="Focused"
+    args={{
+      readonlyState: false
+    }}>
+    {Template.bind({})}
+  </Story>
+  <p className="story-title">Error (Invalid)</p>
+  <Story name="Error Message"
+    args={{
+      value: '',
+      validators: Validators.required,
+      matcher: new CustomErrorStateMatcher()
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+
+###### Component
+```ts
+export class InputHeaderComponent extends InputOutlineComponent {
+  @Input() readonlyState: boolean = true;
+  public headerControl: FormControl = new FormControl(
+    {value: this.value, disabled: this.disabled}, this.validators);
+
+  constructor() {
+    super();
+  }
+}
+```
+
+```html
+<mat-form-field class="p-input-outline p-input-header"
+                appearance="outline"
+                [class.p-input-readonly]="readonlyState"
+                floatLabel="always">
+
+  <input matInput
+         [type]="type"
+         [value]="value"
+         [placeholder]="placeholder"
+         [readonly]="readonlyState"
+         attr.aria-label="{{ariaLabel}}"
+         [formControl]="headerControl"
+         [errorStateMatcher]="matcher"
+         autocomplete="off"
+         (focus)="readonlyState = false"
+         (blur)="readonlyState = true"
+         class="p-input-text-input"
+         [class.readonly]="readonlyState">
+
+  <p-icon class="p-input-outline-icon"
+          matSuffix
+          iconName="edit-3"
+          width="18"
+          height="auto"
+          strokeWidth="1.5">
+  </p-icon>
+
+</mat-form-field>
+```
+
+
