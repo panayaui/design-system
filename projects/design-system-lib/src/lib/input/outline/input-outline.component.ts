@@ -18,6 +18,8 @@ export class InputOutlineComponent implements OnInit {
   @Input() value: string;
   @Input() validators: ValidatorFn[];
   @Input() matcher: ErrorStateMatcher;
+  @Input() isSearch: boolean = false;
+  @Input() iconName: string;
   public formFieldControl: FormControl;
 
   ngOnInit(): void {

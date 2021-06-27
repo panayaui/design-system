@@ -1724,6 +1724,23 @@
                     }
                 },
                 {
+                    "name": "iconName",
+                    "line": 22,
+                    "type": "string",
+                    "inheritance": {
+                        "file": "InputOutlineComponent"
+                    }
+                },
+                {
+                    "name": "isSearch",
+                    "defaultValue": "false",
+                    "line": 21,
+                    "type": "boolean",
+                    "inheritance": {
+                        "file": "InputOutlineComponent"
+                    }
+                },
+                {
                     "name": "label",
                     "line": 12,
                     "type": "string",
@@ -1800,7 +1817,7 @@
                     "type": "FormControl",
                     "optional": false,
                     "description": "",
-                    "line": 21,
+                    "line": 23,
                     "modifierKind": [
                         114
                     ],
@@ -1816,7 +1833,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 29,
+                    "line": 31,
                     "inheritance": {
                         "file": "InputOutlineComponent"
                     }
@@ -1827,7 +1844,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 23,
+                    "line": 25,
                     "inheritance": {
                         "file": "InputOutlineComponent"
                     }
@@ -1996,7 +2013,7 @@
         },
         {
             "name": "InputOutlineComponent",
-            "id": "component-InputOutlineComponent-a5197f840f285815e0b7925a839ef38c",
+            "id": "component-InputOutlineComponent-1896ab7b18ee32bd67d9c4ffed8c7b95",
             "file": "projects/design-system-lib/src/lib/input/outline/input-outline.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2028,6 +2045,17 @@
                     "name": "errorMessage",
                     "line": 15,
                     "type": "string"
+                },
+                {
+                    "name": "iconName",
+                    "line": 22,
+                    "type": "string"
+                },
+                {
+                    "name": "isSearch",
+                    "defaultValue": "false",
+                    "line": 21,
+                    "type": "boolean"
                 },
                 {
                     "name": "label",
@@ -2074,7 +2102,7 @@
                     "type": "FormControl",
                     "optional": false,
                     "description": "",
-                    "line": 21,
+                    "line": 23,
                     "modifierKind": [
                         114
                     ]
@@ -2087,7 +2115,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 29
+                    "line": 31
                 },
                 {
                     "name": "ngOnInit",
@@ -2095,7 +2123,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 23
+                    "line": 25
                 }
             ],
             "hostBindings": [],
@@ -2103,7 +2131,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport {FormControl, ValidatorFn} from '@angular/forms';\r\nimport {ErrorStateMatcher} from '@angular/material/core';\r\n\r\n@Component({\r\n  selector: 'p-input-outline',\r\n  templateUrl: './input-outline.component.html',\r\n  styleUrls: ['./input-outline.component.scss'],\r\n})\r\nexport class InputOutlineComponent implements OnInit {\r\n  @Input() type: string = 'text';\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string;\r\n  @Input() placeholder: string;\r\n  @Input() errorMessage: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() readonly: boolean = false;\r\n  @Input() value: string;\r\n  @Input() validators: ValidatorFn[];\r\n  @Input() matcher: ErrorStateMatcher;\r\n  public formFieldControl: FormControl;\r\n\r\n  ngOnInit(): void {\r\n    this.formFieldControl = new FormControl(\r\n      {value: this.value, disabled: this.disabled},\r\n      this.validators);\r\n  }\r\n\r\n  clearValue(): void {\r\n    this.formFieldControl.setValue('');\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport {FormControl, ValidatorFn} from '@angular/forms';\r\nimport {ErrorStateMatcher} from '@angular/material/core';\r\n\r\n@Component({\r\n  selector: 'p-input-outline',\r\n  templateUrl: './input-outline.component.html',\r\n  styleUrls: ['./input-outline.component.scss'],\r\n})\r\nexport class InputOutlineComponent implements OnInit {\r\n  @Input() type: string = 'text';\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string;\r\n  @Input() placeholder: string;\r\n  @Input() errorMessage: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() readonly: boolean = false;\r\n  @Input() value: string;\r\n  @Input() validators: ValidatorFn[];\r\n  @Input() matcher: ErrorStateMatcher;\r\n  @Input() isSearch: boolean = false;\r\n  @Input() iconName: string;\r\n  public formFieldControl: FormControl;\r\n\r\n  ngOnInit(): void {\r\n    this.formFieldControl = new FormControl(\r\n      {value: this.value, disabled: this.disabled},\r\n      this.validators);\r\n  }\r\n\r\n  clearValue(): void {\r\n    this.formFieldControl.setValue('');\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2115,7 +2143,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<mat-form-field class=\"p-input-outline\"\r\n                appearance=\"outline\"\r\n                [ngClass]=\"{'p-input-readonly' : readonly, 'no-error-message': !errorMessage}\"\r\n                floatLabel=\"always\">\r\n\r\n  <mat-label class=\"p-input-text-label\">{{label}}</mat-label>\r\n\r\n  <input matInput\r\n         [type]=\"type\"\r\n         [placeholder]=\"placeholder\"\r\n         [readonly]=\"readonly\"\r\n         attr.aria-label=\"{{ariaLabel}}\"\r\n         [formControl]=\"formFieldControl\"\r\n         [errorStateMatcher]=\"matcher\"\r\n         autocomplete=\"off\"\r\n         onfocus=\"this.select()\"\r\n         class=\"p-input-text-input\">\r\n\r\n  <button *ngIf=\"formFieldControl.value\"\r\n          matSuffix\r\n          aria-label=\"Clear\"\r\n          class=\"p-input-outline-button\"\r\n          (click)=\"clearValue()\">\r\n    <p-icon class=\"p-input-outline-icon-clear\"\r\n            iconName=\"x\"\r\n            width=\"16\"\r\n            height=\"auto\"\r\n            stroke=\"#B3B3B3\"\r\n            strokeWidth=\"1.5\">\r\n    </p-icon>\r\n  </button>\r\n\r\n  <p-icon *ngIf=\"!formFieldControl.value\"\r\n          class=\"p-input-outline-icon\"\r\n          matSuffix\r\n          iconName=\"search\"\r\n          width=\"16\"\r\n          height=\"auto\"\r\n          stroke=\"#B3B3B3\"\r\n          strokeWidth=\"1.5\">\r\n  </p-icon>\r\n\r\n  <mat-error *ngIf=\"formFieldControl.invalid\"\r\n             class=\"p-input-text-error\">\r\n    {{errorMessage}}\r\n  </mat-error>\r\n</mat-form-field>\r\n"
+            "templateData": "<mat-form-field class=\"p-input-outline\"\r\n                appearance=\"outline\"\r\n                [ngClass]=\"{'p-input-readonly' : readonly, 'no-error-message': !errorMessage}\"\r\n                floatLabel=\"always\">\r\n\r\n  <mat-label class=\"p-input-text-label\">{{label}}</mat-label>\r\n\r\n  <input matInput\r\n         [type]=\"type\"\r\n         [placeholder]=\"placeholder\"\r\n         [readonly]=\"readonly\"\r\n         attr.aria-label=\"{{ariaLabel}}\"\r\n         [formControl]=\"formFieldControl\"\r\n         [errorStateMatcher]=\"matcher\"\r\n         autocomplete=\"off\"\r\n         onfocus=\"this.select()\"\r\n         class=\"p-input-text-input\">\r\n\r\n  <button *ngIf=\"isSearch && formFieldControl.value\"\r\n          matSuffix\r\n          aria-label=\"Clear\"\r\n          class=\"p-input-outline-button\"\r\n          (click)=\"clearValue()\">\r\n    <p-icon class=\"p-input-outline-icon-clear\"\r\n            iconName=\"x\"\r\n            width=\"16\"\r\n            height=\"auto\"\r\n            stroke=\"#B3B3B3\"\r\n            strokeWidth=\"1.5\">\r\n    </p-icon>\r\n  </button>\r\n\r\n  <p-icon *ngIf=\"isSearch && !formFieldControl.value\"\r\n          class=\"p-input-outline-icon\"\r\n          matSuffix\r\n          iconName=\"search\"\r\n          width=\"16\"\r\n          height=\"auto\"\r\n          stroke=\"#B3B3B3\"\r\n          strokeWidth=\"1.5\">\r\n  </p-icon>\r\n\r\n  <p-icon *ngIf=\"iconName && !isSearch\"\r\n          class=\"p-input-outline-icon\"\r\n          matSuffix\r\n          [iconName]=\"iconName\"\r\n          width=\"16\"\r\n          height=\"auto\"\r\n          stroke=\"#B3B3B3\"\r\n          strokeWidth=\"1.5\">\r\n  </p-icon>\r\n\r\n  <mat-error *ngIf=\"formFieldControl.invalid\"\r\n             class=\"p-input-text-error\">\r\n    {{errorMessage}}\r\n  </mat-error>\r\n</mat-form-field>\r\n"
         },
         {
             "name": "InputTextComponent",
@@ -4924,17 +4952,17 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
-                "type": "Story<CheckboxPageComponent>",
-                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "Story<CheckboxGroupPageComponent>",
+                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
-                "type": "Story<CheckboxGroupPageComponent>",
-                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/input-text/input-text-table-layout/input-text-table-layout.stories.ts",
+                "type": "Story<InputTextTableLayoutComponent>",
+                "defaultValue": "(args: InputTextTableLayoutComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -4948,9 +4976,9 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input-text/input-text-table-layout/input-text-table-layout.stories.ts",
-                "type": "Story<InputTextTableLayoutComponent>",
-                "defaultValue": "(args: InputTextTableLayoutComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "Story<CheckboxPageComponent>",
+                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -5026,17 +5054,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/colors/Color-palette.stories.ts",
-                "type": "Story<ColorPaletteComponent>",
-                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/icons/icon.stories.ts",
+                "type": "Story<IconComponent>",
+                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/icons/icon.stories.ts",
-                "type": "Story<IconComponent>",
-                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/colors/Color-palette.stories.ts",
+                "type": "Story<ColorPaletteComponent>",
+                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -5827,7 +5855,7 @@
                 "linktype": "component",
                 "name": "InputHeaderComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/17",
+                "coverageCount": "0/19",
                 "status": "low"
             },
             {
@@ -5854,7 +5882,7 @@
                 "linktype": "component",
                 "name": "InputOutlineComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/14",
+                "coverageCount": "0/16",
                 "status": "low"
             },
             {

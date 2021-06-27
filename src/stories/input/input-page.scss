@@ -39,6 +39,15 @@
   max-width: 220px;
 }
 
+#input-outline {
+  &~ #with-icon,
+  &~ #search {
+    &~ .sbdocs .innerZoomElementWrapper > div {
+      width: 100%;
+    }
+  }
+}
+
 #page-head-input {
   &~ .sbdocs .innerZoomElementWrapper {
     & > div {

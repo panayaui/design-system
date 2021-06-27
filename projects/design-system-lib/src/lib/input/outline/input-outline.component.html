@@ -16,7 +16,7 @@
          onfocus="this.select()"
          class="p-input-text-input">
 
-  <button *ngIf="formFieldControl.value"
+  <button *ngIf="isSearch && formFieldControl.value"
           matSuffix
           aria-label="Clear"
           class="p-input-outline-button"
@@ -30,10 +30,20 @@
     </p-icon>
   </button>
 
-  <p-icon *ngIf="!formFieldControl.value"
+  <p-icon *ngIf="isSearch && !formFieldControl.value"
           class="p-input-outline-icon"
           matSuffix
           iconName="search"
+          width="16"
+          height="auto"
+          stroke="#B3B3B3"
+          strokeWidth="1.5">
+  </p-icon>
+
+  <p-icon *ngIf="iconName && !isSearch"
+          class="p-input-outline-icon"
+          matSuffix
+          [iconName]="iconName"
           width="16"
           height="auto"
           stroke="#B3B3B3"
