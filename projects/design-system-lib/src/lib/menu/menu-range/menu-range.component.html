@@ -1,0 +1,36 @@
+<button [matMenuTriggerFor]="menu"
+        #menuTrigger="matMenuTrigger"
+        class="p-btn p-btn-small p-btn-tertiary">
+    {{menuTriggerName}}
+</button>
+
+<!--menu window-->
+<mat-menu #menu="matMenu" class="p-menu p-menu-range" [overlapTrigger]="false">
+  <div class="p-menu-container" (click)="$event.stopPropagation()"
+                                (keydown)="$event.stopPropagation()">
+    <div class="p-menu-body">
+      <p-input-numeric class="p-menu-range-min"
+                       [label]="inputMin.label"
+                       [value]="inputMin.value"
+                       [disabled]="inputMin.disabled"
+                       [readonly]="inputMin.readonly"
+                       [size]="inputNumericSize.Small"></p-input-numeric>
+      <p-input-numeric class="p-menu-range-max"
+                       [label]="inputMax.label"
+                       [value]="inputMax.value"
+                       [disabled]="inputMax.disabled"
+                       [readonly]="inputMax.readonly"
+                       [size]="inputNumericSize.Small"></p-input-numeric>
+    </div>
+    <div class="p-menu-footer">
+      <p-button class="p-menu-footer-btn"
+                [label]="footerBtnFirst.label"
+                [buttonType]="footerBtnFirst.buttonType"
+                (click)="selectCompleted()"></p-button>
+      <p-button class="p-menu-footer-btn"
+                [label]="footerBtnLast.label"
+                [buttonType]="footerBtnLast.buttonType"
+                (click)="selectCanceled()"></p-button>
+    </div>
+  </div>
+</mat-menu>

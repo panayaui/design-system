@@ -18,6 +18,7 @@ import {MenuRadioGroupComponent} from './menu-radio-group/menu-radio-group.compo
 import {MatRadioModule} from '@angular/material/radio';
 import {RadioButtonModule} from '../radio-button/radio-button.module';
 import {MenuFreeTextComponent} from './menu-free-text/menu-free-text.component';
+import {MenuRangeComponent} from './menu-range/menu-range.component';
 
 @NgModule({
   imports: [
@@ -41,14 +42,16 @@ import {MenuFreeTextComponent} from './menu-free-text/menu-free-text.component';
     MenuMultiSelectComponent,
     MenuTabsComponent,
     MenuRadioGroupComponent,
-    MenuFreeTextComponent
+    MenuFreeTextComponent,
+    MenuRangeComponent
   ],
   exports: [
     MenuSingleSelectComponent,
     MenuMultiSelectComponent,
     MenuTabsComponent,
     MenuRadioGroupComponent,
-    MenuFreeTextComponent
+    MenuFreeTextComponent,
+    MenuRangeComponent
   ]
 })
 export class MenuModule { }

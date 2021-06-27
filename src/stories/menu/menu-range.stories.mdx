@@ -1,12 +1,12 @@
 import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
 import {moduleMetadata} from '@storybook/angular';
 
-import {MenuFreeTextComponent} from 'projects/design-system-lib/src/public-api';
+import {MenuRangeComponent} from 'projects/design-system-lib/src/public-api';
 import {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';
 import {MenuModule} from 'projects/design-system-lib/src/public-api';
 
-<Meta title='Components/Menu/Free Text'
-    component={MenuFreeTextComponent}
+<Meta title='Components/Menu/Range'
+    component={MenuRangeComponent}
     decorators={[
       moduleMetadata({
           imports: [
@@ -15,13 +15,9 @@ import {MenuModule} from 'projects/design-system-lib/src/public-api';
       })
     ]}  
     args={{
-      menuTriggerName: 'Free Text Menu',
-      menuList: [
-        { name: 'Contains', inputValue: '', selected: true },
-        { name: 'Not contains', inputValue: 'smth', selected: false },
-        { name: 'Empty', selected: false },
-        { name: 'Not empty', selected: false }
-      ],
+      menuTriggerName: 'Range Menu',
+      inputMin: { label: 'Min', value: null },
+      inputMax: { label: 'Max', value: 1 },
       footerBtnFirst: {
         label: 'Done',
         buttonType: ButtonTypeEnum.Primary
@@ -35,11 +31,11 @@ import {MenuModule} from 'projects/design-system-lib/src/public-api';
 
 # Menu
 
-export const Template = (args) => <MenuRadioGroupComponent {...args} />
+export const Template = (args) => <MenuRangeComponent {...args} />
 
-###### Free Text Menu
+###### Range Menu
 <Canvas>
-  <Story name="Free Text"
+  <Story name="Range Menu"
     args={{ 
     }}>
     {Template.bind({})}

@@ -39,6 +39,7 @@ export * from './lib/menu/menu-multi-select/menu-multi-select.component';
 export * from './lib/menu/menu-tabs/menu-tabs.component';
 export * from './lib/menu/menu-radio-group/menu-radio-group.component';
 export * from './lib/menu/menu-free-text/menu-free-text.component';
+export * from './lib/menu/menu-range/menu-range.component';
 
 export * from './lib/radio-button/radio-button.module';
 export * from './lib/radio-button/radio-button/radio-button.component';
