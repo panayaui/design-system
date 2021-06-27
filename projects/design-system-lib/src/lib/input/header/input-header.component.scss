@@ -9,7 +9,7 @@
       font-weight: 600;
     }
 
-    &:hover {
+    &:not(.ng-invalid):hover {
       ::ng-deep .mat-form-field-outline,
       ::ng-deep .mat-form-field-outline-thick {
         color: $gray-scale-400;
@@ -17,6 +17,12 @@
       .p-input-outline-icon {
         opacity: 1;
         margin-right: 7px;
+      }
+    }
+    &.mat-form-field-invalid:hover {
+      ::ng-deep .mat-form-field-outline,
+      ::ng-deep .mat-form-field-outline-thick {
+        color: $supportive-alert-700;
       }
     }
   }

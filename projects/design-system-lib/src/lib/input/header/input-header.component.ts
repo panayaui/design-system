@@ -1,6 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {FormControl, ValidatorFn} from '@angular/forms';
-import {ErrorStateMatcher} from '@angular/material/core';
+import {Component, Input} from '@angular/core';
+import {FormControl} from '@angular/forms';
 import {InputOutlineComponent} from '../outline/input-outline.component';
 
 @Component({

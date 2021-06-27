@@ -1,25 +1,22 @@
 import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
 import {moduleMetadata} from '@storybook/angular';
 import {InputOutlineComponent} from 'projects/design-system-lib/src/public-api';
-import {InputNumericSizeEnum} from 'projects/design-system-lib/src/public-api';
 import {InputModule} from 'projects/design-system-lib/src/public-api';
-import {CommonModule} from '@angular/common';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {ReactiveFormsModule, Validators} from '@angular/forms';
+import {Validators} from '@angular/forms';
 import {CustomErrorStateMatcher} from './custom-error-state-matcher'
 
-<Meta title='Components/Input/Outline' component={InputOutlineComponent}
-decorators={[
-  moduleMetadata({
-    imports: [InputModule]
-        })
-]} />
-
-# Input Outline
+<Meta title='Components/Input/Outline' 
+  component={InputOutlineComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [InputModule]
+    })
+  ]} 
+/>
 
 export const Template = (args) => <InputOutlineComponent {...args} />
+
+# Input Outline
 
 ###### Selector
 
@@ -137,7 +134,79 @@ export const Template = (args) => <InputOutlineComponent {...args} />
 
 ###### Component
 ```ts
+export class InputOutlineComponent implements OnInit {
+  @Input() type: string = 'text';
+  @Input() label: string;
+  @Input() ariaLabel: string;
+  @Input() placeholder: string;
+  @Input() errorMessage: string;
+  @Input() disabled: boolean = false;
+  @Input() readonly: boolean = false;
+  @Input() value: string;
+  @Input() validators: ValidatorFn[];
+  @Input() matcher: ErrorStateMatcher;
+  public formFieldControl: FormControl;
 
+  ngOnInit(): void {
+    this.formFieldControl = new FormControl(
+      {value: this.value, disabled: this.disabled},
+      this.validators);
+  }
+
+  clearValue(): void {
+    this.formFieldControl.setValue('');
+  }
+}
+```
+
+```html
+<mat-form-field class="p-input-outline"
+                appearance="outline"
+                [ngClass]="{'p-input-readonly' : readonly, 'no-error-message': !errorMessage}"
+                floatLabel="always">
+
+  <mat-label class="p-input-text-label">{{label}}</mat-label>
+
+  <input matInput
+         [type]="type"
+         [placeholder]="placeholder"
+         [readonly]="readonly"
+         attr.aria-label="{{ariaLabel}}"
+         [formControl]="formFieldControl"
+         [errorStateMatcher]="matcher"
+         autocomplete="off"
+         onfocus="this.select()"
+         class="p-input-text-input">
+
+  <button *ngIf="formFieldControl.value"
+          matSuffix
+          aria-label="Clear"
+          class="p-input-outline-button"
+          (click)="clearValue()">
+    <p-icon class="p-input-outline-icon-clear"
+            iconName="x"
+            width="16"
+            height="auto"
+            stroke="#B3B3B3"
+            strokeWidth="1.5">
+    </p-icon>
+  </button>
+
+  <p-icon *ngIf="!formFieldControl.value"
+          class="p-input-outline-icon"
+          matSuffix
+          iconName="search"
+          width="16"
+          height="auto"
+          stroke="#B3B3B3"
+          strokeWidth="1.5">
+  </p-icon>
+
+  <mat-error *ngIf="formFieldControl.invalid"
+             class="p-input-text-error">
+    {{errorMessage}}
+  </mat-error>
+</mat-form-field>
 ```
 
 
