@@ -25,4 +25,8 @@ export class InputOutlineComponent implements OnInit {
       {value: this.value, disabled: this.disabled},
       this.validators);
   }
+
+  clearValue(): void {
+    this.formFieldControl.setValue('');
+  }
 }

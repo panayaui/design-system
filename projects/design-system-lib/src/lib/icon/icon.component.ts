@@ -35,6 +35,7 @@ export class IconComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(this.stroke, this.iconName);
     allIcons[this.capitalizeName()] ? this.customIcon = false : this.customIcon = true;
 
     !this.width ? this.width = '16' : null;

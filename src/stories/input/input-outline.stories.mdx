@@ -2,6 +2,7 @@ import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
 import {moduleMetadata} from '@storybook/angular';
 import {InputOutlineComponent} from 'projects/design-system-lib/src/public-api';
 import {InputNumericSizeEnum} from 'projects/design-system-lib/src/public-api';
+import {InputModule} from 'projects/design-system-lib/src/public-api';
 import {CommonModule} from '@angular/common';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -12,11 +13,7 @@ import {CustomErrorStateMatcher} from './custom-error-state-matcher'
 <Meta title='Components/Input/Outline' component={InputOutlineComponent}
 decorators={[
   moduleMetadata({
-    imports: [CommonModule,
-            MatInputModule,
-            BrowserAnimationsModule,
-            MatFormFieldModule,
-            ReactiveFormsModule]
+    imports: [InputModule]
         })
 ]} />
 

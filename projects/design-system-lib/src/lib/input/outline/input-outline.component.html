@@ -2,7 +2,9 @@
                 appearance="outline"
                 [ngClass]="{'p-input-outline-readonly' : readonly, 'no-error-message': !errorMessage}"
                 floatLabel="always">
+
   <mat-label class="p-input-text-label">{{label}}</mat-label>
+
   <input matInput
          [type]="type"
          [placeholder]="placeholder"
@@ -13,6 +15,31 @@
          autocomplete="off"
          onfocus="this.select()"
          class="p-input-text-input">
+
+  <button *ngIf="formFieldControl.value"
+          matSuffix
+          aria-label="Clear"
+          class="p-input-outline-button"
+          (click)="clearValue()">
+    <p-icon class="p-input-outline-icon-clear"
+            iconName="x"
+            width="16"
+            height="auto"
+            stroke="#B3B3B3"
+            strokeWidth="1.5">
+    </p-icon>
+  </button>
+
+  <p-icon *ngIf="!formFieldControl.value"
+          class="p-input-outline-icon-search"
+          matSuffix
+          iconName="search"
+          width="16"
+          height="auto"
+          stroke="#B3B3B3"
+          strokeWidth="1.5">
+  </p-icon>
+
   <mat-error *ngIf="formFieldControl.invalid"
              class="p-input-text-error">
     {{errorMessage}}
