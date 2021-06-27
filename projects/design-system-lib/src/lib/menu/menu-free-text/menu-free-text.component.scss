@@ -8,7 +8,7 @@ $menu-width: 250px;
 // mat-menu-panel
 ::ng-deep .p-menu {
   //panel
-  .mat-menu-panel {
+  &.p-menu-text.mat-menu-panel {
     width: $menu-width;
     background-color: $menu-background;
     border-radius: 0;
@@ -24,7 +24,6 @@ $menu-width: 250px;
   }
 
   &-body {
-    height: 100%;
     padding: $menu-padding;
   }
 
