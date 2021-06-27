@@ -41,14 +41,8 @@ $menu-width: 230px;
     }
   }
   // every option
-  ::ng-deep .p-btn {
-    padding-right: $menu-padding;
-    padding-left: $menu-padding;
-  }
-
-  ::ng-deep .p-input-outline {
-    margin-top: $menu-padding;
-    margin-top: $menu-padding;
+  ::ng-deep .p-menu-range-max .p-input-numeric-container {
+    margin-top: 12px;
   }
 }
 

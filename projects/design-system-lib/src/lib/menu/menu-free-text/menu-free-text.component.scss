@@ -24,7 +24,7 @@ $menu-width: 250px;
   }
 
   &-body {
-    padding: $menu-padding;
+    padding: $menu-padding $menu-padding 0 $menu-padding;
   }
 
   &-footer {
@@ -48,7 +48,7 @@ $menu-width: 250px;
 
   ::ng-deep .p-input-outline {
     margin-top: $menu-padding;
-    margin-top: $menu-padding;
+    margin-bottom: $menu-padding * 2;
   }
 }
 
