@@ -1,0 +1,20 @@
+#label-status-main,
+#label-status-main-as-menu-trigger {
+  & ~ .sbdocs .innerZoomElementWrapper > div {
+    $label-width: 150px;
+    &:nth-child(odd){
+      width: $label-width;
+    }
+    &:nth-child(even){
+      width: calc(100% - #{$label-width});
+    }
+  }
+}
+
+#label-status-sub ~ .sbdocs .innerZoomElementWrapper > div {
+  $label-width: 150px;
+  width: $label-width;
+  &:nth-child(3n){
+    width: calc(100% - #{$label-width} * 2);
+  }
+}
