@@ -4960,9 +4960,9 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input-text/input-text-table-layout/input-text-table-layout.stories.ts",
-                "type": "Story<InputTextTableLayoutComponent>",
-                "defaultValue": "(args: InputTextTableLayoutComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "Story<CheckboxPageComponent>",
+                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -4976,9 +4976,9 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
-                "type": "Story<CheckboxPageComponent>",
-                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/input-text/input-text-table-layout/input-text-table-layout.stories.ts",
+                "type": "Story<InputTextTableLayoutComponent>",
+                "defaultValue": "(args: InputTextTableLayoutComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -5062,17 +5062,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/colors/Color-palette.stories.ts",
-                "type": "Story<ColorPaletteComponent>",
-                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/input-text/input-text.stories.ts",
+                "type": "Story<InputTextComponent>",
+                "defaultValue": "(args: InputTextComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input-text/input-text.stories.ts",
-                "type": "Story<InputTextComponent>",
-                "defaultValue": "(args: InputTextComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/colors/Color-palette.stories.ts",
+                "type": "Story<ColorPaletteComponent>",
+                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
