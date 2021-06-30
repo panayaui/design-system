@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 import {formatDate } from '@angular/common';
 import {DateAdapter, MAT_DATE_FORMATS, NativeDateAdapter} from '@angular/material/core';
 
@@ -35,8 +35,18 @@ export class DatepickerComponent {
   @Input() ariaLabel: string;
   @Input() placeholder: string;
   @Input() disabled: boolean = false;
-  @Input() readonly: boolean = false;
   @Input() value: string;
   @Output() dateChange: EventEmitter<any> = new EventEmitter();
   @Output() dateInput: EventEmitter<any> = new EventEmitter();
+  @ViewChild('picker') picker;
+  public isOpened: boolean = false;
+
+  openDatepicker(): void {
+    this.isOpened = true;
+    this.picker.open();
+  }
+
+  streamClosed(): void {
+    this.isOpened = false;
+  }
 }
