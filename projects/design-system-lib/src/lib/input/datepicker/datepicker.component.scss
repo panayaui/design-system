@@ -7,6 +7,10 @@ $date-content-selector: ".mat-calendar-body-cell-content:not(.mat-calendar-body-
 
 // input trigger & icon & preview (Tuesday, March 16, 2021)
 .p-datepicker {
+  cursor: pointer;
+  .p-input-text-input {
+    cursor: pointer;
+  }
   ::ng-deep &.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon-button {
     width: 30px;
     height: 30px;
