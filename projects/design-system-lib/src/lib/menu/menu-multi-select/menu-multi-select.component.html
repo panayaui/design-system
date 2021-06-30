@@ -37,12 +37,12 @@
                 [iconBeforeWidth]="headerBtnFirst.icon.width"
                 [iconBeforeHeight]="headerBtnFirst.icon.height"
                 [buttonType]="headerBtnFirst.buttonType"
-                [disabled]="headerBtnFirst.disabled"></p-button>
+                [disabled]="!filteredList.length"></p-button>
       <p-checkbox *ngIf="headerBtnFirst"
                   class="p-menu-btn-line"
                   [label]="headerBtnLast.label"
                   [checked]="headerBtnLast.checked"
-                  [disabled]="headerBtnLast.disabled"></p-checkbox>
+                  [disabled]="!filteredList.length"></p-checkbox>
     </div>
 
     <div class="p-menu-body">

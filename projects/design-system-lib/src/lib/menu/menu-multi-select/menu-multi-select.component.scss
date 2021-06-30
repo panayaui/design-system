@@ -54,6 +54,9 @@ $menu-max-height: 75vh;
   &:hover,
   &.cdk-focused {
     background-color: $primary-c-50;
+    .mat-pseudo-checkbox:not(.mat-pseudo-checkbox-checked) {
+      border-color: $secondary-a-700;
+    }
   }
   &[disabled] {
     color: $gray-scale-600;
@@ -265,6 +268,9 @@ $menu-max-height: 75vh;
     ::ng-deep .p-checkbox {
       display: inline-flex;
       align-items: center;
+      .mat-checkbox-label {
+        font-weight: 500;
+      }
       @extend %btn-line;
       &:not(.mat-checkbox-disabled):hover {
         background-color: $primary-c-50;
