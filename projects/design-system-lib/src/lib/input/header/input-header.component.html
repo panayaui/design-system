@@ -4,6 +4,7 @@
                 floatLabel="always">
 
   <input matInput
+         #inputField
          [type]="type"
          [value]="value"
          [placeholder]="placeholder"
@@ -12,8 +13,8 @@
          [formControl]="headerControl"
          [errorStateMatcher]="matcher"
          autocomplete="off"
-         (focus)="readonlyState = false"
-         (blur)="readonlyState = true"
+         (focus)="onFocus()"
+         (blur)="onBlur()"
          class="p-input-text-input"
          [class.readonly]="readonlyState">
 
