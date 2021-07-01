@@ -1035,7 +1035,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div>\r\n  <p-menu-tabs [menuTriggerName]=\"menuTriggerName\"\r\n               [menuList]=\"menuList\"\r\n               [footerBtnFirst]=\"footerBtnFirst\"\r\n               [footerBtnLast]=\"footerBtnLast\"\r\n               [filterAriaLabel]=\"filterAriaLabel\"\r\n               [filterPlaceholder]=\"filterPlaceholder\"\r\n               [headerBtnFirst]=\"headerBtnFirst\"\r\n               [headerBtnLast]=\"headerBtnLast\"\r\n               [checkboxList]=\"checkboxList\"></p-menu-tabs>\r\n</div>\r\n\r\n<button #tooltip=\"matTooltip\"\r\n        [matTooltip]=\"'message'\"\r\n        [matTooltipClass]=\"'p-tooltip'\"\r\n        class=\"p-btn p-btn-small p-btn-primary\"\r\n>\r\n  Hover\r\n</button>\r\n\r\n<p class=\"paragraph-3-semibold\">some words</p>\r\n"
+            "templateData": "<div>\r\n  <p-menu-tabs [menuTriggerName]=\"menuTriggerName\"\r\n               [menuList]=\"menuList\"\r\n               [footerBtnFirst]=\"footerBtnFirst\"\r\n               [footerBtnLast]=\"footerBtnLast\"\r\n               [filterAriaLabel]=\"filterAriaLabel\"\r\n               [filterPlaceholder]=\"filterPlaceholder\"\r\n               [headerBtnFirst]=\"headerBtnFirst\"\r\n               [headerBtnLast]=\"headerBtnLast\"\r\n               [checkboxList]=\"checkboxList\"></p-menu-tabs>\r\n</div>\r\n\r\n<button #tooltip=\"matTooltip\"\r\n        [matTooltip]=\"'message'\"\r\n        [matTooltipClass]=\"'p-tooltip'\"\r\n        class=\"p-btn p-btn-small p-btn-primary\"\r\n>\r\n  Hover\r\n</button>\r\n\r\n<p class=\"paragraph-3-semibold\">some words</p>\r\n\r\n<p-input-header [value]=\"'some text'\"></p-input-header>\r\n<p-input-text [value]=\"'some text'\"></p-input-text>\r\n\r\n<p-menu-multi-select\r\n[menuTriggerName]=\"'trigger'\"\r\n[menuList]=\"menuList\"\r\n[headerBtnFirst]=\"headerBtnFirst\"\r\n[headerBtnLast]=\"headerBtnLast\"\r\n[footerBtnFirst]=\"footerBtnFirst\"\r\n[footerBtnLast]=\"footerBtnLast\"></p-menu-multi-select>\r\n"
         },
         {
             "name": "ButtonComponent",
@@ -1711,7 +1711,7 @@
         },
         {
             "name": "InputHeaderComponent",
-            "id": "component-InputHeaderComponent-5a30eb5c858a6940a9dce286986cc066",
+            "id": "component-InputHeaderComponent-b2116fc7668153caf873244a26b67a6f",
             "file": "projects/design-system-lib/src/lib/input/header/input-header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1838,17 +1838,6 @@
             "outputsClass": [],
             "propertiesClass": [
                 {
-                    "name": "headerControl",
-                    "defaultValue": "new FormControl(\r\n    {value: this.value, disabled: this.disabled}, this.validators)",
-                    "type": "FormControl",
-                    "optional": false,
-                    "description": "",
-                    "line": 13,
-                    "modifierKind": [
-                        114
-                    ]
-                },
-                {
                     "name": "inputField",
                     "type": "ElementRef",
                     "optional": false,
@@ -1877,20 +1866,20 @@
             ],
             "methodsClass": [
                 {
-                    "name": "onBlur",
+                    "name": "onInputBlur",
                     "args": [],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 25
+                    "line": 23
                 },
                 {
-                    "name": "onFocus",
+                    "name": "onInputFocused",
                     "args": [],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 20
+                    "line": 18
                 },
                 {
                     "name": "clearValue",
@@ -1920,7 +1909,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, ElementRef, Input, ViewChild} from '@angular/core';\r\nimport {FormControl} from '@angular/forms';\r\nimport {InputOutlineComponent} from '../outline/input-outline.component';\r\n\r\n@Component({\r\n  selector: 'p-input-header',\r\n  templateUrl: './input-header.component.html',\r\n  styleUrls: ['./input-header.component.scss'],\r\n})\r\nexport class InputHeaderComponent extends InputOutlineComponent {\r\n  @Input() readonlyState: boolean = true;\r\n  @ViewChild('inputField') inputField: ElementRef;\r\n  public headerControl: FormControl = new FormControl(\r\n    {value: this.value, disabled: this.disabled}, this.validators);\r\n\r\n  constructor() {\r\n    super();\r\n  }\r\n\r\n  onFocus(): void {\r\n    this.readonlyState = false;\r\n    this.inputField.nativeElement.select();\r\n  }\r\n\r\n  onBlur(): void {\r\n    this.readonlyState = true;\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, ElementRef, Input, ViewChild} from '@angular/core';\r\nimport {FormControl} from '@angular/forms';\r\nimport {InputOutlineComponent} from '../outline/input-outline.component';\r\n\r\n@Component({\r\n  selector: 'p-input-header',\r\n  templateUrl: './input-header.component.html',\r\n  styleUrls: ['./input-header.component.scss'],\r\n})\r\nexport class InputHeaderComponent extends InputOutlineComponent {\r\n  @Input() readonlyState: boolean = true;\r\n  @ViewChild('inputField') inputField: ElementRef;\r\n\r\n  constructor() {\r\n    super();\r\n  }\r\n\r\n  onInputFocused(): void {\r\n    this.readonlyState = false;\r\n    this.inputField.nativeElement.select();\r\n  }\r\n\r\n  onInputBlur(): void {\r\n    this.readonlyState = true;\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1933,10 +1922,10 @@
                 "name": "constructor",
                 "description": "",
                 "args": [],
-                "line": 14
+                "line": 12
             },
             "extends": "InputOutlineComponent",
-            "templateData": "<mat-form-field class=\"p-input-outline p-input-header\"\r\n                appearance=\"outline\"\r\n                [class.p-input-readonly]=\"readonlyState\"\r\n                floatLabel=\"always\">\r\n\r\n  <input matInput\r\n         #inputField\r\n         [type]=\"type\"\r\n         [value]=\"value\"\r\n         [placeholder]=\"placeholder\"\r\n         [readonly]=\"readonlyState\"\r\n         attr.aria-label=\"{{ariaLabel}}\"\r\n         [formControl]=\"headerControl\"\r\n         [errorStateMatcher]=\"matcher\"\r\n         autocomplete=\"off\"\r\n         (focus)=\"onFocus()\"\r\n         (blur)=\"onBlur()\"\r\n         class=\"p-input-text-input\"\r\n         [class.readonly]=\"readonlyState\">\r\n\r\n  <p-icon class=\"p-input-outline-icon\"\r\n          matSuffix\r\n          iconName=\"edit-3\"\r\n          width=\"18\"\r\n          height=\"auto\"\r\n          strokeWidth=\"1.5\">\r\n  </p-icon>\r\n\r\n</mat-form-field>\r\n"
+            "templateData": "<mat-form-field class=\"p-input-outline p-input-header\"\r\n                appearance=\"outline\"\r\n                [class.p-input-readonly]=\"readonlyState\"\r\n                floatLabel=\"always\">\r\n\r\n  <input matInput\r\n         #inputField\r\n         [type]=\"type\"\r\n         [placeholder]=\"placeholder\"\r\n         [readonly]=\"readonlyState\"\r\n         attr.aria-label=\"{{ariaLabel}}\"\r\n         [formControl]=\"formFieldControl\"\r\n         [errorStateMatcher]=\"matcher\"\r\n         autocomplete=\"off\"\r\n         (focus)=\"onInputFocused()\"\r\n         (blur)=\"onInputBlur()\"\r\n         class=\"p-input-text-input\"\r\n         [class.readonly]=\"readonlyState\">\r\n\r\n  <p-icon class=\"p-input-outline-icon\"\r\n          matSuffix\r\n          iconName=\"edit-3\"\r\n          width=\"18\"\r\n          height=\"auto\"\r\n          strokeWidth=\"1.5\">\r\n  </p-icon>\r\n\r\n</mat-form-field>\r\n"
         },
         {
             "name": "InputNumericComponent",
@@ -3280,7 +3269,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<button [matMenuTriggerFor]=\"menu\"\r\n        #menuTrigger=\"matMenuTrigger\"\r\n        class=\"p-btn p-btn-small p-btn-tertiary\">\r\n    {{menuTriggerName}}\r\n</button>\r\n\r\n<!--menu window-->\r\n<mat-menu #menu=\"matMenu\" class=\"p-menu-radio\" [overlapTrigger]=\"false\">\r\n  <div class=\"p-menu-multiple-container\" (click)=\"$event.stopPropagation()\"\r\n                                (keydown)=\"$event.stopPropagation()\">\r\n    <ul class=\"p-menu-body\">\r\n      <li class=\"p-menu-body-item\" *ngFor=\"let option of menuList\">\r\n        <p-radio-button class=\"p-menu-option-radio\"\r\n                        [value]=\"option\"\r\n                        [label]=\"option.label\"\r\n                        [checked]=\"option.checked\"\r\n                        [disabled]=\"option.disabled\">\r\n        </p-radio-button>\r\n\r\n        <p-input-numeric *ngIf=\"option.numericInputValue\"\r\n                          class=\"p-menu-option-input\"\r\n                          [size]=\"inputNumericSize.Small\"\r\n                          [value]=\"option.numericInputValue\">\r\n        </p-input-numeric>\r\n\r\n        <div class=\"p-menu-option-link\" *ngIf=\"option.menuList\">\r\n          <p-menu-single-select class=\"p-menu-option-submenu\"\r\n                                [menuTriggerName]=\"findMenuTriggerName(option.menuList)\"\r\n                                [menuList]=\"option.menuList\">\r\n          </p-menu-single-select>\r\n        </div>\r\n\r\n        <div class=\"p-menu-option-dates\" *ngIf=\"option.dateStart && option.dateEnd\">\r\n          <p-datepicker class=\"p-menu-option-datepicker start\"\r\n                        [ariaLabel]=\"option.dateStart.ariaLabel\"\r\n                        [placeholder]=\"option.dateStart.placeholder\"\r\n                        [disabled]=\"option.dateStart.disabled\"\r\n                        [readonly]=\"option.dateStart.readonly\"\r\n                        [value]=\"option.dateStart.value\">\r\n          </p-datepicker>\r\n          <span class=\"p-menu-option-dates-ampersand paragraph-2-default\">and</span>\r\n          <p-datepicker class=\"p-menu-option-datepicker end\"\r\n                        [ariaLabel]=\"option.dateEnd.ariaLabel\"\r\n                        [placeholder]=\"option.dateEnd.placeholder\"\r\n                        [disabled]=\"option.dateEnd.disabled\"\r\n                        [readonly]=\"option.dateEnd.readonly\"\r\n                        [value]=\"option.dateEnd.value\">\r\n          </p-datepicker>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n    <div class=\"p-menu-footer\">\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnFirst.label\"\r\n                [buttonType]=\"footerBtnFirst.buttonType\"\r\n                (click)=\"selectCompleted()\"></p-button>\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnLast.label\"\r\n                [buttonType]=\"footerBtnLast.buttonType\"\r\n                (click)=\"selectCanceled()\"></p-button>\r\n    </div>\r\n  </div>\r\n</mat-menu>\r\n"
+            "templateData": "<button [matMenuTriggerFor]=\"menu\"\r\n        #menuTrigger=\"matMenuTrigger\"\r\n        class=\"p-btn p-btn-small p-btn-tertiary\">\r\n    {{menuTriggerName}}\r\n</button>\r\n\r\n<!--menu window-->\r\n<mat-menu #menu=\"matMenu\" class=\"p-menu-radio\" [overlapTrigger]=\"false\">\r\n  <div class=\"p-menu-multiple-container\" (click)=\"$event.stopPropagation()\"\r\n                                (keydown)=\"$event.stopPropagation()\">\r\n    <ul class=\"p-menu-body\">\r\n      <li class=\"p-menu-body-item\" *ngFor=\"let option of menuList\">\r\n        <p-radio-button class=\"p-menu-option-radio\"\r\n                        [value]=\"option\"\r\n                        [label]=\"option.label\"\r\n                        [checked]=\"option.checked\"\r\n                        [disabled]=\"option.disabled\">\r\n        </p-radio-button>\r\n\r\n        <p-input-numeric *ngIf=\"option.numericInputValue\"\r\n                          class=\"p-menu-option-input\"\r\n                          [size]=\"inputNumericSize.Small\"\r\n                          [value]=\"option.numericInputValue\">\r\n        </p-input-numeric>\r\n\r\n        <div class=\"p-menu-option-link\" *ngIf=\"option.menuList\">\r\n          <p-menu-single-select class=\"p-menu-option-submenu\"\r\n                                [menuTriggerName]=\"findMenuTriggerName(option.menuList)\"\r\n                                [menuList]=\"option.menuList\">\r\n          </p-menu-single-select>\r\n        </div>\r\n\r\n        <div class=\"p-menu-option-dates\" *ngIf=\"option.dateStart && option.dateEnd\">\r\n          <p-datepicker class=\"p-menu-option-datepicker start\"\r\n                        [ariaLabel]=\"option.dateStart.ariaLabel\"\r\n                        [placeholder]=\"option.dateStart.placeholder\"\r\n                        [disabled]=\"option.dateStart.disabled\"\r\n                        [value]=\"option.dateStart.value\">\r\n          </p-datepicker>\r\n          <span class=\"p-menu-option-dates-ampersand paragraph-2-default\">and</span>\r\n          <p-datepicker class=\"p-menu-option-datepicker end\"\r\n                        [ariaLabel]=\"option.dateEnd.ariaLabel\"\r\n                        [placeholder]=\"option.dateEnd.placeholder\"\r\n                        [disabled]=\"option.dateEnd.disabled\"\r\n                        [value]=\"option.dateEnd.value\">\r\n          </p-datepicker>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n    <div class=\"p-menu-footer\">\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnFirst.label\"\r\n                [buttonType]=\"footerBtnFirst.buttonType\"\r\n                (click)=\"selectCompleted()\"></p-button>\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnLast.label\"\r\n                [buttonType]=\"footerBtnLast.buttonType\"\r\n                (click)=\"selectCanceled()\"></p-button>\r\n    </div>\r\n  </div>\r\n</mat-menu>\r\n"
         },
         {
             "name": "MenuRangeComponent",
@@ -4438,6 +4427,9 @@
                     "type": "imports",
                     "elements": [
                         {
+                            "name": "InputModule"
+                        },
+                        {
                             "name": "MenuModule"
                         }
                     ]
@@ -5018,17 +5010,17 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
-                "type": "Story<CheckboxGroupComponent>",
-                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "Story<CheckboxGroupPageComponent>",
+                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
-                "type": "Story<CheckboxGroupPageComponent>",
-                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
+                "type": "Story<CheckboxGroupComponent>",
+                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -5128,17 +5120,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/colors/Color-palette.stories.ts",
-                "type": "Story<ColorPaletteComponent>",
-                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/icons/icon.stories.ts",
+                "type": "Story<IconComponent>",
+                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/icons/icon.stories.ts",
-                "type": "Story<IconComponent>",
-                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/colors/Color-palette.stories.ts",
+                "type": "Story<ColorPaletteComponent>",
+                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -5152,17 +5144,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/styles/typography-styles.stories.ts",
-                "type": "Story<TypographyStylesComponent>",
-                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
+                "type": "Story<TypographyFontFamilyComponent>",
+                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
-                "type": "Story<TypographyFontFamilyComponent>",
-                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/styles/typography-styles.stories.ts",
+                "type": "Story<TypographyStylesComponent>",
+                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Toggles",
@@ -5929,7 +5921,7 @@
                 "linktype": "component",
                 "name": "InputHeaderComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/22",
+                "coverageCount": "0/21",
                 "status": "low"
             },
             {
