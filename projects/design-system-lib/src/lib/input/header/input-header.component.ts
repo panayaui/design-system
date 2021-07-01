@@ -10,8 +10,6 @@ import {InputOutlineComponent} from '../outline/input-outline.component';
 export class InputHeaderComponent extends InputOutlineComponent {
   @Input() readonlyState: boolean = true;
   @ViewChild('inputField') inputField: ElementRef;
-  public headerControl: FormControl = new FormControl(
-    {value: this.value, disabled: this.disabled}, this.validators);
 
   constructor() {
     super();
