@@ -1035,7 +1035,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div>\r\n  <p-menu-tabs [menuTriggerName]=\"menuTriggerName\"\r\n               [menuList]=\"menuList\"\r\n               [footerBtnFirst]=\"footerBtnFirst\"\r\n               [footerBtnLast]=\"footerBtnLast\"\r\n               [filterAriaLabel]=\"filterAriaLabel\"\r\n               [filterPlaceholder]=\"filterPlaceholder\"\r\n               [headerBtnFirst]=\"headerBtnFirst\"\r\n               [headerBtnLast]=\"headerBtnLast\"\r\n               [checkboxList]=\"checkboxList\"></p-menu-tabs>\r\n</div>\r\n\r\n<button #tooltip=\"matTooltip\"\r\n        [matTooltip]=\"'message'\"\r\n        [matTooltipClass]=\"'p-tooltip'\"\r\n        class=\"p-btn p-btn-small p-btn-primary\"\r\n>\r\n  Hover\r\n</button>\r\n\r\n<p class=\"paragraph-3-semibold\">some words</p>\r\n\r\n<p-input-header [value]=\"'some text'\"></p-input-header>\r\n<p-input-text [value]=\"'some text'\"></p-input-text>\r\n"
+            "templateData": "<div>\r\n  <p-menu-tabs [menuTriggerName]=\"menuTriggerName\"\r\n               [menuList]=\"menuList\"\r\n               [footerBtnFirst]=\"footerBtnFirst\"\r\n               [footerBtnLast]=\"footerBtnLast\"\r\n               [filterAriaLabel]=\"filterAriaLabel\"\r\n               [filterPlaceholder]=\"filterPlaceholder\"\r\n               [headerBtnFirst]=\"headerBtnFirst\"\r\n               [headerBtnLast]=\"headerBtnLast\"\r\n               [checkboxList]=\"checkboxList\"></p-menu-tabs>\r\n</div>\r\n\r\n<button #tooltip=\"matTooltip\"\r\n        [matTooltip]=\"'message'\"\r\n        [matTooltipClass]=\"'p-tooltip'\"\r\n        class=\"p-btn p-btn-small p-btn-primary\"\r\n>\r\n  Hover\r\n</button>\r\n\r\n<p class=\"paragraph-3-semibold\">some words</p>\r\n\r\n<p-input-header [value]=\"'some text'\"></p-input-header>\r\n<p-input-text [value]=\"'some text'\"></p-input-text>\r\n\r\n<p-menu-multi-select\r\n[menuTriggerName]=\"'trigger'\"\r\n[menuList]=\"menuList\"\r\n[headerBtnFirst]=\"headerBtnFirst\"\r\n[headerBtnLast]=\"headerBtnLast\"\r\n[footerBtnFirst]=\"footerBtnFirst\"\r\n[footerBtnLast]=\"footerBtnLast\"></p-menu-multi-select>\r\n"
         },
         {
             "name": "ButtonComponent",
@@ -2489,7 +2489,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"p-label-main\"\r\n     [ngClass]=\"'p-label-main-' + type\"\r\n     [class.trigger]=\"isTriggerMenu\">\r\n  {{label}}\r\n  <p-icon *ngIf=\"isTriggerMenu\"\r\n          class=\"p-label-main-icon\"\r\n          iconName=\"chevron-down\"\r\n          width=\"17\"\r\n          height=\"auto\"\r\n          strokeWidth=\"1.5\">\r\n  </p-icon>\r\n</div>\r\n\r\n\r\n"
+            "templateData": "<div class=\"p-label-main\"\r\n     [ngClass]=\"'p-label-main-' + type\"\r\n     [class.trigger]=\"isTriggerMenu\">\r\n  {{label}}\r\n  <p-icon *ngIf=\"isTriggerMenu\"\r\n          class=\"p-label-main-icon\"\r\n          iconName=\"chevron-down\"\r\n          width=\"17\"\r\n          height=\"auto\"\r\n          strokeWidth=\"2.5\">\r\n  </p-icon>\r\n</div>\r\n\r\n\r\n"
         },
         {
             "name": "LabelSubComponent",
@@ -4930,17 +4930,17 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
+                "file": "src/environments/environment.prod.ts",
                 "type": "object",
-                "defaultValue": "{\r\n  production: false\r\n}"
+                "defaultValue": "{\r\n  production: true\r\n}"
             },
             {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
+                "file": "src/environments/environment.ts",
                 "type": "object",
-                "defaultValue": "{\r\n  production: true\r\n}"
+                "defaultValue": "{\r\n  production: false\r\n}"
             },
             {
                 "name": "ErrorMessage",
@@ -5010,14 +5010,6 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
-                "type": "Story<CheckboxPageComponent>",
-                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "PageTemplate",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
                 "type": "Story<CheckboxGroupComponent>",
                 "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
@@ -5029,6 +5021,14 @@
                 "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
                 "type": "Story<CheckboxGroupPageComponent>",
                 "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "PageTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "Story<CheckboxPageComponent>",
+                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -5144,17 +5144,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/styles/typography-styles.stories.ts",
-                "type": "Story<TypographyStylesComponent>",
-                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
+                "type": "Story<TypographyFontFamilyComponent>",
+                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
-                "type": "Story<TypographyFontFamilyComponent>",
-                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/styles/typography-styles.stories.ts",
+                "type": "Story<TypographyStylesComponent>",
+                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Toggles",
@@ -5440,16 +5440,6 @@
                     "type": "literal type"
                 }
             ],
-            "src/environments/environment.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.ts",
-                    "type": "object",
-                    "defaultValue": "{\r\n  production: false\r\n}"
-                }
-            ],
             "src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -5458,6 +5448,16 @@
                     "file": "src/environments/environment.prod.ts",
                     "type": "object",
                     "defaultValue": "{\r\n  production: true\r\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: false\r\n}"
                 }
             ],
             "src/stories/input-text/input-text.stories.ts": [
