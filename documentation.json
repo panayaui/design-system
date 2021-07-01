@@ -1035,7 +1035,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div>\r\n  <p-menu-tabs [menuTriggerName]=\"menuTriggerName\"\r\n               [menuList]=\"menuList\"\r\n               [footerBtnFirst]=\"footerBtnFirst\"\r\n               [footerBtnLast]=\"footerBtnLast\"\r\n               [filterAriaLabel]=\"filterAriaLabel\"\r\n               [filterPlaceholder]=\"filterPlaceholder\"\r\n               [headerBtnFirst]=\"headerBtnFirst\"\r\n               [headerBtnLast]=\"headerBtnLast\"\r\n               [checkboxList]=\"checkboxList\"></p-menu-tabs>\r\n</div>\r\n\r\n<button #tooltip=\"matTooltip\"\r\n        [matTooltip]=\"'message'\"\r\n        [matTooltipClass]=\"'p-tooltip'\"\r\n        class=\"p-btn p-btn-small p-btn-primary\"\r\n>\r\n  Hover\r\n</button>\r\n\r\n<p class=\"paragraph-3-semibold\">some words</p>\r\n\r\n<p-input-header [value]=\"'some text'\"></p-input-header>\r\n<p-input-text [value]=\"'some text'\"></p-input-text>\r\n\r\n<p-menu-multi-select\r\n[menuTriggerName]=\"'trigger'\"\r\n[menuList]=\"menuList\"\r\n[headerBtnFirst]=\"headerBtnFirst\"\r\n[headerBtnLast]=\"headerBtnLast\"\r\n[footerBtnFirst]=\"footerBtnFirst\"\r\n[footerBtnLast]=\"footerBtnLast\"></p-menu-multi-select>\r\n"
+            "templateData": "<!--<div>-->\r\n  <!--<p-menu-tabs [menuTriggerName]=\"menuTriggerName\"-->\r\n               <!--[menuList]=\"menuList\"-->\r\n               <!--[footerBtnFirst]=\"footerBtnFirst\"-->\r\n               <!--[footerBtnLast]=\"footerBtnLast\"-->\r\n               <!--[filterAriaLabel]=\"filterAriaLabel\"-->\r\n               <!--[filterPlaceholder]=\"filterPlaceholder\"-->\r\n               <!--[headerBtnFirst]=\"headerBtnFirst\"-->\r\n               <!--[headerBtnLast]=\"headerBtnLast\"-->\r\n               <!--[checkboxList]=\"checkboxList\"></p-menu-tabs>-->\r\n<!--</div>-->\r\n\r\n<!--<button #tooltip=\"matTooltip\"-->\r\n        <!--[matTooltip]=\"'message'\"-->\r\n        <!--[matTooltipClass]=\"'p-tooltip'\"-->\r\n        <!--class=\"p-btn p-btn-small p-btn-primary\"-->\r\n<!--&gt;-->\r\n  <!--Hover-->\r\n<!--</button>-->\r\n\r\n<!--<p class=\"paragraph-3-semibold\">some words</p>-->\r\n\r\n<p-input-header [value]=\"'some text'\"></p-input-header>\r\n\r\n<!--<p-input-text [value]=\"'some text'\"></p-input-text>-->\r\n\r\n<!--<p-menu-multi-select-->\r\n<!--[menuTriggerName]=\"'trigger'\"-->\r\n<!--[menuList]=\"menuList\"-->\r\n<!--[headerBtnFirst]=\"headerBtnFirst\"-->\r\n<!--[headerBtnLast]=\"headerBtnLast\"-->\r\n<!--[footerBtnFirst]=\"footerBtnFirst\"-->\r\n<!--[footerBtnLast]=\"footerBtnLast\"></p-menu-multi-select>-->\r\n"
         },
         {
             "name": "ButtonComponent",
@@ -5034,17 +5034,17 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
-                "type": "Story<InputTextPageComponent>",
-                "defaultValue": "(args: InputTextPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/input-text/input-text-table-layout/input-text-table-layout.stories.ts",
+                "type": "Story<InputTextTableLayoutComponent>",
+                "defaultValue": "(args: InputTextTableLayoutComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input-text/input-text-table-layout/input-text-table-layout.stories.ts",
-                "type": "Story<InputTextTableLayoutComponent>",
-                "defaultValue": "(args: InputTextTableLayoutComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
+                "type": "Story<InputTextPageComponent>",
+                "defaultValue": "(args: InputTextPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",

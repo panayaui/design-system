@@ -1,12 +1,23 @@
 @import "input-outline-base";
 
-.p-input-outline {
+::ng-deep .p-input-outline {
+  &.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    width: 100%;
+    transform: translateY(-30px);
+  }
+  .mat-form-field-label-wrapper {
+    top: -16px;
+    padding-top: 16px;
+  }
+  &.mat-form-field.mat-focused .mat-form-field-label {
+    color: $gray-scale-700;
+  }
   &-button {
     @include resetButton;
     width: 20px;
     height: 20px;
     margin-right: 3px;
-    ::ng-deep .mat-form-field-disabled &,
+    .mat-form-field-disabled &,
     .p-input-readonly & {
       display: none;
     }
@@ -14,7 +25,7 @@
 
   &-icon {
     margin-right: 7px;
-    ::ng-deep .mat-form-field-disabled &,
+    .mat-form-field-disabled &,
     .p-input-readonly & {
       display: none;
     }
