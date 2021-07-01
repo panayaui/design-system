@@ -81,15 +81,15 @@ export const Template = (args) => <AlertTriggerComponent {...args} />
     }}>
     {Template.bind({})}
   </Story>
-  <Story name="Action Right Orange"
+  <Story name="Action Right Medium"
     args={{
-      type: AlertEnum.Orange,
+      type: AlertEnum.Medium,
       data: {
         icon: {iconName: 'bell'},
         messageMain: 'Notification message.',
         actionName: 'Action'
       },
-      triggerBtnName: "Orange"
+      triggerBtnName: "Medium"
     }}>
     {Template.bind({})}
   </Story>
@@ -130,10 +130,10 @@ export const Template = (args) => <AlertTriggerComponent {...args} />
     }}>
     {Template.bind({})}
   </Story>
-  <Story name="Action Middle Orange"
+  <Story name="Action Middle Medium"
     args={{
-      type: AlertEnum.Orange,
-      triggerBtnName: "Orange"
+      type: AlertEnum.Medium,
+      triggerBtnName: "Medium"
     }}>
     {Template.bind({})}
   </Story>
@@ -190,15 +190,15 @@ export const Template = (args) => <AlertTriggerComponent {...args} />
     }}>
     {Template.bind({})}
   </Story>
-  <Story name="Action Left Orange"
+  <Story name="Action Left Medium"
     args={{
-      type: AlertEnum.Orange,
+      type: AlertEnum.Medium,
       data: {
         icon: {iconName: 'bell'},
         messageSub: 'Notification message.',
         actionName: 'Action'
       },
-      triggerBtnName: "Orange"
+      triggerBtnName: "Medium"
     }}>
     {Template.bind({})}
   </Story>
@@ -251,14 +251,14 @@ export const Template = (args) => <AlertTriggerComponent {...args} />
     }}>
     {Template.bind({})}
   </Story>
-  <Story name="No Action Orange"
+  <Story name="No Action Medium"
     args={{
-      type: AlertEnum.Orange,
+      type: AlertEnum.Medium,
       data: {
         icon: {iconName: 'bell'},
         messageMain: 'Notification message.'
       },
-      triggerBtnName: "Orange"
+      triggerBtnName: "Medium"
     }}>
     {Template.bind({})}
   </Story>
@@ -333,7 +333,7 @@ export enum AlertEnum {
   Primary = 'primary',
   Secondary = 'secondary',
   Warning = 'warning',
-  Orange = 'orange',
+  Medium = 'medium',
   Success = 'success'
 }
 ```
