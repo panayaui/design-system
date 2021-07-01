@@ -6,15 +6,14 @@
   <input matInput
          #inputField
          [type]="type"
-         [value]="value"
          [placeholder]="placeholder"
          [readonly]="readonlyState"
          attr.aria-label="{{ariaLabel}}"
-         [formControl]="headerControl"
+         [formControl]="formFieldControl"
          [errorStateMatcher]="matcher"
          autocomplete="off"
-         (focus)="onFocus()"
-         (blur)="onBlur()"
+         (focus)="onInputFocused()"
+         (blur)="onInputBlur()"
          class="p-input-text-input"
          [class.readonly]="readonlyState">
 
