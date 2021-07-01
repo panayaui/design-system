@@ -60,6 +60,7 @@ export class MenuSingleSelectComponent implements OnInit, OnDestroy {
   }
 
   onSelectedItem($event, item): void {
+    console.log(item);
     this.onClickTask.emit(item);
     this.selectCompleted();
   }

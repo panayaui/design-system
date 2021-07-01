@@ -12,7 +12,7 @@
 <!--menu-single-select window-->
 <mat-menu #menu="matMenu" class="p-menu" [overlapTrigger]="false">
   <div class="p-menu-container" (click)="$event.stopPropagation()"
-       (keydown)="$event.stopPropagation()">
+                                (keydown)="$event.stopPropagation()">
     <div class="p-menu-header" *ngIf="filterPlaceholder">
       <mat-form-field class="p-menu-form-field"
                       appearance="outline"
@@ -74,7 +74,6 @@
           mat-menu-item
           [class.p-menu-item-selected]="item.selected"
           [disabled]="item.disabled"
-          [disableRipple]="true"
           (click)="onSelectedItem($event, item)">
     {{item.name}}
   </button>
