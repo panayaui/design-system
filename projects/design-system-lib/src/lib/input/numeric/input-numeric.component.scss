@@ -23,9 +23,8 @@ $input-numeric-padding: 8px;
     font-family: $font-family-basic;
     font-weight: 400;
     font-size: $small-font-size;
-    line-height: 19px;
     color: $primary-a-900;
-    padding-bottom: 6px;
+    padding-bottom: 15px;
     &.disabled {
       color: $gray-scale-600;
     }
@@ -39,9 +38,9 @@ $input-numeric-padding: 8px;
 
   ::ng-deep & {
     // material styles override
-    .mat-input-element {
+    .p-input-numeric-input {
       font-family: $font-family-basic;
-      font-size: $base-font-size;
+      font-size: $small-font-size;
       width: 100%;
       line-height: 20px;
       color: $primary-a-900;
@@ -114,17 +113,20 @@ $input-numeric-padding: 8px;
       }
     }
   }
+}
 
-  ::ng-deep &.no-error-message {
-    .mat-form-field-wrapper {
-      padding-bottom: 0;
-    }
-    .mat-form-field-infix {
-      border-top: 0;
-    }
-    .mat-form-field-underline {
-      color: red;
-      position: static;
-    }
+::ng-deep .no-error-message {
+  .p-input-numeric-label {
+    padding-bottom: 6px;
+  }
+  .mat-form-field-wrapper {
+    padding-bottom: 0;
+  }
+  .mat-form-field-infix {
+    border-top: 0;
+  }
+  .mat-form-field-underline {
+    color: red;
+    position: static;
   }
 }
