@@ -7,6 +7,10 @@ $date-content-selector: ".mat-calendar-body-cell-content:not(.mat-calendar-body-
 
 // input trigger & icon & preview (Tuesday, March 16, 2021)
 .p-datepicker {
+  cursor: pointer;
+  .p-input-text-input {
+    cursor: pointer;
+  }
   ::ng-deep &.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon-button {
     width: 30px;
     height: 30px;
@@ -16,11 +20,13 @@ $date-content-selector: ".mat-calendar-body-cell-content:not(.mat-calendar-body-
     color: $primary-a-900;
     opacity: 0;
     transition: opacity 280ms;
+    position: absolute;
+    right: 0;
+    top: 8px;
   }
-  ::ng-deep .mat-form-field-flex:hover {
-    .p-datepicker-icon {
+  ::ng-deep .mat-form-field-flex:hover .p-datepicker-icon,
+  .p-datepicker-icon.shown {
       opacity: 1;
-    }
   }
   ::ng-deep .cdk-program-focused,
   ::ng-deep .cdk-keyboard-focused {

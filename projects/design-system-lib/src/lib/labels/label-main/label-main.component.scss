@@ -17,50 +17,84 @@
   &-critical {
     color: $gray-scale-1;
     background-color: $supportive-alert-700;
+    &.trigger:hover {
+      background-color: $supportive-alert-800;
+    }
   }
 
   &-danger {
     color: $gray-scale-1;
     background-color: $supportive-alert-500;
+    &.trigger:hover {
+      background-color: $supportive-alert-600;
+    }
   }
 
   &-success {
     color: $gray-scale-1;
     background-color: $supportive-success-400;
+    &.trigger:hover {
+      background-color: $supportive-success-500;
+    }
   }
 
   &-medium {
     color: $gray-scale-1;
-    background-color: $supportive-orange-300;
+    background-color: $supportive-medium-400;
+    &.trigger:hover {
+      background-color: $supportive-medium-500;
+    }
   }
 
   &-low {
     color: $primary-a-900;
-    background-color: $supportive-yellow-300;
+    background-color: $supportive-low-300;
+    &.trigger:hover {
+      background-color: $supportive-low-400;
+    }
   }
 
   &-lightGray {
     color: $primary-a-900;
     background-color: $gray-scale-400;
+    &.trigger:hover {
+      background-color: $gray-scale-500;
+    }
   }
 
   &-darkGray {
     color: $gray-scale-1;
     background-color: $gray-scale-800;
+    &.trigger:hover {
+      background-color: $primary-a-900;
+    }
   }
 
   &-dev1 {
     color: $gray-scale-1;
-    background-color: $supportive-dev-a;
+    background-color: $dev-a-100;
+    &.trigger:hover {
+      background-color: $dev-a-200;
+    }
   }
 
   &-dev2 {
     color: $gray-scale-1;
-    background-color: $supportive-dev-b;
+    background-color: $dev-b-200;
+    &.trigger:hover {
+      background-color: $dev-b-300;
+    }
   }
 
   &-dev3 {
     color: $gray-scale-1;
-    background-color: $secondary-a-700;
+    background-color: $dev-c-300;
+    &.trigger:hover {
+      background-color: $dev-c-400;
+    }
+  }
+
+  &-icon {
+    margin-left: 6px;
   }
 }

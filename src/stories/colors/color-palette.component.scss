@@ -1,4 +1,4 @@
-@import "../assets/styles/custom";
+@import "../../../projects/design-system-lib/src/lib/assets/styles/params/colors";
 
 $colorScheme: (
   primary-a-900: $primary-a-900,
@@ -27,17 +27,25 @@ $colorScheme: (
   gray-scale-50: $gray-scale-50,
   gray-scale-5: $gray-scale-5,
   gray-scale-1: $gray-scale-1,
+  supportive-alert-800: $supportive-alert-800,
   supportive-alert-700: $supportive-alert-700,
+  supportive-alert-600: $supportive-alert-600,
   supportive-alert-500: $supportive-alert-500,
   supportive-alert-50: $supportive-alert-50,
-  supportive-yellow-300: $supportive-yellow-300,
-  supportive-orange-300 :$supportive-orange-300,
-  supportive-orange-50: $supportive-orange-50,
+  supportive-low-400: $supportive-low-400,
+  supportive-low-300: $supportive-low-300,
+  supportive-medium-500 :$supportive-medium-500,
+  supportive-medium-400 :$supportive-medium-400,
+  supportive-medium-50: $supportive-medium-50,
+  supportive-success-500: $supportive-success-500,
   supportive-success-400: $supportive-success-400,
   supportive-success-50: $supportive-success-50,
-  supportive-dev-a: $supportive-dev-a,
-  supportive-dev-b: $supportive-dev-b,
-  supportive-dev-c: $supportive-dev-c,
+  dev-a-200: $dev-a-200,
+  dev-a-100: $dev-a-100,
+  dev-b-300: $dev-b-300,
+  dev-b-200: $dev-b-200,
+  dev-c-400: $dev-c-400,
+  dev-c-300: $dev-c-300,
 );
 
 $box-width: 209px;
@@ -87,7 +95,7 @@ $box-gap: 23px;
   }
 
   &-column {
-    & ~ &:not(.color-supportive-dev) {
+    & ~ & {
       margin-left: $box-gap;
     }
   }
@@ -115,19 +123,5 @@ $box-gap: 23px;
   &-box-name,
   &-box-class {
     line-height: 21.37px;
-  }
-
-  &-supportive-dev {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-start;
-    flex-basis: 100%;
-    margin-top: $box-height;
-    .color-box {
-      display: inline-flex;
-      & ~ .color-box {
-        margin-right: $box-gap;
-      }
-    }
   }
 }

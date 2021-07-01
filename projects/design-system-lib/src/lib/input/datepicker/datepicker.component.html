@@ -3,17 +3,19 @@
          [matDatepicker]="picker"
          class="p-input-text-input"
          attr.aria-label="{{ariaLabel}}"
-         onfocus="this.select()">
-  <mat-datepicker-toggle matSuffix [for]="picker" class="p-datepicker-toggle">
-    <p-icon class="p-datepicker-icon"
-            matDatepickerToggleIcon
-            iconName="calendar"
-            width="16"
-            height="auto"
-            strokeWidth="1.5">
-    </p-icon>
-  </mat-datepicker-toggle>
+         autocomplete="off"
+         readonly
+         (click)="openDatepicker()"
+         (focus)="openDatepicker()">
+  <p-icon class="p-datepicker-icon"
+          [class.shown]="isOpened"
+          iconName="calendar"
+          width="16"
+          height="auto"
+          strokeWidth="1.5">
+  </p-icon>
   <mat-datepicker #picker
+                  (closed)="streamClosed()"
                   panelClass="p-datepicker-panel"></mat-datepicker>
 </mat-form-field>
 

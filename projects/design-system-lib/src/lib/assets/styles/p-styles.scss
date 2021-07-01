@@ -171,21 +171,31 @@ $gray-scale-50: #E7E7E9;
 $gray-scale-5: #F6F7F9;
 $gray-scale-1: #FEFEFF;
 
+$supportive-alert-800: #8C0503;
 $supportive-alert-700: #A80603;
+$supportive-alert-600: #CA132B;
 $supportive-alert-500: #E11731;
 $supportive-alert-50: #FED6DE;
 
-$supportive-yellow-300: #F3DC5E;
+$supportive-low-400: #F3D21E;
+$supportive-low-300: #F3DC5E;
 
-$supportive-orange-300: #FF9900;
-$supportive-orange-50: #FFE1B5;
+$supportive-medium-500: #ED8E00;
+$supportive-medium-400: #FF9900;
+$supportive-medium-50: #FFE1B5;
 
+$supportive-success-500: #3EA575;
 $supportive-success-400: #52B788;
 $supportive-success-50: #CCEFDF;
 
-$supportive-dev-a: #6D86E1;
-$supportive-dev-b: #9A4CB6;
-$supportive-dev-c: #4132C8;
+$dev-a-200: #5D75CB;
+$dev-a-100: #6D86E1;
+
+$dev-b-300: #8940A3;
+$dev-b-200: #9A4CB6;
+
+$dev-c-400: #362B97;
+$dev-c-300: #4132C8;
 
 @mixin resetH {
   font-size: inherit;

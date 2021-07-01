@@ -22,7 +22,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
               IconModule
           ]
       })
-    ]}  
+    ]}
     args={{
       data: {
         icon: {iconName: 'bell'},
@@ -32,7 +32,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
         closeBtnName: 'Close'
       },
       duration: 2500
-    }}  
+    }}
  />
 
 # Alert
@@ -47,7 +47,7 @@ export const Template = (args) => <AlertTriggerComponent {...args} />
 ###### Action Right
 <Canvas>
   <Story name="Action Right Primary"
-    args={{ 
+    args={{
       type: AlertEnum.Primary,
       data: {
         icon: {iconName: 'bell'},
@@ -60,7 +60,7 @@ export const Template = (args) => <AlertTriggerComponent {...args} />
     {Template.bind({})}
   </Story>
   <Story name="Action Right Secondary"
-    args={{ 
+    args={{
       type: AlertEnum.Secondary,
       data: {
         icon: {iconName: 'bell'},
@@ -73,7 +73,7 @@ export const Template = (args) => <AlertTriggerComponent {...args} />
     {Template.bind({})}
   </Story>
   <Story name="Action Right Warning"
-    args={{ 
+    args={{
       type: AlertEnum.Warning,
       data: {
         icon: {iconName: 'bell'},
@@ -85,21 +85,21 @@ export const Template = (args) => <AlertTriggerComponent {...args} />
     }}>
     {Template.bind({})}
   </Story>
-  <Story name="Action Right Orange"
-    args={{ 
-      type: AlertEnum.Orange,
+  <Story name="Action Right Medium"
+    args={{
+      type: AlertEnum.Medium,
       data: {
         icon: {iconName: 'bell'},
         messageMain: 'Notification message.',
         actionName: 'Action',
         closeBtnName: 'Close'
       },
-      triggerBtnName: "Orange"
+      triggerBtnName: "Medium"
     }}>
     {Template.bind({})}
   </Story>
   <Story name="Action Right Success"
-    args={{ 
+    args={{
       type: AlertEnum.Success,
       data: {
         icon: {iconName: 'check-circle'},
@@ -116,43 +116,43 @@ export const Template = (args) => <AlertTriggerComponent {...args} />
 ###### Action Middle
 <Canvas>
   <Story name="Action Middle Primary"
-    args={{ 
-      type: AlertEnum.Primary,    
+    args={{
+      type: AlertEnum.Primary,
       triggerBtnName: "Primary"
     }}>
     {Template.bind({})}
   </Story>
   <Story name="Action Middle Secondary"
-    args={{ 
-      type: AlertEnum.Secondary,   
+    args={{
+      type: AlertEnum.Secondary,
       triggerBtnName: "Secondary"
     }}>
     {Template.bind({})}
   </Story>
   <Story name="Action Middle Warning"
-    args={{ 
-      type: AlertEnum.Warning,     
+    args={{
+      type: AlertEnum.Warning,
       triggerBtnName: "Warning"
     }}>
     {Template.bind({})}
   </Story>
-  <Story name="Action Middle Orange"
-    args={{ 
-      type: AlertEnum.Orange,      
-      triggerBtnName: "Orange"
+  <Story name="Action Middle Medium"
+    args={{
+      type: AlertEnum.Medium,
+      triggerBtnName: "Medium"
     }}>
     {Template.bind({})}
   </Story>
   <Story name="Action Middle Success"
-    args={{ 
-      type: AlertEnum.Success,  
+    args={{
+      type: AlertEnum.Success,
        data: {
         icon: {iconName: 'check-circle'},
         messageMain: 'Notification message.',
         actionName: 'Action',
         messageSub: 'Notification message.',
         closeBtnName: 'Close'
-      },   
+      },
       triggerBtnName: "Success"
     }}>
     {Template.bind({})}
@@ -162,7 +162,7 @@ export const Template = (args) => <AlertTriggerComponent {...args} />
 ###### Action Left
 <Canvas>
   <Story name="Action Left Primary"
-    args={{ 
+    args={{
       type: AlertEnum.Primary,
       data: {
         icon: {iconName: 'bell'},
@@ -175,7 +175,7 @@ export const Template = (args) => <AlertTriggerComponent {...args} />
     {Template.bind({})}
   </Story>
   <Story name="Action Left Secondary"
-    args={{ 
+    args={{
       type: AlertEnum.Secondary,
       data: {
         icon: {iconName: 'bell'},
@@ -188,7 +188,7 @@ export const Template = (args) => <AlertTriggerComponent {...args} />
     {Template.bind({})}
   </Story>
   <Story name="Action Left Warning"
-    args={{ 
+    args={{
       type: AlertEnum.Warning,
       data: {
         icon: {iconName: 'bell'},
@@ -200,21 +200,21 @@ export const Template = (args) => <AlertTriggerComponent {...args} />
     }}>
     {Template.bind({})}
   </Story>
-  <Story name="Action Left Orange"
-    args={{ 
-      type: AlertEnum.Orange,
+  <Story name="Action Left Medium"
+    args={{
+      type: AlertEnum.Medium,
       data: {
         icon: {iconName: 'bell'},
         messageSub: 'Notification message.',
         actionName: 'Action',
         closeBtnName: 'Close'
       },
-      triggerBtnName: "Orange"
+      triggerBtnName: "Medium"
     }}>
     {Template.bind({})}
   </Story>
   <Story name="Action Left Success"
-    args={{ 
+    args={{
       type: AlertEnum.Success,
       data: {
         icon: {iconName: 'check-circle'},
@@ -231,7 +231,7 @@ export const Template = (args) => <AlertTriggerComponent {...args} />
 ###### No Action
 <Canvas>
   <Story name="No Action Primary"
-    args={{ 
+    args={{
       type: AlertEnum.Primary,
       data: {
         icon: {iconName: 'bell'},
@@ -243,7 +243,7 @@ export const Template = (args) => <AlertTriggerComponent {...args} />
     {Template.bind({})}
   </Story>
   <Story name="No Action Secondary"
-    args={{ 
+    args={{
       type: AlertEnum.Secondary,
       data: {
         icon: {iconName: 'bell'},
@@ -255,7 +255,7 @@ export const Template = (args) => <AlertTriggerComponent {...args} />
     {Template.bind({})}
   </Story>
   <Story name="No Action Warning"
-    args={{ 
+    args={{
       type: AlertEnum.Warning,
       data: {
         icon: {iconName: 'bell'},
@@ -266,20 +266,20 @@ export const Template = (args) => <AlertTriggerComponent {...args} />
     }}>
     {Template.bind({})}
   </Story>
-  <Story name="No Action Orange"
-    args={{ 
-      type: AlertEnum.Orange,
+  <Story name="No Action Medium"
+    args={{
+      type: AlertEnum.Medium,
       data: {
         icon: {iconName: 'bell'},
         messageMain: 'Notification message.',
         closeBtnName: 'Close'
       },
-      triggerBtnName: "Orange"
+      triggerBtnName: "Medium"
     }}>
     {Template.bind({})}
   </Story>
   <Story name="No Action Success"
-    args={{ 
+    args={{
       type: AlertEnum.Success,
       data: {
         icon: {iconName: 'bell'},
@@ -295,7 +295,7 @@ export const Template = (args) => <AlertTriggerComponent {...args} />
 ###### Usage
 ```ts
  export class AlertTriggerComponent {
-  @Input() data: IAlertData; 
+  @Input() data: IAlertData;
   @Input() type: AlertEnum = AlertEnum.Secondary; // required
   @Input() horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   @Input() verticalPosition: MatSnackBarVerticalPosition = 'top';
@@ -350,7 +350,7 @@ export enum AlertEnum {
   Primary = 'primary',
   Secondary = 'secondary',
   Warning = 'warning',
-  Orange = 'orange',
+  Medium = 'medium',
   Success = 'success'
 }
 ```

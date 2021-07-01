@@ -122,9 +122,9 @@ export const Template = (args) => <MenuMultiSelectComponent {...args} />
     }}>
     {Template.bind({})}
   </Story>
-  <Story name="Multiselect with Filter & Buttons"
+  <Story name="Multiselect with Filter & Actions"
     args={{ 
-      menuTriggerName: 'Multi With Filter & Buttons',
+      menuTriggerName: 'Multi With Filter & Actions',
       filterAriaLabel: 'Find Label',
       filterPlaceholder: 'Find Label',
       footerBtnFirst: {
@@ -146,36 +146,6 @@ export const Template = (args) => <MenuMultiSelectComponent {...args} />
       },
       headerBtnLast: {
         label: 'Not equal to'
-      }
-    }}>
-    {Template.bind({})}
-  </Story>
-  <Story name="Multiselect with Filter & Disabled Buttons"
-    args={{ 
-      menuTriggerName: 'Multi With Filter & Disabled Buttons',
-      filterAriaLabel: 'Find Label',
-      filterPlaceholder: 'Find Label',
-      footerBtnFirst: {
-        label: 'Done',
-        buttonType: ButtonTypeEnum.Primary
-      },
-      footerBtnLast: {
-        label: 'Cancel',
-        buttonType: ButtonTypeEnum.Secondary
-      },
-      headerBtnFirst: {
-        label: 'Clear selected',
-        buttonType: ButtonTypeEnum.Tertiary,
-        icon: {
-          iconName: 'eraser',
-          width: '15',
-          height: '15'
-        },
-        disabled: true
-      },
-      headerBtnLast: {
-        label: 'Not equal to',
-        disabled: true
       }
     }}>
     {Template.bind({})}

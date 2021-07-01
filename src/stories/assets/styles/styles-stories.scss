@@ -38,8 +38,7 @@ p {
   font-size: 0;
 }
 
-#radio-button--base,
-#label-status-main {
+#radio-button--base {
   & ~ .sbdocs .innerZoomElementWrapper > div {
     $label-width: 150px;
     &:nth-child(odd){
@@ -48,14 +47,6 @@ p {
     &:nth-child(even){
       width: calc(100% - #{$label-width});
     }
-  }
-}
-
-#label-status-sub ~ .sbdocs .innerZoomElementWrapper > div {
-  $label-width: 150px;
-  width: $label-width;
-  &:nth-child(3n){
-    width: calc(100% - #{$label-width} * 2);
   }
 }
 
@@ -182,6 +173,7 @@ p {
 
 @import '../../input/input-page';
 @import '../../radio-button/radio-button-group-page';
+@import '../../labels/label-page';
 
 // design-system global styles
 // compiled with: scss-bundle -c scss-bundle.config.json

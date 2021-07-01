@@ -9,4 +9,5 @@ import {LabelTypesEnum} from '../label-types.enum';
 export class LabelMainComponent {
   @Input() label: string;
   @Input() type: LabelTypesEnum;
+  @Input() isTriggerMenu: boolean;
 }

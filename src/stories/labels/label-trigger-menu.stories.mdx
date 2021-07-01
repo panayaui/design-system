@@ -1,0 +1,95 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+import {LabelMainComponent} from 'projects/design-system-lib/src/public-api';
+import {LabelTypesEnum} from 'projects/design-system-lib/src/public-api';
+import {LabelModule} from 'projects/design-system-lib/src/public-api';
+
+<Meta title='Components/Label (Status)/Menu Trigger'
+  component={LabelMainComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [LabelModule]
+    })
+  ]}
+  args={{ label: 'Label', isTriggerMenu: true }} 
+ />
+
+export const Template = (args) => <LabelMainComponent {...args} />
+
+# Label (Status) Main as Menu Trigger
+
+###### Selector
+
+```html
+  <p-label-main [isTriggerMenu]='true'></p-label-main>
+```
+###### Types
+<Canvas>
+  <p className="story-title">critical</p>
+  <Story name="Critical"
+    args={{ type: LabelTypesEnum.CRITICAL }}>
+    {Template.bind({})}
+  </Story>
+  <p className="story-title">danger</p>
+  <Story name="Danger"
+    args={{ type: LabelTypesEnum.DANGER }}>
+    {Template.bind({})}
+  </Story>
+  <p className="story-title">success</p>
+   <Story name="Success"
+    args={{ type: LabelTypesEnum.SUCCESS }}>
+    {Template.bind({})}
+  </Story>
+  <p className="story-title">medium</p>
+   <Story name="Medium"
+    args={{ type: LabelTypesEnum.MEDIUM }}>
+    {Template.bind({})}
+  </Story>
+  <p className="story-title">low</p>
+   <Story name="Low"
+    args={{ type: LabelTypesEnum.LOW }}>
+    {Template.bind({})}
+  </Story>
+  <p className="story-title">light gray</p>
+   <Story name="Light Gray"
+    args={{ type: LabelTypesEnum.LIGHTGRAY }}>
+    {Template.bind({})}
+  </Story>
+  <p className="story-title">dark gray</p>
+   <Story name="Dark Gray"
+    args={{ type: LabelTypesEnum.DARKGRAY }}>
+    {Template.bind({})}
+  </Story>
+  <p className="story-title">dev1</p>
+   <Story name="Dev1"
+    args={{ type: LabelTypesEnum.DEV1 }}>
+    {Template.bind({})}
+  </Story>
+  <p className="story-title">dev2</p>
+   <Story name="Dev2"
+    args={{ type: LabelTypesEnum.DEV2 }}>
+    {Template.bind({})}
+  </Story>
+  <p className="story-title">dev3</p>
+  <Story name="Dev3"
+    args={{ type: LabelTypesEnum.DEV3 }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Types Enum
+
+```ts
+  export enum LabelTypesEnum {
+  CRITICAL = 'critical',
+  DANGER = 'danger',
+  SUCCESS = 'success',
+  MEDIUM = 'medium',
+  LOW = 'low',
+  LIGHTGRAY = 'lightGray',
+  DARKGRAY = 'darkGray',
+  DEV1 = 'dev1',
+  DEV2= 'dev2',
+  DEV3 = 'dev3'
+}
+```

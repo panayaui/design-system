@@ -2,6 +2,6 @@ export enum AlertEnum {
   Primary = 'primary',
   Secondary = 'secondary',
   Warning = 'warning',
-  Orange = 'orange',
+  Medium = 'medium',
   Success = 'success'
 }
