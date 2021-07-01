@@ -44,23 +44,39 @@ const palette = {
   },
   supportive: {
     alert: {
+      800: { name: 'Alert 800', labelColor: 'white' },
       700: { name: 'Alert 700', labelColor: 'white' },
+      600: { name: 'Alert 600', labelColor: 'black' },
       500: { name: 'Alert 500', labelColor: 'black' },
       50: { name: 'Alert 50', labelColor: 'black' }
     },
-    yellow: { 300: { name: 'Yellow 300', labelColor: 'black' } },
-    orange: {
-      300: { name: 'Orange 300', labelColor: 'black' },
-      50: { name: 'Orange 50', labelColor: 'black' }
+    low: {
+      400: { name: 'Low 400', labelColor: 'black' },
+      300: { name: 'Low 300', labelColor: 'black' }
+    },
+    medium: {
+      500: { name: 'Medium 500', labelColor: 'black' },
+      400: { name: 'Medium 400', labelColor: 'black' },
+      50: { name: 'Medium 50', labelColor: 'black' }
     },
     success: {
+      500: { name: 'Success 500', labelColor: 'black' },
       400: { name: 'Success 400', labelColor: 'black' },
       50: { name: 'Success 50', labelColor: 'black' }
+    }
+  },
+  dev: {
+    a: {
+      200: { name: 'A 200', labelColor: 'white' },
+      100: { name: 'A 100', labelColor: 'white' }
     },
-    dev: {
-      a: { name: 'Dev A', labelColor: 'white' },
-      b: { name: 'Dev B', labelColor: 'white' },
-      c: { name: 'Dev C', labelColor: 'white' }
+    b: {
+      300: { name: 'B 300', labelColor: 'white' },
+      200: { name: 'B 200', labelColor: 'white' }
+    },
+    c: {
+      400: { name: 'C 400', labelColor: 'white' },
+      300: { name: 'C 300', labelColor: 'white' }
     }
   }
 };
