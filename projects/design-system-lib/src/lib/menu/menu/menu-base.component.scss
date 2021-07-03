@@ -1,0 +1,68 @@
+@import "../../assets/styles/custom";
+
+$menu-padding: $gap-base;
+$menu-background: $gray-scale-1;
+$menu-footer-height: $btn-small-height + $menu-padding * 4;
+$menu-min-width: 230px;
+$menu-max-height: 75vh;
+
+
+::ng-deep .p-menu.mat-menu-panel {
+  min-width: $menu-min-width;
+  max-height: $menu-max-height;
+  background-color: $menu-background;
+  border-radius: 0;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1),
+  0 2px 6px rgba(0, 0, 0, 0.04),
+  0 -3px 6px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  .mat-menu-content {
+    height: 100%;
+    padding: 0;
+    position: relative;
+  }
+}
+
+
+.p-menu {
+  &-container {
+    height: 100%;
+  }
+  &-footer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: $menu-footer-height;
+    padding: $menu-padding * 2;
+    background-color: $menu-background;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    &-btn {
+      & + & {
+        margin-left: $menu-padding;
+      }
+    }
+  }
+  &-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100% - #{$menu-footer-height});
+    padding-right: $menu-padding;
+    padding-bottom: $menu-padding;
+    &-state {
+      &:before {
+        content: '';
+        display: block;
+        height: 20px;
+        margin-bottom: 7px;
+        background-image: url('../../assets/images/no-data.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+  }
+}

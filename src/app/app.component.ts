@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';
 import {InputNumericSizeEnum} from 'projects/design-system-lib/src/public-api';
+import {ReactiveFormsModule, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -24,6 +25,7 @@ export class AppComponent implements OnInit {
   headerBtnFirst: any;
   headerBtnLast: any;
   checkboxList: any;
+  validator = Validators.required;
 
   constructor() {}
 

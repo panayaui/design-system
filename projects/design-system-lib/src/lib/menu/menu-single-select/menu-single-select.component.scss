@@ -1,16 +1,12 @@
-@import "../../assets/styles/custom";
+@import "../menu/menu-base.component";
 
-$menu-padding: 8px;
 $menu-item-height: 32px;
-$menu-background: $gray-scale-1;
 $menu-item-margin-top: 4px;
 $input-text-height: 32px;
 $input-text-padding: 8px;
 $menu-header-height: $input-text-height + $menu-padding + $menu-padding;
 $menu-footer-height: $menu-padding * 3 + $menu-item-height * 2;
 $menu-body-height: 103px;
-$menu-min-width: 230px;
-$menu-max-height: 75vh;
 
 %menu-item {
   font-family: $font-family-basic;
@@ -24,22 +20,8 @@ $menu-max-height: 75vh;
   }
 }
 
-::ng-deep .p-menu.mat-menu-panel {
-  min-width: $menu-min-width;
-  max-height: $menu-max-height;
-  background-color: $menu-background;
-  border-radius: 0;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1),
-              0 2px 6px rgba(0, 0, 0, 0.04),
-              0 -3px 6px rgba(0, 0, 0, 0.04);
-  overflow: hidden;
-  .mat-menu-content {
-    height: 100%;
-    padding: 0;
-    position: relative;
-  }
-
-  .mat-menu-item {
+::ng-deep .p-menu-single.mat-menu-panel {
+   .mat-menu-item {
     @extend %menu-item;
     font-size: $small-font-size;
     &:hover,
@@ -168,17 +150,14 @@ $menu-max-height: 75vh;
   }
 
   &-footer {
+    display: block;
     width: 100%;
+    height: auto;
     padding-top: $menu-padding;
     padding-right: $menu-padding;
     padding-bottom: $menu-padding;
     padding-left: $menu-padding;
-    background-color: $menu-background;
     border-top: 1px solid $gray-scale-400;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
   }
 
   &-btn-line {

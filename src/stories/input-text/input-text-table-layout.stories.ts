@@ -1,9 +1,9 @@
 import {moduleMetadata} from '@storybook/angular';
 import {CommonModule} from '@angular/common';
 import {Story, Meta} from '@storybook/angular/types-6-0';
-import InputTextTableLayoutComponent from './input-text-table-layout.component';
+import InputTextTableLayoutComponent from '../../../projects/design-system-lib/src/lib/input/table-layout/input-text-table-layout.component';
 import {InputTextComponent} from 'projects/design-system-lib/src/public-api';
-import * as InputTextStories from '../input-text.stories';
+import * as InputTextStories from './input-text.stories';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';

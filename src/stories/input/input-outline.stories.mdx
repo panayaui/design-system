@@ -5,13 +5,13 @@ import {InputModule} from 'projects/design-system-lib/src/public-api';
 import {Validators} from '@angular/forms';
 import {CustomErrorStateMatcher} from './custom-error-state-matcher'
 
-<Meta title='Components/Input/Outline' 
+<Meta title='Components/Input/Outline'
   component={InputOutlineComponent}
   decorators={[
     moduleMetadata({
       imports: [InputModule]
     })
-  ]} 
+  ]}
 />
 
 export const Template = (args) => <InputOutlineComponent {...args} />
@@ -212,8 +212,7 @@ export class InputOutlineComponent implements OnInit {
             iconName="x"
             width="16"
             height="auto"
-            stroke="#B3B3B3"
-            strokeWidth="1.5">
+            stroke="#B3B3B3">
     </p-icon>
   </button>
 
@@ -223,8 +222,7 @@ export class InputOutlineComponent implements OnInit {
           iconName="search"
           width="16"
           height="auto"
-          stroke="#B3B3B3"
-          strokeWidth="1.5">
+          stroke="#B3B3B3">
   </p-icon>
 
   <p-icon *ngIf="iconName && !isSearch"
@@ -233,8 +231,7 @@ export class InputOutlineComponent implements OnInit {
           [iconName]="iconName"
           width="16"
           height="auto"
-          stroke="#B3B3B3"
-          strokeWidth="1.5">
+          stroke="#B3B3B3">
   </p-icon>
 
   <mat-error *ngIf="formFieldControl.invalid"

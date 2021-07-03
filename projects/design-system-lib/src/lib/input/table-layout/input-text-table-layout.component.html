@@ -1,0 +1,77 @@
+<div class="input-table-wrapper">
+  <button class="input-table-trigger" (click)="isSimpleTableVisible = !isSimpleTableVisible">
+    <p-icon class="input-table-trigger-icon"
+            iconName="chevron-down"
+            width="16"
+            height="auto"
+            strokeWidth="3"></p-icon>
+    {{inputTablePage.simple.title}}
+  </button>
+  <div *ngIf="isSimpleTableVisible"
+      tabindex="-1"
+      attr.aria-label="{{inputTablePage.simple.title}}"
+      class="input-table-container">
+    <table class="input-table">
+      <tbody class="input-table-body">
+      <ng-container *ngFor="let input of inputTablePage.simple.table">
+        <tr class="input-table-row">
+          <th class="input-table-header">
+            <span class="input-table-header-text">{{input.tableHeader}}</span>
+          </th>
+          <td class="input-table-data">
+            <p-input-text [type]="input.tableData.type"
+                          [label]="input.tableData.label"
+                          [ariaLabel]="input.tableData.ariaLabel"
+                          [placeholder]="input.tableData.placeholder"
+                          [errorMessage]="input.tableData.errorMessage"
+                          [disabled]="input.tableData.disabled"
+                          [readonly]="input.tableData.readonly"
+                          [value]="input.tableData.value"
+                          [validators]="input.tableData.validators">
+            </p-input-text>
+          </td>
+        </tr>
+      </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="input-table-wrapper">
+  <button class="input-table-trigger" (click)="isComplexTableVisible = !isComplexTableVisible">
+    <p-icon class="input-table-trigger-icon"
+            iconName="chevron-down"
+            width="16"
+            height="auto"
+            strokeWidth="3"></p-icon>
+    {{inputTablePage.complex.title}}
+  </button>
+  <div *ngIf="isComplexTableVisible"
+       tabindex="-1"
+       attr.aria-label="{{inputTablePage.complex.title}}"
+       class="input-table-container">
+    <table class="input-table">
+      <tbody class="input-table-body">
+      <ng-container *ngFor="let input of inputTablePage.complex.table">
+        <tr class="input-table-row">
+          <th class="input-table-header">
+            <span class="input-table-header-text">{{input.tableHeader}}</span>
+          </th>
+          <td class="input-table-data">
+            <p-input-text [type]="input.tableData.type"
+                          [label]="input.tableData.label"
+                          [ariaLabel]="input.tableData.ariaLabel"
+                          [placeholder]="input.tableData.placeholder"
+                          [errorMessage]="input.tableData.errorMessage"
+                          [disabled]="input.tableData.disabled"
+                          [readonly]="input.tableData.readonly"
+                          [value]="input.tableData.value"
+                          [validators]="input.tableData.validators">
+            </p-input-text>
+          </td>
+        </tr>
+      </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>

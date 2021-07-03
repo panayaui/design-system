@@ -15,9 +15,9 @@ $input-text-padding: 8px;
 
   ::ng-deep & {
     // material styles override
-    .mat-input-element {
+    .p-input-text-input {
       font-family: $font-family-basic;
-      font-size: $base-font-size;
+      font-size: $small-font-size;
       max-width: $input-text-width - $input-text-padding;
       line-height: 20px;
       color: $primary-a-900;

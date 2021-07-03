@@ -5,13 +5,13 @@ import {InputModule} from 'projects/design-system-lib/src/public-api';
 import {Validators} from '@angular/forms';
 import {CustomErrorStateMatcher} from './custom-error-state-matcher'
 
-<Meta title='Components/Input/Page Header' 
+<Meta title='Components/Input/Page Header'
   component={InputHeaderComponent}
   decorators={[
     moduleMetadata({
       imports: [InputModule]
     })
-  ]} 
+  ]}
   args={{
     ariaLabel: 'Label',
     value: 'Header title in Default state'
@@ -28,11 +28,11 @@ export const Template = (args) => <InputHeaderComponent {...args} />
   <p-input-header></p-input-header>
 ```
 
-###### States 
+###### States
 <Canvas>
   <p className="story-title">Default (Readonly)</p>
   <Story name="Default"
-    args={{ 
+    args={{
     }}>
     {Template.bind({})}
   </Story>
@@ -93,8 +93,7 @@ export class InputHeaderComponent extends InputOutlineComponent {
           matSuffix
           iconName="edit-3"
           width="18"
-          height="auto"
-          strokeWidth="1.5">
+          height="auto">
   </p-icon>
 
 </mat-form-field>

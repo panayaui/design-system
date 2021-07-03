@@ -56,7 +56,8 @@ $min-size: 28px;
                   inset 0px 1px 0px $gray-scale-400;
     }
 
-    .first + .last .p-toggle-button:not(:checked) + & {
+    .first + .last .p-toggle-button:not(:checked) + &,
+    .first + .last .p-toggle-button:checked:disabled + &{
       box-shadow: inset 1px 0 0 $gray-scale-400,
                   inset -1px 0 0 $gray-scale-400,
                   inset 0 -1px 0 $gray-scale-400,
@@ -64,24 +65,20 @@ $min-size: 28px;
     }
   }
 
-  &-button:checked + .p-toggle-label {
-    //font-weight: 600;
+  &-button:checked:not(:disabled) + .p-toggle-label {
     color: $gray-scale-1;
     background-color: $secondary-a-700;
     box-shadow: none;
   }
 
   &-button:disabled + .p-toggle-label {
-    //font-weight: 600;
     color: $gray-scale-600;
     background-color: $primary-c-50;
   }
 
   &-button:checked:disabled + .p-toggle-label {
-    //font-weight: 600;
     color: $gray-scale-600;
-    background-color: $secondary-a-100;
-    box-shadow: none;
+    background-color: $secondary-a-200;
   }
 
   &-icon {

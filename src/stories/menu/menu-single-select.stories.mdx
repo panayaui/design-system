@@ -21,7 +21,7 @@ import {stateGroups} from './stateGroups';
     decorators={[
       moduleMetadata({
           imports: [
-              CommonModule,            
+              CommonModule,
               BrowserAnimationsModule,
               MatMenuModule,
               InputModule,
@@ -31,7 +31,7 @@ import {stateGroups} from './stateGroups';
               ButtonModule
           ]
       })
-    ]}  
+    ]}
     args={{
       menuTriggerName: 'Single select',
       menuList: [
@@ -52,7 +52,7 @@ import {stateGroups} from './stateGroups';
       onClickTask: item => {
         console.log(item);
       }
-    }}  
+    }}
  />
 
 export const Template = (args) => <MenuSingleSelectComponent {...args} />
@@ -67,12 +67,12 @@ export const Template = (args) => <MenuSingleSelectComponent {...args} />
 ###### Closed on click
 <Canvas>
   <Story name="Simple Menu"
-    args={{ 
+    args={{
     }}>
     {Template.bind({})}
   </Story>
   <Story name="Simple Menu with Group"
-    args={{ 
+    args={{
       menuTriggerName: 'Select with Groups',
       groupTitle: true,
       menuList: stateGroups
@@ -80,7 +80,7 @@ export const Template = (args) => <MenuSingleSelectComponent {...args} />
     {Template.bind({})}
   </Story>
   <Story name="Menu with Filter"
-    args={{ 
+    args={{
       menuTriggerName: 'Menu with Filter',
       menuList: stateGroups,
       groupTitle: true,
@@ -143,7 +143,6 @@ export interface IMenuButton {
             iconAfterWidth="17"
             iconAfterHeight="17"
             [label]="menuTriggerName"
-            [iconAfterStrokeWidth]="1.5"
             [buttonType]="'tertiary'" ></p-button>
 </div>
 

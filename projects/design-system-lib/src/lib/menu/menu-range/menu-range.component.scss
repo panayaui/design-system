@@ -1,47 +1,25 @@
-@import "../../assets/styles/custom";
+@import "../menu/menu-base.component";
 
-$menu-padding: $gap-base;
-$menu-background: $gray-scale-1;
 $menu-footer-height: $btn-small-height + $menu-padding * 3;
 $menu-width: 230px;
 
 // mat-menu-panel
-::ng-deep .p-menu {
+::ng-deep .p-menu.p-menu-range {
   //panel
-  &.p-menu-range.mat-menu-panel {
+  &.mat-menu-panel {
     width: $menu-width;
-    background-color: $menu-background;
-    border-radius: 0;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1),
-    0 2px 6px rgba(0, 0, 0, 0.04),
-    0 -3px 6px rgba(0, 0, 0, 0.04);
-    overflow: hidden;
-    .mat-menu-content {
-      height: 100%;
-      padding: 0;
-      position: relative;
-    }
   }
 
-  &-body {
+  .p-menu-body {
     padding: $menu-padding * 2;
   }
 
-  &-footer {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: $menu-footer-height;
+  .p-menu-footer {
     padding: 0 $menu-padding * 2 $menu-padding * 2 $menu-padding * 2;
-    background-color: $menu-background;
-    &-btn {
-      & + & {
-        margin-left: $menu-padding;
-      }
-    }
+    position: static;
   }
   // every option
-  ::ng-deep .p-menu-range-max .p-input-numeric-container {
+  .p-menu-range-max .p-input-numeric-container {
     margin-top: 12px;
   }
 }

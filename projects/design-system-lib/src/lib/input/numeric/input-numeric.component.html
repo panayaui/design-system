@@ -1,5 +1,5 @@
 <ng-template [ngIf]="label" [ngIfElse]="noLabel">
-  <div class="p-input-numeric-container">
+  <div class="p-input-numeric-container" [class.no-error-message]="!errorMessage">
     <label *ngIf="!labelLast" class="p-input-numeric-label first" [ngClass]="{'disabled' : disabled}">
       {{label}}
     </label>
@@ -14,7 +14,6 @@
   <mat-form-field class="p-input-numeric"
                   appearance="standard"
                   [ngClass]="classes"
-                  [class.no-error-message]="!errorMessage"
                   floatLabel="always">
     <input matInput
            [type]="type"

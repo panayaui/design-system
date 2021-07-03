@@ -12,7 +12,7 @@ export class IconComponent implements OnInit {
   @Input() height: string  = 'auto'; // pixels or auto
   @Input() fill: string = 'none'; // icon background
   @Input() stroke: string = 'currentColor'; // line color
-  @Input() strokeWidth: number = 1; // line width in pixels
+  @Input() strokeWidth: number = 1.5; // line width in pixels
   @Input() strokeLinecap: string = 'round'; // line end
   @Input() strokeLinejoin: string = 'round'; // two lines join
   @Input() disabled: boolean = false;

@@ -1,7 +1,7 @@
 import {moduleMetadata} from '@storybook/angular';
 import {CommonModule} from '@angular/common';
 import {Story, Meta} from '@storybook/angular/types-6-0';
-import {InputTextComponent} from 'projects/design-system-lib/src/public-api';
+import {InputModule, InputTextComponent} from 'projects/design-system-lib/src/public-api';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -17,7 +17,8 @@ export default {
         MatInputModule,
         BrowserAnimationsModule,
         MatFormFieldModule,
-        ReactiveFormsModule],
+        ReactiveFormsModule,
+        InputModule],
     }),
   ],
 } as Meta;
