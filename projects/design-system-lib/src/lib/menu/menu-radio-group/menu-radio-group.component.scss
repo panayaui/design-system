@@ -8,23 +8,10 @@ $menu-header-height: $input-text-height + $menu-padding * 3 + 1px;
 $menu-header-extended-height: $input-text-height + ($menu-padding * 4.5) + ($menu-item-height * 2) + 1px;
 $menu-body-height: 103px;
 $menu-min-width: 480px;
-$menu-max-height: 75vh;
 
 // mat-menu-panel
 ::ng-deep .p-menu.p-menu-radio.mat-menu-panel {
   min-width: $menu-min-width;
-  max-height: $menu-max-height;
-  background-color: $menu-background;
-  border-radius: 0;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1),
-  0 2px 6px rgba(0, 0, 0, 0.04),
-  0 -3px 6px rgba(0, 0, 0, 0.04);
-  overflow: hidden;
-  .mat-menu-content {
-    height: 100%;
-    padding: 0;
-    position: relative;
-  }
 }
 
 .p-menu {

@@ -8,17 +8,6 @@ $menu-width: 250px;
   //panel
   &.mat-menu-panel {
     width: $menu-width;
-    background-color: $menu-background;
-    border-radius: 0;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1),
-    0 2px 6px rgba(0, 0, 0, 0.04),
-    0 -3px 6px rgba(0, 0, 0, 0.04);
-    overflow: hidden;
-    .mat-menu-content {
-      height: 100%;
-      padding: 0;
-      position: relative;
-    }
   }
 
   .p-menu-body {
@@ -30,12 +19,12 @@ $menu-width: 250px;
     position: static;
   }
   // every option
-  ::ng-deep .p-btn {
+  .p-btn {
     padding-right: $menu-padding;
     padding-left: $menu-padding;
   }
 
-  ::ng-deep .p-input-outline {
+  .p-input-outline {
     margin-top: $menu-padding;
     margin-bottom: $menu-padding * 2;
   }
