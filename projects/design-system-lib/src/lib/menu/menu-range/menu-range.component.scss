@@ -4,9 +4,9 @@ $menu-footer-height: $btn-small-height + $menu-padding * 3;
 $menu-width: 230px;
 
 // mat-menu-panel
-::ng-deep .p-menu {
+::ng-deep .p-menu.p-menu-range {
   //panel
-  &.p-menu-range.mat-menu-panel {
+  &.mat-menu-panel {
     width: $menu-width;
     background-color: $menu-background;
     border-radius: 0;
@@ -21,22 +21,13 @@ $menu-width: 230px;
     }
   }
 
-  &-body {
+  .p-menu-body {
     padding: $menu-padding * 2;
   }
 
-  &-footer {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: $menu-footer-height;
+  .p-menu-footer {
     padding: 0 $menu-padding * 2 $menu-padding * 2 $menu-padding * 2;
-    background-color: $menu-background;
-    &-btn {
-      & + & {
-        margin-left: $menu-padding;
-      }
-    }
+    position: static;
   }
   // every option
   ::ng-deep .p-menu-range-max .p-input-numeric-container {

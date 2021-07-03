@@ -9,7 +9,6 @@ $tabs-height: 28px;
 $tabs-header-height: 60px;
 $menu-header-height: $input-text-height + $menu-padding * 3 + 1px;
 $menu-header-extended-height: $input-text-height + ($menu-padding * 4.5) + ($menu-item-height * 2) + 1px;
-$menu-footer-height: $btn-small-height + $menu-padding * 4;
 $menu-body-height: 103px;
 $menu-min-width: 230px;
 $menu-max-height: 75vh;
@@ -229,23 +228,11 @@ $menu-tabs-min-width: 250px;
   }
 
   &-footer {
-    display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: $menu-footer-height;
     padding-top: $menu-padding * 2;
     padding-bottom: $menu-padding * 2;
-    background-color: $menu-background;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    &-btn {
-      & + & {
-        margin-left: $menu-padding;
-      }
-    }
   }
 
   &-btn-line {

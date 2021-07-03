@@ -6,13 +6,12 @@ $input-text-height: 32px;
 $input-text-padding: 8px;
 $menu-header-height: $input-text-height + $menu-padding * 3 + 1px;
 $menu-header-extended-height: $input-text-height + ($menu-padding * 4.5) + ($menu-item-height * 2) + 1px;
-$menu-footer-height: $btn-small-height + $menu-padding * 4;
 $menu-body-height: 103px;
 $menu-min-width: 480px;
 $menu-max-height: 75vh;
 
 // mat-menu-panel
-::ng-deep .p-menu-radio.mat-menu-panel {
+::ng-deep .p-menu.p-menu-radio.mat-menu-panel {
   min-width: $menu-min-width;
   max-height: $menu-max-height;
   background-color: $menu-background;
@@ -42,24 +41,6 @@ $menu-max-height: 75vh;
       height: 30px;
       & + & {
         margin-top: $menu-padding;
-      }
-    }
-  }
-
-  &-footer {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: $menu-footer-height;
-    padding: $menu-padding * 2;
-    background-color: $menu-background;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    &-btn {
-      & + & {
-        margin-left: $menu-padding;
       }
     }
   }

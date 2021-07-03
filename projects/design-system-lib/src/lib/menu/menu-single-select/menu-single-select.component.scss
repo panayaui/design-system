@@ -166,17 +166,14 @@ $menu-max-height: 75vh;
   }
 
   &-footer {
+    display: block;
     width: 100%;
+    height: auto;
     padding-top: $menu-padding;
     padding-right: $menu-padding;
     padding-bottom: $menu-padding;
     padding-left: $menu-padding;
-    background-color: $menu-background;
     border-top: 1px solid $gray-scale-400;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
   }
 
   &-btn-line {
