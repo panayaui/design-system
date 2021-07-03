@@ -1,13 +1,13 @@
-<button [matMenuTriggerFor]="menu"
-        #menuTrigger="matMenuTrigger"
-        class="p-btn p-btn-small p-btn-tertiary">
-    {{menuTriggerName}}
-</button>
+<div class="p-menu-trigger"
+     [matMenuTriggerFor]="menu"
+     #menuTrigger="matMenuTrigger">
+  <ng-content></ng-content>
+</div>
 
 <!--menu window-->
 <mat-menu #menu="matMenu" class="p-menu-radio" [overlapTrigger]="false">
   <div class="p-menu-multiple-container" (click)="$event.stopPropagation()"
-                                (keydown)="$event.stopPropagation()">
+                                          (keydown)="$event.stopPropagation()">
     <ul class="p-menu-body">
       <li class="p-menu-body-item" *ngFor="let option of menuList">
         <p-radio-button class="p-menu-option-radio"
@@ -25,8 +25,8 @@
 
         <div class="p-menu-option-link" *ngIf="option.menuList">
           <p-menu-single-select class="p-menu-option-submenu"
-                                [menuTriggerName]="findMenuTriggerName(option.menuList)"
                                 [menuList]="option.menuList">
+            {{findMenuTriggerName(option.menuList)}}
           </p-menu-single-select>
         </div>
 

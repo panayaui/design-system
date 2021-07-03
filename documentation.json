@@ -456,10 +456,10 @@
         },
         {
             "name": "IMenuFreeTextItem",
-            "id": "interface-IMenuFreeTextItem-66d591c1f099e073562d40d9686c5622",
+            "id": "interface-IMenuFreeTextItem-734605637a78f00a6561dd271d41b11b",
             "file": "projects/design-system-lib/src/lib/menu/menu-free-text/menu-free-text.component.ts",
             "type": "interface",
-            "sourceCode": "import {\r\n  Component,\r\n  Input, OnInit,\r\n  ViewChild\r\n} from '@angular/core';\r\nimport {MatMenuTrigger} from '@angular/material/menu';\r\nimport {IMenuButton} from '../menu-button.interface';\r\n\r\ninterface IMenuFreeTextItem {\r\n  name: string;\r\n  inputValue?: string;\r\n  selected?: boolean;\r\n}\r\n\r\n@Component({\r\n  selector: 'p-menu-free-text',\r\n  templateUrl: './menu-free-text.component.html',\r\n  styleUrls: ['./menu-free-text.component.scss'],\r\n})\r\nexport class MenuFreeTextComponent implements OnInit{\r\n  @Input() menuTriggerName: string;\r\n  @Input() menuList: IMenuFreeTextItem[];\r\n  @Input() footerBtnFirst: IMenuButton;\r\n  @Input() footerBtnLast: IMenuButton;\r\n  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;\r\n  public selectedItem: IMenuFreeTextItem;\r\n  public isInputShown: boolean;\r\n\r\n  ngOnInit(): void {\r\n    this.findSelectedItem();\r\n  }\r\n\r\n  selectCompleted(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  selectCanceled(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  findSelectedItem(): void {\r\n    this.selectedItem = this.menuList.find( item => item.selected );\r\n    this.isInputShown = this.selectedItem.hasOwnProperty('inputValue');\r\n  }\r\n\r\n  setSelectedItem(newSelectedItem): void {\r\n    this.selectedItem.selected = false;\r\n    newSelectedItem.selected = true;\r\n    this.findSelectedItem();\r\n  }\r\n}\r\n",
+            "sourceCode": "import {\r\n  Component,\r\n  Input, OnInit,\r\n  ViewChild\r\n} from '@angular/core';\r\nimport {MatMenuTrigger} from '@angular/material/menu';\r\nimport {IMenuButton} from '../menu-button.interface';\r\n\r\ninterface IMenuFreeTextItem {\r\n  name: string;\r\n  inputValue?: string;\r\n  selected?: boolean;\r\n}\r\n\r\n@Component({\r\n  selector: 'p-menu-free-text',\r\n  templateUrl: './menu-free-text.component.html',\r\n  styleUrls: ['./menu-free-text.component.scss'],\r\n})\r\nexport class MenuFreeTextComponent implements OnInit{\r\n  @Input() menuList: IMenuFreeTextItem[];\r\n  @Input() footerBtnFirst: IMenuButton;\r\n  @Input() footerBtnLast: IMenuButton;\r\n  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;\r\n  public selectedItem: IMenuFreeTextItem;\r\n  public isInputShown: boolean;\r\n\r\n  ngOnInit(): void {\r\n    this.findSelectedItem();\r\n  }\r\n\r\n  selectCompleted(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  selectCanceled(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  findSelectedItem(): void {\r\n    this.selectedItem = this.menuList.find( item => item.selected );\r\n    this.isInputShown = this.selectedItem.hasOwnProperty('inputValue');\r\n  }\r\n\r\n  setSelectedItem(newSelectedItem): void {\r\n    this.selectedItem.selected = false;\r\n    newSelectedItem.selected = true;\r\n    this.findSelectedItem();\r\n  }\r\n}\r\n",
             "properties": [
                 {
                     "name": "inputValue",
@@ -489,10 +489,10 @@
         },
         {
             "name": "IMenuRadioOption",
-            "id": "interface-IMenuRadioOption-a2e8e80fd705ac0c0609cac362c75c8e",
+            "id": "interface-IMenuRadioOption-dfb671864188e6bfe07248a1a94609ab",
             "file": "projects/design-system-lib/src/lib/menu/menu-radio-group/menu-radio-group.component.ts",
             "type": "interface",
-            "sourceCode": "import {\r\n  Component,\r\n  Input,\r\n  OnInit,\r\n  ViewChild\r\n} from '@angular/core';\r\nimport {MatMenuTrigger} from '@angular/material/menu';\r\nimport {IMenuButton} from '../menu-button.interface';\r\nimport {IRadioButton} from '../../radio-button/radio-button.interface';\r\nimport {InputNumericSizeEnum} from '../../input/numeric/input-numeric-size.enum';\r\nimport {IDatepicker} from '../../input/datepicker/datepicker.interface';\r\n\r\ninterface IMenuRadioOption extends IRadioButton {\r\n  numericInputValue?: number;\r\n  menuList?: any[];\r\n  dateStart?: IDatepicker;\r\n  dateEnd?: IDatepicker;\r\n}\r\n\r\n@Component({\r\n  selector: 'p-menu-radio-group',\r\n  templateUrl: './menu-radio-group.component.html',\r\n  styleUrls: ['./menu-radio-group.component.scss'],\r\n})\r\nexport class MenuRadioGroupComponent {\r\n  @Input() menuTriggerName: string;\r\n  @Input() menuList: IMenuRadioOption[];\r\n  @Input() footerBtnFirst: IMenuButton;\r\n  @Input() footerBtnLast: IMenuButton;\r\n  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;\r\n  public inputNumericSize = InputNumericSizeEnum;\r\n\r\n  findMenuTriggerName(menuList): void {\r\n    return menuList.find( item => item.selected === true).name;\r\n  }\r\n\r\n  selectCompleted(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  selectCanceled(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n}\r\n",
+            "sourceCode": "import {\r\n  Component,\r\n  Input,\r\n  OnInit,\r\n  ViewChild\r\n} from '@angular/core';\r\nimport {MatMenuTrigger} from '@angular/material/menu';\r\nimport {IMenuButton} from '../menu-button.interface';\r\nimport {IRadioButton} from '../../radio-button/radio-button.interface';\r\nimport {InputNumericSizeEnum} from '../../input/numeric/input-numeric-size.enum';\r\nimport {IDatepicker} from '../../input/datepicker/datepicker.interface';\r\n\r\ninterface IMenuRadioOption extends IRadioButton {\r\n  numericInputValue?: number;\r\n  menuList?: any[];\r\n  dateStart?: IDatepicker;\r\n  dateEnd?: IDatepicker;\r\n}\r\n\r\n@Component({\r\n  selector: 'p-menu-radio-group',\r\n  templateUrl: './menu-radio-group.component.html',\r\n  styleUrls: ['./menu-radio-group.component.scss'],\r\n})\r\nexport class MenuRadioGroupComponent {\r\n  @Input() menuList: IMenuRadioOption[];\r\n  @Input() footerBtnFirst: IMenuButton;\r\n  @Input() footerBtnLast: IMenuButton;\r\n  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;\r\n  public inputNumericSize = InputNumericSizeEnum;\r\n\r\n  findMenuTriggerName(menuList): void {\r\n    return menuList.find( item => item.selected === true).name;\r\n  }\r\n\r\n  selectCompleted(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  selectCanceled(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n}\r\n",
             "properties": [
                 {
                     "name": "dateEnd",
@@ -913,7 +913,7 @@
         },
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-603881251026896c2e9e48bfee4de841",
+            "id": "component-AppComponent-d8fe901a99eb3e643cde7314c8f4123a",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -933,7 +933,7 @@
                 {
                     "name": "data",
                     "defaultValue": "{\r\n    icon: { iconName: 'bell'},\r\n    messageMain: 'Notification message.',\r\n    actionName: 'Action',\r\n    messageSub: 'Notification message.',\r\n    closeBtnName: 'Close'\r\n  }",
-                    "line": 12
+                    "line": 13
                 }
             ],
             "outputsClass": [],
@@ -943,63 +943,99 @@
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 27
+                    "line": 28
                 },
                 {
                     "name": "filterAriaLabel",
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 23
+                    "line": 24
                 },
                 {
                     "name": "filterPlaceholder",
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 24
+                    "line": 25
                 },
                 {
                     "name": "footerBtnFirst",
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 21
+                    "line": 22
                 },
                 {
                     "name": "footerBtnLast",
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 22
+                    "line": 23
                 },
                 {
                     "name": "headerBtnFirst",
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 25
+                    "line": 26
                 },
                 {
                     "name": "headerBtnLast",
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 26
+                    "line": 27
+                },
+                {
+                    "name": "inputMax",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 34
+                },
+                {
+                    "name": "inputMin",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 33
+                },
+                {
+                    "name": "labelType",
+                    "defaultValue": "LabelTypesEnum",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 30
                 },
                 {
                     "name": "menuList",
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 20
+                    "line": 21
+                },
+                {
+                    "name": "menuListFreeText",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 32
+                },
+                {
+                    "name": "menuListRadio",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 31
                 },
                 {
                     "name": "menuTriggerName",
-                    "type": "",
+                    "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 19
+                    "line": 20
                 },
                 {
                     "name": "validator",
@@ -1007,7 +1043,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 28
+                    "line": 29
                 }
             ],
             "methodsClass": [
@@ -1017,7 +1053,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 32
+                    "line": 38
                 }
             ],
             "hostBindings": [],
@@ -1025,7 +1061,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';\r\nimport {InputNumericSizeEnum} from 'projects/design-system-lib/src/public-api';\r\nimport {ReactiveFormsModule, Validators} from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.scss']\r\n})\r\nexport class AppComponent implements OnInit {\r\n  @Input() data = {\r\n    icon: { iconName: 'bell'},\r\n    messageMain: 'Notification message.',\r\n    actionName: 'Action',\r\n    messageSub: 'Notification message.',\r\n    closeBtnName: 'Close'\r\n  };\r\n  menuTriggerName: 'Multi select';\r\n  menuList: any;\r\n  footerBtnFirst: any;\r\n  footerBtnLast: any;\r\n  filterAriaLabel: string;\r\n  filterPlaceholder: string;\r\n  headerBtnFirst: any;\r\n  headerBtnLast: any;\r\n  checkboxList: any;\r\n  validator = Validators.required;\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {\r\n    this.menuList = [\r\n      { name: 'Alabama',\r\n        disabled: false\r\n      },\r\n      { name: 'Alaska disabled',\r\n        disabled: true\r\n      },\r\n      { name: 'California',\r\n        disabled: false\r\n      },\r\n      { name: 'Colorado',\r\n        disabled: false\r\n      },\r\n      { name: 'Delaware',\r\n        disabled: false\r\n      },\r\n      { name: 'Florida selected disabled',\r\n        disabled: true,\r\n        selected: true\r\n      },\r\n      { name: 'Georgia',\r\n        disabled: false\r\n      },\r\n      { name: 'Hawaii',\r\n        disabled: false\r\n      },\r\n      { name: 'Idaho',\r\n        disabled: true\r\n      },\r\n      { name: 'Illinois',\r\n        disabled: false\r\n      },\r\n      { name: 'Indiana',\r\n        disabled: false\r\n      },\r\n      { name: 'Iowa',\r\n        disabled: false\r\n      },\r\n      { name: 'Kansas',\r\n        disabled: true,\r\n        selected: true\r\n      },\r\n      { name: 'Kentucky',\r\n        disabled: false\r\n      }\r\n    ];\r\n\r\n    this.footerBtnFirst = {\r\n      label: 'Done',\r\n      buttonType: ButtonTypeEnum.Primary\r\n    };\r\n    this.footerBtnLast = {\r\n      label: 'Cancel',\r\n      buttonType: ButtonTypeEnum.Secondary\r\n    };\r\n    this.filterAriaLabel = 'Find Label';\r\n    this.filterPlaceholder = 'Find Label';\r\n\r\n    this.headerBtnFirst = {\r\n      label: 'Clear selected',\r\n        buttonType: ButtonTypeEnum.Tertiary,\r\n        icon: {\r\n        iconName: 'eraser',\r\n          width: '15',\r\n          height: '15'\r\n      }\r\n    };\r\n    this.headerBtnLast = {\r\n      label: 'Not equal to'\r\n    };\r\n    this.checkboxList = [\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Next'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      }\r\n    ];\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';\r\nimport {InputNumericSizeEnum} from 'projects/design-system-lib/src/public-api';\r\nimport {ReactiveFormsModule, Validators} from '@angular/forms';\r\nimport {LabelTypesEnum} from 'projects/design-system-lib/src/lib/labels/label-types.enum';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.scss']\r\n})\r\nexport class AppComponent implements OnInit {\r\n  @Input() data = {\r\n    icon: { iconName: 'bell'},\r\n    messageMain: 'Notification message.',\r\n    actionName: 'Action',\r\n    messageSub: 'Notification message.',\r\n    closeBtnName: 'Close'\r\n  };\r\n  menuTriggerName: string;\r\n  menuList: any;\r\n  footerBtnFirst: any;\r\n  footerBtnLast: any;\r\n  filterAriaLabel: string;\r\n  filterPlaceholder: string;\r\n  headerBtnFirst: any;\r\n  headerBtnLast: any;\r\n  checkboxList: any;\r\n  validator = Validators.required;\r\n  labelType = LabelTypesEnum;\r\n  menuListRadio: any;\r\n  menuListFreeText: any;\r\n  inputMin: any;\r\n  inputMax: any;\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {\r\n    this.menuTriggerName = 'Menu';\r\n    this.menuList = [\r\n      { name: 'Alabama',\r\n        disabled: false\r\n      },\r\n      { name: 'Alaska disabled',\r\n        disabled: true\r\n      },\r\n      { name: 'California',\r\n        disabled: false\r\n      },\r\n      { name: 'Colorado',\r\n        disabled: false\r\n      },\r\n      { name: 'Delaware',\r\n        disabled: false\r\n      },\r\n      { name: 'Florida selected disabled',\r\n        disabled: true,\r\n        selected: true\r\n      },\r\n      { name: 'Georgia',\r\n        disabled: false\r\n      },\r\n      { name: 'Hawaii',\r\n        disabled: false\r\n      },\r\n      { name: 'Idaho',\r\n        disabled: true\r\n      },\r\n      { name: 'Illinois',\r\n        disabled: false\r\n      },\r\n      { name: 'Indiana',\r\n        disabled: false\r\n      },\r\n      { name: 'Iowa',\r\n        disabled: false\r\n      },\r\n      { name: 'Kansas',\r\n        disabled: true,\r\n        selected: true\r\n      },\r\n      { name: 'Kentucky',\r\n        disabled: false\r\n      }\r\n    ];\r\n\r\n    this.footerBtnFirst = {\r\n      label: 'Done',\r\n      buttonType: ButtonTypeEnum.Primary\r\n    };\r\n    this.footerBtnLast = {\r\n      label: 'Cancel',\r\n      buttonType: ButtonTypeEnum.Secondary\r\n    };\r\n    this.filterAriaLabel = 'Find Label';\r\n    this.filterPlaceholder = 'Find Label';\r\n\r\n    this.headerBtnFirst = {\r\n      label: 'Clear selected',\r\n        buttonType: ButtonTypeEnum.Tertiary,\r\n        icon: {\r\n        iconName: 'eraser',\r\n          width: '15',\r\n          height: '15'\r\n      }\r\n    };\r\n    this.headerBtnLast = {\r\n      label: 'Not equal to'\r\n    };\r\n    this.checkboxList = [\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Next'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      }\r\n    ];\r\n    this.menuListRadio =  [\r\n      { label: 'All' },\r\n      { label: 'Today' },\r\n      { label: 'Yesterday' },\r\n      { label: 'Tomorrow' },\r\n      { label: 'This',\r\n        menuList: [\r\n          { name: 'week (Starts Sunday)', selected: true},\r\n          { name: 'week (Starts Monday)'},\r\n          { name: 'month'},\r\n          { name: 'year'}\r\n        ]\r\n      },\r\n      { label: 'Last',\r\n        numericInputValue: 1,\r\n        menuList: [\r\n          { name: 'Day(s)', selected: true},\r\n          { name: 'Week(s)'},\r\n          { name: 'Month(s)'},\r\n          { name: 'Year(s)'}\r\n        ]\r\n      },\r\n      { label: 'Next',\r\n        numericInputValue: 1,\r\n        menuList: [\r\n          { name: 'Day(s)', selected: true},\r\n          { name: 'Week(s)'},\r\n          { name: 'Month(s)'},\r\n          { name: 'Year(s)'}\r\n        ]\r\n      },\r\n      { label: 'Blanks' },\r\n      { label: 'Between',\r\n        dateStart: {\r\n          ariaLabel: 'date start'\r\n        },\r\n        dateEnd: {\r\n          ariaLabel: 'date start'\r\n        }\r\n      }\r\n    ];\r\n    this.menuListFreeText = [\r\n      { name: 'Contains', inputValue: '', selected: true },\r\n      { name: 'Not contains', inputValue: 'smth', selected: false },\r\n      { name: 'Empty', selected: false },\r\n      { name: 'Not empty', selected: false }\r\n    ];\r\n    this.inputMin = { label: 'Min', value: null };\r\n    this.inputMax = { label: 'Max', value: 1 };\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1038,12 +1074,12 @@
                 "name": "constructor",
                 "description": "",
                 "args": [],
-                "line": 28
+                "line": 34
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<!--<div>-->\r\n  <!--<p-menu-tabs [menuTriggerName]=\"menuTriggerName\"-->\r\n               <!--[menuList]=\"menuList\"-->\r\n               <!--[footerBtnFirst]=\"footerBtnFirst\"-->\r\n               <!--[footerBtnLast]=\"footerBtnLast\"-->\r\n               <!--[filterAriaLabel]=\"filterAriaLabel\"-->\r\n               <!--[filterPlaceholder]=\"filterPlaceholder\"-->\r\n               <!--[headerBtnFirst]=\"headerBtnFirst\"-->\r\n               <!--[headerBtnLast]=\"headerBtnLast\"-->\r\n               <!--[checkboxList]=\"checkboxList\"></p-menu-tabs>-->\r\n<!--</div>-->\r\n\r\n<!--<button #tooltip=\"matTooltip\"-->\r\n        <!--[matTooltip]=\"'message'\"-->\r\n        <!--[matTooltipClass]=\"'p-tooltip'\"-->\r\n        <!--class=\"p-btn p-btn-small p-btn-primary\"-->\r\n<!--&gt;-->\r\n  <!--Hover-->\r\n<!--</button>-->\r\n\r\n<!--<p class=\"paragraph-3-semibold\">some words</p>-->\r\n\r\n<p-input-header [value]=\"'some text'\"></p-input-header>\r\n\r\n<!--<p-input-text [value]=\"'some text'\"></p-input-text>-->\r\n\r\n<!--<p-menu-multi-select-->\r\n<!--[menuTriggerName]=\"'trigger'\"-->\r\n<!--[menuList]=\"menuList\"-->\r\n<!--[headerBtnFirst]=\"headerBtnFirst\"-->\r\n<!--[headerBtnLast]=\"headerBtnLast\"-->\r\n<!--[footerBtnFirst]=\"footerBtnFirst\"-->\r\n<!--[footerBtnLast]=\"footerBtnLast\"></p-menu-multi-select>-->\r\n\r\n<p-menu-single-select\r\n[menuTriggerName]=\"'trigger'\"\r\n[menuList]=\"menuList\"></p-menu-single-select>\r\n\r\n"
+            "templateData": "<!--<div>-->\r\n  <!--<p-menu-tabs [menuTriggerName]=\"menuTriggerName\"-->\r\n               <!--[menuList]=\"menuList\"-->\r\n               <!--[footerBtnFirst]=\"footerBtnFirst\"-->\r\n               <!--[footerBtnLast]=\"footerBtnLast\"-->\r\n               <!--[filterAriaLabel]=\"filterAriaLabel\"-->\r\n               <!--[filterPlaceholder]=\"filterPlaceholder\"-->\r\n               <!--[headerBtnFirst]=\"headerBtnFirst\"-->\r\n               <!--[headerBtnLast]=\"headerBtnLast\"-->\r\n               <!--[checkboxList]=\"checkboxList\"></p-menu-tabs>-->\r\n<!--</div>-->\r\n\r\n<!--<button #tooltip=\"matTooltip\"-->\r\n        <!--[matTooltip]=\"'message'\"-->\r\n        <!--[matTooltipClass]=\"'p-tooltip'\"-->\r\n        <!--class=\"p-btn p-btn-small p-btn-primary\"-->\r\n<!--&gt;-->\r\n  <!--Hover-->\r\n<!--</button>-->\r\n\r\n<!--<p-button iconAfter=\"chevron-down\"-->\r\n<!--iconAfterWidth=\"17\"-->\r\n<!--iconAfterHeight=\"17\"-->\r\n<!--[label]=\"menuTriggerName\"-->\r\n<!--[buttonType]=\"'tertiary'\" ></p-button>-\r\n\r\n<!--<p class=\"paragraph-3-semibold\">some words</p>-->\r\n\r\n<!--<p-input-header [value]=\"'some text'\"></p-input-header>-->\r\n\r\n<!--<p-input-text [value]=\"'some text'\"></p-input-text>-->\r\n\r\n<!--<p-menu-single-select [menuList]=\"menuList\">-->\r\n  <!--<p-label-main label=\"trigger\"-->\r\n                <!--[type]=\"labelType.CRITICAL\"-->\r\n                <!--[isTriggerMenu]=\"true\"></p-label-main>-->\r\n<!--</p-menu-single-select>-->\r\n\r\n<!--<p-menu-multi-select [menuList]=\"menuList\"-->\r\n                     <!--[headerBtnFirst]=\"headerBtnFirst\"-->\r\n                     <!--[headerBtnLast]=\"headerBtnLast\"-->\r\n                     <!--[footerBtnFirst]=\"footerBtnFirst\"-->\r\n                     <!--[footerBtnLast]=\"footerBtnLast\">-->\r\n  <!--<p-input-text [value]=\"'Menu Multiple'\"></p-input-text>-->\r\n<!--</p-menu-multi-select>-->\r\n\r\n<!--<p-menu-tabs [menuList]=\"menuList\"-->\r\n             <!--[headerBtnFirst]=\"headerBtnFirst\"-->\r\n             <!--[headerBtnLast]=\"headerBtnLast\"-->\r\n             <!--[footerBtnFirst]=\"footerBtnFirst\"-->\r\n             <!--[footerBtnLast]=\"footerBtnLast\">-->\r\n  <!--<p-input-text [value]=\"'Menu Tabs'\"></p-input-text>-->\r\n<!--</p-menu-tabs>-->\r\n\r\n<p-menu-radio-group [menuList]=\"menuListRadio\"\r\n             [footerBtnFirst]=\"footerBtnFirst\"\r\n             [footerBtnLast]=\"footerBtnLast\">\r\n  <p-input-text [value]=\"'Menu Radio Group'\"></p-input-text>\r\n</p-menu-radio-group>\r\n\r\n\r\n<!--<p-menu-free-text [menuList]=\"menuListFreeText\"-->\r\n                    <!--[footerBtnFirst]=\"footerBtnFirst\"-->\r\n                    <!--[footerBtnLast]=\"footerBtnLast\">-->\r\n  <!--<p-input-text [value]=\"'Menu Free Text'\"></p-input-text>-->\r\n<!--</p-menu-free-text>-->\r\n\r\n<!--<p-menu-range [inputMax]=\"inputMax\" [inputMin]=\"inputMin\"-->\r\n              <!--[footerBtnFirst]=\"footerBtnFirst\"-->\r\n              <!--[footerBtnLast]=\"footerBtnLast\">-->\r\n  <!--<p-input-text [value]=\"'Menu Range'\"></p-input-text>-->\r\n<!--</p-menu-range>-->\r\n"
         },
         {
             "name": "ButtonComponent",
@@ -2443,7 +2479,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"input-table-wrapper\">\r\n  <button class=\"input-table-trigger\" (click)=\"isSimpleTableVisible = !isSimpleTableVisible\">\r\n    <p-icon class=\"input-table-trigger-icon\"\r\n            name=\"chevron-down\"\r\n            width=\"16\"\r\n            height=\"auto\"\r\n            strokeWidth=\"3\"></p-icon>\r\n    {{inputTablePage.simple.title}}\r\n  </button>\r\n  <div *ngIf=\"isSimpleTableVisible\"\r\n      tabindex=\"-1\"\r\n      attr.aria-label=\"{{inputTablePage.simple.title}}\"\r\n      class=\"input-table-container\">\r\n    <table class=\"input-table\">\r\n      <tbody class=\"input-table-body\">\r\n      <ng-container *ngFor=\"let input of inputTablePage.simple.table\">\r\n        <tr class=\"input-table-row\">\r\n          <th class=\"input-table-header\">\r\n            <span class=\"input-table-header-text\">{{input.tableHeader}}</span>\r\n          </th>\r\n          <td class=\"input-table-data\">\r\n            <p-input-text [type]=\"input.tableData.type\"\r\n                          [label]=\"input.tableData.label\"\r\n                          [ariaLabel]=\"input.tableData.ariaLabel\"\r\n                          [placeholder]=\"input.tableData.placeholder\"\r\n                          [errorMessage]=\"input.tableData.errorMessage\"\r\n                          [disabled]=\"input.tableData.disabled\"\r\n                          [readonly]=\"input.tableData.readonly\"\r\n                          [value]=\"input.tableData.value\"\r\n                          [validators]=\"input.tableData.validators\">\r\n            </p-input-text>\r\n          </td>\r\n        </tr>\r\n      </ng-container>\r\n      </tbody>\r\n    </table>\r\n  </div>\r\n  <!--<p-input-text [type]=\"inputTablePage.simple.table[1].tableData.type\"-->\r\n                <!--[label]=\"inputTablePage.simple.table[1].tableData.label\"-->\r\n                <!--[ariaLabel]=\"inputTablePage.simple.table[1].tableData.ariaLabel\"-->\r\n                <!--[placeholder]=\"inputTablePage.simple.table[1].tableData.placeholder\"-->\r\n                <!--[errorMessage]=\"inputTablePage.simple.table[1].tableData.errorMessage\"-->\r\n                <!--[disabled]=\"inputTablePage.simple.table[1].tableData.disabled\"-->\r\n                <!--[readonly]=\"inputTablePage.simple.table[1].tableData.readonly\"-->\r\n                <!--[value]=\"inputTablePage.simple.table[1].tableData.value\"-->\r\n                <!--[validators]=\"inputTablePage.simple.table[1].tableData.validators\">-->\r\n  <!--</p-input-text>-->\r\n</div>\r\n\r\n<div class=\"input-table-wrapper\">\r\n  <button class=\"input-table-trigger\" (click)=\"isComplesTableVisible = !isComplesTableVisible\">\r\n    <p-icon class=\"input-table-trigger-icon\"\r\n            name=\"chevron-down\"\r\n            width=\"16\"\r\n            height=\"auto\"\r\n            strokeWidth=\"3\"></p-icon>\r\n    {{inputTablePage.complex.title}}\r\n  </button>\r\n  <div *ngIf=\"isComplexTableVisible\"\r\n       tabindex=\"-1\"\r\n       attr.aria-label=\"{{inputTablePage.complex.title}}\"\r\n       class=\"input-table-container\">\r\n    <table class=\"input-table\">\r\n      <tbody class=\"input-table-body\">\r\n      <ng-container *ngFor=\"let input of inputTablePage.complex.table\">\r\n        <tr class=\"input-table-row\">\r\n          <th class=\"input-table-header\">\r\n            <span class=\"input-table-header-text\">{{input.tableHeader}}</span>\r\n          </th>\r\n          <td class=\"input-table-data\">\r\n            <p-input-text [type]=\"input.tableData.type\"\r\n                          [label]=\"input.tableData.label\"\r\n                          [ariaLabel]=\"input.tableData.ariaLabel\"\r\n                          [placeholder]=\"input.tableData.placeholder\"\r\n                          [errorMessage]=\"input.tableData.errorMessage\"\r\n                          [disabled]=\"input.tableData.disabled\"\r\n                          [readonly]=\"input.tableData.readonly\"\r\n                          [value]=\"input.tableData.value\"\r\n                          [validators]=\"input.tableData.validators\">\r\n            </p-input-text>\r\n          </td>\r\n        </tr>\r\n      </ng-container>\r\n      </tbody>\r\n    </table>\r\n  </div>\r\n</div>\r\n"
+            "templateData": "<div class=\"input-table-wrapper\">\r\n  <button class=\"input-table-trigger\" (click)=\"isSimpleTableVisible = !isSimpleTableVisible\">\r\n    <p-icon class=\"input-table-trigger-icon\"\r\n            iconName=\"chevron-down\"\r\n            width=\"16\"\r\n            height=\"auto\"\r\n            strokeWidth=\"3\"></p-icon>\r\n    {{inputTablePage.simple.title}}\r\n  </button>\r\n  <div *ngIf=\"isSimpleTableVisible\"\r\n      tabindex=\"-1\"\r\n      attr.aria-label=\"{{inputTablePage.simple.title}}\"\r\n      class=\"input-table-container\">\r\n    <table class=\"input-table\">\r\n      <tbody class=\"input-table-body\">\r\n      <ng-container *ngFor=\"let input of inputTablePage.simple.table\">\r\n        <tr class=\"input-table-row\">\r\n          <th class=\"input-table-header\">\r\n            <span class=\"input-table-header-text\">{{input.tableHeader}}</span>\r\n          </th>\r\n          <td class=\"input-table-data\">\r\n            <p-input-text [type]=\"input.tableData.type\"\r\n                          [label]=\"input.tableData.label\"\r\n                          [ariaLabel]=\"input.tableData.ariaLabel\"\r\n                          [placeholder]=\"input.tableData.placeholder\"\r\n                          [errorMessage]=\"input.tableData.errorMessage\"\r\n                          [disabled]=\"input.tableData.disabled\"\r\n                          [readonly]=\"input.tableData.readonly\"\r\n                          [value]=\"input.tableData.value\"\r\n                          [validators]=\"input.tableData.validators\">\r\n            </p-input-text>\r\n          </td>\r\n        </tr>\r\n      </ng-container>\r\n      </tbody>\r\n    </table>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"input-table-wrapper\">\r\n  <button class=\"input-table-trigger\" (click)=\"isComplexTableVisible = !isComplexTableVisible\">\r\n    <p-icon class=\"input-table-trigger-icon\"\r\n            iconName=\"chevron-down\"\r\n            width=\"16\"\r\n            height=\"auto\"\r\n            strokeWidth=\"3\"></p-icon>\r\n    {{inputTablePage.complex.title}}\r\n  </button>\r\n  <div *ngIf=\"isComplexTableVisible\"\r\n       tabindex=\"-1\"\r\n       attr.aria-label=\"{{inputTablePage.complex.title}}\"\r\n       class=\"input-table-container\">\r\n    <table class=\"input-table\">\r\n      <tbody class=\"input-table-body\">\r\n      <ng-container *ngFor=\"let input of inputTablePage.complex.table\">\r\n        <tr class=\"input-table-row\">\r\n          <th class=\"input-table-header\">\r\n            <span class=\"input-table-header-text\">{{input.tableHeader}}</span>\r\n          </th>\r\n          <td class=\"input-table-data\">\r\n            <p-input-text [type]=\"input.tableData.type\"\r\n                          [label]=\"input.tableData.label\"\r\n                          [ariaLabel]=\"input.tableData.ariaLabel\"\r\n                          [placeholder]=\"input.tableData.placeholder\"\r\n                          [errorMessage]=\"input.tableData.errorMessage\"\r\n                          [disabled]=\"input.tableData.disabled\"\r\n                          [readonly]=\"input.tableData.readonly\"\r\n                          [value]=\"input.tableData.value\"\r\n                          [validators]=\"input.tableData.validators\">\r\n            </p-input-text>\r\n          </td>\r\n        </tr>\r\n      </ng-container>\r\n      </tbody>\r\n    </table>\r\n  </div>\r\n</div>\r\n"
         },
         {
             "name": "LabelMainComponent",
@@ -2781,7 +2817,7 @@
         },
         {
             "name": "MenuFreeTextComponent",
-            "id": "component-MenuFreeTextComponent-66d591c1f099e073562d40d9686c5622",
+            "id": "component-MenuFreeTextComponent-734605637a78f00a6561dd271d41b11b",
             "file": "projects/design-system-lib/src/lib/menu/menu-free-text/menu-free-text.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2800,23 +2836,18 @@
             "inputsClass": [
                 {
                     "name": "footerBtnFirst",
-                    "line": 23,
+                    "line": 22,
                     "type": "IMenuButton"
                 },
                 {
                     "name": "footerBtnLast",
-                    "line": 24,
+                    "line": 23,
                     "type": "IMenuButton"
                 },
                 {
                     "name": "menuList",
-                    "line": 22,
-                    "type": "IMenuFreeTextItem[]"
-                },
-                {
-                    "name": "menuTriggerName",
                     "line": 21,
-                    "type": "string"
+                    "type": "IMenuFreeTextItem[]"
                 }
             ],
             "outputsClass": [],
@@ -2826,7 +2857,7 @@
                     "type": "boolean",
                     "optional": false,
                     "description": "",
-                    "line": 27,
+                    "line": 26,
                     "modifierKind": [
                         114
                     ]
@@ -2836,7 +2867,7 @@
                     "type": "MatMenuTrigger",
                     "optional": false,
                     "description": "",
-                    "line": 25,
+                    "line": 24,
                     "decorators": [
                         {
                             "name": "ViewChild",
@@ -2849,7 +2880,7 @@
                     "type": "IMenuFreeTextItem",
                     "optional": false,
                     "description": "",
-                    "line": 26,
+                    "line": 25,
                     "modifierKind": [
                         114
                     ]
@@ -2862,7 +2893,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 41
+                    "line": 40
                 },
                 {
                     "name": "ngOnInit",
@@ -2870,7 +2901,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 29
+                    "line": 28
                 },
                 {
                     "name": "selectCanceled",
@@ -2878,7 +2909,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 37
+                    "line": 36
                 },
                 {
                     "name": "selectCompleted",
@@ -2886,7 +2917,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 33
+                    "line": 32
                 },
                 {
                     "name": "setSelectedItem",
@@ -2899,7 +2930,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 46,
+                    "line": 45,
                     "jsdoctags": [
                         {
                             "name": "newSelectedItem",
@@ -2916,7 +2947,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {\r\n  Component,\r\n  Input, OnInit,\r\n  ViewChild\r\n} from '@angular/core';\r\nimport {MatMenuTrigger} from '@angular/material/menu';\r\nimport {IMenuButton} from '../menu-button.interface';\r\n\r\ninterface IMenuFreeTextItem {\r\n  name: string;\r\n  inputValue?: string;\r\n  selected?: boolean;\r\n}\r\n\r\n@Component({\r\n  selector: 'p-menu-free-text',\r\n  templateUrl: './menu-free-text.component.html',\r\n  styleUrls: ['./menu-free-text.component.scss'],\r\n})\r\nexport class MenuFreeTextComponent implements OnInit{\r\n  @Input() menuTriggerName: string;\r\n  @Input() menuList: IMenuFreeTextItem[];\r\n  @Input() footerBtnFirst: IMenuButton;\r\n  @Input() footerBtnLast: IMenuButton;\r\n  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;\r\n  public selectedItem: IMenuFreeTextItem;\r\n  public isInputShown: boolean;\r\n\r\n  ngOnInit(): void {\r\n    this.findSelectedItem();\r\n  }\r\n\r\n  selectCompleted(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  selectCanceled(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  findSelectedItem(): void {\r\n    this.selectedItem = this.menuList.find( item => item.selected );\r\n    this.isInputShown = this.selectedItem.hasOwnProperty('inputValue');\r\n  }\r\n\r\n  setSelectedItem(newSelectedItem): void {\r\n    this.selectedItem.selected = false;\r\n    newSelectedItem.selected = true;\r\n    this.findSelectedItem();\r\n  }\r\n}\r\n",
+            "sourceCode": "import {\r\n  Component,\r\n  Input, OnInit,\r\n  ViewChild\r\n} from '@angular/core';\r\nimport {MatMenuTrigger} from '@angular/material/menu';\r\nimport {IMenuButton} from '../menu-button.interface';\r\n\r\ninterface IMenuFreeTextItem {\r\n  name: string;\r\n  inputValue?: string;\r\n  selected?: boolean;\r\n}\r\n\r\n@Component({\r\n  selector: 'p-menu-free-text',\r\n  templateUrl: './menu-free-text.component.html',\r\n  styleUrls: ['./menu-free-text.component.scss'],\r\n})\r\nexport class MenuFreeTextComponent implements OnInit{\r\n  @Input() menuList: IMenuFreeTextItem[];\r\n  @Input() footerBtnFirst: IMenuButton;\r\n  @Input() footerBtnLast: IMenuButton;\r\n  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;\r\n  public selectedItem: IMenuFreeTextItem;\r\n  public isInputShown: boolean;\r\n\r\n  ngOnInit(): void {\r\n    this.findSelectedItem();\r\n  }\r\n\r\n  selectCompleted(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  selectCanceled(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  findSelectedItem(): void {\r\n    this.selectedItem = this.menuList.find( item => item.selected );\r\n    this.isInputShown = this.selectedItem.hasOwnProperty('inputValue');\r\n  }\r\n\r\n  setSelectedItem(newSelectedItem): void {\r\n    this.selectedItem.selected = false;\r\n    newSelectedItem.selected = true;\r\n    this.findSelectedItem();\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2928,11 +2959,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<button [matMenuTriggerFor]=\"menu\"\r\n        #menuTrigger=\"matMenuTrigger\"\r\n        class=\"p-btn p-btn-small p-btn-tertiary\">\r\n    {{menuTriggerName}}\r\n</button>\r\n\r\n<!--menu window-->\r\n<mat-menu #menu=\"matMenu\" class=\"p-menu p-menu-text\" [overlapTrigger]=\"false\">\r\n  <div class=\"p-menu-container\" (click)=\"$event.stopPropagation()\"\r\n                                (keydown)=\"$event.stopPropagation()\">\r\n    <div class=\"p-menu-body\">\r\n      <p-menu-single-select class=\"p-menu-submenu\"\r\n                            [menuTriggerName]=\"selectedItem?.name\"\r\n                            [menuList]=\"menuList\"\r\n                            (onClickTask)=\"setSelectedItem($event)\">\r\n      </p-menu-single-select>\r\n      <p-input-outline *ngIf=\"isInputShown\"\r\n                       class=\"p-menu-text-input\"\r\n                       ariaLabel=\"Free text\"\r\n                       placeholder=\"Type here\"\r\n                       [value]=\"inputValue\">\r\n      </p-input-outline>\r\n    </div>\r\n    <div class=\"p-menu-footer\">\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnFirst.label\"\r\n                [buttonType]=\"footerBtnFirst.buttonType\"\r\n                (click)=\"selectCompleted()\"></p-button>\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnLast.label\"\r\n                [buttonType]=\"footerBtnLast.buttonType\"\r\n                (click)=\"selectCanceled()\"></p-button>\r\n    </div>\r\n  </div>\r\n</mat-menu>\r\n"
+            "templateData": "<div class=\"p-menu-trigger\"\r\n     [matMenuTriggerFor]=\"menu\"\r\n     #menuTrigger=\"matMenuTrigger\">\r\n  <ng-content></ng-content>\r\n</div>\r\n\r\n<!--menu window-->\r\n<mat-menu #menu=\"matMenu\" class=\"p-menu p-menu-text\" [overlapTrigger]=\"false\">\r\n  <div class=\"p-menu-container\" (click)=\"$event.stopPropagation()\"\r\n                                (keydown)=\"$event.stopPropagation()\">\r\n    <div class=\"p-menu-body\">\r\n      <p-menu-single-select class=\"p-menu-submenu\"\r\n                            [menuList]=\"menuList\"\r\n                            (onClickTask)=\"setSelectedItem($event)\">\r\n        {{selectedItem?.name}}\r\n      </p-menu-single-select>\r\n      <p-input-outline *ngIf=\"isInputShown\"\r\n                       class=\"p-menu-text-input\"\r\n                       ariaLabel=\"Free text\"\r\n                       placeholder=\"Type here\"\r\n                       [value]=\"inputValue\">\r\n      </p-input-outline>\r\n    </div>\r\n    <div class=\"p-menu-footer\">\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnFirst.label\"\r\n                [buttonType]=\"footerBtnFirst.buttonType\"\r\n                (click)=\"selectCompleted()\"></p-button>\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnLast.label\"\r\n                [buttonType]=\"footerBtnLast.buttonType\"\r\n                (click)=\"selectCanceled()\"></p-button>\r\n    </div>\r\n  </div>\r\n</mat-menu>\r\n"
         },
         {
             "name": "MenuMultiSelectComponent",
-            "id": "component-MenuMultiSelectComponent-02048e60687d28549fd5f897751373dc",
+            "id": "component-MenuMultiSelectComponent-e1b5939b90ffb94cefbef87cae532eb5",
             "file": "projects/design-system-lib/src/lib/menu/menu-multi-select/menu-multi-select.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2951,43 +2982,38 @@
             "inputsClass": [
                 {
                     "name": "filterAriaLabel",
-                    "line": 23,
-                    "type": "string"
-                },
-                {
-                    "name": "filterPlaceholder",
                     "line": 22,
                     "type": "string"
                 },
                 {
+                    "name": "filterPlaceholder",
+                    "line": 21,
+                    "type": "string"
+                },
+                {
                     "name": "footerBtnFirst",
-                    "line": 26,
+                    "line": 25,
                     "type": "IMenuButton"
                 },
                 {
                     "name": "footerBtnLast",
-                    "line": 27,
+                    "line": 26,
                     "type": "IMenuButton"
                 },
                 {
                     "name": "headerBtnFirst",
-                    "line": 24,
+                    "line": 23,
                     "type": "IMenuButton"
                 },
                 {
                     "name": "headerBtnLast",
-                    "line": 25,
+                    "line": 24,
                     "type": "ICheckbox"
                 },
                 {
                     "name": "menuList",
-                    "line": 21,
-                    "type": "any[]"
-                },
-                {
-                    "name": "menuTriggerName",
                     "line": 20,
-                    "type": "string"
+                    "type": "any[]"
                 }
             ],
             "outputsClass": [],
@@ -2997,7 +3023,7 @@
                     "type": "any[]",
                     "optional": false,
                     "description": "",
-                    "line": 31,
+                    "line": 30,
                     "modifierKind": [
                         114
                     ]
@@ -3007,7 +3033,7 @@
                     "type": "FormControl",
                     "optional": false,
                     "description": "",
-                    "line": 32,
+                    "line": 31,
                     "modifierKind": [
                         114
                     ]
@@ -3017,7 +3043,7 @@
                     "type": "MatMenuTrigger",
                     "optional": false,
                     "description": "",
-                    "line": 28,
+                    "line": 27,
                     "decorators": [
                         {
                             "name": "ViewChild",
@@ -3031,7 +3057,7 @@
                     "type": "any[]",
                     "optional": false,
                     "description": "",
-                    "line": 29,
+                    "line": 28,
                     "modifierKind": [
                         112
                     ]
@@ -3042,7 +3068,7 @@
                     "type": "any[]",
                     "optional": false,
                     "description": "",
-                    "line": 30,
+                    "line": 29,
                     "modifierKind": [
                         114
                     ]
@@ -3052,7 +3078,7 @@
                     "type": "SubscriptionLike",
                     "optional": false,
                     "description": "",
-                    "line": 33,
+                    "line": 32,
                     "modifierKind": [
                         112
                     ]
@@ -3070,7 +3096,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 55,
+                    "line": 54,
                     "jsdoctags": [
                         {
                             "name": "value",
@@ -3087,7 +3113,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 48
+                    "line": 47
                 },
                 {
                     "name": "ngOnInit",
@@ -3095,7 +3121,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 35
+                    "line": 34
                 },
                 {
                     "name": "onOptionSelected",
@@ -3108,7 +3134,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 59,
+                    "line": 58,
                     "jsdoctags": [
                         {
                             "name": "item",
@@ -3125,7 +3151,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 69
+                    "line": 68
                 },
                 {
                     "name": "selectCompleted",
@@ -3133,7 +3159,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 64
+                    "line": 63
                 }
             ],
             "hostBindings": [],
@@ -3141,7 +3167,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {\r\n  Component,\r\n  Input,\r\n  OnDestroy,\r\n  OnInit,\r\n  ViewChild\r\n} from '@angular/core';\r\nimport {FormControl} from '@angular/forms';\r\nimport {SubscriptionLike} from 'rxjs';\r\nimport {MatMenuTrigger} from '@angular/material/menu';\r\nimport {IMenuButton} from '../menu-button.interface';\r\nimport {ICheckbox} from '../../checkbox/checkbox.interface';\r\n\r\n@Component({\r\n  selector: 'p-menu-multi-select',\r\n  templateUrl: './menu-multi-select.component.html',\r\n  styleUrls: ['./menu-multi-select.component.scss'],\r\n})\r\nexport class MenuMultiSelectComponent implements OnInit, OnDestroy {\r\n  @Input() menuTriggerName: string;\r\n  @Input() menuList: any[];\r\n  @Input() filterPlaceholder: string; // if there is a search and buttons\r\n  @Input() filterAriaLabel: string;\r\n  @Input() headerBtnFirst: IMenuButton;\r\n  @Input() headerBtnLast: ICheckbox;\r\n  @Input() footerBtnFirst: IMenuButton;\r\n  @Input() footerBtnLast: IMenuButton;\r\n  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;\r\n  private selectedList: any[] = [];\r\n  public selectedShown: any[] = [];\r\n  public filteredList: any[];\r\n  public formFieldControl: FormControl;\r\n  private sub: SubscriptionLike;\r\n\r\n  ngOnInit(): void {\r\n    this.filteredList = this.menuList;\r\n    if (this.filterPlaceholder) {\r\n      this.formFieldControl = new FormControl('');\r\n      this.sub = this.formFieldControl.valueChanges.subscribe((value: string) => {\r\n        this.alterList(value);\r\n      });\r\n    }\r\n    if (!this.filterAriaLabel && this.filterPlaceholder) {\r\n      this.filterAriaLabel = this.filterPlaceholder;\r\n    }\r\n  }\r\n\r\n  ngOnDestroy(): void {\r\n    if (this.filterPlaceholder && this.sub) {\r\n      this.sub.unsubscribe();\r\n      this.sub = null;\r\n    }\r\n  }\r\n\r\n  alterList(value: string): void {\r\n    this.filteredList = this.menuList.filter( item => item.name.toLowerCase().indexOf(value.toLowerCase()) > -1);\r\n  }\r\n\r\n  onOptionSelected(item): void {\r\n    console.log(item);\r\n    this.selectedList.push(item);\r\n  }\r\n\r\n  selectCompleted(): void {\r\n    this.selectedShown = this.selectedList;\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  selectCanceled(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n}\r\n",
+            "sourceCode": "import {\r\n  Component,\r\n  Input,\r\n  OnDestroy,\r\n  OnInit,\r\n  ViewChild\r\n} from '@angular/core';\r\nimport {FormControl} from '@angular/forms';\r\nimport {SubscriptionLike} from 'rxjs';\r\nimport {MatMenuTrigger} from '@angular/material/menu';\r\nimport {IMenuButton} from '../menu-button.interface';\r\nimport {ICheckbox} from '../../checkbox/checkbox.interface';\r\n\r\n@Component({\r\n  selector: 'p-menu-multi-select',\r\n  templateUrl: './menu-multi-select.component.html',\r\n  styleUrls: ['./menu-multi-select.component.scss'],\r\n})\r\nexport class MenuMultiSelectComponent implements OnInit, OnDestroy {\r\n  @Input() menuList: any[];\r\n  @Input() filterPlaceholder: string; // if there is a search and buttons\r\n  @Input() filterAriaLabel: string;\r\n  @Input() headerBtnFirst: IMenuButton;\r\n  @Input() headerBtnLast: ICheckbox;\r\n  @Input() footerBtnFirst: IMenuButton;\r\n  @Input() footerBtnLast: IMenuButton;\r\n  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;\r\n  private selectedList: any[] = [];\r\n  public selectedShown: any[] = [];\r\n  public filteredList: any[];\r\n  public formFieldControl: FormControl;\r\n  private sub: SubscriptionLike;\r\n\r\n  ngOnInit(): void {\r\n    this.filteredList = this.menuList;\r\n    if (this.filterPlaceholder) {\r\n      this.formFieldControl = new FormControl('');\r\n      this.sub = this.formFieldControl.valueChanges.subscribe((value: string) => {\r\n        this.alterList(value);\r\n      });\r\n    }\r\n    if (!this.filterAriaLabel && this.filterPlaceholder) {\r\n      this.filterAriaLabel = this.filterPlaceholder;\r\n    }\r\n  }\r\n\r\n  ngOnDestroy(): void {\r\n    if (this.filterPlaceholder && this.sub) {\r\n      this.sub.unsubscribe();\r\n      this.sub = null;\r\n    }\r\n  }\r\n\r\n  alterList(value: string): void {\r\n    this.filteredList = this.menuList.filter( item => item.name.toLowerCase().indexOf(value.toLowerCase()) > -1);\r\n  }\r\n\r\n  onOptionSelected(item): void {\r\n    console.log(item);\r\n    this.selectedList.push(item);\r\n  }\r\n\r\n  selectCompleted(): void {\r\n    this.selectedShown = this.selectedList;\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  selectCanceled(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3154,11 +3180,11 @@
                 "OnInit",
                 "OnDestroy"
             ],
-            "templateData": "<button [matMenuTriggerFor]=\"menu\"\r\n        #menuTrigger=\"matMenuTrigger\"\r\n        class=\"p-btn p-btn-small p-btn-tertiary\">\r\n  <ng-template [ngIf]=\"!selectedShown?.length\" [ngIfElse]=\"selectedItems\">\r\n    {{menuTriggerName}}\r\n  </ng-template>\r\n\r\n  <ng-template #selectedItems>\r\n    <ng-container *ngFor=\"let item of selectedShown\">\r\n      <span class=\"p-menu-trigger-result\">{{item.name}}</span>\r\n    </ng-container>\r\n  </ng-template>\r\n</button>\r\n\r\n<!--menu window-->\r\n<mat-menu #menu=\"matMenu\" class=\"p-menu-multiple\" [overlapTrigger]=\"false\">\r\n  <div class=\"p-menu-multiple-container\" (click)=\"$event.stopPropagation()\"\r\n       (keydown)=\"$event.stopPropagation()\">\r\n    <div class=\"p-menu-header\" *ngIf=\"filterPlaceholder\"\r\n         [class.extended]=\"headerBtnFirst && headerBtnLast\">\r\n      <mat-form-field class=\"p-menu-form-field\"\r\n                      appearance=\"outline\"\r\n                      floatLabel=\"always\">\r\n        <input matInput\r\n               type=\"text\"\r\n               [placeholder]=\"filterPlaceholder\"\r\n               attr.aria-label=\"{{filterAriaLabel}}\"\r\n               [formControl]=\"formFieldControl\"\r\n               autocomplete=\"off\"\r\n               onfocus=\"this.select()\"\r\n               class=\"p-menu-input\">\r\n      </mat-form-field>\r\n\r\n      <p-button *ngIf=\"headerBtnFirst\"\r\n                class=\"p-menu-btn-line\"\r\n                [label]=\"headerBtnFirst.label\"\r\n                [iconBefore]=\"headerBtnFirst.icon.iconName\"\r\n                [iconBeforeWidth]=\"headerBtnFirst.icon.width\"\r\n                [iconBeforeHeight]=\"headerBtnFirst.icon.height\"\r\n                [buttonType]=\"headerBtnFirst.buttonType\"\r\n                [disabled]=\"!filteredList.length\"></p-button>\r\n      <p-checkbox *ngIf=\"headerBtnFirst\"\r\n                  class=\"p-menu-btn-line\"\r\n                  [label]=\"headerBtnLast.label\"\r\n                  [checked]=\"headerBtnLast.checked\"\r\n                  [disabled]=\"!filteredList.length\"></p-checkbox>\r\n    </div>\r\n\r\n    <div class=\"p-menu-body\">\r\n      <ng-template [ngIf]=\"filteredList.length\" [ngIfElse]=\"emptyState\">\r\n        <mat-selection-list class=\"p-menu-body-container\">\r\n          <mat-list-option class=\"p-menu-multiple-item\"\r\n                           *ngFor=\"let item of filteredList\"\r\n                           [disableRipple]=\"true\"\r\n                           [disabled]=\"item.disabled\"\r\n                           [selected]=\"item.selected\"\r\n                           (click)=\"onOptSelected(item)\">\r\n            {{item.name}}\r\n          </mat-list-option>\r\n        </mat-selection-list>\r\n      </ng-template>\r\n\r\n      <ng-template #emptyState>\r\n        <div class=\"p-menu-empty\">\r\n          <p class=\"p-menu-empty-state paragraph-1-default\">\r\n            No data found\r\n          </p>\r\n        </div>\r\n      </ng-template>\r\n\r\n    </div>\r\n\r\n    <div class=\"p-menu-footer\">\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnFirst.label\"\r\n                [buttonType]=\"footerBtnFirst.buttonType\"\r\n                (click)=\"selectCompleted()\"></p-button>\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnLast.label\"\r\n                [buttonType]=\"footerBtnLast.buttonType\"\r\n                (click)=\"selectCanceled()\"></p-button>\r\n    </div>\r\n  </div>\r\n</mat-menu>\r\n"
+            "templateData": "<div class=\"p-menu-trigger\"\r\n     [matMenuTriggerFor]=\"menu\"\r\n     #menuTrigger=\"matMenuTrigger\">\r\n  <ng-content></ng-content>\r\n</div>\r\n\r\n<!--menu window-->\r\n<mat-menu #menu=\"matMenu\" class=\"p-menu-multiple\" [overlapTrigger]=\"false\">\r\n  <div class=\"p-menu-multiple-container\" (click)=\"$event.stopPropagation()\"\r\n       (keydown)=\"$event.stopPropagation()\">\r\n    <div class=\"p-menu-header\" *ngIf=\"filterPlaceholder\"\r\n         [class.extended]=\"headerBtnFirst && headerBtnLast\">\r\n      <mat-form-field class=\"p-menu-form-field\"\r\n                      appearance=\"outline\"\r\n                      floatLabel=\"always\">\r\n        <input matInput\r\n               type=\"text\"\r\n               [placeholder]=\"filterPlaceholder\"\r\n               attr.aria-label=\"{{filterAriaLabel}}\"\r\n               [formControl]=\"formFieldControl\"\r\n               autocomplete=\"off\"\r\n               onfocus=\"this.select()\"\r\n               class=\"p-menu-input\">\r\n      </mat-form-field>\r\n\r\n      <p-button *ngIf=\"headerBtnFirst\"\r\n                class=\"p-menu-btn-line\"\r\n                [label]=\"headerBtnFirst.label\"\r\n                [iconBefore]=\"headerBtnFirst.icon.iconName\"\r\n                [iconBeforeWidth]=\"headerBtnFirst.icon.width\"\r\n                [iconBeforeHeight]=\"headerBtnFirst.icon.height\"\r\n                [buttonType]=\"headerBtnFirst.buttonType\"\r\n                [disabled]=\"!filteredList.length\"></p-button>\r\n      <p-checkbox *ngIf=\"headerBtnFirst\"\r\n                  class=\"p-menu-btn-line\"\r\n                  [label]=\"headerBtnLast.label\"\r\n                  [checked]=\"headerBtnLast.checked\"\r\n                  [disabled]=\"!filteredList.length\"></p-checkbox>\r\n    </div>\r\n\r\n    <div class=\"p-menu-body\">\r\n      <ng-template [ngIf]=\"filteredList.length\" [ngIfElse]=\"emptyState\">\r\n        <mat-selection-list class=\"p-menu-body-container\">\r\n          <mat-list-option class=\"p-menu-multiple-item\"\r\n                           *ngFor=\"let item of filteredList\"\r\n                           [disableRipple]=\"true\"\r\n                           [disabled]=\"item.disabled\"\r\n                           [selected]=\"item.selected\"\r\n                           (click)=\"onOptSelected(item)\">\r\n            {{item.name}}\r\n          </mat-list-option>\r\n        </mat-selection-list>\r\n      </ng-template>\r\n\r\n      <ng-template #emptyState>\r\n        <div class=\"p-menu-empty\">\r\n          <p class=\"p-menu-empty-state paragraph-1-default\">\r\n            No data found\r\n          </p>\r\n        </div>\r\n      </ng-template>\r\n\r\n    </div>\r\n\r\n    <div class=\"p-menu-footer\">\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnFirst.label\"\r\n                [buttonType]=\"footerBtnFirst.buttonType\"\r\n                (click)=\"selectCompleted()\"></p-button>\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnLast.label\"\r\n                [buttonType]=\"footerBtnLast.buttonType\"\r\n                (click)=\"selectCanceled()\"></p-button>\r\n    </div>\r\n  </div>\r\n</mat-menu>\r\n"
         },
         {
             "name": "MenuRadioGroupComponent",
-            "id": "component-MenuRadioGroupComponent-a2e8e80fd705ac0c0609cac362c75c8e",
+            "id": "component-MenuRadioGroupComponent-dfb671864188e6bfe07248a1a94609ab",
             "file": "projects/design-system-lib/src/lib/menu/menu-radio-group/menu-radio-group.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3177,23 +3203,18 @@
             "inputsClass": [
                 {
                     "name": "footerBtnFirst",
-                    "line": 28,
+                    "line": 27,
                     "type": "IMenuButton"
                 },
                 {
                     "name": "footerBtnLast",
-                    "line": 29,
+                    "line": 28,
                     "type": "IMenuButton"
                 },
                 {
                     "name": "menuList",
-                    "line": 27,
-                    "type": "IMenuRadioOption[]"
-                },
-                {
-                    "name": "menuTriggerName",
                     "line": 26,
-                    "type": "string"
+                    "type": "IMenuRadioOption[]"
                 }
             ],
             "outputsClass": [],
@@ -3204,7 +3225,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 31,
+                    "line": 30,
                     "modifierKind": [
                         114
                     ]
@@ -3214,7 +3235,7 @@
                     "type": "MatMenuTrigger",
                     "optional": false,
                     "description": "",
-                    "line": 30,
+                    "line": 29,
                     "decorators": [
                         {
                             "name": "ViewChild",
@@ -3235,7 +3256,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 33,
+                    "line": 32,
                     "jsdoctags": [
                         {
                             "name": "menuList",
@@ -3252,7 +3273,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 41
+                    "line": 40
                 },
                 {
                     "name": "selectCompleted",
@@ -3260,7 +3281,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 37
+                    "line": 36
                 }
             ],
             "hostBindings": [],
@@ -3268,7 +3289,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {\r\n  Component,\r\n  Input,\r\n  OnInit,\r\n  ViewChild\r\n} from '@angular/core';\r\nimport {MatMenuTrigger} from '@angular/material/menu';\r\nimport {IMenuButton} from '../menu-button.interface';\r\nimport {IRadioButton} from '../../radio-button/radio-button.interface';\r\nimport {InputNumericSizeEnum} from '../../input/numeric/input-numeric-size.enum';\r\nimport {IDatepicker} from '../../input/datepicker/datepicker.interface';\r\n\r\ninterface IMenuRadioOption extends IRadioButton {\r\n  numericInputValue?: number;\r\n  menuList?: any[];\r\n  dateStart?: IDatepicker;\r\n  dateEnd?: IDatepicker;\r\n}\r\n\r\n@Component({\r\n  selector: 'p-menu-radio-group',\r\n  templateUrl: './menu-radio-group.component.html',\r\n  styleUrls: ['./menu-radio-group.component.scss'],\r\n})\r\nexport class MenuRadioGroupComponent {\r\n  @Input() menuTriggerName: string;\r\n  @Input() menuList: IMenuRadioOption[];\r\n  @Input() footerBtnFirst: IMenuButton;\r\n  @Input() footerBtnLast: IMenuButton;\r\n  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;\r\n  public inputNumericSize = InputNumericSizeEnum;\r\n\r\n  findMenuTriggerName(menuList): void {\r\n    return menuList.find( item => item.selected === true).name;\r\n  }\r\n\r\n  selectCompleted(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  selectCanceled(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n}\r\n",
+            "sourceCode": "import {\r\n  Component,\r\n  Input,\r\n  OnInit,\r\n  ViewChild\r\n} from '@angular/core';\r\nimport {MatMenuTrigger} from '@angular/material/menu';\r\nimport {IMenuButton} from '../menu-button.interface';\r\nimport {IRadioButton} from '../../radio-button/radio-button.interface';\r\nimport {InputNumericSizeEnum} from '../../input/numeric/input-numeric-size.enum';\r\nimport {IDatepicker} from '../../input/datepicker/datepicker.interface';\r\n\r\ninterface IMenuRadioOption extends IRadioButton {\r\n  numericInputValue?: number;\r\n  menuList?: any[];\r\n  dateStart?: IDatepicker;\r\n  dateEnd?: IDatepicker;\r\n}\r\n\r\n@Component({\r\n  selector: 'p-menu-radio-group',\r\n  templateUrl: './menu-radio-group.component.html',\r\n  styleUrls: ['./menu-radio-group.component.scss'],\r\n})\r\nexport class MenuRadioGroupComponent {\r\n  @Input() menuList: IMenuRadioOption[];\r\n  @Input() footerBtnFirst: IMenuButton;\r\n  @Input() footerBtnLast: IMenuButton;\r\n  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;\r\n  public inputNumericSize = InputNumericSizeEnum;\r\n\r\n  findMenuTriggerName(menuList): void {\r\n    return menuList.find( item => item.selected === true).name;\r\n  }\r\n\r\n  selectCompleted(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  selectCanceled(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3277,11 +3298,11 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<button [matMenuTriggerFor]=\"menu\"\r\n        #menuTrigger=\"matMenuTrigger\"\r\n        class=\"p-btn p-btn-small p-btn-tertiary\">\r\n    {{menuTriggerName}}\r\n</button>\r\n\r\n<!--menu window-->\r\n<mat-menu #menu=\"matMenu\" class=\"p-menu-radio\" [overlapTrigger]=\"false\">\r\n  <div class=\"p-menu-multiple-container\" (click)=\"$event.stopPropagation()\"\r\n                                (keydown)=\"$event.stopPropagation()\">\r\n    <ul class=\"p-menu-body\">\r\n      <li class=\"p-menu-body-item\" *ngFor=\"let option of menuList\">\r\n        <p-radio-button class=\"p-menu-option-radio\"\r\n                        [value]=\"option\"\r\n                        [label]=\"option.label\"\r\n                        [checked]=\"option.checked\"\r\n                        [disabled]=\"option.disabled\">\r\n        </p-radio-button>\r\n\r\n        <p-input-numeric *ngIf=\"option.numericInputValue\"\r\n                          class=\"p-menu-option-input\"\r\n                          [size]=\"inputNumericSize.Small\"\r\n                          [value]=\"option.numericInputValue\">\r\n        </p-input-numeric>\r\n\r\n        <div class=\"p-menu-option-link\" *ngIf=\"option.menuList\">\r\n          <p-menu-single-select class=\"p-menu-option-submenu\"\r\n                                [menuTriggerName]=\"findMenuTriggerName(option.menuList)\"\r\n                                [menuList]=\"option.menuList\">\r\n          </p-menu-single-select>\r\n        </div>\r\n\r\n        <div class=\"p-menu-option-dates\" *ngIf=\"option.dateStart && option.dateEnd\">\r\n          <p-datepicker class=\"p-menu-option-datepicker start\"\r\n                        [ariaLabel]=\"option.dateStart.ariaLabel\"\r\n                        [placeholder]=\"option.dateStart.placeholder\"\r\n                        [disabled]=\"option.dateStart.disabled\"\r\n                        [value]=\"option.dateStart.value\">\r\n          </p-datepicker>\r\n          <span class=\"p-menu-option-dates-ampersand paragraph-2-default\">and</span>\r\n          <p-datepicker class=\"p-menu-option-datepicker end\"\r\n                        [ariaLabel]=\"option.dateEnd.ariaLabel\"\r\n                        [placeholder]=\"option.dateEnd.placeholder\"\r\n                        [disabled]=\"option.dateEnd.disabled\"\r\n                        [value]=\"option.dateEnd.value\">\r\n          </p-datepicker>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n    <div class=\"p-menu-footer\">\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnFirst.label\"\r\n                [buttonType]=\"footerBtnFirst.buttonType\"\r\n                (click)=\"selectCompleted()\"></p-button>\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnLast.label\"\r\n                [buttonType]=\"footerBtnLast.buttonType\"\r\n                (click)=\"selectCanceled()\"></p-button>\r\n    </div>\r\n  </div>\r\n</mat-menu>\r\n"
+            "templateData": "<div class=\"p-menu-trigger\"\r\n     [matMenuTriggerFor]=\"menu\"\r\n     #menuTrigger=\"matMenuTrigger\">\r\n  <ng-content></ng-content>\r\n</div>\r\n\r\n<!--menu window-->\r\n<mat-menu #menu=\"matMenu\" class=\"p-menu-radio\" [overlapTrigger]=\"false\">\r\n  <div class=\"p-menu-multiple-container\" (click)=\"$event.stopPropagation()\"\r\n                                (keydown)=\"$event.stopPropagation()\">\r\n    <ul class=\"p-menu-body\">\r\n      <li class=\"p-menu-body-item\" *ngFor=\"let option of menuList\">\r\n        <p-radio-button class=\"p-menu-option-radio\"\r\n                        [value]=\"option\"\r\n                        [label]=\"option.label\"\r\n                        [checked]=\"option.checked\"\r\n                        [disabled]=\"option.disabled\">\r\n        </p-radio-button>\r\n\r\n        <p-input-numeric *ngIf=\"option.numericInputValue\"\r\n                          class=\"p-menu-option-input\"\r\n                          [size]=\"inputNumericSize.Small\"\r\n                          [value]=\"option.numericInputValue\">\r\n        </p-input-numeric>\r\n\r\n        <div class=\"p-menu-option-link\" *ngIf=\"option.menuList\">\r\n          <p-menu-single-select class=\"p-menu-option-submenu\"\r\n                                [menuList]=\"option.menuList\">\r\n            {{findMenuTriggerName(option.menuList)}}\r\n          </p-menu-single-select>\r\n        </div>\r\n\r\n        <div class=\"p-menu-option-dates\" *ngIf=\"option.dateStart && option.dateEnd\">\r\n          <p-datepicker class=\"p-menu-option-datepicker start\"\r\n                        [ariaLabel]=\"option.dateStart.ariaLabel\"\r\n                        [placeholder]=\"option.dateStart.placeholder\"\r\n                        [disabled]=\"option.dateStart.disabled\"\r\n                        [value]=\"option.dateStart.value\">\r\n          </p-datepicker>\r\n          <span class=\"p-menu-option-dates-ampersand paragraph-2-default\">and</span>\r\n          <p-datepicker class=\"p-menu-option-datepicker end\"\r\n                        [ariaLabel]=\"option.dateEnd.ariaLabel\"\r\n                        [placeholder]=\"option.dateEnd.placeholder\"\r\n                        [disabled]=\"option.dateEnd.disabled\"\r\n                        [value]=\"option.dateEnd.value\">\r\n          </p-datepicker>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n    <div class=\"p-menu-footer\">\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnFirst.label\"\r\n                [buttonType]=\"footerBtnFirst.buttonType\"\r\n                (click)=\"selectCompleted()\"></p-button>\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnLast.label\"\r\n                [buttonType]=\"footerBtnLast.buttonType\"\r\n                (click)=\"selectCanceled()\"></p-button>\r\n    </div>\r\n  </div>\r\n</mat-menu>\r\n"
         },
         {
             "name": "MenuRangeComponent",
-            "id": "component-MenuRangeComponent-82a4c15d2b304e12918a10b66e4d4d55",
+            "id": "component-MenuRangeComponent-f08b9fa15adcff9359217b0bf57d7468",
             "file": "projects/design-system-lib/src/lib/menu/menu-range/menu-range.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3300,28 +3321,23 @@
             "inputsClass": [
                 {
                     "name": "footerBtnFirst",
-                    "line": 21,
+                    "line": 20,
                     "type": "IMenuButton"
                 },
                 {
                     "name": "footerBtnLast",
-                    "line": 22,
+                    "line": 21,
                     "type": "IMenuButton"
                 },
                 {
                     "name": "inputMax",
-                    "line": 20,
-                    "type": "IInputNumeric"
-                },
-                {
-                    "name": "inputMin",
                     "line": 19,
                     "type": "IInputNumeric"
                 },
                 {
-                    "name": "menuTriggerName",
+                    "name": "inputMin",
                     "line": 18,
-                    "type": "string"
+                    "type": "IInputNumeric"
                 }
             ],
             "outputsClass": [],
@@ -3332,7 +3348,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 24,
+                    "line": 23,
                     "modifierKind": [
                         114
                     ]
@@ -3342,7 +3358,7 @@
                     "type": "MatMenuTrigger",
                     "optional": false,
                     "description": "",
-                    "line": 23,
+                    "line": 22,
                     "decorators": [
                         {
                             "name": "ViewChild",
@@ -3358,7 +3374,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 30
+                    "line": 29
                 },
                 {
                     "name": "selectCompleted",
@@ -3366,7 +3382,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 26
+                    "line": 25
                 }
             ],
             "hostBindings": [],
@@ -3374,7 +3390,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {\r\n  Component,\r\n  Input, OnInit,\r\n  ViewChild\r\n} from '@angular/core';\r\nimport {MatMenuTrigger} from '@angular/material/menu';\r\nimport {IMenuButton} from '../menu-button.interface';\r\nimport {InputNumericSizeEnum} from '../../input/numeric/input-numeric-size.enum';\r\nimport {IInputNumeric} from '../../input/numeric/input-numeric.interface';\r\n\r\n\r\n@Component({\r\n  selector: 'p-menu-range',\r\n  templateUrl: './menu-range.component.html',\r\n  styleUrls: ['./menu-range.component.scss'],\r\n})\r\nexport class MenuRangeComponent {\r\n  @Input() menuTriggerName: string;\r\n  @Input() inputMin: IInputNumeric;\r\n  @Input() inputMax: IInputNumeric;\r\n  @Input() footerBtnFirst: IMenuButton;\r\n  @Input() footerBtnLast: IMenuButton;\r\n  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger\r\n  public inputNumericSize = InputNumericSizeEnum;\r\n\r\n  selectCompleted(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  selectCanceled(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n}\r\n",
+            "sourceCode": "import {\r\n  Component,\r\n  Input, OnInit,\r\n  ViewChild\r\n} from '@angular/core';\r\nimport {MatMenuTrigger} from '@angular/material/menu';\r\nimport {IMenuButton} from '../menu-button.interface';\r\nimport {InputNumericSizeEnum} from '../../input/numeric/input-numeric-size.enum';\r\nimport {IInputNumeric} from '../../input/numeric/input-numeric.interface';\r\n\r\n\r\n@Component({\r\n  selector: 'p-menu-range',\r\n  templateUrl: './menu-range.component.html',\r\n  styleUrls: ['./menu-range.component.scss'],\r\n})\r\nexport class MenuRangeComponent {\r\n  @Input() inputMin: IInputNumeric;\r\n  @Input() inputMax: IInputNumeric;\r\n  @Input() footerBtnFirst: IMenuButton;\r\n  @Input() footerBtnLast: IMenuButton;\r\n  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger\r\n  public inputNumericSize = InputNumericSizeEnum;\r\n\r\n  selectCompleted(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  selectCanceled(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3383,11 +3399,11 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<button [matMenuTriggerFor]=\"menu\"\r\n        #menuTrigger=\"matMenuTrigger\"\r\n        class=\"p-btn p-btn-small p-btn-tertiary\">\r\n    {{menuTriggerName}}\r\n</button>\r\n\r\n<!--menu window-->\r\n<mat-menu #menu=\"matMenu\" class=\"p-menu p-menu-range\" [overlapTrigger]=\"false\">\r\n  <div class=\"p-menu-container\" (click)=\"$event.stopPropagation()\"\r\n                                (keydown)=\"$event.stopPropagation()\">\r\n    <div class=\"p-menu-body\">\r\n      <p-input-numeric class=\"p-menu-range-min\"\r\n                       [label]=\"inputMin.label\"\r\n                       [value]=\"inputMin.value\"\r\n                       [disabled]=\"inputMin.disabled\"\r\n                       [readonly]=\"inputMin.readonly\"\r\n                       [size]=\"inputNumericSize.Small\"></p-input-numeric>\r\n      <p-input-numeric class=\"p-menu-range-max\"\r\n                       [label]=\"inputMax.label\"\r\n                       [value]=\"inputMax.value\"\r\n                       [disabled]=\"inputMax.disabled\"\r\n                       [readonly]=\"inputMax.readonly\"\r\n                       [size]=\"inputNumericSize.Small\"></p-input-numeric>\r\n    </div>\r\n    <div class=\"p-menu-footer\">\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnFirst.label\"\r\n                [buttonType]=\"footerBtnFirst.buttonType\"\r\n                (click)=\"selectCompleted()\"></p-button>\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnLast.label\"\r\n                [buttonType]=\"footerBtnLast.buttonType\"\r\n                (click)=\"selectCanceled()\"></p-button>\r\n    </div>\r\n  </div>\r\n</mat-menu>\r\n"
+            "templateData": "<div class=\"p-menu-trigger\"\r\n     [matMenuTriggerFor]=\"menu\"\r\n     #menuTrigger=\"matMenuTrigger\">\r\n  <ng-content></ng-content>\r\n</div>\r\n\r\n<!--menu window-->\r\n<mat-menu #menu=\"matMenu\" class=\"p-menu p-menu-range\" [overlapTrigger]=\"false\">\r\n  <div class=\"p-menu-container\" (click)=\"$event.stopPropagation()\"\r\n                                (keydown)=\"$event.stopPropagation()\">\r\n    <div class=\"p-menu-body\">\r\n      <p-input-numeric class=\"p-menu-range-min\"\r\n                       [label]=\"inputMin.label\"\r\n                       [value]=\"inputMin.value\"\r\n                       [disabled]=\"inputMin.disabled\"\r\n                       [readonly]=\"inputMin.readonly\"\r\n                       [size]=\"inputNumericSize.Small\"></p-input-numeric>\r\n      <p-input-numeric class=\"p-menu-range-max\"\r\n                       [label]=\"inputMax.label\"\r\n                       [value]=\"inputMax.value\"\r\n                       [disabled]=\"inputMax.disabled\"\r\n                       [readonly]=\"inputMax.readonly\"\r\n                       [size]=\"inputNumericSize.Small\"></p-input-numeric>\r\n    </div>\r\n    <div class=\"p-menu-footer\">\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnFirst.label\"\r\n                [buttonType]=\"footerBtnFirst.buttonType\"\r\n                (click)=\"selectCompleted()\"></p-button>\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnLast.label\"\r\n                [buttonType]=\"footerBtnLast.buttonType\"\r\n                (click)=\"selectCanceled()\"></p-button>\r\n    </div>\r\n  </div>\r\n</mat-menu>\r\n"
         },
         {
             "name": "MenuSingleSelectComponent",
-            "id": "component-MenuSingleSelectComponent-a10aff4fdce77b5dc74b139e97ee3594",
+            "id": "component-MenuSingleSelectComponent-599e423af70e3bc0a1572c3c2ad46b91",
             "file": "projects/design-system-lib/src/lib/menu/menu-single-select/menu-single-select.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3406,46 +3422,41 @@
             "inputsClass": [
                 {
                     "name": "buttonFirst",
-                    "line": 19,
+                    "line": 18,
                     "type": "IMenuButton"
                 },
                 {
                     "name": "buttonLast",
-                    "line": 20,
+                    "line": 19,
                     "type": "IMenuButton"
                 },
                 {
                     "name": "filterAriaLabel",
-                    "line": 18,
+                    "line": 17,
                     "type": "string"
                 },
                 {
                     "name": "filterPlaceholder",
-                    "line": 17,
+                    "line": 16,
                     "type": "string"
                 },
                 {
                     "name": "groupTitle",
                     "defaultValue": "false",
-                    "line": 16,
+                    "line": 15,
                     "type": "boolean"
                 },
                 {
                     "name": "menuList",
-                    "line": 15,
-                    "type": "any[]"
-                },
-                {
-                    "name": "menuTriggerName",
                     "line": 14,
-                    "type": "string"
+                    "type": "any[]"
                 }
             ],
             "outputsClass": [
                 {
                     "name": "onClickTask",
                     "defaultValue": "new EventEmitter()",
-                    "line": 21,
+                    "line": 20,
                     "type": "EventEmitter<any>"
                 }
             ],
@@ -3455,7 +3466,7 @@
                     "type": "ButtonTypeEnum",
                     "optional": false,
                     "description": "",
-                    "line": 26,
+                    "line": 25,
                     "modifierKind": [
                         114
                     ]
@@ -3465,7 +3476,7 @@
                     "type": "any[]",
                     "optional": false,
                     "description": "",
-                    "line": 23,
+                    "line": 22,
                     "modifierKind": [
                         114
                     ]
@@ -3475,7 +3486,7 @@
                     "type": "FormControl",
                     "optional": false,
                     "description": "",
-                    "line": 24,
+                    "line": 23,
                     "modifierKind": [
                         114
                     ]
@@ -3485,7 +3496,7 @@
                     "type": "MatMenuTrigger",
                     "optional": false,
                     "description": "",
-                    "line": 22,
+                    "line": 21,
                     "decorators": [
                         {
                             "name": "ViewChild",
@@ -3498,7 +3509,7 @@
                     "type": "SubscriptionLike",
                     "optional": false,
                     "description": "",
-                    "line": 25,
+                    "line": 24,
                     "modifierKind": [
                         112
                     ]
@@ -3516,7 +3527,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 48,
+                    "line": 47,
                     "jsdoctags": [
                         {
                             "name": "value",
@@ -3533,7 +3544,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 41
+                    "line": 40
                 },
                 {
                     "name": "ngOnInit",
@@ -3541,7 +3552,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 28
+                    "line": 27
                 },
                 {
                     "name": "onSelectedItem",
@@ -3558,7 +3569,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 62,
+                    "line": 61,
                     "jsdoctags": [
                         {
                             "name": "$event",
@@ -3582,7 +3593,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 58
+                    "line": 57
                 }
             ],
             "hostBindings": [],
@@ -3590,7 +3601,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild} from '@angular/core';\r\nimport {FormControl} from '@angular/forms';\r\nimport {SubscriptionLike} from 'rxjs';\r\nimport {IMenuButton} from '../menu-button.interface';\r\nimport {ButtonTypeEnum} from '../../button/button-type.enum';\r\nimport {MatMenuTrigger} from '@angular/material/menu';\r\n\r\n@Component({\r\n  selector: 'p-menu-single-select',\r\n  templateUrl: './menu-single-select.component.html',\r\n  styleUrls: ['./menu-single-select.component.scss'],\r\n})\r\nexport class MenuSingleSelectComponent implements OnInit, OnDestroy {\r\n  @Input() menuTriggerName: string;\r\n  @Input() menuList: any[];\r\n  @Input() groupTitle: boolean = false; // if there is a group title\r\n  @Input() filterPlaceholder: string; // if there is a search and buttons\r\n  @Input() filterAriaLabel: string;\r\n  @Input() buttonFirst: IMenuButton;\r\n  @Input() buttonLast: IMenuButton;\r\n  @Output() onClickTask: EventEmitter<any> = new EventEmitter();\r\n  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;\r\n  public filteredList: any[];\r\n  public formFieldControl: FormControl;\r\n  private sub: SubscriptionLike;\r\n  public buttonTypeEnum: ButtonTypeEnum;\r\n\r\n  ngOnInit(): void {\r\n    this.filteredList = this.menuList;\r\n    if (this.filterPlaceholder) {\r\n      this.formFieldControl = new FormControl('');\r\n      this.sub = this.formFieldControl.valueChanges.subscribe((value: string) => {\r\n        this.alterList(value);\r\n      });\r\n    }\r\n    if (!this.filterAriaLabel && this.filterPlaceholder) {\r\n      this.filterAriaLabel = this.filterPlaceholder;\r\n    }\r\n  }\r\n\r\n  ngOnDestroy(): void {\r\n    if (this.filterPlaceholder && this.sub) {\r\n      this.sub.unsubscribe();\r\n      this.sub = null;\r\n    }\r\n  }\r\n\r\n  alterList(value: string): void {\r\n    this.filteredList = [];\r\n    this.menuList.forEach(group => {\r\n      const filteredGroup = group.names.filter( name => name.name.toLowerCase().indexOf(value.toLowerCase()) > -1);\r\n      if (filteredGroup.length > 0) {\r\n        this.filteredList.push(Object.assign({}, group, group.names = filteredGroup));\r\n      }\r\n    });\r\n  }\r\n\r\n  selectCompleted(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  onSelectedItem($event, item): void {\r\n    console.log(item);\r\n    this.onClickTask.emit(item);\r\n    this.selectCompleted();\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild} from '@angular/core';\r\nimport {FormControl} from '@angular/forms';\r\nimport {SubscriptionLike} from 'rxjs';\r\nimport {IMenuButton} from '../menu-button.interface';\r\nimport {ButtonTypeEnum} from '../../button/button-type.enum';\r\nimport {MatMenuTrigger} from '@angular/material/menu';\r\n\r\n@Component({\r\n  selector: 'p-menu-single-select',\r\n  templateUrl: './menu-single-select.component.html',\r\n  styleUrls: ['./menu-single-select.component.scss'],\r\n})\r\nexport class MenuSingleSelectComponent implements OnInit, OnDestroy {\r\n  @Input() menuList: any[];\r\n  @Input() groupTitle: boolean = false; // if there is a group title\r\n  @Input() filterPlaceholder: string; // if there is a search and buttons\r\n  @Input() filterAriaLabel: string;\r\n  @Input() buttonFirst: IMenuButton;\r\n  @Input() buttonLast: IMenuButton;\r\n  @Output() onClickTask: EventEmitter<any> = new EventEmitter();\r\n  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;\r\n  public filteredList: any[];\r\n  public formFieldControl: FormControl;\r\n  private sub: SubscriptionLike;\r\n  public buttonTypeEnum: ButtonTypeEnum;\r\n\r\n  ngOnInit(): void {\r\n    this.filteredList = this.menuList;\r\n    if (this.filterPlaceholder) {\r\n      this.formFieldControl = new FormControl('');\r\n      this.sub = this.formFieldControl.valueChanges.subscribe((value: string) => {\r\n        this.alterList(value);\r\n      });\r\n    }\r\n    if (!this.filterAriaLabel && this.filterPlaceholder) {\r\n      this.filterAriaLabel = this.filterPlaceholder;\r\n    }\r\n  }\r\n\r\n  ngOnDestroy(): void {\r\n    if (this.filterPlaceholder && this.sub) {\r\n      this.sub.unsubscribe();\r\n      this.sub = null;\r\n    }\r\n  }\r\n\r\n  alterList(value: string): void {\r\n    this.filteredList = [];\r\n    this.menuList.forEach(group => {\r\n      const filteredGroup = group.names.filter( name => name.name.toLowerCase().indexOf(value.toLowerCase()) > -1);\r\n      if (filteredGroup.length > 0) {\r\n        this.filteredList.push(Object.assign({}, group, group.names = filteredGroup));\r\n      }\r\n    });\r\n  }\r\n\r\n  selectCompleted(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  onSelectedItem($event, item): void {\r\n    console.log(item);\r\n    this.onClickTask.emit(item);\r\n    this.selectCompleted();\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3603,11 +3614,11 @@
                 "OnInit",
                 "OnDestroy"
             ],
-            "templateData": "<div class=\"p-menu-trigger\"\r\n     [matMenuTriggerFor]=\"menu\"\r\n     #menuTrigger=\"matMenuTrigger\">\r\n  <p-button iconAfter=\"chevron-down\"\r\n            iconAfterWidth=\"17\"\r\n            iconAfterHeight=\"17\"\r\n            [label]=\"menuTriggerName\"\r\n            [buttonType]=\"'tertiary'\" ></p-button>\r\n</div>\r\n\r\n\r\n<!--menu-single-select window-->\r\n<mat-menu #menu=\"matMenu\" class=\"p-menu\" [overlapTrigger]=\"false\">\r\n  <div class=\"p-menu-container\" (click)=\"$event.stopPropagation()\"\r\n                                (keydown)=\"$event.stopPropagation()\">\r\n    <div class=\"p-menu-header\" *ngIf=\"filterPlaceholder\">\r\n      <mat-form-field class=\"p-menu-form-field\"\r\n                      appearance=\"outline\"\r\n                      floatLabel=\"always\"\r\n                      (click)=\"$event.stopPropagation()\"\r\n                      (keydown)=\"$event.stopPropagation()\">\r\n        <input matInput\r\n               type=\"text\"\r\n               [placeholder]=\"filterPlaceholder\"\r\n               attr.aria-label=\"{{filterAriaLabel}}\"\r\n               [formControl]=\"formFieldControl\"\r\n               autocomplete=\"off\"\r\n               onfocus=\"this.select()\"\r\n               class=\"p-menu-input\">\r\n      </mat-form-field>\r\n    </div>\r\n\r\n    <div class=\"p-menu-body\">\r\n      <div class=\"p-menu-body-container\">\r\n        <!--groupTitle === true-->\r\n        <ng-template [ngIf]=\"groupTitle\" [ngIfElse]=\"noGroupTitle\">\r\n          <ng-container *ngFor=\"let group of filteredList\">\r\n            <h6 class=\"p-menu-group-title\">{{group.letter}}</h6>\r\n            <ng-container [ngTemplateOutlet]=\"menuLine\"\r\n                          [ngTemplateOutletContext] =\"{itemsList: group.names}\"></ng-container>\r\n          </ng-container>\r\n        </ng-template>\r\n\r\n        <!--groupTitle === false-->\r\n        <ng-template #noGroupTitle>\r\n          <ng-container [ngTemplateOutlet]=\"menuLine\"\r\n                        [ngTemplateOutletContext] =\"{itemsList: menuList}\"></ng-container>\r\n        </ng-template>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"p-menu-footer\" *ngIf=\"filterPlaceholder\">\r\n      <p-button class=\"p-menu-btn-line\"\r\n                [label]=\"buttonFirst.label\"\r\n                [iconBefore]=\"buttonFirst.icon.iconName\"\r\n                [iconBeforeWidth]=\"buttonFirst.icon.width\"\r\n                [iconBeforeHeight]=\"buttonFirst.icon.height\"\r\n                [buttonType]=\"buttonFirst.buttonType\"></p-button>\r\n      <p-button class=\"p-menu-btn-line\"\r\n                [label]=\"buttonLast.label\"\r\n                [iconBefore]=\"buttonLast.icon.iconName\"\r\n                [iconBeforeWidth]=\"buttonLast.icon.width\"\r\n                [iconBeforeHeight]=\"buttonLast.icon.height\"\r\n                [buttonType]=\"buttonLast.buttonType\"></p-button>\r\n    </div>\r\n  </div>\r\n</mat-menu>\r\n\r\n\r\n\r\n<!--menu-single-select line template-->\r\n<ng-template #menuLine let-itemsList=\"itemsList\">\r\n  <button *ngFor=\"let item of itemsList\"\r\n          mat-menu-item\r\n          [class.p-menu-item-selected]=\"item.selected\"\r\n          [disabled]=\"item.disabled\"\r\n          (click)=\"onSelectedItem($event, item)\">\r\n    {{item.name}}\r\n  </button>\r\n</ng-template>\r\n"
+            "templateData": "<div class=\"p-menu-trigger\"\r\n     [matMenuTriggerFor]=\"menu\"\r\n     #menuTrigger=\"matMenuTrigger\">\r\n  <ng-content></ng-content>\r\n</div>\r\n\r\n<!--menu-single-select window-->\r\n<mat-menu #menu=\"matMenu\" class=\"p-menu\" [overlapTrigger]=\"false\">\r\n  <div class=\"p-menu-container\" (click)=\"$event.stopPropagation()\"\r\n                                (keydown)=\"$event.stopPropagation()\">\r\n    <div class=\"p-menu-header\" *ngIf=\"filterPlaceholder\">\r\n      <mat-form-field class=\"p-menu-form-field\"\r\n                      appearance=\"outline\"\r\n                      floatLabel=\"always\"\r\n                      (click)=\"$event.stopPropagation()\"\r\n                      (keydown)=\"$event.stopPropagation()\">\r\n        <input matInput\r\n               type=\"text\"\r\n               [placeholder]=\"filterPlaceholder\"\r\n               attr.aria-label=\"{{filterAriaLabel}}\"\r\n               [formControl]=\"formFieldControl\"\r\n               autocomplete=\"off\"\r\n               onfocus=\"this.select()\"\r\n               class=\"p-menu-input\">\r\n      </mat-form-field>\r\n    </div>\r\n\r\n    <div class=\"p-menu-body\">\r\n      <div class=\"p-menu-body-container\">\r\n        <!--groupTitle === true-->\r\n        <ng-template [ngIf]=\"groupTitle\" [ngIfElse]=\"noGroupTitle\">\r\n          <ng-container *ngFor=\"let group of filteredList\">\r\n            <h6 class=\"p-menu-group-title\">{{group.letter}}</h6>\r\n            <ng-container [ngTemplateOutlet]=\"menuLine\"\r\n                          [ngTemplateOutletContext] =\"{itemsList: group.names}\"></ng-container>\r\n          </ng-container>\r\n        </ng-template>\r\n\r\n        <!--groupTitle === false-->\r\n        <ng-template #noGroupTitle>\r\n          <ng-container [ngTemplateOutlet]=\"menuLine\"\r\n                        [ngTemplateOutletContext] =\"{itemsList: menuList}\"></ng-container>\r\n        </ng-template>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"p-menu-footer\" *ngIf=\"filterPlaceholder\">\r\n      <p-button class=\"p-menu-btn-line\"\r\n                [label]=\"buttonFirst.label\"\r\n                [iconBefore]=\"buttonFirst.icon.iconName\"\r\n                [iconBeforeWidth]=\"buttonFirst.icon.width\"\r\n                [iconBeforeHeight]=\"buttonFirst.icon.height\"\r\n                [buttonType]=\"buttonFirst.buttonType\"></p-button>\r\n      <p-button class=\"p-menu-btn-line\"\r\n                [label]=\"buttonLast.label\"\r\n                [iconBefore]=\"buttonLast.icon.iconName\"\r\n                [iconBeforeWidth]=\"buttonLast.icon.width\"\r\n                [iconBeforeHeight]=\"buttonLast.icon.height\"\r\n                [buttonType]=\"buttonLast.buttonType\"></p-button>\r\n    </div>\r\n  </div>\r\n</mat-menu>\r\n\r\n\r\n\r\n<!--menu-single-select line template-->\r\n<ng-template #menuLine let-itemsList=\"itemsList\">\r\n  <button *ngFor=\"let item of itemsList\"\r\n          mat-menu-item\r\n          [class.p-menu-item-selected]=\"item.selected\"\r\n          [disabled]=\"item.disabled\"\r\n          (click)=\"onSelectedItem($event, item)\">\r\n    {{item.name}}\r\n  </button>\r\n</ng-template>\r\n"
         },
         {
             "name": "MenuTabsComponent",
-            "id": "component-MenuTabsComponent-a599b547c548599cb0c09ee72a67aea3",
+            "id": "component-MenuTabsComponent-4de91e3a5653b24cd322d87efd3316ea",
             "file": "projects/design-system-lib/src/lib/menu/menu-tabs/menu-tabs.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3626,48 +3637,43 @@
             "inputsClass": [
                 {
                     "name": "checkboxList",
-                    "line": 30,
+                    "line": 29,
                     "type": "literal type[]"
                 },
                 {
                     "name": "filterAriaLabel",
-                    "line": 25,
-                    "type": "string"
-                },
-                {
-                    "name": "filterPlaceholder",
                     "line": 24,
                     "type": "string"
                 },
                 {
+                    "name": "filterPlaceholder",
+                    "line": 23,
+                    "type": "string"
+                },
+                {
                     "name": "footerBtnFirst",
-                    "line": 28,
+                    "line": 27,
                     "type": "IMenuButton"
                 },
                 {
                     "name": "footerBtnLast",
-                    "line": 29,
+                    "line": 28,
                     "type": "IMenuButton"
                 },
                 {
                     "name": "headerBtnFirst",
-                    "line": 26,
+                    "line": 25,
                     "type": "IMenuButton"
                 },
                 {
                     "name": "headerBtnLast",
-                    "line": 27,
+                    "line": 26,
                     "type": "ICheckbox"
                 },
                 {
                     "name": "menuList",
-                    "line": 23,
-                    "type": "any[]"
-                },
-                {
-                    "name": "menuTriggerName",
                     "line": 22,
-                    "type": "string"
+                    "type": "any[]"
                 }
             ],
             "outputsClass": [],
@@ -3677,7 +3683,7 @@
                     "type": "FormControl",
                     "optional": false,
                     "description": "",
-                    "line": 38,
+                    "line": 37,
                     "modifierKind": [
                         114
                     ]
@@ -3687,7 +3693,7 @@
                     "type": "any[]",
                     "optional": false,
                     "description": "",
-                    "line": 37,
+                    "line": 36,
                     "modifierKind": [
                         114
                     ]
@@ -3698,7 +3704,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 42,
+                    "line": 41,
                     "modifierKind": [
                         114
                     ]
@@ -3708,7 +3714,7 @@
                     "type": "MatMenuTrigger",
                     "optional": false,
                     "description": "",
-                    "line": 34,
+                    "line": 33,
                     "decorators": [
                         {
                             "name": "ViewChild",
@@ -3722,7 +3728,7 @@
                     "type": "any[]",
                     "optional": false,
                     "description": "",
-                    "line": 35,
+                    "line": 34,
                     "modifierKind": [
                         112
                     ]
@@ -3733,7 +3739,7 @@
                     "type": "any[]",
                     "optional": false,
                     "description": "",
-                    "line": 36,
+                    "line": 35,
                     "modifierKind": [
                         114
                     ]
@@ -3743,7 +3749,7 @@
                     "type": "SubscriptionLike",
                     "optional": false,
                     "description": "",
-                    "line": 39,
+                    "line": 38,
                     "modifierKind": [
                         112
                     ]
@@ -3753,7 +3759,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 41,
+                    "line": 40,
                     "modifierKind": [
                         114
                     ]
@@ -3763,7 +3769,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 40,
+                    "line": 39,
                     "modifierKind": [
                         114
                     ]
@@ -3781,7 +3787,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 66,
+                    "line": 65,
                     "jsdoctags": [
                         {
                             "name": "value",
@@ -3798,7 +3804,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 59
+                    "line": 58
                 },
                 {
                     "name": "ngOnInit",
@@ -3806,7 +3812,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 44
+                    "line": 43
                 },
                 {
                     "name": "onOptionSelected",
@@ -3819,7 +3825,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 70,
+                    "line": 69,
                     "jsdoctags": [
                         {
                             "name": "item",
@@ -3836,7 +3842,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 80
+                    "line": 79
                 },
                 {
                     "name": "selectCompleted",
@@ -3844,7 +3850,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 75
+                    "line": 74
                 }
             ],
             "hostBindings": [],
@@ -3852,7 +3858,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {\r\n  Component,\r\n  Input,\r\n  OnDestroy,\r\n  OnInit,\r\n  ViewChild\r\n} from '@angular/core';\r\nimport {FormControl} from '@angular/forms';\r\nimport {SubscriptionLike} from 'rxjs';\r\nimport {MatMenuTrigger} from '@angular/material/menu';\r\nimport {IMenuButton} from '../menu-button.interface';\r\nimport {ICheckbox} from '../../checkbox/checkbox.interface';\r\nimport {IInputNumeric} from '../../input/numeric/input-numeric.interface';\r\nimport {InputNumericSizeEnum} from '../../input/numeric/input-numeric-size.enum';\r\n\r\n@Component({\r\n  selector: 'p-menu-tabs',\r\n  templateUrl: './menu-tabs.component.html',\r\n  styleUrls: ['./menu-tabs.component.scss'],\r\n})\r\nexport class MenuTabsComponent implements OnInit, OnDestroy {\r\n  @Input() menuTriggerName: string;\r\n  @Input() menuList: any[];\r\n  @Input() filterPlaceholder: string; // if there is a search and buttons\r\n  @Input() filterAriaLabel: string;\r\n  @Input() headerBtnFirst: IMenuButton;\r\n  @Input() headerBtnLast: ICheckbox;\r\n  @Input() footerBtnFirst: IMenuButton;\r\n  @Input() footerBtnLast: IMenuButton;\r\n  @Input() checkboxList: {\r\n    checkbox: ICheckbox,\r\n    inputNum: IInputNumeric\r\n  }[];\r\n  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;\r\n  private selectedList: any[] = [];\r\n  public selectedShown: any[] = [];\r\n  public filteredList: any[];\r\n  public customControl: FormControl;\r\n  private sub: SubscriptionLike;\r\n  public tabSpecificName: string;\r\n  public tabRelativeName: string;\r\n  public inputNumericSize = InputNumericSizeEnum;\r\n\r\n  ngOnInit(): void {\r\n    this.filteredList = this.menuList;\r\n    if (this.filterPlaceholder) {\r\n      this.customControl = new FormControl('');\r\n      this.sub = this.customControl.valueChanges.subscribe((value: string) => {\r\n        this.alterList(value);\r\n      });\r\n    }\r\n    if (!this.filterAriaLabel && this.filterPlaceholder) {\r\n      this.filterAriaLabel = this.filterPlaceholder;\r\n    }\r\n    this.tabSpecificName = 'Specific';\r\n    this.tabRelativeName = 'Relative';\r\n  }\r\n\r\n  ngOnDestroy(): void {\r\n    if (this.filterPlaceholder && this.sub) {\r\n      this.sub.unsubscribe();\r\n      this.sub = null;\r\n    }\r\n  }\r\n\r\n  alterList(value: string): void {\r\n    this.filteredList = this.menuList.filter( item => item.name.toLowerCase().indexOf(value.toLowerCase()) > -1);\r\n  }\r\n\r\n  onOptionSelected(item): void {\r\n    console.log(item);\r\n    this.selectedList.push(item);\r\n  }\r\n\r\n  selectCompleted(): void {\r\n    this.selectedShown = this.selectedList;\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  selectCanceled(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n}\r\n",
+            "sourceCode": "import {\r\n  Component,\r\n  Input,\r\n  OnDestroy,\r\n  OnInit,\r\n  ViewChild\r\n} from '@angular/core';\r\nimport {FormControl} from '@angular/forms';\r\nimport {SubscriptionLike} from 'rxjs';\r\nimport {MatMenuTrigger} from '@angular/material/menu';\r\nimport {IMenuButton} from '../menu-button.interface';\r\nimport {ICheckbox} from '../../checkbox/checkbox.interface';\r\nimport {IInputNumeric} from '../../input/numeric/input-numeric.interface';\r\nimport {InputNumericSizeEnum} from '../../input/numeric/input-numeric-size.enum';\r\n\r\n@Component({\r\n  selector: 'p-menu-tabs',\r\n  templateUrl: './menu-tabs.component.html',\r\n  styleUrls: ['./menu-tabs.component.scss'],\r\n})\r\nexport class MenuTabsComponent implements OnInit, OnDestroy {\r\n  @Input() menuList: any[];\r\n  @Input() filterPlaceholder: string; // if there is a search and buttons\r\n  @Input() filterAriaLabel: string;\r\n  @Input() headerBtnFirst: IMenuButton;\r\n  @Input() headerBtnLast: ICheckbox;\r\n  @Input() footerBtnFirst: IMenuButton;\r\n  @Input() footerBtnLast: IMenuButton;\r\n  @Input() checkboxList: {\r\n    checkbox: ICheckbox,\r\n    inputNum: IInputNumeric\r\n  }[];\r\n  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;\r\n  private selectedList: any[] = [];\r\n  public selectedShown: any[] = [];\r\n  public filteredList: any[];\r\n  public customControl: FormControl;\r\n  private sub: SubscriptionLike;\r\n  public tabSpecificName: string;\r\n  public tabRelativeName: string;\r\n  public inputNumericSize = InputNumericSizeEnum;\r\n\r\n  ngOnInit(): void {\r\n    this.filteredList = this.menuList;\r\n    if (this.filterPlaceholder) {\r\n      this.customControl = new FormControl('');\r\n      this.sub = this.customControl.valueChanges.subscribe((value: string) => {\r\n        this.alterList(value);\r\n      });\r\n    }\r\n    if (!this.filterAriaLabel && this.filterPlaceholder) {\r\n      this.filterAriaLabel = this.filterPlaceholder;\r\n    }\r\n    this.tabSpecificName = 'Specific';\r\n    this.tabRelativeName = 'Relative';\r\n  }\r\n\r\n  ngOnDestroy(): void {\r\n    if (this.filterPlaceholder && this.sub) {\r\n      this.sub.unsubscribe();\r\n      this.sub = null;\r\n    }\r\n  }\r\n\r\n  alterList(value: string): void {\r\n    this.filteredList = this.menuList.filter( item => item.name.toLowerCase().indexOf(value.toLowerCase()) > -1);\r\n  }\r\n\r\n  onOptionSelected(item): void {\r\n    console.log(item);\r\n    this.selectedList.push(item);\r\n  }\r\n\r\n  selectCompleted(): void {\r\n    this.selectedShown = this.selectedList;\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  selectCanceled(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3865,7 +3871,7 @@
                 "OnInit",
                 "OnDestroy"
             ],
-            "templateData": "<button [matMenuTriggerFor]=\"menu\"\r\n        #menuTrigger=\"matMenuTrigger\"\r\n        class=\"p-btn p-btn-small p-btn-tertiary\">\r\n   <ng-template [ngIf]=\"!selectedShown?.length\" [ngIfElse]=\"selectedItems\">\r\n    {{menuTriggerName}}\r\n  </ng-template>\r\n\r\n  <ng-template #selectedItems>\r\n    <ng-container *ngFor=\"let item of selectedShown\">\r\n      <span class=\"p-menu-trigger-result\">{{item.name}}</span>\r\n    </ng-container>\r\n  </ng-template>\r\n</button>\r\n\r\n<!--menu window-->\r\n<mat-menu #menu=\"matMenu\" class=\"p-menu tabs\" [overlapTrigger]=\"false\">\r\n  <div class=\"p-menu-container\" (click)=\"$event.stopPropagation()\"\r\n                                (keydown)=\"$event.stopPropagation()\">\r\n    <mat-tab-group mat-align-tabs=\"center\"\r\n                   [disablePagination]=\"true\"\r\n                   [disableRipple]=\"true\"\r\n                   class=\"p-menu-tabs\">\r\n      <mat-tab [label]=\"tabSpecificName\">\r\n        <div class=\"p-menu-tabs-panel specific\">\r\n          <div class=\"p-menu-header\" *ngIf=\"filterPlaceholder\"\r\n               [class.extended]=\"headerBtnFirst && headerBtnLast\">\r\n            <mat-form-field class=\"p-menu-form-field\"\r\n                            appearance=\"outline\"\r\n                            floatLabel=\"always\">\r\n              <input matInput *ngIf=\"filterPlaceholder\"\r\n                     type=\"text\"\r\n                     [placeholder]=\"filterPlaceholder\"\r\n                     attr.aria-label=\"{{filterAriaLabel}}\"\r\n                     [formControl]=\"customControl\"\r\n                     autocomplete=\"off\"\r\n                     onfocus=\"this.select()\"\r\n                     class=\"p-menu-input\"/>\r\n            </mat-form-field>\r\n\r\n            <p-button *ngIf=\"headerBtnFirst\"\r\n                      class=\"p-menu-btn-line\"\r\n                      [label]=\"headerBtnFirst.label\"\r\n                      [iconBefore]=\"headerBtnFirst.icon.iconName\"\r\n                      [iconBeforeWidth]=\"headerBtnFirst.icon.width\"\r\n                      [iconBeforeHeight]=\"headerBtnFirst.icon.height\"\r\n                      [buttonType]=\"headerBtnFirst.buttonType\"\r\n                      [disabled]=\"headerBtnFirst.disabled\"></p-button>\r\n            <p-checkbox *ngIf=\"headerBtnFirst\"\r\n                        class=\"p-menu-btn-line\"\r\n                        [label]=\"headerBtnLast.label\"\r\n                        [checked]=\"headerBtnLast.checked\"\r\n                        [disabled]=\"headerBtnLast.disabled\"></p-checkbox>\r\n          </div>\r\n\r\n          <div class=\"p-menu-body\">\r\n            <mat-selection-list class=\"p-menu-body-container\">\r\n              <mat-list-option class=\"p-menu-multiple-item\"\r\n                               *ngFor=\"let item of filteredList\"\r\n                               [disableRipple]=\"true\"\r\n                               [disabled]=\"item.disabled\"\r\n                               [selected]=\"item.selected\"\r\n                               (click)=\"onOptionSelected(item)\">\r\n                {{item.name}}\r\n              </mat-list-option>\r\n            </mat-selection-list>\r\n          </div>\r\n        </div>\r\n      </mat-tab>\r\n      <mat-tab [label]=\"tabRelativeName\">\r\n        <div class=\"p-menu-tabs-panel relative\">\r\n          <ul class=\"p-menu-check-list\" *ngIf=\"checkboxList?.length\">\r\n            <li class=\"p-menu-check-item\" *ngFor=\"let checkLine of checkboxList\">\r\n              <p-checkbox class=\"p-menu-check-checkbox\"\r\n                          [label]=\"checkLine.checkbox.label\"\r\n                          [checked]=\"checkLine.checkbox.checked\"\r\n                          [disabled]=\"checkLine.checkbox.disabled\"></p-checkbox>\r\n              <p-input-numeric class=\"p-menu-check-input\"\r\n                               [label]=\"checkLine.inputNum.label\"\r\n                               [value]=\"checkLine.inputNum.value\"\r\n                               [disabled]=\"checkLine.inputNum.disabled\"\r\n                               [readonly]=\"checkLine.inputNum.readonly\"\r\n                               [size]=\"inputNumericSize.Small\"\r\n                               [labelLast]=\"true\"></p-input-numeric>\r\n            </li>\r\n          </ul>\r\n        </div>\r\n      </mat-tab>\r\n    </mat-tab-group>\r\n    <div class=\"p-menu-footer\">\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnFirst.label\"\r\n                [buttonType]=\"footerBtnFirst.buttonType\"\r\n                (click)=\"selectCompleted()\"></p-button>\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnLast.label\"\r\n                [buttonType]=\"footerBtnLast.buttonType\"\r\n                (click)=\"selectCanceled()\"></p-button>\r\n    </div>\r\n  </div>\r\n</mat-menu>\r\n\r\n<!--trigger build comment-->\r\n"
+            "templateData": "<div class=\"p-menu-trigger\"\r\n     [matMenuTriggerFor]=\"menu\"\r\n     #menuTrigger=\"matMenuTrigger\">\r\n  <ng-content></ng-content>\r\n</div>\r\n\r\n<!--menu window-->\r\n<mat-menu #menu=\"matMenu\" class=\"p-menu tabs\" [overlapTrigger]=\"false\">\r\n  <div class=\"p-menu-container\" (click)=\"$event.stopPropagation()\"\r\n                                (keydown)=\"$event.stopPropagation()\">\r\n    <mat-tab-group mat-align-tabs=\"center\"\r\n                   [disablePagination]=\"true\"\r\n                   [disableRipple]=\"true\"\r\n                   class=\"p-menu-tabs\">\r\n      <mat-tab [label]=\"tabSpecificName\">\r\n        <div class=\"p-menu-tabs-panel specific\">\r\n          <div class=\"p-menu-header\" *ngIf=\"filterPlaceholder\"\r\n               [class.extended]=\"headerBtnFirst && headerBtnLast\">\r\n            <mat-form-field class=\"p-menu-form-field\"\r\n                            appearance=\"outline\"\r\n                            floatLabel=\"always\">\r\n              <input matInput *ngIf=\"filterPlaceholder\"\r\n                     type=\"text\"\r\n                     [placeholder]=\"filterPlaceholder\"\r\n                     attr.aria-label=\"{{filterAriaLabel}}\"\r\n                     [formControl]=\"customControl\"\r\n                     autocomplete=\"off\"\r\n                     onfocus=\"this.select()\"\r\n                     class=\"p-menu-input\"/>\r\n            </mat-form-field>\r\n\r\n            <p-button *ngIf=\"headerBtnFirst\"\r\n                      class=\"p-menu-btn-line\"\r\n                      [label]=\"headerBtnFirst.label\"\r\n                      [iconBefore]=\"headerBtnFirst.icon.iconName\"\r\n                      [iconBeforeWidth]=\"headerBtnFirst.icon.width\"\r\n                      [iconBeforeHeight]=\"headerBtnFirst.icon.height\"\r\n                      [buttonType]=\"headerBtnFirst.buttonType\"\r\n                      [disabled]=\"headerBtnFirst.disabled\"></p-button>\r\n            <p-checkbox *ngIf=\"headerBtnFirst\"\r\n                        class=\"p-menu-btn-line\"\r\n                        [label]=\"headerBtnLast.label\"\r\n                        [checked]=\"headerBtnLast.checked\"\r\n                        [disabled]=\"headerBtnLast.disabled\"></p-checkbox>\r\n          </div>\r\n\r\n          <div class=\"p-menu-body\">\r\n            <mat-selection-list class=\"p-menu-body-container\">\r\n              <mat-list-option class=\"p-menu-multiple-item\"\r\n                               *ngFor=\"let item of filteredList\"\r\n                               [disableRipple]=\"true\"\r\n                               [disabled]=\"item.disabled\"\r\n                               [selected]=\"item.selected\"\r\n                               (click)=\"onOptionSelected(item)\">\r\n                {{item.name}}\r\n              </mat-list-option>\r\n            </mat-selection-list>\r\n          </div>\r\n        </div>\r\n      </mat-tab>\r\n      <mat-tab [label]=\"tabRelativeName\">\r\n        <div class=\"p-menu-tabs-panel relative\">\r\n          <ul class=\"p-menu-check-list\" *ngIf=\"checkboxList?.length\">\r\n            <li class=\"p-menu-check-item\" *ngFor=\"let checkLine of checkboxList\">\r\n              <p-checkbox class=\"p-menu-check-checkbox\"\r\n                          [label]=\"checkLine.checkbox.label\"\r\n                          [checked]=\"checkLine.checkbox.checked\"\r\n                          [disabled]=\"checkLine.checkbox.disabled\"></p-checkbox>\r\n              <p-input-numeric class=\"p-menu-check-input\"\r\n                               [label]=\"checkLine.inputNum.label\"\r\n                               [value]=\"checkLine.inputNum.value\"\r\n                               [disabled]=\"checkLine.inputNum.disabled\"\r\n                               [readonly]=\"checkLine.inputNum.readonly\"\r\n                               [size]=\"inputNumericSize.Small\"\r\n                               [labelLast]=\"true\"></p-input-numeric>\r\n            </li>\r\n          </ul>\r\n        </div>\r\n      </mat-tab>\r\n    </mat-tab-group>\r\n    <div class=\"p-menu-footer\">\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnFirst.label\"\r\n                [buttonType]=\"footerBtnFirst.buttonType\"\r\n                (click)=\"selectCompleted()\"></p-button>\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnLast.label\"\r\n                [buttonType]=\"footerBtnLast.buttonType\"\r\n                (click)=\"selectCanceled()\"></p-button>\r\n    </div>\r\n  </div>\r\n</mat-menu>\r\n\r\n<!--trigger build comment-->\r\n"
         },
         {
             "name": "RadioButtonComponent",
@@ -4435,7 +4441,13 @@
                     "type": "imports",
                     "elements": [
                         {
+                            "name": "ButtonModule"
+                        },
+                        {
                             "name": "InputModule"
+                        },
+                        {
+                            "name": "LabelModule"
                         },
                         {
                             "name": "MenuModule"
@@ -5128,17 +5140,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/icons/icon.stories.ts",
-                "type": "Story<IconComponent>",
-                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/colors/Color-palette.stories.ts",
+                "type": "Story<ColorPaletteComponent>",
+                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/colors/Color-palette.stories.ts",
-                "type": "Story<ColorPaletteComponent>",
-                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/icons/icon.stories.ts",
+                "type": "Story<IconComponent>",
+                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -6019,7 +6031,7 @@
                 "linktype": "component",
                 "name": "MenuFreeTextComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/13",
+                "coverageCount": "0/12",
                 "status": "low"
             },
             {
@@ -6037,7 +6049,7 @@
                 "linktype": "component",
                 "name": "MenuMultiSelectComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/21",
+                "coverageCount": "0/20",
                 "status": "low"
             },
             {
@@ -6046,7 +6058,7 @@
                 "linktype": "component",
                 "name": "MenuRadioGroupComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/10",
+                "coverageCount": "0/9",
                 "status": "low"
             },
             {
@@ -6064,7 +6076,7 @@
                 "linktype": "component",
                 "name": "MenuRangeComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/10",
+                "coverageCount": "0/9",
                 "status": "low"
             },
             {
@@ -6073,7 +6085,7 @@
                 "linktype": "component",
                 "name": "MenuSingleSelectComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/19",
+                "coverageCount": "0/18",
                 "status": "low"
             },
             {
@@ -6082,7 +6094,7 @@
                 "linktype": "component",
                 "name": "MenuTabsComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/25",
+                "coverageCount": "0/24",
                 "status": "low"
             },
             {
@@ -6165,7 +6177,7 @@
                 "linktype": "component",
                 "name": "AppComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/14",
+                "coverageCount": "0/19",
                 "status": "low"
             },
             {
