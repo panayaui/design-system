@@ -1,7 +1,5 @@
-@import "../../assets/styles/custom";
+@import "../menu/menu-base.component";
 
-$menu-padding: $gap-base;
-$menu-background: $gray-scale-1;
 $menu-footer-height: $btn-small-height + $menu-padding * 3;
 $menu-width: 230px;
 

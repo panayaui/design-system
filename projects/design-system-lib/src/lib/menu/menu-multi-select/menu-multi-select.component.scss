@@ -1,8 +1,6 @@
-@import "../../assets/styles/custom";
+@import "../menu/menu-base.component";
 
-$menu-padding: 8px;
 $menu-item-height: 32px;
-$menu-background: $gray-scale-1;
 $menu-item-margin-top: 4px;
 $input-text-height: 32px;
 $input-text-padding: 8px;
@@ -34,11 +32,6 @@ $menu-max-height: 75vh;
     padding: 0;
     position: relative;
   }
-}
-
-// container of the multiple selection menu
-.p-menu-multiple-container {
-  height: 100%;
 }
 
 ::ng-deep .p-menu-multiple-item.mat-list-option.mat-list-item {

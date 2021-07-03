@@ -14,7 +14,7 @@ import {ICheckbox} from '../../checkbox/checkbox.interface';
 @Component({
   selector: 'p-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss'],
+  styleUrls: ['./menu-base.component.scss'],
 })
 export class MenuComponent implements OnInit, OnDestroy {
   @Input() menuTriggerName: string;

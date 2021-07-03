@@ -2443,7 +2443,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"input-table-wrapper\">\r\n  <button class=\"input-table-trigger\" (click)=\"isSimpleTableVisible = !isSimpleTableVisible\">\r\n    <p-icon class=\"input-table-trigger-icon\"\r\n            name=\"chevron-down\"\r\n            width=\"16\"\r\n            height=\"auto\"\r\n            strokeWidth=\"3\"></p-icon>\r\n    {{inputTablePage.simple.title}}\r\n  </button>\r\n  <div *ngIf=\"isSimpleTableVisible\"\r\n      tabindex=\"-1\"\r\n      attr.aria-label=\"{{inputTablePage.simple.title}}\"\r\n      class=\"input-table-container\">\r\n    <table class=\"input-table\">\r\n      <tbody class=\"input-table-body\">\r\n      <ng-container *ngFor=\"let input of inputTablePage.simple.table\">\r\n        <tr class=\"input-table-row\">\r\n          <th class=\"input-table-header\">\r\n            <span class=\"input-table-header-text\">{{input.tableHeader}}</span>\r\n          </th>\r\n          <td class=\"input-table-data\">\r\n            <p-input-text [type]=\"input.tableData.type\"\r\n                          [label]=\"input.tableData.label\"\r\n                          [ariaLabel]=\"input.tableData.ariaLabel\"\r\n                          [placeholder]=\"input.tableData.placeholder\"\r\n                          [errorMessage]=\"input.tableData.errorMessage\"\r\n                          [disabled]=\"input.tableData.disabled\"\r\n                          [readonly]=\"input.tableData.readonly\"\r\n                          [value]=\"input.tableData.value\"\r\n                          [validators]=\"input.tableData.validators\">\r\n            </p-input-text>\r\n          </td>\r\n        </tr>\r\n      </ng-container>\r\n      </tbody>\r\n    </table>\r\n  </div>\r\n  <!--<p-input-text [type]=\"inputTablePage.simple.table[1].tableData.type\"-->\r\n                <!--[label]=\"inputTablePage.simple.table[1].tableData.label\"-->\r\n                <!--[ariaLabel]=\"inputTablePage.simple.table[1].tableData.ariaLabel\"-->\r\n                <!--[placeholder]=\"inputTablePage.simple.table[1].tableData.placeholder\"-->\r\n                <!--[errorMessage]=\"inputTablePage.simple.table[1].tableData.errorMessage\"-->\r\n                <!--[disabled]=\"inputTablePage.simple.table[1].tableData.disabled\"-->\r\n                <!--[readonly]=\"inputTablePage.simple.table[1].tableData.readonly\"-->\r\n                <!--[value]=\"inputTablePage.simple.table[1].tableData.value\"-->\r\n                <!--[validators]=\"inputTablePage.simple.table[1].tableData.validators\">-->\r\n  <!--</p-input-text>-->\r\n</div>\r\n\r\n<div class=\"input-table-wrapper\">\r\n  <button class=\"input-table-trigger\" (click)=\"isComplesTableVisible = !isComplesTableVisible\">\r\n    <p-icon class=\"input-table-trigger-icon\"\r\n            name=\"chevron-down\"\r\n            width=\"16\"\r\n            height=\"auto\"\r\n            strokeWidth=\"3\"></p-icon>\r\n    {{inputTablePage.complex.title}}\r\n  </button>\r\n  <div *ngIf=\"isComplexTableVisible\"\r\n       tabindex=\"-1\"\r\n       attr.aria-label=\"{{inputTablePage.complex.title}}\"\r\n       class=\"input-table-container\">\r\n    <table class=\"input-table\">\r\n      <tbody class=\"input-table-body\">\r\n      <ng-container *ngFor=\"let input of inputTablePage.complex.table\">\r\n        <tr class=\"input-table-row\">\r\n          <th class=\"input-table-header\">\r\n            <span class=\"input-table-header-text\">{{input.tableHeader}}</span>\r\n          </th>\r\n          <td class=\"input-table-data\">\r\n            <p-input-text [type]=\"input.tableData.type\"\r\n                          [label]=\"input.tableData.label\"\r\n                          [ariaLabel]=\"input.tableData.ariaLabel\"\r\n                          [placeholder]=\"input.tableData.placeholder\"\r\n                          [errorMessage]=\"input.tableData.errorMessage\"\r\n                          [disabled]=\"input.tableData.disabled\"\r\n                          [readonly]=\"input.tableData.readonly\"\r\n                          [value]=\"input.tableData.value\"\r\n                          [validators]=\"input.tableData.validators\">\r\n            </p-input-text>\r\n          </td>\r\n        </tr>\r\n      </ng-container>\r\n      </tbody>\r\n    </table>\r\n  </div>\r\n</div>\r\n"
+            "templateData": "<div class=\"input-table-wrapper\">\r\n  <button class=\"input-table-trigger\" (click)=\"isSimpleTableVisible = !isSimpleTableVisible\">\r\n    <p-icon class=\"input-table-trigger-icon\"\r\n            iconName=\"chevron-down\"\r\n            width=\"16\"\r\n            height=\"auto\"\r\n            strokeWidth=\"3\"></p-icon>\r\n    {{inputTablePage.simple.title}}\r\n  </button>\r\n  <div *ngIf=\"isSimpleTableVisible\"\r\n      tabindex=\"-1\"\r\n      attr.aria-label=\"{{inputTablePage.simple.title}}\"\r\n      class=\"input-table-container\">\r\n    <table class=\"input-table\">\r\n      <tbody class=\"input-table-body\">\r\n      <ng-container *ngFor=\"let input of inputTablePage.simple.table\">\r\n        <tr class=\"input-table-row\">\r\n          <th class=\"input-table-header\">\r\n            <span class=\"input-table-header-text\">{{input.tableHeader}}</span>\r\n          </th>\r\n          <td class=\"input-table-data\">\r\n            <p-input-text [type]=\"input.tableData.type\"\r\n                          [label]=\"input.tableData.label\"\r\n                          [ariaLabel]=\"input.tableData.ariaLabel\"\r\n                          [placeholder]=\"input.tableData.placeholder\"\r\n                          [errorMessage]=\"input.tableData.errorMessage\"\r\n                          [disabled]=\"input.tableData.disabled\"\r\n                          [readonly]=\"input.tableData.readonly\"\r\n                          [value]=\"input.tableData.value\"\r\n                          [validators]=\"input.tableData.validators\">\r\n            </p-input-text>\r\n          </td>\r\n        </tr>\r\n      </ng-container>\r\n      </tbody>\r\n    </table>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"input-table-wrapper\">\r\n  <button class=\"input-table-trigger\" (click)=\"isComplexTableVisible = !isComplexTableVisible\">\r\n    <p-icon class=\"input-table-trigger-icon\"\r\n            iconName=\"chevron-down\"\r\n            width=\"16\"\r\n            height=\"auto\"\r\n            strokeWidth=\"3\"></p-icon>\r\n    {{inputTablePage.complex.title}}\r\n  </button>\r\n  <div *ngIf=\"isComplexTableVisible\"\r\n       tabindex=\"-1\"\r\n       attr.aria-label=\"{{inputTablePage.complex.title}}\"\r\n       class=\"input-table-container\">\r\n    <table class=\"input-table\">\r\n      <tbody class=\"input-table-body\">\r\n      <ng-container *ngFor=\"let input of inputTablePage.complex.table\">\r\n        <tr class=\"input-table-row\">\r\n          <th class=\"input-table-header\">\r\n            <span class=\"input-table-header-text\">{{input.tableHeader}}</span>\r\n          </th>\r\n          <td class=\"input-table-data\">\r\n            <p-input-text [type]=\"input.tableData.type\"\r\n                          [label]=\"input.tableData.label\"\r\n                          [ariaLabel]=\"input.tableData.ariaLabel\"\r\n                          [placeholder]=\"input.tableData.placeholder\"\r\n                          [errorMessage]=\"input.tableData.errorMessage\"\r\n                          [disabled]=\"input.tableData.disabled\"\r\n                          [readonly]=\"input.tableData.readonly\"\r\n                          [value]=\"input.tableData.value\"\r\n                          [validators]=\"input.tableData.validators\">\r\n            </p-input-text>\r\n          </td>\r\n        </tr>\r\n      </ng-container>\r\n      </tbody>\r\n    </table>\r\n  </div>\r\n</div>\r\n"
         },
         {
             "name": "LabelMainComponent",
@@ -4938,17 +4938,17 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
+                "file": "src/environments/environment.ts",
                 "type": "object",
-                "defaultValue": "{\r\n  production: true\r\n}"
+                "defaultValue": "{\r\n  production: false\r\n}"
             },
             {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
+                "file": "src/environments/environment.prod.ts",
                 "type": "object",
-                "defaultValue": "{\r\n  production: false\r\n}"
+                "defaultValue": "{\r\n  production: true\r\n}"
             },
             {
                 "name": "ErrorMessage",
@@ -5026,17 +5026,17 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
-                "type": "Story<CheckboxGroupComponent>",
-                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "Story<CheckboxGroupPageComponent>",
+                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
-                "type": "Story<CheckboxGroupPageComponent>",
-                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
+                "type": "Story<CheckboxGroupComponent>",
+                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -5128,17 +5128,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/icons/icon.stories.ts",
-                "type": "Story<IconComponent>",
-                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/colors/Color-palette.stories.ts",
+                "type": "Story<ColorPaletteComponent>",
+                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/colors/Color-palette.stories.ts",
-                "type": "Story<ColorPaletteComponent>",
-                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/icons/icon.stories.ts",
+                "type": "Story<IconComponent>",
+                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -5152,17 +5152,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
-                "type": "Story<TypographyFontFamilyComponent>",
-                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/styles/typography-styles.stories.ts",
+                "type": "Story<TypographyStylesComponent>",
+                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/styles/typography-styles.stories.ts",
-                "type": "Story<TypographyStylesComponent>",
-                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
+                "type": "Story<TypographyFontFamilyComponent>",
+                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Toggles",
@@ -5448,16 +5448,6 @@
                     "type": "literal type"
                 }
             ],
-            "src/environments/environment.prod.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.prod.ts",
-                    "type": "object",
-                    "defaultValue": "{\r\n  production: true\r\n}"
-                }
-            ],
             "src/environments/environment.ts": [
                 {
                     "name": "environment",
@@ -5466,6 +5456,16 @@
                     "file": "src/environments/environment.ts",
                     "type": "object",
                     "defaultValue": "{\r\n  production: false\r\n}"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: true\r\n}"
                 }
             ],
             "src/stories/input-text/input-text.stories.ts": [
