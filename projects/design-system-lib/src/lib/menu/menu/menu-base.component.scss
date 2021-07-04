@@ -5,6 +5,7 @@ $menu-background: $gray-scale-1;
 $menu-footer-height: $btn-small-height + $menu-padding * 4;
 $menu-min-width: 230px;
 $menu-max-height: 75vh;
+$menu-body-min-height: 103px;
 
 
 ::ng-deep .p-menu.mat-menu-panel {
@@ -35,7 +36,6 @@ $menu-max-height: 75vh;
     height: $menu-footer-height;
     padding: $menu-padding * 2;
     background-color: $menu-background;
-    position: absolute;
     bottom: 0;
     left: 0;
     z-index: 1;
