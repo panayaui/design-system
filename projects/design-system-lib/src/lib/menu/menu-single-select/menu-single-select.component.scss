@@ -1,19 +1,18 @@
 @import "../menu/menu-base.component";
 
 $menu-item-height: 32px;
-$menu-item-margin-top: 4px;
+$menu-item-margin-top: $gap-small;
 $input-text-height: 32px;
-$input-text-padding: 8px;
+$input-text-padding: $menu-padding;
 $menu-header-height: $input-text-height + $menu-padding + $menu-padding;
-$menu-footer-height: $menu-padding * 3 + $menu-item-height * 2;
-$menu-body-height: 103px;
+$menu-footer-height: $menu-padding * 2 + $menu-item-height * 2 + 1px;
 
 %menu-item {
   font-family: $font-family-basic;
   color: $primary-a-900;
   height: $menu-item-height;
   line-height: $menu-item-height;
-  padding: 0 8px;
+  padding: 0 $menu-padding;
   @include ellipsis;
   & + & {
     margin-top: $menu-item-margin-top;
@@ -44,82 +43,6 @@ $menu-body-height: 103px;
   text-transform: uppercase;
 }
 
-// search field
-::ng-deep .p-menu {
-  &-form-field {
-    width: 100%;
-    height: $input-text-height;
-    ::placeholder {
-      font-style: italic;
-      color: $gray-scale-700;
-    }
-
-    .mat-input-element {
-      font-family: $font-family-basic;
-      font-size: $small-font-size;
-      color: $primary-a-900;
-      max-width: calc(100% - #{$input-text-padding} * 2 - 2px);
-      height: $input-text-height - 2px;
-      margin-top: 1px;
-      padding-left: $input-text-padding;
-      padding-right: $input-text-padding;
-      caret-color: $primary-a-900;
-    }
-
-    &.mat-form-field-appearance-outline {
-      &:hover {
-        .mat-form-field-outline,
-        .mat-form-field-outline-thick {
-          color: $primary-a-900;
-        }
-      }
-      .mat-form-field-wrapper {
-        height: 100%;
-        margin-top: 0;
-        margin-bottom: 0;
-        padding-bottom: 0;
-      }
-      .mat-form-field-flex {
-        height: 100%;
-        padding: 0;
-        margin-top: 0;
-      }
-      .mat-form-field-outline {
-        top: 0;
-      }
-      .mat-form-field-infix {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: $input-text-height;
-        padding: 0;
-        border-top: none;
-      }
-      .mat-form-field-outline-start {
-        border-radius: 2px 0 0 2px;
-      }
-      .mat-form-field-outline-end {
-        border-radius: 0 2px 2px 0;
-      }
-      .mat-form-field-outline,
-      .mat-form-field-outline-thick {
-        color: $gray-scale-400;
-        .mat-form-field-outline-start,
-        .mat-form-field-outline-end,
-        .mat-form-field-outline-gap {
-          border-width: 1px;
-        }
-      }
-      &.mat-focused {
-        .mat-form-field-outline,
-        .mat-form-field-outline-thick {
-          color: $primary-a-900;
-        }
-      }
-    }
-  }
-}
-
 .p-menu {
   &-header {
     width: 100%;
@@ -137,7 +60,7 @@ $menu-body-height: 103px;
     padding-left: $menu-padding;
     .p-menu-header + & {
       height: calc(100% - #{$menu-footer-height});
-      min-height: $menu-header-height + $menu-body-height + $menu-footer-height;
+      min-height: $menu-header-height + $menu-body-min-height;
       padding-top: $menu-header-height;
       padding-bottom: 0;
     }

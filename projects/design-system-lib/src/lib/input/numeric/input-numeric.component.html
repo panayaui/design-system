@@ -1,5 +1,6 @@
-<ng-template [ngIf]="label" [ngIfElse]="noLabel">
-  <div class="p-input-numeric-container" [class.no-error-message]="!errorMessage">
+<div class="p-input-numeric-container" [class.no-error-message]="!errorMessage">
+  <ng-template [ngIf]="label" [ngIfElse]="noLabel">
+
     <label *ngIf="!labelLast" class="p-input-numeric-label first" [ngClass]="{'disabled' : disabled}">
       {{label}}
     </label>
@@ -7,27 +8,27 @@
     <label *ngIf="labelLast" class="p-input-numeric-label last" [ngClass]="{'disabled' : disabled}">
       {{label}}
     </label>
-  </div>
-</ng-template>
+  </ng-template>
 
-<ng-template #noLabel>
-  <mat-form-field class="p-input-numeric"
-                  appearance="standard"
-                  [ngClass]="classes"
-                  floatLabel="always">
-    <input matInput
-           [type]="type"
-           [placeholder]="placeholder"
-           [readonly]="readonly"
-           attr.aria-label="{{ariaLabel}}"
-           [formControl]="formFieldControl"
-           [errorStateMatcher]="matcher"
-           autocomplete="off"
-           onfocus="this.select()"
-           class="p-input-numeric-input">
-    <mat-error *ngIf="formFieldControl.invalid"
-               class="p-input-numeric-error">
-      {{errorMessage}}
-    </mat-error>
-  </mat-form-field>
-</ng-template>
+  <ng-template #noLabel>
+    <mat-form-field class="p-input-numeric"
+                    appearance="standard"
+                    [ngClass]="classes"
+                    floatLabel="always">
+      <input matInput
+             [type]="type"
+             [placeholder]="placeholder"
+             [readonly]="readonly"
+             attr.aria-label="{{ariaLabel}}"
+             [formControl]="formFieldControl"
+             [errorStateMatcher]="matcher"
+             autocomplete="off"
+             onfocus="this.select()"
+             class="p-input-numeric-input">
+      <mat-error *ngIf="formFieldControl.invalid"
+                 class="p-input-numeric-error">
+        {{errorMessage}}
+      </mat-error>
+    </mat-form-field>
+  </ng-template>
+</div>

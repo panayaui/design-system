@@ -72,8 +72,8 @@ $input-text-height: 32px;
     }
     // focus
     &.mat-focused {
-      &~.mat-form-field-outline,
-      &~.mat-form-field-outline-thick {
+      .mat-form-field-outline,
+      .mat-form-field-outline-thick {
         color: $primary-a-900;
       }
     }

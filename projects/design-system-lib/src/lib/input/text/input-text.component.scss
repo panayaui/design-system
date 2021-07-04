@@ -4,17 +4,20 @@ $input-text-width: 220px;
 $input-text-padding: 8px;
 
 .p-input-text {
-  &-label {
-    font-family: $font-family-basic;
-    font-weight: 500;
-    font-size: $tiny-font-size;
-    text-transform: capitalize;
-    line-height: 19px;
-    color: $gray-scale-700;
-  }
-
   ::ng-deep & {
     // material styles override
+    &.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+      width: 100%;
+      transform: translateY(-30px);
+    }
+    .mat-form-field-label-wrapper {
+      top: -16px;
+      padding-top: 16px;
+    }
+    &.mat-form-field.mat-focused .mat-form-field-label,
+    &.mat-form-field.mat-form-field-invalid .mat-form-field-label {
+      color: $gray-scale-700;
+    }
     .p-input-text-input {
       font-family: $font-family-basic;
       font-size: $small-font-size;
@@ -83,6 +86,17 @@ $input-text-padding: 8px;
         box-shadow: none;
       }
     }
-  }
 
+    //icon
+    .mat-form-field-suffix {
+      align-self: flex-end;
+    }
+    &-icon {
+      padding-bottom: 6px;
+      .mat-form-field-disabled &,
+      .p-input-readonly & {
+        display: none;
+      }
+    }
+  }
 }

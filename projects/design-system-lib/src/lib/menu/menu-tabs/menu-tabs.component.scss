@@ -7,17 +7,9 @@ $input-text-padding: 8px;
 $tabs-width: 84px;
 $tabs-height: 28px;
 $tabs-header-height: 60px;
-$menu-header-height: $input-text-height + $menu-padding * 3 + 1px;
+$menu-header-height: $input-text-height + $menu-padding * 4 + 1px;
 $menu-header-extended-height: $input-text-height + ($menu-padding * 4.5) + ($menu-item-height * 2) + 1px;
-$menu-body-height: 103px;
 $menu-min-width: 250px;
-
-%btn-line {
-  width: 100%;
-  height: 100%;
-  padding-right: $menu-padding;
-  padding-left: $menu-padding;
-}
 
 %menu-item {
   font-family: $font-family-basic;
@@ -98,82 +90,6 @@ $menu-min-width: 250px;
   }
 }
 
-// search field
-::ng-deep .p-menu {
-  &-form-field {
-    width: 100%;
-    height: $input-text-height;
-    ::placeholder {
-      font-style: italic;
-      color: $gray-scale-700;
-    }
-
-    .mat-input-element {
-      font-family: $font-family-basic;
-      font-size: $small-font-size;
-      color: $primary-a-900;
-      max-width: calc(100% - #{$input-text-padding} * 2 - 2px);
-      height: $input-text-height - 2px;
-      margin-top: 1px;
-      padding-left: $input-text-padding;
-      padding-right: $input-text-padding;
-      caret-color: $primary-a-900;
-    }
-
-    &.mat-form-field-appearance-outline {
-      &:hover {
-        .mat-form-field-outline,
-        .mat-form-field-outline-thick {
-          color: $primary-a-900;
-        }
-      }
-      .mat-form-field-wrapper {
-        height: 100%;
-        margin-top: 0;
-        margin-bottom: 0;
-        padding-bottom: 0;
-      }
-      .mat-form-field-flex {
-        height: 100%;
-        padding: 0;
-        margin-top: 0;
-      }
-      .mat-form-field-outline {
-        top: 0;
-      }
-      .mat-form-field-infix {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: $input-text-height;
-        padding: 0;
-        border-top: none;
-      }
-      .mat-form-field-outline-start {
-        border-radius: 2px 0 0 2px;
-      }
-      .mat-form-field-outline-end {
-        border-radius: 0 2px 2px 0;
-      }
-      .mat-form-field-outline,
-      .mat-form-field-outline-thick {
-        color: $gray-scale-400;
-        .mat-form-field-outline-start,
-        .mat-form-field-outline-end,
-        .mat-form-field-outline-gap {
-          border-width: 1px;
-        }
-      }
-      &.mat-focused {
-        .mat-form-field-outline,
-        .mat-form-field-outline-thick {
-          color: $primary-a-900;
-        }
-      }
-    }
-  }
-}
-
 .p-menu {
   &-header {
     width: 100%;
@@ -192,20 +108,22 @@ $menu-min-width: 250px;
   }
 
   &-body {
-    height: calc(100% - #{$menu-footer-height});
+    height: 100%;
+    min-height: $menu-body-min-height;
     padding-top: $menu-padding;
     padding-right: 0;
     padding-bottom: 0;
     padding-left: $menu-padding;
     // there are buttons after input
     .p-menu-header.extended + & {
-      min-height: $menu-header-extended-height + $menu-body-height + $menu-footer-height;
+      min-height: $menu-header-extended-height + $menu-body-min-height + $menu-footer-height;
       padding-top: $menu-header-extended-height;
     }
 
     &-container {
       height: 100%;
       padding-top: 0;
+      padding-right: $menu-padding;
       overflow: auto;
     }
   }
@@ -216,6 +134,7 @@ $menu-min-width: 250px;
     width: 100%;
     padding-top: $menu-padding * 2;
     padding-bottom: $menu-padding * 2;
+    position: absolute;
   }
 
   &-btn-line {
@@ -226,6 +145,11 @@ $menu-min-width: 250px;
       @extend %btn-line;
       justify-content: flex-start;
     }
+    ::ng-deep .p-btn-icon-before {
+      .p-btn-label {
+        margin-left: $menu-padding;
+      }
+    }
     ::ng-deep .p-checkbox {
       display: inline-flex;
       align-items: center;
@@ -233,14 +157,24 @@ $menu-min-width: 250px;
       &:not(.mat-checkbox-disabled):hover {
         background-color: $primary-c-50;
       }
+      .mat-checkbox-label {
+        font-weight: 500;
+      }
     }
+    .p-menu-input + & {
+      margin-top: $menu-padding;
+    }
+  }
+
+  &-empty {
+    height: calc(100% - 62px);
   }
 }
 
 // tabs
 ::ng-deep .p-menu-tab-group {
   max-height: $menu-max-height;
-  height: 100%;
+  height: calc(100% - #{$menu-footer-height});
   .mat-tab-list {
     width: 100%;
     height: $tabs-header-height;
@@ -295,8 +229,10 @@ $menu-min-width: 250px;
   .mat-ink-bar {
     display: none;
   }
-
-  &-panel {
+  .mat-tab-body-content {
+    overflow: hidden;
+  }
+  .p-menu-tabs-panel {
     height: 100%;
     &.relative {
       height: calc(100% - #{$tabs-header-height});

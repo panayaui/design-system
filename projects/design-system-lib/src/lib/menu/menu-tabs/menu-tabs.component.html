@@ -24,18 +24,12 @@
         <div class="p-menu-tabs-panel specific">
           <div class="p-menu-header" *ngIf="filterPlaceholder"
                [class.extended]="headerBtnFirst && headerBtnLast">
-            <mat-form-field class="p-menu-form-field"
-                            appearance="outline"
-                            floatLabel="always">
-              <input matInput *ngIf="filterPlaceholder"
-                     type="text"
-                     [placeholder]="filterPlaceholder"
-                     attr.aria-label="{{filterAriaLabel}}"
-                     [formControl]="customControl"
-                     autocomplete="off"
-                     onfocus="this.select()"
-                     class="p-menu-input"/>
-            </mat-form-field>
+            <p-input-outline class="p-menu-input"
+                             [ariaLabel]="filterAriaLabel"
+                             [placeholder]="filterPlaceholder"
+                             [isSearch]="true"
+                             (onSearch)="alterList($event)">
+            </p-input-outline>
 
             <p-button *ngIf="headerBtnFirst"
                       class="p-menu-btn-line"
@@ -44,25 +38,35 @@
                       [iconBeforeWidth]="headerBtnFirst.icon.width"
                       [iconBeforeHeight]="headerBtnFirst.icon.height"
                       [buttonType]="headerBtnFirst.buttonType"
-                      [disabled]="headerBtnFirst.disabled"></p-button>
+                      [disabled]="!filteredList.length"></p-button>
             <p-checkbox *ngIf="headerBtnFirst"
                         class="p-menu-btn-line"
                         [label]="headerBtnLast.label"
                         [checked]="headerBtnLast.checked"
-                        [disabled]="headerBtnLast.disabled"></p-checkbox>
+                        [disabled]="!filteredList.length"></p-checkbox>
           </div>
 
           <div class="p-menu-body">
-            <mat-selection-list class="p-menu-body-container">
-              <mat-list-option class="p-menu-multiple-item"
-                               *ngFor="let item of filteredList"
-                               [disableRipple]="true"
-                               [disabled]="item.disabled"
-                               [selected]="item.selected"
-                               (click)="onOptionSelected(item)">
-                {{item.name}}
-              </mat-list-option>
-            </mat-selection-list>
+            <ng-template [ngIf]="filteredList.length" [ngIfElse]="emptyState">
+              <mat-selection-list class="p-menu-body-container">
+                <mat-list-option class="p-menu-multiple-item"
+                                 *ngFor="let item of filteredList"
+                                 [disableRipple]="true"
+                                 [disabled]="item.disabled"
+                                 [selected]="item.selected"
+                                 (click)="onOptionSelected(item)">
+                  {{item.name}}
+                </mat-list-option>
+              </mat-selection-list>
+            </ng-template>
+
+            <ng-template #emptyState>
+              <div class="p-menu-empty">
+                <p class="p-menu-empty-state paragraph-1-default">
+                  No data found
+                </p>
+              </div>
+            </ng-template>
           </div>
         </div>
       </mat-tab>

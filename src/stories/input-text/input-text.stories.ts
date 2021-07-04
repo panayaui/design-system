@@ -7,21 +7,21 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ReactiveFormsModule, Validators} from '@angular/forms';
 
-export default {
-  title: 'Components/Input',
-  component: InputTextComponent,
-  decorators: [
-    moduleMetadata({
-      declarations: [InputTextComponent],
-      imports: [CommonModule,
-        MatInputModule,
-        BrowserAnimationsModule,
-        MatFormFieldModule,
-        ReactiveFormsModule,
-        InputModule],
-    }),
-  ],
-} as Meta;
+// export default {
+//   title: 'Components/Input',
+//   component: InputTextComponent,
+//   decorators: [
+//     moduleMetadata({
+//       declarations: [InputTextComponent],
+//       imports: [CommonModule,
+//         MatInputModule,
+//         BrowserAnimationsModule,
+//         MatFormFieldModule,
+//         ReactiveFormsModule,
+//         InputModule],
+//     }),
+//   ],
+// } as Meta;
 
 const Template: Story<InputTextComponent> = (args: InputTextComponent) => ({
   props: args,
