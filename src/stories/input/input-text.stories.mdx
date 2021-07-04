@@ -1,0 +1,167 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+import {InputTextComponent} from 'projects/design-system-lib/src/public-api';
+import {InputModule} from 'projects/design-system-lib/src/public-api';
+import {Validators} from '@angular/forms';
+import {CustomErrorStateMatcher} from './custom-error-state-matcher';
+
+<Meta title='Components/Input/Text'
+  component={InputTextComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [InputModule]
+    })
+  ]}
+/>
+
+export const Template = (args) => <InputTextComponent {...args} />
+
+# Input Text
+
+###### Selector
+
+```html
+  <p-input-text></p-input-text>
+```
+
+###### No Label
+<Canvas>
+  <p className="story-title hidden-text">size</p>
+  <p className="story-title">Regular</p>
+  <p className="story-title">Error</p>
+  <p className="story-title">Error Message</p>
+  <p className="story-title">Default</p>
+  <Story name="Default"
+     args={{
+         ariaLabel: 'Label',
+         value: 'Input text'
+     }}>
+     {Template.bind({})}
+  </Story>
+  <Story name="Error State"
+    args={{
+        ariaLabel: 'Label',
+        value: null,
+        validators: Validators.required
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Error Message"
+    args={{
+        ariaLabel: 'Label',
+        value: null,
+        validators: Validators.required,
+        errorMessage: 'Validation text',
+        matcher: new CustomErrorStateMatcher()
+    }}>
+    {Template.bind({})}
+  </Story>
+  <p className="story-title">Disabled</p>
+  <Story name="Regular Disabled"
+    args={{
+        ariaLabel: 'Label',
+        value: 'Input text',
+        disabled: true
+    }}>
+  {Template.bind({})}
+  </Story>
+  <p className="story-title hidden-text">placeholder</p>
+  <p className="story-title hidden-text">placeholder</p>
+  <p className="story-title">Readonly</p>
+  <Story name="Regular Readonly"
+    args={{
+        ariaLabel: 'Label',
+        value: 'Input text',
+        readonly: true
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Label
+<Canvas>
+  <p className="story-title hidden-text">size</p>
+  <p className="story-title">Regular</p>
+  <p className="story-title">Error</p>
+  <p className="story-title">Error Message</p>
+  <p className="story-title">Default</p>
+  <Story name="Label"
+     args={{
+         label: 'Label',
+         value: 'Input text',
+     }}>
+     {Template.bind({})}
+  </Story>
+  <Story name="Label Error State"
+    args={{
+        label: 'Label',
+        value: null,
+        validators: Validators.required
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Label Error Message"
+    args={{
+        label: 'Label',
+        value: null,
+        validators: Validators.required,
+        errorMessage: 'Validation text',
+        matcher: new CustomErrorStateMatcher()
+    }}>
+    {Template.bind({})}
+  </Story>
+  <p className="story-title">Disabled</p>
+  <Story name="Label Regular Disabled"
+    args={{
+        label: 'Label',
+        value: 'Input text',
+        disabled: true
+    }}>
+  {Template.bind({})}
+  </Story>
+  <p className="story-title hidden-text">placeholder</p>
+  <p className="story-title hidden-text">placeholder</p>
+  <p className="story-title">Readonly</p>
+  <Story name="Label Regular Readonly"
+    args={{
+        ariaLabel: 'Label',
+        value: 'Input text',
+        readonly: true
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### With Icon
+<Canvas>
+  <Story name="With Icon"
+     args={{
+         value: 'Input text',
+         iconName: 'chevron-down'
+     }}>
+     {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Search
+<Canvas>
+  <Story name="Search"
+     args={{
+         value: '',
+         isSearch: true,
+         placeholder: 'Find views'
+     }}>
+     {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Component
+```ts
+
+```
+
+```html
+
+```
+
+
