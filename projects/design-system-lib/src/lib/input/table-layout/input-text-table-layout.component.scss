@@ -44,12 +44,6 @@ $table-header-padding-right: 40px;
 
 .input-table-trigger {
   @include resetButton;
-  font-family: $font-family-accent;
-  font-weight: 700;
-  font-size: $middle-font-size;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: $primary-a-900;
   margin-bottom: 15px;
   &-icon {
     display: flex;

@@ -1,6 +1,7 @@
 import {ValidatorFn} from '@angular/forms';
+import {ErrorStateMatcher} from '@angular/material/core';
 
-export default interface IInputText {
+export interface IInputText {
   type: string;
   label: string;
   ariaLabel: string;
@@ -10,4 +11,6 @@ export default interface IInputText {
   readonly: boolean;
   value: string;
   validators: ValidatorFn[];
+  matcher: ErrorStateMatcher;
+  iconName: string;
 }
