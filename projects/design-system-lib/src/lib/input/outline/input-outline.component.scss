@@ -9,7 +9,8 @@
     top: -16px;
     padding-top: 16px;
   }
-  &.mat-form-field.mat-focused .mat-form-field-label {
+  &.mat-form-field.mat-focused .mat-form-field-label,
+  &.mat-form-field.mat-form-field-invalid .mat-form-field-label {
     color: $gray-scale-700;
   }
   &-button {
