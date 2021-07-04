@@ -2,12 +2,7 @@
 
 $table-header-max-width: 240px;
 $table-header-padding-right: 40px;
-
-.page-input-text-table-layout {
-  .page-main {
-    display: block;
-  }
-}
+$table-height: 325px;
 
 .input-table {
   border-collapse: collapse;
@@ -33,24 +28,23 @@ $table-header-padding-right: 40px;
       border-top-width: 5px;
     }
   }
-}
 
-.input-table-wrapper {
-  height: 325px;
-  &~& {
-    margin-top: 220px;
+  &-trigger {
+    @include resetButton;
+    margin-bottom: 15px;
+    &-icon {
+      display: flex;
+      margin-right: 12.5px;
+    }
   }
-}
 
-.input-table-trigger {
-  @include resetButton;
-  margin-bottom: 15px;
-  &-icon {
-    display: flex;
-    margin-right: 12.5px;
+  &-container {
+    height: 0;
+    padding-left: 22px;
+    transition: height 225ms cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    &.visible {
+      height: 325px;
+    }
   }
-}
-
-.input-table-container {
-  padding-left: 22px;
 }
