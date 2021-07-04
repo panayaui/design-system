@@ -88,82 +88,6 @@ $menu-header-extended-height: $input-text-height + ($menu-padding * 4.5) + ($men
   }
 }
 
-// search field
-::ng-deep .p-menu {
-  &-form-field {
-    width: 100%;
-    height: $input-text-height;
-    ::placeholder {
-      font-style: italic;
-      color: $gray-scale-700;
-    }
-
-    .mat-input-element {
-      font-family: $font-family-basic;
-      font-size: $small-font-size;
-      color: $primary-a-900;
-      max-width: calc(100% - #{$input-text-padding} * 2 - 2px);
-      height: $input-text-height - 2px;
-      margin-top: 1px;
-      padding-left: $input-text-padding;
-      padding-right: $input-text-padding;
-      caret-color: $primary-a-900;
-    }
-
-    &.mat-form-field-appearance-outline {
-      &:hover {
-        .mat-form-field-outline,
-        .mat-form-field-outline-thick {
-          color: $primary-a-900;
-        }
-      }
-      .mat-form-field-wrapper {
-        height: 100%;
-        margin-top: 0;
-        margin-bottom: 0;
-        padding-bottom: 0;
-      }
-      .mat-form-field-flex {
-        height: 100%;
-        padding: 0;
-        margin-top: 0;
-      }
-      .mat-form-field-outline {
-        top: 0;
-      }
-      .mat-form-field-infix {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: $input-text-height;
-        padding: 0;
-        border-top: none;
-      }
-      .mat-form-field-outline-start {
-        border-radius: 2px 0 0 2px;
-      }
-      .mat-form-field-outline-end {
-        border-radius: 0 2px 2px 0;
-      }
-      .mat-form-field-outline,
-      .mat-form-field-outline-thick {
-        color: $gray-scale-400;
-        .mat-form-field-outline-start,
-        .mat-form-field-outline-end,
-        .mat-form-field-outline-gap {
-          border-width: 1px;
-        }
-      }
-      &.mat-focused {
-        .mat-form-field-outline,
-        .mat-form-field-outline-thick {
-          color: $primary-a-900;
-        }
-      }
-    }
-  }
-}
-
 .p-menu {
   &-header {
     width: 100%;
@@ -231,6 +155,9 @@ $menu-header-extended-height: $input-text-height + ($menu-padding * 4.5) + ($men
       &:not(.mat-checkbox-disabled):hover {
         background-color: $primary-c-50;
       }
+    }
+    .p-menu-input + & {
+      margin-top: $menu-padding;
     }
   }
 }

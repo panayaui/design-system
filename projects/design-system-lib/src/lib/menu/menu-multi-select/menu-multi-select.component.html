@@ -18,19 +18,12 @@
                                           (keydown)="$event.stopPropagation()">
     <div class="p-menu-header" *ngIf="filterPlaceholder"
          [class.extended]="headerBtnFirst && headerBtnLast">
-      <mat-form-field class="p-menu-form-field"
-                      appearance="outline"
-                      floatLabel="always">
-        <input matInput
-               type="text"
-               [placeholder]="filterPlaceholder"
-               attr.aria-label="{{filterAriaLabel}}"
-               [formControl]="formFieldControl"
-               autocomplete="off"
-               onfocus="this.select()"
-               class="p-menu-input">
-      </mat-form-field>
-
+      <p-input-outline class="p-menu-input"
+                       [ariaLabel]="filterAriaLabel"
+                       [placeholder]="filterPlaceholder"
+                       [isSearch]="true"
+                       (onSearch)="alterList($event)">
+      </p-input-outline>
       <p-button *ngIf="headerBtnFirst"
                 class="p-menu-btn-line"
                 [label]="headerBtnFirst.label"
