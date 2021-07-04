@@ -1,9 +1,9 @@
 @import "../menu/menu-base.component";
 
 $menu-item-height: 32px;
-$menu-item-margin-top: 4px;
+$menu-item-margin-top: $gap-small;
 $input-text-height: 32px;
-$input-text-padding: 8px;
+$input-text-padding: $menu-padding;
 $menu-header-height: $input-text-height + $menu-padding * 3 + 1px;
 $menu-header-extended-height: $input-text-height + ($menu-padding * 4.5) + ($menu-item-height * 2) + 1px;
 $menu-body-height: 103px;
@@ -21,7 +21,7 @@ $menu-body-height: 103px;
   color: $primary-a-900;
   height: $menu-item-height;
   line-height: $menu-item-height;
-  padding: 0 8px;
+  padding: 0 $menu-padding;
   & + & {
     margin-top: $menu-item-margin-top;
   }
@@ -40,7 +40,7 @@ $menu-body-height: 103px;
     padding: 0;
     .mat-list-text {
       display: inline;
-      padding-left: 8px;
+      padding-left: $menu-padding;
       padding-right: 0;
       @include ellipsis;
     }

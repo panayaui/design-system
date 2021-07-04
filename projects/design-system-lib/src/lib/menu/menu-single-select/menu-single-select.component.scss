@@ -1,9 +1,9 @@
 @import "../menu/menu-base.component";
 
 $menu-item-height: 32px;
-$menu-item-margin-top: 4px;
+$menu-item-margin-top: $gap-small;
 $input-text-height: 32px;
-$input-text-padding: 8px;
+$input-text-padding: $menu-padding;
 $menu-header-height: $input-text-height + $menu-padding + $menu-padding;
 $menu-footer-height: $menu-padding * 3 + $menu-item-height * 2;
 $menu-body-height: 103px;
@@ -13,7 +13,7 @@ $menu-body-height: 103px;
   color: $primary-a-900;
   height: $menu-item-height;
   line-height: $menu-item-height;
-  padding: 0 8px;
+  padding: 0 $menu-padding;
   @include ellipsis;
   & + & {
     margin-top: $menu-item-margin-top;
