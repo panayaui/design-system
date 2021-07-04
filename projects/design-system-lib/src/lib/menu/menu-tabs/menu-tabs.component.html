@@ -53,16 +53,26 @@
           </div>
 
           <div class="p-menu-body">
-            <mat-selection-list class="p-menu-body-container">
-              <mat-list-option class="p-menu-multiple-item"
-                               *ngFor="let item of filteredList"
-                               [disableRipple]="true"
-                               [disabled]="item.disabled"
-                               [selected]="item.selected"
-                               (click)="onOptionSelected(item)">
-                {{item.name}}
-              </mat-list-option>
-            </mat-selection-list>
+            <ng-template [ngIf]="filteredList.length" [ngIfElse]="emptyState">
+              <mat-selection-list class="p-menu-body-container">
+                <mat-list-option class="p-menu-multiple-item"
+                                 *ngFor="let item of filteredList"
+                                 [disableRipple]="true"
+                                 [disabled]="item.disabled"
+                                 [selected]="item.selected"
+                                 (click)="onOptionSelected(item)">
+                  {{item.name}}
+                </mat-list-option>
+              </mat-selection-list>
+            </ng-template>
+
+            <ng-template #emptyState>
+              <div class="p-menu-empty">
+                <p class="p-menu-empty-state paragraph-1-default">
+                  No data found
+                </p>
+              </div>
+            </ng-template>
           </div>
         </div>
       </mat-tab>
