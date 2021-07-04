@@ -2,15 +2,23 @@
                 appearance="standard"
                 [ngClass]="{'p-input-text-readonly' : readonly}"
                 floatLabel="always">
-  <mat-label class="p-input-text-label">{{label}}</mat-label>
+  <mat-label class="p-input-text-label paragraph-3-default">{{label}}</mat-label>
   <input matInput
          [type]="type"
          [placeholder]="placeholder"
          [readonly]="readonly"
          attr.aria-label="{{ariaLabel}}"
          [formControl]="formFieldControl"
+         [errorStateMatcher]="matcher"
          onfocus="this.select()"
          class="p-input-text-input">
+  <p-icon *ngIf="iconName"
+          class="p-input-text-icon"
+          matSuffix
+          [iconName]="iconName"
+          width="16"
+          height="16">
+  </p-icon>
   <mat-error *ngIf="formFieldControl.invalid"
              class="p-input-text-error">
     {{errorMessage}}

@@ -143,25 +143,36 @@ export const Template = (args) => <InputTextComponent {...args} />
   </Story>
 </Canvas>
 
-###### Search
-<Canvas>
-  <Story name="Search"
-     args={{
-         value: '',
-         isSearch: true,
-         placeholder: 'Find views'
-     }}>
-     {Template.bind({})}
-  </Story>
-</Canvas>
-
 ###### Component
 ```ts
-
+export class InputTextComponent implements OnInit {
+  @Input() type: string = 'text';
+  @Input() label: string;
+  @Input() ariaLabel: string;
+  @Input() placeholder: string;
+  @Input() errorMessage: string;
+  @Input() disabled: boolean = false;
+  @Input() readonly: boolean = false;
+  @Input() value: string;
+  @Input() validators: ValidatorFn[];
+  @Input() matcher: ErrorStateMatcher;
+  @Input() iconName: string;
+  public formFieldControl: FormControl;
+}
 ```
 
-```html
-
+```ts
+export default interface IInputText {
+  type: string;
+  label: string;
+  ariaLabel: string;
+  placeholder: string;
+  errorMessage: string;
+  disabled: boolean;
+  readonly: boolean;
+  value: string;
+  validators: ValidatorFn[];
+}
 ```
 
 
