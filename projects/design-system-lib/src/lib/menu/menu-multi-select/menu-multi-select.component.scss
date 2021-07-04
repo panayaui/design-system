@@ -7,13 +7,6 @@ $input-text-padding: $menu-padding;
 $menu-header-height: $input-text-height + $menu-padding * 3 + 1px;
 $menu-header-extended-height: $input-text-height + ($menu-padding * 4.5) + ($menu-item-height * 2) + 1px;
 
-%btn-line {
-  width: 100%;
-  height: 100%;
-  padding-right: $menu-padding;
-  padding-left: $menu-padding;
-}
-
 ::ng-deep .p-menu-multiple-item.mat-list-option.mat-list-item {
   font-family: $font-family-basic;
   font-size: $small-font-size;
@@ -140,7 +133,6 @@ $menu-header-extended-height: $input-text-height + ($menu-padding * 4.5) + ($men
       justify-content: flex-start;
     }
     ::ng-deep .p-btn-icon-before {
-      padding-left: $menu-padding;
       .p-btn-label {
         margin-left: $menu-padding;
       }
@@ -148,12 +140,12 @@ $menu-header-extended-height: $input-text-height + ($menu-padding * 4.5) + ($men
     ::ng-deep .p-checkbox {
       display: inline-flex;
       align-items: center;
-      .mat-checkbox-label {
-        font-weight: 500;
-      }
       @extend %btn-line;
       &:not(.mat-checkbox-disabled):hover {
         background-color: $primary-c-50;
+      }
+      .mat-checkbox-label {
+        font-weight: 500;
       }
     }
     .p-menu-input + & {

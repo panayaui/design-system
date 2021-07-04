@@ -7,6 +7,12 @@ $menu-min-width: 230px;
 $menu-max-height: 75vh;
 $menu-body-min-height: 103px;
 
+%btn-line {
+  width: 100%;
+  height: 100%;
+  padding-right: $menu-padding;
+  padding-left: $menu-padding;
+}
 
 ::ng-deep .p-menu.mat-menu-panel {
   min-width: $menu-min-width;
