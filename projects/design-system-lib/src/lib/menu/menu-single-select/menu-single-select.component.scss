@@ -136,7 +136,7 @@ $menu-footer-height: $menu-padding * 2 + $menu-item-height * 2 + 1px;
     padding-left: $menu-padding;
     .p-menu-header + & {
       height: calc(100% - #{$menu-footer-height});
-      min-height: $menu-header-height + $menu-body-min-height + $menu-footer-height;
+      min-height: $menu-header-height + $menu-body-min-height;
       padding-top: $menu-header-height;
       padding-bottom: 0;
     }

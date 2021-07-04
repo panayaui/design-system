@@ -237,6 +237,10 @@ $menu-min-width: 250px;
       }
     }
   }
+
+  &-empty {
+    height: calc(100% - 62px);
+  }
 }
 
 // tabs

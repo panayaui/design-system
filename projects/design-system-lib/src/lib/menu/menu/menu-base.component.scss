@@ -49,14 +49,14 @@ $menu-body-min-height: 103px;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: calc(100% - #{$menu-footer-height});
+    height: 100%;
     padding-right: $menu-padding;
     padding-bottom: $menu-padding;
     &-state {
       &:before {
         content: '';
         display: block;
-        height: 20px;
+        height: 30px;
         margin-bottom: 7px;
         background-image: url('../../assets/images/no-data.svg');
         background-repeat: no-repeat;
