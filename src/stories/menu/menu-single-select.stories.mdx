@@ -2,17 +2,8 @@ import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
 import {moduleMetadata} from '@storybook/angular';
 
 import {MenuSingleSelectComponent} from 'projects/design-system-lib/src/public-api';
-import {InputModule} from 'projects/design-system-lib/src/public-api';
-import {ButtonModule} from 'projects/design-system-lib/src/public-api';
+import {MenuModule} from 'projects/design-system-lib/src/public-api';
 import {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';
-import {IconModule} from 'projects/design-system-lib/src/public-api';
-
-import {CommonModule} from '@angular/common';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {ReactiveFormsModule} from '@angular/forms';
 
 import {stateGroups} from './stateGroups';
 
@@ -21,14 +12,7 @@ import {stateGroups} from './stateGroups';
     decorators={[
       moduleMetadata({
           imports: [
-              CommonModule,
-              BrowserAnimationsModule,
-              MatMenuModule,
-              InputModule,
-              MatInputModule,
-              MatFormFieldModule,
-              ReactiveFormsModule,
-              ButtonModule
+              MenuModule
           ]
       })
     ]}
@@ -63,8 +47,6 @@ export const Template = (args) => <MenuSingleSelectComponent {...args} />
 ```html
 <p-menu-single-select></p-menu-single-select>
 ```
-
-###### Closed on click
 <Canvas>
   <Story name="Simple Menu"
     args={{

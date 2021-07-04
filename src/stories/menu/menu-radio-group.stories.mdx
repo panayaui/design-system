@@ -2,33 +2,15 @@ import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
 import {moduleMetadata} from '@storybook/angular';
 
 import {MenuRadioGroupComponent} from 'projects/design-system-lib/src/public-api';
-import {ButtonModule} from 'projects/design-system-lib/src/public-api';
 import {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';
-import {IconModule} from 'projects/design-system-lib/src/public-api';
 import {MenuModule} from 'projects/design-system-lib/src/public-api';
-import {RadioButtonModule} from 'projects/design-system-lib/src/public-api';
-
-import {CommonModule} from '@angular/common';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {ReactiveFormsModule} from '@angular/forms';
-import {MatRadioModule} from '@angular/material/radio';
 
 <Meta title='Components/Menu/Radio Group'
     component={MenuRadioGroupComponent}
     decorators={[
       moduleMetadata({
           imports: [
-              CommonModule,
-              BrowserAnimationsModule,
-              MatMenuModule,
-              MatFormFieldModule,
-              ReactiveFormsModule,
-              MatRadioModule,
-              ButtonModule,
-              MenuModule,
-              RadioButtonModule
+              MenuModule
           ]
       })
     ]}
@@ -86,11 +68,15 @@ import {MatRadioModule} from '@angular/material/radio';
     }}
  />
 
-# Menu
+# Radio Group Menu
 
 export const Template = (args) => <MenuRadioGroupComponent {...args} />
 
-###### Radio Group Menu
+###### Selector
+```html
+<p-menu-radio-group></p-menu-radio-group>
+```
+
 <Canvas>
   <Story name="Radio"
     args={{
