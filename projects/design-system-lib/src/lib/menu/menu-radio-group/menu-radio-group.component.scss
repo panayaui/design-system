@@ -1,13 +1,8 @@
 @import "../menu/menu-base.component";
 
-$menu-item-height: 32px;
-$menu-item-margin-top: 4px;
-$input-text-height: 32px;
-$input-text-padding: 8px;
-$menu-header-height: $input-text-height + $menu-padding * 3 + 1px;
-$menu-header-extended-height: $input-text-height + ($menu-padding * 4.5) + ($menu-item-height * 2) + 1px;
-$menu-body-height: 103px;
+$menu-item-height: 36px;
 $menu-min-width: 480px;
+$menu-radio-padding: 24px;
 
 // mat-menu-panel
 ::ng-deep .p-menu.p-menu-radio.mat-menu-panel {
@@ -18,38 +13,49 @@ $menu-min-width: 480px;
   &-body {
     @include resetUl;
     height: calc(100%);
-    padding-top: 24px;
-    padding-right: 24px;
+    padding-top: $gap-double;
+    padding-right: $menu-radio-padding - $menu-padding;
     padding-bottom: $menu-footer-height;
-    padding-left: 24px;
-    &-item {
-      display: flex;
-      align-items: center;
-      height: 30px;
-      & + & {
-        margin-top: $menu-padding;
-      }
-    }
+    padding-left: $menu-radio-padding - $menu-padding;
+  }
+  &-footer {
+    padding-right: $menu-radio-padding;
+    padding-left: $menu-radio-padding;
   }
 }
 
 // every option
 .p-menu-option {
+  display: flex;
+  align-items: center;
+  height: $menu-item-height;
+  padding-left: $menu-padding;
+  &:hover {
+    background-color: $primary-c-50;
+    ::ng-deep .mat-radio-outer-circle {
+      border-color: $secondary-a-700;
+    }
+    ::ng-deep .p-btn-icon-post {
+      opacity: 1;
+    }
+  }
+  ::ng-deep .mat-radio-label {
+    padding-bottom: 2px;
+  }
   &-input {
     margin-left: 29px;
+    ::ng-deep .p-input-numeric-container {
+      padding-top: 8px;
+    }
   }
-  &-link {
-    display: inline-flex;
-    color: $secondary-a-700;
-
+  &-submenu {
     ::ng-deep .p-btn {
+      color: $secondary-a-700;
       min-width: unset;
-      padding-top: 2.5px;
       padding-left: 5px;
       padding-right: 5px;
-      &:hover,
+      background-color: transparent;
       &:focus {
-        background-color: transparent;
         .p-btn-icon-post {
           opacity: 1;
         }
@@ -69,7 +75,12 @@ $menu-min-width: 480px;
       width: 124px;
     }
   }
-  &-datepicker,
+  &-datepicker {
+    margin-left: 16px;
+    ::ng-deep .mat-form-field-wrapper {
+      padding-top: 8px;
+    }
+  }
   &-dates-ampersand {
     margin-left: 16px;
   }

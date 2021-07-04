@@ -9,7 +9,7 @@
   <div class="p-menu-container" (click)="$event.stopPropagation()"
                                 (keydown)="$event.stopPropagation()">
     <ul class="p-menu-body">
-      <li class="p-menu-body-item" *ngFor="let option of menuList">
+      <li class="p-menu-option" *ngFor="let option of menuList">
         <p-radio-button class="p-menu-option-radio"
                         [value]="option"
                         [label]="option.label"
@@ -23,12 +23,11 @@
                           [value]="option.numericInputValue">
         </p-input-numeric>
 
-        <div class="p-menu-option-link" *ngIf="option.menuList">
-          <p-menu-single-select class="p-menu-option-submenu"
-                                [menuTriggerName]="findMenuTriggerName(option.menuList)"
-                                [menuList]="option.menuList">
-          </p-menu-single-select>
-        </div>
+        <p-menu-single-select *ngIf="option.menuList"
+          class="p-menu-option-submenu"
+                              [menuTriggerName]="findMenuTriggerName(option.menuList)"
+                              [menuList]="option.menuList">
+        </p-menu-single-select>
 
         <div class="p-menu-option-dates" *ngIf="option.dateStart && option.dateEnd">
           <p-datepicker class="p-menu-option-datepicker start"
