@@ -1,7 +1,16 @@
+<p-button class="p-modal-close"
+          ariaLabel="Close Modal"
+          [buttonType]="buttonType.IsIcon"
+          iconBefore="x"
+          iconBeforeWidth="19"
+          iconBeforeStrokeColor="#FEFEFF"
+          [iconBeforeStrokeWidth]="2"
+          (onClickTask)="closeModal()"></p-button>
+
 <div class="p-modal-wrapper">
   <header class="p-modal-header" *ngIf="data.headerText">
     <p-icon *ngIf="data.headerIcon?.iconName"
-      class="p-modal-header-icon"
+            class="p-modal-header-icon"
             [iconName]="data.headerIcon.iconName"
             [width]="data.headerIcon.width"
             [height]="data.headerIcon.height"

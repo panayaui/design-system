@@ -7,7 +7,7 @@ $width-large: 1040px;
 $max-height: 87vh;
 $header-height: 64px;
 $footer-height: 72px;
-$padding-left: $gap-base-plus;
+$padding-left: $gap-double-plus;
 $padding-right: $gap-double;
 $content-text-max-width: 490px;
 
@@ -46,6 +46,14 @@ $fullScreen-height: calc(100% - #{$fullScreen-top} - #{$fullScreen-margin});
     background: $gray-scale-1;
     border-radius: 4px;
     box-shadow: none;
+    position: relative;
+    overflow: visible;
+  }
+
+  &-close {
+    position: absolute;
+    top: -30px;
+    right: -4px;
   }
 
   &-wrapper {
@@ -61,7 +69,6 @@ $fullScreen-height: calc(100% - #{$fullScreen-top} - #{$fullScreen-margin});
     padding-right: $padding-right;
     padding-left: $padding-left;
     @include ellipsis;
-    flex: 0 0 $header-height;
     &-icon {
       margin-right: $gap-double;
     }
@@ -69,7 +76,7 @@ $fullScreen-height: calc(100% - #{$fullScreen-top} - #{$fullScreen-margin});
 
   &-content {
     margin: 0;
-    padding-top: $gap-base-plus;
+    padding-top: $gap-double-plus;
     padding-right: $padding-right;
     padding-bottom: $gap-double;
     padding-left: $padding-left;
