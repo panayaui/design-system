@@ -85,4 +85,8 @@ $content-text-max-width: 500px;
   }
 }
 
+::ng-deep .cdk-overlay-dark-backdrop {
+  background: rgba(45, 48, 71, 0.8); // $primary-a-900;
+}
+
 
