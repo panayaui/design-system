@@ -7,8 +7,8 @@ $width-fullSize: 640px;
 $max-height: 87vh;
 $header-height: 64px;
 $footer-height: 72px;
-$padding-left: 24px;
-$padding-right: 16px;
+$padding-left: $gap-base-plus;
+$padding-right: $gap-double;
 $content-text-max-width: 500px;
 
 
@@ -57,13 +57,16 @@ $content-text-max-width: 500px;
 
   &-content {
     margin: 0;
-    padding-top: $gap-base;
+    padding-top: $gap-base-plus;
     padding-right: $padding-right;
     padding-bottom: $gap-double;
     padding-left: $padding-left;
     flex: 1 0;
     &-text {
       max-width: $content-text-max-width;
+    }
+    .p-modal-header + & {
+      padding-top: $gap-base;
     }
   }
 

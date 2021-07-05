@@ -33,7 +33,7 @@ import {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';
         label: 'Cancel',
         buttonType: ButtonTypeEnum.Tertiary,
       }]
-    },
+    }
   }}
 />
 
@@ -66,6 +66,64 @@ export const Template = (args) => <ModalTriggerComponent {...args} />
     args={{
       type: ModalEnum.Large,
       triggerBtnName: "Large"
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### No Header 
+<Canvas>
+  <Story name="Small No Header"
+    args={{
+      type: ModalEnum.Small,
+      triggerBtnName: "Small",
+      data: {
+        textParagraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ipsum orci, imperdiet quis cursus sed, efficitur vitae risus. Quisque lacinia, risus eu rhoncus eleifend.',
+        actions: [{
+          label: 'Some',
+          buttonType: ButtonTypeEnum.Primary,
+        },
+        {
+          label: 'Cancel',
+          buttonType: ButtonTypeEnum.Secondary,
+        }]
+      }
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Medium No Header"
+    args={{
+      type: ModalEnum.Medium,
+      triggerBtnName: "Medium",
+      data: {
+        textParagraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ipsum orci, imperdiet quis cursus sed, efficitur vitae risus. Quisque lacinia, risus eu rhoncus eleifend.',
+        actions: [{
+          label: 'Some',
+          buttonType: ButtonTypeEnum.Primary,
+        },
+        {
+          label: 'Cancel',
+          buttonType: ButtonTypeEnum.Secondary,
+        }]
+      }
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Large No Header"
+    args={{
+      type: ModalEnum.Large,
+      triggerBtnName: "Large",
+      data: {
+        textParagraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ipsum orci, imperdiet quis cursus sed, efficitur vitae risus. Quisque lacinia, risus eu rhoncus eleifend.',
+        actions: [{
+          label: 'Some',
+          buttonType: ButtonTypeEnum.Primary,
+        },
+        {
+          label: 'Cancel',
+          buttonType: ButtonTypeEnum.Secondary,
+        }]
+      }
     }}>
     {Template.bind({})}
   </Story>
