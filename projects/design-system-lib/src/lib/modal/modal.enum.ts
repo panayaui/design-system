@@ -1,7 +1,6 @@
 export enum ModalEnum {
-  Primary = 'primary',
-  Secondary = 'secondary',
-  Warning = 'warning',
+  Small = 'small',
   Medium = 'medium',
-  Success = 'success'
+  Large = 'large',
+  FullScreen = 'fullScreen'
 }

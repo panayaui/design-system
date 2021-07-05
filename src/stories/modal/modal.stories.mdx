@@ -3,6 +3,7 @@ import {moduleMetadata} from '@storybook/angular';
 import {ModalTriggerComponent} from './modal-trigger.component';
 import {ModalModule} from 'projects/design-system-lib/src/public-api';
 import {ModalEnum} from 'projects/design-system-lib/src/public-api';
+import {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';
 
 <Meta title='Components/Modal'
   component={ModalTriggerComponent}
@@ -13,12 +14,26 @@ import {ModalEnum} from 'projects/design-system-lib/src/public-api';
   ]}
   args={{
     data: {
-      icon: {iconName: 'bell'},
-      messageMain: 'Notification message.',
-      actionName: 'Action',
-      messageSub: 'Notification message.',
-      closeBtnName: 'Close'
-    }
+      headerText: 'Lorem Ipsum Title',
+      headerIcon: {
+        iconName: 'alert-triangle',
+        width: '28',
+        stroke: '#A80603'
+      },
+      textParagraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ipsum orci, imperdiet quis cursus sed, efficitur vitae risus. Quisque lacinia, risus eu rhoncus eleifend.',
+      actions: [{
+        label: 'Some',
+        buttonType: ButtonTypeEnum.Primary,
+      },
+      {
+        label: 'Action',
+        buttonType: ButtonTypeEnum.Secondary,
+      },
+      {
+        label: 'Cancel',
+        buttonType: ButtonTypeEnum.Tertiary,
+      }]
+    },
   }}
 />
 
@@ -33,16 +48,24 @@ export const Template = (args) => <ModalTriggerComponent {...args} />
 
 ###### Modal With Fixed Width 
 <Canvas>
-  <Story name="Modal"
+  <Story name="Small"
     args={{
-      type: ModalEnum.Primary,
-      data: {
-        icon: {iconName: 'bell'},
-        messageMain: 'Notification message.',
-        actionName: 'Action',
-        closeBtnName: 'Close'
-      },
-      triggerBtnName: "Primary"
+      type: ModalEnum.Small,
+      triggerBtnName: "Small"
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Medium"
+    args={{
+      type: ModalEnum.Medium,
+      triggerBtnName: "Medium"
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Large"
+    args={{
+      type: ModalEnum.Large,
+      triggerBtnName: "Large"
     }}>
     {Template.bind({})}
   </Story>

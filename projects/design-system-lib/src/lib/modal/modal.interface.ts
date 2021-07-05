@@ -1,9 +1,9 @@
 import {IIcon} from '../icon/icon.interface';
+import {IButton} from '../button/button.interface';
 
 export interface IModalData {
-  icon?: IIcon;
-  messageMain?: string;
-  actionName?: string;
-  messageSub?: string;
-  closeBtnName?: string;
+  headerIcon?: IIcon;
+  headerText?: string;
+  textParagraph?: string;
+  actions: IButton[];
 }

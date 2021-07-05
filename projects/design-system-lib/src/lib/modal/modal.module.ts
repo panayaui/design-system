@@ -4,13 +4,15 @@ import {IconModule} from '../icon/icon.module';
 import {MatDialogModule} from '@angular/material/dialog';
 import {ModalComponent} from './modal.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ButtonModule} from '../button/button.module';
 
 @NgModule({
   imports: [
     CommonModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    IconModule
+    IconModule,
+    ButtonModule
   ],
   declarations: [
     ModalComponent

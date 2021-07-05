@@ -10,8 +10,8 @@ import {ModalComponent} from 'projects/design-system-lib/src/lib/modal/modal.com
   styleUrls: ['./modal-trigger.component.scss']
 })
 export class ModalTriggerComponent {
-  @Input() data: IModalData = { actionName: 'some', messageSub: 'animal'};
-  @Input() type: ModalEnum = ModalEnum.Primary; // required
+  @Input() data: IModalData;
+  @Input() type: ModalEnum; // required
   @Input() panelClass: string | string[];
   @Input() triggerBtnName: string;
 
