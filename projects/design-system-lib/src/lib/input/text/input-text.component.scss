@@ -6,9 +6,9 @@ $input-text-padding: 8px;
 .p-input-text {
   ::ng-deep & {
     // material styles override
-    &.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    &.mat-form-field-appearance-standard.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
       width: 100%;
-      transform: translateY(-30px);
+      transform: translateY(-23px);
     }
     .mat-form-field-label-wrapper {
       top: -16px;
