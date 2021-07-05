@@ -5,10 +5,10 @@
   font-family: $font-family-basic;
   font-size: $small-font-size;
   font-weight: 500;
-  line-height: 19px;
+  line-height: 20px;
   min-width: 80px;
-  padding-right: 23px;
-  padding-left: 23px;
+  padding-right: $gap-double-plus;
+  padding-left: $gap-double-plus;
   border-radius: $btn-border-radius;
   white-space: nowrap;
   transition: all 400ms;
@@ -87,16 +87,16 @@
 
   // class of the button
   &-icon-before {
-    padding-left: 16px;
+    padding-left: $gap-double;
     .p-btn-label {
-      margin-left: 8px;
+      margin-left: $gap-base;
     }
   }
   // class of the button
   &-icon-after {
-    padding-right: 16px;
+    padding-right: $gap-double;
     .p-btn-label {
-      margin-right: 8px;
+      margin-right: $gap-base;
     }
   }
 
@@ -106,6 +106,12 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
+  }
+
+  &-isIcon {
+    line-height: unset;
+    min-width: unset;
+    padding: $gap-small;
   }
 }
 

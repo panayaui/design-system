@@ -1,18 +1,23 @@
-<button class="p-btn" [ngClass]="classes" [disabled]="disabled"
+<button class="p-btn"
+        [ngClass]="classes"
+        [disabled]="disabled"
+        attr.aria-label="{{ariaLabel}}"
         (click)="onClickTask.emit($event)">
   <p-icon *ngIf="iconBefore"
           class="p-btn-icon-pre"
           [iconName]="iconBefore"
           [width]="iconBeforeWidth"
           [height]="iconBeforeHeight"
+          [stroke]="iconBeforeStrokeColor"
           [strokeWidth]="iconBeforeStrokeWidth"
           [disabled]="disabled"></p-icon>
-  <span class="p-btn-label">{{label}}</span>
+  <span class="p-btn-label" *ngIf="label">{{label}}</span>
   <p-icon *ngIf="iconAfter"
           class="p-btn-icon-post"
           [iconName]="iconAfter"
           [width]="iconAfterWidth"
           [height]="iconAfterHeight"
+          [stroke]="iconAfterStrokeColor"
           [strokeWidth]="iconAfterStrokeWidth"
           [disabled]="disabled"></p-icon>
 </button>
