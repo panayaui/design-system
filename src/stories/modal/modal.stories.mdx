@@ -15,11 +15,6 @@ import {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';
   args={{
     data: {
       headerText: 'Lorem Ipsum Title',
-      headerIcon: {
-        iconName: 'alert-triangle',
-        width: '28',
-        stroke: '#A80603'
-      },
       textParagraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ipsum orci, imperdiet quis cursus sed, efficitur vitae risus. Quisque lacinia, risus eu rhoncus eleifend.',
       actions: [{
         label: 'Some',
@@ -66,6 +61,17 @@ export const Template = (args) => <ModalTriggerComponent {...args} />
     args={{
       type: ModalEnum.Large,
       triggerBtnName: "Large"
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Full Screen
+<Canvas>
+  <Story name="Full Screen"
+    args={{
+      type: ModalEnum.FullScreen,
+      triggerBtnName: "Full Screen"
     }}>
     {Template.bind({})}
   </Story>
@@ -129,12 +135,88 @@ export const Template = (args) => <ModalTriggerComponent {...args} />
   </Story>
 </Canvas>
 
-###### Full Screen
+###### Header With Icons
 <Canvas>
-  <Story name="Full Screen"
+  <Story name="Small With Icon"
     args={{
-      type: ModalEnum.FullScreen,
-      triggerBtnName: "Full Screen"
+      type: ModalEnum.Small,
+      triggerBtnName: "Small",
+      data: {
+        headerText: 'Lorem Ipsum Title',
+        headerIcon: {
+          iconName: 'alert-triangle',
+          width: '28',
+          stroke: '#A80603'
+        },
+        textParagraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ipsum orci, imperdiet quis cursus sed, efficitur vitae risus. Quisque lacinia, risus eu rhoncus eleifend.',
+        actions: [{
+          label: 'Some',
+          buttonType: ButtonTypeEnum.Primary,
+        },
+        {
+          label: 'Action',
+          buttonType: ButtonTypeEnum.Secondary,
+        },
+        {
+          label: 'Cancel',
+          buttonType: ButtonTypeEnum.Tertiary,
+        }]
+      }
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Medium With Icon"
+    args={{
+      type: ModalEnum.Medium,
+      triggerBtnName: "Medium",
+      data: {
+        headerText: 'Lorem Ipsum Title',
+        headerIcon: {
+          iconName: 'check-circle',
+          width: '28',
+          stroke: '#52B788'
+        },
+        textParagraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ipsum orci, imperdiet quis cursus sed, efficitur vitae risus. Quisque lacinia, risus eu rhoncus eleifend.',
+        actions: [{
+          label: 'Some',
+          buttonType: ButtonTypeEnum.Primary,
+        },
+        {
+          label: 'Action',
+          buttonType: ButtonTypeEnum.Secondary,
+        },
+        {
+          label: 'Cancel',
+          buttonType: ButtonTypeEnum.Tertiary,
+        }]
+      }
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Large With Icon"
+    args={{
+      type: ModalEnum.Large,
+      triggerBtnName: "Large",
+      data: {
+        headerText: 'Lorem Ipsum Title',
+        headerIcon: {
+          iconName: 'box',
+          width: '28'
+        },
+        textParagraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ipsum orci, imperdiet quis cursus sed, efficitur vitae risus. Quisque lacinia, risus eu rhoncus eleifend.',
+        actions: [{
+          label: 'Some',
+          buttonType: ButtonTypeEnum.Primary,
+        },
+        {
+          label: 'Action',
+          buttonType: ButtonTypeEnum.Secondary,
+        },
+        {
+          label: 'Cancel',
+          buttonType: ButtonTypeEnum.Tertiary,
+        }]
+      }
     }}>
     {Template.bind({})}
   </Story>
