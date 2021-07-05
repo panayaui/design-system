@@ -1,0 +1,69 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+import {ModalTriggerComponent} from './modal-trigger.component';
+import {ModalModule} from 'projects/design-system-lib/src/public-api';
+import {ModalEnum} from 'projects/design-system-lib/src/public-api';
+
+<Meta title='Components/Modal'
+  component={ModalTriggerComponent}
+  decorators={[
+    moduleMetadata({
+        imports: [ModalModule]
+    })
+  ]}
+  args={{
+    data: {
+      icon: {iconName: 'bell'},
+      messageMain: 'Notification message.',
+      actionName: 'Action',
+      messageSub: 'Notification message.',
+      closeBtnName: 'Close'
+    }
+  }}
+/>
+
+export const Template = (args) => <ModalTriggerComponent {...args} />
+
+# Modal
+
+###### Selector
+```html
+  <p-modal></p-modal>
+```
+
+###### Modal With Fixed Width 
+<Canvas>
+  <Story name="Modal"
+    args={{
+      type: ModalEnum.Primary,
+      data: {
+        icon: {iconName: 'bell'},
+        messageMain: 'Notification message.',
+        actionName: 'Action',
+        closeBtnName: 'Close'
+      },
+      triggerBtnName: "Primary"
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Usage
+```ts
+ 
+```
+
+###### Component
+```ts
+
+```
+
+###### IModalData
+```ts
+
+```
+
+###### ModalEnum
+```ts
+
+```

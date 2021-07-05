@@ -47,3 +47,8 @@ export * from './lib/radio-button/radio-button.module';
 export * from './lib/radio-button/radio-button/radio-button.component';
 export * from './lib/radio-button/radio-button-group/radio-button-group.component';
 export * from './lib/radio-button/radio-button.interface';
+
+export * from './lib/modal/modal.module';
+export * from './lib/modal/modal.component';
+export * from './lib/modal/modal.interface';
+export * from './lib/modal/modal.enum';
