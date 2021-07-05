@@ -3,13 +3,18 @@
 $width-small: 640px;
 $width-medium: 840px;
 $width-large: 1040px;
-$width-fullSize: 640px;
+
 $max-height: 87vh;
 $header-height: 64px;
 $footer-height: 72px;
 $padding-left: $gap-base-plus;
 $padding-right: $gap-double;
-$content-text-max-width: 500px;
+$content-text-max-width: 490px;
+
+$fullScreen-top: 64px;
+$fullScreen-margin: 32px;
+$fullScreen-width: calc(100% - #{$fullScreen-margin} * 2);
+$fullScreen-height: calc(100% - #{$fullScreen-top} - #{$fullScreen-margin});
 
 
 ::ng-deep .p-modal {
@@ -23,8 +28,15 @@ $content-text-max-width: 500px;
   &-large {
     width: $width-large;
   }
-  &-fullsize {
-    width: $width-fullSize;
+  &-fullScreen {
+    width: $fullScreen-width;
+    height: $fullScreen-height;
+    max-width: unset !important;
+    max-height: unset !important;
+    margin-top: $fullScreen-top;
+    margin-right: $fullScreen-margin;
+    margin-bottom: $fullScreen-margin;
+    margin-left: $fullScreen-margin;
   }
 
   ::ng-deep .mat-dialog-container {

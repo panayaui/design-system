@@ -129,6 +129,17 @@ export const Template = (args) => <ModalTriggerComponent {...args} />
   </Story>
 </Canvas>
 
+###### Full Screen
+<Canvas>
+  <Story name="Full Screen"
+    args={{
+      type: ModalEnum.FullScreen,
+      triggerBtnName: "Full Screen"
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
 ###### Usage
 ```ts
  
