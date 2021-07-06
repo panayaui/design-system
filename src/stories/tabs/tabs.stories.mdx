@@ -14,40 +14,40 @@ import {TabGroupModule} from 'projects/design-system-lib/src/public-api';
   ]}
   args={{ 
     tabGroup: [{
-      tabButton: { labelName: 'Tab Name' },
+      tabButton: { labelName: 'Tab Name', labelIcon: { iconName: 'grid'} },
       tabPanel: 'January Panel'
     },
     {
-      tabButton: { labelName: 'February' },
+      tabButton: { labelName: 'February', labelNotification: true },
       tabPanel: 'February Panel'
     },
     {
-      tabButton: { labelName: 'March' },
+      tabButton: { labelName: 'March', labelCounter: 1 },
       tabPanel: 'March Panel'
-    },
-     {
-      tabButton: { labelName: 'April' },
-      tabPanel: 'April Panel'
-    },
-    {
-      tabButton: { labelName: 'May' },
-      tabPanel: 'May Panel'
-    },
-     {
-      tabButton: { labelName: 'June' },
-      tabPanel: 'June Panel'
     },
     {
       tabButton: { labelName: 'July' },
       tabPanel: 'July Panel'
     },
-     {
+    {
+      tabButton: { labelName: 'April', labelIcon: { iconName: 'grid'}, labelNotification: true },
+      tabPanel: 'April Panel'
+    },
+    {
       tabButton: { labelName: 'August' },
       tabPanel: 'August Panel'
     },
     {
-      tabButton: { labelName: 'September' },
-      tabPanel: 'September Panel'
+      tabButton: { labelName: 'May', labelIcon: { iconName: 'grid'}, labelCounter: 1 },
+      tabPanel: 'May Panel'
+    },
+     {
+      tabButton: { labelName: 'June', labelNotification: true, labelCounter: 1 },
+      tabPanel: 'June Panel'
+    },
+    {
+      tabButton: { labelName: 'October', labelIcon: { iconName: 'grid'}, labelNotification: true, labelCounter: 2 },
+      tabPanel: 'October Panel'
     }]
   }}
 />
@@ -60,6 +60,7 @@ export const Template = (args) => <TabGroupComponent {...args} />
 ```ts
   <p-tab-group></p-tab-group>
 ```
+###### Default
 <Canvas>
   <Story name="Tabs"
     args={{
@@ -68,34 +69,75 @@ export const Template = (args) => <TabGroupComponent {...args} />
   </Story>
 </Canvas>
 
+###### Disabled
+<Canvas>
+  <Story name="Tabs Disabled"
+    args={{
+      tabGroup: [{
+        tabButton: { labelName: 'Tab Name', labelIcon: { iconName: 'grid'} },
+        tabPanel: 'January Panel'
+      },
+      {
+        tabButton: { labelName: 'February', labelNotification: true },
+        tabPanel: 'February Panel',
+        disabled: true
+      },
+      {
+        tabButton: { labelName: 'March', labelCounter: 1 },
+        tabPanel: 'March Panel',
+        disabled: true
+      },
+      {
+        tabButton: { labelName: 'July' },
+        tabPanel: 'July Panel',
+        disabled: true
+      },
+      {
+        tabButton: { labelName: 'April', labelIcon: { iconName: 'grid'}, labelNotification: true },
+        tabPanel: 'April Panel',
+        disabled: true
+      },
+      {
+        tabButton: { labelName: 'August' },
+        tabPanel: 'August Panel'
+      },
+      {
+        tabButton: { labelName: 'May', labelIcon: { iconName: 'grid'}, labelCounter: 1 },
+        tabPanel: 'May Panel',
+        disabled: true
+      },
+      {
+        tabButton: { labelName: 'June', labelNotification: true, labelCounter: 1 },
+        tabPanel: 'June Panel',
+        disabled: true
+      },
+      {
+        tabButton: { labelName: 'October', labelIcon: { iconName: 'grid'}, labelNotification: true, labelCounter: 2 },
+        tabPanel: 'October Panel',
+        disabled: true
+      }]
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
 ###### Component
 ```ts
-export class ToggleComponent {
-  @Input() optionsListName: string;
-  @Input() optionsList: IToggleOption[];
-  @Input() disabled: boolean;
+export class TabGroupComponent {
+  @Input() tabGroup: {
+    tabButton: ITab,
+    tabPanel: any,
+    disabled: boolean
+  }[];
 }
 ```
 
-###### IToggleOption
+###### ITab
 ```ts
-interface IToggleOption {
-  optionName: string;
-  icon: IIcon;
-  checked: boolean;
-}
-```
-
-###### IIcon
-```ts
-export interface IIcon {
-  iconName: string; // required
-  width: string;
-  height: string;
-  fill: string;
-  stroke: string;
-  strokeWidth: number;
-  strokeLinecap: string;
-  strokeLinejoin: string;
+export interface ITab {
+  labelName: string;
+  labelIcon?: IIcon;
+  labelNotification?: true;
+  labelCounter?: number;
 }
 ```

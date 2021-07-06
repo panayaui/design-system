@@ -9,7 +9,7 @@ import {ITab} from './tab.interface';
 export class TabGroupComponent {
   @Input() tabGroup: {
     tabButton: ITab,
-    tabPanel: any
+    tabPanel: any,
+    disabled: boolean
   }[];
-
 }
