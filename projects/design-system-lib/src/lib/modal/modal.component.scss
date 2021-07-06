@@ -1,0 +1,113 @@
+@import "../assets/styles/custom";
+
+$width-small: 640px;
+$width-medium: 840px;
+$width-large: 1040px;
+
+$max-height: 87vh;
+$header-height: 64px;
+$footer-height: 72px;
+$padding-left: $gap-double-plus;
+$padding-right: $gap-double;
+$content-text-max-width: 490px;
+
+$fullScreen-top: 64px;
+$fullScreen-margin: 32px;
+$fullScreen-width: calc(100% - #{$fullScreen-margin} * 2);
+$fullScreen-height: calc(100% - #{$fullScreen-top} - #{$fullScreen-margin});
+
+
+::ng-deep .p-modal {
+  max-height: $max-height;
+  &-small {
+    width: $width-small;
+  }
+  &-medium {
+    width: $width-medium;
+  }
+  &-large {
+    width: $width-large;
+  }
+  &-fullScreen {
+    width: $fullScreen-width;
+    height: $fullScreen-height;
+    max-width: unset !important;
+    max-height: unset !important;
+    margin-top: $fullScreen-top;
+    margin-right: $fullScreen-margin;
+    margin-bottom: $fullScreen-margin;
+    margin-left: $fullScreen-margin;
+  }
+
+  ::ng-deep .mat-dialog-container {
+    display: block;
+    color: $primary-a-900;
+    padding: 0;
+    background: $gray-scale-1;
+    border-radius: 4px;
+    box-shadow: none;
+    position: relative;
+    overflow: visible;
+  }
+
+  &-close {
+    position: absolute;
+    top: -30px;
+    right: -4px;
+  }
+
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    height: 100%;
+  }
+
+  &-header {
+    display: flex;
+    align-items: center;
+    height: $header-height;
+    padding-right: $padding-right;
+    padding-left: $padding-left;
+    @include ellipsis;
+    &-icon {
+      margin-right: $gap-double;
+    }
+  }
+
+  &-content {
+    margin: 0;
+    padding-top: $gap-double-plus;
+    padding-right: $padding-right;
+    padding-bottom: $gap-double;
+    padding-left: $padding-left;
+    flex: 1 0;
+    &-text {
+      max-width: $content-text-max-width;
+    }
+    .p-modal-header + & {
+      padding-top: $gap-base;
+    }
+  }
+
+  &-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: $footer-height;
+    padding-right: $padding-right;
+    padding-left: $padding-left;
+    flex: 0 0 $footer-height;
+    &-btn {
+      & + & {
+        margin-left: $gap-double;
+      }
+    }
+  }
+}
+
+::ng-deep .cdk-overlay-dark-backdrop {
+  background: rgba(45, 48, 71, 0.8); // $primary-a-900;
+}
+
+

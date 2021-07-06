@@ -1,0 +1,310 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+import {ModalTriggerComponent} from './modal-trigger.component';
+import {ModalModule, ButtonModule} from 'projects/design-system-lib/src/public-api';
+import {ModalEnum} from 'projects/design-system-lib/src/public-api';
+import {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';
+import {loremIpsum} from './loremIpsum';
+
+<Meta title='Components/Modal'
+  component={ModalTriggerComponent}
+  decorators={[
+    moduleMetadata({
+        imports: [ModalModule, ButtonModule]
+    })
+  ]}
+  args={{
+    data: {
+      headerText: 'Lorem Ipsum Title',
+      textParagraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ipsum orci, imperdiet quis cursus sed, efficitur vitae risus. Quisque lacinia, risus eu rhoncus eleifend.',
+      actions: [{
+        label: 'Some',
+        buttonType: ButtonTypeEnum.Primary,
+      },
+      {
+        label: 'Action',
+        buttonType: ButtonTypeEnum.Secondary,
+      },
+      {
+        label: 'Cancel',
+        buttonType: ButtonTypeEnum.Tertiary,
+      }]
+    }
+  }}
+/>
+
+export const Template = (args) => <ModalTriggerComponent {...args} />
+
+# Modal
+
+###### Selector
+```html
+  <p-modal></p-modal>
+```
+
+###### Modal With Fixed Width 
+<Canvas>
+  <Story name="Small"
+    args={{
+      type: ModalEnum.Small,
+      triggerBtnName: "Small"
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Medium"
+    args={{
+      type: ModalEnum.Medium,
+      triggerBtnName: "Medium"
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Large"
+    args={{
+      type: ModalEnum.Large,
+      triggerBtnName: "Large"
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Full Screen
+<Canvas>
+  <Story name="Full Screen"
+    args={{
+      type: ModalEnum.FullScreen,
+      triggerBtnName: "Full Screen"
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### No Header 
+<Canvas>
+  <Story name="Small No Header"
+    args={{
+      type: ModalEnum.Small,
+      triggerBtnName: "Small",
+      data: {
+        textParagraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ipsum orci, imperdiet quis cursus sed, efficitur vitae risus. Quisque lacinia, risus eu rhoncus eleifend.',
+        actions: [{
+          label: 'Some',
+          buttonType: ButtonTypeEnum.Primary,
+        },
+        {
+          label: 'Cancel',
+          buttonType: ButtonTypeEnum.Secondary,
+        }]
+      }
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Medium No Header"
+    args={{
+      type: ModalEnum.Medium,
+      triggerBtnName: "Medium",
+      data: {
+        textParagraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ipsum orci, imperdiet quis cursus sed, efficitur vitae risus. Quisque lacinia, risus eu rhoncus eleifend.',
+        actions: [{
+          label: 'Some',
+          buttonType: ButtonTypeEnum.Primary,
+        },
+        {
+          label: 'Cancel',
+          buttonType: ButtonTypeEnum.Secondary,
+        }]
+      }
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Large No Header"
+    args={{
+      type: ModalEnum.Large,
+      triggerBtnName: "Large",
+      data: {
+        textParagraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ipsum orci, imperdiet quis cursus sed, efficitur vitae risus. Quisque lacinia, risus eu rhoncus eleifend.',
+        actions: [{
+          label: 'Some',
+          buttonType: ButtonTypeEnum.Primary,
+        },
+        {
+          label: 'Cancel',
+          buttonType: ButtonTypeEnum.Secondary,
+        }]
+      }
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Header With Icons
+<Canvas>
+  <Story name="Small With Icon"
+    args={{
+      type: ModalEnum.Small,
+      triggerBtnName: "Small",
+      data: {
+        headerText: 'Lorem Ipsum Title',
+        headerIcon: {
+          iconName: 'alert-triangle',
+          width: '28',
+          stroke: '#A80603'
+        },
+        textParagraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ipsum orci, imperdiet quis cursus sed, efficitur vitae risus. Quisque lacinia, risus eu rhoncus eleifend.',
+        actions: [{
+          label: 'Some',
+          buttonType: ButtonTypeEnum.Distructive,
+        },
+        {
+          label: 'Action',
+          buttonType: ButtonTypeEnum.Secondary,
+        },
+        {
+          label: 'Cancel',
+          buttonType: ButtonTypeEnum.Tertiary,
+        }]
+      }
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Medium With Icon"
+    args={{
+      type: ModalEnum.Medium,
+      triggerBtnName: "Medium",
+      data: {
+        headerText: 'Lorem Ipsum Title',
+        headerIcon: {
+          iconName: 'check-circle',
+          width: '28',
+          stroke: '#52B788'
+        },
+        textParagraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ipsum orci, imperdiet quis cursus sed, efficitur vitae risus. Quisque lacinia, risus eu rhoncus eleifend.',
+        actions: [{
+          label: 'Some',
+          buttonType: ButtonTypeEnum.Distructive,
+        },
+        {
+          label: 'Action',
+          buttonType: ButtonTypeEnum.Primary,
+        },
+        {
+          label: 'Cancel',
+          buttonType: ButtonTypeEnum.Secondary,
+        }]
+      }
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Large With Icon"
+    args={{
+      type: ModalEnum.Large,
+      triggerBtnName: "Large",
+      data: {
+        headerText: 'Lorem Ipsum Title',
+        headerIcon: {
+          iconName: 'box',
+          width: '28'
+        },
+        textParagraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ipsum orci, imperdiet quis cursus sed, efficitur vitae risus. Quisque lacinia, risus eu rhoncus eleifend.',
+        actions: [{
+          label: 'Some',
+          buttonType: ButtonTypeEnum.Primary,
+        },
+        {
+          label: 'Action',
+          buttonType: ButtonTypeEnum.Secondary,
+        },
+        {
+          label: 'Cancel',
+          buttonType: ButtonTypeEnum.Tertiary,
+        }]
+      }
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### With Scroll Bar
+<Canvas>
+  <Story name="Scroll"
+    args={{
+      type: ModalEnum.Medium,
+      triggerBtnName: "Scroll",
+      data: {
+        headerText: 'Lorem Ipsum Title',
+        textParagraph: loremIpsum,
+        actions: [{
+          label: 'Some',
+          buttonType: ButtonTypeEnum.Primary,
+        },
+        {
+          label: 'Action',
+          buttonType: ButtonTypeEnum.Secondary,
+        },
+        {
+          label: 'Cancel',
+          buttonType: ButtonTypeEnum.Tertiary,
+        }]
+      }
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Usage
+```ts
+ export class ModalTriggerComponent {
+  @Input() data: IModalData;
+  @Input() type: ModalEnum; // required
+  @Input() panelClass: string | string[];
+  @Input() triggerBtnName: string;
+  public buttonType = ButtonTypeEnum;
+
+  constructor(public dialog: MatDialog) {}
+
+  openDialog(): void {
+    this.panelClass = ['p-modal', 'p-modal-' + this.type];
+    const dialogRef = this.dialog.open(ModalComponent, {
+      data: this.data,
+      panelClass: this.panelClass, // required
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed', result);
+    });
+  }
+}
+```
+
+###### Component
+```ts
+export class ModalComponent {
+  public buttonType = ButtonTypeEnum;
+
+  constructor(public dialogRef: MatDialogRef<ModalComponent>,
+              @Inject(MAT_DIALOG_DATA) public data: IModalData){}
+
+  closeModal(): void {
+    this.dialogRef.close();
+  }
+}
+```
+
+###### IModalData
+```ts
+export interface IModalData {
+  headerIcon?: IIcon;
+  headerText?: string;
+  textParagraph?: string;
+  actions: IButton[];
+}
+```
+
+###### ModalEnum
+```ts
+export enum ModalEnum {
+  Small = 'small',
+  Medium = 'medium',
+  Large = 'large',
+  FullScreen = 'fullScreen'
+}
+```

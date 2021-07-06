@@ -49,6 +49,123 @@
             "methods": []
         },
         {
+            "name": "IButton",
+            "id": "interface-IButton-a33b085d8ec879cc77ca79d3cdcc1715",
+            "file": "projects/design-system-lib/src/lib/button/button.interface.ts",
+            "type": "interface",
+            "sourceCode": "import {ButtonTypeEnum} from './button-type.enum';\r\nimport {Input} from '@angular/core';\r\n\r\nexport interface IButton {\r\n  label: string;\r\n  ariaLabel: string;\r\n  large: boolean;\r\n  disabled: boolean;\r\n  iconBefore: string;\r\n  iconBeforeWidth: string;\r\n  iconBeforeHeight: string;\r\n  iconBeforeStrokeWidth: number;\r\n  iconBeforeStrokeColor: string;\r\n  iconAfter: string;\r\n  iconAfterWidth: string;\r\n  iconAfterHeight: string;\r\n  iconAfterStrokeWidth: number;\r\n  iconAfterStrokeColor: string;\r\n  buttonType: ButtonTypeEnum;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "ariaLabel",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "buttonType",
+                    "type": "ButtonTypeEnum",
+                    "optional": false,
+                    "description": "",
+                    "line": 19
+                },
+                {
+                    "name": "disabled",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 8
+                },
+                {
+                    "name": "iconAfter",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                },
+                {
+                    "name": "iconAfterHeight",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                },
+                {
+                    "name": "iconAfterStrokeColor",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 18
+                },
+                {
+                    "name": "iconAfterStrokeWidth",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 17
+                },
+                {
+                    "name": "iconAfterWidth",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                },
+                {
+                    "name": "iconBefore",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                },
+                {
+                    "name": "iconBeforeHeight",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                },
+                {
+                    "name": "iconBeforeStrokeColor",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                },
+                {
+                    "name": "iconBeforeStrokeWidth",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "iconBeforeWidth",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                },
+                {
+                    "name": "label",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "large",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
             "name": "ICheckbox",
             "id": "interface-ICheckbox-fb62af5d1c72b56155b92ea9023e484d",
             "file": "projects/design-system-lib/src/lib/checkbox/checkbox.interface.ts",
@@ -541,6 +658,46 @@
             "kind": 150,
             "methods": [],
             "extends": "IRadioButton"
+        },
+        {
+            "name": "IModalData",
+            "id": "interface-IModalData-0c2e0e2711f239aa19e802008d711499",
+            "file": "projects/design-system-lib/src/lib/modal/modal.interface.ts",
+            "type": "interface",
+            "sourceCode": "import {IIcon} from '../icon/icon.interface';\r\nimport {IButton} from '../button/button.interface';\r\n\r\nexport interface IModalData {\r\n  headerIcon?: IIcon;\r\n  headerText?: string;\r\n  textParagraph?: string;\r\n  actions: IButton[];\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "actions",
+                    "type": "IButton[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 8
+                },
+                {
+                    "name": "headerIcon",
+                    "type": "IIcon",
+                    "optional": true,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "headerText",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "textParagraph",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 7
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
         },
         {
             "name": "IRadioButton",
@@ -1061,7 +1218,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-a96bbbcda00691d47175c3942789394e",
+            "id": "component-ButtonComponent-7e92cc6eed14e2b4dfc64ac30dd8c0ae",
             "file": "projects/design-system-lib/src/lib/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1079,59 +1236,74 @@
             "viewProviders": [],
             "inputsClass": [
                 {
+                    "name": "ariaLabel",
+                    "line": 11,
+                    "type": "string"
+                },
+                {
                     "name": "buttonType",
                     "defaultValue": "ButtonTypeEnum.Primary",
-                    "line": 21,
+                    "line": 24,
                     "type": "ButtonTypeEnum"
                 },
                 {
                     "name": "disabled",
                     "defaultValue": "false",
-                    "line": 12,
+                    "line": 13,
                     "type": "boolean"
                 },
                 {
                     "name": "iconAfter",
-                    "line": 17,
+                    "line": 19,
                     "type": "string"
                 },
                 {
                     "name": "iconAfterHeight",
                     "defaultValue": "'auto'",
-                    "line": 19,
+                    "line": 21,
+                    "type": "string"
+                },
+                {
+                    "name": "iconAfterStrokeColor",
+                    "line": 23,
                     "type": "string"
                 },
                 {
                     "name": "iconAfterStrokeWidth",
-                    "line": 20,
+                    "line": 22,
                     "type": "number"
                 },
                 {
                     "name": "iconAfterWidth",
                     "defaultValue": "'auto'",
-                    "line": 18,
+                    "line": 20,
                     "type": "string"
                 },
                 {
                     "name": "iconBefore",
-                    "line": 13,
+                    "line": 14,
                     "type": "string"
                 },
                 {
                     "name": "iconBeforeHeight",
                     "defaultValue": "'auto'",
-                    "line": 15,
+                    "line": 16,
+                    "type": "string"
+                },
+                {
+                    "name": "iconBeforeStrokeColor",
+                    "line": 18,
                     "type": "string"
                 },
                 {
                     "name": "iconBeforeStrokeWidth",
-                    "line": 16,
+                    "line": 17,
                     "type": "number"
                 },
                 {
                     "name": "iconBeforeWidth",
                     "defaultValue": "'auto'",
-                    "line": 14,
+                    "line": 15,
                     "type": "string"
                 },
                 {
@@ -1142,7 +1314,7 @@
                 {
                     "name": "large",
                     "defaultValue": "false",
-                    "line": 11,
+                    "line": 12,
                     "type": "boolean"
                 }
             ],
@@ -1150,7 +1322,7 @@
                 {
                     "name": "onClickTask",
                     "defaultValue": "new EventEmitter()",
-                    "line": 22,
+                    "line": 25,
                     "type": "EventEmitter<any>"
                 }
             ],
@@ -1161,11 +1333,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, EventEmitter, Input, Output} from '@angular/core';\r\nimport {ButtonTypeEnum} from './button-type.enum';\r\n\r\n@Component({\r\n  selector: 'p-button',\r\n  templateUrl: './button.component.html',\r\n  styleUrls: ['./button.component.scss'],\r\n})\r\nexport class ButtonComponent {\r\n  @Input() label: string;\r\n  @Input() large: boolean = false;\r\n  @Input() disabled: boolean = false;\r\n  @Input() iconBefore: string;\r\n  @Input() iconBeforeWidth: string = 'auto';\r\n  @Input() iconBeforeHeight: string = 'auto';\r\n  @Input() iconBeforeStrokeWidth: number;\r\n  @Input() iconAfter: string;\r\n  @Input() iconAfterWidth: string = 'auto';\r\n  @Input() iconAfterHeight: string = 'auto';\r\n  @Input() iconAfterStrokeWidth: number;\r\n  @Input() buttonType: ButtonTypeEnum = ButtonTypeEnum.Primary;\r\n  @Output() onClickTask: EventEmitter<any> = new EventEmitter();\r\n\r\n  public get classes(): string[] {\r\n    const classParams = [];\r\n    this.large ? classParams.push('p-btn-large') : classParams.push('p-btn-small');\r\n    this.iconBefore ? classParams.push('p-btn-icon-before') : null;\r\n    this.iconAfter ? classParams.push('p-btn-icon-after') : null;\r\n    classParams.push(`p-btn-${this.buttonType}`);\r\n    return classParams;\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, EventEmitter, Input, Output} from '@angular/core';\r\nimport {ButtonTypeEnum} from './button-type.enum';\r\n\r\n@Component({\r\n  selector: 'p-button',\r\n  templateUrl: './button.component.html',\r\n  styleUrls: ['./button.component.scss'],\r\n})\r\nexport class ButtonComponent {\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string;\r\n  @Input() large: boolean = false;\r\n  @Input() disabled: boolean = false;\r\n  @Input() iconBefore: string;\r\n  @Input() iconBeforeWidth: string = 'auto';\r\n  @Input() iconBeforeHeight: string = 'auto';\r\n  @Input() iconBeforeStrokeWidth: number;\r\n  @Input() iconBeforeStrokeColor: string;\r\n  @Input() iconAfter: string;\r\n  @Input() iconAfterWidth: string = 'auto';\r\n  @Input() iconAfterHeight: string = 'auto';\r\n  @Input() iconAfterStrokeWidth: number;\r\n  @Input() iconAfterStrokeColor: string;\r\n  @Input() buttonType: ButtonTypeEnum = ButtonTypeEnum.Primary;\r\n  @Output() onClickTask: EventEmitter<any> = new EventEmitter();\r\n\r\n  public get classes(): string[] {\r\n    const classParams = [];\r\n    this.iconBefore ? classParams.push('p-btn-icon-before') : null;\r\n    this.iconAfter ? classParams.push('p-btn-icon-after') : null;\r\n    classParams.push(`p-btn-${this.buttonType}`);\r\n    if (this.buttonType !== ButtonTypeEnum.IsIcon) {\r\n      this.large  ? classParams.push('p-btn-large') : classParams.push('p-btn-small');\r\n    }\r\n    return classParams;\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n::ng-deep .p-btn {\r\n  @include resetButton;\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  font-weight: 500;\r\n  line-height: 19px;\r\n  min-width: 80px;\r\n  padding-right: 23px;\r\n  padding-left: 23px;\r\n  border-radius: $btn-border-radius;\r\n  white-space: nowrap;\r\n  transition: all 400ms;\r\n\r\n  &-large {\r\n    height: $btn-large-height;\r\n  }\r\n\r\n  &-small {\r\n    height: $btn-small-height;\r\n  }\r\n\r\n  &:disabled {\r\n    pointer-events: none;\r\n  }\r\n\r\n  &-primary {\r\n    color: $gray-scale-1;\r\n    background-color: $secondary-a-700;\r\n    &:hover {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:focus {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      background-color: $secondary-a-50;\r\n    }\r\n  }\r\n\r\n  &-secondary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    border: 1px solid $secondary-a-700;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      border-color: $secondary-a-500;\r\n    }\r\n  }\r\n\r\n  &-tertiary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n    }\r\n  }\r\n\r\n  &-distructive {\r\n    color: $gray-scale-1;\r\n    background-color: $supportive-alert-500;\r\n    &:hover {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:focus {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      background-color: $supportive-alert-50;\r\n    }\r\n  }\r\n\r\n  // class of the button\r\n  &-icon-before {\r\n    padding-left: 16px;\r\n    .p-btn-label {\r\n      margin-left: 8px;\r\n    }\r\n  }\r\n  // class of the button\r\n  &-icon-after {\r\n    padding-right: 16px;\r\n    .p-btn-label {\r\n      margin-right: 8px;\r\n    }\r\n  }\r\n\r\n  // class of the icon\r\n  &-icon-pre,\r\n  &-icon-post {\r\n    display: inline-flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n  }\r\n}\r\n\r\n\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n::ng-deep .p-btn {\r\n  @include resetButton;\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  font-weight: 500;\r\n  line-height: 20px;\r\n  min-width: 80px;\r\n  padding-right: $gap-double-plus;\r\n  padding-left: $gap-double-plus;\r\n  border-radius: $btn-border-radius;\r\n  white-space: nowrap;\r\n  transition: all 400ms;\r\n\r\n  &-large {\r\n    height: $btn-large-height;\r\n  }\r\n\r\n  &-small {\r\n    height: $btn-small-height;\r\n  }\r\n\r\n  &:disabled {\r\n    pointer-events: none;\r\n  }\r\n\r\n  &-primary {\r\n    color: $gray-scale-1;\r\n    background-color: $secondary-a-700;\r\n    &:hover {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:focus {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      background-color: $secondary-a-50;\r\n    }\r\n  }\r\n\r\n  &-secondary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    border: 1px solid $secondary-a-700;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      border-color: $secondary-a-500;\r\n    }\r\n  }\r\n\r\n  &-tertiary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n    }\r\n  }\r\n\r\n  &-distructive {\r\n    color: $gray-scale-1;\r\n    background-color: $supportive-alert-500;\r\n    &:hover {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:focus {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      background-color: $supportive-alert-50;\r\n    }\r\n  }\r\n\r\n  // class of the button\r\n  &-icon-before {\r\n    padding-left: $gap-double;\r\n    .p-btn-label {\r\n      margin-left: $gap-base;\r\n    }\r\n  }\r\n  // class of the button\r\n  &-icon-after {\r\n    padding-right: $gap-double;\r\n    .p-btn-label {\r\n      margin-right: $gap-base;\r\n    }\r\n  }\r\n\r\n  // class of the icon\r\n  &-icon-pre,\r\n  &-icon-post {\r\n    display: inline-flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n  }\r\n\r\n  &-isIcon {\r\n    line-height: unset;\r\n    min-width: unset;\r\n    padding: $gap-small;\r\n  }\r\n}\r\n\r\n\r\n",
                     "styleUrl": "./button.component.scss"
                 }
             ],
@@ -1177,11 +1349,11 @@
                         "name": "classes",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 24
+                        "line": 27
                     }
                 }
             },
-            "templateData": "<button class=\"p-btn\" [ngClass]=\"classes\" [disabled]=\"disabled\"\r\n        (click)=\"onClickTask.emit($event)\">\r\n  <p-icon *ngIf=\"iconBefore\"\r\n          class=\"p-btn-icon-pre\"\r\n          [iconName]=\"iconBefore\"\r\n          [width]=\"iconBeforeWidth\"\r\n          [height]=\"iconBeforeHeight\"\r\n          [strokeWidth]=\"iconBeforeStrokeWidth\"\r\n          [disabled]=\"disabled\"></p-icon>\r\n  <span class=\"p-btn-label\">{{label}}</span>\r\n  <p-icon *ngIf=\"iconAfter\"\r\n          class=\"p-btn-icon-post\"\r\n          [iconName]=\"iconAfter\"\r\n          [width]=\"iconAfterWidth\"\r\n          [height]=\"iconAfterHeight\"\r\n          [strokeWidth]=\"iconAfterStrokeWidth\"\r\n          [disabled]=\"disabled\"></p-icon>\r\n</button>\r\n"
+            "templateData": "<button class=\"p-btn\"\r\n        [ngClass]=\"classes\"\r\n        [disabled]=\"disabled\"\r\n        attr.aria-label=\"{{ariaLabel}}\"\r\n        (click)=\"onClickTask.emit($event)\">\r\n  <p-icon *ngIf=\"iconBefore\"\r\n          class=\"p-btn-icon-pre\"\r\n          [iconName]=\"iconBefore\"\r\n          [width]=\"iconBeforeWidth\"\r\n          [height]=\"iconBeforeHeight\"\r\n          [stroke]=\"iconBeforeStrokeColor\"\r\n          [strokeWidth]=\"iconBeforeStrokeWidth\"\r\n          [disabled]=\"disabled\"></p-icon>\r\n  <span class=\"p-btn-label\" *ngIf=\"label\">{{label}}</span>\r\n  <p-icon *ngIf=\"iconAfter\"\r\n          class=\"p-btn-icon-post\"\r\n          [iconName]=\"iconAfter\"\r\n          [width]=\"iconAfterWidth\"\r\n          [height]=\"iconAfterHeight\"\r\n          [stroke]=\"iconAfterStrokeColor\"\r\n          [strokeWidth]=\"iconAfterStrokeWidth\"\r\n          [disabled]=\"disabled\"></p-icon>\r\n</button>\r\n"
         },
         {
             "name": "CheckboxComponent",
@@ -2391,7 +2563,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$input-text-width: 220px;\r\n$input-text-padding: 8px;\r\n\r\n.p-input-text {\r\n  ::ng-deep & {\r\n    // material styles override\r\n    &.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {\r\n      width: 100%;\r\n      transform: translateY(-30px);\r\n    }\r\n    .mat-form-field-label-wrapper {\r\n      top: -16px;\r\n      padding-top: 16px;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-label,\r\n    &.mat-form-field.mat-form-field-invalid .mat-form-field-label {\r\n      color: $gray-scale-700;\r\n    }\r\n    .p-input-text-input {\r\n      font-family: $font-family-basic;\r\n      font-size: $small-font-size;\r\n      max-width: $input-text-width - $input-text-padding;\r\n      line-height: 20px;\r\n      color: $primary-a-900;\r\n      padding-left: $input-text-padding;\r\n      caret-color: $primary-a-900;\r\n    }\r\n    .mat-form-field-infix {\r\n      width: $input-text-width;\r\n      padding-bottom: 6px;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-flex {\r\n      padding-top: 0;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $gray-scale-600;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-underline,\r\n    &:not(.mat-form-field-disabled):not(.mat-form-field-invalid)\r\n            .mat-form-field-flex:hover~.mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $primary-a-900;\r\n    }\r\n    .mat-form-field-ripple {\r\n      display: none;\r\n    }\r\n    .mat-form-field-subscript-wrapper {\r\n      margin-top: 5px;\r\n    }\r\n    .mat-error {\r\n      font-family: $font-family-basic;\r\n      font-size: $tiny-font-size;\r\n      color: $supportive-alert-500;\r\n      line-height: 12px;\r\n    }\r\n\r\n    // disabled\r\n    &.mat-form-field-disabled {\r\n      .mat-input-element {\r\n        color: $gray-scale-600;\r\n      }\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $gray-scale-400;\r\n      }\r\n    }\r\n\r\n    // error state\r\n    &.ng-invalid {\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-500;\r\n      }\r\n      &.mat-form-field .mat-form-field-flex:hover~.mat-form-field-underline,\r\n      &.mat-form-field.mat-focused .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-700;\r\n      }\r\n    }\r\n\r\n    // readonly\r\n    &.p-input-text-readonly {\r\n      &:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover~.mat-form-field-underline,\r\n\r\n      .mat-form-field-underline {\r\n        box-shadow: none;\r\n      }\r\n    }\r\n\r\n    //icon\r\n    .mat-form-field-suffix {\r\n      align-self: flex-end;\r\n    }\r\n    &-icon {\r\n      padding-bottom: 6px;\r\n      .mat-form-field-disabled &,\r\n      .p-input-readonly & {\r\n        display: none;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$input-text-width: 220px;\r\n$input-text-padding: 8px;\r\n\r\n.p-input-text {\r\n  ::ng-deep & {\r\n    // material styles override\r\n    &.mat-form-field-appearance-standard.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {\r\n      width: 100%;\r\n      transform: translateY(-23px);\r\n    }\r\n    .mat-form-field-label-wrapper {\r\n      top: -16px;\r\n      padding-top: 16px;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-label,\r\n    &.mat-form-field.mat-form-field-invalid .mat-form-field-label {\r\n      color: $gray-scale-700;\r\n    }\r\n    .p-input-text-input {\r\n      font-family: $font-family-basic;\r\n      font-size: $small-font-size;\r\n      max-width: $input-text-width - $input-text-padding;\r\n      line-height: 20px;\r\n      color: $primary-a-900;\r\n      padding-left: $input-text-padding;\r\n      caret-color: $primary-a-900;\r\n    }\r\n    .mat-form-field-infix {\r\n      width: $input-text-width;\r\n      padding-bottom: 6px;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-flex {\r\n      padding-top: 0;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $gray-scale-600;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-underline,\r\n    &:not(.mat-form-field-disabled):not(.mat-form-field-invalid)\r\n            .mat-form-field-flex:hover~.mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $primary-a-900;\r\n    }\r\n    .mat-form-field-ripple {\r\n      display: none;\r\n    }\r\n    .mat-form-field-subscript-wrapper {\r\n      margin-top: 5px;\r\n    }\r\n    .mat-error {\r\n      font-family: $font-family-basic;\r\n      font-size: $tiny-font-size;\r\n      color: $supportive-alert-500;\r\n      line-height: 12px;\r\n    }\r\n\r\n    // disabled\r\n    &.mat-form-field-disabled {\r\n      .mat-input-element {\r\n        color: $gray-scale-600;\r\n      }\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $gray-scale-400;\r\n      }\r\n    }\r\n\r\n    // error state\r\n    &.ng-invalid {\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-500;\r\n      }\r\n      &.mat-form-field .mat-form-field-flex:hover~.mat-form-field-underline,\r\n      &.mat-form-field.mat-focused .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-700;\r\n      }\r\n    }\r\n\r\n    // readonly\r\n    &.p-input-text-readonly {\r\n      &:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover~.mat-form-field-underline,\r\n\r\n      .mat-form-field-underline {\r\n        box-shadow: none;\r\n      }\r\n    }\r\n\r\n    //icon\r\n    .mat-form-field-suffix {\r\n      align-self: flex-end;\r\n    }\r\n    &-icon {\r\n      padding-bottom: 6px;\r\n      .mat-form-field-disabled &,\r\n      .p-input-readonly & {\r\n        display: none;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "./input-text.component.scss"
                 }
             ],
@@ -3938,6 +4110,232 @@
             "templateData": "<button [matMenuTriggerFor]=\"menu\"\r\n        #menuTrigger=\"matMenuTrigger\"\r\n        class=\"p-btn p-btn-small p-btn-tertiary\">\r\n   <ng-template [ngIf]=\"!selectedShown?.length\" [ngIfElse]=\"selectedItems\">\r\n    {{menuTriggerName}}\r\n  </ng-template>\r\n\r\n  <ng-template #selectedItems>\r\n    <ng-container *ngFor=\"let item of selectedShown\">\r\n      <span class=\"p-menu-trigger-result\">{{item.name}}</span>\r\n    </ng-container>\r\n  </ng-template>\r\n</button>\r\n\r\n<!--menu window-->\r\n<mat-menu #menu=\"matMenu\" class=\"p-menu p-menu-tabs\" [overlapTrigger]=\"false\">\r\n  <div class=\"p-menu-container\" (click)=\"$event.stopPropagation()\"\r\n                                (keydown)=\"$event.stopPropagation()\">\r\n    <mat-tab-group mat-align-tabs=\"center\"\r\n                   [disablePagination]=\"true\"\r\n                   [disableRipple]=\"true\"\r\n                   class=\"p-menu-tab-group\">\r\n      <mat-tab [label]=\"tabSpecificName\">\r\n        <div class=\"p-menu-tabs-panel specific\">\r\n          <div class=\"p-menu-header\" *ngIf=\"filterPlaceholder\"\r\n               [class.extended]=\"headerBtnFirst && headerBtnLast\">\r\n            <p-input-outline class=\"p-menu-input\"\r\n                             [ariaLabel]=\"filterAriaLabel\"\r\n                             [placeholder]=\"filterPlaceholder\"\r\n                             [isSearch]=\"true\"\r\n                             (onSearch)=\"alterList($event)\">\r\n            </p-input-outline>\r\n\r\n            <p-button *ngIf=\"headerBtnFirst\"\r\n                      class=\"p-menu-btn-line\"\r\n                      [label]=\"headerBtnFirst.label\"\r\n                      [iconBefore]=\"headerBtnFirst.icon.iconName\"\r\n                      [iconBeforeWidth]=\"headerBtnFirst.icon.width\"\r\n                      [iconBeforeHeight]=\"headerBtnFirst.icon.height\"\r\n                      [buttonType]=\"headerBtnFirst.buttonType\"\r\n                      [disabled]=\"!filteredList.length\"></p-button>\r\n            <p-checkbox *ngIf=\"headerBtnFirst\"\r\n                        class=\"p-menu-btn-line\"\r\n                        [label]=\"headerBtnLast.label\"\r\n                        [checked]=\"headerBtnLast.checked\"\r\n                        [disabled]=\"!filteredList.length\"></p-checkbox>\r\n          </div>\r\n\r\n          <div class=\"p-menu-body\">\r\n            <ng-template [ngIf]=\"filteredList.length\" [ngIfElse]=\"emptyState\">\r\n              <mat-selection-list class=\"p-menu-body-container\">\r\n                <mat-list-option class=\"p-menu-multiple-item\"\r\n                                 *ngFor=\"let item of filteredList\"\r\n                                 [disableRipple]=\"true\"\r\n                                 [disabled]=\"item.disabled\"\r\n                                 [selected]=\"item.selected\"\r\n                                 (click)=\"onOptionSelected(item)\">\r\n                  {{item.name}}\r\n                </mat-list-option>\r\n              </mat-selection-list>\r\n            </ng-template>\r\n\r\n            <ng-template #emptyState>\r\n              <div class=\"p-menu-empty\">\r\n                <p class=\"p-menu-empty-state paragraph-1-default\">\r\n                  No data found\r\n                </p>\r\n              </div>\r\n            </ng-template>\r\n          </div>\r\n        </div>\r\n      </mat-tab>\r\n      <mat-tab [label]=\"tabRelativeName\">\r\n        <div class=\"p-menu-tabs-panel relative\">\r\n          <ul class=\"p-menu-check-list\" *ngIf=\"checkboxList?.length\">\r\n            <li class=\"p-menu-check-item\" *ngFor=\"let checkLine of checkboxList\">\r\n              <p-checkbox class=\"p-menu-check-checkbox\"\r\n                          [label]=\"checkLine.checkbox.label\"\r\n                          [checked]=\"checkLine.checkbox.checked\"\r\n                          [disabled]=\"checkLine.checkbox.disabled\"></p-checkbox>\r\n              <p-input-numeric class=\"p-menu-check-input\"\r\n                               [label]=\"checkLine.inputNum.label\"\r\n                               [value]=\"checkLine.inputNum.value\"\r\n                               [disabled]=\"checkLine.inputNum.disabled\"\r\n                               [readonly]=\"checkLine.inputNum.readonly\"\r\n                               [size]=\"inputNumericSize.Small\"\r\n                               [labelLast]=\"true\"></p-input-numeric>\r\n            </li>\r\n          </ul>\r\n        </div>\r\n      </mat-tab>\r\n    </mat-tab-group>\r\n    <div class=\"p-menu-footer\">\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnFirst.label\"\r\n                [buttonType]=\"footerBtnFirst.buttonType\"\r\n                (click)=\"selectCompleted()\"></p-button>\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnLast.label\"\r\n                [buttonType]=\"footerBtnLast.buttonType\"\r\n                (click)=\"selectCanceled()\"></p-button>\r\n    </div>\r\n  </div>\r\n</mat-menu>\r\n\r\n<!--trigger build comment-->\r\n"
         },
         {
+            "name": "ModalComponent",
+            "id": "component-ModalComponent-fa664dd96d2d3dbc86e3109a0c4ed0e2",
+            "file": "projects/design-system-lib/src/lib/modal/modal.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-modal",
+            "styleUrls": [
+                "./modal.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./modal.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "buttonType",
+                    "defaultValue": "ButtonTypeEnum",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "data",
+                    "type": "IModalData",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "decorators": [
+                        {
+                            "name": "Inject",
+                            "stringifiedArguments": "MAT_DIALOG_DATA"
+                        }
+                    ],
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "dialogRef",
+                    "type": "MatDialogRef<ModalComponent>",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "closeModal",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 18
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, Inject} from '@angular/core';\r\nimport {IModalData} from './modal.interface';\r\nimport {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';\r\nimport {ButtonTypeEnum} from '../button/button-type.enum';\r\n\r\n@Component({\r\n  selector: 'p-modal',\r\n  templateUrl: './modal.component.html',\r\n  styleUrls: ['./modal.component.scss'],\r\n})\r\n\r\nexport class ModalComponent {\r\n  public buttonType = ButtonTypeEnum;\r\n\r\n  constructor(public dialogRef: MatDialogRef<ModalComponent>,\r\n              @Inject(MAT_DIALOG_DATA) public data: IModalData){}\r\n\r\n  closeModal(): void {\r\n    this.dialogRef.close();\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$width-small: 640px;\r\n$width-medium: 840px;\r\n$width-large: 1040px;\r\n\r\n$max-height: 87vh;\r\n$header-height: 64px;\r\n$footer-height: 72px;\r\n$padding-left: $gap-double-plus;\r\n$padding-right: $gap-double;\r\n$content-text-max-width: 490px;\r\n\r\n$fullScreen-top: 64px;\r\n$fullScreen-margin: 32px;\r\n$fullScreen-width: calc(100% - #{$fullScreen-margin} * 2);\r\n$fullScreen-height: calc(100% - #{$fullScreen-top} - #{$fullScreen-margin});\r\n\r\n\r\n::ng-deep .p-modal {\r\n  max-height: $max-height;\r\n  &-small {\r\n    width: $width-small;\r\n  }\r\n  &-medium {\r\n    width: $width-medium;\r\n  }\r\n  &-large {\r\n    width: $width-large;\r\n  }\r\n  &-fullScreen {\r\n    width: $fullScreen-width;\r\n    height: $fullScreen-height;\r\n    max-width: unset !important;\r\n    max-height: unset !important;\r\n    margin-top: $fullScreen-top;\r\n    margin-right: $fullScreen-margin;\r\n    margin-bottom: $fullScreen-margin;\r\n    margin-left: $fullScreen-margin;\r\n  }\r\n\r\n  ::ng-deep .mat-dialog-container {\r\n    display: block;\r\n    color: $primary-a-900;\r\n    padding: 0;\r\n    background: $gray-scale-1;\r\n    border-radius: 4px;\r\n    box-shadow: none;\r\n    position: relative;\r\n    overflow: visible;\r\n  }\r\n\r\n  &-close {\r\n    position: absolute;\r\n    top: -30px;\r\n    right: -4px;\r\n  }\r\n\r\n  &-wrapper {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: stretch;\r\n    height: 100%;\r\n  }\r\n\r\n  &-header {\r\n    display: flex;\r\n    align-items: center;\r\n    height: $header-height;\r\n    padding-right: $padding-right;\r\n    padding-left: $padding-left;\r\n    @include ellipsis;\r\n    &-icon {\r\n      margin-right: $gap-double;\r\n    }\r\n  }\r\n\r\n  &-content {\r\n    margin: 0;\r\n    padding-top: $gap-double-plus;\r\n    padding-right: $padding-right;\r\n    padding-bottom: $gap-double;\r\n    padding-left: $padding-left;\r\n    flex: 1 0;\r\n    &-text {\r\n      max-width: $content-text-max-width;\r\n    }\r\n    .p-modal-header + & {\r\n      padding-top: $gap-base;\r\n    }\r\n  }\r\n\r\n  &-footer {\r\n    display: flex;\r\n    justify-content: flex-end;\r\n    align-items: center;\r\n    height: $footer-height;\r\n    padding-right: $padding-right;\r\n    padding-left: $padding-left;\r\n    flex: 0 0 $footer-height;\r\n    &-btn {\r\n      & + & {\r\n        margin-left: $gap-double;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n::ng-deep .cdk-overlay-dark-backdrop {\r\n  background: rgba(45, 48, 71, 0.8); // $primary-a-900;\r\n}\r\n\r\n\r\n",
+                    "styleUrl": "./modal.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "dialogRef",
+                        "type": "MatDialogRef<ModalComponent>"
+                    },
+                    {
+                        "name": "data",
+                        "type": "IModalData"
+                    }
+                ],
+                "line": 13,
+                "jsdoctags": [
+                    {
+                        "name": "dialogRef",
+                        "type": "MatDialogRef<ModalComponent>",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "data",
+                        "type": "IModalData",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "templateData": "<p-button class=\"p-modal-close\"\r\n          ariaLabel=\"Close Modal\"\r\n          [buttonType]=\"buttonType.IsIcon\"\r\n          iconBefore=\"x\"\r\n          iconBeforeWidth=\"19\"\r\n          iconBeforeStrokeColor=\"#FEFEFF\"\r\n          [iconBeforeStrokeWidth]=\"2\"\r\n          (onClickTask)=\"closeModal()\"></p-button>\r\n\r\n<div class=\"p-modal-wrapper\">\r\n  <header class=\"p-modal-header\" *ngIf=\"data.headerText\">\r\n    <p-icon *ngIf=\"data.headerIcon?.iconName\"\r\n            class=\"p-modal-header-icon\"\r\n            [iconName]=\"data.headerIcon.iconName\"\r\n            [width]=\"data.headerIcon.width\"\r\n            [height]=\"data.headerIcon.height\"\r\n            [fill]=\"data.headerIcon.fill\"\r\n            [stroke]=\"data.headerIcon.stroke\"\r\n            [strokeWidth]=\"data.headerIcon.strokeWidth\"\r\n            [strokeLinecap]=\"data.headerIcon.strokeLinecap\"\r\n            [strokeLinejoin]=\"data.headerIcon.strokeLinejoin\"></p-icon>\r\n    <h2 class=\"p-modal-title headline-7-bold\">{{data.headerText}}</h2>\r\n  </header>\r\n\r\n  <mat-dialog-content class=\"p-modal-content\">\r\n    <p class=\"p-modal-content-text paragraph-1-default\">{{data.textParagraph}}</p>\r\n  </mat-dialog-content>\r\n\r\n  <footer class=\"p-modal-footer\">\r\n    <p-button *ngFor=\"let btn of data.actions\"\r\n              class=\"p-modal-footer-btn\"\r\n              [label]=\"btn.label\"\r\n              [large]=\"btn.large\"\r\n              [buttonType]=\"btn.buttonType\"\r\n              (onClickTask)=\"closeModal()\"></p-button>\r\n  </footer>\r\n</div>\r\n\r\n"
+        },
+        {
+            "name": "ModalTriggerComponent",
+            "id": "component-ModalTriggerComponent-4f86c5ed61b29de2862c1bb9ab04bce3",
+            "file": "src/stories/modal/modal-trigger.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "modal-trigger",
+            "styleUrls": [
+                "./modal-trigger.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./modal-trigger.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "data",
+                    "line": 14,
+                    "type": "IModalData"
+                },
+                {
+                    "name": "panelClass",
+                    "line": 16,
+                    "type": "string | string[]"
+                },
+                {
+                    "name": "triggerBtnName",
+                    "line": 17,
+                    "type": "string"
+                },
+                {
+                    "name": "type",
+                    "line": 15,
+                    "type": "ModalEnum"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "buttonType",
+                    "defaultValue": "ButtonTypeEnum",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 18,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "dialog",
+                    "type": "MatDialog",
+                    "optional": false,
+                    "description": "",
+                    "line": 20,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "openDialog",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 22
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {IModalData} from 'projects/design-system-lib/src/lib/modal/modal.interface';\r\nimport {ModalEnum} from 'projects/design-system-lib/src/lib/modal/modal.enum';\r\nimport {MatDialog} from '@angular/material/dialog';\r\nimport {ModalComponent} from 'projects/design-system-lib/src/lib/modal/modal.component';\r\nimport {ButtonTypeEnum} from '../../../projects/design-system-lib/src/lib/button/button-type.enum';\r\n\r\n@Component({\r\n  selector: 'modal-trigger',\r\n  templateUrl: './modal-trigger.component.html',\r\n  styleUrls: ['./modal-trigger.component.scss']\r\n})\r\nexport class ModalTriggerComponent {\r\n  @Input() data: IModalData;\r\n  @Input() type: ModalEnum; // required\r\n  @Input() panelClass: string | string[];\r\n  @Input() triggerBtnName: string;\r\n  public buttonType = ButtonTypeEnum;\r\n\r\n  constructor(public dialog: MatDialog) {}\r\n\r\n  openDialog(): void {\r\n    this.panelClass = ['p-modal', 'p-modal-' + this.type];\r\n    const dialogRef = this.dialog.open(ModalComponent, {\r\n      data: this.data,\r\n      panelClass: this.panelClass, // required\r\n    });\r\n\r\n    dialogRef.afterClosed().subscribe(result => {\r\n      console.log('The dialog was closed', result);\r\n    });\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./modal-trigger.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "dialog",
+                        "type": "MatDialog"
+                    }
+                ],
+                "line": 18,
+                "jsdoctags": [
+                    {
+                        "name": "dialog",
+                        "type": "MatDialog",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "templateData": "<p-button [label]=\"triggerBtnName\"\r\n          [buttonType]=\"buttonType.Secondary\"\r\n          (click)=\"openDialog()\">\r\n</p-button>\r\n"
+        },
+        {
             "name": "RadioButtonComponent",
             "id": "component-RadioButtonComponent-4867504d7fc1334b23be9b71c8fb58d5",
             "file": "projects/design-system-lib/src/lib/radio-button/radio-button/radio-button.component.ts",
@@ -4876,6 +5274,50 @@
             ]
         },
         {
+            "name": "ModalModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ModalComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "ButtonModule"
+                        },
+                        {
+                            "name": "IconModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ModalComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "RadioButtonModule",
             "children": [
                 {
@@ -5067,6 +5509,14 @@
                 "defaultValue": "{\r\n  ...InputTextStories.NoLabel.args, ariaLabel: 'Cell long long Label', errorMessage: 'Validation text', validators: Validators.required, matcher: new CustomErrorStateMatcher()\r\n}"
             },
             {
+                "name": "loremIpsum",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/modal/loremIpsum.ts",
+                "type": "",
+                "defaultValue": "'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus eros in lectus feugiat, ut congue felis ullamcorper. Sed diam enim, commodo quis ultricies eleifend, euismod vitae risus. Nulla non vestibulum metus. Pellentesque placerat rutrum turpis ac mollis. Sed est ante, condimentum eu fermentum quis, suscipit sit amet ligula. Nullam risus justo, tincidunt vel sem ac, vulputate molestie tortor. Suspendisse dui risus, venenatis et hendrerit ac, pharetra eu nunc. Sed ultricies eleifend lectus vitae hendrerit. Pellentesque non pellentesque dolor. Donec ac purus mattis, aliquet nisi id, maximus velit. Curabitur arcu sapien, suscipit nec lorem eu, consequat congue orci. Donec egestas nec nunc id placerat. Donec non laoreet arcu, non lobortis orci. Maecenas vel dapibus odio. Proin eu odio sem. Fusce porta rutrum ipsum quis venenatis.\\n' +\r\n  '\\n' +\r\n  'Integer ac diam vel justo euismod aliquet quis eget nisi. Mauris maximus pulvinar malesuada. Nulla facilisi. In sollicitudin malesuada eleifend. Nam iaculis elementum ex, sed gravida mauris dapibus vel. Mauris sed massa in nibh ornare ullamcorper non et odio. Duis porttitor tempus velit, nec facilisis libero imperdiet et. Donec scelerisque, felis nec pellentesque hendrerit, nulla nisi iaculis dolor, ac ullamcorper libero mi sed purus. Mauris metus leo, euismod id molestie quis, convallis suscipit ante. Suspendisse eu neque ut turpis porttitor condimentum in quis arcu.\\n' +\r\n  '\\n' +\r\n  'Phasellus laoreet tempor diam, in iaculis massa elementum quis. Integer vehicula neque quis nibh molestie tempor. Morbi hendrerit velit a porta feugiat. Quisque non eros ut neque varius elementum non at ex. Pellentesque vestibulum nunc ac gravida accumsan. Nulla id ipsum at libero aliquet ullamcorper nec et massa. Cras congue finibus risus a porttitor.\\n' +\r\n  '\\n' +\r\n  'Sed massa ligula, lacinia non libero non, condimentum commodo turpis. Etiam cursus turpis vel turpis consequat accumsan. Fusce nunc mauris, ultricies nec egestas vitae, interdum at felis. Quisque massa quam, consectetur ac turpis in, vehicula lacinia tortor. Etiam accumsan arcu nulla, ac semper tortor commodo ac. Nunc tempor nisl id molestie ultricies. Nullam vehicula libero sodales metus lobortis sollicitudin.\\n' +\r\n  '\\n' +\r\n  'Etiam commodo sapien mi, ultricies egestas felis tincidunt eu. Nullam vitae mi et tellus dignissim eleifend. Nullam aliquam, sapien sed blandit venenatis, dui lorem vulputate felis, a porta massa purus sodales dui. Nunc commodo lacinia diam, quis dapibus mauris vehicula ut. Integer porttitor, urna at consectetur vehicula, justo nulla euismod leo, egestas porttitor lorem lacus vel dui. Donec feugiat sollicitudin leo quis facilisis. Pellentesque vel ultrices metus. Donec et condimentum odio. In porta, lectus facilisis auctor iaculis, sem odio consequat urna, eget tincidunt mauris diam molestie lorem. In viverra justo vel justo pharetra placerat. Donec tincidunt libero ante, id consectetur arcu pulvinar sed. Curabitur eget augue imperdiet lectus viverra luctus ut in quam. Cras eget lacus non odio gravida feugiat ut nec odio. Integer vel volutpat magna, quis consequat magna. Proin non malesuada enim, eget porttitor risus.'"
+            },
+            {
                 "name": "NoLabel",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -5110,17 +5560,17 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
-                "type": "Story<CheckboxGroupComponent>",
-                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "Story<CheckboxGroupPageComponent>",
+                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
-                "type": "Story<CheckboxGroupPageComponent>",
-                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
+                "type": "Story<CheckboxGroupComponent>",
+                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -5220,14 +5670,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input-text/input-text.stories.ts",
-                "type": "Story<InputTextComponent>",
-                "defaultValue": "(args: InputTextComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/colors/Color-palette.stories.ts",
                 "type": "Story<ColorPaletteComponent>",
                 "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
@@ -5236,9 +5678,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
-                "type": "Story<TypographyFontFamilyComponent>",
-                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/input-text/input-text.stories.ts",
+                "type": "Story<InputTextComponent>",
+                "defaultValue": "(args: InputTextComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -5247,6 +5689,14 @@
                 "file": "src/stories/typography/styles/typography-styles.stories.ts",
                 "type": "Story<TypographyStylesComponent>",
                 "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
+                "type": "Story<TypographyFontFamilyComponent>",
+                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Toggles",
@@ -5339,6 +5789,10 @@
                     {
                         "name": "Distructive",
                         "value": "distructive"
+                    },
+                    {
+                        "name": "IsIcon",
+                        "value": "isIcon"
                     }
                 ],
                 "ctype": "miscellaneous",
@@ -5415,6 +5869,31 @@
                 "subtype": "enum",
                 "description": "",
                 "file": "projects/design-system-lib/src/lib/labels/label-types.enum.ts"
+            },
+            {
+                "name": "ModalEnum",
+                "childs": [
+                    {
+                        "name": "Small",
+                        "value": "small"
+                    },
+                    {
+                        "name": "Medium",
+                        "value": "medium"
+                    },
+                    {
+                        "name": "Large",
+                        "value": "large"
+                    },
+                    {
+                        "name": "FullScreen",
+                        "value": "fullScreen"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "description": "",
+                "file": "projects/design-system-lib/src/lib/modal/modal.enum.ts"
             }
         ],
         "groupedVariables": {
@@ -5656,6 +6135,16 @@
                     "defaultValue": "PageTemplate.bind({})"
                 }
             ],
+            "src/stories/modal/loremIpsum.ts": [
+                {
+                    "name": "loremIpsum",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/modal/loremIpsum.ts",
+                    "type": "",
+                    "defaultValue": "'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus eros in lectus feugiat, ut congue felis ullamcorper. Sed diam enim, commodo quis ultricies eleifend, euismod vitae risus. Nulla non vestibulum metus. Pellentesque placerat rutrum turpis ac mollis. Sed est ante, condimentum eu fermentum quis, suscipit sit amet ligula. Nullam risus justo, tincidunt vel sem ac, vulputate molestie tortor. Suspendisse dui risus, venenatis et hendrerit ac, pharetra eu nunc. Sed ultricies eleifend lectus vitae hendrerit. Pellentesque non pellentesque dolor. Donec ac purus mattis, aliquet nisi id, maximus velit. Curabitur arcu sapien, suscipit nec lorem eu, consequat congue orci. Donec egestas nec nunc id placerat. Donec non laoreet arcu, non lobortis orci. Maecenas vel dapibus odio. Proin eu odio sem. Fusce porta rutrum ipsum quis venenatis.\\n' +\r\n  '\\n' +\r\n  'Integer ac diam vel justo euismod aliquet quis eget nisi. Mauris maximus pulvinar malesuada. Nulla facilisi. In sollicitudin malesuada eleifend. Nam iaculis elementum ex, sed gravida mauris dapibus vel. Mauris sed massa in nibh ornare ullamcorper non et odio. Duis porttitor tempus velit, nec facilisis libero imperdiet et. Donec scelerisque, felis nec pellentesque hendrerit, nulla nisi iaculis dolor, ac ullamcorper libero mi sed purus. Mauris metus leo, euismod id molestie quis, convallis suscipit ante. Suspendisse eu neque ut turpis porttitor condimentum in quis arcu.\\n' +\r\n  '\\n' +\r\n  'Phasellus laoreet tempor diam, in iaculis massa elementum quis. Integer vehicula neque quis nibh molestie tempor. Morbi hendrerit velit a porta feugiat. Quisque non eros ut neque varius elementum non at ex. Pellentesque vestibulum nunc ac gravida accumsan. Nulla id ipsum at libero aliquet ullamcorper nec et massa. Cras congue finibus risus a porttitor.\\n' +\r\n  '\\n' +\r\n  'Sed massa ligula, lacinia non libero non, condimentum commodo turpis. Etiam cursus turpis vel turpis consequat accumsan. Fusce nunc mauris, ultricies nec egestas vitae, interdum at felis. Quisque massa quam, consectetur ac turpis in, vehicula lacinia tortor. Etiam accumsan arcu nulla, ac semper tortor commodo ac. Nunc tempor nisl id molestie ultricies. Nullam vehicula libero sodales metus lobortis sollicitudin.\\n' +\r\n  '\\n' +\r\n  'Etiam commodo sapien mi, ultricies egestas felis tincidunt eu. Nullam vitae mi et tellus dignissim eleifend. Nullam aliquam, sapien sed blandit venenatis, dui lorem vulputate felis, a porta massa purus sodales dui. Nunc commodo lacinia diam, quis dapibus mauris vehicula ut. Integer porttitor, urna at consectetur vehicula, justo nulla euismod leo, egestas porttitor lorem lacus vel dui. Donec feugiat sollicitudin leo quis facilisis. Pellentesque vel ultrices metus. Donec et condimentum odio. In porta, lectus facilisis auctor iaculis, sem odio consequat urna, eget tincidunt mauris diam molestie lorem. In viverra justo vel justo pharetra placerat. Donec tincidunt libero ante, id consectetur arcu pulvinar sed. Curabitur eget augue imperdiet lectus viverra luctus ut in quam. Cras eget lacus non odio gravida feugiat ut nec odio. Integer vel volutpat magna, quis consequat magna. Proin non malesuada enim, eget porttitor risus.'"
+                }
+            ],
             "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts": [
                 {
                     "name": "NoLabel",
@@ -5835,6 +6324,10 @@
                         {
                             "name": "Distructive",
                             "value": "distructive"
+                        },
+                        {
+                            "name": "IsIcon",
+                            "value": "isIcon"
                         }
                     ],
                     "ctype": "miscellaneous",
@@ -5916,6 +6409,33 @@
                     "description": "",
                     "file": "projects/design-system-lib/src/lib/labels/label-types.enum.ts"
                 }
+            ],
+            "projects/design-system-lib/src/lib/modal/modal.enum.ts": [
+                {
+                    "name": "ModalEnum",
+                    "childs": [
+                        {
+                            "name": "Small",
+                            "value": "small"
+                        },
+                        {
+                            "name": "Medium",
+                            "value": "medium"
+                        },
+                        {
+                            "name": "Large",
+                            "value": "large"
+                        },
+                        {
+                            "name": "FullScreen",
+                            "value": "fullScreen"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "description": "",
+                    "file": "projects/design-system-lib/src/lib/modal/modal.enum.ts"
+                }
             ]
         },
         "groupedTypeAliases": {}
@@ -5958,7 +6478,16 @@
                 "linktype": "component",
                 "name": "ButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/14",
+                "coverageCount": "0/17",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/button/button.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "IButton",
+                "coveragePercent": 0,
+                "coverageCount": "0/16",
                 "status": "low"
             },
             {
@@ -6184,6 +6713,24 @@
                 "name": "MenuComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/21",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/modal/modal.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ModalComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/modal/modal.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "IModalData",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
@@ -6600,6 +7147,25 @@
                 "name": "stateGroups",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/modal/loremIpsum.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "loremIpsum",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/modal/modal-trigger.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ModalTriggerComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
                 "status": "low"
             },
             {

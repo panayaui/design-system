@@ -1,0 +1,38 @@
+<p-button class="p-modal-close"
+          ariaLabel="Close Modal"
+          [buttonType]="buttonType.IsIcon"
+          iconBefore="x"
+          iconBeforeWidth="19"
+          iconBeforeStrokeColor="#FEFEFF"
+          [iconBeforeStrokeWidth]="2"
+          (onClickTask)="closeModal()"></p-button>
+
+<div class="p-modal-wrapper">
+  <header class="p-modal-header" *ngIf="data.headerText">
+    <p-icon *ngIf="data.headerIcon?.iconName"
+            class="p-modal-header-icon"
+            [iconName]="data.headerIcon.iconName"
+            [width]="data.headerIcon.width"
+            [height]="data.headerIcon.height"
+            [fill]="data.headerIcon.fill"
+            [stroke]="data.headerIcon.stroke"
+            [strokeWidth]="data.headerIcon.strokeWidth"
+            [strokeLinecap]="data.headerIcon.strokeLinecap"
+            [strokeLinejoin]="data.headerIcon.strokeLinejoin"></p-icon>
+    <h2 class="p-modal-title headline-7-bold">{{data.headerText}}</h2>
+  </header>
+
+  <mat-dialog-content class="p-modal-content">
+    <p class="p-modal-content-text paragraph-1-default">{{data.textParagraph}}</p>
+  </mat-dialog-content>
+
+  <footer class="p-modal-footer">
+    <p-button *ngFor="let btn of data.actions"
+              class="p-modal-footer-btn"
+              [label]="btn.label"
+              [large]="btn.large"
+              [buttonType]="btn.buttonType"
+              (onClickTask)="closeModal()"></p-button>
+  </footer>
+</div>
+
