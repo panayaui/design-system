@@ -1,0 +1,20 @@
+<mat-tab-group class="p-tab-group"
+              animationDuration="0ms">
+  <mat-tab *ngFor="let tab of tabGroup"
+            class="p-tab-group-button">
+    <ng-template mat-tab-label>
+      <!--<p-icon *ngIf="iconBefore"-->
+      <!--class="p-btn-icon-pre"-->
+      <!--[iconName]="iconBefore"-->
+      <!--[width]="iconBeforeWidth"-->
+      <!--[height]="iconBeforeHeight"-->
+      <!--[stroke]="iconBeforeStrokeColor"-->
+      <!--[strokeWidth]="iconBeforeStrokeWidth"-->
+      <!--[disabled]="disabled"></p-icon>-->
+      <span class="p-tab-group-label paragraph-1-default">
+        {{tab.tabButton.labelName}}
+      </span>
+    </ng-template>
+    {{tab.tabPanel}}
+  </mat-tab>
+</mat-tab-group>

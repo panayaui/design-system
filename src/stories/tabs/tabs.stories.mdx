@@ -1,0 +1,101 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+import {TabGroupComponent} from 'projects/design-system-lib/src/public-api';
+import {TabGroupModule} from 'projects/design-system-lib/src/public-api';
+
+<Meta title='Components/Tabs'
+  component={TabGroupComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [
+        TabGroupModule
+      ]
+    })
+  ]}
+  args={{ 
+    tabGroup: [{
+      tabButton: { labelName: 'Tab Name' },
+      tabPanel: 'January Panel'
+    },
+    {
+      tabButton: { labelName: 'February' },
+      tabPanel: 'February Panel'
+    },
+    {
+      tabButton: { labelName: 'March' },
+      tabPanel: 'March Panel'
+    },
+     {
+      tabButton: { labelName: 'April' },
+      tabPanel: 'April Panel'
+    },
+    {
+      tabButton: { labelName: 'May' },
+      tabPanel: 'May Panel'
+    },
+     {
+      tabButton: { labelName: 'June' },
+      tabPanel: 'June Panel'
+    },
+    {
+      tabButton: { labelName: 'July' },
+      tabPanel: 'July Panel'
+    },
+     {
+      tabButton: { labelName: 'August' },
+      tabPanel: 'August Panel'
+    },
+    {
+      tabButton: { labelName: 'September' },
+      tabPanel: 'September Panel'
+    }]
+  }}
+/>
+
+export const Template = (args) => <TabGroupComponent {...args} />
+
+# Tab Group
+
+###### Selector
+```ts
+  <p-tab-group></p-tab-group>
+```
+<Canvas>
+  <Story name="Tabs"
+    args={{
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Component
+```ts
+export class ToggleComponent {
+  @Input() optionsListName: string;
+  @Input() optionsList: IToggleOption[];
+  @Input() disabled: boolean;
+}
+```
+
+###### IToggleOption
+```ts
+interface IToggleOption {
+  optionName: string;
+  icon: IIcon;
+  checked: boolean;
+}
+```
+
+###### IIcon
+```ts
+export interface IIcon {
+  iconName: string; // required
+  width: string;
+  height: string;
+  fill: string;
+  stroke: string;
+  strokeWidth: number;
+  strokeLinecap: string;
+  strokeLinejoin: string;
+}
+```

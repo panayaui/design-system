@@ -53,3 +53,7 @@ export * from './lib/modal/modal.module';
 export * from './lib/modal/modal.component';
 export * from './lib/modal/modal.interface';
 export * from './lib/modal/modal.enum';
+
+export * from './lib/tab-group/tab-group.module';
+export * from './lib/tab-group/tab-group.component';
+export * from './lib/tab-group/tab.interface';

@@ -26,6 +26,7 @@ export class AppComponent implements OnInit {
   headerBtnLast: any;
   checkboxList: any;
   validator = Validators.required;
+  tabGroup: any;
 
   constructor() {}
 
@@ -122,5 +123,41 @@ export class AppComponent implements OnInit {
         inputNum: { label: 'Release(s)', value: 1}
       }
     ];
+    this.tabGroup =  [{
+      tabButton: { labelName: 'Tab Name' },
+      tabPanel: 'January Panel'
+    },
+    {
+      tabButton: { labelName: 'February' },
+      tabPanel: 'February Panel'
+    },
+    {
+      tabButton: { labelName: 'March' },
+      tabPanel: 'March Panel'
+    },
+    {
+      tabButton: { labelName: 'April' },
+      tabPanel: 'April Panel'
+    },
+    {
+      tabButton: { labelName: 'May' },
+      tabPanel: 'May Panel'
+    },
+    {
+      tabButton: { labelName: 'June' },
+      tabPanel: 'June Panel'
+    },
+    {
+      tabButton: { labelName: 'July' },
+      tabPanel: 'July Panel'
+    },
+    {
+      tabButton: { labelName: 'August' },
+      tabPanel: 'August Panel'
+    },
+    {
+      tabButton: { labelName: 'September' },
+      tabPanel: 'September Panel'
+    }];
   }
 }
