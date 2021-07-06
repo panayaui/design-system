@@ -50,101 +50,115 @@
         },
         {
             "name": "IButton",
-            "id": "interface-IButton-40db3d9cbbff4eaea4cda746f41092ac",
+            "id": "interface-IButton-a33b085d8ec879cc77ca79d3cdcc1715",
             "file": "projects/design-system-lib/src/lib/button/button.interface.ts",
             "type": "interface",
-            "sourceCode": "import {ButtonTypeEnum} from './button-type.enum';\r\n\r\nexport interface IButton {\r\n  label: string;\r\n  ariaLabel: string;\r\n  large: boolean;\r\n  disabled: boolean;\r\n  iconBefore: string;\r\n  iconBeforeWidth: string;\r\n  iconBeforeHeight: string;\r\n  iconBeforeStrokeWidth: number;\r\n  iconAfter: string;\r\n  iconAfterWidth: string;\r\n  iconAfterHeight: string;\r\n  iconAfterStrokeWidth: number;\r\n  buttonType: ButtonTypeEnum;\r\n}\r\n",
+            "sourceCode": "import {ButtonTypeEnum} from './button-type.enum';\r\nimport {Input} from '@angular/core';\r\n\r\nexport interface IButton {\r\n  label: string;\r\n  ariaLabel: string;\r\n  large: boolean;\r\n  disabled: boolean;\r\n  iconBefore: string;\r\n  iconBeforeWidth: string;\r\n  iconBeforeHeight: string;\r\n  iconBeforeStrokeWidth: number;\r\n  iconBeforeStrokeColor: string;\r\n  iconAfter: string;\r\n  iconAfterWidth: string;\r\n  iconAfterHeight: string;\r\n  iconAfterStrokeWidth: number;\r\n  iconAfterStrokeColor: string;\r\n  buttonType: ButtonTypeEnum;\r\n}\r\n",
             "properties": [
                 {
                     "name": "ariaLabel",
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 5
+                    "line": 6
                 },
                 {
                     "name": "buttonType",
                     "type": "ButtonTypeEnum",
                     "optional": false,
                     "description": "",
-                    "line": 16
+                    "line": 19
                 },
                 {
                     "name": "disabled",
                     "type": "boolean",
                     "optional": false,
                     "description": "",
-                    "line": 7
+                    "line": 8
                 },
                 {
                     "name": "iconAfter",
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 12
+                    "line": 14
                 },
                 {
                     "name": "iconAfterHeight",
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 14
+                    "line": 16
+                },
+                {
+                    "name": "iconAfterStrokeColor",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 18
                 },
                 {
                     "name": "iconAfterStrokeWidth",
                     "type": "number",
                     "optional": false,
                     "description": "",
-                    "line": 15
+                    "line": 17
                 },
                 {
                     "name": "iconAfterWidth",
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 13
+                    "line": 15
                 },
                 {
                     "name": "iconBefore",
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 8
+                    "line": 9
                 },
                 {
                     "name": "iconBeforeHeight",
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 10
+                    "line": 11
+                },
+                {
+                    "name": "iconBeforeStrokeColor",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
                 },
                 {
                     "name": "iconBeforeStrokeWidth",
                     "type": "number",
                     "optional": false,
                     "description": "",
-                    "line": 11
+                    "line": 12
                 },
                 {
                     "name": "iconBeforeWidth",
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 9
+                    "line": 10
                 },
                 {
                     "name": "label",
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 4
+                    "line": 5
                 },
                 {
                     "name": "large",
                     "type": "boolean",
                     "optional": false,
                     "description": "",
-                    "line": 6
+                    "line": 7
                 }
             ],
             "indexSignatures": [],
@@ -1204,7 +1218,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-1bb81bfc89d1ead51ad44985c98551fc",
+            "id": "component-ButtonComponent-7e92cc6eed14e2b4dfc64ac30dd8c0ae",
             "file": "projects/design-system-lib/src/lib/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1229,7 +1243,7 @@
                 {
                     "name": "buttonType",
                     "defaultValue": "ButtonTypeEnum.Primary",
-                    "line": 22,
+                    "line": 24,
                     "type": "ButtonTypeEnum"
                 },
                 {
@@ -1240,24 +1254,29 @@
                 },
                 {
                     "name": "iconAfter",
-                    "line": 18,
+                    "line": 19,
                     "type": "string"
                 },
                 {
                     "name": "iconAfterHeight",
                     "defaultValue": "'auto'",
-                    "line": 20,
+                    "line": 21,
+                    "type": "string"
+                },
+                {
+                    "name": "iconAfterStrokeColor",
+                    "line": 23,
                     "type": "string"
                 },
                 {
                     "name": "iconAfterStrokeWidth",
-                    "line": 21,
+                    "line": 22,
                     "type": "number"
                 },
                 {
                     "name": "iconAfterWidth",
                     "defaultValue": "'auto'",
-                    "line": 19,
+                    "line": 20,
                     "type": "string"
                 },
                 {
@@ -1269,6 +1288,11 @@
                     "name": "iconBeforeHeight",
                     "defaultValue": "'auto'",
                     "line": 16,
+                    "type": "string"
+                },
+                {
+                    "name": "iconBeforeStrokeColor",
+                    "line": 18,
                     "type": "string"
                 },
                 {
@@ -1298,7 +1322,7 @@
                 {
                     "name": "onClickTask",
                     "defaultValue": "new EventEmitter()",
-                    "line": 23,
+                    "line": 25,
                     "type": "EventEmitter<any>"
                 }
             ],
@@ -1309,11 +1333,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, EventEmitter, Input, Output} from '@angular/core';\r\nimport {ButtonTypeEnum} from './button-type.enum';\r\n\r\n@Component({\r\n  selector: 'p-button',\r\n  templateUrl: './button.component.html',\r\n  styleUrls: ['./button.component.scss'],\r\n})\r\nexport class ButtonComponent {\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string;\r\n  @Input() large: boolean = false;\r\n  @Input() disabled: boolean = false;\r\n  @Input() iconBefore: string;\r\n  @Input() iconBeforeWidth: string = 'auto';\r\n  @Input() iconBeforeHeight: string = 'auto';\r\n  @Input() iconBeforeStrokeWidth: number;\r\n  @Input() iconAfter: string;\r\n  @Input() iconAfterWidth: string = 'auto';\r\n  @Input() iconAfterHeight: string = 'auto';\r\n  @Input() iconAfterStrokeWidth: number;\r\n  @Input() buttonType: ButtonTypeEnum = ButtonTypeEnum.Primary;\r\n  @Output() onClickTask: EventEmitter<any> = new EventEmitter();\r\n\r\n  public get classes(): string[] {\r\n    const classParams = [];\r\n    this.large ? classParams.push('p-btn-large') : classParams.push('p-btn-small');\r\n    this.iconBefore ? classParams.push('p-btn-icon-before') : null;\r\n    this.iconAfter ? classParams.push('p-btn-icon-after') : null;\r\n    classParams.push(`p-btn-${this.buttonType}`);\r\n    return classParams;\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, EventEmitter, Input, Output} from '@angular/core';\r\nimport {ButtonTypeEnum} from './button-type.enum';\r\n\r\n@Component({\r\n  selector: 'p-button',\r\n  templateUrl: './button.component.html',\r\n  styleUrls: ['./button.component.scss'],\r\n})\r\nexport class ButtonComponent {\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string;\r\n  @Input() large: boolean = false;\r\n  @Input() disabled: boolean = false;\r\n  @Input() iconBefore: string;\r\n  @Input() iconBeforeWidth: string = 'auto';\r\n  @Input() iconBeforeHeight: string = 'auto';\r\n  @Input() iconBeforeStrokeWidth: number;\r\n  @Input() iconBeforeStrokeColor: string;\r\n  @Input() iconAfter: string;\r\n  @Input() iconAfterWidth: string = 'auto';\r\n  @Input() iconAfterHeight: string = 'auto';\r\n  @Input() iconAfterStrokeWidth: number;\r\n  @Input() iconAfterStrokeColor: string;\r\n  @Input() buttonType: ButtonTypeEnum = ButtonTypeEnum.Primary;\r\n  @Output() onClickTask: EventEmitter<any> = new EventEmitter();\r\n\r\n  public get classes(): string[] {\r\n    const classParams = [];\r\n    this.iconBefore ? classParams.push('p-btn-icon-before') : null;\r\n    this.iconAfter ? classParams.push('p-btn-icon-after') : null;\r\n    classParams.push(`p-btn-${this.buttonType}`);\r\n    if (this.buttonType !== ButtonTypeEnum.IsIcon) {\r\n      this.large  ? classParams.push('p-btn-large') : classParams.push('p-btn-small');\r\n    }\r\n    return classParams;\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n::ng-deep .p-btn {\r\n  @include resetButton;\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  font-weight: 500;\r\n  line-height: 19px;\r\n  min-width: 80px;\r\n  padding-right: 23px;\r\n  padding-left: 23px;\r\n  border-radius: $btn-border-radius;\r\n  white-space: nowrap;\r\n  transition: all 400ms;\r\n\r\n  &-large {\r\n    height: $btn-large-height;\r\n  }\r\n\r\n  &-small {\r\n    height: $btn-small-height;\r\n  }\r\n\r\n  &:disabled {\r\n    pointer-events: none;\r\n  }\r\n\r\n  &-primary {\r\n    color: $gray-scale-1;\r\n    background-color: $secondary-a-700;\r\n    &:hover {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:focus {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      background-color: $secondary-a-50;\r\n    }\r\n  }\r\n\r\n  &-secondary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    border: 1px solid $secondary-a-700;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      border-color: $secondary-a-500;\r\n    }\r\n  }\r\n\r\n  &-tertiary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n    }\r\n  }\r\n\r\n  &-distructive {\r\n    color: $gray-scale-1;\r\n    background-color: $supportive-alert-500;\r\n    &:hover {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:focus {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      background-color: $supportive-alert-50;\r\n    }\r\n  }\r\n\r\n  &-icon {\r\n\r\n  }\r\n\r\n  // class of the button\r\n  &-icon-before {\r\n    padding-left: 16px;\r\n    .p-btn-label {\r\n      margin-left: 8px;\r\n    }\r\n  }\r\n  // class of the button\r\n  &-icon-after {\r\n    padding-right: 16px;\r\n    .p-btn-label {\r\n      margin-right: 8px;\r\n    }\r\n  }\r\n\r\n  // class of the icon\r\n  &-icon-pre,\r\n  &-icon-post {\r\n    display: inline-flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n  }\r\n}\r\n\r\n\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n::ng-deep .p-btn {\r\n  @include resetButton;\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  font-weight: 500;\r\n  line-height: 20px;\r\n  min-width: 80px;\r\n  padding-right: $gap-double-plus;\r\n  padding-left: $gap-double-plus;\r\n  border-radius: $btn-border-radius;\r\n  white-space: nowrap;\r\n  transition: all 400ms;\r\n\r\n  &-large {\r\n    height: $btn-large-height;\r\n  }\r\n\r\n  &-small {\r\n    height: $btn-small-height;\r\n  }\r\n\r\n  &:disabled {\r\n    pointer-events: none;\r\n  }\r\n\r\n  &-primary {\r\n    color: $gray-scale-1;\r\n    background-color: $secondary-a-700;\r\n    &:hover {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:focus {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      background-color: $secondary-a-50;\r\n    }\r\n  }\r\n\r\n  &-secondary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    border: 1px solid $secondary-a-700;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      border-color: $secondary-a-500;\r\n    }\r\n  }\r\n\r\n  &-tertiary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n    }\r\n  }\r\n\r\n  &-distructive {\r\n    color: $gray-scale-1;\r\n    background-color: $supportive-alert-500;\r\n    &:hover {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:focus {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      background-color: $supportive-alert-50;\r\n    }\r\n  }\r\n\r\n  // class of the button\r\n  &-icon-before {\r\n    padding-left: $gap-double;\r\n    .p-btn-label {\r\n      margin-left: $gap-base;\r\n    }\r\n  }\r\n  // class of the button\r\n  &-icon-after {\r\n    padding-right: $gap-double;\r\n    .p-btn-label {\r\n      margin-right: $gap-base;\r\n    }\r\n  }\r\n\r\n  // class of the icon\r\n  &-icon-pre,\r\n  &-icon-post {\r\n    display: inline-flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n  }\r\n\r\n  &-isIcon {\r\n    line-height: unset;\r\n    min-width: unset;\r\n    padding: $gap-small;\r\n  }\r\n}\r\n\r\n\r\n",
                     "styleUrl": "./button.component.scss"
                 }
             ],
@@ -1325,11 +1349,11 @@
                         "name": "classes",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 25
+                        "line": 27
                     }
                 }
             },
-            "templateData": "<button class=\"p-btn\"\r\n        [ngClass]=\"classes\"\r\n        [disabled]=\"disabled\"\r\n        attr.aria-label=\"{{ariaLabel}}\"\r\n        (click)=\"onClickTask.emit($event)\">\r\n  <p-icon *ngIf=\"iconBefore\"\r\n          class=\"p-btn-icon-pre\"\r\n          [iconName]=\"iconBefore\"\r\n          [width]=\"iconBeforeWidth\"\r\n          [height]=\"iconBeforeHeight\"\r\n          [strokeWidth]=\"iconBeforeStrokeWidth\"\r\n          [disabled]=\"disabled\"></p-icon>\r\n  <span class=\"p-btn-label\" *ngIf=\"label\">{{label}}</span>\r\n  <p-icon *ngIf=\"iconAfter\"\r\n          class=\"p-btn-icon-post\"\r\n          [iconName]=\"iconAfter\"\r\n          [width]=\"iconAfterWidth\"\r\n          [height]=\"iconAfterHeight\"\r\n          [strokeWidth]=\"iconAfterStrokeWidth\"\r\n          [disabled]=\"disabled\"></p-icon>\r\n</button>\r\n"
+            "templateData": "<button class=\"p-btn\"\r\n        [ngClass]=\"classes\"\r\n        [disabled]=\"disabled\"\r\n        attr.aria-label=\"{{ariaLabel}}\"\r\n        (click)=\"onClickTask.emit($event)\">\r\n  <p-icon *ngIf=\"iconBefore\"\r\n          class=\"p-btn-icon-pre\"\r\n          [iconName]=\"iconBefore\"\r\n          [width]=\"iconBeforeWidth\"\r\n          [height]=\"iconBeforeHeight\"\r\n          [stroke]=\"iconBeforeStrokeColor\"\r\n          [strokeWidth]=\"iconBeforeStrokeWidth\"\r\n          [disabled]=\"disabled\"></p-icon>\r\n  <span class=\"p-btn-label\" *ngIf=\"label\">{{label}}</span>\r\n  <p-icon *ngIf=\"iconAfter\"\r\n          class=\"p-btn-icon-post\"\r\n          [iconName]=\"iconAfter\"\r\n          [width]=\"iconAfterWidth\"\r\n          [height]=\"iconAfterHeight\"\r\n          [stroke]=\"iconAfterStrokeColor\"\r\n          [strokeWidth]=\"iconAfterStrokeWidth\"\r\n          [disabled]=\"disabled\"></p-icon>\r\n</button>\r\n"
         },
         {
             "name": "CheckboxComponent",
@@ -4087,7 +4111,7 @@
         },
         {
             "name": "ModalComponent",
-            "id": "component-ModalComponent-bffd64c0dbb1831561526a09f9910e2c",
+            "id": "component-ModalComponent-fa664dd96d2d3dbc86e3109a0c4ed0e2",
             "file": "projects/design-system-lib/src/lib/modal/modal.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -4108,7 +4132,8 @@
             "propertiesClass": [
                 {
                     "name": "buttonType",
-                    "type": "ButtonTypeEnum",
+                    "defaultValue": "ButtonTypeEnum",
+                    "type": "",
                     "optional": false,
                     "description": "",
                     "line": 13,
@@ -4158,11 +4183,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Inject} from '@angular/core';\r\nimport {IModalData} from './modal.interface';\r\nimport {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';\r\nimport {ButtonTypeEnum} from '../button/button-type.enum';\r\n\r\n@Component({\r\n  selector: 'p-modal',\r\n  templateUrl: './modal.component.html',\r\n  styleUrls: ['./modal.component.scss'],\r\n})\r\n\r\nexport class ModalComponent {\r\n  public buttonType: ButtonTypeEnum;\r\n\r\n  constructor(public dialogRef: MatDialogRef<ModalComponent>,\r\n              @Inject(MAT_DIALOG_DATA) public data: IModalData){}\r\n\r\n  closeModal(): void {\r\n    this.dialogRef.close();\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import {Component, Inject} from '@angular/core';\r\nimport {IModalData} from './modal.interface';\r\nimport {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';\r\nimport {ButtonTypeEnum} from '../button/button-type.enum';\r\n\r\n@Component({\r\n  selector: 'p-modal',\r\n  templateUrl: './modal.component.html',\r\n  styleUrls: ['./modal.component.scss'],\r\n})\r\n\r\nexport class ModalComponent {\r\n  public buttonType = ButtonTypeEnum;\r\n\r\n  constructor(public dialogRef: MatDialogRef<ModalComponent>,\r\n              @Inject(MAT_DIALOG_DATA) public data: IModalData){}\r\n\r\n  closeModal(): void {\r\n    this.dialogRef.close();\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$width-small: 640px;\r\n$width-medium: 840px;\r\n$width-large: 1040px;\r\n\r\n$max-height: 87vh;\r\n$header-height: 64px;\r\n$footer-height: 72px;\r\n$padding-left: $gap-base-plus;\r\n$padding-right: $gap-double;\r\n$content-text-max-width: 490px;\r\n\r\n$fullScreen-top: 64px;\r\n$fullScreen-margin: 32px;\r\n$fullScreen-width: calc(100% - #{$fullScreen-margin} * 2);\r\n$fullScreen-height: calc(100% - #{$fullScreen-top} - #{$fullScreen-margin});\r\n\r\n\r\n::ng-deep .p-modal {\r\n  max-height: $max-height;\r\n  &-small {\r\n    width: $width-small;\r\n  }\r\n  &-medium {\r\n    width: $width-medium;\r\n  }\r\n  &-large {\r\n    width: $width-large;\r\n  }\r\n  &-fullScreen {\r\n    width: $fullScreen-width;\r\n    height: $fullScreen-height;\r\n    max-width: unset !important;\r\n    max-height: unset !important;\r\n    margin-top: $fullScreen-top;\r\n    margin-right: $fullScreen-margin;\r\n    margin-bottom: $fullScreen-margin;\r\n    margin-left: $fullScreen-margin;\r\n  }\r\n\r\n  ::ng-deep .mat-dialog-container {\r\n    display: block;\r\n    color: $primary-a-900;\r\n    padding: 0;\r\n    background: $gray-scale-1;\r\n    border-radius: 4px;\r\n    box-shadow: none;\r\n  }\r\n\r\n  &-wrapper {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: stretch;\r\n    height: 100%;\r\n  }\r\n\r\n  &-header {\r\n    display: flex;\r\n    align-items: center;\r\n    padding-right: $padding-right;\r\n    padding-left: $padding-left;\r\n    @include ellipsis;\r\n    flex: 0 0 $header-height;\r\n    &-icon {\r\n      margin-right: $gap-double;\r\n    }\r\n  }\r\n\r\n  &-content {\r\n    margin: 0;\r\n    padding-top: $gap-base-plus;\r\n    padding-right: $padding-right;\r\n    padding-bottom: $gap-double;\r\n    padding-left: $padding-left;\r\n    flex: 1 0;\r\n    &-text {\r\n      max-width: $content-text-max-width;\r\n    }\r\n    .p-modal-header + & {\r\n      padding-top: $gap-base;\r\n    }\r\n  }\r\n\r\n  &-footer {\r\n    display: flex;\r\n    justify-content: flex-end;\r\n    align-items: center;\r\n    padding-right: $padding-right;\r\n    padding-left: $padding-left;\r\n    flex: 0 0 $footer-height;\r\n    &-btn {\r\n      & + & {\r\n        margin-left: $gap-double;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n::ng-deep .cdk-overlay-dark-backdrop {\r\n  background: rgba(45, 48, 71, 0.8); // $primary-a-900;\r\n}\r\n\r\n\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$width-small: 640px;\r\n$width-medium: 840px;\r\n$width-large: 1040px;\r\n\r\n$max-height: 87vh;\r\n$header-height: 64px;\r\n$footer-height: 72px;\r\n$padding-left: $gap-double-plus;\r\n$padding-right: $gap-double;\r\n$content-text-max-width: 490px;\r\n\r\n$fullScreen-top: 64px;\r\n$fullScreen-margin: 32px;\r\n$fullScreen-width: calc(100% - #{$fullScreen-margin} * 2);\r\n$fullScreen-height: calc(100% - #{$fullScreen-top} - #{$fullScreen-margin});\r\n\r\n\r\n::ng-deep .p-modal {\r\n  max-height: $max-height;\r\n  &-small {\r\n    width: $width-small;\r\n  }\r\n  &-medium {\r\n    width: $width-medium;\r\n  }\r\n  &-large {\r\n    width: $width-large;\r\n  }\r\n  &-fullScreen {\r\n    width: $fullScreen-width;\r\n    height: $fullScreen-height;\r\n    max-width: unset !important;\r\n    max-height: unset !important;\r\n    margin-top: $fullScreen-top;\r\n    margin-right: $fullScreen-margin;\r\n    margin-bottom: $fullScreen-margin;\r\n    margin-left: $fullScreen-margin;\r\n  }\r\n\r\n  ::ng-deep .mat-dialog-container {\r\n    display: block;\r\n    color: $primary-a-900;\r\n    padding: 0;\r\n    background: $gray-scale-1;\r\n    border-radius: 4px;\r\n    box-shadow: none;\r\n    position: relative;\r\n    overflow: visible;\r\n  }\r\n\r\n  &-close {\r\n    position: absolute;\r\n    top: -30px;\r\n    right: -4px;\r\n  }\r\n\r\n  &-wrapper {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: stretch;\r\n    height: 100%;\r\n  }\r\n\r\n  &-header {\r\n    display: flex;\r\n    align-items: center;\r\n    height: $header-height;\r\n    padding-right: $padding-right;\r\n    padding-left: $padding-left;\r\n    @include ellipsis;\r\n    &-icon {\r\n      margin-right: $gap-double;\r\n    }\r\n  }\r\n\r\n  &-content {\r\n    margin: 0;\r\n    padding-top: $gap-double-plus;\r\n    padding-right: $padding-right;\r\n    padding-bottom: $gap-double;\r\n    padding-left: $padding-left;\r\n    flex: 1 0;\r\n    &-text {\r\n      max-width: $content-text-max-width;\r\n    }\r\n    .p-modal-header + & {\r\n      padding-top: $gap-base;\r\n    }\r\n  }\r\n\r\n  &-footer {\r\n    display: flex;\r\n    justify-content: flex-end;\r\n    align-items: center;\r\n    height: $footer-height;\r\n    padding-right: $padding-right;\r\n    padding-left: $padding-left;\r\n    flex: 0 0 $footer-height;\r\n    &-btn {\r\n      & + & {\r\n        margin-left: $gap-double;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n::ng-deep .cdk-overlay-dark-backdrop {\r\n  background: rgba(45, 48, 71, 0.8); // $primary-a-900;\r\n}\r\n\r\n\r\n",
                     "styleUrl": "./modal.component.scss"
                 }
             ],
@@ -4198,11 +4223,11 @@
                     }
                 ]
             },
-            "templateData": "<div class=\"p-modal-wrapper\">\r\n  <header class=\"p-modal-header\" *ngIf=\"data.headerText\">\r\n    <p-icon *ngIf=\"data.headerIcon?.iconName\"\r\n      class=\"p-modal-header-icon\"\r\n            [iconName]=\"data.headerIcon.iconName\"\r\n            [width]=\"data.headerIcon.width\"\r\n            [height]=\"data.headerIcon.height\"\r\n            [fill]=\"data.headerIcon.fill\"\r\n            [stroke]=\"data.headerIcon.stroke\"\r\n            [strokeWidth]=\"data.headerIcon.strokeWidth\"\r\n            [strokeLinecap]=\"data.headerIcon.strokeLinecap\"\r\n            [strokeLinejoin]=\"data.headerIcon.strokeLinejoin\"></p-icon>\r\n    <h2 class=\"p-modal-title headline-7-bold\">{{data.headerText}}</h2>\r\n    <p-button class=\"p-modal-close\"\r\n              ariaLabel=\"Close Modal\"\r\n              [buttonType]=\"buttonType.Icon\"\r\n              [iconBefore]=\"x\"\r\n              [iconBeforeWidth]=\"19\"\r\n              (onClickTask)=\"closeModal()\"></p-button>\r\n  </header>\r\n\r\n  <mat-dialog-content class=\"p-modal-content\">\r\n    <p class=\"p-modal-content-text paragraph-1-default\">{{data.textParagraph}}</p>\r\n  </mat-dialog-content>\r\n\r\n  <footer class=\"p-modal-footer\">\r\n    <p-button *ngFor=\"let btn of data.actions\"\r\n              class=\"p-modal-footer-btn\"\r\n              [label]=\"btn.label\"\r\n              [large]=\"btn.large\"\r\n              [buttonType]=\"btn.buttonType\"\r\n              (onClickTask)=\"closeModal()\"></p-button>\r\n  </footer>\r\n</div>\r\n\r\n"
+            "templateData": "<p-button class=\"p-modal-close\"\r\n          ariaLabel=\"Close Modal\"\r\n          [buttonType]=\"buttonType.IsIcon\"\r\n          iconBefore=\"x\"\r\n          iconBeforeWidth=\"22\"\r\n          iconBeforeStrokeColor=\"#FEFEFF\"\r\n          [iconBeforeStrokeWidth]=\"2.5\"\r\n          (onClickTask)=\"closeModal()\"></p-button>\r\n\r\n<div class=\"p-modal-wrapper\">\r\n  <header class=\"p-modal-header\" *ngIf=\"data.headerText\">\r\n    <p-icon *ngIf=\"data.headerIcon?.iconName\"\r\n            class=\"p-modal-header-icon\"\r\n            [iconName]=\"data.headerIcon.iconName\"\r\n            [width]=\"data.headerIcon.width\"\r\n            [height]=\"data.headerIcon.height\"\r\n            [fill]=\"data.headerIcon.fill\"\r\n            [stroke]=\"data.headerIcon.stroke\"\r\n            [strokeWidth]=\"data.headerIcon.strokeWidth\"\r\n            [strokeLinecap]=\"data.headerIcon.strokeLinecap\"\r\n            [strokeLinejoin]=\"data.headerIcon.strokeLinejoin\"></p-icon>\r\n    <h2 class=\"p-modal-title headline-7-bold\">{{data.headerText}}</h2>\r\n  </header>\r\n\r\n  <mat-dialog-content class=\"p-modal-content\">\r\n    <p class=\"p-modal-content-text paragraph-1-default\">{{data.textParagraph}}</p>\r\n  </mat-dialog-content>\r\n\r\n  <footer class=\"p-modal-footer\">\r\n    <p-button *ngFor=\"let btn of data.actions\"\r\n              class=\"p-modal-footer-btn\"\r\n              [label]=\"btn.label\"\r\n              [large]=\"true\"\r\n              [buttonType]=\"btn.buttonType\"\r\n              (onClickTask)=\"closeModal()\"></p-button>\r\n  </footer>\r\n</div>\r\n\r\n"
         },
         {
             "name": "ModalTriggerComponent",
-            "id": "component-ModalTriggerComponent-336fd95782532908d2f0da8996005a3a",
+            "id": "component-ModalTriggerComponent-4f86c5ed61b29de2862c1bb9ab04bce3",
             "file": "src/stories/modal/modal-trigger.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -4221,33 +4246,44 @@
             "inputsClass": [
                 {
                     "name": "data",
-                    "line": 13,
+                    "line": 14,
                     "type": "IModalData"
                 },
                 {
                     "name": "panelClass",
-                    "line": 15,
+                    "line": 16,
                     "type": "string | string[]"
                 },
                 {
                     "name": "triggerBtnName",
-                    "line": 16,
+                    "line": 17,
                     "type": "string"
                 },
                 {
                     "name": "type",
-                    "line": 14,
+                    "line": 15,
                     "type": "ModalEnum"
                 }
             ],
             "outputsClass": [],
             "propertiesClass": [
                 {
+                    "name": "buttonType",
+                    "defaultValue": "ButtonTypeEnum",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 18,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
                     "name": "dialog",
                     "type": "MatDialog",
                     "optional": false,
                     "description": "",
-                    "line": 18,
+                    "line": 20,
                     "modifierKind": [
                         114
                     ]
@@ -4260,7 +4296,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 20
+                    "line": 22
                 }
             ],
             "hostBindings": [],
@@ -4268,7 +4304,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {IModalData} from 'projects/design-system-lib/src/lib/modal/modal.interface';\r\nimport {ModalEnum} from 'projects/design-system-lib/src/lib/modal/modal.enum';\r\nimport {MatDialog} from '@angular/material/dialog';\r\nimport {ModalComponent} from 'projects/design-system-lib/src/lib/modal/modal.component';\r\n\r\n@Component({\r\n  selector: 'modal-trigger',\r\n  templateUrl: './modal-trigger.component.html',\r\n  styleUrls: ['./modal-trigger.component.scss']\r\n})\r\nexport class ModalTriggerComponent {\r\n  @Input() data: IModalData;\r\n  @Input() type: ModalEnum; // required\r\n  @Input() panelClass: string | string[];\r\n  @Input() triggerBtnName: string;\r\n\r\n  constructor(public dialog: MatDialog) {}\r\n\r\n  openDialog(): void {\r\n    this.panelClass = ['p-modal', 'p-modal-' + this.type];\r\n    const dialogRef = this.dialog.open(ModalComponent, {\r\n      data: this.data,\r\n      panelClass: this.panelClass, // required\r\n    });\r\n\r\n    dialogRef.afterClosed().subscribe(result => {\r\n      console.log('The dialog was closed', result);\r\n    });\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {IModalData} from 'projects/design-system-lib/src/lib/modal/modal.interface';\r\nimport {ModalEnum} from 'projects/design-system-lib/src/lib/modal/modal.enum';\r\nimport {MatDialog} from '@angular/material/dialog';\r\nimport {ModalComponent} from 'projects/design-system-lib/src/lib/modal/modal.component';\r\nimport {ButtonTypeEnum} from '../../../projects/design-system-lib/src/lib/button/button-type.enum';\r\n\r\n@Component({\r\n  selector: 'modal-trigger',\r\n  templateUrl: './modal-trigger.component.html',\r\n  styleUrls: ['./modal-trigger.component.scss']\r\n})\r\nexport class ModalTriggerComponent {\r\n  @Input() data: IModalData;\r\n  @Input() type: ModalEnum; // required\r\n  @Input() panelClass: string | string[];\r\n  @Input() triggerBtnName: string;\r\n  public buttonType = ButtonTypeEnum;\r\n\r\n  constructor(public dialog: MatDialog) {}\r\n\r\n  openDialog(): void {\r\n    this.panelClass = ['p-modal', 'p-modal-' + this.type];\r\n    const dialogRef = this.dialog.open(ModalComponent, {\r\n      data: this.data,\r\n      panelClass: this.panelClass, // required\r\n    });\r\n\r\n    dialogRef.afterClosed().subscribe(result => {\r\n      console.log('The dialog was closed', result);\r\n    });\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -4286,7 +4322,7 @@
                         "type": "MatDialog"
                     }
                 ],
-                "line": 16,
+                "line": 18,
                 "jsdoctags": [
                     {
                         "name": "dialog",
@@ -4297,7 +4333,7 @@
                     }
                 ]
             },
-            "templateData": "<button class=\"p-btn p-btn-small p-btn-secondary\"\r\n        (click)=\"openDialog()\">\r\n  {{triggerBtnName}}\r\n</button>\r\n"
+            "templateData": "<p-button [label]=\"triggerBtnName\"\r\n          [buttonType]=\"buttonType.Secondary\"\r\n          (click)=\"openDialog()\">\r\n</p-button>\r\n"
         },
         {
             "name": "RadioButtonComponent",
@@ -5473,6 +5509,14 @@
                 "defaultValue": "{\r\n  ...InputTextStories.NoLabel.args, ariaLabel: 'Cell long long Label', errorMessage: 'Validation text', validators: Validators.required, matcher: new CustomErrorStateMatcher()\r\n}"
             },
             {
+                "name": "loremIpsum",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/modal/loremIpsum.ts",
+                "type": "",
+                "defaultValue": "'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus eros in lectus feugiat, ut congue felis ullamcorper. Sed diam enim, commodo quis ultricies eleifend, euismod vitae risus. Nulla non vestibulum metus. Pellentesque placerat rutrum turpis ac mollis. Sed est ante, condimentum eu fermentum quis, suscipit sit amet ligula. Nullam risus justo, tincidunt vel sem ac, vulputate molestie tortor. Suspendisse dui risus, venenatis et hendrerit ac, pharetra eu nunc. Sed ultricies eleifend lectus vitae hendrerit. Pellentesque non pellentesque dolor. Donec ac purus mattis, aliquet nisi id, maximus velit. Curabitur arcu sapien, suscipit nec lorem eu, consequat congue orci. Donec egestas nec nunc id placerat. Donec non laoreet arcu, non lobortis orci. Maecenas vel dapibus odio. Proin eu odio sem. Fusce porta rutrum ipsum quis venenatis.\\n' +\r\n  '\\n' +\r\n  'Integer ac diam vel justo euismod aliquet quis eget nisi. Mauris maximus pulvinar malesuada. Nulla facilisi. In sollicitudin malesuada eleifend. Nam iaculis elementum ex, sed gravida mauris dapibus vel. Mauris sed massa in nibh ornare ullamcorper non et odio. Duis porttitor tempus velit, nec facilisis libero imperdiet et. Donec scelerisque, felis nec pellentesque hendrerit, nulla nisi iaculis dolor, ac ullamcorper libero mi sed purus. Mauris metus leo, euismod id molestie quis, convallis suscipit ante. Suspendisse eu neque ut turpis porttitor condimentum in quis arcu.\\n' +\r\n  '\\n' +\r\n  'Phasellus laoreet tempor diam, in iaculis massa elementum quis. Integer vehicula neque quis nibh molestie tempor. Morbi hendrerit velit a porta feugiat. Quisque non eros ut neque varius elementum non at ex. Pellentesque vestibulum nunc ac gravida accumsan. Nulla id ipsum at libero aliquet ullamcorper nec et massa. Cras congue finibus risus a porttitor.\\n' +\r\n  '\\n' +\r\n  'Sed massa ligula, lacinia non libero non, condimentum commodo turpis. Etiam cursus turpis vel turpis consequat accumsan. Fusce nunc mauris, ultricies nec egestas vitae, interdum at felis. Quisque massa quam, consectetur ac turpis in, vehicula lacinia tortor. Etiam accumsan arcu nulla, ac semper tortor commodo ac. Nunc tempor nisl id molestie ultricies. Nullam vehicula libero sodales metus lobortis sollicitudin.\\n' +\r\n  '\\n' +\r\n  'Etiam commodo sapien mi, ultricies egestas felis tincidunt eu. Nullam vitae mi et tellus dignissim eleifend. Nullam aliquam, sapien sed blandit venenatis, dui lorem vulputate felis, a porta massa purus sodales dui. Nunc commodo lacinia diam, quis dapibus mauris vehicula ut. Integer porttitor, urna at consectetur vehicula, justo nulla euismod leo, egestas porttitor lorem lacus vel dui. Donec feugiat sollicitudin leo quis facilisis. Pellentesque vel ultrices metus. Donec et condimentum odio. In porta, lectus facilisis auctor iaculis, sem odio consequat urna, eget tincidunt mauris diam molestie lorem. In viverra justo vel justo pharetra placerat. Donec tincidunt libero ante, id consectetur arcu pulvinar sed. Curabitur eget augue imperdiet lectus viverra luctus ut in quam. Cras eget lacus non odio gravida feugiat ut nec odio. Integer vel volutpat magna, quis consequat magna. Proin non malesuada enim, eget porttitor risus.'"
+            },
+            {
                 "name": "NoLabel",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -5524,17 +5568,17 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
-                "type": "Story<CheckboxPageComponent>",
-                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "Story<CheckboxGroupPageComponent>",
+                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
-                "type": "Story<CheckboxGroupPageComponent>",
-                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "Story<CheckboxPageComponent>",
+                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -5626,14 +5670,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input-text/input-text.stories.ts",
-                "type": "Story<InputTextComponent>",
-                "defaultValue": "(args: InputTextComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/icons/icon.stories.ts",
                 "type": "Story<IconComponent>",
                 "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
@@ -5642,9 +5678,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/styles/typography-styles.stories.ts",
-                "type": "Story<TypographyStylesComponent>",
-                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/input-text/input-text.stories.ts",
+                "type": "Story<InputTextComponent>",
+                "defaultValue": "(args: InputTextComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -5653,6 +5689,14 @@
                 "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
                 "type": "Story<TypographyFontFamilyComponent>",
                 "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/typography/styles/typography-styles.stories.ts",
+                "type": "Story<TypographyStylesComponent>",
+                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Toggles",
@@ -5747,8 +5791,8 @@
                         "value": "distructive"
                     },
                     {
-                        "name": "Icon",
-                        "value": "icon"
+                        "name": "IsIcon",
+                        "value": "isIcon"
                     }
                 ],
                 "ctype": "miscellaneous",
@@ -6091,6 +6135,16 @@
                     "defaultValue": "PageTemplate.bind({})"
                 }
             ],
+            "src/stories/modal/loremIpsum.ts": [
+                {
+                    "name": "loremIpsum",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/modal/loremIpsum.ts",
+                    "type": "",
+                    "defaultValue": "'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus eros in lectus feugiat, ut congue felis ullamcorper. Sed diam enim, commodo quis ultricies eleifend, euismod vitae risus. Nulla non vestibulum metus. Pellentesque placerat rutrum turpis ac mollis. Sed est ante, condimentum eu fermentum quis, suscipit sit amet ligula. Nullam risus justo, tincidunt vel sem ac, vulputate molestie tortor. Suspendisse dui risus, venenatis et hendrerit ac, pharetra eu nunc. Sed ultricies eleifend lectus vitae hendrerit. Pellentesque non pellentesque dolor. Donec ac purus mattis, aliquet nisi id, maximus velit. Curabitur arcu sapien, suscipit nec lorem eu, consequat congue orci. Donec egestas nec nunc id placerat. Donec non laoreet arcu, non lobortis orci. Maecenas vel dapibus odio. Proin eu odio sem. Fusce porta rutrum ipsum quis venenatis.\\n' +\r\n  '\\n' +\r\n  'Integer ac diam vel justo euismod aliquet quis eget nisi. Mauris maximus pulvinar malesuada. Nulla facilisi. In sollicitudin malesuada eleifend. Nam iaculis elementum ex, sed gravida mauris dapibus vel. Mauris sed massa in nibh ornare ullamcorper non et odio. Duis porttitor tempus velit, nec facilisis libero imperdiet et. Donec scelerisque, felis nec pellentesque hendrerit, nulla nisi iaculis dolor, ac ullamcorper libero mi sed purus. Mauris metus leo, euismod id molestie quis, convallis suscipit ante. Suspendisse eu neque ut turpis porttitor condimentum in quis arcu.\\n' +\r\n  '\\n' +\r\n  'Phasellus laoreet tempor diam, in iaculis massa elementum quis. Integer vehicula neque quis nibh molestie tempor. Morbi hendrerit velit a porta feugiat. Quisque non eros ut neque varius elementum non at ex. Pellentesque vestibulum nunc ac gravida accumsan. Nulla id ipsum at libero aliquet ullamcorper nec et massa. Cras congue finibus risus a porttitor.\\n' +\r\n  '\\n' +\r\n  'Sed massa ligula, lacinia non libero non, condimentum commodo turpis. Etiam cursus turpis vel turpis consequat accumsan. Fusce nunc mauris, ultricies nec egestas vitae, interdum at felis. Quisque massa quam, consectetur ac turpis in, vehicula lacinia tortor. Etiam accumsan arcu nulla, ac semper tortor commodo ac. Nunc tempor nisl id molestie ultricies. Nullam vehicula libero sodales metus lobortis sollicitudin.\\n' +\r\n  '\\n' +\r\n  'Etiam commodo sapien mi, ultricies egestas felis tincidunt eu. Nullam vitae mi et tellus dignissim eleifend. Nullam aliquam, sapien sed blandit venenatis, dui lorem vulputate felis, a porta massa purus sodales dui. Nunc commodo lacinia diam, quis dapibus mauris vehicula ut. Integer porttitor, urna at consectetur vehicula, justo nulla euismod leo, egestas porttitor lorem lacus vel dui. Donec feugiat sollicitudin leo quis facilisis. Pellentesque vel ultrices metus. Donec et condimentum odio. In porta, lectus facilisis auctor iaculis, sem odio consequat urna, eget tincidunt mauris diam molestie lorem. In viverra justo vel justo pharetra placerat. Donec tincidunt libero ante, id consectetur arcu pulvinar sed. Curabitur eget augue imperdiet lectus viverra luctus ut in quam. Cras eget lacus non odio gravida feugiat ut nec odio. Integer vel volutpat magna, quis consequat magna. Proin non malesuada enim, eget porttitor risus.'"
+                }
+            ],
             "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts": [
                 {
                     "name": "NoLabel",
@@ -6272,8 +6326,8 @@
                             "value": "distructive"
                         },
                         {
-                            "name": "Icon",
-                            "value": "icon"
+                            "name": "IsIcon",
+                            "value": "isIcon"
                         }
                     ],
                     "ctype": "miscellaneous",
@@ -6424,7 +6478,7 @@
                 "linktype": "component",
                 "name": "ButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/15",
+                "coverageCount": "0/17",
                 "status": "low"
             },
             {
@@ -6433,7 +6487,7 @@
                 "linktype": "interface",
                 "name": "IButton",
                 "coveragePercent": 0,
-                "coverageCount": "0/14",
+                "coverageCount": "0/16",
                 "status": "low"
             },
             {
@@ -7096,12 +7150,22 @@
                 "status": "low"
             },
             {
+                "filePath": "src/stories/modal/loremIpsum.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "loremIpsum",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/stories/modal/modal-trigger.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "ModalTriggerComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/8",
+                "coverageCount": "0/9",
                 "status": "low"
             },
             {

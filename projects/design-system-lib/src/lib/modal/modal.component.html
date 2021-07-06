@@ -2,9 +2,9 @@
           ariaLabel="Close Modal"
           [buttonType]="buttonType.IsIcon"
           iconBefore="x"
-          iconBeforeWidth="19"
+          iconBeforeWidth="22"
           iconBeforeStrokeColor="#FEFEFF"
-          [iconBeforeStrokeWidth]="2"
+          [iconBeforeStrokeWidth]="2.5"
           (onClickTask)="closeModal()"></p-button>
 
 <div class="p-modal-wrapper">
@@ -30,7 +30,7 @@
     <p-button *ngFor="let btn of data.actions"
               class="p-modal-footer-btn"
               [label]="btn.label"
-              [large]="btn.large"
+              [large]="true"
               [buttonType]="btn.buttonType"
               (onClickTask)="closeModal()"></p-button>
   </footer>
