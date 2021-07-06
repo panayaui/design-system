@@ -3,6 +3,7 @@ import {IModalData} from 'projects/design-system-lib/src/lib/modal/modal.interfa
 import {ModalEnum} from 'projects/design-system-lib/src/lib/modal/modal.enum';
 import {MatDialog} from '@angular/material/dialog';
 import {ModalComponent} from 'projects/design-system-lib/src/lib/modal/modal.component';
+import {ButtonTypeEnum} from '../../../projects/design-system-lib/src/lib/button/button-type.enum';
 
 @Component({
   selector: 'modal-trigger',
@@ -14,6 +15,7 @@ export class ModalTriggerComponent {
   @Input() type: ModalEnum; // required
   @Input() panelClass: string | string[];
   @Input() triggerBtnName: string;
+  public buttonType = ButtonTypeEnum;
 
   constructor(public dialog: MatDialog) {}
 

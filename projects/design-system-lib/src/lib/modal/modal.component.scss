@@ -66,6 +66,7 @@ $fullScreen-height: calc(100% - #{$fullScreen-top} - #{$fullScreen-margin});
   &-header {
     display: flex;
     align-items: center;
+    height: $header-height;
     padding-right: $padding-right;
     padding-left: $padding-left;
     @include ellipsis;
@@ -93,6 +94,7 @@ $fullScreen-height: calc(100% - #{$fullScreen-top} - #{$fullScreen-margin});
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    height: $footer-height;
     padding-right: $padding-right;
     padding-left: $padding-left;
     flex: 0 0 $footer-height;

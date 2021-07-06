@@ -18,5 +18,4 @@ export class ModalComponent {
   closeModal(): void {
     this.dialogRef.close();
   }
-
 }
