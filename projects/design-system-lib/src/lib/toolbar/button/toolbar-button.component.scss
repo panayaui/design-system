@@ -1,0 +1,52 @@
+@import "../../assets/styles/custom";
+
+$toolbar-btn-height: 38px;
+
+.p-toolbar-btn {
+  @include resetButton;
+  display: flex;
+  align-items: center;
+  font-family: $font-family-basic;
+  font-size: $small-font-size;
+  font-weight: 400;
+  height: $toolbar-btn-height;
+  padding-right: $gap-base;
+  padding-left: $gap-base;
+  border-radius: $btn-border-radius;
+  white-space: nowrap;
+
+  &:not(:disabled):hover,
+  &:not(:disabled):focus {
+    background-color: $primary-c-50;
+  }
+
+  &.menu-trigger {
+    &:not(:disabled):not(.active):hover,
+    &:not(:disabled):not(.active):focus {
+      color: $secondary-a-800;
+    }
+  }
+
+  &.active {
+    color: $secondary-a-700;
+    background-color: $primary-c-50;
+  }
+
+  &:disabled {
+    color: $gray-scale-600;
+    pointer-events: none;
+  }
+
+  // class of the before icon
+  &-icon {
+    margin-right: $gap-base;
+  }
+
+  // class of the after icon (chevron-down)
+  &-arrow {
+    margin-left: $gap-small;
+  }
+
+}
+
+

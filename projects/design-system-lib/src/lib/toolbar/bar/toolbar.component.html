@@ -1,0 +1,15 @@
+<ul class="p-toolbar">
+  <li class="p-toolbar-item" *ngFor="let item of toolbar">
+    <p-toolbar-button
+      class="p-toolbar-item-comp"
+      [label]="item.label"
+      [disabled]="item.disabled"
+      [iconBeforeName]="item.iconBeforeName"
+      [iconBeforeWidth]="item.iconBeforeWidth"
+      [iconBeforeHeight]="item.iconBeforeHeight"
+      [iconBeforeStrokeWidth]="item.iconBeforeStrokeWidth"
+      [iconBeforeStrokeColor]="item.iconBeforeStrokeColor"
+      [isMenuTrigger]="item.isMenuTrigger">
+    </p-toolbar-button>
+  </li>
+</ul>
