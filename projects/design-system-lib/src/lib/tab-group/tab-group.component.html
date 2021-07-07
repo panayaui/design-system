@@ -1,0 +1,28 @@
+<mat-tab-group class="p-tabs"
+              animationDuration="0ms">
+  <mat-tab *ngFor="let tab of tabGroup"
+            class="p-tabs-button"
+            [disabled]="tab.disabled">
+    <ng-template mat-tab-label>
+      <p-icon *ngIf="tab.tabButton.labelIcon?.iconName"
+              class="p-tabs-icon"
+              [iconName]="tab.tabButton.labelIcon?.iconName"
+              [width]="15"></p-icon>
+      <span class="p-tabs-label paragraph-1-default">
+        {{tab.tabButton.labelName}}
+      </span>
+      <span *ngIf="tab.tabButton.labelNotification"
+            class="p-tabs-notification hidden-text">
+        has notification
+      </span>
+      <span *ngIf="tab.tabButton.labelCounter"
+            class="p-tabs-counter paragraph-3-medium">
+        <span class="hidden-text">counter is</span>
+        <span class="p-tabs-counter-value">
+          {{tab.tabButton.labelCounter}}
+        </span>
+      </span>
+    </ng-template>
+    {{tab.tabPanel}}
+  </mat-tab>
+</mat-tab-group>

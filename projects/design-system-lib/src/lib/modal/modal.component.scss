@@ -70,18 +70,20 @@ $fullScreen-height: calc(100% - #{$fullScreen-top} - #{$fullScreen-margin});
     padding-right: $padding-right;
     padding-left: $padding-left;
     @include ellipsis;
+    flex: 0 0 $header-height;
     &-icon {
       margin-right: $gap-double;
     }
   }
 
   &-content {
+    max-height: calc(100% - 64px - 72px);
     margin: 0;
     padding-top: $gap-double-plus;
     padding-right: $padding-right;
     padding-bottom: $gap-double;
     padding-left: $padding-left;
-    flex: 1 0;
+    flex: 1 0 100%;
     &-text {
       max-width: $content-text-max-width;
     }

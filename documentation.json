@@ -747,6 +747,46 @@
             "methods": []
         },
         {
+            "name": "ITab",
+            "id": "interface-ITab-e149248ab8818480bb0c0cbde0111f0d",
+            "file": "projects/design-system-lib/src/lib/tab-group/tab.interface.ts",
+            "type": "interface",
+            "sourceCode": "import {IIcon} from '../icon/icon.interface';\r\n\r\nexport interface ITab {\r\n  labelName: string;\r\n  labelIcon?: IIcon;\r\n  labelNotification?: boolean;\r\n  labelCounter?: number;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "labelCounter",
+                    "type": "number",
+                    "optional": true,
+                    "description": "",
+                    "line": 7
+                },
+                {
+                    "name": "labelIcon",
+                    "type": "IIcon",
+                    "optional": true,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "labelName",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "labelNotification",
+                    "type": "boolean",
+                    "optional": true,
+                    "description": "",
+                    "line": 6
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
             "name": "IToggleOption",
             "id": "interface-IToggleOption-de3608518d970bbce9bddc253539896d",
             "file": "projects/design-system-lib/src/lib/toggle/toggle.component.ts",
@@ -1084,7 +1124,7 @@
         },
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-603881251026896c2e9e48bfee4de841",
+            "id": "component-AppComponent-0bce2ea8c5d0cf07f9409a5690a7adbf",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1173,6 +1213,13 @@
                     "line": 19
                 },
                 {
+                    "name": "tabGroup",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 29
+                },
+                {
                     "name": "validator",
                     "defaultValue": "Validators.required",
                     "type": "",
@@ -1188,7 +1235,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 32
+                    "line": 33
                 }
             ],
             "hostBindings": [],
@@ -1196,7 +1243,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';\r\nimport {InputNumericSizeEnum} from 'projects/design-system-lib/src/public-api';\r\nimport {ReactiveFormsModule, Validators} from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.scss']\r\n})\r\nexport class AppComponent implements OnInit {\r\n  @Input() data = {\r\n    icon: { iconName: 'bell'},\r\n    messageMain: 'Notification message.',\r\n    actionName: 'Action',\r\n    messageSub: 'Notification message.',\r\n    closeBtnName: 'Close'\r\n  };\r\n  menuTriggerName: 'Multi select';\r\n  menuList: any;\r\n  footerBtnFirst: any;\r\n  footerBtnLast: any;\r\n  filterAriaLabel: string;\r\n  filterPlaceholder: string;\r\n  headerBtnFirst: any;\r\n  headerBtnLast: any;\r\n  checkboxList: any;\r\n  validator = Validators.required;\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {\r\n    this.menuList = [\r\n      { name: 'Alabama',\r\n        disabled: false\r\n      },\r\n      { name: 'Alaska disabled',\r\n        disabled: true\r\n      },\r\n      { name: 'California',\r\n        disabled: false\r\n      },\r\n      { name: 'Colorado',\r\n        disabled: false\r\n      },\r\n      { name: 'Delaware',\r\n        disabled: false\r\n      },\r\n      { name: 'Florida selected disabled',\r\n        disabled: true,\r\n        selected: true\r\n      },\r\n      { name: 'Georgia',\r\n        disabled: false\r\n      },\r\n      { name: 'Hawaii',\r\n        disabled: false\r\n      },\r\n      { name: 'Idaho',\r\n        disabled: true\r\n      },\r\n      { name: 'Illinois',\r\n        disabled: false\r\n      },\r\n      { name: 'Indiana',\r\n        disabled: false\r\n      },\r\n      { name: 'Iowa',\r\n        disabled: false\r\n      },\r\n      { name: 'Kansas',\r\n        disabled: true,\r\n        selected: true\r\n      },\r\n      { name: 'Kentucky',\r\n        disabled: false\r\n      }\r\n    ];\r\n\r\n    this.footerBtnFirst = {\r\n      label: 'Done',\r\n      buttonType: ButtonTypeEnum.Primary\r\n    };\r\n    this.footerBtnLast = {\r\n      label: 'Cancel',\r\n      buttonType: ButtonTypeEnum.Secondary\r\n    };\r\n    this.filterAriaLabel = 'Find Label';\r\n    this.filterPlaceholder = 'Find Label';\r\n\r\n    this.headerBtnFirst = {\r\n      label: 'Clear selected',\r\n        buttonType: ButtonTypeEnum.Tertiary,\r\n        icon: {\r\n        iconName: 'eraser',\r\n          width: '15',\r\n          height: '15'\r\n      }\r\n    };\r\n    this.headerBtnLast = {\r\n      label: 'Not equal to'\r\n    };\r\n    this.checkboxList = [\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Next'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      }\r\n    ];\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';\r\nimport {InputNumericSizeEnum} from 'projects/design-system-lib/src/public-api';\r\nimport {ReactiveFormsModule, Validators} from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.scss']\r\n})\r\nexport class AppComponent implements OnInit {\r\n  @Input() data = {\r\n    icon: { iconName: 'bell'},\r\n    messageMain: 'Notification message.',\r\n    actionName: 'Action',\r\n    messageSub: 'Notification message.',\r\n    closeBtnName: 'Close'\r\n  };\r\n  menuTriggerName: 'Multi select';\r\n  menuList: any;\r\n  footerBtnFirst: any;\r\n  footerBtnLast: any;\r\n  filterAriaLabel: string;\r\n  filterPlaceholder: string;\r\n  headerBtnFirst: any;\r\n  headerBtnLast: any;\r\n  checkboxList: any;\r\n  validator = Validators.required;\r\n  tabGroup: any;\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {\r\n    this.menuList = [\r\n      { name: 'Alabama',\r\n        disabled: false\r\n      },\r\n      { name: 'Alaska disabled',\r\n        disabled: true\r\n      },\r\n      { name: 'California',\r\n        disabled: false\r\n      },\r\n      { name: 'Colorado',\r\n        disabled: false\r\n      },\r\n      { name: 'Delaware',\r\n        disabled: false\r\n      },\r\n      { name: 'Florida selected disabled',\r\n        disabled: true,\r\n        selected: true\r\n      },\r\n      { name: 'Georgia',\r\n        disabled: false\r\n      },\r\n      { name: 'Hawaii',\r\n        disabled: false\r\n      },\r\n      { name: 'Idaho',\r\n        disabled: true\r\n      },\r\n      { name: 'Illinois',\r\n        disabled: false\r\n      },\r\n      { name: 'Indiana',\r\n        disabled: false\r\n      },\r\n      { name: 'Iowa',\r\n        disabled: false\r\n      },\r\n      { name: 'Kansas',\r\n        disabled: true,\r\n        selected: true\r\n      },\r\n      { name: 'Kentucky',\r\n        disabled: false\r\n      }\r\n    ];\r\n\r\n    this.footerBtnFirst = {\r\n      label: 'Done',\r\n      buttonType: ButtonTypeEnum.Primary\r\n    };\r\n    this.footerBtnLast = {\r\n      label: 'Cancel',\r\n      buttonType: ButtonTypeEnum.Secondary\r\n    };\r\n    this.filterAriaLabel = 'Find Label';\r\n    this.filterPlaceholder = 'Find Label';\r\n\r\n    this.headerBtnFirst = {\r\n      label: 'Clear selected',\r\n        buttonType: ButtonTypeEnum.Tertiary,\r\n        icon: {\r\n        iconName: 'eraser',\r\n          width: '15',\r\n          height: '15'\r\n      }\r\n    };\r\n    this.headerBtnLast = {\r\n      label: 'Not equal to'\r\n    };\r\n    this.checkboxList = [\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Next'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      }\r\n    ];\r\n    this.tabGroup =  [{\r\n      tabButton: { labelName: 'Tab Name' },\r\n      tabPanel: 'January Panel'\r\n    },\r\n    {\r\n      tabButton: { labelName: 'February' },\r\n      tabPanel: 'February Panel'\r\n    },\r\n    {\r\n      tabButton: { labelName: 'March' },\r\n      tabPanel: 'March Panel'\r\n    },\r\n    {\r\n      tabButton: { labelName: 'April' },\r\n      tabPanel: 'April Panel'\r\n    },\r\n    {\r\n      tabButton: { labelName: 'May' },\r\n      tabPanel: 'May Panel'\r\n    },\r\n    {\r\n      tabButton: { labelName: 'June' },\r\n      tabPanel: 'June Panel'\r\n    },\r\n    {\r\n      tabButton: { labelName: 'July' },\r\n      tabPanel: 'July Panel'\r\n    },\r\n    {\r\n      tabButton: { labelName: 'August' },\r\n      tabPanel: 'August Panel'\r\n    },\r\n    {\r\n      tabButton: { labelName: 'September' },\r\n      tabPanel: 'September Panel'\r\n    }];\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1209,12 +1256,12 @@
                 "name": "constructor",
                 "description": "",
                 "args": [],
-                "line": 28
+                "line": 29
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<!--<div>-->\r\n  <!--<p-menu-tabs [menuTriggerName]=\"menuTriggerName\"-->\r\n               <!--[menuList]=\"menuList\"-->\r\n               <!--[footerBtnFirst]=\"footerBtnFirst\"-->\r\n               <!--[footerBtnLast]=\"footerBtnLast\"-->\r\n               <!--[filterAriaLabel]=\"filterAriaLabel\"-->\r\n               <!--[filterPlaceholder]=\"filterPlaceholder\"-->\r\n               <!--[headerBtnFirst]=\"headerBtnFirst\"-->\r\n               <!--[headerBtnLast]=\"headerBtnLast\"-->\r\n               <!--[checkboxList]=\"checkboxList\"></p-menu-tabs>-->\r\n<!--</div>-->\r\n\r\n<!--<button #tooltip=\"matTooltip\"-->\r\n        <!--[matTooltip]=\"'message'\"-->\r\n        <!--[matTooltipClass]=\"'p-tooltip'\"-->\r\n        <!--class=\"p-btn p-btn-small p-btn-primary\"-->\r\n<!--&gt;-->\r\n  <!--Hover-->\r\n<!--</button>-->\r\n\r\n<!--<p class=\"paragraph-3-semibold\">some words</p>-->\r\n\r\n<!--<p-input-header [value]=\"'some text'\"></p-input-header>-->\r\n\r\n<!--<p-input-text [value]=\"'some text'\"></p-input-text>-->\r\n\r\n<!--<p-menu-multi-select-->\r\n<!--[menuTriggerName]=\"'trigger'\"-->\r\n<!--[menuList]=\"menuList\"-->\r\n<!--[headerBtnFirst]=\"headerBtnFirst\"-->\r\n<!--[headerBtnLast]=\"headerBtnLast\"-->\r\n<!--[footerBtnFirst]=\"footerBtnFirst\"-->\r\n<!--[footerBtnLast]=\"footerBtnLast\"></p-menu-multi-select>-->\r\n\r\n<p-menu-single-select\r\n[menuTriggerName]=\"'trigger'\"\r\n[menuList]=\"menuList\"></p-menu-single-select>\r\n\r\n"
+            "templateData": "<!--<div>-->\r\n  <!--<p-menu-tab-group [menuTriggerName]=\"menuTriggerName\"-->\r\n               <!--[menuList]=\"menuList\"-->\r\n               <!--[footerBtnFirst]=\"footerBtnFirst\"-->\r\n               <!--[footerBtnLast]=\"footerBtnLast\"-->\r\n               <!--[filterAriaLabel]=\"filterAriaLabel\"-->\r\n               <!--[filterPlaceholder]=\"filterPlaceholder\"-->\r\n               <!--[headerBtnFirst]=\"headerBtnFirst\"-->\r\n               <!--[headerBtnLast]=\"headerBtnLast\"-->\r\n               <!--[checkboxList]=\"checkboxList\"></p-menu-tab-group>-->\r\n<!--</div>-->\r\n\r\n<!--<button #tooltip=\"matTooltip\"-->\r\n        <!--[matTooltip]=\"'message'\"-->\r\n        <!--[matTooltipClass]=\"'p-tooltip'\"-->\r\n        <!--class=\"p-btn p-btn-small p-btn-primary\"-->\r\n<!--&gt;-->\r\n  <!--Hover-->\r\n<!--</button>-->\r\n\r\n<!--<p class=\"paragraph-3-semibold\">some words</p>-->\r\n\r\n<!--<p-input-header [value]=\"'some text'\"></p-input-header>-->\r\n\r\n<!--<p-input-text [value]=\"'some text'\"></p-input-text>-->\r\n\r\n<!--<p-menu-multi-select-->\r\n<!--[menuTriggerName]=\"'trigger'\"-->\r\n<!--[menuList]=\"menuList\"-->\r\n<!--[headerBtnFirst]=\"headerBtnFirst\"-->\r\n<!--[headerBtnLast]=\"headerBtnLast\"-->\r\n<!--[footerBtnFirst]=\"footerBtnFirst\"-->\r\n<!--[footerBtnLast]=\"footerBtnLast\"></p-menu-multi-select>-->\r\n\r\n<!--<p-menu-single-select-->\r\n<!--[menuTriggerName]=\"'trigger'\"-->\r\n<!--[menuList]=\"menuList\"></p-menu-single-select>-->\r\n\r\n<p-tab-group [tabGroup]=\"tabGroup\"></p-tab-group>\r\n"
         },
         {
             "name": "ButtonComponent",
@@ -4187,7 +4234,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$width-small: 640px;\r\n$width-medium: 840px;\r\n$width-large: 1040px;\r\n\r\n$max-height: 87vh;\r\n$header-height: 64px;\r\n$footer-height: 72px;\r\n$padding-left: $gap-double-plus;\r\n$padding-right: $gap-double;\r\n$content-text-max-width: 490px;\r\n\r\n$fullScreen-top: 64px;\r\n$fullScreen-margin: 32px;\r\n$fullScreen-width: calc(100% - #{$fullScreen-margin} * 2);\r\n$fullScreen-height: calc(100% - #{$fullScreen-top} - #{$fullScreen-margin});\r\n\r\n\r\n::ng-deep .p-modal {\r\n  max-height: $max-height;\r\n  &-small {\r\n    width: $width-small;\r\n  }\r\n  &-medium {\r\n    width: $width-medium;\r\n  }\r\n  &-large {\r\n    width: $width-large;\r\n  }\r\n  &-fullScreen {\r\n    width: $fullScreen-width;\r\n    height: $fullScreen-height;\r\n    max-width: unset !important;\r\n    max-height: unset !important;\r\n    margin-top: $fullScreen-top;\r\n    margin-right: $fullScreen-margin;\r\n    margin-bottom: $fullScreen-margin;\r\n    margin-left: $fullScreen-margin;\r\n  }\r\n\r\n  ::ng-deep .mat-dialog-container {\r\n    display: block;\r\n    color: $primary-a-900;\r\n    padding: 0;\r\n    background: $gray-scale-1;\r\n    border-radius: 4px;\r\n    box-shadow: none;\r\n    position: relative;\r\n    overflow: visible;\r\n  }\r\n\r\n  &-close {\r\n    position: absolute;\r\n    top: -30px;\r\n    right: -4px;\r\n  }\r\n\r\n  &-wrapper {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: stretch;\r\n    height: 100%;\r\n  }\r\n\r\n  &-header {\r\n    display: flex;\r\n    align-items: center;\r\n    height: $header-height;\r\n    padding-right: $padding-right;\r\n    padding-left: $padding-left;\r\n    @include ellipsis;\r\n    &-icon {\r\n      margin-right: $gap-double;\r\n    }\r\n  }\r\n\r\n  &-content {\r\n    margin: 0;\r\n    padding-top: $gap-double-plus;\r\n    padding-right: $padding-right;\r\n    padding-bottom: $gap-double;\r\n    padding-left: $padding-left;\r\n    flex: 1 0;\r\n    &-text {\r\n      max-width: $content-text-max-width;\r\n    }\r\n    .p-modal-header + & {\r\n      padding-top: $gap-base;\r\n    }\r\n  }\r\n\r\n  &-footer {\r\n    display: flex;\r\n    justify-content: flex-end;\r\n    align-items: center;\r\n    height: $footer-height;\r\n    padding-right: $padding-right;\r\n    padding-left: $padding-left;\r\n    flex: 0 0 $footer-height;\r\n    &-btn {\r\n      & + & {\r\n        margin-left: $gap-double;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n::ng-deep .cdk-overlay-dark-backdrop {\r\n  background: rgba(45, 48, 71, 0.8); // $primary-a-900;\r\n}\r\n\r\n\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$width-small: 640px;\r\n$width-medium: 840px;\r\n$width-large: 1040px;\r\n\r\n$max-height: 87vh;\r\n$header-height: 64px;\r\n$footer-height: 72px;\r\n$padding-left: $gap-double-plus;\r\n$padding-right: $gap-double;\r\n$content-text-max-width: 490px;\r\n\r\n$fullScreen-top: 64px;\r\n$fullScreen-margin: 32px;\r\n$fullScreen-width: calc(100% - #{$fullScreen-margin} * 2);\r\n$fullScreen-height: calc(100% - #{$fullScreen-top} - #{$fullScreen-margin});\r\n\r\n\r\n::ng-deep .p-modal {\r\n  max-height: $max-height;\r\n  &-small {\r\n    width: $width-small;\r\n  }\r\n  &-medium {\r\n    width: $width-medium;\r\n  }\r\n  &-large {\r\n    width: $width-large;\r\n  }\r\n  &-fullScreen {\r\n    width: $fullScreen-width;\r\n    height: $fullScreen-height;\r\n    max-width: unset !important;\r\n    max-height: unset !important;\r\n    margin-top: $fullScreen-top;\r\n    margin-right: $fullScreen-margin;\r\n    margin-bottom: $fullScreen-margin;\r\n    margin-left: $fullScreen-margin;\r\n  }\r\n\r\n  ::ng-deep .mat-dialog-container {\r\n    display: block;\r\n    color: $primary-a-900;\r\n    padding: 0;\r\n    background: $gray-scale-1;\r\n    border-radius: 4px;\r\n    box-shadow: none;\r\n    position: relative;\r\n    overflow: visible;\r\n  }\r\n\r\n  &-close {\r\n    position: absolute;\r\n    top: -30px;\r\n    right: -4px;\r\n  }\r\n\r\n  &-wrapper {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: stretch;\r\n    height: 100%;\r\n  }\r\n\r\n  &-header {\r\n    display: flex;\r\n    align-items: center;\r\n    height: $header-height;\r\n    padding-right: $padding-right;\r\n    padding-left: $padding-left;\r\n    @include ellipsis;\r\n    flex: 0 0 $header-height;\r\n    &-icon {\r\n      margin-right: $gap-double;\r\n    }\r\n  }\r\n\r\n  &-content {\r\n    max-height: calc(100% - 64px - 72px);\r\n    margin: 0;\r\n    padding-top: $gap-double-plus;\r\n    padding-right: $padding-right;\r\n    padding-bottom: $gap-double;\r\n    padding-left: $padding-left;\r\n    flex: 1 0 100%;\r\n    &-text {\r\n      max-width: $content-text-max-width;\r\n    }\r\n    .p-modal-header + & {\r\n      padding-top: $gap-base;\r\n    }\r\n  }\r\n\r\n  &-footer {\r\n    display: flex;\r\n    justify-content: flex-end;\r\n    align-items: center;\r\n    height: $footer-height;\r\n    padding-right: $padding-right;\r\n    padding-left: $padding-left;\r\n    flex: 0 0 $footer-height;\r\n    &-btn {\r\n      & + & {\r\n        margin-left: $gap-double;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n::ng-deep .cdk-overlay-dark-backdrop {\r\n  background: rgba(45, 48, 71, 0.8); // $primary-a-900;\r\n}\r\n\r\n\r\n",
                     "styleUrl": "./modal.component.scss"
                 }
             ],
@@ -4223,7 +4270,7 @@
                     }
                 ]
             },
-            "templateData": "<p-button class=\"p-modal-close\"\r\n          ariaLabel=\"Close Modal\"\r\n          [buttonType]=\"buttonType.IsIcon\"\r\n          iconBefore=\"x\"\r\n          iconBeforeWidth=\"19\"\r\n          iconBeforeStrokeColor=\"#FEFEFF\"\r\n          [iconBeforeStrokeWidth]=\"2\"\r\n          (onClickTask)=\"closeModal()\"></p-button>\r\n\r\n<div class=\"p-modal-wrapper\">\r\n  <header class=\"p-modal-header\" *ngIf=\"data.headerText\">\r\n    <p-icon *ngIf=\"data.headerIcon?.iconName\"\r\n            class=\"p-modal-header-icon\"\r\n            [iconName]=\"data.headerIcon.iconName\"\r\n            [width]=\"data.headerIcon.width\"\r\n            [height]=\"data.headerIcon.height\"\r\n            [fill]=\"data.headerIcon.fill\"\r\n            [stroke]=\"data.headerIcon.stroke\"\r\n            [strokeWidth]=\"data.headerIcon.strokeWidth\"\r\n            [strokeLinecap]=\"data.headerIcon.strokeLinecap\"\r\n            [strokeLinejoin]=\"data.headerIcon.strokeLinejoin\"></p-icon>\r\n    <h2 class=\"p-modal-title headline-7-bold\">{{data.headerText}}</h2>\r\n  </header>\r\n\r\n  <mat-dialog-content class=\"p-modal-content\">\r\n    <p class=\"p-modal-content-text paragraph-1-default\">{{data.textParagraph}}</p>\r\n  </mat-dialog-content>\r\n\r\n  <footer class=\"p-modal-footer\">\r\n    <p-button *ngFor=\"let btn of data.actions\"\r\n              class=\"p-modal-footer-btn\"\r\n              [label]=\"btn.label\"\r\n              [large]=\"btn.large\"\r\n              [buttonType]=\"btn.buttonType\"\r\n              (onClickTask)=\"closeModal()\"></p-button>\r\n  </footer>\r\n</div>\r\n\r\n"
+            "templateData": "<p-button class=\"p-modal-close\"\r\n          ariaLabel=\"Close Modal\"\r\n          [buttonType]=\"buttonType.IsIcon\"\r\n          iconBefore=\"x\"\r\n          iconBeforeWidth=\"22\"\r\n          iconBeforeStrokeColor=\"#FEFEFF\"\r\n          [iconBeforeStrokeWidth]=\"2.5\"\r\n          (onClickTask)=\"closeModal()\"></p-button>\r\n\r\n<div class=\"p-modal-wrapper\">\r\n  <header class=\"p-modal-header\" *ngIf=\"data.headerText\">\r\n    <p-icon *ngIf=\"data.headerIcon?.iconName\"\r\n            class=\"p-modal-header-icon\"\r\n            [iconName]=\"data.headerIcon.iconName\"\r\n            [width]=\"data.headerIcon.width\"\r\n            [height]=\"data.headerIcon.height\"\r\n            [fill]=\"data.headerIcon.fill\"\r\n            [stroke]=\"data.headerIcon.stroke\"\r\n            [strokeWidth]=\"data.headerIcon.strokeWidth\"\r\n            [strokeLinecap]=\"data.headerIcon.strokeLinecap\"\r\n            [strokeLinejoin]=\"data.headerIcon.strokeLinejoin\"></p-icon>\r\n    <h2 class=\"p-modal-title headline-7-bold\">{{data.headerText}}</h2>\r\n  </header>\r\n\r\n  <mat-dialog-content class=\"p-modal-content\">\r\n    <p class=\"p-modal-content-text paragraph-1-default\">{{data.textParagraph}}</p>\r\n  </mat-dialog-content>\r\n\r\n  <footer class=\"p-modal-footer\">\r\n    <p-button *ngFor=\"let btn of data.actions\"\r\n              class=\"p-modal-footer-btn\"\r\n              [label]=\"btn.label\"\r\n              [large]=\"true\"\r\n              [buttonType]=\"btn.buttonType\"\r\n              (onClickTask)=\"closeModal()\"></p-button>\r\n  </footer>\r\n</div>\r\n\r\n"
         },
         {
             "name": "ModalTriggerComponent",
@@ -4620,6 +4667,50 @@
             "templateData": "<div class=\"page slide-toggles\">\r\n    <header class=\"page-header\">\r\n      <h1 class=\"page-title\">Toggle / <span class=\"page-header-highlighted\">Items</span></h1>\r\n    </header>\r\n\r\n    <main class=\"page-main\">\r\n      <ul class=\"page-list header-list\">\r\n        <li class=\"list-header\"></li>\r\n        <li class=\"list-header\">[checked]=true</li>\r\n        <li class=\"list-header\">\r\n          [checked]=true\r\n          <br/>\r\n          [disabled]=true\r\n        </li>\r\n        <li class=\"list-header\">\r\n          [checked]=false\r\n        </li>\r\n        <li class=\"list-header\">\r\n          [checked]=false\r\n          <br/>\r\n          [disabled]=true\r\n        </li>\r\n      </ul>\r\n\r\n      <ul *ngFor=\"let toggleType of slideTogglePage | keyvalue: originalOrder\"\r\n          class=\"page-list content-list {{toggleType.key}}\">\r\n        <li class=\"list-header\">\r\n          [{{toggleType.key}}]=\"Label\"\r\n        </li>\r\n        <li *ngFor=\"let toggle of toggleType.value\" class=\"list-item\">\r\n          <p-slide-toggle [label]=\"toggle.label\"\r\n                          [ariaLabel]=\"toggle.ariaLabel\"\r\n                          [checked]=\"toggle.checked\"\r\n                          [disabled]=\"toggle.disabled\">\r\n          </p-slide-toggle>\r\n        </li>\r\n      </ul>\r\n\r\n    </main>\r\n</div>\r\n"
         },
         {
+            "name": "TabGroupComponent",
+            "id": "component-TabGroupComponent-b46e934de549bed10ddfcfe55dcec7d2",
+            "file": "projects/design-system-lib/src/lib/tab-group/tab-group.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-tab-group",
+            "styleUrls": [
+                "./tab-group.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./tab-group.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "tabGroup",
+                    "line": 10,
+                    "type": "literal type[]"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {ITab} from './tab.interface';\r\n\r\n@Component({\r\n  selector: 'p-tab-group',\r\n  templateUrl: './tab-group.component.html',\r\n  styleUrls: ['./tab-group.component.scss'],\r\n})\r\nexport class TabGroupComponent {\r\n  @Input() tabGroup: {\r\n    tabButton: ITab,\r\n    tabPanel: any,\r\n    disabled: boolean\r\n  }[];\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$tab-height: 52px;\r\n$tab-padding: $gap-double;\r\n\r\n::ng-deep .p-tabs {\r\n  .mat-tab-header {\r\n    border-bottom-color: $gray-scale-400;\r\n  }\r\n  .mat-tab-label {\r\n    min-width: unset;\r\n    height: $tab-height;\r\n    padding: 0 $tab-padding;\r\n    opacity: 1;\r\n    &:not(.mat-tab-disabled):not(.mat-tab-label-active):hover {\r\n      background-color: $primary-c-50;\r\n      .p-tabs-counter {\r\n        font-weight: 700;\r\n        background-color: $gray-scale-400;\r\n      }\r\n    }\r\n  }\r\n  .mat-tab-label-content {\r\n    color: $primary-a-900;\r\n  }\r\n  .mat-tab-label-active {\r\n    .p-tab-group-label {\r\n      font-weight: 700;\r\n    }\r\n    .p-tabs-counter {\r\n      font-weight: 600;\r\n      color: $gray-scale-1;\r\n      background-color: $primary-a-900;\r\n    }\r\n  }\r\n  &.mat-tab-group .mat-ink-bar {\r\n    height: 4px;\r\n    background-color: $primary-a-900;\r\n  }\r\n\r\n  // icon\r\n  &-icon {\r\n    margin-right: 4px;\r\n  }\r\n\r\n  // notification\r\n  &-notification {\r\n    width: 6px;\r\n    height: 6px;\r\n    border-radius: 50%;\r\n    background-color: $supportive-alert-500;\r\n    transform: translate(3px, -6px);\r\n  }\r\n\r\n  // counter\r\n  &-counter {\r\n    display: inline-flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    width: 18px;\r\n    height: 16px;\r\n    margin-left: 4px;\r\n    background-color: $gray-scale-50;\r\n    border-radius: 50%;\r\n    .p-tabs-notification + & {\r\n      margin-left: 7px;\r\n    }\r\n  }\r\n\r\n  .mat-tab-disabled {\r\n    .mat-tab-label-content,\r\n    .p-tabs-counter {\r\n      color: $gray-scale-600;\r\n    }\r\n  }\r\n\r\n  // tabpanel\r\n  .mat-tab-body-wrapper {\r\n    padding: $gap-double $gap-double * 2;\r\n    border-right: 1px solid $gray-scale-400;\r\n    border-bottom: 1px solid $gray-scale-400;\r\n    border-left: 1px solid $gray-scale-400;\r\n  }\r\n}\r\n\r\n\r\n",
+                    "styleUrl": "./tab-group.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<mat-tab-group class=\"p-tabs\"\r\n              animationDuration=\"0ms\">\r\n  <mat-tab *ngFor=\"let tab of tabGroup\"\r\n            class=\"p-tabs-button\"\r\n            [disabled]=\"tab.disabled\">\r\n    <ng-template mat-tab-label>\r\n      <p-icon *ngIf=\"tab.tabButton.labelIcon?.iconName\"\r\n              class=\"p-tabs-icon\"\r\n              [iconName]=\"tab.tabButton.labelIcon?.iconName\"\r\n              [width]=\"15\"></p-icon>\r\n      <span class=\"p-tabs-label paragraph-1-default\">\r\n        {{tab.tabButton.labelName}}\r\n      </span>\r\n      <span *ngIf=\"tab.tabButton.labelNotification\"\r\n            class=\"p-tabs-notification hidden-text\">\r\n        has notification\r\n      </span>\r\n      <span *ngIf=\"tab.tabButton.labelCounter\"\r\n            class=\"p-tabs-counter paragraph-3-medium\">\r\n        <span class=\"hidden-text\">counter is</span>\r\n        <span class=\"p-tabs-counter-value\">\r\n          {{tab.tabButton.labelCounter}}\r\n        </span>\r\n      </span>\r\n    </ng-template>\r\n    {{tab.tabPanel}}\r\n  </mat-tab>\r\n</mat-tab-group>\r\n"
+        },
+        {
             "name": "ToggleComponent",
             "id": "component-ToggleComponent-de3608518d970bbce9bddc253539896d",
             "file": "projects/design-system-lib/src/lib/toggle/toggle.component.ts",
@@ -4907,6 +4998,9 @@
                         },
                         {
                             "name": "MenuModule"
+                        },
+                        {
+                            "name": "TabGroupModule"
                         }
                     ]
                 },
@@ -5361,6 +5455,47 @@
             ]
         },
         {
+            "name": "TabGroupModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "TabGroupComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "IconModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "TabGroupComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "ToggleModule",
             "children": [
                 {
@@ -5686,17 +5821,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/styles/typography-styles.stories.ts",
-                "type": "Story<TypographyStylesComponent>",
-                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
+                "type": "Story<TypographyFontFamilyComponent>",
+                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
-                "type": "Story<TypographyFontFamilyComponent>",
-                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/styles/typography-styles.stories.ts",
+                "type": "Story<TypographyStylesComponent>",
+                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Toggles",
@@ -6761,6 +6896,24 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/design-system-lib/src/lib/tab-group/tab-group.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TabGroupComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/tab-group/tab.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "ITab",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/design-system-lib/src/lib/toggle/toggle.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -6804,7 +6957,7 @@
                 "linktype": "component",
                 "name": "AppComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/14",
+                "coverageCount": "0/15",
                 "status": "low"
             },
             {
