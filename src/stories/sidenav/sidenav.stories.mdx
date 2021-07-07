@@ -1,0 +1,82 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+import {SidenavComponent} from 'projects/design-system-lib/src/public-api';
+import {SidenavModule} from 'projects/design-system-lib/src/public-api';
+
+<Meta title='Components/Sidenav'
+  component={SidenavComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [
+        SidenavModule
+      ]
+    })
+  ]}
+  args={{ 
+    tabGroup: [{
+      tabButton: { labelName: 'Tab Name', labelIcon: { iconName: 'grid'} },
+      tabPanel: 'January Panel'
+    },
+    {
+      tabButton: { labelName: 'February', labelNotification: true },
+      tabPanel: 'February Panel'
+    },
+    {
+      tabButton: { labelName: 'March', labelCounter: 1 },
+      tabPanel: 'March Panel'
+    },
+    {
+      tabButton: { labelName: 'July' },
+      tabPanel: 'July Panel'
+    },
+    {
+      tabButton: { labelName: 'April', labelIcon: { iconName: 'grid'}, labelNotification: true },
+      tabPanel: 'April Panel'
+    },
+    {
+      tabButton: { labelName: 'August' },
+      tabPanel: 'August Panel'
+    },
+    {
+      tabButton: { labelName: 'May', labelIcon: { iconName: 'grid'}, labelCounter: 1 },
+      tabPanel: 'May Panel'
+    },
+     {
+      tabButton: { labelName: 'June', labelNotification: true, labelCounter: 1 },
+      tabPanel: 'June Panel'
+    },
+    {
+      tabButton: { labelName: 'October', labelIcon: { iconName: 'grid'}, labelNotification: true, labelCounter: 2 },
+      tabPanel: 'October Panel'
+    }]
+  }}
+/>
+
+export const Template = (args) => <SidenavComponent {...args} />
+
+# Sidenav
+
+###### Selector
+```ts
+  <p-sidenav></p-sidenav>
+```
+###### Default
+<Canvas>
+  <Story name="Tabs"
+    args={{
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+
+###### Component
+```ts
+
+```
+
+###### ITab
+```ts
+
+```
