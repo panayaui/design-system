@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import {ISidenavPanel} from './sidenav-panel.interface';
 
 @Component({
   selector: 'p-sidenav',
@@ -6,5 +7,5 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./sidenav.component.scss'],
 })
 export class SidenavComponent {
-  @Input() sidenav: any[];
+  @Input() sidenav: ISidenavPanel[];
 }
