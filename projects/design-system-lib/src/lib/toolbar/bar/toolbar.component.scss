@@ -1,0 +1,9 @@
+@import "../../assets/styles/custom";
+
+.p-toolbar {
+  @include resetUl;
+  display: flex;
+  align-items: center;
+}
+
+

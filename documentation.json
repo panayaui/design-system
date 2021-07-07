@@ -818,6 +818,74 @@
             "indexSignatures": [],
             "kind": 150,
             "methods": []
+        },
+        {
+            "name": "IToolbarButton",
+            "id": "interface-IToolbarButton-e80d57e507506fe8b0f9623f2c60eafb",
+            "file": "projects/design-system-lib/src/lib/toolbar/toolbar-button.interface.ts",
+            "type": "interface",
+            "sourceCode": "export interface IToolbarButton {\r\n  label: string;\r\n  disabled: boolean;\r\n  iconBeforeName: string;\r\n  iconBeforeWidth: string;\r\n  iconBeforeHeight: string;\r\n  iconBeforeStrokeWidth: number;\r\n  iconBeforeStrokeColor: string;\r\n  isMenuTrigger: boolean;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "disabled",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "iconBeforeHeight",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "iconBeforeName",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "iconBeforeStrokeColor",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 8
+                },
+                {
+                    "name": "iconBeforeStrokeWidth",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                },
+                {
+                    "name": "iconBeforeWidth",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "isMenuTrigger",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                },
+                {
+                    "name": "label",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
         }
     ],
     "injectables": [],
@@ -4765,6 +4833,145 @@
             "templateData": "<div class=\"p-toggle\">\r\n  <div *ngFor=\"let option of optionsList; let i = index\"\r\n       class=\"p-toggle-item\"\r\n       [ngClass]=\"i === 0 ? 'first' : i === optionsList.length - 1 ? 'last' : 'middle'\">\r\n    <input [id]=\"'toggle-' + option.optionName\"\r\n           [name]=\"optionsListName\"\r\n           [value]=\"option.optionName\"\r\n           [checked]=\"option.checked\"\r\n           [disabled]=\"disabled\"\r\n           type=\"radio\"\r\n           class=\"p-toggle-button\"/>\r\n    <label [attr.for]=\"'toggle-' + option.optionName\" class=\"p-toggle-label\"\r\n          [class.p-toggle-label-icon]=\"option.icon?.iconName\">\r\n      <ng-template [ngIf]=\"!option.icon?.iconName && !option.icon?.iconName\"\r\n                   [ngIfElse]=\"icon\">\r\n        <span class=\"p-toggle-text\">{{option.optionName}}</span>\r\n      </ng-template>\r\n\r\n      <ng-template #icon>\r\n        <span class=\"p-toggle-icon\" attr.aria-label=\"{{option.optionName}}\">\r\n          <p-icon class=\"p-toggle-icon-comp\"\r\n              [iconName]=\"option.icon.iconName\"\r\n              [width]=\"option.icon?.width\"\r\n              [height]=\"option.icon?.height\"\r\n              [fill]=\"option.icon?.fill\"\r\n              [stroke]=\"option.icon?.stroke\"\r\n              [strokeWidth]=\"option.icon?.strokeWidth\"\r\n              [strokeLinecap]=\"option.icon?.strokeLinecap\"\r\n              [strokeLinejoin]=\"option.icon?.strokeLinejoin\"></p-icon>\r\n        </span>\r\n      </ng-template>\r\n    </label>\r\n  </div>\r\n</div>\r\n\r\n\r\n\r\n"
         },
         {
+            "name": "ToolbarButtonComponent",
+            "id": "component-ToolbarButtonComponent-27377e72f98283ca442218999cd96b00",
+            "file": "projects/design-system-lib/src/lib/toolbar/button/toolbar-button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-toolbar-button",
+            "styleUrls": [
+                "./toolbar-button.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./toolbar-button.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "line": 10,
+                    "type": "boolean"
+                },
+                {
+                    "name": "iconBeforeHeight",
+                    "defaultValue": "'auto'",
+                    "line": 13,
+                    "type": "string"
+                },
+                {
+                    "name": "iconBeforeName",
+                    "line": 11,
+                    "type": "string"
+                },
+                {
+                    "name": "iconBeforeStrokeColor",
+                    "line": 15,
+                    "type": "string"
+                },
+                {
+                    "name": "iconBeforeStrokeWidth",
+                    "line": 14,
+                    "type": "number"
+                },
+                {
+                    "name": "iconBeforeWidth",
+                    "defaultValue": "'auto'",
+                    "line": 12,
+                    "type": "string"
+                },
+                {
+                    "name": "isMenuTrigger",
+                    "defaultValue": "false",
+                    "line": 16,
+                    "type": "boolean"
+                },
+                {
+                    "name": "label",
+                    "line": 9,
+                    "type": "string"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "isActive",
+                    "defaultValue": "false",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 17,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, EventEmitter, Input, Output} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'p-toolbar-button',\r\n  templateUrl: './toolbar-button.component.html',\r\n  styleUrls: ['./toolbar-button.component.scss'],\r\n})\r\nexport class ToolbarButtonComponent {\r\n  @Input() label: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() iconBeforeName: string;\r\n  @Input() iconBeforeWidth: string = 'auto';\r\n  @Input() iconBeforeHeight: string = 'auto';\r\n  @Input() iconBeforeStrokeWidth: number;\r\n  @Input() iconBeforeStrokeColor: string;\r\n  @Input() isMenuTrigger: boolean = false;\r\n  public isActive: boolean = false;\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$toolbar-btn-height: 38px;\r\n\r\n.p-toolbar-btn {\r\n  @include resetButton;\r\n  display: flex;\r\n  align-items: center;\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  font-weight: 400;\r\n  height: $toolbar-btn-height;\r\n  padding-right: $gap-base;\r\n  padding-left: $gap-base;\r\n  border-radius: $btn-border-radius;\r\n  white-space: nowrap;\r\n\r\n  &:not(:disabled):hover,\r\n  &:not(:disabled):focus {\r\n    background-color: $primary-c-50;\r\n  }\r\n\r\n  &.menu-trigger {\r\n    &:not(:disabled):not(.active):hover,\r\n    &:not(:disabled):not(.active):focus {\r\n      color: $secondary-a-800;\r\n    }\r\n  }\r\n\r\n  &.active {\r\n    color: $secondary-a-700;\r\n    background-color: $primary-c-50;\r\n  }\r\n\r\n  &:disabled {\r\n    color: $gray-scale-600;\r\n    pointer-events: none;\r\n  }\r\n\r\n  // class of the before icon\r\n  &-icon {\r\n    margin-right: $gap-base;\r\n  }\r\n\r\n  // class of the after icon (chevron-down)\r\n  &-arrow {\r\n    margin-left: $gap-small;\r\n  }\r\n\r\n}\r\n\r\n\r\n",
+                    "styleUrl": "./toolbar-button.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<button class=\"p-toolbar-btn\"\r\n        [ngClass]=\"{'menu-trigger' : isMenuTrigger, 'active' : isMenuTrigger && isActive}\"\r\n        [disabled]=\"disabled\"\r\n        (click)=\"isActive = true\"\r\n        (blur)=\"isActive = false\">\r\n  <p-icon *ngIf=\"iconBeforeName\"\r\n          class=\"p-toolbar-btn-icon\"\r\n          [iconName]=\"iconBeforeName\"\r\n          [width]=\"iconBeforeWidth\"\r\n          [height]=\"iconBeforeHeight\"\r\n          [stroke]=\"iconBeforeStrokeColor\"\r\n          [strokeWidth]=\"iconBeforeStrokeWidth\"\r\n          [disabled]=\"disabled\"></p-icon>\r\n  <span class=\"p-toolbar-btn-label\">{{label}}</span>\r\n  <p-icon *ngIf=\"isMenuTrigger\"\r\n          class=\"p-toolbar-btn-arrow\"\r\n          iconName=\"chevron-down\"\r\n          [width]=\"17\"\r\n          [disabled]=\"disabled\"></p-icon>\r\n</button>\r\n"
+        },
+        {
+            "name": "ToolbarComponent",
+            "id": "component-ToolbarComponent-37fe9642f5f3a18f6aef97f4ad5503d5",
+            "file": "projects/design-system-lib/src/lib/toolbar/bar/toolbar.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-toolbar",
+            "styleUrls": [
+                "./toolbar.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./toolbar.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "toolbar",
+                    "line": 10,
+                    "type": "IToolbarButton[]"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {IToolbarButton} from '../toolbar-button.interface';\r\n\r\n@Component({\r\n  selector: 'p-toolbar',\r\n  templateUrl: './toolbar.component.html',\r\n  styleUrls: ['./toolbar.component.scss'],\r\n})\r\nexport class ToolbarComponent {\r\n  @Input() toolbar: IToolbarButton[];\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n.p-toolbar {\r\n  @include resetUl;\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\n\r\n",
+                    "styleUrl": "./toolbar.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<ul class=\"p-toolbar\">\r\n  <li class=\"p-toolbar-item\" *ngFor=\"let item of toolbar\">\r\n    <p-toolbar-button\r\n      class=\"p-toolbar-item-comp\"\r\n      [label]=\"item.label\"\r\n      [disabled]=\"item.disabled\"\r\n      [iconBeforeName]=\"item.iconBeforeName\"\r\n      [iconBeforeWidth]=\"item.iconBeforeWidth\"\r\n      [iconBeforeHeight]=\"item.iconBeforeHeight\"\r\n      [iconBeforeStrokeWidth]=\"item.iconBeforeStrokeWidth\"\r\n      [iconBeforeStrokeColor]=\"item.iconBeforeStrokeColor\"\r\n      [isMenuTrigger]=\"item.isMenuTrigger\">\r\n    </p-toolbar-button>\r\n  </li>\r\n</ul>\r\n"
+        },
+        {
             "name": "TooltipComponent",
             "id": "component-TooltipComponent-33bd68de687ce4abbae355e286032df7",
             "file": "src/stories/tooltip/tooltip.component.ts",
@@ -5535,6 +5742,53 @@
                     "elements": []
                 }
             ]
+        },
+        {
+            "name": "ToolbarModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ToolbarButtonComponent"
+                        },
+                        {
+                            "name": "ToolbarComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "IconModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ToolbarButtonComponent"
+                        },
+                        {
+                            "name": "ToolbarComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
         }
     ],
     "miscellaneous": {
@@ -5591,17 +5845,17 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
+                "file": "src/environments/environment.ts",
                 "type": "object",
-                "defaultValue": "{\r\n  production: true\r\n}"
+                "defaultValue": "{\r\n  production: false\r\n}"
             },
             {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
+                "file": "src/environments/environment.prod.ts",
                 "type": "object",
-                "defaultValue": "{\r\n  production: false\r\n}"
+                "defaultValue": "{\r\n  production: true\r\n}"
             },
             {
                 "name": "ErrorMessage",
@@ -5695,14 +5949,6 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
-                "type": "Story<CheckboxGroupPageComponent>",
-                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "PageTemplate",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
                 "type": "Story<CheckboxGroupComponent>",
                 "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
@@ -5714,6 +5960,14 @@
                 "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
                 "type": "Story<CheckboxPageComponent>",
                 "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "PageTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "Story<CheckboxGroupPageComponent>",
+                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -5797,17 +6051,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/icons/icon.stories.ts",
-                "type": "Story<IconComponent>",
-                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/colors/Color-palette.stories.ts",
+                "type": "Story<ColorPaletteComponent>",
+                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/colors/Color-palette.stories.ts",
-                "type": "Story<ColorPaletteComponent>",
-                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/icons/icon.stories.ts",
+                "type": "Story<IconComponent>",
+                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -6146,16 +6400,6 @@
                     "type": "literal type"
                 }
             ],
-            "src/environments/environment.prod.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.prod.ts",
-                    "type": "object",
-                    "defaultValue": "{\r\n  production: true\r\n}"
-                }
-            ],
             "src/environments/environment.ts": [
                 {
                     "name": "environment",
@@ -6164,6 +6408,16 @@
                     "file": "src/environments/environment.ts",
                     "type": "object",
                     "defaultValue": "{\r\n  production: false\r\n}"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: true\r\n}"
                 }
             ],
             "src/stories/input-text/input-text.stories.ts": [
@@ -6929,6 +7183,33 @@
                 "name": "IToggleOption",
                 "coveragePercent": 0,
                 "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/toolbar/bar/toolbar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ToolbarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/toolbar/button/toolbar-button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ToolbarButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/10",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/toolbar/toolbar-button.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "IToolbarButton",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
                 "status": "low"
             },
             {

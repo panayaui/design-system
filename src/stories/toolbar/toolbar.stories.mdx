@@ -1,0 +1,108 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+import {ToolbarComponent} from 'projects/design-system-lib/src/public-api';
+import {ToolbarModule} from 'projects/design-system-lib/src/public-api';
+
+<Meta title='Components/Toolbar'
+  component={ToolbarComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [ToolbarModule]
+    })
+  ]}
+  args={{
+    toolbar: [
+      {
+        label: 'Create',
+        iconBeforeName: 'plus',
+        iconBeforeWidth: '17',
+        isMenuTrigger: true
+      },
+      {
+        label: 'Edit',
+        iconBeforeName: 'edit-3',
+        iconBeforeWidth: '17',
+        isMenuTrigger: false
+      },
+      {
+        label: 'Delete',
+        iconBeforeName: 'trash-2',
+        iconBeforeWidth: '17',
+        isMenuTrigger: false
+      },
+      {
+        label: 'Link to',
+        iconBeforeName: 'link',
+        iconBeforeWidth: '17',
+        isMenuTrigger: true,
+        disabled: true
+      },
+      {
+        label: 'Assign',
+        iconBeforeName: 'user',
+        iconBeforeWidth: '17',
+        isMenuTrigger: false,
+        disabled: true
+      },
+      {
+        label: 'Broadcast',
+        iconBeforeName: 'message-square',
+        iconBeforeWidth: '17',
+        isMenuTrigger: false,
+        disabled: true
+      },
+      {
+        label: 'Import',
+        iconBeforeName: 'download',
+        iconBeforeWidth: '17',
+        isMenuTrigger: true
+      },
+      {
+        label: 'Approval Workflow',
+        iconBeforeName: 'award',
+        iconBeforeWidth: '17',
+        isMenuTrigger: true
+      },
+      {
+        label: 'Export',
+        iconBeforeName: 'file-plus',
+        iconBeforeWidth: '17',
+        isMenuTrigger: true
+      },
+      {
+        label: 'Rank',
+        iconBeforeName: 'align-left',
+        iconBeforeWidth: '17',
+        isMenuTrigger: false
+      }
+    ]
+  }}
+/>
+
+export const Template = (args) => <ToolbarComponent {...args} />
+
+# Toolbar
+
+###### Selector
+```html
+  <p-toolbar></p-toolbar>
+```
+
+###### Default
+<Canvas>
+  <Story name="Toolbar"
+    args={{
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Component
+```ts
+
+```
+
+###### Types
+```ts
+
+```

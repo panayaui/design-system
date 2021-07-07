@@ -1,0 +1,59 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+import {ToolbarButtonComponent} from 'projects/design-system-lib/src/public-api';
+import {ToolbarModule} from 'projects/design-system-lib/src/public-api';
+
+<Meta title='Components/Toolbar/Button'
+  component={ToolbarButtonComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [ToolbarModule]
+    })
+  ]}
+  args={{
+    label: 'Action item',
+    iconBeforeName: 'trash-2',
+    iconBeforeWidth: '17',
+    isMenuTrigger: true
+  }}
+/>
+
+export const Template = (args) => <ToolbarButtonComponent {...args} />
+
+# Toolbar Button
+
+###### Selector
+```html
+  <p-toolbar-button></p-toolbar-button>
+```
+
+###### Default
+<Canvas>
+  <Story name="Toolbar Button"
+    args={{
+      isMenuTrigger: false
+    }}>
+    {Template.bind({})}
+  </Story>
+   <Story name="Menu Trigger"
+    args={{
+    }}>
+    {Template.bind({})}
+  </Story>
+   <Story name="Toolbar Disabled"
+    args={{
+      disabled: true
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Component
+```ts
+
+```
+
+###### Types
+```ts
+
+```
