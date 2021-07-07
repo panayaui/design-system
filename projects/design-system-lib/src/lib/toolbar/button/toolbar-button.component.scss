@@ -15,16 +15,9 @@ $toolbar-btn-height: 38px;
   border-radius: $btn-border-radius;
   white-space: nowrap;
 
-  &:not(:disabled):hover,
-  &:not(:disabled):focus {
-    background-color: $primary-c-50;
-  }
-
-  &.menu-trigger {
-    &:not(:disabled):not(.active):hover,
-    &:not(:disabled):not(.active):focus {
-      color: $secondary-a-800;
-    }
+  &:not(:disabled):not(.active):hover,
+  &:not(:disabled):not(.active):focus {
+    color: $secondary-a-700;
   }
 
   &.active {
@@ -46,7 +39,6 @@ $toolbar-btn-height: 38px;
   &-arrow {
     margin-left: $gap-small;
   }
-
 }
 
 
