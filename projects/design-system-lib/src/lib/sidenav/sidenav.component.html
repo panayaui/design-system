@@ -1,0 +1,20 @@
+<mat-accordion class="p-sidenav" multi>
+  <mat-expansion-panel *ngFor="let panel of sidenav"
+                        class="p-sidenav-panel">
+    <mat-expansion-panel-header class="p-sidenav-header">
+      <p-icon class="p-sidenav-header-icon"
+              [iconName]="panel.header.headerIcon.iconName"
+              [width]="17"></p-icon>
+     {{panel.header.headerName}}
+    </mat-expansion-panel-header>
+
+    <ul class="p-sidenav-content">
+      <li class="p-sidenav-content-item" *ngFor="let content of panel.content">
+        <a href="{{content.link}}"
+           class="p-sidenav-content-link">
+          {{content.name}}
+        </a>
+      </li>
+    </ul>
+  </mat-expansion-panel>
+</mat-accordion>

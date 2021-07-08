@@ -50,10 +50,29 @@ export const Template = (args) => <ToolbarButtonComponent {...args} />
 
 ###### Component
 ```ts
-
+export class ToolbarButtonComponent {
+  @Input() label: string;
+  @Input() disabled: boolean = false;
+  @Input() iconBeforeName: string;
+  @Input() iconBeforeWidth: string = 'auto';
+  @Input() iconBeforeHeight: string = 'auto';
+  @Input() iconBeforeStrokeWidth: number;
+  @Input() iconBeforeStrokeColor: string;
+  @Input() isMenuTrigger: boolean = false;
+  public isActive: boolean = false;
+}
 ```
 
-###### Types
+###### IToolbarButton
 ```ts
-
+export interface IToolbarButton {
+  label: string;
+  disabled?: boolean;
+  iconBeforeName?: string;
+  iconBeforeWidth?: string;
+  iconBeforeHeight?: string;
+  iconBeforeStrokeWidth?: number;
+  iconBeforeStrokeColor?: string;
+  isMenuTrigger?: boolean;
+}
 ```

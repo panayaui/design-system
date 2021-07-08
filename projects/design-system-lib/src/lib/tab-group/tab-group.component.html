@@ -1,5 +1,6 @@
 <mat-tab-group class="p-tabs"
-              animationDuration="0ms">
+               [disableRipple]="true"
+               animationDuration="0ms">
   <mat-tab *ngFor="let tab of tabGroup"
             class="p-tabs-button"
             [disabled]="tab.disabled">

@@ -64,10 +64,56 @@ export const Template = (args) => <TabGroupComponent {...args} />
 <Canvas>
   <Story name="Tabs"
     args={{
+      tabGroup: [{
+        tabButton: { labelName: 'Tab Name' },
+        tabPanel: 'January Panel'
+      },
+      {
+        tabButton: { labelName: 'February' },
+        tabPanel: 'February Panel'
+      },
+      {
+        tabButton: { labelName: 'March', labelCounter: 1 },
+        tabPanel: 'March Panel'
+      },
+      {
+        tabButton: { labelName: 'July' },
+        tabPanel: 'July Panel'
+      },
+      {
+        tabButton: { labelName: 'April' },
+        tabPanel: 'April Panel'
+      },
+      {
+        tabButton: { labelName: 'August' },
+        tabPanel: 'August Panel'
+      },
+      {
+        tabButton: { labelName: 'May', labelCounter: 1 },
+        tabPanel: 'May Panel'
+      },
+      {
+        tabButton: { labelName: 'June', labelCounter: 1 },
+        tabPanel: 'June Panel'
+      },
+      {
+        tabButton: { labelName: 'October', labelCounter: 2 },
+        tabPanel: 'October Panel'
+      }]
     }}>
     {Template.bind({})}
   </Story>
 </Canvas>
+
+###### Icon Tabs
+<Canvas>
+  <Story name="Tabs With Icons"
+    args={{
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
 
 ###### Disabled
 <Canvas>

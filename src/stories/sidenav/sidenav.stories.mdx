@@ -1,0 +1,122 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+import {SidenavComponent} from 'projects/design-system-lib/src/public-api';
+import {SidenavModule} from 'projects/design-system-lib/src/public-api';
+
+<Meta title='Components/Sidenav'
+  component={SidenavComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [
+        SidenavModule
+      ]
+    })
+  ]}
+  args={{ 
+    sidenav: [{
+      header: { headerName: 'section title', headerIcon: { iconName: 'file'} },
+      content: [{
+        name: 'section title',
+        link: ''
+      },
+      {
+        name: 'section title',
+        link: ''
+      },
+      {
+        name: 'section title',
+        link: ''
+      }]
+    },
+    {
+      header: { headerName: 'section title', headerIcon: { iconName: 'file'} },
+      content: [{
+        name: 'section title',
+        link: ''
+      },
+      {
+        name: 'section title',
+        link: ''
+      },
+      {
+        name: 'section title',
+        link: ''
+      }]
+    },
+    {
+      header: { headerName: 'section title', headerIcon: { iconName: 'file'} },
+      content: [{
+        name: 'section title',
+        link: ''
+      },
+      {
+        name: 'section title',
+        link: ''
+      },
+      {
+        name: 'section title',
+        link: ''
+      }]
+    },
+    {
+      header: { headerName: 'section title', headerIcon: { iconName: 'file'} },
+      content: [{
+        name: 'section title',
+        link: ''
+      },
+      {
+        name: 'section title',
+        link: ''
+      },
+      {
+        name: 'section title',
+        link: ''
+      }]
+    },
+    {
+      header: { headerName: 'section title', headerIcon: { iconName: 'file'} },
+      content: [{
+        name: 'section title',
+        link: ''
+      },
+      {
+        name: 'section title',
+        link: ''
+      },
+      {
+        name: 'section title',
+        link: ''
+      }]
+    }
+   ]
+  }}
+/>
+
+export const Template = (args) => <SidenavComponent {...args} />
+
+# Sidenav
+
+###### Selector
+```ts
+  <p-sidenav></p-sidenav>
+```
+###### Default
+<Canvas>
+  <Story name="Tabs"
+    args={{
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+
+###### Component
+```ts
+
+```
+
+###### ITab
+```ts
+
+```
