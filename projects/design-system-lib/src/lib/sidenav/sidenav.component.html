@@ -11,7 +11,8 @@
     <ul class="p-sidenav-content">
       <li class="p-sidenav-content-item" *ngFor="let content of panel.content">
         <a href="{{content.link}}"
-           class="p-sidenav-content-link">
+           class="p-sidenav-content-link"
+           [class.selected]="content.selected">
           {{content.name}}
         </a>
       </li>

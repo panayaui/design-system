@@ -5,6 +5,7 @@ export interface ISidenavPanel {
   };
   content: {
     name: string,
-    link: string
+    link: string,
+    selected: boolean
   }[];
 }
