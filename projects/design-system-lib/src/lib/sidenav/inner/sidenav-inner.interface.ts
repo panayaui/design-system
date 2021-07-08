@@ -1,11 +1,9 @@
-export interface ISidenavPanel {
+export interface ISidenavInner {
   header: {
     headerName: string,
-    headerIcon: string,
   };
-  content: {
+  content?: {
     name: string,
-    link: string,
     selected: boolean
   }[];
 }

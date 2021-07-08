@@ -1,10 +1,10 @@
 import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
 import {moduleMetadata} from '@storybook/angular';
-import {SidenavComponent} from 'projects/design-system-lib/src/public-api';
+import {SidenavMainComponent} from 'projects/design-system-lib/src/public-api';
 import {SidenavModule} from 'projects/design-system-lib/src/public-api';
 
-<Meta title='Components/Sidenav'
-  component={SidenavComponent}
+<Meta title='Components/Sidenav/Main'
+  component={SidenavMainComponent}
   decorators={[
     moduleMetadata({
       imports: [
@@ -107,15 +107,14 @@ import {SidenavModule} from 'projects/design-system-lib/src/public-api';
   }}
 />
 
-export const Template = (args) => <SidenavComponent {...args} />
+export const Template = (args) => <SidenavMainComponent {...args} />
 
-# Sidenav
+# Sidenav Main
 
 ###### Selector
 ```ts
-  <p-sidenav></p-sidenav>
+  <p-sidenav-main></p-sidenav-main>
 ```
-###### Default
 <Canvas>
   <Story name="Main"
     args={{
@@ -123,8 +122,6 @@ export const Template = (args) => <SidenavComponent {...args} />
     {Template.bind({})}
   </Story>
 </Canvas>
-
-
 
 ###### Component
 ```ts

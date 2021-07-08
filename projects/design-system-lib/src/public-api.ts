@@ -64,5 +64,7 @@ export * from './lib/toolbar/bar/toolbar.component';
 export * from './lib/toolbar/toolbar-button.interface';
 
 export * from './lib/sidenav/sidenav.module';
-export * from './lib/sidenav/sidenav.component';
-export * from './lib/sidenav/sidenav-panel.interface';
+export * from './lib/sidenav/main/sidenav-main.component';
+export * from './lib/sidenav/main/sidenav-main.interface';
+export * from './lib/sidenav/inner/sidenav-inner.component';
+export * from './lib/sidenav/inner/sidenav-inner.interface';
