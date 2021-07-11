@@ -1,0 +1,57 @@
+@import "../sidenav.component";
+
+$header-height: 62px;
+
+.p-sidenav {
+  ::ng-deep &.main .mat-expansion-panel-header {
+    font-family: $font-family-accent;
+    font-weight: 600;
+    font-size: $small-font-size;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $primary-a-900;
+    padding-right: $padding-right;
+    padding-left: $padding-left;
+    border-right: $border;
+    border-left: $border;
+    @include ellipsis;
+    &,
+    &.mat-expanded {
+      height: $header-height;
+    }
+    &.mat-expanded {
+      color: $secondary-a-700;
+    }
+  }
+
+  .p-sidenav-header-icon {
+    margin-right: 10px;
+  }
+
+  &-content-link {
+    @include resetLink;
+    display: flex;
+    align-items: center;
+    font-family: $font-family-basic;
+    font-weight: 600;
+    font-size: $small-font-size;
+    text-transform: capitalize;
+    width: 100%;
+    height: 100%;
+    padding-right: $padding-right;
+    padding-left: $padding-left-content;
+    border-right: $border;
+    border-left: $border;
+    outline: none;
+    position: relative;
+    &:focus,
+    &:hover {
+      background: $primary-c-50;
+    }
+    &.selected {
+      @extend %selected;
+    }
+  }
+}
+
+

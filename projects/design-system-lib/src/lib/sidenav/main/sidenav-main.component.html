@@ -1,17 +1,20 @@
-<mat-accordion class="p-sidenav" multi>
+<mat-accordion class="p-sidenav main" multi>
   <mat-expansion-panel *ngFor="let panel of sidenav"
-                        class="p-sidenav-panel">
+                       class="p-sidenav-panel">
     <mat-expansion-panel-header class="p-sidenav-header">
-      <p-icon class="p-sidenav-header-icon"
+      <p-icon *ngIf="panel.header.headerIcon?.iconName"
+              class="p-sidenav-header-icon"
               [iconName]="panel.header.headerIcon.iconName"
               [width]="17"></p-icon>
-     {{panel.header.headerName}}
+      {{panel.header.headerName}}
     </mat-expansion-panel-header>
 
+    <!--expanded content-->
     <ul class="p-sidenav-content">
       <li class="p-sidenav-content-item" *ngFor="let content of panel.content">
         <a href="{{content.link}}"
-           class="p-sidenav-content-link">
+           class="p-sidenav-content-link"
+           [class.selected]="content.selected">
           {{content.name}}
         </a>
       </li>

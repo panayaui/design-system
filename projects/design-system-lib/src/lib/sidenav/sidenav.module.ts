@@ -3,7 +3,8 @@ import {IconModule} from '../icon/icon.module';
 import {CommonModule} from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatExpansionModule} from '@angular/material/expansion';
-import {SidenavComponent} from './sidenav.component';
+import {SidenavMainComponent} from './main/sidenav-main.component';
+import {SidenavInnerComponent} from './inner/sidenav-inner.component';
 
 @NgModule({
   imports: [
@@ -13,10 +14,12 @@ import {SidenavComponent} from './sidenav.component';
     IconModule
   ],
   declarations: [
-    SidenavComponent
+    SidenavMainComponent,
+    SidenavInnerComponent
   ],
   exports: [
-    SidenavComponent
+    SidenavMainComponent,
+    SidenavInnerComponent
   ]
 })
 export class SidenavModule { }

@@ -1,10 +1,10 @@
 import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
 import {moduleMetadata} from '@storybook/angular';
-import {SidenavComponent} from 'projects/design-system-lib/src/public-api';
+import {SidenavMainComponent} from 'projects/design-system-lib/src/public-api';
 import {SidenavModule} from 'projects/design-system-lib/src/public-api';
 
-<Meta title='Components/Sidenav'
-  component={SidenavComponent}
+<Meta title='Components/Sidenav/Main'
+  component={SidenavMainComponent}
   decorators={[
     moduleMetadata({
       imports: [
@@ -17,99 +17,111 @@ import {SidenavModule} from 'projects/design-system-lib/src/public-api';
       header: { headerName: 'section title', headerIcon: { iconName: 'file'} },
       content: [{
         name: 'section title',
-        link: ''
+        link: '',
+        selected: true
       },
       {
         name: 'section title',
-        link: ''
+        link: '',
+        selected: false
       },
       {
         name: 'section title',
-        link: ''
+        link: '',
+        selected: false
       }]
     },
     {
       header: { headerName: 'section title', headerIcon: { iconName: 'file'} },
       content: [{
         name: 'section title',
-        link: ''
+        link: '',
+        selected: false
       },
       {
         name: 'section title',
-        link: ''
+        link: '',
+        selected: false
       },
       {
         name: 'section title',
-        link: ''
+        link: '',
+        selected: false
       }]
     },
     {
       header: { headerName: 'section title', headerIcon: { iconName: 'file'} },
       content: [{
         name: 'section title',
-        link: ''
+        link: '',
+        selected: false
       },
       {
         name: 'section title',
-        link: ''
+        link: '',
+        selected: false
       },
       {
         name: 'section title',
-        link: ''
+        link: '',
+        selected: false
       }]
     },
     {
       header: { headerName: 'section title', headerIcon: { iconName: 'file'} },
       content: [{
         name: 'section title',
-        link: ''
+        link: '',
+        selected: false
       },
       {
         name: 'section title',
-        link: ''
+        link: '',
+        selected: false
       },
       {
         name: 'section title',
-        link: ''
+        link: '',
+        selected: false
       }]
     },
     {
       header: { headerName: 'section title', headerIcon: { iconName: 'file'} },
       content: [{
         name: 'section title',
-        link: ''
+        link: '',
+        selected: false
       },
       {
         name: 'section title',
-        link: ''
+        link: '',
+        selected: false
       },
       {
         name: 'section title',
-        link: ''
+        link: '',
+        selected: false
       }]
     }
    ]
   }}
 />
 
-export const Template = (args) => <SidenavComponent {...args} />
+export const Template = (args) => <SidenavMainComponent {...args} />
 
-# Sidenav
+# Sidenav Main
 
 ###### Selector
 ```ts
-  <p-sidenav></p-sidenav>
+  <p-sidenav-main></p-sidenav-main>
 ```
-###### Default
 <Canvas>
-  <Story name="Tabs"
+  <Story name="Main"
     args={{
     }}>
     {Template.bind({})}
   </Story>
 </Canvas>
-
-
 
 ###### Component
 ```ts

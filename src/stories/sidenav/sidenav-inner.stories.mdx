@@ -1,0 +1,78 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+import {SidenavInnerComponent} from 'projects/design-system-lib/src/public-api';
+import {SidenavModule} from 'projects/design-system-lib/src/public-api';
+
+<Meta title='Components/Sidenav/Inner'
+  component={SidenavInnerComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [
+        SidenavModule
+      ]
+    })
+  ]}
+  args={{ 
+     sidenav: [{
+      header: { headerName: 'single section title 1', selected: true },
+      content: []
+    },
+    {
+      header: { headerName: 'single section title 2', selected: false },
+      content: []
+    },
+    {
+      header: { headerName: 'Multiple section title 3', selected: false },
+      content: [{
+        name: 'section title',
+        selected: false
+      }]
+    },
+    {
+      header: { headerName: 'Multiple section title 4', selected: false },
+      content: [{
+        name: 'section title',
+        selected: true
+      },
+      {
+        name: 'section title',
+        selected: false
+      },
+      {
+        name: 'section title',
+        selected: false
+      }]
+    },
+    {
+      header: { headerName: 'single section title 2', selected: false },
+      content: []
+    }
+   ]
+  }}
+/>
+
+export const Template = (args) => <SidenavInnerComponent {...args} />
+
+# Sidenav Inner
+
+###### Selector
+```ts
+  <p-sidenav-inner></p-sidenav-inner>
+```
+<Canvas>
+  <Story name="Inner"
+    args={{
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Component
+```ts
+
+```
+
+###### ITab
+```ts
+
+```
