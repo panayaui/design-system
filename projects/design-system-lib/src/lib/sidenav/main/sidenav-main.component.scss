@@ -1,8 +1,14 @@
 @import "../sidenav.component";
 
 $header-height: 62px;
+$padding-left-main: 36px;
+$padding-left-content: 56px;
+$expand-width: 14px;
 
 .p-sidenav {
+  ::ng-deep &.main .mat-expansion-panel:not([class*=mat-elevation-z]) {
+    border-top: $border;
+  }
   ::ng-deep &.main .mat-expansion-panel-header {
     font-family: $font-family-accent;
     font-weight: 600;
@@ -11,21 +17,25 @@ $header-height: 62px;
     text-transform: uppercase;
     color: $primary-a-900;
     padding-right: $padding-right;
-    padding-left: $padding-left;
+    padding-left: $padding-left-main;
     border-right: $border;
     border-left: $border;
-    @include ellipsis;
     &,
     &.mat-expanded {
       height: $header-height;
     }
     &.mat-expanded {
       color: $secondary-a-700;
+      font-weight: 700;
     }
   }
 
   .p-sidenav-header-icon {
     margin-right: 10px;
+  }
+
+  &-content-item {
+    border-top: 1px solid $gray-scale-400;
   }
 
   &-content-link {

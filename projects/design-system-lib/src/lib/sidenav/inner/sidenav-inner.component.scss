@@ -1,65 +1,61 @@
 @import "../sidenav.component";
 
 $item-height: $content-item-height;
-$padding-inner: 24px;
-$expand-padding: 10px;
+$padding-left-inner: 24px;
+$padding-left-content: 40px;
+
+%innerSidenavItem {
+  @include resetButton;
+  display: flex;
+  align-items: center;
+  font-family: $font-family-basic;
+  font-weight: 600;
+  font-size: $small-font-size;
+  text-transform: capitalize;
+  color: $primary-a-900;
+  width: 100%;
+  height: 100%;
+  padding-right: $padding-right;
+  padding-left: $padding-left-inner;
+  border-top: 1px solid $gray-scale-400;
+  border-right: $border;
+  border-left: $border;
+  outline: none;
+  position: relative;
+  &:focus,
+  &:hover {
+    background-color: $primary-c-50;
+  }
+  &.selected {
+    @extend %selected;
+  }
+}
 
 .p-sidenav {
   ::ng-deep &.inner {
-    .expandable {
-      border-right: $border;
-    }
     .mat-expansion-panel-header {
+      @extend %innerSidenavItem;
       &,
       &.mat-expanded {
         height: $item-height;
-        padding: 0;
       }
     }
     .mat-content {
-      height: 100%;
+      justify-content: space-between;
     }
   }
-  &-function {
-    @include resetButton;
-    font-family: $font-family-basic;
-    font-weight: 600;
-    font-size: $small-font-size;
-    text-transform: capitalize;
-    color: $primary-a-900;
-    width: 100%;
-    height: 100%;
-    padding-left: $padding-inner;
-    border-left: $border;
+
+  &-button {
+    @extend %innerSidenavItem;
     justify-content: flex-start;
-    @include ellipsis;
-    .p-sidenav-content & {
-      font-weight: 500;
-      padding-right: $padding-inner;
-      padding-left: 40px;
-      &:focus,
-      &:hover {
-        background-color: $primary-c-50;
-      }
-    }
-    &.selected {
-      @extend %selected;
-    }
-    .p-sidenav-panel:not(.expandable) & {
-      border-right: $border;
-      padding-right: $padding-inner;
-    }
+    padding-left: $padding-left-content;
   }
+}
 
-  &-content-item {
-    position: relative;
-  }
-
-  &-expand-btn {
-    @include resetButton;
-    width: $expand-width + $expand-padding * 2;
-    height: 100%;
-    margin-right: $padding-inner - $expand-padding;
+.p-sidenav-header-icon {
+  transition: transform 280ms;
+  ::ng-deep .mat-expanded & {
+    transform: rotate(-180deg);
   }
 }
 
