@@ -6,5 +6,9 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./chip-button.component.scss'],
 })
 export class ChipButtonComponent {
-  @Input() chips: any[];
+  @Input() label: string;
+  @Input() values: string[];
+  @Input() iconRemove: boolean;
+  @Input() iconMenuTrigger: boolean;
+  @Input() full: boolean;
 }
