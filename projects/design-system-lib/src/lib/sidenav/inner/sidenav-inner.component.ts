@@ -9,7 +9,7 @@ import {ISidenavInner} from './sidenav-inner.interface';
 export class SidenavInnerComponent {
   @Input() sidenav: ISidenavInner[];
 
-  onItemClicked(panel): void {
+  onButtonClicked(panel): void {
     console.log(panel);
   }
 }

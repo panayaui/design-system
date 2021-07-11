@@ -1,12 +1,13 @@
 <mat-accordion class="p-sidenav inner" multi>
   <mat-expansion-panel *ngFor="let panel of sidenav"
                        hideToggle
+                       [expanded]="true"
                        class="p-sidenav-panel"
                        [class.expandable]="panel.content?.length">
     <mat-expansion-panel-header class="p-sidenav-header"
                                 #panelH
                                 (click)="panelH._toggle()">
-      <button class="p-sidenav-function" (click)="onItemClicked(panel)"
+      <button class="p-sidenav-function" (click)="onButtonClicked(panel)"
               [class.selected]="panel.header.selected">
         {{panel.header.headerName}}
       </button>
@@ -20,7 +21,7 @@
       <li class="p-sidenav-content-item" *ngFor="let content of panel.content">
         <button class="p-sidenav-function"
            [class.selected]="content.selected"
-           (click)="onItemClicked(panel)">
+           (click)="onButtonClicked(panel)">
           {{content.name}}
         </button>
       </li>

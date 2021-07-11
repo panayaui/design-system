@@ -2,6 +2,7 @@
 
 $header-height: $content-item-height;
 $padding-inner: 24px;
+$expand-padding: 10px;
 
 .p-sidenav {
   ::ng-deep &.inner {
@@ -28,23 +29,24 @@ $padding-inner: 24px;
     color: $primary-a-900;
     width: 100%;
     height: 100%;
-    padding-right: $padding-inner;
     padding-left: $padding-inner;
     border-left: $border;
     justify-content: flex-start;
     @include ellipsis;
-    &:focus,
-    &:hover {
-      background: $primary-c-50;
-    }
     .p-sidenav-content & {
+      padding-right: $padding-inner;
       padding-left: 40px;
+      &:focus,
+      &:hover {
+        background-color: $primary-c-50;
+      }
     }
     &.selected {
       @extend %selected;
     }
     .p-sidenav-panel:not(.expandable) & {
       border-right: $border;
+      padding-right: $padding-inner;
     }
   }
 
@@ -54,24 +56,16 @@ $padding-inner: 24px;
 
   &-expand-btn {
     @include resetButton;
-    width: 34px;
+    width: $expand-width + $expand-padding * 2;
     height: 100%;
+    margin-right: $padding-inner - $expand-padding;
     &:after {
-      content: 'Expand';
-      display: block;
-      font-size: 0;
-      width: 14px;
-      height: 14px;
-      background-image: url('../../assets/images/plus.svg');
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: initial;
-      border: none;
-      padding: 0;
-      transform: none;
+      @include expand;
+      transform: rotate(0deg);
+      transition: transform 280ms;
       ::ng-deep .mat-expanded & {
-        content: 'Collapse';
-        background-image: url('../../assets/images/minus.svg');
+        @include collapse('primary');
+        transform: rotate(180deg);
       }
     }
   }

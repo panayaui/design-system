@@ -18,10 +18,6 @@ $header-height: 62px;
     &,
     &.mat-expanded {
       height: $header-height;
-      &:focus,
-      &:hover {
-        background: $primary-c-50;
-      }
     }
     &.mat-expanded {
       color: $secondary-a-700;
