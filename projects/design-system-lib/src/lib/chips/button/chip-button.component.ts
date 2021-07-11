@@ -11,4 +11,5 @@ export class ChipButtonComponent {
   @Input() iconRemove: boolean;
   @Input() iconMenuTrigger: boolean;
   @Input() full: boolean;
+  @Input() active: boolean;
 }

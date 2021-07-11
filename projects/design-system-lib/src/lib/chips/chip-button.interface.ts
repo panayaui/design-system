@@ -4,4 +4,5 @@ export interface IChip {
   iconRemove?: boolean;
   iconMenuTrigger?: boolean;
   full?: boolean;
+  active?: boolean;
 }

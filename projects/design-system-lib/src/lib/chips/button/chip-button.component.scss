@@ -1,8 +1,21 @@
 @import "../../assets/styles/custom";
 
+$chip-height: 27px;
+
 .p-chip {
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  height: $chip-height;
+  padding-right: $gap-small;
+  padding-left: $gap-small;
+  background-color: $gray-scale-1;
+  border: 1px solid currentColor;
+  border-radius: 16px;
+  &:hover,
+  &:active,
+  &.active {
+    color: $secondary-a-700;
+  }
 
   &-label:after {
     content: ':';
@@ -18,7 +31,7 @@
     display: flex;
     margin-left: $gap-small;
     &:not(:last-child):after {
-      content: ',';
+      content: ';';
     }
   }
 
@@ -28,5 +41,14 @@
 
   &-menuTrigger {
     margin-left: $gap-small;
+  }
+
+  &.full {
+    background-color: $secondary-a-50;
+    //&:hover,
+    //&:active,
+    //&.active {
+    //  color: $secondary-a-700;
+    //}
   }
 }

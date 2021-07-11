@@ -3,7 +3,7 @@ import {moduleMetadata} from '@storybook/angular';
 import {ChipButtonComponent} from 'projects/design-system-lib/src/public-api';
 import {ChipsModule} from 'projects/design-system-lib/src/public-api';
 
-<Meta title='Components/Chips'
+<Meta title='Components/Chips/Buttons'
   component={ChipButtonComponent}
   decorators={[
     moduleMetadata({
@@ -21,16 +21,31 @@ import {ChipsModule} from 'projects/design-system-lib/src/public-api';
 
 export const Template = (args) => <ChipButtonComponent {...args} />
 
-# Chips
+# Chip Button
 
 ###### Selector
 ```ts
   <p-tab-group></p-tab-group>
 ```
-###### Default
 <Canvas>
-  <Story name="Chips"
+  <p className="story-title">Default</p>
+  <Story name="Default"
     args={{  }}>
+    {Template.bind({})}
+  </Story>
+   <p className="story-title">Active</p>
+  <Story name="Active"
+    args={{ active: true }}>
+    {Template.bind({})}
+  </Story>
+  <p className="story-title">Full</p>
+  <Story name="Full"
+    args={{ full: true }}>
+    {Template.bind({})}
+  </Story>
+  <p className="story-title">Full Active</p>
+  <Story name="Full Active"
+    args={{ full: true, active: true }}>
     {Template.bind({})}
   </Story>
 </Canvas>

@@ -1,0 +1,11 @@
+#chip-button{
+  &~ .sbdocs .innerZoomElementWrapper > div {
+    $label-width: 150px;
+    &:nth-child(odd){
+      width: $label-width;
+    }
+    &:nth-child(even){
+      width: calc(100% - #{$label-width});
+    }
+  }
+}
