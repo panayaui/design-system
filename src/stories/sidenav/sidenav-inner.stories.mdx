@@ -14,25 +14,25 @@ import {SidenavModule} from 'projects/design-system-lib/src/public-api';
   ]}
   args={{ 
      sidenav: [{
-      header: { headerName: 'single section title 1' },
+      header: { headerName: 'single section title 1', selected: true },
       content: []
     },
     {
-      header: { headerName: 'single section title 2' },
+      header: { headerName: 'single section title 2', selected: false },
       content: []
     },
     {
-      header: { headerName: 'Multiple section title 3' },
+      header: { headerName: 'Multiple section title 3', selected: false },
       content: [{
         name: 'section title',
         selected: false
       }]
     },
     {
-      header: { headerName: 'Multiple section title 4' },
+      header: { headerName: 'Multiple section title 4', selected: false },
       content: [{
         name: 'section title',
-        selected: false
+        selected: true
       },
       {
         name: 'section title',
@@ -44,7 +44,7 @@ import {SidenavModule} from 'projects/design-system-lib/src/public-api';
       }]
     },
     {
-      header: { headerName: 'single section title 2' },
+      header: { headerName: 'single section title 2', selected: false },
       content: []
     }
    ]

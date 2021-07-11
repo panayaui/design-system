@@ -1,151 +1,78 @@
 @import "../sidenav.component";
 
-$content-item-height: 48px;
-$padding-right: 32px;
-$padding-left: 36px;
-$padding-left-content: 56px;
-$border: 1px solid $gray-scale-400;
+$header-height: $content-item-height;
+$padding-inner: 24px;
 
-::ng-deep .p-sidenav {
-  &.mat-accordion {
-    .mat-expansion-panel,
-    .mat-expansion-panel:first-of-type,
-    .mat-expansion-panel:last-of-type {
-      background-color: $gray-scale-1;
-      border-radius: 0;
+.p-sidenav {
+  ::ng-deep &.inner {
+    .expandable {
+      border-right: $border;
     }
-  }
-
-  .mat-expansion-panel:not([class*=mat-elevation-z]) {
-    box-shadow: none;
-    border-top: $border;
-    &:last-child{
-      border-bottom: $border;
+    .mat-expansion-panel-header {
+      &,
+      &.mat-expanded {
+        height: $header-height;
+        padding: 0;
+      }
     }
-  }
-
-  .mat-expansion-panel-spacing {
-    margin: 0;
-  }
-
-  .mat-expansion-panel-body {
-    padding: 0;
-  }
-
-  &-content {
-    @include resetUl;
-    &-item {
-      height: $content-item-height;
-      border-top: 1px solid $gray-scale-400;
-    }
-    &-link {
-      @include resetLink;
-      display: flex;
-      align-items: center;
-      font-family: $font-family-basic;
-      font-weight: 600;
-      font-size: $small-font-size;
-      text-transform: capitalize;
-      width: 100%;
+    .mat-content {
       height: 100%;
-      padding-right: $padding-right;
-      padding-left: $padding-left-content;
+    }
+  }
+  &-function {
+    @include resetButton;
+    font-family: $font-family-basic;
+    font-weight: 600;
+    font-size: $small-font-size;
+    text-transform: capitalize;
+    color: $primary-a-900;
+    width: 100%;
+    height: 100%;
+    padding-right: $padding-inner;
+    padding-left: $padding-inner;
+    border-left: $border;
+    justify-content: flex-start;
+    @include ellipsis;
+    &:focus,
+    &:hover {
+      background: $primary-c-50;
+    }
+    .p-sidenav-content & {
+      padding-left: 40px;
+    }
+    &.selected {
+      @extend %selected;
+    }
+    .p-sidenav-panel:not(.expandable) & {
       border-right: $border;
-      border-left: $border;
-      outline: none;
-      position: relative;
-      &:focus,
-      &:hover {
-        background: $primary-c-50;
-      }
-      &.selected:before {
-        content: '';
-        display: block;
-        width: 4px;
-        height: calc( 100% + 2px);
-        background-color: $primary-a-900;
-        position: absolute;
-        top: -1px;
-        left: -1px;
-      }
     }
   }
 
-  .mat-expansion-indicator:after {
-    content: '';
-    display: block;
-    width: 14px;
-    height: 14px;
-    background-image: url('../../assets/images/plus.svg');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: initial;
-    border: none;
-    padding: 0;
-    transform: none;
+  &-content-item {
+    position: relative;
   }
 
-  .mat-expanded .mat-expansion-indicator::after {
-    background-image: url('../../assets/images/minus.svg');
-  }
-
-  // main
-  &:not(.inner) {
-    $header-height: 62px;
-    .mat-expansion-panel-header {
-      font-family: $font-family-accent;
-      font-weight: 600;
-      font-size: $small-font-size;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: $primary-a-900;
-      padding-right: $padding-right;
-      padding-left: $padding-left;
-      border-right: $border;
-      border-left: $border;
-      @include ellipsis;
-      &,
-      &.mat-expanded {
-        height: $header-height;
-        &:focus,
-        &:hover {
-          background: $primary-c-50;
-        }
+  &-expand-btn {
+    @include resetButton;
+    width: 34px;
+    height: 100%;
+    &:after {
+      content: 'Expand';
+      display: block;
+      font-size: 0;
+      width: 14px;
+      height: 14px;
+      background-image: url('../../assets/images/plus.svg');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: initial;
+      border: none;
+      padding: 0;
+      transform: none;
+      ::ng-deep .mat-expanded & {
+        content: 'Collapse';
+        background-image: url('../../assets/images/minus.svg');
       }
-      &.mat-expanded {
-        color: $secondary-a-700;
-      }
-    }
-
-    .p-sidenav-header-icon {
-      margin-right: 10px;
-    }
-  }
-
-  // inner sidenav
-  &.inner {
-    $header-height: $content-item-height;
-    $padding-inner: 24px;
-    .mat-expansion-panel-header {
-      font-family: $font-family-basic;
-      font-weight: 600;
-      font-size: $small-font-size;
-      text-transform: capitalize;
-      color: $primary-a-900;
-      padding-right: $padding-inner;
-      padding-left: $padding-inner;
-      border-right: $border;
-      border-left: $border;
-      @include ellipsis;
-      &,
-      &.mat-expanded {
-        height: $header-height;
-        &:focus,
-        &:hover {
-          background: $primary-c-50;
-        }
-      }
-
     }
   }
 }
