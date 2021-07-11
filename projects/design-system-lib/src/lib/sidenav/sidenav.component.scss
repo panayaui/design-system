@@ -21,26 +21,6 @@ $expand-width: 14px;
   }
 }
 
-@mixin expand() {
-  content: 'Expand';
-  display: block;
-  font-size: 0;
-  width: $expand-width;
-  height: $expand-width;
-  background-image: url('../assets/images/plus.svg');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: initial;
-  border: none;
-  padding: 0;
-  transform: none;
-}
-
-@mixin collapse($minusColor) {
-  content: 'Collapse';
-  background-image: url('../assets/images/minus-#{$minusColor}.svg');
-}
-
 ::ng-deep .p-sidenav {
   &.mat-accordion {
     .mat-expansion-panel,
@@ -73,14 +53,6 @@ $expand-width: 14px;
       height: $content-item-height;
       border-top: 1px solid $gray-scale-400;
     }
-  }
-
-  .mat-expansion-indicator:after {
-    @include expand;
-  }
-
-  .mat-expanded .mat-expansion-indicator::after {
-    @include collapse('dev');
   }
 }
 

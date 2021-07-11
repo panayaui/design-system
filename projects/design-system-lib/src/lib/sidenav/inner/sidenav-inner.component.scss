@@ -1,6 +1,6 @@
 @import "../sidenav.component";
 
-$header-height: $content-item-height;
+$item-height: $content-item-height;
 $padding-inner: 24px;
 $expand-padding: 10px;
 
@@ -12,7 +12,7 @@ $expand-padding: 10px;
     .mat-expansion-panel-header {
       &,
       &.mat-expanded {
-        height: $header-height;
+        height: $item-height;
         padding: 0;
       }
     }
@@ -34,6 +34,7 @@ $expand-padding: 10px;
     justify-content: flex-start;
     @include ellipsis;
     .p-sidenav-content & {
+      font-weight: 500;
       padding-right: $padding-inner;
       padding-left: 40px;
       &:focus,
@@ -59,15 +60,6 @@ $expand-padding: 10px;
     width: $expand-width + $expand-padding * 2;
     height: 100%;
     margin-right: $padding-inner - $expand-padding;
-    &:after {
-      @include expand;
-      transform: rotate(0deg);
-      transition: transform 280ms;
-      ::ng-deep .mat-expanded & {
-        @include collapse('primary');
-        transform: rotate(180deg);
-      }
-    }
   }
 }
 

@@ -4674,7 +4674,7 @@
         },
         {
             "name": "SidenavInnerComponent",
-            "id": "component-SidenavInnerComponent-17ddad19cb6ce4c23a35c0185b84bbcf",
+            "id": "component-SidenavInnerComponent-d144cf120e4bc9b79ba31d6c48f45e3c",
             "file": "projects/design-system-lib/src/lib/sidenav/inner/sidenav-inner.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -4701,7 +4701,7 @@
             "propertiesClass": [],
             "methodsClass": [
                 {
-                    "name": "onItemClicked",
+                    "name": "onButtonClicked",
                     "args": [
                         {
                             "name": "panel",
@@ -4728,16 +4728,16 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {ISidenavInner} from './sidenav-inner.interface';\r\n\r\n@Component({\r\n  selector: 'p-sidenav-inner',\r\n  templateUrl: './sidenav-inner.component.html',\r\n  styleUrls: ['./sidenav-inner.component.scss'],\r\n})\r\nexport class SidenavInnerComponent {\r\n  @Input() sidenav: ISidenavInner[];\r\n\r\n  onItemClicked(panel): void {\r\n    console.log(panel);\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {ISidenavInner} from './sidenav-inner.interface';\r\n\r\n@Component({\r\n  selector: 'p-sidenav-inner',\r\n  templateUrl: './sidenav-inner.component.html',\r\n  styleUrls: ['./sidenav-inner.component.scss'],\r\n})\r\nexport class SidenavInnerComponent {\r\n  @Input() sidenav: ISidenavInner[];\r\n\r\n  onButtonClicked(panel): void {\r\n    console.log(panel);\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../sidenav.component\";\r\n\r\n$header-height: $content-item-height;\r\n$padding-inner: 24px;\r\n$expand-padding: 10px;\r\n\r\n.p-sidenav {\r\n  ::ng-deep &.inner {\r\n    .expandable {\r\n      border-right: $border;\r\n    }\r\n    .mat-expansion-panel-header {\r\n      &,\r\n      &.mat-expanded {\r\n        height: $header-height;\r\n        padding: 0;\r\n      }\r\n    }\r\n    .mat-content {\r\n      height: 100%;\r\n    }\r\n  }\r\n  &-function {\r\n    @include resetButton;\r\n    font-family: $font-family-basic;\r\n    font-weight: 600;\r\n    font-size: $small-font-size;\r\n    text-transform: capitalize;\r\n    color: $primary-a-900;\r\n    width: 100%;\r\n    height: 100%;\r\n    padding-right: $padding-inner;\r\n    padding-left: $padding-inner;\r\n    border-left: $border;\r\n    justify-content: flex-start;\r\n    @include ellipsis;\r\n    .p-sidenav-content & {\r\n      padding-left: 40px;\r\n      &:focus,\r\n      &:hover {\r\n        background-color: $primary-c-50;\r\n      }\r\n    }\r\n    &.selected {\r\n      @extend %selected;\r\n    }\r\n    .p-sidenav-panel:not(.expandable) & {\r\n      border-right: $border;\r\n    }\r\n  }\r\n\r\n  &-content-item {\r\n    position: relative;\r\n  }\r\n\r\n  &-expand-btn {\r\n    @include resetButton;\r\n    width: $expand-width + $expand-padding * 2;\r\n    height: 100%;\r\n    margin-right: $padding-inner - $expand-padding;\r\n    &:after {\r\n      @include expand;\r\n      transform: rotate(0deg);\r\n      transition: transform 280ms;\r\n      ::ng-deep .mat-expanded & {\r\n        @include collapse('primary');\r\n        transform: rotate(180deg);\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n\r\n",
+                    "data": "@import \"../sidenav.component\";\r\n\r\n$item-height: $content-item-height;\r\n$padding-inner: 24px;\r\n$expand-padding: 10px;\r\n\r\n.p-sidenav {\r\n  ::ng-deep &.inner {\r\n    .expandable {\r\n      border-right: $border;\r\n    }\r\n    .mat-expansion-panel-header {\r\n      &,\r\n      &.mat-expanded {\r\n        height: $item-height;\r\n        padding: 0;\r\n      }\r\n    }\r\n    .mat-content {\r\n      height: 100%;\r\n    }\r\n  }\r\n  &-function {\r\n    @include resetButton;\r\n    font-family: $font-family-basic;\r\n    font-weight: 600;\r\n    font-size: $small-font-size;\r\n    text-transform: capitalize;\r\n    color: $primary-a-900;\r\n    width: 100%;\r\n    height: 100%;\r\n    padding-left: $padding-inner;\r\n    border-left: $border;\r\n    justify-content: flex-start;\r\n    @include ellipsis;\r\n    .p-sidenav-content & {\r\n      font-weight: 500;\r\n      padding-right: $padding-inner;\r\n      padding-left: 40px;\r\n      &:focus,\r\n      &:hover {\r\n        background-color: $primary-c-50;\r\n      }\r\n    }\r\n    &.selected {\r\n      @extend %selected;\r\n    }\r\n    .p-sidenav-panel:not(.expandable) & {\r\n      border-right: $border;\r\n      padding-right: $padding-inner;\r\n    }\r\n  }\r\n\r\n  &-content-item {\r\n    position: relative;\r\n  }\r\n\r\n  &-expand-btn {\r\n    @include resetButton;\r\n    width: $expand-width + $expand-padding * 2;\r\n    height: 100%;\r\n    margin-right: $padding-inner - $expand-padding;\r\n  }\r\n}\r\n\r\n\r\n",
                     "styleUrl": "./sidenav-inner.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<mat-accordion class=\"p-sidenav inner\" multi>\r\n  <mat-expansion-panel *ngFor=\"let panel of sidenav\"\r\n                       hideToggle\r\n                       class=\"p-sidenav-panel\"\r\n                       [class.expandable]=\"panel.content?.length\">\r\n    <mat-expansion-panel-header class=\"p-sidenav-header\"\r\n                                #panelH\r\n                                (click)=\"panelH._toggle()\">\r\n      <button class=\"p-sidenav-function\" (click)=\"onItemClicked(panel)\"\r\n              [class.selected]=\"panel.header.selected\">\r\n        {{panel.header.headerName}}\r\n      </button>\r\n      <button *ngIf=\"panel.content?.length\"\r\n              class=\"p-sidenav-expand-btn\" (click)=\"panelH._toggle()\">\r\n      </button>\r\n    </mat-expansion-panel-header>\r\n\r\n    <!--expanded content-->\r\n    <ul class=\"p-sidenav-content\" *ngIf=\"panel.content?.length\">\r\n      <li class=\"p-sidenav-content-item\" *ngFor=\"let content of panel.content\">\r\n        <button class=\"p-sidenav-function\"\r\n           [class.selected]=\"content.selected\"\r\n           (click)=\"onItemClicked(panel)\">\r\n          {{content.name}}\r\n        </button>\r\n      </li>\r\n    </ul>\r\n  </mat-expansion-panel>\r\n</mat-accordion>\r\n"
+            "templateData": "<mat-accordion class=\"p-sidenav inner\" multi>\r\n  <mat-expansion-panel *ngFor=\"let panel of sidenav\"\r\n                       [expanded]=\"true\"\r\n                       class=\"p-sidenav-panel\"\r\n                       [class.expandable]=\"panel.content?.length\">\r\n    <mat-expansion-panel-header class=\"p-sidenav-header\"\r\n                                #panelH\r\n                                (click)=\"panelH._toggle()\">\r\n      <button class=\"p-sidenav-function\" (click)=\"onButtonClicked(panel)\"\r\n              [class.selected]=\"panel.header.selected\">\r\n        {{panel.header.headerName}}\r\n      </button>\r\n      <button *ngIf=\"panel.content?.length\"\r\n              class=\"p-sidenav-expand-btn\" (click)=\"panelH._toggle()\">\r\n      </button>\r\n    </mat-expansion-panel-header>\r\n\r\n    <!--expanded content-->\r\n    <ul class=\"p-sidenav-content\" *ngIf=\"panel.content?.length\">\r\n      <li class=\"p-sidenav-content-item\" *ngFor=\"let content of panel.content\">\r\n        <button class=\"p-sidenav-function\"\r\n           [class.selected]=\"content.selected\"\r\n           (click)=\"onButtonClicked(panel)\">\r\n          {{content.name}}\r\n        </button>\r\n      </li>\r\n    </ul>\r\n  </mat-expansion-panel>\r\n</mat-accordion>\r\n"
         },
         {
             "name": "SidenavMainComponent",
@@ -6295,17 +6295,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/icons/icon.stories.ts",
-                "type": "Story<IconComponent>",
-                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/colors/Color-palette.stories.ts",
+                "type": "Story<ColorPaletteComponent>",
+                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/colors/Color-palette.stories.ts",
-                "type": "Story<ColorPaletteComponent>",
-                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/icons/icon.stories.ts",
+                "type": "Story<IconComponent>",
+                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -6319,17 +6319,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
-                "type": "Story<TypographyFontFamilyComponent>",
-                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/styles/typography-styles.stories.ts",
+                "type": "Story<TypographyStylesComponent>",
+                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/styles/typography-styles.stories.ts",
-                "type": "Story<TypographyStylesComponent>",
-                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
+                "type": "Story<TypographyFontFamilyComponent>",
+                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Toggles",
