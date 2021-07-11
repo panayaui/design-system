@@ -123,12 +123,21 @@ export const Template = (args) => <SidenavMainComponent {...args} />
   </Story>
 </Canvas>
 
-###### Component
+The sidenav expansion panel's width = 100%. 
+
+In this Width example widht = 280px is set on its parent contaner.
+
+###### ISidenavMain
 ```ts
-
-```
-
-###### ITab
-```ts
-
+export interface ISidenavMain {
+  header: {
+    headerName: string,
+    headerIcon?: string,
+  };
+  content: {
+    name: string,
+    link: string,
+    selected: boolean
+  }[];
+}
 ```
