@@ -1,0 +1,189 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+import {TabGroupComponent} from 'projects/design-system-lib/src/public-api';
+import {TabGroupModule} from 'projects/design-system-lib/src/public-api';
+
+<Meta title='Components/Tabs'
+  component={TabGroupComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [
+        TabGroupModule
+      ]
+    })
+  ]}
+  args={{ 
+    tabGroup: [{
+      tabButton: { labelName: 'Tab Name', labelIcon: { iconName: 'grid'} },
+      tabPanel: 'January Panel'
+    },
+    {
+      tabButton: { labelName: 'February', labelNotification: true },
+      tabPanel: 'February Panel'
+    },
+    {
+      tabButton: { labelName: 'March', labelCounter: 1 },
+      tabPanel: 'March Panel'
+    },
+    {
+      tabButton: { labelName: 'July' },
+      tabPanel: 'July Panel'
+    },
+    {
+      tabButton: { labelName: 'April', labelIcon: { iconName: 'grid'}, labelNotification: true },
+      tabPanel: 'April Panel'
+    },
+    {
+      tabButton: { labelName: 'August' },
+      tabPanel: 'August Panel'
+    },
+    {
+      tabButton: { labelName: 'May', labelIcon: { iconName: 'grid'}, labelCounter: 1 },
+      tabPanel: 'May Panel'
+    },
+     {
+      tabButton: { labelName: 'June', labelNotification: true, labelCounter: 1 },
+      tabPanel: 'June Panel'
+    },
+    {
+      tabButton: { labelName: 'October', labelIcon: { iconName: 'grid'}, labelNotification: true, labelCounter: 2 },
+      tabPanel: 'October Panel'
+    }]
+  }}
+/>
+
+export const Template = (args) => <TabGroupComponent {...args} />
+
+# Tab Group
+
+###### Selector
+```ts
+  <p-tab-group></p-tab-group>
+```
+###### Default
+<Canvas>
+  <Story name="Tabs"
+    args={{
+      tabGroup: [{
+        tabButton: { labelName: 'Tab Name' },
+        tabPanel: 'January Panel'
+      },
+      {
+        tabButton: { labelName: 'February' },
+        tabPanel: 'February Panel'
+      },
+      {
+        tabButton: { labelName: 'March', labelCounter: 1 },
+        tabPanel: 'March Panel'
+      },
+      {
+        tabButton: { labelName: 'July' },
+        tabPanel: 'July Panel'
+      },
+      {
+        tabButton: { labelName: 'April' },
+        tabPanel: 'April Panel'
+      },
+      {
+        tabButton: { labelName: 'August' },
+        tabPanel: 'August Panel'
+      },
+      {
+        tabButton: { labelName: 'May', labelCounter: 1 },
+        tabPanel: 'May Panel'
+      },
+      {
+        tabButton: { labelName: 'June', labelCounter: 1 },
+        tabPanel: 'June Panel'
+      },
+      {
+        tabButton: { labelName: 'October', labelCounter: 2 },
+        tabPanel: 'October Panel'
+      }]
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Icon Tabs
+<Canvas>
+  <Story name="Tabs With Icons"
+    args={{
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+###### Disabled
+<Canvas>
+  <Story name="Tabs Disabled"
+    args={{
+      tabGroup: [{
+        tabButton: { labelName: 'Tab Name', labelIcon: { iconName: 'grid'} },
+        tabPanel: 'January Panel'
+      },
+      {
+        tabButton: { labelName: 'February', labelNotification: true },
+        tabPanel: 'February Panel',
+        disabled: true
+      },
+      {
+        tabButton: { labelName: 'March', labelCounter: 1 },
+        tabPanel: 'March Panel',
+        disabled: true
+      },
+      {
+        tabButton: { labelName: 'July' },
+        tabPanel: 'July Panel',
+        disabled: true
+      },
+      {
+        tabButton: { labelName: 'April', labelIcon: { iconName: 'grid'}, labelNotification: true },
+        tabPanel: 'April Panel',
+        disabled: true
+      },
+      {
+        tabButton: { labelName: 'August' },
+        tabPanel: 'August Panel'
+      },
+      {
+        tabButton: { labelName: 'May', labelIcon: { iconName: 'grid'}, labelCounter: 1 },
+        tabPanel: 'May Panel',
+        disabled: true
+      },
+      {
+        tabButton: { labelName: 'June', labelNotification: true, labelCounter: 1 },
+        tabPanel: 'June Panel',
+        disabled: true
+      },
+      {
+        tabButton: { labelName: 'October', labelIcon: { iconName: 'grid'}, labelNotification: true, labelCounter: 2 },
+        tabPanel: 'October Panel',
+        disabled: true
+      }]
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Component
+```ts
+export class TabGroupComponent {
+  @Input() tabGroup: {
+    tabButton: ITab,
+    tabPanel: any,
+    disabled: boolean
+  }[];
+}
+```
+
+###### ITab
+```ts
+export interface ITab {
+  labelName: string;
+  labelIcon?: IIcon;
+  labelNotification?: true;
+  labelCounter?: number;
+}
+```
