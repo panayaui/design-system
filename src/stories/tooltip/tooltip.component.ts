@@ -10,7 +10,10 @@ export class TooltipComponent {
   @Input() disabled: boolean = false; // matTooltipDisabled
   @Input() showDelay: number; // matTooltipShowDelay in ms
   @Input() hideDelay: number; // matTooltipHideDelay in ms
-  @Input() position: string; // matTooltipPosition
+  @Input() position: string = 'above'; // matTooltipPosition
   // type TooltipPosition = 'left' | 'right' | 'above' | 'below' | 'before' | 'after';
-  @Input() tooltipClass: string = 'p-tooltip'; // matTooltipClass - css class
+
+  public get classes(): string {
+    return `p-tooltip ${this.position}`;
+  }
 }
