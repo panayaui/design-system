@@ -1,0 +1,102 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+import {ChipsComponent} from 'projects/design-system-lib/src/public-api';
+import {ChipsModule} from 'projects/design-system-lib/src/public-api';
+
+<Meta title='Components/Chips/Bar'
+  component={ChipsComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [
+        ChipsModule
+      ]
+    })
+  ]}
+  args={{ 
+    ariaLabel: 'A list of filters',
+    chips: [
+      {
+        label: 'Type',
+        iconRemove: true,
+        iconMenuTrigger: true,
+        values: ['Defect'],
+        full: true
+      },
+      {
+        label: 'Dev owner',
+        iconRemove: true,
+        iconMenuTrigger: true,
+        values: ['James Lee', 'Niv Dan'],
+        full: true
+      },
+      {
+        label: 'Creation date',
+        iconRemove: true,
+        iconMenuTrigger: true,
+        values: ['All'],
+        full: false
+      }
+    ]
+  }}
+/>
+
+export const Template = (args) => <ChipsComponent {...args} />
+
+# Chips
+
+###### Selector
+```ts
+  <p-chips></p-chips>
+```
+###### With Remove Icon
+<Canvas>
+  <Story name="With Remove Icon"
+    args={{
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### No Remove Icon
+<Canvas>
+  <Story name="No Remove Icon"
+    args={{
+      chips: [
+        {
+          label: 'Type',
+          iconRemove: false,
+          iconMenuTrigger: true,
+          values: ['Defect'],
+          full: true
+        },
+        {
+          label: 'Dev owner',
+          iconRemove: false,
+          iconMenuTrigger: true,
+          values: ['James Lee', 'Niv Dan'],
+          full: true
+        },
+        {
+          label: 'Creation date',
+          iconRemove: false,
+          iconMenuTrigger: true,
+          values: ['All'],
+          full: false
+        }
+      ]
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### IChip
+```ts
+export interface IChip {
+  label: string;
+  values?: string[];
+  iconRemove?: boolean;
+  iconMenuTrigger?: boolean;
+  full?: boolean;
+  active?: boolean;
+}
+```

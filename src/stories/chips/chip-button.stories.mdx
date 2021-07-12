@@ -25,8 +25,13 @@ export const Template = (args) => <ChipButtonComponent {...args} />
 
 ###### Selector
 ```ts
-  <p-tab-group></p-tab-group>
+  // for standalone use
+  <p-chip-button></p-chip-button>
+
+  // to show a line of chips 
+  <p-chips></p-chips>
 ```
+###### With Remove Icon
 <Canvas>
   <p className="story-title">Default</p>
   <Story name="Default"
@@ -50,13 +55,28 @@ export const Template = (args) => <ChipButtonComponent {...args} />
   </Story>
 </Canvas>
 
-
-###### Component
-```ts
-
-```
+###### No Remove Icon
+<Canvas>
+  <p className="story-title">Default</p>
+  <Story name="Default No Remove"
+    args={{ iconRemove: false }}>
+    {Template.bind({})}
+  </Story>
+  <p className="story-title">Full</p>
+  <Story name="Full No Remove"
+    args={{ iconRemove: false, full: true }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
 
 ###### ITab
 ```ts
-
+export interface IChip {
+  label: string;
+  values?: string[];
+  iconRemove?: boolean;
+  iconMenuTrigger?: boolean;
+  full?: boolean;
+  active?: boolean;
+}
 ```

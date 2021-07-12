@@ -12,11 +12,11 @@ import {ChipButtonComponent} from './button/chip-button.component';
     IconModule
   ],
   declarations: [
-    // ChipsComponent,
+    ChipsComponent,
     ChipButtonComponent
   ],
   exports: [
-    // ChipsComponent,
+    ChipsComponent,
     ChipButtonComponent
   ]
 })

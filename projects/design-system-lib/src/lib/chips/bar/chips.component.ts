@@ -8,4 +8,5 @@ import {IChip} from '../chip-button.interface';
 })
 export class ChipsComponent {
   @Input() chips: IChip[];
+  @Input() ariaLabel: string;
 }
