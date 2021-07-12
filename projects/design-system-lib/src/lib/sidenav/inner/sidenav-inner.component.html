@@ -1,6 +1,7 @@
 <mat-accordion class="p-sidenav inner" multi>
   <mat-expansion-panel *ngFor="let panel of sidenav"
                        hideToggle
+                       expanded
                        class="p-sidenav-panel">
     <mat-expansion-panel-header class="p-sidenav-header"
            [class.selected]="panel.header.selected"

@@ -78,7 +78,7 @@ $expand-width: 14px;
     transform: none;
   }
 
-  ::ng-deep &.mat-expanded .mat-expansion-indicator::after {
+  ::ng-deep .mat-expanded .mat-expansion-indicator::after {
     content: 'Collapse';
     background-image: url('../../assets/images/minus.svg');
   }

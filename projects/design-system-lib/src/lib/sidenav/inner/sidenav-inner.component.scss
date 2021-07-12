@@ -9,7 +9,6 @@ $padding-left-content: 40px;
   display: flex;
   align-items: center;
   font-family: $font-family-basic;
-  font-weight: 600;
   font-size: $small-font-size;
   text-transform: capitalize;
   color: $primary-a-900;
@@ -35,6 +34,7 @@ $padding-left-content: 40px;
   ::ng-deep &.inner {
     .mat-expansion-panel-header {
       @extend %innerSidenavItem;
+      font-weight: 600;
       &,
       &.mat-expanded {
         height: $item-height;
@@ -47,6 +47,7 @@ $padding-left-content: 40px;
 
   &-button {
     @extend %innerSidenavItem;
+    font-weight: 500;
     justify-content: flex-start;
     padding-left: $padding-left-content;
   }
