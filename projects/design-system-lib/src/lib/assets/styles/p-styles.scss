@@ -528,6 +528,7 @@ $arrow-border: 7px;
   color: $gray-scale-1;
   min-width: 100px;
   min-height: 36px;
+  line-height: 1.5;
   margin: $margin;
   padding: 8px 12px;
   background-color: $primary-a-900;
@@ -535,6 +536,7 @@ $arrow-border: 7px;
   transform: none !important;
   transform-origin: 0 !important;
   overflow: visible;
+  white-space: pre-line;
   &:after {
     content: "";
     border-width: $arrow-border;
@@ -550,7 +552,7 @@ $arrow-border: 7px;
     top: 50%;
   }
   &.left:after,
-  &.before:after, {
+  &.before:after {
     border-left-color: $primary-a-900;
     margin-top: -$arrow-border;
     left: calc(100% - #{$margin});
