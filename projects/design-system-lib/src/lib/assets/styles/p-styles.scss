@@ -515,7 +515,8 @@ p {
   line-height: 20px;
 }
 
-//
+$margin: 3px;
+$arrow-border: 7px;
 
 .mat-tooltip.p-tooltip {
   display: flex;
@@ -527,11 +528,23 @@ p {
   color: $gray-scale-1;
   min-width: 100px;
   min-height: 36px;
+  margin: $margin;
   padding: 8px 12px;
   background-color: $primary-a-900;
   border-radius: 4px;
   transform: none !important;
   transform-origin: 0 !important;
+  overflow: visible;
+  &:after {
+    content: "";
+    margin-left: -$arrow-border;
+    border-width: $arrow-border;
+    border-style: solid;
+    border-color: $primary-a-900 transparent transparent transparent;
+    position: absolute;
+    top: calc(100% - #{$margin});
+    left: 50%;
+  }
 }
 
 //scrollbar in Firefox
