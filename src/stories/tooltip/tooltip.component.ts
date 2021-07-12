@@ -5,7 +5,7 @@ import {TooltipPosition} from '@angular/material/tooltip';
   selector: 'p-tooltip',
   templateUrl: './tooltip.component.html'
 })
-export default class TooltipComponent {
+export class TooltipComponent {
   @Input() message: string; // matTooltip
   @Input() disabled: boolean = false; // matTooltipDisabled
   @Input() showDelay: number; // matTooltipShowDelay in ms
