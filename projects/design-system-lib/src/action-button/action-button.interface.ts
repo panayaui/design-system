@@ -1,4 +1,4 @@
-export interface IToolbarButton {
+export interface IActionButton {
   label: string;
   disabled?: boolean;
   iconBeforeName?: string;

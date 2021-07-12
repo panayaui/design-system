@@ -1,13 +1,13 @@
 import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
 import {moduleMetadata} from '@storybook/angular';
-import {ToolbarButtonComponent} from 'projects/design-system-lib/src/public-api';
-import {ToolbarModule} from 'projects/design-system-lib/src/public-api';
+import {ActionButtonComponent} from 'projects/design-system-lib/src/public-api';
+import {ActionButtonModule} from 'projects/design-system-lib/src/public-api';
 
-<Meta title='Components/Toolbar/Button'
-  component={ToolbarButtonComponent}
+<Meta title='Components/Action Button'
+  component={ActionButtonComponent}
   decorators={[
     moduleMetadata({
-      imports: [ToolbarModule]
+      imports: [ActionButtonModule]
     })
   ]}
   args={{
@@ -18,7 +18,7 @@ import {ToolbarModule} from 'projects/design-system-lib/src/public-api';
   }}
 />
 
-export const Template = (args) => <ToolbarButtonComponent {...args} />
+export const Template = (args) => <ActionButtonComponent {...args} />
 
 # Toolbar Button
 
@@ -29,7 +29,7 @@ export const Template = (args) => <ToolbarButtonComponent {...args} />
 
 ###### Default
 <Canvas>
-  <Story name="Toolbar Button"
+  <Story name="Action Button"
     args={{
       isMenuTrigger: false
     }}>
@@ -40,7 +40,7 @@ export const Template = (args) => <ToolbarButtonComponent {...args} />
     }}>
     {Template.bind({})}
   </Story>
-   <Story name="Toolbar Disabled"
+   <Story name="Action Button Disabled"
     args={{
       disabled: true
     }}>
@@ -50,7 +50,7 @@ export const Template = (args) => <ToolbarButtonComponent {...args} />
 
 ###### Component
 ```ts
-export class ToolbarButtonComponent {
+export class ActionButtonComponent {
   @Input() label: string;
   @Input() disabled: boolean = false;
   @Input() iconBeforeName: string;
@@ -63,9 +63,9 @@ export class ToolbarButtonComponent {
 }
 ```
 
-###### IToolbarButton
+###### IActionButton
 ```ts
-export interface IToolbarButton {
+export interface IActionButton {
   label: string;
   disabled?: boolean;
   iconBeforeName?: string;

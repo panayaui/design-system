@@ -2,6 +2,74 @@
     "pipes": [],
     "interfaces": [
         {
+            "name": "IActionButton",
+            "id": "interface-IActionButton-07ece2718d032de3a45d42751388b174",
+            "file": "projects/design-system-lib/src/action-button/action-button.interface.ts",
+            "type": "interface",
+            "sourceCode": "export interface IActionButton {\r\n  label: string;\r\n  disabled?: boolean;\r\n  iconBeforeName?: string;\r\n  iconBeforeWidth?: string;\r\n  iconBeforeHeight?: string;\r\n  iconBeforeStrokeWidth?: number;\r\n  iconBeforeStrokeColor?: string;\r\n  isMenuTrigger?: boolean;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "disabled",
+                    "type": "boolean",
+                    "optional": true,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "iconBeforeHeight",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "iconBeforeName",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "iconBeforeStrokeColor",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 8
+                },
+                {
+                    "name": "iconBeforeStrokeWidth",
+                    "type": "number",
+                    "optional": true,
+                    "description": "",
+                    "line": 7
+                },
+                {
+                    "name": "iconBeforeWidth",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "isMenuTrigger",
+                    "type": "boolean",
+                    "optional": true,
+                    "description": "",
+                    "line": 9
+                },
+                {
+                    "name": "label",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
             "name": "IAlertData",
             "id": "interface-IAlertData-d5dd3a4328cabd97ecff13ef89e80685",
             "file": "projects/design-system-lib/src/lib/alert/alert.interface.ts",
@@ -924,74 +992,6 @@
             "indexSignatures": [],
             "kind": 150,
             "methods": []
-        },
-        {
-            "name": "IToolbarButton",
-            "id": "interface-IToolbarButton-2d1ea49bc674eb97fdb28e84edc5c506",
-            "file": "projects/design-system-lib/src/lib/toolbar/toolbar-button.interface.ts",
-            "type": "interface",
-            "sourceCode": "export interface IToolbarButton {\r\n  label: string;\r\n  disabled?: boolean;\r\n  iconBeforeName?: string;\r\n  iconBeforeWidth?: string;\r\n  iconBeforeHeight?: string;\r\n  iconBeforeStrokeWidth?: number;\r\n  iconBeforeStrokeColor?: string;\r\n  isMenuTrigger?: boolean;\r\n}\r\n",
-            "properties": [
-                {
-                    "name": "disabled",
-                    "type": "boolean",
-                    "optional": true,
-                    "description": "",
-                    "line": 3
-                },
-                {
-                    "name": "iconBeforeHeight",
-                    "type": "string",
-                    "optional": true,
-                    "description": "",
-                    "line": 6
-                },
-                {
-                    "name": "iconBeforeName",
-                    "type": "string",
-                    "optional": true,
-                    "description": "",
-                    "line": 4
-                },
-                {
-                    "name": "iconBeforeStrokeColor",
-                    "type": "string",
-                    "optional": true,
-                    "description": "",
-                    "line": 8
-                },
-                {
-                    "name": "iconBeforeStrokeWidth",
-                    "type": "number",
-                    "optional": true,
-                    "description": "",
-                    "line": 7
-                },
-                {
-                    "name": "iconBeforeWidth",
-                    "type": "string",
-                    "optional": true,
-                    "description": "",
-                    "line": 5
-                },
-                {
-                    "name": "isMenuTrigger",
-                    "type": "boolean",
-                    "optional": true,
-                    "description": "",
-                    "line": 9
-                },
-                {
-                    "name": "label",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 2
-                }
-            ],
-            "indexSignatures": [],
-            "kind": 150,
-            "methods": []
         }
     ],
     "injectables": [],
@@ -1087,6 +1087,101 @@
     ],
     "directives": [],
     "components": [
+        {
+            "name": "ActionButtonComponent",
+            "id": "component-ActionButtonComponent-5a942dc70e5a4cf9118acf8677f37e52",
+            "file": "projects/design-system-lib/src/action-button/action-button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-action-button",
+            "styleUrls": [
+                "./action-button.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./action-button.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "line": 10,
+                    "type": "boolean"
+                },
+                {
+                    "name": "iconBeforeHeight",
+                    "defaultValue": "'auto'",
+                    "line": 13,
+                    "type": "string"
+                },
+                {
+                    "name": "iconBeforeName",
+                    "line": 11,
+                    "type": "string"
+                },
+                {
+                    "name": "iconBeforeStrokeColor",
+                    "line": 15,
+                    "type": "string"
+                },
+                {
+                    "name": "iconBeforeStrokeWidth",
+                    "line": 14,
+                    "type": "number"
+                },
+                {
+                    "name": "iconBeforeWidth",
+                    "defaultValue": "'auto'",
+                    "line": 12,
+                    "type": "string"
+                },
+                {
+                    "name": "isMenuTrigger",
+                    "defaultValue": "false",
+                    "line": 16,
+                    "type": "boolean"
+                },
+                {
+                    "name": "label",
+                    "line": 9,
+                    "type": "string"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "isActive",
+                    "defaultValue": "false",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 17,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, EventEmitter, Input, Output} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'p-action-button',\r\n  templateUrl: './action-button.component.html',\r\n  styleUrls: ['./action-button.component.scss'],\r\n})\r\nexport class ActionButtonComponent {\r\n  @Input() label: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() iconBeforeName: string;\r\n  @Input() iconBeforeWidth: string = 'auto';\r\n  @Input() iconBeforeHeight: string = 'auto';\r\n  @Input() iconBeforeStrokeWidth: number;\r\n  @Input() iconBeforeStrokeColor: string;\r\n  @Input() isMenuTrigger: boolean = false;\r\n  public isActive: boolean = false;\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../lib/assets/styles/custom\";\r\n\r\n$toolbar-btn-height: 38px;\r\n\r\n.p-toolbar-btn {\r\n  @include resetButton;\r\n  display: flex;\r\n  align-items: center;\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  font-weight: 400;\r\n  height: $toolbar-btn-height;\r\n  padding-right: $gap-base;\r\n  padding-left: $gap-base;\r\n  border-radius: $btn-border-radius;\r\n  white-space: nowrap;\r\n\r\n  &:not(:disabled):not(.active):hover,\r\n  &:not(:disabled):not(.active):focus {\r\n    color: $secondary-a-700;\r\n  }\r\n\r\n  &.active {\r\n    color: $secondary-a-700;\r\n    background-color: $primary-c-50;\r\n  }\r\n\r\n  &:disabled {\r\n    color: $gray-scale-600;\r\n    pointer-events: none;\r\n  }\r\n\r\n  // class of the before icon\r\n  &-icon {\r\n    margin-right: $gap-base;\r\n  }\r\n\r\n  // class of the after icon (chevron-down)\r\n  &-arrow {\r\n    margin-left: $gap-small;\r\n  }\r\n}\r\n\r\n\r\n",
+                    "styleUrl": "./action-button.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<button class=\"p-toolbar-btn\"\r\n        [ngClass]=\"{'menu-trigger' : isMenuTrigger, 'active' : isActive}\"\r\n        [disabled]=\"disabled\"\r\n        (click)=\"isActive = true\"\r\n        (blur)=\"isActive = false\">\r\n  <p-icon *ngIf=\"iconBeforeName\"\r\n          class=\"p-toolbar-btn-icon\"\r\n          [iconName]=\"iconBeforeName\"\r\n          [width]=\"iconBeforeWidth\"\r\n          [height]=\"iconBeforeHeight\"\r\n          [stroke]=\"iconBeforeStrokeColor\"\r\n          [strokeWidth]=\"iconBeforeStrokeWidth\"\r\n          [disabled]=\"disabled\"></p-icon>\r\n  <span class=\"p-toolbar-btn-label\">{{label}}</span>\r\n  <p-icon *ngIf=\"isMenuTrigger\"\r\n          class=\"p-toolbar-btn-arrow\"\r\n          iconName=\"chevron-down\"\r\n          [width]=\"17\"\r\n          [disabled]=\"disabled\"></p-icon>\r\n</button>\r\n"
+        },
         {
             "name": "AlertComponent",
             "id": "component-AlertComponent-071f9bd18b5f47a15529434f5fe80056",
@@ -1558,7 +1653,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n::ng-deep .p-btn {\r\n  @include resetButton;\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  font-weight: 500;\r\n  line-height: 20px;\r\n  min-width: 80px;\r\n  padding-right: $gap-double-plus;\r\n  padding-left: $gap-double-plus;\r\n  border-radius: $btn-border-radius;\r\n  white-space: nowrap;\r\n  transition: all 400ms;\r\n\r\n  &-large {\r\n    height: $btn-large-height;\r\n  }\r\n\r\n  &-small {\r\n    height: $btn-small-height;\r\n  }\r\n\r\n  &:disabled {\r\n    pointer-events: none;\r\n  }\r\n\r\n  &-primary {\r\n    color: $gray-scale-1;\r\n    background-color: $secondary-a-700;\r\n    &:hover {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:focus {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      background-color: $secondary-a-50;\r\n    }\r\n  }\r\n\r\n  &-secondary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    border: 1px solid $secondary-a-700;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      border-color: $secondary-a-500;\r\n    }\r\n  }\r\n\r\n  &-tertiary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n    }\r\n  }\r\n\r\n  &-distructive {\r\n    color: $gray-scale-1;\r\n    background-color: $supportive-alert-500;\r\n    &:hover {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:focus {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      background-color: $supportive-alert-50;\r\n    }\r\n  }\r\n\r\n  // class of the button\r\n  &-icon-before {\r\n    padding-left: $gap-double;\r\n    .p-btn-label {\r\n      margin-left: $gap-base;\r\n    }\r\n  }\r\n  // class of the button\r\n  &-icon-after {\r\n    padding-right: $gap-double;\r\n    .p-btn-label {\r\n      margin-right: $gap-base;\r\n    }\r\n  }\r\n\r\n  // class of the icon\r\n  &-icon-pre,\r\n  &-icon-post {\r\n    display: inline-flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n  }\r\n\r\n  &-isIcon {\r\n    line-height: unset;\r\n    min-width: unset;\r\n    padding: $gap-small;\r\n  }\r\n}\r\n\r\n\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n::ng-deep .p-btn {\r\n  @include resetButton;\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  font-weight: 500;\r\n  line-height: 20px;\r\n  min-width: 80px;\r\n  padding-right: $gap-double-plus;\r\n  padding-left: $gap-double-plus;\r\n  border-radius: $btn-border-radius;\r\n  white-space: nowrap;\r\n  transition: all 400ms;\r\n\r\n  &-large {\r\n    height: $btn-large-height;\r\n  }\r\n\r\n  &-small {\r\n    height: $btn-small-height;\r\n  }\r\n\r\n  &:disabled {\r\n    pointer-events: none;\r\n  }\r\n\r\n  &-primary {\r\n    color: $gray-scale-1;\r\n    background-color: $secondary-a-700;\r\n    &:hover {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:focus {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      background-color: $secondary-a-50;\r\n    }\r\n  }\r\n\r\n  &-secondary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    border: 1px solid $secondary-a-700;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      border-color: $secondary-a-500;\r\n    }\r\n  }\r\n\r\n  &-tertiary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n    }\r\n  }\r\n\r\n  &-distructive {\r\n    color: $gray-scale-1;\r\n    background-color: $supportive-alert-500;\r\n    &:hover {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:focus {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      background-color: $supportive-alert-50;\r\n    }\r\n  }\r\n\r\n  // class of the action-button\r\n  &-icon-before {\r\n    padding-left: $gap-double;\r\n    .p-btn-label {\r\n      margin-left: $gap-base;\r\n    }\r\n  }\r\n  // class of the action-button\r\n  &-icon-after {\r\n    padding-right: $gap-double;\r\n    .p-btn-label {\r\n      margin-right: $gap-base;\r\n    }\r\n  }\r\n\r\n  // class of the icon\r\n  &-icon-pre,\r\n  &-icon-post {\r\n    display: inline-flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n  }\r\n\r\n  &-isIcon {\r\n    line-height: unset;\r\n    min-width: unset;\r\n    padding: $gap-small;\r\n  }\r\n}\r\n\r\n\r\n",
                     "styleUrl": "./button.component.scss"
                 }
             ],
@@ -1911,12 +2006,12 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$tab-height: 52px;\r\n$tab-padding: $gap-double;\r\n\r\n::ng-deep .p-tabs {\r\n  .mat-tab-header {\r\n    border-bottom-color: $gray-scale-400;\r\n  }\r\n  .mat-tab-label {\r\n    min-width: unset;\r\n    height: $tab-height;\r\n    padding: 0 $tab-padding;\r\n    opacity: 1;\r\n    &:not(.mat-tab-disabled):not(.mat-tab-label-active):hover {\r\n      background-color: $primary-c-50;\r\n      .p-tabs-counter {\r\n        font-weight: 700;\r\n        background-color: $gray-scale-400;\r\n      }\r\n    }\r\n  }\r\n  .mat-tab-label-content {\r\n    color: $primary-a-900;\r\n  }\r\n  .mat-tab-label-active {\r\n    .p-tabs-label {\r\n      font-weight: 700;\r\n    }\r\n    .p-tabs-counter {\r\n      font-weight: 600;\r\n      color: $gray-scale-1;\r\n      background-color: $primary-a-900;\r\n    }\r\n  }\r\n  &.mat-tab-group .mat-ink-bar {\r\n    height: 4px;\r\n    background-color: $primary-a-900;\r\n  }\r\n\r\n  // icon\r\n  &-icon {\r\n    margin-right: 4px;\r\n  }\r\n\r\n  // notification\r\n  &-notification {\r\n    width: 6px;\r\n    height: 6px;\r\n    border-radius: 50%;\r\n    background-color: $supportive-alert-500;\r\n    transform: translate(3px, -6px);\r\n  }\r\n\r\n  // counter\r\n  &-counter {\r\n    display: inline-flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    width: 18px;\r\n    height: 16px;\r\n    margin-left: 4px;\r\n    background-color: $gray-scale-50;\r\n    border-radius: 50%;\r\n    .p-tabs-notification + & {\r\n      margin-left: 7px;\r\n    }\r\n  }\r\n\r\n  .mat-tab-disabled {\r\n    .mat-tab-label-content,\r\n    .p-tabs-counter {\r\n      color: $gray-scale-600;\r\n    }\r\n  }\r\n\r\n  // tabpanel\r\n  .mat-tab-body-wrapper {\r\n    padding: $gap-double $gap-double * 2;\r\n    border-right: 1px solid $gray-scale-400;\r\n    border-bottom: 1px solid $gray-scale-400;\r\n    border-left: 1px solid $gray-scale-400;\r\n  }\r\n}\r\n\r\n\r\n",
+                    "data": "@import \"../button/chip-button.component\";\r\n\r\n.p-chips-list {\r\n  .p-chip + .p-chip {\r\n    margin-left: $gap-base;\r\n  }\r\n}\r\n",
                     "styleUrl": "./chips.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<mat-chip-list attr.aria-label=\"{{ariaLabel}}\">\r\n  <mat-basic-chip *ngFor=\"let chip of chips\"\r\n                  class=\"p-chip\"\r\n                  [ngClass]=\"{'full' : chip.full, 'active' : chip.active }\">\r\n    <p-icon *ngIf=\"chip.iconRemove\"\r\n            class=\"p-chip-remove\"\r\n            matChipRemove\r\n            iconName=\"x\"\r\n            width=\"12\"\r\n            [strokeWidth]=\"2\">\r\n    </p-icon>\r\n    <span class=\"p-chip-label paragraph-2-default\">Title</span>\r\n    <ul class=\"p-chip-values paragraph-2-default\" *ngIf=\"chip.values?.length\">\r\n      <li class=\"p-chip-value-item\" *ngFor=\"let value of chip.values\">\r\n        {{value}}\r\n      </li>\r\n    </ul>\r\n    <p-icon *ngIf=\"chip.iconRemove\"\r\n            class=\"p-chip-menuTrigger\"\r\n            iconName=\"chevron-down\"\r\n            width=\"14\"\r\n            [strokeWidth]=\"2\">\r\n    </p-icon>\r\n  </mat-basic-chip>\r\n</mat-chip-list>\r\n"
+            "templateData": "<mat-chip-list class=\"p-chips-list\" attr.aria-label=\"{{ariaLabel}}\">\r\n  <mat-basic-chip *ngFor=\"let chip of chips\"\r\n                  class=\"p-chip\"\r\n                  [ngClass]=\"{'full' : chip.full, 'active' : chip.active }\">\r\n    <p-icon *ngIf=\"chip.iconRemove\"\r\n            class=\"p-chip-remove\"\r\n            matChipRemove\r\n            iconName=\"x\"\r\n            width=\"12\"\r\n            [strokeWidth]=\"2\">\r\n    </p-icon>\r\n    <span class=\"p-chip-label paragraph-2-default\">Title</span>\r\n    <ul class=\"p-chip-values paragraph-2-default\" *ngIf=\"chip.values?.length\">\r\n      <li class=\"p-chip-value-item\" *ngFor=\"let value of chip.values\">\r\n        {{value}}\r\n      </li>\r\n    </ul>\r\n    <p-icon *ngIf=\"chip.iconRemove\"\r\n            class=\"p-chip-menuTrigger\"\r\n            iconName=\"chevron-down\"\r\n            width=\"14\"\r\n            [strokeWidth]=\"2\">\r\n    </p-icon>\r\n  </mat-basic-chip>\r\n</mat-chip-list>\r\n"
         },
         {
             "name": "ColorPaletteComponent",
@@ -5202,104 +5297,9 @@
             "templateData": "<div class=\"p-toggle\">\r\n  <div *ngFor=\"let option of optionsList; let i = index\"\r\n       class=\"p-toggle-item\"\r\n       [ngClass]=\"i === 0 ? 'first' : i === optionsList.length - 1 ? 'last' : 'middle'\">\r\n    <input [id]=\"'toggle-' + option.optionName\"\r\n           [name]=\"optionsListName\"\r\n           [value]=\"option.optionName\"\r\n           [checked]=\"option.checked\"\r\n           [disabled]=\"disabled\"\r\n           type=\"radio\"\r\n           class=\"p-toggle-button\"/>\r\n    <label [attr.for]=\"'toggle-' + option.optionName\" class=\"p-toggle-label\"\r\n          [class.p-toggle-label-icon]=\"option.icon?.iconName\">\r\n      <ng-template [ngIf]=\"!option.icon?.iconName && !option.icon?.iconName\"\r\n                   [ngIfElse]=\"icon\">\r\n        <span class=\"p-toggle-text\">{{option.optionName}}</span>\r\n      </ng-template>\r\n\r\n      <ng-template #icon>\r\n        <span class=\"p-toggle-icon\" attr.aria-label=\"{{option.optionName}}\">\r\n          <p-icon class=\"p-toggle-icon-comp\"\r\n              [iconName]=\"option.icon.iconName\"\r\n              [width]=\"option.icon?.width\"\r\n              [height]=\"option.icon?.height\"\r\n              [fill]=\"option.icon?.fill\"\r\n              [stroke]=\"option.icon?.stroke\"\r\n              [strokeWidth]=\"option.icon?.strokeWidth\"\r\n              [strokeLinecap]=\"option.icon?.strokeLinecap\"\r\n              [strokeLinejoin]=\"option.icon?.strokeLinejoin\"></p-icon>\r\n        </span>\r\n      </ng-template>\r\n    </label>\r\n  </div>\r\n</div>\r\n\r\n\r\n\r\n"
         },
         {
-            "name": "ToolbarButtonComponent",
-            "id": "component-ToolbarButtonComponent-27377e72f98283ca442218999cd96b00",
-            "file": "projects/design-system-lib/src/lib/toolbar/button/toolbar-button.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "p-toolbar-button",
-            "styleUrls": [
-                "./toolbar-button.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./toolbar-button.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [
-                {
-                    "name": "disabled",
-                    "defaultValue": "false",
-                    "line": 10,
-                    "type": "boolean"
-                },
-                {
-                    "name": "iconBeforeHeight",
-                    "defaultValue": "'auto'",
-                    "line": 13,
-                    "type": "string"
-                },
-                {
-                    "name": "iconBeforeName",
-                    "line": 11,
-                    "type": "string"
-                },
-                {
-                    "name": "iconBeforeStrokeColor",
-                    "line": 15,
-                    "type": "string"
-                },
-                {
-                    "name": "iconBeforeStrokeWidth",
-                    "line": 14,
-                    "type": "number"
-                },
-                {
-                    "name": "iconBeforeWidth",
-                    "defaultValue": "'auto'",
-                    "line": 12,
-                    "type": "string"
-                },
-                {
-                    "name": "isMenuTrigger",
-                    "defaultValue": "false",
-                    "line": 16,
-                    "type": "boolean"
-                },
-                {
-                    "name": "label",
-                    "line": 9,
-                    "type": "string"
-                }
-            ],
-            "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "isActive",
-                    "defaultValue": "false",
-                    "type": "boolean",
-                    "optional": false,
-                    "description": "",
-                    "line": 17,
-                    "modifierKind": [
-                        114
-                    ]
-                }
-            ],
-            "methodsClass": [],
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "",
-            "type": "component",
-            "sourceCode": "import {Component, EventEmitter, Input, Output} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'p-toolbar-button',\r\n  templateUrl: './toolbar-button.component.html',\r\n  styleUrls: ['./toolbar-button.component.scss'],\r\n})\r\nexport class ToolbarButtonComponent {\r\n  @Input() label: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() iconBeforeName: string;\r\n  @Input() iconBeforeWidth: string = 'auto';\r\n  @Input() iconBeforeHeight: string = 'auto';\r\n  @Input() iconBeforeStrokeWidth: number;\r\n  @Input() iconBeforeStrokeColor: string;\r\n  @Input() isMenuTrigger: boolean = false;\r\n  public isActive: boolean = false;\r\n}\r\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$toolbar-btn-height: 38px;\r\n\r\n.p-toolbar-btn {\r\n  @include resetButton;\r\n  display: flex;\r\n  align-items: center;\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  font-weight: 400;\r\n  height: $toolbar-btn-height;\r\n  padding-right: $gap-base;\r\n  padding-left: $gap-base;\r\n  border-radius: $btn-border-radius;\r\n  white-space: nowrap;\r\n\r\n  &:not(:disabled):not(.active):hover,\r\n  &:not(:disabled):not(.active):focus {\r\n    color: $secondary-a-700;\r\n  }\r\n\r\n  &.active {\r\n    color: $secondary-a-700;\r\n    background-color: $primary-c-50;\r\n  }\r\n\r\n  &:disabled {\r\n    color: $gray-scale-600;\r\n    pointer-events: none;\r\n  }\r\n\r\n  // class of the before icon\r\n  &-icon {\r\n    margin-right: $gap-base;\r\n  }\r\n\r\n  // class of the after icon (chevron-down)\r\n  &-arrow {\r\n    margin-left: $gap-small;\r\n  }\r\n}\r\n\r\n\r\n",
-                    "styleUrl": "./toolbar-button.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "templateData": "<button class=\"p-toolbar-btn\"\r\n        [ngClass]=\"{'menu-trigger' : isMenuTrigger, 'active' : isActive}\"\r\n        [disabled]=\"disabled\"\r\n        (click)=\"isActive = true\"\r\n        (blur)=\"isActive = false\">\r\n  <p-icon *ngIf=\"iconBeforeName\"\r\n          class=\"p-toolbar-btn-icon\"\r\n          [iconName]=\"iconBeforeName\"\r\n          [width]=\"iconBeforeWidth\"\r\n          [height]=\"iconBeforeHeight\"\r\n          [stroke]=\"iconBeforeStrokeColor\"\r\n          [strokeWidth]=\"iconBeforeStrokeWidth\"\r\n          [disabled]=\"disabled\"></p-icon>\r\n  <span class=\"p-toolbar-btn-label\">{{label}}</span>\r\n  <p-icon *ngIf=\"isMenuTrigger\"\r\n          class=\"p-toolbar-btn-arrow\"\r\n          iconName=\"chevron-down\"\r\n          [width]=\"17\"\r\n          [disabled]=\"disabled\"></p-icon>\r\n</button>\r\n"
-        },
-        {
             "name": "ToolbarComponent",
-            "id": "component-ToolbarComponent-37fe9642f5f3a18f6aef97f4ad5503d5",
-            "file": "projects/design-system-lib/src/lib/toolbar/bar/toolbar.component.ts",
+            "id": "component-ToolbarComponent-a2c62962bdb5dc6830334f14fc97b61b",
+            "file": "projects/design-system-lib/src/lib/toolbar/toolbar.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -5318,7 +5318,7 @@
                 {
                     "name": "toolbar",
                     "line": 10,
-                    "type": "IToolbarButton[]"
+                    "type": "IActionButton[]"
                 }
             ],
             "outputsClass": [],
@@ -5329,16 +5329,16 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {IToolbarButton} from '../toolbar-button.interface';\r\n\r\n@Component({\r\n  selector: 'p-toolbar',\r\n  templateUrl: './toolbar.component.html',\r\n  styleUrls: ['./toolbar.component.scss'],\r\n})\r\nexport class ToolbarComponent {\r\n  @Input() toolbar: IToolbarButton[];\r\n}\r\n",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {IActionButton} from '../../action-button/action-button.interface';\r\n\r\n@Component({\r\n  selector: 'p-toolbar',\r\n  templateUrl: './toolbar.component.html',\r\n  styleUrls: ['./toolbar.component.scss'],\r\n})\r\nexport class ToolbarComponent {\r\n  @Input() toolbar: IActionButton[];\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n.p-toolbar {\r\n  @include resetUl;\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\n\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n.p-toolbar {\r\n  @include resetUl;\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\n\r\n",
                     "styleUrl": "./toolbar.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<ul class=\"p-toolbar\">\r\n  <li class=\"p-toolbar-item\" *ngFor=\"let item of toolbar\">\r\n    <p-toolbar-button\r\n      class=\"p-toolbar-item-comp\"\r\n      [label]=\"item.label\"\r\n      [disabled]=\"item.disabled\"\r\n      [iconBeforeName]=\"item.iconBeforeName\"\r\n      [iconBeforeWidth]=\"item.iconBeforeWidth\"\r\n      [iconBeforeHeight]=\"item.iconBeforeHeight\"\r\n      [iconBeforeStrokeWidth]=\"item.iconBeforeStrokeWidth\"\r\n      [iconBeforeStrokeColor]=\"item.iconBeforeStrokeColor\"\r\n      [isMenuTrigger]=\"item.isMenuTrigger\">\r\n    </p-toolbar-button>\r\n  </li>\r\n</ul>\r\n"
+            "templateData": "<ul class=\"p-toolbar\">\r\n  <li class=\"p-toolbar-item\" *ngFor=\"let item of toolbar\">\r\n    <p-action-button\r\n      class=\"p-toolbar-item-comp\"\r\n      [label]=\"item.label\"\r\n      [disabled]=\"item.disabled\"\r\n      [iconBeforeName]=\"item.iconBeforeName\"\r\n      [iconBeforeWidth]=\"item.iconBeforeWidth\"\r\n      [iconBeforeHeight]=\"item.iconBeforeHeight\"\r\n      [iconBeforeStrokeWidth]=\"item.iconBeforeStrokeWidth\"\r\n      [iconBeforeStrokeColor]=\"item.iconBeforeStrokeColor\"\r\n      [isMenuTrigger]=\"item.isMenuTrigger\">\r\n    </p-action-button>\r\n  </li>\r\n</ul>\r\n"
         },
         {
             "name": "TooltipComponent",
@@ -5510,6 +5510,47 @@
         }
     ],
     "modules": [
+        {
+            "name": "ActionButtonModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ActionButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "IconModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ActionButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
         {
             "name": "AlertModule",
             "children": [
@@ -6217,9 +6258,6 @@
                     "type": "declarations",
                     "elements": [
                         {
-                            "name": "ToolbarButtonComponent"
-                        },
-                        {
                             "name": "ToolbarComponent"
                         }
                     ]
@@ -6228,16 +6266,13 @@
                     "type": "imports",
                     "elements": [
                         {
-                            "name": "IconModule"
+                            "name": "ActionButtonModule"
                         }
                     ]
                 },
                 {
                     "type": "exports",
                     "elements": [
-                        {
-                            "name": "ToolbarButtonComponent"
-                        },
                         {
                             "name": "ToolbarComponent"
                         }
@@ -6436,17 +6471,17 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
-                "type": "Story<InputTextPageComponent>",
-                "defaultValue": "(args: InputTextPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts",
+                "type": "Story<SlideTogglePageComponent>",
+                "defaultValue": "(args: SlideTogglePageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts",
-                "type": "Story<SlideTogglePageComponent>",
-                "defaultValue": "(args: SlideTogglePageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
+                "type": "Story<InputTextPageComponent>",
+                "defaultValue": "(args: InputTextPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "palette",
@@ -6538,17 +6573,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
-                "type": "Story<TypographyFontFamilyComponent>",
-                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/styles/typography-styles.stories.ts",
+                "type": "Story<TypographyStylesComponent>",
+                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/styles/typography-styles.stories.ts",
-                "type": "Story<TypographyStylesComponent>",
-                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
+                "type": "Story<TypographyFontFamilyComponent>",
+                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Toggles",
@@ -7307,6 +7342,24 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/design-system-lib/src/action-button/action-button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ActionButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/10",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/action-button/action-button.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "IActionButton",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/design-system-lib/src/lib/alert/alert.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -7712,30 +7765,12 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/design-system-lib/src/lib/toolbar/bar/toolbar.component.ts",
+                "filePath": "projects/design-system-lib/src/lib/toolbar/toolbar.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "ToolbarComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/design-system-lib/src/lib/toolbar/button/toolbar-button.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "ToolbarButtonComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/10",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/design-system-lib/src/lib/toolbar/toolbar-button.interface.ts",
-                "type": "interface",
-                "linktype": "interface",
-                "name": "IToolbarButton",
-                "coveragePercent": 0,
-                "coverageCount": "0/9",
                 "status": "low"
             },
             {

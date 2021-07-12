@@ -58,10 +58,12 @@ export * from './lib/tab-group/tab-group.module';
 export * from './lib/tab-group/tab-group.component';
 export * from './lib/tab-group/tab.interface';
 
+export * from './action-button/action-button.component';
+export * from './action-button/action-button.module';
+export * from './action-button/action-button.interface';
+
 export * from './lib/toolbar/toolbar.module';
-export * from './lib/toolbar/button/toolbar-button.component';
-export * from './lib/toolbar/bar/toolbar.component';
-export * from './lib/toolbar/toolbar-button.interface';
+export * from './lib/toolbar/toolbar.component';
 
 export * from './lib/sidenav/sidenav.module';
 export * from './lib/sidenav/main/sidenav-main.component';

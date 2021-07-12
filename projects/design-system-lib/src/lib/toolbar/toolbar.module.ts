@@ -1,21 +1,20 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {IconModule} from '../icon/icon.module';
-import {ToolbarButtonComponent} from './button/toolbar-button.component';
-import {ToolbarComponent} from './bar/toolbar.component';
+import {ActionButtonComponent} from '../../action-button/action-button.component';
+import {ToolbarComponent} from './toolbar.component';
+import {ActionButtonModule} from '../../action-button/action-button.module';
 
 
 @NgModule({
   imports: [
     CommonModule,
-    IconModule
+    ActionButtonModule
   ],
   declarations: [
-    ToolbarButtonComponent,
     ToolbarComponent
   ],
   exports: [
-    ToolbarButtonComponent,
     ToolbarComponent
   ]
 })

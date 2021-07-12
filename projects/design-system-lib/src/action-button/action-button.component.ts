@@ -1,11 +1,11 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
-  selector: 'p-toolbar-button',
-  templateUrl: './toolbar-button.component.html',
-  styleUrls: ['./toolbar-button.component.scss'],
+  selector: 'p-action-button',
+  templateUrl: './action-button.component.html',
+  styleUrls: ['./action-button.component.scss'],
 })
-export class ToolbarButtonComponent {
+export class ActionButtonComponent {
   @Input() label: string;
   @Input() disabled: boolean = false;
   @Input() iconBeforeName: string;

@@ -1,6 +1,6 @@
 <ul class="p-toolbar">
   <li class="p-toolbar-item" *ngFor="let item of toolbar">
-    <p-toolbar-button
+    <p-action-button
       class="p-toolbar-item-comp"
       [label]="item.label"
       [disabled]="item.disabled"
@@ -10,6 +10,6 @@
       [iconBeforeStrokeWidth]="item.iconBeforeStrokeWidth"
       [iconBeforeStrokeColor]="item.iconBeforeStrokeColor"
       [isMenuTrigger]="item.isMenuTrigger">
-    </p-toolbar-button>
+    </p-action-button>
   </li>
 </ul>
