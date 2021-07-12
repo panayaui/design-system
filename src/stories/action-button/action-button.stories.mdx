@@ -14,7 +14,8 @@ import {ActionButtonModule} from 'projects/design-system-lib/src/public-api';
     label: 'Action item',
     iconBeforeName: 'trash-2',
     iconBeforeWidth: '17',
-    isMenuTrigger: true
+    isMenuTrigger: true,
+    isStandalone: true
   }}
 />
 
@@ -27,7 +28,7 @@ export const Template = (args) => <ActionButtonComponent {...args} />
   <p-toolbar-button></p-toolbar-button>
 ```
 
-###### Default
+###### Standalone
 <Canvas>
   <Story name="Action Button"
     args={{
@@ -43,6 +44,30 @@ export const Template = (args) => <ActionButtonComponent {...args} />
    <Story name="Action Button Disabled"
     args={{
       disabled: true
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### In the Toolbar
+<Canvas>
+  <Story name="Toolbar Button"
+    args={{
+      isMenuTrigger: false,
+      isStandalone: false
+    }}>
+    {Template.bind({})}
+  </Story>
+   <Story name="Toolbar Menu Trigger"
+    args={{
+      isStandalone: false
+    }}>
+    {Template.bind({})}
+  </Story>
+   <Story name="Toolbar Button Disabled"
+    args={{
+      disabled: true,
+      isStandalone: false
     }}>
     {Template.bind({})}
   </Story>
@@ -74,5 +99,6 @@ export interface IActionButton {
   iconBeforeStrokeWidth?: number;
   iconBeforeStrokeColor?: string;
   isMenuTrigger?: boolean;
+  isStandalone?: boolean;
 }
 ```

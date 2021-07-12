@@ -1,19 +1,19 @@
-<button class="p-toolbar-btn"
-        [ngClass]="{'menu-trigger' : isMenuTrigger, 'active' : isActive}"
+<button class="p-action-btn"
+        [ngClass]="{'menu-trigger' : isMenuTrigger, 'active' : isActive, 'standalone' : isStandalone}"
         [disabled]="disabled"
         (click)="isActive = true"
         (blur)="isActive = false">
   <p-icon *ngIf="iconBeforeName"
-          class="p-toolbar-btn-icon"
+          class="p-action-btn-icon"
           [iconName]="iconBeforeName"
           [width]="iconBeforeWidth"
           [height]="iconBeforeHeight"
           [stroke]="iconBeforeStrokeColor"
           [strokeWidth]="iconBeforeStrokeWidth"
           [disabled]="disabled"></p-icon>
-  <span class="p-toolbar-btn-label">{{label}}</span>
+  <span class="p-action-btn-label">{{label}}</span>
   <p-icon *ngIf="isMenuTrigger"
-          class="p-toolbar-btn-arrow"
+          class="p-action-btn-arrow"
           iconName="chevron-down"
           [width]="17"
           [disabled]="disabled"></p-icon>

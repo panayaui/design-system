@@ -7,4 +7,5 @@ export interface IActionButton {
   iconBeforeStrokeWidth?: number;
   iconBeforeStrokeColor?: string;
   isMenuTrigger?: boolean;
+  isStandalone?: boolean;
 }

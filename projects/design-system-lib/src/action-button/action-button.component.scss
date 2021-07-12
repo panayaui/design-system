@@ -1,23 +1,34 @@
 @import "../lib/assets/styles/custom";
 
-$toolbar-btn-height: 38px;
+$action-btn-height: 38px;
 
-.p-toolbar-btn {
+.p-action-btn {
   @include resetButton;
   display: flex;
   align-items: center;
   font-family: $font-family-basic;
   font-size: $small-font-size;
-  font-weight: 400;
-  height: $toolbar-btn-height;
+  height: $action-btn-height;
   padding-right: $gap-base;
   padding-left: $gap-base;
   border-radius: $btn-border-radius;
   white-space: nowrap;
 
-  &:not(:disabled):not(.active):hover,
-  &:not(:disabled):not(.active):focus {
+  &.standalone {
     color: $secondary-a-700;
+    font-weight: 600;
+    &:not(:disabled):not(.active):hover,
+    &:not(:disabled):not(.active):focus {
+      background-color: $primary-c-50;
+    }
+  }
+  &:not(.standalone) {
+    color: $primary-a-900;
+    font-weight: 400;
+    &:not(:disabled):not(.active):hover,
+    &:not(:disabled):not(.active):focus {
+      color: $secondary-a-700;
+    }
   }
 
   &.active {

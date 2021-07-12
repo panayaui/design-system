@@ -14,5 +14,6 @@ export class ActionButtonComponent {
   @Input() iconBeforeStrokeWidth: number;
   @Input() iconBeforeStrokeColor: string;
   @Input() isMenuTrigger: boolean = false;
+  @Input() isStandalone: boolean = true;
   public isActive: boolean = false;
 }
