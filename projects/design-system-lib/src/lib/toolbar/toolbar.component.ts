@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {IToolbarButton} from '../toolbar-button.interface';
+import {IActionButton} from '../../action-button/action-button.interface';
 
 @Component({
   selector: 'p-toolbar',
@@ -7,5 +7,5 @@ import {IToolbarButton} from '../toolbar-button.interface';
   styleUrls: ['./toolbar.component.scss'],
 })
 export class ToolbarComponent {
-  @Input() toolbar: IToolbarButton[];
+  @Input() toolbar: IActionButton[];
 }

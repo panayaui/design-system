@@ -1,35 +1,36 @@
 import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
 import {moduleMetadata} from '@storybook/angular';
-import {ToolbarButtonComponent} from 'projects/design-system-lib/src/public-api';
-import {ToolbarModule} from 'projects/design-system-lib/src/public-api';
+import {ActionButtonComponent} from 'projects/design-system-lib/src/public-api';
+import {ActionButtonModule} from 'projects/design-system-lib/src/public-api';
 
-<Meta title='Components/Toolbar/Button'
-  component={ToolbarButtonComponent}
+<Meta title='Components/Action Button'
+  component={ActionButtonComponent}
   decorators={[
     moduleMetadata({
-      imports: [ToolbarModule]
+      imports: [ActionButtonModule]
     })
   ]}
   args={{
     label: 'Action item',
     iconBeforeName: 'trash-2',
     iconBeforeWidth: '17',
-    isMenuTrigger: true
+    isMenuTrigger: true,
+    isStandalone: true
   }}
 />
 
-export const Template = (args) => <ToolbarButtonComponent {...args} />
+export const Template = (args) => <ActionButtonComponent {...args} />
 
-# Toolbar Button
+# Action Button
 
 ###### Selector
 ```html
-  <p-toolbar-button></p-toolbar-button>
+  <p-action-button></p-action-button>
 ```
 
-###### Default
+###### Standalone
 <Canvas>
-  <Story name="Toolbar Button"
+  <Story name="Action Button"
     args={{
       isMenuTrigger: false
     }}>
@@ -40,7 +41,7 @@ export const Template = (args) => <ToolbarButtonComponent {...args} />
     }}>
     {Template.bind({})}
   </Story>
-   <Story name="Toolbar Disabled"
+   <Story name="Action Button Disabled"
     args={{
       disabled: true
     }}>
@@ -48,9 +49,33 @@ export const Template = (args) => <ToolbarButtonComponent {...args} />
   </Story>
 </Canvas>
 
+###### In the Toolbar
+<Canvas>
+  <Story name="Toolbar Button"
+    args={{
+      isMenuTrigger: false,
+      isStandalone: false
+    }}>
+    {Template.bind({})}
+  </Story>
+   <Story name="Toolbar Menu Trigger"
+    args={{
+      isStandalone: false
+    }}>
+    {Template.bind({})}
+  </Story>
+   <Story name="Toolbar Button Disabled"
+    args={{
+      disabled: true,
+      isStandalone: false
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
 ###### Component
 ```ts
-export class ToolbarButtonComponent {
+export class ActionButtonComponent {
   @Input() label: string;
   @Input() disabled: boolean = false;
   @Input() iconBeforeName: string;
@@ -63,9 +88,9 @@ export class ToolbarButtonComponent {
 }
 ```
 
-###### IToolbarButton
+###### IActionButton
 ```ts
-export interface IToolbarButton {
+export interface IActionButton {
   label: string;
   disabled?: boolean;
   iconBeforeName?: string;
@@ -74,5 +99,6 @@ export interface IToolbarButton {
   iconBeforeStrokeWidth?: number;
   iconBeforeStrokeColor?: string;
   isMenuTrigger?: boolean;
+  isStandalone?: boolean;
 }
 ```

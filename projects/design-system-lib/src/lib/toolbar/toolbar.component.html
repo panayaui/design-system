@@ -1,7 +1,7 @@
 <ul class="p-toolbar">
   <li class="p-toolbar-item" *ngFor="let item of toolbar">
-    <p-toolbar-button
-      class="p-toolbar-item-comp"
+    <p-action-button
+      class="p-action-item-comp"
       [label]="item.label"
       [disabled]="item.disabled"
       [iconBeforeName]="item.iconBeforeName"
@@ -9,7 +9,8 @@
       [iconBeforeHeight]="item.iconBeforeHeight"
       [iconBeforeStrokeWidth]="item.iconBeforeStrokeWidth"
       [iconBeforeStrokeColor]="item.iconBeforeStrokeColor"
-      [isMenuTrigger]="item.isMenuTrigger">
-    </p-toolbar-button>
+      [isMenuTrigger]="item.isMenuTrigger"
+      [isStandalone]="false">
+    </p-action-button>
   </li>
 </ul>

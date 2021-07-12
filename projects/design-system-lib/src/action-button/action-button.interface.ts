@@ -1,4 +1,4 @@
-export interface IToolbarButton {
+export interface IActionButton {
   label: string;
   disabled?: boolean;
   iconBeforeName?: string;
@@ -7,4 +7,5 @@ export interface IToolbarButton {
   iconBeforeStrokeWidth?: number;
   iconBeforeStrokeColor?: string;
   isMenuTrigger?: boolean;
+  isStandalone?: boolean;
 }
