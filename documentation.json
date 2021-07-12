@@ -1543,7 +1543,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<!--<div>-->\r\n  <!--<p-menu-tab-group [menuTriggerName]=\"menuTriggerName\"-->\r\n               <!--[menuList]=\"menuList\"-->\r\n               <!--[footerBtnFirst]=\"footerBtnFirst\"-->\r\n               <!--[footerBtnLast]=\"footerBtnLast\"-->\r\n               <!--[filterAriaLabel]=\"filterAriaLabel\"-->\r\n               <!--[filterPlaceholder]=\"filterPlaceholder\"-->\r\n               <!--[headerBtnFirst]=\"headerBtnFirst\"-->\r\n               <!--[headerBtnLast]=\"headerBtnLast\"-->\r\n               <!--[checkboxList]=\"checkboxList\"></p-menu-tab-group>-->\r\n<!--</div>-->\r\n\r\n<!--<button #tooltip=\"matTooltip\"-->\r\n        <!--[matTooltip]=\"'message'\"-->\r\n        <!--[matTooltipClass]=\"'p-tooltip'\"-->\r\n        <!--class=\"p-btn p-btn-small p-btn-primary\"-->\r\n<!--&gt;-->\r\n  <!--Hover-->\r\n<!--</button>-->\r\n\r\n<!--<p class=\"paragraph-3-semibold\">some words</p>-->\r\n\r\n<!--<p-input-header [value]=\"'some text'\"></p-input-header>-->\r\n\r\n<!--<p-input-text [value]=\"'some text'\"></p-input-text>-->\r\n\r\n<!--<p-menu-multi-select-->\r\n<!--[menuTriggerName]=\"'trigger'\"-->\r\n<!--[menuList]=\"menuList\"-->\r\n<!--[headerBtnFirst]=\"headerBtnFirst\"-->\r\n<!--[headerBtnLast]=\"headerBtnLast\"-->\r\n<!--[footerBtnFirst]=\"footerBtnFirst\"-->\r\n<!--[footerBtnLast]=\"footerBtnLast\"></p-menu-multi-select>-->\r\n\r\n<!--<p-menu-single-select-->\r\n<!--[menuTriggerName]=\"'trigger'\"-->\r\n<!--[menuList]=\"menuList\"></p-menu-single-select>-->\r\n\r\n<p-tab-group [tabGroup]=\"tabGroup\"></p-tab-group>\r\n"
+            "templateData": "<!--<div>-->\r\n  <!--<p-menu-tab-group [menuTriggerName]=\"menuTriggerName\"-->\r\n               <!--[menuList]=\"menuList\"-->\r\n               <!--[footerBtnFirst]=\"footerBtnFirst\"-->\r\n               <!--[footerBtnLast]=\"footerBtnLast\"-->\r\n               <!--[filterAriaLabel]=\"filterAriaLabel\"-->\r\n               <!--[filterPlaceholder]=\"filterPlaceholder\"-->\r\n               <!--[headerBtnFirst]=\"headerBtnFirst\"-->\r\n               <!--[headerBtnLast]=\"headerBtnLast\"-->\r\n               <!--[checkboxList]=\"checkboxList\"></p-menu-tab-group>-->\r\n<!--</div>-->\r\n\r\n\r\n<!--<p class=\"paragraph-3-semibold\">some words</p>-->\r\n\r\n<!--<p-input-header [value]=\"'some text'\"></p-input-header>-->\r\n\r\n<!--<p-input-text [value]=\"'some text'\"></p-input-text>-->\r\n\r\n<!--<p-menu-multi-select-->\r\n<!--[menuTriggerName]=\"'trigger'\"-->\r\n<!--[menuList]=\"menuList\"-->\r\n<!--[headerBtnFirst]=\"headerBtnFirst\"-->\r\n<!--[headerBtnLast]=\"headerBtnLast\"-->\r\n<!--[footerBtnFirst]=\"footerBtnFirst\"-->\r\n<!--[footerBtnLast]=\"footerBtnLast\"></p-menu-multi-select>-->\r\n\r\n<!--<p-menu-single-select-->\r\n<!--[menuTriggerName]=\"'trigger'\"-->\r\n<!--[menuList]=\"menuList\"></p-menu-single-select>-->\r\n\r\n<p-tab-group [tabGroup]=\"tabGroup\"></p-tab-group>\r\n\r\n\r\n\r\n<button #tooltip=\"matTooltip\"\r\n        [matTooltip]=\"'message'\"\r\n        [matTooltipClass]=\"'p-tooltip left'\"\r\n        [matTooltipPosition]=\"'above'\"\r\n        class=\"p-btn p-btn-small p-btn-primary\"\r\n>\r\n  Hover\r\n</button>\r\n"
         },
         {
             "name": "ButtonComponent",
@@ -1910,7 +1910,7 @@
         },
         {
             "name": "ChipButtonComponent",
-            "id": "component-ChipButtonComponent-68bcd1e7bc1942edcfb475a11794bc9a",
+            "id": "component-ChipButtonComponent-395e17eed00c80f92efa281bdc5a6b0a",
             "file": "projects/design-system-lib/src/lib/chips/button/chip-button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1966,7 +1966,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'p-chip-button',\r\n  templateUrl: './chip-button.component.html',\r\n  styleUrls: ['./chip-button.component.scss'],\r\n})\r\nexport class ChipButtonComponent {\r\n  @Input() label: string;\r\n  @Input() values: string[];\r\n  @Input() iconRemove: boolean;\r\n  @Input() iconMenuTrigger: boolean;\r\n  @Input() full: boolean;\r\n  @Input() active: boolean;\r\n}\r\n",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'p-chip-button',\r\n  templateUrl: './chip-button.component.html',\r\n  styleUrls: ['./chip-button.component.scss'],\r\n})\r\nexport class ChipButtonComponent {\r\n  @Input() label: string;\r\n  @Input() values: string[];\r\n  @Input() iconRemove: boolean;\r\n  @Input() iconMenuTrigger: boolean;\r\n  @Input() full: boolean;\r\n  @Input() active: boolean;\r\n\r\n  public get valuesInTooltip(): string {\r\n    let tooltipText = '';\r\n    this.values.forEach( value => tooltipText = `${tooltipText} \\n ${value}`);\r\n    return tooltipText;\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1975,11 +1975,22 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<mat-basic-chip class=\"p-chip\"\r\n                [ngClass]=\"{'full' : full, 'active' : active }\">\r\n  <p-icon *ngIf=\"iconRemove\"\r\n          class=\"p-chip-remove\"\r\n          matChipRemove\r\n          iconName=\"x\"\r\n          width=\"12\"\r\n          [strokeWidth]=\"2\">\r\n  </p-icon>\r\n  <span class=\"p-chip-label paragraph-2-default\">Title</span>\r\n  <ul class=\"p-chip-values paragraph-2-default\" *ngIf=\"values?.length\">\r\n    <li class=\"p-chip-value-item\" *ngFor=\"let value of values\">\r\n      {{value}}\r\n    </li>\r\n  </ul>\r\n  <p-icon *ngIf=\"iconRemove\"\r\n          class=\"p-chip-menuTrigger\"\r\n          iconName=\"chevron-down\"\r\n          width=\"14\"\r\n          [strokeWidth]=\"2\">\r\n  </p-icon>\r\n</mat-basic-chip>\r\n\r\n"
+            "accessors": {
+                "valuesInTooltip": {
+                    "name": "valuesInTooltip",
+                    "getSignature": {
+                        "name": "valuesInTooltip",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 16
+                    }
+                }
+            },
+            "templateData": "<mat-basic-chip class=\"p-chip\"\r\n                [disableRipple]=\"true\"\r\n                [ngClass]=\"{'full' : full, 'active' : active }\"\r\n                [matTooltip]=\"valuesInTooltip\"\r\n                matTooltipPosition=\"above\"\r\n                matTooltipClass=\"p-tooltip above\">\r\n  <p-icon *ngIf=\"iconRemove\"\r\n          class=\"p-chip-remove\"\r\n          matChipRemove\r\n          iconName=\"x\"\r\n          width=\"12\"\r\n          [strokeWidth]=\"2\">\r\n  </p-icon>\r\n  <span class=\"p-chip-label paragraph-2-default\">Title</span>\r\n  <ul class=\"p-chip-values paragraph-2-default\" *ngIf=\"values?.length\">\r\n    <li class=\"p-chip-value-item\" *ngFor=\"let value of values\">\r\n      {{value}}\r\n    </li>\r\n  </ul>\r\n  <p-icon *ngIf=\"iconRemove\"\r\n          class=\"p-chip-menuTrigger\"\r\n          iconName=\"chevron-down\"\r\n          width=\"14\"\r\n          [strokeWidth]=\"2\">\r\n  </p-icon>\r\n</mat-basic-chip>\r\n\r\n"
         },
         {
             "name": "ChipsComponent",
-            "id": "component-ChipsComponent-a28add674d373171a7040055004a1ac3",
+            "id": "component-ChipsComponent-0e070c87273e480499fd09b4a4f355a3",
             "file": "projects/design-system-lib/src/lib/chips/bar/chips.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2009,13 +2020,36 @@
             ],
             "outputsClass": [],
             "propertiesClass": [],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "valuesInTooltip",
+                    "args": [
+                        {
+                            "name": "values",
+                            "type": "string[]"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 13,
+                    "jsdoctags": [
+                        {
+                            "name": "values",
+                            "type": "string[]",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
             "hostBindings": [],
             "hostListeners": [],
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {IChip} from '../chip-button.interface';\r\n\r\n@Component({\r\n  selector: 'p-chips',\r\n  templateUrl: './chips.component.html',\r\n  styleUrls: ['./chips.component.scss'],\r\n})\r\nexport class ChipsComponent {\r\n  @Input() chips: IChip[];\r\n  @Input() ariaLabel: string;\r\n}\r\n",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {IChip} from '../chip-button.interface';\r\n\r\n@Component({\r\n  selector: 'p-chips',\r\n  templateUrl: './chips.component.html',\r\n  styleUrls: ['./chips.component.scss'],\r\n})\r\nexport class ChipsComponent {\r\n  @Input() chips: IChip[];\r\n  @Input() ariaLabel: string;\r\n\r\n  valuesInTooltip(values: string[]): string {\r\n    let tooltipText = '';\r\n    values.forEach( value => tooltipText = `${tooltipText} \\n ${value}`);\r\n    return tooltipText;\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2024,7 +2058,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<mat-chip-list class=\"p-chips-list\" attr.aria-label=\"{{ariaLabel}}\">\r\n  <mat-basic-chip *ngFor=\"let chip of chips\"\r\n                  class=\"p-chip\"\r\n                  [ngClass]=\"{'full' : chip.full, 'active' : chip.active }\">\r\n    <p-icon *ngIf=\"chip.iconRemove\"\r\n            class=\"p-chip-remove\"\r\n            matChipRemove\r\n            iconName=\"x\"\r\n            width=\"12\"\r\n            [strokeWidth]=\"2\">\r\n    </p-icon>\r\n    <span class=\"p-chip-label paragraph-2-default\">Title</span>\r\n    <ul class=\"p-chip-values paragraph-2-default\" *ngIf=\"chip.values?.length\">\r\n      <li class=\"p-chip-value-item\" *ngFor=\"let value of chip.values\">\r\n        {{value}}\r\n      </li>\r\n    </ul>\r\n    <p-icon *ngIf=\"chip.iconRemove\"\r\n            class=\"p-chip-menuTrigger\"\r\n            iconName=\"chevron-down\"\r\n            width=\"14\"\r\n            [strokeWidth]=\"2\">\r\n    </p-icon>\r\n  </mat-basic-chip>\r\n</mat-chip-list>\r\n"
+            "templateData": "<mat-chip-list class=\"p-chips-list\" attr.aria-label=\"{{ariaLabel}}\">\r\n  <mat-basic-chip *ngFor=\"let chip of chips\"\r\n                  class=\"p-chip\"\r\n                  [ngClass]=\"{'full' : chip.full, 'active' : chip.active }\"\r\n                  [matTooltip]=\"valuesInTooltip(chip.values)\"\r\n                  matTooltipPosition=\"above\"\r\n                  matTooltipClass=\"p-tooltip above\">\r\n    <p-icon *ngIf=\"chip.iconRemove\"\r\n            class=\"p-chip-remove\"\r\n            matChipRemove\r\n            iconName=\"x\"\r\n            width=\"12\"\r\n            [strokeWidth]=\"2\">\r\n    </p-icon>\r\n    <span class=\"p-chip-label paragraph-2-default\">Title</span>\r\n    <ul class=\"p-chip-values paragraph-2-default\" *ngIf=\"chip.values?.length\">\r\n      <li class=\"p-chip-value-item\" *ngFor=\"let value of chip.values\">\r\n        {{value}}\r\n      </li>\r\n    </ul>\r\n    <p-icon *ngIf=\"chip.iconRemove\"\r\n            class=\"p-chip-menuTrigger\"\r\n            iconName=\"chevron-down\"\r\n            width=\"14\"\r\n            [strokeWidth]=\"2\">\r\n    </p-icon>\r\n  </mat-basic-chip>\r\n</mat-chip-list>\r\n"
         },
         {
             "name": "ChipsWithActionButtonsComponent",
@@ -5414,7 +5448,7 @@
         },
         {
             "name": "TooltipComponent",
-            "id": "component-TooltipComponent-33bd68de687ce4abbae355e286032df7",
+            "id": "component-TooltipComponent-a066a206278795a393152d6316bb972f",
             "file": "src/stories/tooltip/tooltip.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -5447,6 +5481,7 @@
                 },
                 {
                     "name": "position",
+                    "defaultValue": "'above'",
                     "line": 13,
                     "type": "string"
                 },
@@ -5454,12 +5489,6 @@
                     "name": "showDelay",
                     "line": 11,
                     "type": "number"
-                },
-                {
-                    "name": "tooltipClass",
-                    "defaultValue": "'p-tooltip'",
-                    "line": 15,
-                    "type": "string"
                 }
             ],
             "outputsClass": [],
@@ -5470,11 +5499,22 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {TooltipPosition} from '@angular/material/tooltip';\r\n\r\n@Component({\r\n  selector: 'p-tooltip',\r\n  templateUrl: './tooltip.component.html'\r\n})\r\nexport default class TooltipComponent {\r\n  @Input() message: string; // matTooltip\r\n  @Input() disabled: boolean = false; // matTooltipDisabled\r\n  @Input() showDelay: number; // matTooltipShowDelay in ms\r\n  @Input() hideDelay: number; // matTooltipHideDelay in ms\r\n  @Input() position: string; // matTooltipPosition\r\n  // type TooltipPosition = 'left' | 'right' | 'above' | 'below' | 'before' | 'after';\r\n  @Input() tooltipClass: string = 'p-tooltip'; // matTooltipClass - css class\r\n}\r\n",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {TooltipPosition} from '@angular/material/tooltip';\r\n\r\n@Component({\r\n  selector: 'p-tooltip',\r\n  templateUrl: './tooltip.component.html'\r\n})\r\nexport class TooltipComponent {\r\n  @Input() message: string; // matTooltip\r\n  @Input() disabled: boolean = false; // matTooltipDisabled\r\n  @Input() showDelay: number; // matTooltipShowDelay in ms\r\n  @Input() hideDelay: number; // matTooltipHideDelay in ms\r\n  @Input() position: string = 'above'; // matTooltipPosition\r\n  // type TooltipPosition = 'left' | 'right' | 'above' | 'below' | 'before' | 'after';\r\n\r\n  public get classes(): string {\r\n    return `p-tooltip ${this.position}`;\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "templateData": "<button #tooltip=\"matTooltip\"\r\n        [matTooltip]=\"message\"\r\n        [matTooltipDisabled]=\"disabled\"\r\n        [matTooltipShowDelay]=\"showDelay\"\r\n        [matTooltipHideDelay]=\"hideDelay\"\r\n        [matTooltipPosition]=\"position\"\r\n        [matTooltipClass]=\"tooltipClass\"\r\n        class=\"p-btn p-btn-small p-btn-primary\"\r\n        >\r\n  Hover\r\n</button>\r\n\r\n\r\n"
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 16
+                    }
+                }
+            },
+            "templateData": "<p-button class=\"p-tooltip-container\"\r\n          label=\"Hover\"\r\n          buttonType=\"secondary\"\r\n          #tooltip=\"matTooltip\"\r\n          [matTooltip]=\"message\"\r\n          [matTooltipDisabled]=\"disabled\"\r\n          [matTooltipShowDelay]=\"showDelay\"\r\n          [matTooltipHideDelay]=\"hideDelay\"\r\n          [matTooltipPosition]=\"position\"\r\n          [matTooltipClass]=\"classes\">\r\n</p-button>\r\n\r\n"
         },
         {
             "name": "TypographyFontFamilyComponent",
@@ -6415,17 +6455,17 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
+                "file": "src/environments/environment.ts",
                 "type": "object",
-                "defaultValue": "{\r\n  production: true\r\n}"
+                "defaultValue": "{\r\n  production: false\r\n}"
             },
             {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
+                "file": "src/environments/environment.prod.ts",
                 "type": "object",
-                "defaultValue": "{\r\n  production: false\r\n}"
+                "defaultValue": "{\r\n  production: true\r\n}"
             },
             {
                 "name": "ErrorMessage",
@@ -6543,17 +6583,17 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts",
-                "type": "Story<SlideTogglePageComponent>",
-                "defaultValue": "(args: SlideTogglePageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
+                "type": "Story<InputTextPageComponent>",
+                "defaultValue": "(args: InputTextPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
-                "type": "Story<InputTextPageComponent>",
-                "defaultValue": "(args: InputTextPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts",
+                "type": "Story<SlideTogglePageComponent>",
+                "defaultValue": "(args: SlideTogglePageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "palette",
@@ -6629,14 +6669,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/icons/icon.stories.ts",
-                "type": "Story<IconComponent>",
-                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/input-text/input-text.stories.ts",
                 "type": "Story<InputTextComponent>",
                 "defaultValue": "(args: InputTextComponent) => ({\r\n  props: args,\r\n})"
@@ -6645,9 +6677,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/styles/typography-styles.stories.ts",
-                "type": "Story<TypographyStylesComponent>",
-                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/icons/icon.stories.ts",
+                "type": "Story<IconComponent>",
+                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -6656,6 +6688,14 @@
                 "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
                 "type": "Story<TypographyFontFamilyComponent>",
                 "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/typography/styles/typography-styles.stories.ts",
+                "type": "Story<TypographyStylesComponent>",
+                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Toggles",
@@ -6970,16 +7010,6 @@
                     "type": "literal type"
                 }
             ],
-            "src/environments/environment.prod.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.prod.ts",
-                    "type": "object",
-                    "defaultValue": "{\r\n  production: true\r\n}"
-                }
-            ],
             "src/environments/environment.ts": [
                 {
                     "name": "environment",
@@ -6988,6 +7018,16 @@
                     "file": "src/environments/environment.ts",
                     "type": "object",
                     "defaultValue": "{\r\n  production: false\r\n}"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: true\r\n}"
                 }
             ],
             "src/stories/input-text/input-text.stories.ts": [
@@ -7491,7 +7531,7 @@
                 "linktype": "component",
                 "name": "ChipsComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -8318,7 +8358,7 @@
                 "linktype": "component",
                 "name": "TooltipComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {

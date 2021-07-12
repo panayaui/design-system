@@ -12,4 +12,10 @@ export class ChipButtonComponent {
   @Input() iconMenuTrigger: boolean;
   @Input() full: boolean;
   @Input() active: boolean;
+
+  public get valuesInTooltip(): string {
+    let tooltipText = '';
+    this.values.forEach( value => tooltipText = `${tooltipText} \n ${value}`);
+    return tooltipText;
+  }
 }
