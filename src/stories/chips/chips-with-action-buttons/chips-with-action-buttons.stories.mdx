@@ -1,0 +1,79 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+import {ChipsWithActionButtonsComponent} from './chips-with-action-buttons.component';
+import {ChipsModule} from 'projects/design-system-lib/src/public-api';
+import {ActionButtonModule} from 'projects/design-system-lib/src/public-api';
+
+<Meta title='Components/Chips/Bar With Action Buttons'
+  component={ChipsWithActionButtonsComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [
+        ChipsModule,
+        ActionButtonModule
+      ]
+    })
+  ]}
+  args={{ 
+    firstButton: {
+      label: 'Reported by Me',
+      iconBeforeName: 'sliders',
+      iconBeforeWidth: '17',
+      isMenuTrigger: true,
+      isStandalone: true
+    }, 
+    lastButton: {
+      label: 'Add Filter',
+      iconBeforeName: 'plus',
+      iconBeforeWidth: '17',
+      isMenuTrigger: false,
+      isStandalone: true
+    },
+    chipsAriaLabel: 'A list of filters',
+    chips: [
+      {
+        label: 'Type',
+        iconRemove: true,
+        iconMenuTrigger: true,
+        values: ['Defect'],
+        full: true
+      },
+      {
+        label: 'Dev owner',
+        iconRemove: true,
+        iconMenuTrigger: true,
+        values: ['James Lee', 'Niv Dan'],
+        full: true
+      },
+      {
+        label: 'Creation date',
+        iconRemove: true,
+        iconMenuTrigger: true,
+        values: ['All'],
+        full: false
+      }
+    ]
+  }}
+/>
+
+export const Template = (args) => <ChipsWithActionButtonsComponent {...args} />
+
+# Chips And Actions
+
+The component is not included into design-system library.
+
+It is an example component to show the way the Chips interact with the Action buttons.
+
+###### Selector
+```ts
+  <p-chips-and-actions></p-chips-and-actions>
+```
+<Canvas>
+  <Story name="Chips and Actions"
+    args={{
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+

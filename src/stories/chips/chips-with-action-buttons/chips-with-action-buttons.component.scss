@@ -1,0 +1,10 @@
+@import "../../../../projects/design-system-lib/src/lib/assets/styles/custom";
+
+.p-chips-and-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  * + * {
+    margin-left: $gap-base;
+  }
+}

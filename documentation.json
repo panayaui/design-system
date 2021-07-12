@@ -3,10 +3,10 @@
     "interfaces": [
         {
             "name": "IActionButton",
-            "id": "interface-IActionButton-07ece2718d032de3a45d42751388b174",
+            "id": "interface-IActionButton-6b98e01bc5358f8162fdacc7859dc5bb",
             "file": "projects/design-system-lib/src/action-button/action-button.interface.ts",
             "type": "interface",
-            "sourceCode": "export interface IActionButton {\r\n  label: string;\r\n  disabled?: boolean;\r\n  iconBeforeName?: string;\r\n  iconBeforeWidth?: string;\r\n  iconBeforeHeight?: string;\r\n  iconBeforeStrokeWidth?: number;\r\n  iconBeforeStrokeColor?: string;\r\n  isMenuTrigger?: boolean;\r\n}\r\n",
+            "sourceCode": "export interface IActionButton {\r\n  label: string;\r\n  disabled?: boolean;\r\n  iconBeforeName?: string;\r\n  iconBeforeWidth?: string;\r\n  iconBeforeHeight?: string;\r\n  iconBeforeStrokeWidth?: number;\r\n  iconBeforeStrokeColor?: string;\r\n  isMenuTrigger?: boolean;\r\n  isStandalone?: boolean;\r\n}\r\n",
             "properties": [
                 {
                     "name": "disabled",
@@ -56,6 +56,13 @@
                     "optional": true,
                     "description": "",
                     "line": 9
+                },
+                {
+                    "name": "isStandalone",
+                    "type": "boolean",
+                    "optional": true,
+                    "description": "",
+                    "line": 10
                 },
                 {
                     "name": "label",
@@ -1089,7 +1096,7 @@
     "components": [
         {
             "name": "ActionButtonComponent",
-            "id": "component-ActionButtonComponent-5a942dc70e5a4cf9118acf8677f37e52",
+            "id": "component-ActionButtonComponent-907906d95161a15bbfb395db17b075ab",
             "file": "projects/design-system-lib/src/action-button/action-button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1146,6 +1153,12 @@
                     "type": "boolean"
                 },
                 {
+                    "name": "isStandalone",
+                    "defaultValue": "true",
+                    "line": 17,
+                    "type": "boolean"
+                },
+                {
                     "name": "label",
                     "line": 9,
                     "type": "string"
@@ -1159,7 +1172,7 @@
                     "type": "boolean",
                     "optional": false,
                     "description": "",
-                    "line": 17,
+                    "line": 18,
                     "modifierKind": [
                         114
                     ]
@@ -1171,16 +1184,16 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, EventEmitter, Input, Output} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'p-action-button',\r\n  templateUrl: './action-button.component.html',\r\n  styleUrls: ['./action-button.component.scss'],\r\n})\r\nexport class ActionButtonComponent {\r\n  @Input() label: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() iconBeforeName: string;\r\n  @Input() iconBeforeWidth: string = 'auto';\r\n  @Input() iconBeforeHeight: string = 'auto';\r\n  @Input() iconBeforeStrokeWidth: number;\r\n  @Input() iconBeforeStrokeColor: string;\r\n  @Input() isMenuTrigger: boolean = false;\r\n  public isActive: boolean = false;\r\n}\r\n",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'p-action-button',\r\n  templateUrl: './action-button.component.html',\r\n  styleUrls: ['./action-button.component.scss'],\r\n})\r\nexport class ActionButtonComponent {\r\n  @Input() label: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() iconBeforeName: string;\r\n  @Input() iconBeforeWidth: string = 'auto';\r\n  @Input() iconBeforeHeight: string = 'auto';\r\n  @Input() iconBeforeStrokeWidth: number;\r\n  @Input() iconBeforeStrokeColor: string;\r\n  @Input() isMenuTrigger: boolean = false;\r\n  @Input() isStandalone: boolean = true;\r\n  public isActive: boolean = false;\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../lib/assets/styles/custom\";\r\n\r\n$toolbar-btn-height: 38px;\r\n\r\n.p-toolbar-btn {\r\n  @include resetButton;\r\n  display: flex;\r\n  align-items: center;\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  font-weight: 400;\r\n  height: $toolbar-btn-height;\r\n  padding-right: $gap-base;\r\n  padding-left: $gap-base;\r\n  border-radius: $btn-border-radius;\r\n  white-space: nowrap;\r\n\r\n  &:not(:disabled):not(.active):hover,\r\n  &:not(:disabled):not(.active):focus {\r\n    color: $secondary-a-700;\r\n  }\r\n\r\n  &.active {\r\n    color: $secondary-a-700;\r\n    background-color: $primary-c-50;\r\n  }\r\n\r\n  &:disabled {\r\n    color: $gray-scale-600;\r\n    pointer-events: none;\r\n  }\r\n\r\n  // class of the before icon\r\n  &-icon {\r\n    margin-right: $gap-base;\r\n  }\r\n\r\n  // class of the after icon (chevron-down)\r\n  &-arrow {\r\n    margin-left: $gap-small;\r\n  }\r\n}\r\n\r\n\r\n",
+                    "data": "@import \"../lib/assets/styles/custom\";\r\n\r\n$action-btn-height: 38px;\r\n\r\n.p-action-btn {\r\n  @include resetButton;\r\n  display: flex;\r\n  align-items: center;\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  height: $action-btn-height;\r\n  padding-right: $gap-base;\r\n  padding-left: $gap-base;\r\n  border-radius: $btn-border-radius;\r\n  white-space: nowrap;\r\n\r\n  &.standalone {\r\n    color: $secondary-a-700;\r\n    font-weight: 600;\r\n    &:not(:disabled):not(.active):hover,\r\n    &:not(:disabled):not(.active):focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n  }\r\n  &:not(.standalone) {\r\n    color: $primary-a-900;\r\n    font-weight: 400;\r\n    &:not(:disabled):not(.active):hover,\r\n    &:not(:disabled):not(.active):focus {\r\n      color: $secondary-a-700;\r\n    }\r\n  }\r\n\r\n  &.active {\r\n    color: $secondary-a-700;\r\n    background-color: $primary-c-50;\r\n  }\r\n\r\n  &:disabled {\r\n    color: $gray-scale-600;\r\n    pointer-events: none;\r\n  }\r\n\r\n  // class of the before icon\r\n  &-icon {\r\n    margin-right: $gap-base;\r\n  }\r\n\r\n  // class of the after icon (chevron-down)\r\n  &-arrow {\r\n    margin-left: $gap-small;\r\n  }\r\n}\r\n\r\n\r\n",
                     "styleUrl": "./action-button.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<button class=\"p-toolbar-btn\"\r\n        [ngClass]=\"{'menu-trigger' : isMenuTrigger, 'active' : isActive}\"\r\n        [disabled]=\"disabled\"\r\n        (click)=\"isActive = true\"\r\n        (blur)=\"isActive = false\">\r\n  <p-icon *ngIf=\"iconBeforeName\"\r\n          class=\"p-toolbar-btn-icon\"\r\n          [iconName]=\"iconBeforeName\"\r\n          [width]=\"iconBeforeWidth\"\r\n          [height]=\"iconBeforeHeight\"\r\n          [stroke]=\"iconBeforeStrokeColor\"\r\n          [strokeWidth]=\"iconBeforeStrokeWidth\"\r\n          [disabled]=\"disabled\"></p-icon>\r\n  <span class=\"p-toolbar-btn-label\">{{label}}</span>\r\n  <p-icon *ngIf=\"isMenuTrigger\"\r\n          class=\"p-toolbar-btn-arrow\"\r\n          iconName=\"chevron-down\"\r\n          [width]=\"17\"\r\n          [disabled]=\"disabled\"></p-icon>\r\n</button>\r\n"
+            "templateData": "<button class=\"p-action-btn\"\r\n        [ngClass]=\"{'menu-trigger' : isMenuTrigger, 'active' : isActive, 'standalone' : isStandalone}\"\r\n        [disabled]=\"disabled\"\r\n        (click)=\"isActive = true\"\r\n        (blur)=\"isActive = false\">\r\n  <p-icon *ngIf=\"iconBeforeName\"\r\n          class=\"p-action-btn-icon\"\r\n          [iconName]=\"iconBeforeName\"\r\n          [width]=\"iconBeforeWidth\"\r\n          [height]=\"iconBeforeHeight\"\r\n          [stroke]=\"iconBeforeStrokeColor\"\r\n          [strokeWidth]=\"iconBeforeStrokeWidth\"\r\n          [disabled]=\"disabled\"></p-icon>\r\n  <span class=\"p-action-btn-label\">{{label}}</span>\r\n  <p-icon *ngIf=\"isMenuTrigger\"\r\n          class=\"p-action-btn-arrow\"\r\n          iconName=\"chevron-down\"\r\n          [width]=\"17\"\r\n          [disabled]=\"disabled\"></p-icon>\r\n</button>\r\n"
         },
         {
             "name": "AlertComponent",
@@ -2012,6 +2025,65 @@
             ],
             "stylesData": "",
             "templateData": "<mat-chip-list class=\"p-chips-list\" attr.aria-label=\"{{ariaLabel}}\">\r\n  <mat-basic-chip *ngFor=\"let chip of chips\"\r\n                  class=\"p-chip\"\r\n                  [ngClass]=\"{'full' : chip.full, 'active' : chip.active }\">\r\n    <p-icon *ngIf=\"chip.iconRemove\"\r\n            class=\"p-chip-remove\"\r\n            matChipRemove\r\n            iconName=\"x\"\r\n            width=\"12\"\r\n            [strokeWidth]=\"2\">\r\n    </p-icon>\r\n    <span class=\"p-chip-label paragraph-2-default\">Title</span>\r\n    <ul class=\"p-chip-values paragraph-2-default\" *ngIf=\"chip.values?.length\">\r\n      <li class=\"p-chip-value-item\" *ngFor=\"let value of chip.values\">\r\n        {{value}}\r\n      </li>\r\n    </ul>\r\n    <p-icon *ngIf=\"chip.iconRemove\"\r\n            class=\"p-chip-menuTrigger\"\r\n            iconName=\"chevron-down\"\r\n            width=\"14\"\r\n            [strokeWidth]=\"2\">\r\n    </p-icon>\r\n  </mat-basic-chip>\r\n</mat-chip-list>\r\n"
+        },
+        {
+            "name": "ChipsWithActionButtonsComponent",
+            "id": "component-ChipsWithActionButtonsComponent-d61e5acf225fb1697ddec1fa3cb6fe7a",
+            "file": "src/stories/chips/chips-with-action-buttons/chips-with-action-buttons.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-chips-and-actions",
+            "styleUrls": [
+                "./chips-with-action-buttons.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./chips-with-action-buttons.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "chips",
+                    "line": 11,
+                    "type": "IChip[]"
+                },
+                {
+                    "name": "chipsAriaLabel",
+                    "line": 12,
+                    "type": "string"
+                },
+                {
+                    "name": "firstButton",
+                    "line": 13,
+                    "type": "IActionButton"
+                },
+                {
+                    "name": "lastButton",
+                    "line": 14,
+                    "type": "IActionButton"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {IChip} from 'projects/design-system-lib/src/public-api';\r\nimport {IActionButton} from 'projects/design-system-lib/src/public-api';\r\n\r\n@Component({\r\n  selector: 'p-chips-and-actions',\r\n  templateUrl: './chips-with-action-buttons.component.html',\r\n  styleUrls: ['./chips-with-action-buttons.component.scss'],\r\n})\r\nexport class ChipsWithActionButtonsComponent {\r\n  @Input() chips: IChip[];\r\n  @Input() chipsAriaLabel: string;\r\n  @Input() firstButton: IActionButton;\r\n  @Input() lastButton: IActionButton;\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../../../../projects/design-system-lib/src/lib/assets/styles/custom\";\r\n\r\n.p-chips-and-actions {\r\n  display: flex;\r\n  align-items: center;\r\n  flex-wrap: wrap;\r\n  * + * {\r\n    margin-left: $gap-base;\r\n  }\r\n}\r\n",
+                    "styleUrl": "./chips-with-action-buttons.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"p-chips-and-actions\">\r\n  <p-action-button\r\n    [label]=\"firstButton.label\"\r\n    [disabled]=\"firstButton.disabled\"\r\n    [iconBeforeName]=\"firstButton.iconBeforeName\"\r\n    [iconBeforeWidth]=\"firstButton.iconBeforeWidth\"\r\n    [iconBeforeHeight]=\"firstButton.iconBeforeHeight\"\r\n    [iconBeforeStrokeWidth]=\"firstButton.iconBeforeStrokeWidth\"\r\n    [iconBeforeStrokeColor]=\"firstButton.iconBeforeStrokeColor\"\r\n    [isMenuTrigger]=\"firstButton.isMenuTrigger\"\r\n    [isStandalone]=\"firstButton.isStandalone\"></p-action-button>\r\n\r\n  <p-chips class=\"p-chips-comp\"\r\n           [chips]=\"chips\"\r\n           [ariaLabel]=\"chipsAriaLabel\"></p-chips>\r\n\r\n  <p-action-button\r\n    [label]=\"lastButton.label\"\r\n    [disabled]=\"lastButton.disabled\"\r\n    [iconBeforeName]=\"lastButton.iconBeforeName\"\r\n    [iconBeforeWidth]=\"lastButton.iconBeforeWidth\"\r\n    [iconBeforeHeight]=\"lastButton.iconBeforeHeight\"\r\n    [iconBeforeStrokeWidth]=\"lastButton.iconBeforeStrokeWidth\"\r\n    [iconBeforeStrokeColor]=\"lastButton.iconBeforeStrokeColor\"\r\n    [isMenuTrigger]=\"lastButton.isMenuTrigger\"\r\n    [isStandalone]=\"lastButton.isStandalone\"></p-action-button>\r\n</div>\r\n"
         },
         {
             "name": "ColorPaletteComponent",
@@ -5338,7 +5410,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<ul class=\"p-toolbar\">\r\n  <li class=\"p-toolbar-item\" *ngFor=\"let item of toolbar\">\r\n    <p-action-button\r\n      class=\"p-toolbar-item-comp\"\r\n      [label]=\"item.label\"\r\n      [disabled]=\"item.disabled\"\r\n      [iconBeforeName]=\"item.iconBeforeName\"\r\n      [iconBeforeWidth]=\"item.iconBeforeWidth\"\r\n      [iconBeforeHeight]=\"item.iconBeforeHeight\"\r\n      [iconBeforeStrokeWidth]=\"item.iconBeforeStrokeWidth\"\r\n      [iconBeforeStrokeColor]=\"item.iconBeforeStrokeColor\"\r\n      [isMenuTrigger]=\"item.isMenuTrigger\">\r\n    </p-action-button>\r\n  </li>\r\n</ul>\r\n"
+            "templateData": "<ul class=\"p-toolbar\">\r\n  <li class=\"p-toolbar-item\" *ngFor=\"let item of toolbar\">\r\n    <p-action-button\r\n      class=\"p-action-item-comp\"\r\n      [label]=\"item.label\"\r\n      [disabled]=\"item.disabled\"\r\n      [iconBeforeName]=\"item.iconBeforeName\"\r\n      [iconBeforeWidth]=\"item.iconBeforeWidth\"\r\n      [iconBeforeHeight]=\"item.iconBeforeHeight\"\r\n      [iconBeforeStrokeWidth]=\"item.iconBeforeStrokeWidth\"\r\n      [iconBeforeStrokeColor]=\"item.iconBeforeStrokeColor\"\r\n      [isMenuTrigger]=\"item.isMenuTrigger\"\r\n      [isStandalone]=\"false\">\r\n    </p-action-button>\r\n  </li>\r\n</ul>\r\n"
         },
         {
             "name": "TooltipComponent",
@@ -6455,17 +6527,17 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
-                "type": "Story<CheckboxPageComponent>",
-                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "Story<CheckboxGroupPageComponent>",
+                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
-                "type": "Story<CheckboxGroupPageComponent>",
-                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "Story<CheckboxPageComponent>",
+                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -7347,7 +7419,7 @@
                 "linktype": "component",
                 "name": "ActionButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/10",
+                "coverageCount": "0/11",
                 "status": "low"
             },
             {
@@ -7356,7 +7428,7 @@
                 "linktype": "interface",
                 "name": "IActionButton",
                 "coveragePercent": 0,
-                "coverageCount": "0/9",
+                "coverageCount": "0/10",
                 "status": "low"
             },
             {
@@ -7955,6 +8027,15 @@
                 "name": "WithLabel",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/chips/chips-with-action-buttons/chips-with-action-buttons.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ChipsWithActionButtonsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
