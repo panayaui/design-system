@@ -1,0 +1,25 @@
+<mat-chip-list class="p-chips-list" attr.aria-label="{{ariaLabel}}">
+  <mat-basic-chip *ngFor="let chip of chips"
+                  class="p-chip"
+                  [ngClass]="{'full' : chip.full, 'active' : chip.active }">
+    <p-icon *ngIf="chip.iconRemove"
+            class="p-chip-remove"
+            matChipRemove
+            iconName="x"
+            width="12"
+            [strokeWidth]="2">
+    </p-icon>
+    <span class="p-chip-label paragraph-2-default">Title</span>
+    <ul class="p-chip-values paragraph-2-default" *ngIf="chip.values?.length">
+      <li class="p-chip-value-item" *ngFor="let value of chip.values">
+        {{value}}
+      </li>
+    </ul>
+    <p-icon *ngIf="chip.iconRemove"
+            class="p-chip-menuTrigger"
+            iconName="chevron-down"
+            width="14"
+            [strokeWidth]="2">
+    </p-icon>
+  </mat-basic-chip>
+</mat-chip-list>

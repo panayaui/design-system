@@ -253,6 +253,60 @@
             "methods": []
         },
         {
+            "name": "IChip",
+            "id": "interface-IChip-4865a03c759c459727415ae90a9e88b9",
+            "file": "projects/design-system-lib/src/lib/chips/chip-button.interface.ts",
+            "type": "interface",
+            "sourceCode": "export interface IChip {\r\n  label: string;\r\n  values?: string[];\r\n  iconRemove?: boolean;\r\n  iconMenuTrigger?: boolean;\r\n  full?: boolean;\r\n  active?: boolean;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "active",
+                    "type": "boolean",
+                    "optional": true,
+                    "description": "",
+                    "line": 7
+                },
+                {
+                    "name": "full",
+                    "type": "boolean",
+                    "optional": true,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "iconMenuTrigger",
+                    "type": "boolean",
+                    "optional": true,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "iconRemove",
+                    "type": "boolean",
+                    "optional": true,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "label",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "values",
+                    "type": "string[]",
+                    "optional": true,
+                    "description": "",
+                    "line": 3
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
             "name": "IDatepicker",
             "id": "interface-IDatepicker-2b7f00bfb8debcf76de9d8a7fb2ebb82",
             "file": "projects/design-system-lib/src/lib/input/datepicker/datepicker.interface.ts",
@@ -1745,6 +1799,124 @@
             ],
             "stylesData": "",
             "templateData": "<div class=\"page checkboxes\">\r\n    <header class=\"page-header\">\r\n      <h1 class=\"page-title\">Checkbox / <span class=\"page-header-highlighted\">Base</span></h1>\r\n    </header>\r\n\r\n    <main class=\"page-main\">\r\n      <ul class=\"page-list header-list\">\r\n        <li class=\"list-header\"></li>\r\n        <li class=\"list-header\">[checked]=false</li>\r\n        <li class=\"list-header\">\r\n          [checked]=false\r\n          <br/>\r\n          [disabled]=true\r\n        </li>\r\n        <li class=\"list-header\">\r\n          [checked]=true\r\n        </li>\r\n        <li class=\"list-header\">\r\n          [checked]=true\r\n          <br/>\r\n          [disabled]=true\r\n        </li>\r\n        <li class=\"list-header\">\r\n          [selectAll]=true\r\n        </li>\r\n        <li class=\"list-header\">\r\n          [indeterminate]=true\r\n        </li>\r\n      </ul>\r\n\r\n      <ul *ngFor=\"let checkboxType of checkboxesPage | keyvalue: originalOrder\"\r\n          class=\"page-list content-list {{checkboxType.key}}\">\r\n        <li class=\"list-header\">\r\n          [{{checkboxType.key}}]=\"Label\"\r\n        </li>\r\n        <li *ngFor=\"let checkbox of checkboxType.value\" class=\"list-item\">\r\n          <p-checkbox [label]=\"checkbox.label\"\r\n                          [ariaLabel]=\"checkbox.ariaLabel\"\r\n                          [checked]=\"checkbox.checked\"\r\n                          [disabled]=\"checkbox.disabled\"\r\n                          [selectAll]=\"checkbox.selectAll\"\r\n                          [indeterminate]=\"checkbox.indeterminate\">\r\n          </p-checkbox>\r\n        </li>\r\n      </ul>\r\n\r\n    </main>\r\n</div>\r\n"
+        },
+        {
+            "name": "ChipButtonComponent",
+            "id": "component-ChipButtonComponent-68bcd1e7bc1942edcfb475a11794bc9a",
+            "file": "projects/design-system-lib/src/lib/chips/button/chip-button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-chip-button",
+            "styleUrls": [
+                "./chip-button.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./chip-button.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "active",
+                    "line": 14,
+                    "type": "boolean"
+                },
+                {
+                    "name": "full",
+                    "line": 13,
+                    "type": "boolean"
+                },
+                {
+                    "name": "iconMenuTrigger",
+                    "line": 12,
+                    "type": "boolean"
+                },
+                {
+                    "name": "iconRemove",
+                    "line": 11,
+                    "type": "boolean"
+                },
+                {
+                    "name": "label",
+                    "line": 9,
+                    "type": "string"
+                },
+                {
+                    "name": "values",
+                    "line": 10,
+                    "type": "string[]"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'p-chip-button',\r\n  templateUrl: './chip-button.component.html',\r\n  styleUrls: ['./chip-button.component.scss'],\r\n})\r\nexport class ChipButtonComponent {\r\n  @Input() label: string;\r\n  @Input() values: string[];\r\n  @Input() iconRemove: boolean;\r\n  @Input() iconMenuTrigger: boolean;\r\n  @Input() full: boolean;\r\n  @Input() active: boolean;\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$chip-height: 27px;\r\n\r\n.p-chip {\r\n  display: inline-flex;\r\n  align-items: center;\r\n  height: $chip-height;\r\n  padding-right: $gap-small;\r\n  padding-left: $gap-small;\r\n  background-color: $gray-scale-1;\r\n  border: 1px solid currentColor;\r\n  border-radius: 16px;\r\n  &:hover,\r\n  &:active,\r\n  &.active {\r\n    color: $secondary-a-700;\r\n  }\r\n\r\n  &-label:after {\r\n    content: ':';\r\n  }\r\n\r\n  &-values {\r\n    @include resetUl;\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n\r\n  &-value-item {\r\n    display: flex;\r\n    margin-left: $gap-small;\r\n    &:not(:last-child):after {\r\n      content: ';';\r\n    }\r\n  }\r\n\r\n  &-remove {\r\n    margin-right: $gap-small;\r\n  }\r\n\r\n  &-menuTrigger {\r\n    margin-left: $gap-small;\r\n  }\r\n\r\n  &.full {\r\n    background-color: $secondary-a-50;\r\n  }\r\n}\r\n",
+                    "styleUrl": "./chip-button.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<mat-basic-chip class=\"p-chip\"\r\n                [ngClass]=\"{'full' : full, 'active' : active }\">\r\n  <p-icon *ngIf=\"iconRemove\"\r\n          class=\"p-chip-remove\"\r\n          matChipRemove\r\n          iconName=\"x\"\r\n          width=\"12\"\r\n          [strokeWidth]=\"2\">\r\n  </p-icon>\r\n  <span class=\"p-chip-label paragraph-2-default\">Title</span>\r\n  <ul class=\"p-chip-values paragraph-2-default\" *ngIf=\"values?.length\">\r\n    <li class=\"p-chip-value-item\" *ngFor=\"let value of values\">\r\n      {{value}}\r\n    </li>\r\n  </ul>\r\n  <p-icon *ngIf=\"iconRemove\"\r\n          class=\"p-chip-menuTrigger\"\r\n          iconName=\"chevron-down\"\r\n          width=\"14\"\r\n          [strokeWidth]=\"2\">\r\n  </p-icon>\r\n</mat-basic-chip>\r\n\r\n"
+        },
+        {
+            "name": "ChipsComponent",
+            "id": "component-ChipsComponent-a28add674d373171a7040055004a1ac3",
+            "file": "projects/design-system-lib/src/lib/chips/bar/chips.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-chips",
+            "styleUrls": [
+                "./chips.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./chips.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "ariaLabel",
+                    "line": 11,
+                    "type": "string"
+                },
+                {
+                    "name": "chips",
+                    "line": 10,
+                    "type": "IChip[]"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {IChip} from '../chip-button.interface';\r\n\r\n@Component({\r\n  selector: 'p-chips',\r\n  templateUrl: './chips.component.html',\r\n  styleUrls: ['./chips.component.scss'],\r\n})\r\nexport class ChipsComponent {\r\n  @Input() chips: IChip[];\r\n  @Input() ariaLabel: string;\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../button/chip-button.component\";\r\n\r\n.p-chips-list {\r\n  .p-chip + .p-chip {\r\n    margin-left: $gap-base;\r\n  }\r\n}\r\n",
+                    "styleUrl": "./chips.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<mat-chip-list class=\"p-chips-list\" attr.aria-label=\"{{ariaLabel}}\">\r\n  <mat-basic-chip *ngFor=\"let chip of chips\"\r\n                  class=\"p-chip\"\r\n                  [ngClass]=\"{'full' : chip.full, 'active' : chip.active }\">\r\n    <p-icon *ngIf=\"chip.iconRemove\"\r\n            class=\"p-chip-remove\"\r\n            matChipRemove\r\n            iconName=\"x\"\r\n            width=\"12\"\r\n            [strokeWidth]=\"2\">\r\n    </p-icon>\r\n    <span class=\"p-chip-label paragraph-2-default\">Title</span>\r\n    <ul class=\"p-chip-values paragraph-2-default\" *ngIf=\"chip.values?.length\">\r\n      <li class=\"p-chip-value-item\" *ngFor=\"let value of chip.values\">\r\n        {{value}}\r\n      </li>\r\n    </ul>\r\n    <p-icon *ngIf=\"chip.iconRemove\"\r\n            class=\"p-chip-menuTrigger\"\r\n            iconName=\"chevron-down\"\r\n            width=\"14\"\r\n            [strokeWidth]=\"2\">\r\n    </p-icon>\r\n  </mat-basic-chip>\r\n</mat-chip-list>\r\n"
         },
         {
             "name": "ColorPaletteComponent",
@@ -4674,7 +4846,7 @@
         },
         {
             "name": "SidenavInnerComponent",
-            "id": "component-SidenavInnerComponent-d144cf120e4bc9b79ba31d6c48f45e3c",
+            "id": "component-SidenavInnerComponent-17ddad19cb6ce4c23a35c0185b84bbcf",
             "file": "projects/design-system-lib/src/lib/sidenav/inner/sidenav-inner.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -4701,7 +4873,7 @@
             "propertiesClass": [],
             "methodsClass": [
                 {
-                    "name": "onButtonClicked",
+                    "name": "onItemClicked",
                     "args": [
                         {
                             "name": "panel",
@@ -4728,16 +4900,16 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {ISidenavInner} from './sidenav-inner.interface';\r\n\r\n@Component({\r\n  selector: 'p-sidenav-inner',\r\n  templateUrl: './sidenav-inner.component.html',\r\n  styleUrls: ['./sidenav-inner.component.scss'],\r\n})\r\nexport class SidenavInnerComponent {\r\n  @Input() sidenav: ISidenavInner[];\r\n\r\n  onButtonClicked(panel): void {\r\n    console.log(panel);\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {ISidenavInner} from './sidenav-inner.interface';\r\n\r\n@Component({\r\n  selector: 'p-sidenav-inner',\r\n  templateUrl: './sidenav-inner.component.html',\r\n  styleUrls: ['./sidenav-inner.component.scss'],\r\n})\r\nexport class SidenavInnerComponent {\r\n  @Input() sidenav: ISidenavInner[];\r\n\r\n  onItemClicked(panel): void {\r\n    console.log(panel);\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../sidenav.component\";\r\n\r\n$header-height: $content-item-height;\r\n$padding-inner: 24px;\r\n$expand-padding: 10px;\r\n\r\n.p-sidenav {\r\n  ::ng-deep &.inner {\r\n    .expandable {\r\n      border-right: $border;\r\n    }\r\n    .mat-expansion-panel-header {\r\n      &,\r\n      &.mat-expanded {\r\n        height: $header-height;\r\n        padding: 0;\r\n      }\r\n    }\r\n    .mat-content {\r\n      height: 100%;\r\n    }\r\n  }\r\n  &-function {\r\n    @include resetButton;\r\n    font-family: $font-family-basic;\r\n    font-weight: 600;\r\n    font-size: $small-font-size;\r\n    text-transform: capitalize;\r\n    color: $primary-a-900;\r\n    width: 100%;\r\n    height: 100%;\r\n    padding-left: $padding-inner;\r\n    border-left: $border;\r\n    justify-content: flex-start;\r\n    @include ellipsis;\r\n    .p-sidenav-content & {\r\n      padding-right: $padding-inner;\r\n      padding-left: 40px;\r\n      &:focus,\r\n      &:hover {\r\n        background-color: $primary-c-50;\r\n      }\r\n    }\r\n    &.selected {\r\n      @extend %selected;\r\n    }\r\n    .p-sidenav-panel:not(.expandable) & {\r\n      border-right: $border;\r\n      padding-right: $padding-inner;\r\n    }\r\n  }\r\n\r\n  &-content-item {\r\n    position: relative;\r\n  }\r\n\r\n  &-expand-btn {\r\n    @include resetButton;\r\n    width: $expand-width + $expand-padding * 2;\r\n    height: 100%;\r\n    margin-right: $padding-inner - $expand-padding;\r\n    &:after {\r\n      @include expand;\r\n      transform: rotate(0deg);\r\n      transition: transform 280ms;\r\n      ::ng-deep .mat-expanded & {\r\n        @include collapse('primary');\r\n        transform: rotate(180deg);\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n\r\n",
+                    "data": "@import \"../sidenav.component\";\r\n\r\n$item-height: $content-item-height;\r\n$padding-left-inner: 24px;\r\n$padding-left-content: 40px;\r\n\r\n%innerSidenavItem {\r\n  @include resetButton;\r\n  display: flex;\r\n  align-items: center;\r\n  font-family: $font-family-basic;\r\n  font-weight: 600;\r\n  font-size: $small-font-size;\r\n  text-transform: capitalize;\r\n  color: $primary-a-900;\r\n  width: 100%;\r\n  height: 100%;\r\n  padding-right: $padding-right;\r\n  padding-left: $padding-left-inner;\r\n  border-top: 1px solid $gray-scale-400;\r\n  border-right: $border;\r\n  border-left: $border;\r\n  outline: none;\r\n  position: relative;\r\n  &:focus,\r\n  &:hover {\r\n    background-color: $primary-c-50;\r\n  }\r\n  &.selected {\r\n    @extend %selected;\r\n  }\r\n}\r\n\r\n.p-sidenav {\r\n  ::ng-deep &.inner {\r\n    .mat-expansion-panel-header {\r\n      @extend %innerSidenavItem;\r\n      &,\r\n      &.mat-expanded {\r\n        height: $item-height;\r\n      }\r\n    }\r\n    .mat-content {\r\n      justify-content: space-between;\r\n    }\r\n  }\r\n\r\n  &-button {\r\n    @extend %innerSidenavItem;\r\n    justify-content: flex-start;\r\n    padding-left: $padding-left-content;\r\n  }\r\n}\r\n\r\n.p-sidenav-header-icon {\r\n  transition: transform 280ms;\r\n  ::ng-deep .mat-expanded & {\r\n    transform: rotate(-180deg);\r\n  }\r\n}\r\n\r\n\r\n",
                     "styleUrl": "./sidenav-inner.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<mat-accordion class=\"p-sidenav inner\" multi>\r\n  <mat-expansion-panel *ngFor=\"let panel of sidenav\"\r\n                       hideToggle\r\n                       [expanded]=\"true\"\r\n                       class=\"p-sidenav-panel\"\r\n                       [class.expandable]=\"panel.content?.length\">\r\n    <mat-expansion-panel-header class=\"p-sidenav-header\"\r\n                                #panelH\r\n                                (click)=\"panelH._toggle()\">\r\n      <button class=\"p-sidenav-function\" (click)=\"onButtonClicked(panel)\"\r\n              [class.selected]=\"panel.header.selected\">\r\n        {{panel.header.headerName}}\r\n      </button>\r\n      <button *ngIf=\"panel.content?.length\"\r\n              class=\"p-sidenav-expand-btn\" (click)=\"panelH._toggle()\">\r\n      </button>\r\n    </mat-expansion-panel-header>\r\n\r\n    <!--expanded content-->\r\n    <ul class=\"p-sidenav-content\" *ngIf=\"panel.content?.length\">\r\n      <li class=\"p-sidenav-content-item\" *ngFor=\"let content of panel.content\">\r\n        <button class=\"p-sidenav-function\"\r\n           [class.selected]=\"content.selected\"\r\n           (click)=\"onButtonClicked(panel)\">\r\n          {{content.name}}\r\n        </button>\r\n      </li>\r\n    </ul>\r\n  </mat-expansion-panel>\r\n</mat-accordion>\r\n"
+            "templateData": "<mat-accordion class=\"p-sidenav inner\" multi>\r\n  <mat-expansion-panel *ngFor=\"let panel of sidenav\"\r\n                       hideToggle\r\n                       class=\"p-sidenav-panel\">\r\n    <mat-expansion-panel-header class=\"p-sidenav-header\"\r\n           [class.selected]=\"panel.header.selected\"\r\n           (click)=\"onItemClicked(panel)\">\r\n        {{panel.header.headerName}}\r\n      <p-icon *ngIf=\"panel.content?.length\"\r\n              class=\"p-sidenav-header-icon\"\r\n              iconName=\"chevron-down\"\r\n              width=\"16\">\r\n      </p-icon>\r\n    </mat-expansion-panel-header>\r\n\r\n    <!--expanded content-->\r\n    <ul class=\"p-sidenav-content\" *ngIf=\"panel.content?.length\">\r\n      <li class=\"p-sidenav-content-item\" *ngFor=\"let content of panel.content\">\r\n        <button class=\"p-sidenav-button\"\r\n           [class.selected]=\"content.selected\"\r\n           (click)=\"onItemClicked(panel)\">\r\n          {{content.name}}\r\n        </button>\r\n      </li>\r\n    </ul>\r\n  </mat-expansion-panel>\r\n</mat-accordion>\r\n"
         },
         {
             "name": "SidenavMainComponent",
@@ -4810,7 +4982,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../sidenav.component\";\r\n\r\n$header-height: 62px;\r\n\r\n.p-sidenav {\r\n  ::ng-deep &.main .mat-expansion-panel-header {\r\n    font-family: $font-family-accent;\r\n    font-weight: 600;\r\n    font-size: $small-font-size;\r\n    letter-spacing: 0.08em;\r\n    text-transform: uppercase;\r\n    color: $primary-a-900;\r\n    padding-right: $padding-right;\r\n    padding-left: $padding-left;\r\n    border-right: $border;\r\n    border-left: $border;\r\n    @include ellipsis;\r\n    &,\r\n    &.mat-expanded {\r\n      height: $header-height;\r\n    }\r\n    &.mat-expanded {\r\n      color: $secondary-a-700;\r\n    }\r\n  }\r\n\r\n  .p-sidenav-header-icon {\r\n    margin-right: 10px;\r\n  }\r\n\r\n  &-content-link {\r\n    @include resetLink;\r\n    display: flex;\r\n    align-items: center;\r\n    font-family: $font-family-basic;\r\n    font-weight: 600;\r\n    font-size: $small-font-size;\r\n    text-transform: capitalize;\r\n    width: 100%;\r\n    height: 100%;\r\n    padding-right: $padding-right;\r\n    padding-left: $padding-left-content;\r\n    border-right: $border;\r\n    border-left: $border;\r\n    outline: none;\r\n    position: relative;\r\n    &:focus,\r\n    &:hover {\r\n      background: $primary-c-50;\r\n    }\r\n    &.selected {\r\n      @extend %selected;\r\n    }\r\n  }\r\n}\r\n\r\n\r\n",
+                    "data": "@import \"../sidenav.component\";\r\n\r\n$header-height: 62px;\r\n$padding-left-main: 36px;\r\n$padding-left-content: 56px;\r\n$expand-width: 14px;\r\n\r\n.p-sidenav {\r\n  ::ng-deep &.main .mat-expansion-panel:not([class*=mat-elevation-z]) {\r\n    border-top: $border;\r\n  }\r\n  ::ng-deep &.main .mat-expansion-panel-header {\r\n    font-family: $font-family-accent;\r\n    font-weight: 600;\r\n    font-size: $small-font-size;\r\n    letter-spacing: 0.08em;\r\n    text-transform: uppercase;\r\n    color: $primary-a-900;\r\n    padding-right: $padding-right;\r\n    padding-left: $padding-left-main;\r\n    border-right: $border;\r\n    border-left: $border;\r\n    &,\r\n    &.mat-expanded {\r\n      height: $header-height;\r\n    }\r\n    &.mat-expanded {\r\n      color: $secondary-a-700;\r\n      font-weight: 700;\r\n    }\r\n  }\r\n\r\n  .p-sidenav-header-icon {\r\n    margin-right: 10px;\r\n  }\r\n\r\n  &-content-item {\r\n    border-top: 1px solid $gray-scale-400;\r\n  }\r\n\r\n  &-content-link {\r\n    @include resetLink;\r\n    display: flex;\r\n    align-items: center;\r\n    font-family: $font-family-basic;\r\n    font-weight: 600;\r\n    font-size: $small-font-size;\r\n    text-transform: capitalize;\r\n    width: 100%;\r\n    height: 100%;\r\n    padding-right: $padding-right;\r\n    padding-left: $padding-left-content;\r\n    border-right: $border;\r\n    border-left: $border;\r\n    outline: none;\r\n    position: relative;\r\n    &:focus,\r\n    &:hover {\r\n      background: $primary-c-50;\r\n    }\r\n    &.selected {\r\n      @extend %selected;\r\n    }\r\n  }\r\n\r\n  ::ng-deep .mat-expansion-indicator:after {\r\n    content: 'Expand';\r\n    display: block;\r\n    font-size: 0;\r\n    width: $expand-width;\r\n    height: $expand-width;\r\n    background-image: url('../../assets/images/plus.svg');\r\n    background-repeat: no-repeat;\r\n    background-position: center center;\r\n    background-size: initial;\r\n    border: none;\r\n    padding: 0;\r\n    transform: none;\r\n  }\r\n\r\n  ::ng-deep &.mat-expanded .mat-expansion-indicator::after {\r\n    content: 'Collapse';\r\n    background-image: url('../../assets/images/minus.svg');\r\n  }\r\n}\r\n\r\n\r\n",
                     "styleUrl": "./sidenav-main.component.scss"
                 }
             ],
@@ -5534,6 +5706,53 @@
             ]
         },
         {
+            "name": "ChipsModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ChipButtonComponent"
+                        },
+                        {
+                            "name": "ChipsComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "IconModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ChipButtonComponent"
+                        },
+                        {
+                            "name": "ChipsComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "IconModule",
             "children": [
                 {
@@ -6089,17 +6308,17 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
+                "file": "src/environments/environment.ts",
                 "type": "object",
-                "defaultValue": "{\r\n  production: true\r\n}"
+                "defaultValue": "{\r\n  production: false\r\n}"
             },
             {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
+                "file": "src/environments/environment.prod.ts",
                 "type": "object",
-                "defaultValue": "{\r\n  production: false\r\n}"
+                "defaultValue": "{\r\n  production: true\r\n}"
             },
             {
                 "name": "ErrorMessage",
@@ -6201,17 +6420,17 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
-                "type": "Story<CheckboxPageComponent>",
-                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
+                "type": "Story<CheckboxGroupComponent>",
+                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
-                "type": "Story<CheckboxGroupComponent>",
-                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "Story<CheckboxPageComponent>",
+                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -6319,17 +6538,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
-                "type": "Story<TypographyFontFamilyComponent>",
-                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/styles/typography-styles.stories.ts",
+                "type": "Story<TypographyStylesComponent>",
+                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/styles/typography-styles.stories.ts",
-                "type": "Story<TypographyStylesComponent>",
-                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
+                "type": "Story<TypographyFontFamilyComponent>",
+                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Toggles",
@@ -6644,16 +6863,6 @@
                     "type": "literal type"
                 }
             ],
-            "src/environments/environment.prod.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.prod.ts",
-                    "type": "object",
-                    "defaultValue": "{\r\n  production: true\r\n}"
-                }
-            ],
             "src/environments/environment.ts": [
                 {
                     "name": "environment",
@@ -6662,6 +6871,16 @@
                     "file": "src/environments/environment.ts",
                     "type": "object",
                     "defaultValue": "{\r\n  production: false\r\n}"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: true\r\n}"
                 }
             ],
             "src/stories/input-text/input-text.stories.ts": [
@@ -7137,6 +7356,33 @@
                 "type": "interface",
                 "linktype": "interface",
                 "name": "ICheckbox",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/chips/bar/chips.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ChipsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/chips/button/chip-button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ChipButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/chips/chip-button.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "IChip",
                 "coveragePercent": 0,
                 "coverageCount": "0/7",
                 "status": "low"

@@ -1,0 +1,7 @@
+@import "../button/chip-button.component";
+
+.p-chips-list {
+  .p-chip + .p-chip {
+    margin-left: $gap-base;
+  }
+}

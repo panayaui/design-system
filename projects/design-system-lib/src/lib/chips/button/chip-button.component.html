@@ -1,0 +1,23 @@
+<mat-basic-chip class="p-chip"
+                [ngClass]="{'full' : full, 'active' : active }">
+  <p-icon *ngIf="iconRemove"
+          class="p-chip-remove"
+          matChipRemove
+          iconName="x"
+          width="12"
+          [strokeWidth]="2">
+  </p-icon>
+  <span class="p-chip-label paragraph-2-default">Title</span>
+  <ul class="p-chip-values paragraph-2-default" *ngIf="values?.length">
+    <li class="p-chip-value-item" *ngFor="let value of values">
+      {{value}}
+    </li>
+  </ul>
+  <p-icon *ngIf="iconRemove"
+          class="p-chip-menuTrigger"
+          iconName="chevron-down"
+          width="14"
+          [strokeWidth]="2">
+  </p-icon>
+</mat-basic-chip>
+

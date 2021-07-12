@@ -1,0 +1,49 @@
+@import "../../assets/styles/custom";
+
+$chip-height: 27px;
+
+.p-chip {
+  display: inline-flex;
+  align-items: center;
+  height: $chip-height;
+  padding-right: $gap-small;
+  padding-left: $gap-small;
+  background-color: $gray-scale-1;
+  border: 1px solid currentColor;
+  border-radius: 16px;
+  &:hover,
+  &:active,
+  &.active {
+    color: $secondary-a-700;
+  }
+
+  &-label:after {
+    content: ':';
+  }
+
+  &-values {
+    @include resetUl;
+    display: flex;
+    align-items: center;
+  }
+
+  &-value-item {
+    display: flex;
+    margin-left: $gap-small;
+    &:not(:last-child):after {
+      content: ';';
+    }
+  }
+
+  &-remove {
+    margin-right: $gap-small;
+  }
+
+  &-menuTrigger {
+    margin-left: $gap-small;
+  }
+
+  &.full {
+    background-color: $secondary-a-50;
+  }
+}

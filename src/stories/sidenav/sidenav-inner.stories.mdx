@@ -3,7 +3,7 @@ import {moduleMetadata} from '@storybook/angular';
 import {SidenavInnerComponent} from 'projects/design-system-lib/src/public-api';
 import {SidenavModule} from 'projects/design-system-lib/src/public-api';
 
-<Meta title='Components/Sidenav/Inner'
+<Meta title='Components/Sidenav/Sub'
   component={SidenavInnerComponent}
   decorators={[
     moduleMetadata({
@@ -60,7 +60,7 @@ export const Template = (args) => <SidenavInnerComponent {...args} />
   <p-sidenav-inner></p-sidenav-inner>
 ```
 <Canvas>
-  <Story name="Inner"
+  <Story name="Sub"
     args={{
     }}>
     {Template.bind({})}
@@ -71,7 +71,7 @@ The sidenav expansion panel's width = 100%.
 
 In this example width = 210px is set on its parent contaner.
 
-###### ITab
+###### ISidenavInner
 ```ts
 export interface ISidenavInner {
   header: {

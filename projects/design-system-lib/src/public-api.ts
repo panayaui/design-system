@@ -68,3 +68,8 @@ export * from './lib/sidenav/main/sidenav-main.component';
 export * from './lib/sidenav/main/sidenav-main.interface';
 export * from './lib/sidenav/inner/sidenav-inner.component';
 export * from './lib/sidenav/inner/sidenav-inner.interface';
+
+export * from './lib/chips/chips.module';
+export * from './lib/chips/bar/chips.component';
+export * from './lib/chips/chip-button.interface';
+export * from './lib/chips/button/chip-button.component';

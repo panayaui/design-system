@@ -1,27 +1,24 @@
 <mat-accordion class="p-sidenav inner" multi>
   <mat-expansion-panel *ngFor="let panel of sidenav"
                        hideToggle
-                       [expanded]="true"
-                       class="p-sidenav-panel"
-                       [class.expandable]="panel.content?.length">
+                       class="p-sidenav-panel">
     <mat-expansion-panel-header class="p-sidenav-header"
-                                #panelH
-                                (click)="panelH._toggle()">
-      <button class="p-sidenav-function" (click)="onButtonClicked(panel)"
-              [class.selected]="panel.header.selected">
+           [class.selected]="panel.header.selected"
+           (click)="onItemClicked(panel)">
         {{panel.header.headerName}}
-      </button>
-      <button *ngIf="panel.content?.length"
-              class="p-sidenav-expand-btn" (click)="panelH._toggle()">
-      </button>
+      <p-icon *ngIf="panel.content?.length"
+              class="p-sidenav-header-icon"
+              iconName="chevron-down"
+              width="16">
+      </p-icon>
     </mat-expansion-panel-header>
 
     <!--expanded content-->
     <ul class="p-sidenav-content" *ngIf="panel.content?.length">
       <li class="p-sidenav-content-item" *ngFor="let content of panel.content">
-        <button class="p-sidenav-function"
+        <button class="p-sidenav-button"
            [class.selected]="content.selected"
-           (click)="onButtonClicked(panel)">
+           (click)="onItemClicked(panel)">
           {{content.name}}
         </button>
       </li>

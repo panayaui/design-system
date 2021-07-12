@@ -1,0 +1,82 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+import {ChipButtonComponent} from 'projects/design-system-lib/src/public-api';
+import {ChipsModule} from 'projects/design-system-lib/src/public-api';
+
+<Meta title='Components/Chips/Buttons'
+  component={ChipButtonComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [
+        ChipsModule
+      ]
+    })
+  ]}
+  args={{
+    iconRemove: true,
+    iconMenuTrigger: true,
+    values: ['Unassaigned', 'Released', 'Something very very long long']
+  }}
+/>
+
+export const Template = (args) => <ChipButtonComponent {...args} />
+
+# Chip Button
+
+###### Selector
+```ts
+  // for standalone use
+  <p-chip-button></p-chip-button>
+
+  // to show a line of chips 
+  <p-chips></p-chips>
+```
+###### With Remove Icon
+<Canvas>
+  <p className="story-title">Default</p>
+  <Story name="Default"
+    args={{  }}>
+    {Template.bind({})}
+  </Story>
+   <p className="story-title">Active</p>
+  <Story name="Active"
+    args={{ active: true }}>
+    {Template.bind({})}
+  </Story>
+  <p className="story-title">Full</p>
+  <Story name="Full"
+    args={{ full: true }}>
+    {Template.bind({})}
+  </Story>
+  <p className="story-title">Full Active</p>
+  <Story name="Full Active"
+    args={{ full: true, active: true }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### No Remove Icon
+<Canvas>
+  <p className="story-title">Default</p>
+  <Story name="Default No Remove"
+    args={{ iconRemove: false }}>
+    {Template.bind({})}
+  </Story>
+  <p className="story-title">Full</p>
+  <Story name="Full No Remove"
+    args={{ iconRemove: false, full: true }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### ITab
+```ts
+export interface IChip {
+  label: string;
+  values?: string[];
+  iconRemove?: boolean;
+  iconMenuTrigger?: boolean;
+  full?: boolean;
+  active?: boolean;
+}
+```
