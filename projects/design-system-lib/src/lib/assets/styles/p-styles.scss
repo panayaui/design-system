@@ -515,7 +515,8 @@ p {
   line-height: 20px;
 }
 
-//
+$margin: 3px;
+$arrow-border: 7px;
 
 .mat-tooltip.p-tooltip {
   display: flex;
@@ -523,12 +524,52 @@ p {
   align-items: center;
   font-family: $font-family-basic;
   font-size: $small-font-size;
+  font-weight: 400;
   color: $gray-scale-1;
   min-width: 100px;
   min-height: 36px;
+  line-height: 1.5;
+  margin: $margin;
   padding: 8px 12px;
   background-color: $primary-a-900;
   border-radius: 4px;
+  transform: none !important;
+  transform-origin: 0 !important;
+  overflow: visible;
+  white-space: pre-line;
+  &:after {
+    content: "";
+    border-width: $arrow-border;
+    border-style: solid;
+    border-color: transparent;
+    position: absolute;
+  }
+  &.right:after,
+  &.after:after{
+    border-right-color: $primary-a-900;
+    margin-top: -$arrow-border;
+    right: calc(100% - #{$margin});
+    top: 50%;
+  }
+  &.left:after,
+  &.before:after {
+    border-left-color: $primary-a-900;
+    margin-top: -$arrow-border;
+    left: calc(100% - #{$margin});
+    top: 50%;
+  }
+  &.above:after {
+    border-top-color: $primary-a-900;
+    margin-left: -$arrow-border;
+    top: calc(100% - #{$margin});
+    left: 50%;
+  }
+  &.below:after {
+    border-bottom-color: $primary-a-900;
+    margin-left: -$arrow-border;
+    bottom: calc(100% - #{$margin});
+    left: 50%;
+  }
 }
 
 //scrollbar in Firefox

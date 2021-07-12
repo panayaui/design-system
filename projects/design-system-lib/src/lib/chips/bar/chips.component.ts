@@ -9,4 +9,10 @@ import {IChip} from '../chip-button.interface';
 export class ChipsComponent {
   @Input() chips: IChip[];
   @Input() ariaLabel: string;
+
+  valuesInTooltip(values: string[]): string {
+    let tooltipText = '';
+    values.forEach( value => tooltipText = `${tooltipText} \n ${value}`);
+    return tooltipText;
+  }
 }

@@ -1,13 +1,12 @@
-<button #tooltip="matTooltip"
-        [matTooltip]="message"
-        [matTooltipDisabled]="disabled"
-        [matTooltipShowDelay]="showDelay"
-        [matTooltipHideDelay]="hideDelay"
-        [matTooltipPosition]="position"
-        [matTooltipClass]="tooltipClass"
-        class="p-btn p-btn-small p-btn-primary"
-        >
-  Hover
-</button>
-
+<p-button class="p-tooltip-container"
+          label="Hover"
+          buttonType="secondary"
+          #tooltip="matTooltip"
+          [matTooltip]="message"
+          [matTooltipDisabled]="disabled"
+          [matTooltipShowDelay]="showDelay"
+          [matTooltipHideDelay]="hideDelay"
+          [matTooltipPosition]="position"
+          [matTooltipClass]="classes">
+</p-button>
 

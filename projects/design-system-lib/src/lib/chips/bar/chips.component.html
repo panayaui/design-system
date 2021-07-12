@@ -1,7 +1,11 @@
 <mat-chip-list class="p-chips-list" attr.aria-label="{{ariaLabel}}">
   <mat-basic-chip *ngFor="let chip of chips"
                   class="p-chip"
-                  [ngClass]="{'full' : chip.full, 'active' : chip.active }">
+                  [disableRipple]="true"
+                  [ngClass]="{'full' : chip.full, 'active' : chip.active }"
+                  [matTooltip]="valuesInTooltip(chip.values)"
+                  matTooltipPosition="above"
+                  matTooltipClass="p-tooltip above">
     <p-icon *ngIf="chip.iconRemove"
             class="p-chip-remove"
             matChipRemove

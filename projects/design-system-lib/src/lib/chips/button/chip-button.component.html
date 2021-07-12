@@ -1,5 +1,9 @@
 <mat-basic-chip class="p-chip"
-                [ngClass]="{'full' : full, 'active' : active }">
+                [disableRipple]="true"
+                [ngClass]="{'full' : full, 'active' : active }"
+                [matTooltip]="valuesInTooltip"
+                matTooltipPosition="above"
+                matTooltipClass="p-tooltip above">
   <p-icon *ngIf="iconRemove"
           class="p-chip-remove"
           matChipRemove
