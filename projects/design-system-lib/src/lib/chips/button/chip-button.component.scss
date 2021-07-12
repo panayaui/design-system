@@ -17,14 +17,18 @@ $chip-height: 27px;
     color: $secondary-a-700;
   }
 
-  &-label:after {
-    content: ':';
+  &-label {
+    margin-left: $gap-small;
+    :after {
+      content: ':';
+    }
   }
 
   &-values {
     @include resetUl;
     display: flex;
     align-items: center;
+    margin-right: $gap-small;
   }
 
   &-value-item {
@@ -36,11 +40,11 @@ $chip-height: 27px;
   }
 
   &-remove {
-    margin-right: $gap-small;
+    //margin-right: $gap-small;
   }
 
   &-menuTrigger {
-    margin-left: $gap-small;
+    //margin-left: $gap-small;
   }
 
   &.full {
