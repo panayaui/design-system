@@ -22,7 +22,7 @@ import {TextareaEnum} from 'projects/design-system-lib/src/public-api';
 
 export const Template = (args) => <TextareaComponent {...args} />
 
-# Textarea
+# Textarea Small
 
 ###### Selector
 
@@ -153,8 +153,12 @@ export class TextareaComponent implements OnInit, OnDestroy {
   public formFieldControl: FormControl;
   private sub: SubscriptionLike;
 
-  public get classes(): string {
-    return `p-textarea ${this.size}`;
+  public get classes(): string[] {
+    const classParams = [];
+    this.readonly ? classParams.push('p-input-readonly') : null;
+    !this.errorMessage ? classParams.push('no-error-message') : null;
+    classParams.push(`${this.size}`);
+    return classParams;
   }
 
   ngOnInit(): void {
