@@ -6,7 +6,7 @@ import {Validators} from '@angular/forms';
 import {CustomErrorStateMatcher} from './custom-error-state-matcher';
 import {TextareaEnum} from 'projects/design-system-lib/src/public-api';
 
-<Meta title='Components/Textarea'
+<Meta title='Components/Textarea/Small'
   component={TextareaComponent}
   decorators={[
     moduleMetadata({
@@ -27,7 +27,8 @@ export const Template = (args) => <TextareaComponent {...args} />
 ###### Selector
 
 ```html
-  <p-textarea></p-textarea>
+// size: TextareaEnum.Small
+<p-textarea></p-textarea>
 ```
 
 ###### No Label
@@ -136,33 +137,9 @@ export const Template = (args) => <TextareaComponent {...args} />
   </Story>
 </Canvas>
 
-###### With Icon
-<Canvas>
-  <Story name="With Icon"
-     args={{
-         value: 'Input text',
-         iconName: 'chevron-down'
-     }}>
-     {Template.bind({})}
-  </Story>
-</Canvas>
-
-###### Search
-<Canvas>
-  <Story name="Search"
-     args={{
-         value: '',
-         isSearch: true,
-         placeholder: 'Find views'
-     }}>
-     {Template.bind({})}
-  </Story>
-</Canvas>
-
 ###### Component
 ```ts
-export class InputOutlineComponent implements OnInit {
-  @Input() type: string = 'text';
+export class TextareaComponent implements OnInit, OnDestroy {
   @Input() label: string;
   @Input() ariaLabel: string;
   @Input() placeholder: string;
@@ -172,9 +149,13 @@ export class InputOutlineComponent implements OnInit {
   @Input() value: string;
   @Input() validators: ValidatorFn[];
   @Input() matcher: ErrorStateMatcher;
-  @Input() isSearch: boolean = false;
-  @Input() iconName: string;
+  @Input() size = TextareaEnum;
   public formFieldControl: FormControl;
+  private sub: SubscriptionLike;
+
+  public get classes(): string {
+    return `p-textarea ${this.size}`;
+  }
 
   ngOnInit(): void {
     this.formFieldControl = new FormControl(
@@ -182,67 +163,26 @@ export class InputOutlineComponent implements OnInit {
       this.validators);
   }
 
+  ngOnDestroy(): void {
+    if (this.sub) {
+      this.sub.unsubscribe();
+      this.sub = null;
+    }
+  }
+
   clearValue(): void {
     this.formFieldControl.setValue('');
   }
 }
 ```
-
-```html
-<mat-form-field class="p-input-outline"
-                appearance="outline"
-                [ngClass]="{'p-input-readonly' : readonly, 'no-error-message': !errorMessage}"
-                floatLabel="always">
-
-  <mat-label class="p-input-text-label">{{label}}</mat-label>
-
-  <input matInput
-         [type]="type"
-         [placeholder]="placeholder"
-         [readonly]="readonly"
-         attr.aria-label="{{ariaLabel}}"
-         [formControl]="formFieldControl"
-         [errorStateMatcher]="matcher"
-         autocomplete="off"
-         onfocus="this.select()"
-         class="p-input-text-input">
-
-  <button *ngIf="isSearch && formFieldControl.value"
-          matSuffix
-          aria-label="Clear"
-          class="p-input-outline-button"
-          (click)="clearValue()">
-    <p-icon class="p-input-outline-icon-clear"
-            iconName="x"
-            width="16"
-            height="auto"
-            stroke="#B3B3B3">
-    </p-icon>
-  </button>
-
-  <p-icon *ngIf="isSearch && !formFieldControl.value"
-          class="p-input-outline-icon"
-          matSuffix
-          iconName="search"
-          width="16"
-          height="auto"
-          stroke="#B3B3B3">
-  </p-icon>
-
-  <p-icon *ngIf="iconName && !isSearch"
-          class="p-input-outline-icon"
-          matSuffix
-          [iconName]="iconName"
-          width="16"
-          height="auto"
-          stroke="#B3B3B3">
-  </p-icon>
-
-  <mat-error *ngIf="formFieldControl.invalid"
-             class="p-input-text-error">
-    {{errorMessage}}
-  </mat-error>
-</mat-form-field>
+###### TextareaEnum
+```ts
+export enum TextareaEnum {
+  Small = 'small',
+  ExtendedHeight = 'extendedHeight',
+  Medium = 'medium',
+  Large = 'large'
+}
 ```
 
 

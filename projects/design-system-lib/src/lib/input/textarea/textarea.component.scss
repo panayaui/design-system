@@ -12,6 +12,15 @@
   resize: none;
 
   &.small {
-
+    height: 100px;
   }
+
+  ::ng-deep &.mat-input-element {
+    padding-top: $gap-base;
+    padding-bottom: $gap-base;
+  }
+}
+
+::ng-deep .p-input-outline.mat-form-field-appearance-outline .mat-form-field-infix {
+  height: auto;
 }
