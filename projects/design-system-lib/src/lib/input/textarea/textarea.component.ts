@@ -23,8 +23,12 @@ export class TextareaComponent implements OnInit, OnDestroy {
   public formFieldControl: FormControl;
   private sub: SubscriptionLike;
 
-  public get classes(): string {
-    return `p-textarea ${this.size}`;
+  public get classes(): string[] {
+    const classParams = [];
+    this.readonly ? classParams.push('p-input-readonly') : null;
+    !this.errorMessage ? classParams.push('no-error-message') : null;
+    classParams.push(`${this.size}`);
+    return classParams;
   }
 
   ngOnInit(): void {

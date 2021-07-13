@@ -1,8 +1,5 @@
 @import "../../assets/styles/custom";
 
-$input-text-width: 220px;
-$input-text-padding: 8px;
-
 .p-input-text {
   ::ng-deep & {
     // material styles override
