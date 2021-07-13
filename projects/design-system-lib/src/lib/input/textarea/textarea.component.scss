@@ -1,0 +1,17 @@
+@import "../outline/input-outline.component";
+
+.p-textarea {
+  font-family: $font-family-basic;
+  font-size: $small-font-size;
+  color: $primary-a-900;
+  max-width: calc(100% - #{$input-text-padding} * 2 - 2px);
+  margin-top: 1px;
+  padding-left: $input-text-padding;
+  padding-right: $input-text-padding;
+  caret-color: $primary-a-900;
+  resize: none;
+
+  &.small {
+
+  }
+}

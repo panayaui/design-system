@@ -14,6 +14,7 @@ import {IconModule} from '../icon/icon.module';
 import {MatIconModule} from '@angular/material/icon';
 import {InputHeaderComponent} from './header/input-header.component';
 import {InputTextTableLayoutComponent} from './table-layout/input-text-table-layout.component';
+import {TextareaComponent} from './textarea/textarea.component';
 
 @NgModule({
   imports: [
@@ -33,7 +34,8 @@ import {InputTextTableLayoutComponent} from './table-layout/input-text-table-lay
     InputOutlineComponent,
     InputHeaderComponent,
     DatepickerComponent,
-    InputTextTableLayoutComponent
+    InputTextTableLayoutComponent,
+    TextareaComponent
   ],
   exports: [
     InputNumericComponent,
@@ -41,7 +43,8 @@ import {InputTextTableLayoutComponent} from './table-layout/input-text-table-lay
     InputOutlineComponent,
     InputHeaderComponent,
     DatepickerComponent,
-    InputTextTableLayoutComponent
+    InputTextTableLayoutComponent,
+    TextareaComponent
   ]
 })
 export class InputModule { }

@@ -1,6 +1,7 @@
 #numeric-input,
 #input-outline,
-#input-text {
+#input-text,
+#textarea {
   &~ .sbdocs .innerZoomElementWrapper > div {
     $label-width: 150px;
     $regular-item-width: 250px;

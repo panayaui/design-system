@@ -1,0 +1,22 @@
+<mat-form-field class="p-input-outline"
+                appearance="outline"
+                [ngClass]="{'p-input-readonly' : readonly, 'no-error-message': !errorMessage}"
+                floatLabel="always">
+
+  <mat-label class="p-input-text-label paragraph-3-default">{{label}}</mat-label>
+
+  <textarea matInput
+         [placeholder]="placeholder"
+         [readonly]="readonly"
+         attr.aria-label="{{ariaLabel}}"
+         [formControl]="formFieldControl"
+         [errorStateMatcher]="matcher"
+         autocomplete="off"
+         onfocus="this.select()"
+         [ngClass]="classes"></textarea>
+
+  <mat-error *ngIf="formFieldControl.invalid"
+             class="p-input-text-error">
+    {{errorMessage}}
+  </mat-error>
+</mat-form-field>
