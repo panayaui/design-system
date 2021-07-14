@@ -78,7 +78,8 @@
                           [label]="checkLine.checkbox.label"
                           [checked]="checkLine.checkbox.checked"
                           [disabled]="checkLine.checkbox.disabled"></p-checkbox>
-              <p-input-numeric class="p-menu-check-input"
+              <p-input-numeric *ngIf="checkLine.inputNum"
+                               class="p-menu-check-input"
                                [label]="checkLine.inputNum.label"
                                [value]="checkLine.inputNum.value"
                                [disabled]="checkLine.inputNum.disabled"

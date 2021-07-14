@@ -29,7 +29,7 @@ export class MenuTabsComponent implements OnInit, OnDestroy {
   @Input() footerBtnLast: IMenuButton;
   @Input() checkboxList: {
     checkbox: ICheckbox,
-    inputNum: IInputNumeric
+    inputNum?: IInputNumeric
   }[];
   @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;
   private selectedList: any[] = [];
