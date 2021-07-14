@@ -4,7 +4,7 @@
         {
             "name": "IActionButton",
             "id": "interface-IActionButton-6b98e01bc5358f8162fdacc7859dc5bb",
-            "file": "projects/design-system-lib/src/action-button/action-button.interface.ts",
+            "file": "projects/design-system-lib/src/lib/action-button/action-button.interface.ts",
             "type": "interface",
             "sourceCode": "export interface IActionButton {\r\n  label: string;\r\n  disabled?: boolean;\r\n  iconBeforeName?: string;\r\n  iconBeforeWidth?: string;\r\n  iconBeforeHeight?: string;\r\n  iconBeforeStrokeWidth?: number;\r\n  iconBeforeStrokeColor?: string;\r\n  isMenuTrigger?: boolean;\r\n  isStandalone?: boolean;\r\n}\r\n",
             "properties": [
@@ -1097,7 +1097,7 @@
         {
             "name": "ActionButtonComponent",
             "id": "component-ActionButtonComponent-907906d95161a15bbfb395db17b075ab",
-            "file": "projects/design-system-lib/src/action-button/action-button.component.ts",
+            "file": "projects/design-system-lib/src/lib/action-button/action-button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1188,7 +1188,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../lib/assets/styles/custom\";\r\n\r\n$action-btn-height: 38px;\r\n\r\n.p-action-btn {\r\n  @include resetButton;\r\n  display: flex;\r\n  align-items: center;\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  height: $action-btn-height;\r\n  padding-right: $gap-base;\r\n  padding-left: $gap-base;\r\n  border-radius: $btn-border-radius;\r\n  white-space: nowrap;\r\n\r\n  &.standalone {\r\n    color: $secondary-a-700;\r\n    font-weight: 600;\r\n    &:not(:disabled):not(.active):hover,\r\n    &:not(:disabled):not(.active):focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n  }\r\n  &:not(.standalone) {\r\n    color: $primary-a-900;\r\n    font-weight: 400;\r\n    &:not(:disabled):not(.active):hover,\r\n    &:not(:disabled):not(.active):focus {\r\n      color: $secondary-a-700;\r\n    }\r\n  }\r\n\r\n  &.active {\r\n    color: $secondary-a-700;\r\n    background-color: $primary-c-50;\r\n  }\r\n\r\n  &:disabled {\r\n    color: $gray-scale-600;\r\n    pointer-events: none;\r\n  }\r\n\r\n  // class of the before icon\r\n  &-icon {\r\n    margin-right: $gap-base;\r\n  }\r\n\r\n  // class of the after icon (chevron-down)\r\n  &-arrow {\r\n    margin-left: $gap-small;\r\n  }\r\n}\r\n\r\n\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$action-btn-height: 38px;\r\n\r\n.p-action-btn {\r\n  @include resetButton;\r\n  display: flex;\r\n  align-items: center;\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  height: $action-btn-height;\r\n  padding-right: $gap-base;\r\n  padding-left: $gap-base;\r\n  border-radius: $btn-border-radius;\r\n  white-space: nowrap;\r\n\r\n  &.standalone {\r\n    color: $secondary-a-700;\r\n    font-weight: 600;\r\n    &:not(:disabled):not(.active):hover,\r\n    &:not(:disabled):not(.active):focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n  }\r\n  &:not(.standalone) {\r\n    color: $primary-a-900;\r\n    font-weight: 400;\r\n    &:not(:disabled):not(.active):hover,\r\n    &:not(:disabled):not(.active):focus {\r\n      color: $secondary-a-700;\r\n    }\r\n  }\r\n\r\n  &.active {\r\n    color: $secondary-a-700;\r\n    background-color: $primary-c-50;\r\n  }\r\n\r\n  &:disabled {\r\n    color: $gray-scale-600;\r\n    pointer-events: none;\r\n  }\r\n\r\n  // class of the before icon\r\n  &-icon {\r\n    margin-right: $gap-base;\r\n  }\r\n\r\n  // class of the after icon (chevron-down)\r\n  &-arrow {\r\n    margin-left: $gap-small;\r\n  }\r\n}\r\n\r\n\r\n",
                     "styleUrl": "./action-button.component.scss"
                 }
             ],
@@ -1547,7 +1547,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-7e92cc6eed14e2b4dfc64ac30dd8c0ae",
+            "id": "component-ButtonComponent-4716f738b2fa0972068a7bc26791088b",
             "file": "projects/design-system-lib/src/lib/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1662,7 +1662,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, EventEmitter, Input, Output} from '@angular/core';\r\nimport {ButtonTypeEnum} from './button-type.enum';\r\n\r\n@Component({\r\n  selector: 'p-button',\r\n  templateUrl: './button.component.html',\r\n  styleUrls: ['./button.component.scss'],\r\n})\r\nexport class ButtonComponent {\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string;\r\n  @Input() large: boolean = false;\r\n  @Input() disabled: boolean = false;\r\n  @Input() iconBefore: string;\r\n  @Input() iconBeforeWidth: string = 'auto';\r\n  @Input() iconBeforeHeight: string = 'auto';\r\n  @Input() iconBeforeStrokeWidth: number;\r\n  @Input() iconBeforeStrokeColor: string;\r\n  @Input() iconAfter: string;\r\n  @Input() iconAfterWidth: string = 'auto';\r\n  @Input() iconAfterHeight: string = 'auto';\r\n  @Input() iconAfterStrokeWidth: number;\r\n  @Input() iconAfterStrokeColor: string;\r\n  @Input() buttonType: ButtonTypeEnum = ButtonTypeEnum.Primary;\r\n  @Output() onClickTask: EventEmitter<any> = new EventEmitter();\r\n\r\n  public get classes(): string[] {\r\n    const classParams = [];\r\n    this.iconBefore ? classParams.push('p-btn-icon-before') : null;\r\n    this.iconAfter ? classParams.push('p-btn-icon-after') : null;\r\n    classParams.push(`p-btn-${this.buttonType}`);\r\n    if (this.buttonType !== ButtonTypeEnum.IsIcon) {\r\n      this.large  ? classParams.push('p-btn-large') : classParams.push('p-btn-small');\r\n    }\r\n    return classParams;\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, EventEmitter, Input, Output} from '@angular/core';\r\nimport {ButtonTypeEnum} from './button-type.enum';\r\n\r\n@Component({\r\n  selector: 'p-button',\r\n  templateUrl: './button.component.html',\r\n  styleUrls: ['./button.component.scss'],\r\n})\r\nexport class ButtonComponent {\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string;\r\n  @Input() large: boolean = false;\r\n  @Input() disabled: boolean = false;\r\n  @Input() iconBefore: string;\r\n  @Input() iconBeforeWidth: string = 'auto';\r\n  @Input() iconBeforeHeight: string = 'auto';\r\n  @Input() iconBeforeStrokeWidth: number;\r\n  @Input() iconBeforeStrokeColor: string;\r\n  @Input() iconAfter: string;\r\n  @Input() iconAfterWidth: string = 'auto';\r\n  @Input() iconAfterHeight: string = 'auto';\r\n  @Input() iconAfterStrokeWidth: number;\r\n  @Input() iconAfterStrokeColor: string;\r\n  @Input() buttonType: ButtonTypeEnum = ButtonTypeEnum.Primary;\r\n  @Output() onClickTask: EventEmitter<any> = new EventEmitter();\r\n\r\n  public get classes(): string[] {\r\n    console.log(this.iconBefore);\r\n    const classParams = [];\r\n    this.iconBefore ? classParams.push('p-btn-icon-before') : null;\r\n    this.iconAfter ? classParams.push('p-btn-icon-after') : null;\r\n    classParams.push(`p-btn-${this.buttonType}`);\r\n    if (this.buttonType !== ButtonTypeEnum.IsIcon) {\r\n      this.large  ? classParams.push('p-btn-large') : classParams.push('p-btn-small');\r\n    }\r\n    return classParams;\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2302,7 +2302,7 @@
         },
         {
             "name": "IconComponent",
-            "id": "component-IconComponent-62e5153acfeba0f17641381b0450d2c6",
+            "id": "component-IconComponent-4502bc3bc456c5b8435d7b0f8a2ec81d",
             "file": "projects/design-system-lib/src/lib/icon/icon.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2393,7 +2393,7 @@
                     "optional": false,
                     "returnType": "string",
                     "typeParameters": [],
-                    "line": 49
+                    "line": 50
                 },
                 {
                     "name": "ngOnInit",
@@ -2401,7 +2401,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 37
+                    "line": 38
                 }
             ],
             "hostBindings": [],
@@ -2409,11 +2409,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport { allIcons } from 'angular-feather/icons';\r\n\r\n@Component({\r\n  selector: 'p-icon',\r\n  templateUrl: './icon.component.html',\r\n  styleUrls: ['./icon.component.scss'],\r\n})\r\nexport class IconComponent implements OnInit {\r\n  @Input() iconName: string;\r\n  @Input() width: string  = '16'; // pixels or auto\r\n  @Input() height: string  = 'auto'; // pixels or auto\r\n  @Input() fill: string = 'none'; // icon background\r\n  @Input() stroke: string = 'currentColor'; // line color\r\n  @Input() strokeWidth: number = 1.5; // line width in pixels\r\n  @Input() strokeLinecap: string = 'round'; // line end\r\n  @Input() strokeLinejoin: string = 'round'; // two lines join\r\n  @Input() disabled: boolean = false;\r\n  public customIcon: boolean;\r\n\r\n  public get iconStyles(): any {\r\n    return {\r\n      width: this.width === 'auto' ? this.width : `${this.width}px`,\r\n      height: this.height === 'auto' ? this.height : `${this.height}px`,\r\n      fill: this.fill,\r\n      stroke: this.stroke,\r\n      strokeWidth: `${this.strokeWidth}px`,\r\n      strokeLinecap: this.strokeLinecap,\r\n      strokeLinejoin: this.strokeLinejoin\r\n    };\r\n  }\r\n\r\n  public get customName(): string {\r\n    return this.disabled ? `p-icon-custom-${this.iconName}-disabled` : `p-icon-custom-${this.iconName}`;\r\n  }\r\n\r\n  ngOnInit(): void {\r\n    allIcons[this.capitalizeName()] ? this.customIcon = false : this.customIcon = true;\r\n\r\n    !this.width ? this.width = '16' : null;\r\n    !this.height ? this.height = 'auto' : null;\r\n    !this.fill ? this.fill = 'none' : null;\r\n    !this.stroke ? this.stroke = 'currentColor' : null;\r\n    !this.strokeWidth ? this.strokeWidth = 1.5 : null;\r\n    !this.strokeLinecap ? this.strokeLinecap = 'round' : null;\r\n    !this.strokeLinejoin ? this.strokeLinejoin = 'round' : null;\r\n  }\r\n\r\n  capitalizeName(): string {\r\n    let iconNameCap = '';\r\n    this.iconName.split('-').forEach( str => iconNameCap += str.charAt(0).toUpperCase() + str.slice(1));\r\n    return iconNameCap;\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport { allIcons } from 'angular-feather/icons';\r\n\r\n@Component({\r\n  selector: 'p-icon',\r\n  templateUrl: './icon.component.html',\r\n  styleUrls: ['./icon.component.scss'],\r\n})\r\nexport class IconComponent implements OnInit {\r\n  @Input() iconName: string;\r\n  @Input() width: string  = '16'; // pixels or auto\r\n  @Input() height: string  = 'auto'; // pixels or auto\r\n  @Input() fill: string = 'none'; // icon background\r\n  @Input() stroke: string = 'currentColor'; // line color\r\n  @Input() strokeWidth: number = 1.5; // line width in pixels\r\n  @Input() strokeLinecap: string = 'round'; // line end\r\n  @Input() strokeLinejoin: string = 'round'; // two lines join\r\n  @Input() disabled: boolean = false;\r\n  public customIcon: boolean;\r\n\r\n  public get iconStyles(): any {\r\n    return {\r\n      width: this.width === 'auto' ? this.width : `${this.width}px`,\r\n      height: this.height === 'auto' ? this.height : `${this.height}px`,\r\n      fill: this.fill,\r\n      stroke: this.stroke,\r\n      strokeWidth: `${this.strokeWidth}px`,\r\n      strokeLinecap: this.strokeLinecap,\r\n      strokeLinejoin: this.strokeLinejoin\r\n    };\r\n  }\r\n\r\n  public get customName(): string {\r\n    console.log(this.iconName);\r\n    return this.disabled ? `p-icon-custom-${this.iconName}-disabled` : `p-icon-custom-${this.iconName}`;\r\n  }\r\n\r\n  ngOnInit(): void {\r\n    allIcons[this.capitalizeName()] ? this.customIcon = false : this.customIcon = true;\r\n\r\n    !this.width ? this.width = '16' : null;\r\n    !this.height ? this.height = 'auto' : null;\r\n    !this.fill ? this.fill = 'none' : null;\r\n    !this.stroke ? this.stroke = 'currentColor' : null;\r\n    !this.strokeWidth ? this.strokeWidth = 1.5 : null;\r\n    !this.strokeLinecap ? this.strokeLinecap = 'round' : null;\r\n    !this.strokeLinejoin ? this.strokeLinejoin = 'round' : null;\r\n  }\r\n\r\n  capitalizeName(): string {\r\n    let iconNameCap = '';\r\n    this.iconName.split('-').forEach( str => iconNameCap += str.charAt(0).toUpperCase() + str.slice(1));\r\n    return iconNameCap;\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n:host {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n.p-icon {\r\n  display: inline-flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n// custom icons\r\n.p-icon-custom {\r\n  background-repeat: no-repeat;\r\n  background-size: contain;\r\n  &-eraser {\r\n    background-image: url('../assets/images/icons/eraser.svg');\r\n  }\r\n  &-eraser-disabled {\r\n    background-image: url('../assets/images/icons/eraser-disabled.svg');\r\n  }\r\n\r\n}\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n:host {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n.p-icon {\r\n  display: inline-flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n// custom icons\r\n.p-icon-custom {\r\n  background-repeat: no-repeat;\r\n  background-size: contain;\r\n  &-eraser {\r\n    background-image: url('../assets/images/icons/eraser.svg');\r\n  }\r\n  &-eraser-disabled {\r\n    background-image: url('../assets/images/icons/eraser-disabled.svg');\r\n  }\r\n  &-unlink {\r\n    background-image: url('../assets/images/icons/unlink.svg');\r\n  }\r\n}\r\n",
                     "styleUrl": "./icon.component.scss"
                 }
             ],
@@ -2697,7 +2697,7 @@
         },
         {
             "name": "InputLinkComponent",
-            "id": "component-InputLinkComponent-6d588a660bb078313ef32edc10c900f2",
+            "id": "component-InputLinkComponent-8994ff95e5dd88b45e78e4d97513c326",
             "file": "projects/design-system-lib/src/lib/input/link/input-link.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2716,49 +2716,70 @@
             "inputsClass": [
                 {
                     "name": "ariaLabel",
-                    "line": 11,
+                    "line": 14,
                     "type": "string"
                 },
                 {
                     "name": "disabled",
                     "defaultValue": "false",
-                    "line": 14,
+                    "line": 17,
                     "type": "boolean"
                 },
                 {
                     "name": "errorMessage",
-                    "line": 13,
+                    "line": 16,
                     "type": "string"
                 },
                 {
                     "name": "matcher",
-                    "line": 17,
+                    "line": 20,
                     "type": "ErrorStateMatcher"
                 },
                 {
                     "name": "placeholder",
-                    "line": 12,
+                    "line": 15,
                     "type": "string"
                 },
                 {
                     "name": "validators",
-                    "line": 16,
+                    "line": 19,
                     "type": "ValidatorFn[]"
                 },
                 {
                     "name": "value",
-                    "line": 15,
+                    "line": 18,
                     "type": "string"
                 }
             ],
             "outputsClass": [],
             "propertiesClass": [
                 {
+                    "name": "buttonType",
+                    "defaultValue": "ButtonTypeEnum",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 22,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "dialog",
+                    "type": "MatDialog",
+                    "optional": false,
+                    "description": "",
+                    "line": 24,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
                     "name": "formFieldControl",
                     "type": "FormControl",
                     "optional": false,
                     "description": "",
-                    "line": 18,
+                    "line": 21,
                     "modifierKind": [
                         114
                     ]
@@ -2771,7 +2792,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 20
+                    "line": 26
                 },
                 {
                     "name": "openModal",
@@ -2779,7 +2800,15 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 26
+                    "line": 32
+                },
+                {
+                    "name": "removeLink",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 57
                 }
             ],
             "hostBindings": [],
@@ -2787,19 +2816,39 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport {FormControl, ValidatorFn} from '@angular/forms';\r\nimport {ErrorStateMatcher} from '@angular/material/core';\r\n\r\n@Component({\r\n  selector: 'p-input-link',\r\n  templateUrl: './input-link.component.html',\r\n  styleUrls: ['./input-link.component.scss'],\r\n})\r\nexport class InputLinkComponent implements OnInit {\r\n  @Input() ariaLabel: string;\r\n  @Input() placeholder: string;\r\n  @Input() errorMessage: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() value: string;\r\n  @Input() validators: ValidatorFn[];\r\n  @Input() matcher: ErrorStateMatcher;\r\n  public formFieldControl: FormControl;\r\n\r\n  ngOnInit(): void {\r\n    this.formFieldControl = new FormControl(\r\n      {value: this.value, disabled: this.disabled},\r\n      this.validators);\r\n  }\r\n\r\n  openModal(): void {\r\n    console.log('modal');\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport {FormControl, ValidatorFn} from '@angular/forms';\r\nimport {ErrorStateMatcher} from '@angular/material/core';\r\nimport {ButtonTypeEnum} from '../../button/button-type.enum';\r\nimport {MatDialog} from '@angular/material/dialog';\r\nimport {ModalComponent} from '../../modal/modal.component';\r\n\r\n@Component({\r\n  selector: 'p-input-link',\r\n  templateUrl: './input-link.component.html',\r\n  styleUrls: ['./input-link.component.scss'],\r\n})\r\nexport class InputLinkComponent implements OnInit {\r\n  @Input() ariaLabel: string;\r\n  @Input() placeholder: string;\r\n  @Input() errorMessage: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() value: string;\r\n  @Input() validators: ValidatorFn[];\r\n  @Input() matcher: ErrorStateMatcher;\r\n  public formFieldControl: FormControl;\r\n  public buttonType = ButtonTypeEnum;\r\n\r\n  constructor(public dialog: MatDialog) {}\r\n\r\n  ngOnInit(): void {\r\n    this.formFieldControl = new FormControl(\r\n      {value: this.value, disabled: this.disabled},\r\n      this.validators);\r\n  }\r\n\r\n  openModal(): void {\r\n    console.log('modal');\r\n    const data = {\r\n      headerText: 'Lorem Ipsum Title',\r\n        textParagraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ipsum orci, imperdiet quis cursus sed, efficitur vitae risus. Quisque lacinia, risus eu rhoncus eleifend.',\r\n        actions: [{\r\n        label: 'Some',\r\n        buttonType: ButtonTypeEnum.Primary,\r\n      },\r\n        {\r\n          label: 'Action',\r\n          buttonType: ButtonTypeEnum.Secondary,\r\n        },\r\n        {\r\n          label: 'Cancel',\r\n          buttonType: ButtonTypeEnum.Tertiary,\r\n        }]\r\n    };\r\n    const panelClass = ['p-modal', 'p-modal-small'];\r\n    const dialogRef = this.dialog.open(ModalComponent, {\r\n      data,\r\n      panelClass, // required\r\n    });\r\n  }\r\n\r\n  removeLink(): void {\r\n    this.formFieldControl.setValue('');\r\n    this.value = '';\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n.p-input-text {\r\n  ::ng-deep & {\r\n    // material styles override\r\n    &.mat-form-field-appearance-standard.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {\r\n      width: 100%;\r\n      transform: translateY(-23px);\r\n    }\r\n    .mat-form-field-label-wrapper {\r\n      top: -16px;\r\n      padding-top: 16px;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-label,\r\n    &.mat-form-field.mat-form-field-invalid .mat-form-field-label {\r\n      color: $gray-scale-700;\r\n    }\r\n    .p-input-text-input {\r\n      font-family: $font-family-basic;\r\n      font-size: $small-font-size;\r\n      max-width: $input-text-width - $input-text-padding;\r\n      line-height: 20px;\r\n      color: $primary-a-900;\r\n      padding-left: $input-text-padding;\r\n      caret-color: $primary-a-900;\r\n    }\r\n    .mat-form-field-infix {\r\n      width: $input-text-width;\r\n      padding-bottom: 6px;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-flex {\r\n      padding-top: 0;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $gray-scale-600;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-underline,\r\n    &:not(.mat-form-field-disabled):not(.mat-form-field-invalid)\r\n            .mat-form-field-flex:hover~.mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $primary-a-900;\r\n    }\r\n    .mat-form-field-ripple {\r\n      display: none;\r\n    }\r\n    .mat-form-field-subscript-wrapper {\r\n      margin-top: 5px;\r\n    }\r\n    .mat-error {\r\n      font-family: $font-family-basic;\r\n      font-size: $tiny-font-size;\r\n      color: $supportive-alert-500;\r\n      line-height: 12px;\r\n    }\r\n\r\n    // disabled\r\n    &.mat-form-field-disabled {\r\n      .mat-input-element {\r\n        color: $gray-scale-600;\r\n      }\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $gray-scale-400;\r\n      }\r\n    }\r\n\r\n    // error state\r\n    &.ng-invalid {\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-500;\r\n      }\r\n      &.mat-form-field .mat-form-field-flex:hover~.mat-form-field-underline,\r\n      &.mat-form-field.mat-focused .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-700;\r\n      }\r\n    }\r\n\r\n    // readonly\r\n    &.p-input-text-readonly {\r\n      &:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover~.mat-form-field-underline,\r\n\r\n      .mat-form-field-underline {\r\n        box-shadow: none;\r\n      }\r\n    }\r\n\r\n    //icon\r\n    .mat-form-field-suffix {\r\n      align-self: flex-end;\r\n    }\r\n    &-icon {\r\n      padding-bottom: 6px;\r\n      .mat-form-field-disabled &,\r\n      .p-input-readonly & {\r\n        display: none;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+                    "data": "@import \"../text/input-text.component\";\r\n\r\n.p-input-link {\r\n  color: $secondary-a-700;\r\n  width: $input-text-width;\r\n\r\n  ::placeholder {\r\n    color: $secondary-a-700;\r\n  }\r\n\r\n  .p-input-text-input {\r\n    color: $secondary-a-700;\r\n    max-width: calc(100% - #{$gap-base} - #{$gap-small});\r\n    @include ellipsis;\r\n  }\r\n\r\n  ::ng-deep .mat-form-field-infix {\r\n    width: auto;\r\n  }\r\n\r\n  &-prefix {\r\n    margin-left: $gap-base;\r\n  }\r\n\r\n  ::ng-deep .mat-form-field-prefix + .mat-form-field-infix .p-input-text-input {\r\n    padding-left: $gap-small;\r\n  }\r\n\r\n  ::ng-deep .mat-form-field-suffix {\r\n    padding-bottom: 3px;\r\n  }\r\n\r\n  // hover\r\n  &:not(.mat-form-field-disabled):not(.mat-form-field-invalid):hover {\r\n    color: $secondary-a-800;\r\n    width: $input-text-width;\r\n\r\n    ::placeholder {\r\n      color: $secondary-a-800;\r\n    }\r\n\r\n    .p-input-text-input {\r\n      color: $secondary-a-800;\r\n      @include ellipsis;\r\n    }\r\n  }\r\n}\r\n\r\n",
                     "styleUrl": "./input-link.component.scss"
                 }
             ],
             "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "dialog",
+                        "type": "MatDialog"
+                    }
+                ],
+                "line": 22,
+                "jsdoctags": [
+                    {
+                        "name": "dialog",
+                        "type": "MatDialog",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<mat-form-field class=\"p-input-text p-input-link\"\r\n                appearance=\"standard\"\r\n                [ngClass]=\"{'p-input-text-readonly' : readonly}\"\r\n                floatLabel=\"always\">\r\n  <p-icon *ngIf=\"formFieldControl.value === ''\"\r\n          class=\"p-input-text-icon\"\r\n          matPrefix\r\n          [iconName]=\"eye\"\r\n          width=\"16\"\r\n          height=\"16\">\r\n  </p-icon>\r\n  <input matInput\r\n         type=\"text\"\r\n         [placeholder]=\"placeholder\"\r\n         [readonly]=\"true\"\r\n         attr.aria-label=\"{{ariaLabel}}\"\r\n         [formControl]=\"formFieldControl\"\r\n         [errorStateMatcher]=\"matcher\"\r\n         (click)=\"openModal()\"\r\n         class=\"p-input-text-input\">\r\n  <p-icon *ngIf=\"formFieldControl.value !== ''\"\r\n          class=\"p-input-text-icon\"\r\n          matSuffix\r\n          [iconName]=\"eye\"\r\n          width=\"16\"\r\n          height=\"16\">\r\n  </p-icon>\r\n  <mat-error *ngIf=\"formFieldControl.invalid\"\r\n             class=\"p-input-text-error\">\r\n    {{errorMessage}}\r\n  </mat-error>\r\n</mat-form-field>\r\n"
+            "templateData": "<mat-form-field class=\"p-input-text p-input-link p-input-text-readonly\"\r\n                appearance=\"standard\"\r\n                floatLabel=\"always\">\r\n  <p-icon *ngIf=\"formFieldControl.value === ''\"\r\n          class=\"p-input-link-prefix\"\r\n          matPrefix\r\n          iconName=\"link\"\r\n          width=\"16\"\r\n          height=\"16\">\r\n  </p-icon>\r\n  <input matInput\r\n         type=\"text\"\r\n         [placeholder]=\"placeholder\"\r\n         [readonly]=\"true\"\r\n         attr.aria-label=\"{{ariaLabel}}\"\r\n         [formControl]=\"formFieldControl\"\r\n         [errorStateMatcher]=\"matcher\"\r\n         (click)=\"openModal()\"\r\n         class=\"p-input-text-input\"\r\n         [matTooltip]=\"value\"\r\n         matTooltipPosition=\"above\"\r\n         matTooltipClass=\"p-tooltip above\">\r\n\r\n  <p-button *ngIf=\"formFieldControl.value !== ''\"\r\n            class=\"p-input-text-icon edit-link\"\r\n            matSuffix\r\n            ariaLabel=\"Edit Link\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            iconBefore=\"link\"\r\n            iconBeforeWidth=\"16\"\r\n            (onClickTask)=\"openModal()\"\r\n            matTooltip=\"Edit Link\"\r\n            matTooltipPosition=\"above\"\r\n            matTooltipClass=\"p-tooltip above\"></p-button>\r\n\r\n  <p-button *ngIf=\"formFieldControl.value !== ''\"\r\n            class=\"p-input-text-icon remove-link\"\r\n            matSuffix\r\n            ariaLabel=\"Unlink\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            iconBefore=\"unlink\"\r\n            iconBeforeWidth=\"16\"\r\n            (onClickTask)=\"removeLink()\"\r\n            matTooltip=\"Unlink\"\r\n            matTooltipPosition=\"above\"\r\n            matTooltipClass=\"p-tooltip above\"></p-button>\r\n\r\n  <mat-error *ngIf=\"formFieldControl.invalid\"\r\n             class=\"p-input-text-error\">\r\n    {{errorMessage}}\r\n  </mat-error>\r\n</mat-form-field>\r\n"
         },
         {
             "name": "InputNumericComponent",
@@ -3209,7 +3258,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n.p-input-text {\r\n  ::ng-deep & {\r\n    // material styles override\r\n    &.mat-form-field-appearance-standard.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {\r\n      width: 100%;\r\n      transform: translateY(-23px);\r\n    }\r\n    .mat-form-field-label-wrapper {\r\n      top: -16px;\r\n      padding-top: 16px;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-label,\r\n    &.mat-form-field.mat-form-field-invalid .mat-form-field-label {\r\n      color: $gray-scale-700;\r\n    }\r\n    .p-input-text-input {\r\n      font-family: $font-family-basic;\r\n      font-size: $small-font-size;\r\n      max-width: $input-text-width - $input-text-padding;\r\n      line-height: 20px;\r\n      color: $primary-a-900;\r\n      padding-left: $input-text-padding;\r\n      caret-color: $primary-a-900;\r\n    }\r\n    .mat-form-field-infix {\r\n      width: $input-text-width;\r\n      padding-bottom: 6px;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-flex {\r\n      padding-top: 0;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $gray-scale-600;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-underline,\r\n    &:not(.mat-form-field-disabled):not(.mat-form-field-invalid)\r\n            .mat-form-field-flex:hover~.mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $primary-a-900;\r\n    }\r\n    .mat-form-field-ripple {\r\n      display: none;\r\n    }\r\n    .mat-form-field-subscript-wrapper {\r\n      margin-top: 5px;\r\n    }\r\n    .mat-error {\r\n      font-family: $font-family-basic;\r\n      font-size: $tiny-font-size;\r\n      color: $supportive-alert-500;\r\n      line-height: 12px;\r\n    }\r\n\r\n    // disabled\r\n    &.mat-form-field-disabled {\r\n      .mat-input-element {\r\n        color: $gray-scale-600;\r\n      }\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $gray-scale-400;\r\n      }\r\n    }\r\n\r\n    // error state\r\n    &.ng-invalid {\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-500;\r\n      }\r\n      &.mat-form-field .mat-form-field-flex:hover~.mat-form-field-underline,\r\n      &.mat-form-field.mat-focused .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-700;\r\n      }\r\n    }\r\n\r\n    // readonly\r\n    &.p-input-text-readonly {\r\n      &:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover~.mat-form-field-underline,\r\n\r\n      .mat-form-field-underline {\r\n        box-shadow: none;\r\n      }\r\n    }\r\n\r\n    //icon\r\n    .mat-form-field-suffix {\r\n      align-self: flex-end;\r\n    }\r\n    &-icon {\r\n      padding-bottom: 6px;\r\n      .mat-form-field-disabled &,\r\n      .p-input-readonly & {\r\n        display: none;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n.p-input-text {\r\n  ::ng-deep & {\r\n    // material styles override\r\n    &.mat-form-field-appearance-standard.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {\r\n      width: 100%;\r\n      transform: translateY(-23px);\r\n    }\r\n    .mat-form-field-label-wrapper {\r\n      top: -16px;\r\n      padding-top: 16px;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-label,\r\n    &.mat-form-field.mat-form-field-invalid .mat-form-field-label {\r\n      color: $gray-scale-700;\r\n    }\r\n    .p-input-text-input {\r\n      font-family: $font-family-basic;\r\n      font-size: $small-font-size;\r\n      max-width: $input-text-width - $input-text-padding;\r\n      line-height: 20px;\r\n      color: $primary-a-900;\r\n      padding-left: $input-text-padding;\r\n      caret-color: $primary-a-900;\r\n    }\r\n    .mat-form-field-infix {\r\n      width: $input-text-width;\r\n      padding-bottom: 6px;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-flex {\r\n      padding-top: 0;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $gray-scale-600;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-underline,\r\n    &:not(.p-input-link):not(.mat-form-field-disabled):not(.mat-form-field-invalid)\r\n            .mat-form-field-flex:hover~.mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $primary-a-900;\r\n    }\r\n    .mat-form-field-ripple {\r\n      display: none;\r\n    }\r\n    .mat-form-field-subscript-wrapper {\r\n      margin-top: 5px;\r\n    }\r\n    .mat-error {\r\n      font-family: $font-family-basic;\r\n      font-size: $tiny-font-size;\r\n      color: $supportive-alert-500;\r\n      line-height: 12px;\r\n    }\r\n\r\n    // disabled\r\n    &.mat-form-field-disabled {\r\n      .mat-input-element {\r\n        color: $gray-scale-600;\r\n      }\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $gray-scale-400;\r\n      }\r\n    }\r\n\r\n    // error state\r\n    &.ng-invalid {\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-500;\r\n      }\r\n      &.mat-form-field .mat-form-field-flex:hover~.mat-form-field-underline,\r\n      &.mat-form-field.mat-focused .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-700;\r\n      }\r\n    }\r\n\r\n    // readonly\r\n    &.p-input-text-readonly:not(.p-input-link) {\r\n      &:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover~.mat-form-field-underline,\r\n\r\n      .mat-form-field-underline {\r\n        box-shadow: none;\r\n      }\r\n    }\r\n\r\n    //icon\r\n    .mat-form-field-suffix {\r\n      align-self: flex-end;\r\n    }\r\n    &-icon {\r\n      padding-bottom: 6px;\r\n      .mat-form-field-disabled &,\r\n      .p-input-readonly & {\r\n        display: none;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "./input-text.component.scss"
                 }
             ],
@@ -5662,7 +5711,7 @@
         },
         {
             "name": "ToolbarComponent",
-            "id": "component-ToolbarComponent-a2c62962bdb5dc6830334f14fc97b61b",
+            "id": "component-ToolbarComponent-61dc37b4b25bb48c75b170b95ab9cb29",
             "file": "projects/design-system-lib/src/lib/toolbar/toolbar.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -5693,7 +5742,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {IActionButton} from '../../action-button/action-button.interface';\r\n\r\n@Component({\r\n  selector: 'p-toolbar',\r\n  templateUrl: './toolbar.component.html',\r\n  styleUrls: ['./toolbar.component.scss'],\r\n})\r\nexport class ToolbarComponent {\r\n  @Input() toolbar: IActionButton[];\r\n}\r\n",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {IActionButton} from '../action-button/action-button.interface';\r\n\r\n@Component({\r\n  selector: 'p-toolbar',\r\n  templateUrl: './toolbar.component.html',\r\n  styleUrls: ['./toolbar.component.scss'],\r\n})\r\nexport class ToolbarComponent {\r\n  @Input() toolbar: IActionButton[];\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -6240,7 +6289,13 @@
                     "type": "imports",
                     "elements": [
                         {
+                            "name": "ButtonModule"
+                        },
+                        {
                             "name": "IconModule"
+                        },
+                        {
+                            "name": "ModalModule"
                         }
                     ]
                 },
@@ -6829,17 +6884,17 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
-                "type": "Story<CheckboxGroupPageComponent>",
-                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
+                "type": "Story<CheckboxGroupComponent>",
+                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
-                "type": "Story<CheckboxGroupComponent>",
-                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "Story<CheckboxGroupPageComponent>",
+                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -7776,7 +7831,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/design-system-lib/src/action-button/action-button.component.ts",
+                "filePath": "projects/design-system-lib/src/lib/action-button/action-button.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "ActionButtonComponent",
@@ -7785,7 +7840,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/design-system-lib/src/action-button/action-button.interface.ts",
+                "filePath": "projects/design-system-lib/src/lib/action-button/action-button.interface.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "IActionButton",
@@ -7925,7 +7980,7 @@
                 "linktype": "component",
                 "name": "InputLinkComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/11",
+                "coverageCount": "0/15",
                 "status": "low"
             },
             {
