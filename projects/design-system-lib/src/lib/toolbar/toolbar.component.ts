@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {IActionButton} from '../../action-button/action-button.interface';
+import {IActionButton} from '../action-button/action-button.interface';
 
 @Component({
   selector: 'p-toolbar',

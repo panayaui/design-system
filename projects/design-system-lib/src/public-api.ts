@@ -60,9 +60,9 @@ export * from './lib/tab-group/tab-group.module';
 export * from './lib/tab-group/tab-group.component';
 export * from './lib/tab-group/tab.interface';
 
-export * from './action-button/action-button.component';
-export * from './action-button/action-button.module';
-export * from './action-button/action-button.interface';
+export * from './lib/action-button/action-button.component';
+export * from './lib/action-button/action-button.module';
+export * from './lib/action-button/action-button.interface';
 
 export * from './lib/toolbar/toolbar.module';
 export * from './lib/toolbar/toolbar.component';
