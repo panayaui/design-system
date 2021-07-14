@@ -201,27 +201,28 @@ $menu-min-width: 250px;
       color: $gray-scale-1;
       background-color: $secondary-a-700;
       font-weight: 600;
-      &:hover ,
-      &:focus {
-        background-color: $secondary-a-800;
-      }
+      //&:hover ,
+      //&:focus {
+      //  background-color: $secondary-a-800;
+      //}
       &:disabled {
         color: $gray-scale-600;
-        background-color: $secondary-a-50;
+        background-color: $secondary-a-100;
+        border: 1px solid $gray-scale-400;
       }
     }
     &:not(.mat-tab-label-active) {
-      color: $secondary-a-700;
+      color: $primary-a-900;
       background-color: $gray-scale-1;
-      border: 1px solid $secondary-a-700;
+      border: 1px solid $gray-scale-400;
       font-weight: 400;
       &:hover,
       &:focus {
-        background-color: $primary-c-50;
+        border-color: $dev-c-300;
       }
       &:disabled {
         color: $gray-scale-600;
-        border-color: $secondary-a-500;
+        background-color: $primary-c-50;
       }
     }
   }
@@ -259,7 +260,7 @@ $menu-min-width: 250px;
   }
   &-input {
     margin-left: 20px;
-    margin-top: 13px;
+    margin-top: 7px;
   }
 }
 
