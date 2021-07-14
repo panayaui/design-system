@@ -25,6 +25,9 @@ export * from './lib/input/table-layout/input-text-table-layout.component';
 export * from './lib/input/outline/input-outline.component';
 export * from './lib/input/header/input-header.component';
 export * from './lib/input/datepicker/datepicker.component';
+export * from './lib/input/textarea/textarea.component';
+export * from './lib/input/textarea/textarea.enum';
+export * from './lib/input/link/input-link.component';
 
 export * from './lib/alert/alert.module';
 export * from './lib/alert/alert.component';
@@ -58,9 +61,9 @@ export * from './lib/tab-group/tab-group.module';
 export * from './lib/tab-group/tab-group.component';
 export * from './lib/tab-group/tab.interface';
 
-export * from './action-button/action-button.component';
-export * from './action-button/action-button.module';
-export * from './action-button/action-button.interface';
+export * from './lib/action-button/action-button.component';
+export * from './lib/action-button/action-button.module';
+export * from './lib/action-button/action-button.interface';
 
 export * from './lib/toolbar/toolbar.module';
 export * from './lib/toolbar/toolbar.component';

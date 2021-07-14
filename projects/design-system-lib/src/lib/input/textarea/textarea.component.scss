@@ -1,0 +1,43 @@
+@import "../outline/input-outline.component";
+
+.p-textarea {
+  width: auto;
+  &.small ::ng-deep .mat-form-field-flex {
+    width: $input-text-width;
+    height: calc(100px);
+}
+
+  &.extendedHeight ::ng-deep .mat-form-field-flex {
+    width: $input-text-width;
+    height: calc(285px);
+  }
+
+  &.medium ::ng-deep .mat-form-field-flex {
+    width: 530px;
+    height: 100px;
+  }
+
+  &.large ::ng-deep .mat-form-field-flex {
+    width: 1150px;
+    height: 100px;
+  }
+
+  ::ng-deep &.mat-form-field-appearance-outline .mat-form-field-infix {
+    height: calc(100% - 2px);
+    padding-top: $input-text-padding ;
+    padding-bottom: $input-text-padding;
+  }
+
+  &-input {
+    font-family: $font-family-basic;
+    font-size: $small-font-size;
+    color: $primary-a-900;
+    max-width: calc(100% - #{$input-text-padding} * 2 - 2px);
+    height: 100%;
+    padding-right: $input-text-padding;
+    padding-left: $input-text-padding;
+    caret-color: $primary-a-900;
+    resize: none;
+  }
+}
+

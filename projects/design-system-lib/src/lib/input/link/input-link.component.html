@@ -1,0 +1,53 @@
+<mat-form-field class="p-input-text p-input-link p-input-text-readonly"
+                appearance="standard"
+                floatLabel="always">
+  <p-icon *ngIf="formFieldControl.value === ''"
+          class="p-input-link-prefix"
+          matPrefix
+          iconName="link"
+          width="16"
+          height="16">
+  </p-icon>
+  <input matInput
+         type="text"
+         [placeholder]="placeholder"
+         [readonly]="true"
+         attr.aria-label="{{ariaLabel}}"
+         [formControl]="formFieldControl"
+         [errorStateMatcher]="matcher"
+         (click)="openModal()"
+         class="p-input-text-input"
+         [matTooltip]="value"
+         matTooltipPosition="above"
+         matTooltipClass="p-tooltip above">
+
+  <p-button *ngIf="formFieldControl.value !== ''"
+            class="p-input-text-icon edit-link"
+            matSuffix
+            ariaLabel="Edit Link"
+            [buttonType]="buttonType.IsIcon"
+            iconBefore="link"
+            iconBeforeWidth="16"
+            (onClickTask)="openModal()"
+            matTooltip="Edit Link"
+            matTooltipPosition="above"
+            matTooltipClass="p-tooltip above"></p-button>
+
+  <p-button *ngIf="formFieldControl.value !== ''"
+            class="p-input-text-icon remove-link"
+            matSuffix
+            ariaLabel="Unlink"
+            [buttonType]="buttonType.IsIcon"
+            iconBefore="unlink"
+            iconBeforeWidth="16"
+            iconBeforeHeight="16"
+            (onClickTask)="removeLink()"
+            matTooltip="Unlink"
+            matTooltipPosition="above"
+            matTooltipClass="p-tooltip above"></p-button>
+
+  <mat-error *ngIf="formFieldControl.invalid"
+             class="p-input-text-error">
+    {{errorMessage}}
+  </mat-error>
+</mat-form-field>

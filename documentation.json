@@ -4,7 +4,7 @@
         {
             "name": "IActionButton",
             "id": "interface-IActionButton-6b98e01bc5358f8162fdacc7859dc5bb",
-            "file": "projects/design-system-lib/src/action-button/action-button.interface.ts",
+            "file": "projects/design-system-lib/src/lib/action-button/action-button.interface.ts",
             "type": "interface",
             "sourceCode": "export interface IActionButton {\r\n  label: string;\r\n  disabled?: boolean;\r\n  iconBeforeName?: string;\r\n  iconBeforeWidth?: string;\r\n  iconBeforeHeight?: string;\r\n  iconBeforeStrokeWidth?: number;\r\n  iconBeforeStrokeColor?: string;\r\n  isMenuTrigger?: boolean;\r\n  isStandalone?: boolean;\r\n}\r\n",
             "properties": [
@@ -1097,7 +1097,7 @@
         {
             "name": "ActionButtonComponent",
             "id": "component-ActionButtonComponent-907906d95161a15bbfb395db17b075ab",
-            "file": "projects/design-system-lib/src/action-button/action-button.component.ts",
+            "file": "projects/design-system-lib/src/lib/action-button/action-button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1188,7 +1188,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../lib/assets/styles/custom\";\r\n\r\n$action-btn-height: 38px;\r\n\r\n.p-action-btn {\r\n  @include resetButton;\r\n  display: flex;\r\n  align-items: center;\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  height: $action-btn-height;\r\n  padding-right: $gap-base;\r\n  padding-left: $gap-base;\r\n  border-radius: $btn-border-radius;\r\n  white-space: nowrap;\r\n\r\n  &.standalone {\r\n    color: $secondary-a-700;\r\n    font-weight: 600;\r\n    &:not(:disabled):not(.active):hover,\r\n    &:not(:disabled):not(.active):focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n  }\r\n  &:not(.standalone) {\r\n    color: $primary-a-900;\r\n    font-weight: 400;\r\n    &:not(:disabled):not(.active):hover,\r\n    &:not(:disabled):not(.active):focus {\r\n      color: $secondary-a-700;\r\n    }\r\n  }\r\n\r\n  &.active {\r\n    color: $secondary-a-700;\r\n    background-color: $primary-c-50;\r\n  }\r\n\r\n  &:disabled {\r\n    color: $gray-scale-600;\r\n    pointer-events: none;\r\n  }\r\n\r\n  // class of the before icon\r\n  &-icon {\r\n    margin-right: $gap-base;\r\n  }\r\n\r\n  // class of the after icon (chevron-down)\r\n  &-arrow {\r\n    margin-left: $gap-small;\r\n  }\r\n}\r\n\r\n\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$action-btn-height: 38px;\r\n\r\n.p-action-btn {\r\n  @include resetButton;\r\n  display: flex;\r\n  align-items: center;\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  height: $action-btn-height;\r\n  padding-right: $gap-base;\r\n  padding-left: $gap-base;\r\n  border-radius: $btn-border-radius;\r\n  white-space: nowrap;\r\n\r\n  &.standalone {\r\n    color: $secondary-a-700;\r\n    font-weight: 600;\r\n    &:not(:disabled):not(.active):hover,\r\n    &:not(:disabled):not(.active):focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n  }\r\n  &:not(.standalone) {\r\n    color: $primary-a-900;\r\n    font-weight: 400;\r\n    &:not(:disabled):not(.active):hover,\r\n    &:not(:disabled):not(.active):focus {\r\n      color: $secondary-a-700;\r\n    }\r\n  }\r\n\r\n  &.active {\r\n    color: $secondary-a-700;\r\n    background-color: $primary-c-50;\r\n  }\r\n\r\n  &:disabled {\r\n    color: $gray-scale-600;\r\n    pointer-events: none;\r\n  }\r\n\r\n  // class of the before icon\r\n  &-icon {\r\n    margin-right: $gap-small;\r\n  }\r\n\r\n  // class of the after icon (chevron-down)\r\n  &-arrow {\r\n    margin-left: $gap-small;\r\n  }\r\n}\r\n\r\n\r\n",
                     "styleUrl": "./action-button.component.scss"
                 }
             ],
@@ -2413,7 +2413,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n:host {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n.p-icon {\r\n  display: inline-flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n// custom icons\r\n.p-icon-custom {\r\n  background-repeat: no-repeat;\r\n  background-size: contain;\r\n  &-eraser {\r\n    background-image: url('../assets/images/icons/eraser.svg');\r\n  }\r\n  &-eraser-disabled {\r\n    background-image: url('../assets/images/icons/eraser-disabled.svg');\r\n  }\r\n\r\n}\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n:host {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n.p-icon {\r\n  display: inline-flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n// custom icons\r\n.p-icon-custom {\r\n  background-repeat: no-repeat;\r\n  background-size: contain;\r\n  &-eraser {\r\n    background-image: url('../assets/images/icons/eraser.svg');\r\n  }\r\n  &-eraser-disabled {\r\n    background-image: url('../assets/images/icons/eraser-disabled.svg');\r\n  }\r\n  &-unlink {\r\n    background-image: url('../assets/images/icons/unlink.svg');\r\n  }\r\n\r\n}\r\n",
                     "styleUrl": "./icon.component.scss"
                 }
             ],
@@ -2694,6 +2694,161 @@
             },
             "extends": "InputOutlineComponent",
             "templateData": "<mat-form-field class=\"p-input-outline p-input-header\"\r\n                appearance=\"outline\"\r\n                [class.p-input-readonly]=\"readonlyState\"\r\n                floatLabel=\"always\">\r\n\r\n  <input matInput\r\n         #inputField\r\n         [type]=\"type\"\r\n         [placeholder]=\"placeholder\"\r\n         [readonly]=\"readonlyState\"\r\n         attr.aria-label=\"{{ariaLabel}}\"\r\n         [formControl]=\"formFieldControl\"\r\n         [errorStateMatcher]=\"matcher\"\r\n         autocomplete=\"off\"\r\n         (focus)=\"onInputFocused()\"\r\n         (blur)=\"onInputBlur()\"\r\n         class=\"p-input-text-input\"\r\n         [class.readonly]=\"readonlyState\">\r\n\r\n  <p-icon class=\"p-input-outline-icon\"\r\n          matSuffix\r\n          iconName=\"edit-3\"\r\n          width=\"18\"\r\n          height=\"auto\">\r\n  </p-icon>\r\n\r\n</mat-form-field>\r\n"
+        },
+        {
+            "name": "InputLinkComponent",
+            "id": "component-InputLinkComponent-8994ff95e5dd88b45e78e4d97513c326",
+            "file": "projects/design-system-lib/src/lib/input/link/input-link.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-input-link",
+            "styleUrls": [
+                "./input-link.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./input-link.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "ariaLabel",
+                    "line": 14,
+                    "type": "string"
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "line": 17,
+                    "type": "boolean"
+                },
+                {
+                    "name": "errorMessage",
+                    "line": 16,
+                    "type": "string"
+                },
+                {
+                    "name": "matcher",
+                    "line": 20,
+                    "type": "ErrorStateMatcher"
+                },
+                {
+                    "name": "placeholder",
+                    "line": 15,
+                    "type": "string"
+                },
+                {
+                    "name": "validators",
+                    "line": 19,
+                    "type": "ValidatorFn[]"
+                },
+                {
+                    "name": "value",
+                    "line": 18,
+                    "type": "string"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "buttonType",
+                    "defaultValue": "ButtonTypeEnum",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 22,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "dialog",
+                    "type": "MatDialog",
+                    "optional": false,
+                    "description": "",
+                    "line": 24,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "formFieldControl",
+                    "type": "FormControl",
+                    "optional": false,
+                    "description": "",
+                    "line": 21,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 26
+                },
+                {
+                    "name": "openModal",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 32
+                },
+                {
+                    "name": "removeLink",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 57
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport {FormControl, ValidatorFn} from '@angular/forms';\r\nimport {ErrorStateMatcher} from '@angular/material/core';\r\nimport {ButtonTypeEnum} from '../../button/button-type.enum';\r\nimport {MatDialog} from '@angular/material/dialog';\r\nimport {ModalComponent} from '../../modal/modal.component';\r\n\r\n@Component({\r\n  selector: 'p-input-link',\r\n  templateUrl: './input-link.component.html',\r\n  styleUrls: ['./input-link.component.scss'],\r\n})\r\nexport class InputLinkComponent implements OnInit {\r\n  @Input() ariaLabel: string;\r\n  @Input() placeholder: string;\r\n  @Input() errorMessage: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() value: string;\r\n  @Input() validators: ValidatorFn[];\r\n  @Input() matcher: ErrorStateMatcher;\r\n  public formFieldControl: FormControl;\r\n  public buttonType = ButtonTypeEnum;\r\n\r\n  constructor(public dialog: MatDialog) {}\r\n\r\n  ngOnInit(): void {\r\n    this.formFieldControl = new FormControl(\r\n      {value: this.value, disabled: this.disabled},\r\n      this.validators);\r\n  }\r\n\r\n  openModal(): void {\r\n    console.log('modal');\r\n    const data = {\r\n      headerText: 'Lorem Ipsum Title',\r\n        textParagraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ipsum orci, imperdiet quis cursus sed, efficitur vitae risus. Quisque lacinia, risus eu rhoncus eleifend.',\r\n        actions: [{\r\n        label: 'Some',\r\n        buttonType: ButtonTypeEnum.Primary,\r\n      },\r\n        {\r\n          label: 'Action',\r\n          buttonType: ButtonTypeEnum.Secondary,\r\n        },\r\n        {\r\n          label: 'Cancel',\r\n          buttonType: ButtonTypeEnum.Tertiary,\r\n        }]\r\n    };\r\n    const panelClass = ['p-modal', 'p-modal-small'];\r\n    const dialogRef = this.dialog.open(ModalComponent, {\r\n      data,\r\n      panelClass, // required\r\n    });\r\n  }\r\n\r\n  removeLink(): void {\r\n    this.formFieldControl.setValue('');\r\n    this.value = '';\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../text/input-text.component\";\r\n\r\n.p-input-link {\r\n  color: $secondary-a-700;\r\n  width: $input-text-width;\r\n\r\n  ::placeholder {\r\n    color: $secondary-a-700;\r\n  }\r\n\r\n  .p-input-text-input {\r\n    color: $secondary-a-700;\r\n    max-width: calc(100% - #{$gap-base} - #{$gap-small});\r\n    @include ellipsis;\r\n  }\r\n\r\n  ::ng-deep .mat-form-field-infix {\r\n    width: auto;\r\n  }\r\n\r\n  &-prefix {\r\n    margin-left: $gap-base;\r\n  }\r\n\r\n  ::ng-deep .mat-form-field-prefix + .mat-form-field-infix .p-input-text-input {\r\n    padding-left: $gap-small;\r\n  }\r\n\r\n  ::ng-deep .mat-form-field-suffix {\r\n    padding-bottom: 3px;\r\n  }\r\n\r\n  // hover\r\n  &:not(.mat-form-field-disabled):not(.mat-form-field-invalid):hover {\r\n    color: $secondary-a-800;\r\n    width: $input-text-width;\r\n\r\n    ::placeholder {\r\n      color: $secondary-a-800;\r\n    }\r\n\r\n    .p-input-text-input {\r\n      color: $secondary-a-800;\r\n      @include ellipsis;\r\n    }\r\n  }\r\n}\r\n\r\n",
+                    "styleUrl": "./input-link.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "dialog",
+                        "type": "MatDialog"
+                    }
+                ],
+                "line": 22,
+                "jsdoctags": [
+                    {
+                        "name": "dialog",
+                        "type": "MatDialog",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<mat-form-field class=\"p-input-text p-input-link p-input-text-readonly\"\r\n                appearance=\"standard\"\r\n                floatLabel=\"always\">\r\n  <p-icon *ngIf=\"formFieldControl.value === ''\"\r\n          class=\"p-input-link-prefix\"\r\n          matPrefix\r\n          iconName=\"link\"\r\n          width=\"16\"\r\n          height=\"16\">\r\n  </p-icon>\r\n  <input matInput\r\n         type=\"text\"\r\n         [placeholder]=\"placeholder\"\r\n         [readonly]=\"true\"\r\n         attr.aria-label=\"{{ariaLabel}}\"\r\n         [formControl]=\"formFieldControl\"\r\n         [errorStateMatcher]=\"matcher\"\r\n         (click)=\"openModal()\"\r\n         class=\"p-input-text-input\"\r\n         [matTooltip]=\"value\"\r\n         matTooltipPosition=\"above\"\r\n         matTooltipClass=\"p-tooltip above\">\r\n\r\n  <p-button *ngIf=\"formFieldControl.value !== ''\"\r\n            class=\"p-input-text-icon edit-link\"\r\n            matSuffix\r\n            ariaLabel=\"Edit Link\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            iconBefore=\"link\"\r\n            iconBeforeWidth=\"16\"\r\n            (onClickTask)=\"openModal()\"\r\n            matTooltip=\"Edit Link\"\r\n            matTooltipPosition=\"above\"\r\n            matTooltipClass=\"p-tooltip above\"></p-button>\r\n\r\n  <p-button *ngIf=\"formFieldControl.value !== ''\"\r\n            class=\"p-input-text-icon remove-link\"\r\n            matSuffix\r\n            ariaLabel=\"Unlink\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            iconBefore=\"unlink\"\r\n            iconBeforeWidth=\"16\"\r\n            iconBeforeHeight=\"16\"\r\n            (onClickTask)=\"removeLink()\"\r\n            matTooltip=\"Unlink\"\r\n            matTooltipPosition=\"above\"\r\n            matTooltipClass=\"p-tooltip above\"></p-button>\r\n\r\n  <mat-error *ngIf=\"formFieldControl.invalid\"\r\n             class=\"p-input-text-error\">\r\n    {{errorMessage}}\r\n  </mat-error>\r\n</mat-form-field>\r\n"
         },
         {
             "name": "InputNumericComponent",
@@ -3103,7 +3258,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$input-text-width: 220px;\r\n$input-text-padding: 8px;\r\n\r\n.p-input-text {\r\n  ::ng-deep & {\r\n    // material styles override\r\n    &.mat-form-field-appearance-standard.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {\r\n      width: 100%;\r\n      transform: translateY(-23px);\r\n    }\r\n    .mat-form-field-label-wrapper {\r\n      top: -16px;\r\n      padding-top: 16px;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-label,\r\n    &.mat-form-field.mat-form-field-invalid .mat-form-field-label {\r\n      color: $gray-scale-700;\r\n    }\r\n    .p-input-text-input {\r\n      font-family: $font-family-basic;\r\n      font-size: $small-font-size;\r\n      max-width: $input-text-width - $input-text-padding;\r\n      line-height: 20px;\r\n      color: $primary-a-900;\r\n      padding-left: $input-text-padding;\r\n      caret-color: $primary-a-900;\r\n    }\r\n    .mat-form-field-infix {\r\n      width: $input-text-width;\r\n      padding-bottom: 6px;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-flex {\r\n      padding-top: 0;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $gray-scale-600;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-underline,\r\n    &:not(.mat-form-field-disabled):not(.mat-form-field-invalid)\r\n            .mat-form-field-flex:hover~.mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $primary-a-900;\r\n    }\r\n    .mat-form-field-ripple {\r\n      display: none;\r\n    }\r\n    .mat-form-field-subscript-wrapper {\r\n      margin-top: 5px;\r\n    }\r\n    .mat-error {\r\n      font-family: $font-family-basic;\r\n      font-size: $tiny-font-size;\r\n      color: $supportive-alert-500;\r\n      line-height: 12px;\r\n    }\r\n\r\n    // disabled\r\n    &.mat-form-field-disabled {\r\n      .mat-input-element {\r\n        color: $gray-scale-600;\r\n      }\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $gray-scale-400;\r\n      }\r\n    }\r\n\r\n    // error state\r\n    &.ng-invalid {\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-500;\r\n      }\r\n      &.mat-form-field .mat-form-field-flex:hover~.mat-form-field-underline,\r\n      &.mat-form-field.mat-focused .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-700;\r\n      }\r\n    }\r\n\r\n    // readonly\r\n    &.p-input-text-readonly {\r\n      &:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover~.mat-form-field-underline,\r\n\r\n      .mat-form-field-underline {\r\n        box-shadow: none;\r\n      }\r\n    }\r\n\r\n    //icon\r\n    .mat-form-field-suffix {\r\n      align-self: flex-end;\r\n    }\r\n    &-icon {\r\n      padding-bottom: 6px;\r\n      .mat-form-field-disabled &,\r\n      .p-input-readonly & {\r\n        display: none;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n.p-input-text {\r\n  ::ng-deep & {\r\n    // material styles override\r\n    &.mat-form-field-appearance-standard.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {\r\n      width: 100%;\r\n      transform: translateY(-23px);\r\n    }\r\n    .mat-form-field-label-wrapper {\r\n      top: -16px;\r\n      padding-top: 16px;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-label,\r\n    &.mat-form-field.mat-form-field-invalid .mat-form-field-label {\r\n      color: $gray-scale-700;\r\n    }\r\n    .p-input-text-input {\r\n      font-family: $font-family-basic;\r\n      font-size: $small-font-size;\r\n      max-width: $input-text-width - $input-text-padding;\r\n      line-height: 20px;\r\n      color: $primary-a-900;\r\n      padding-left: $input-text-padding;\r\n      caret-color: $primary-a-900;\r\n    }\r\n    .mat-form-field-infix {\r\n      width: $input-text-width;\r\n      padding-bottom: 6px;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-flex {\r\n      padding-top: 0;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $gray-scale-600;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-underline,\r\n    &:not(.p-input-link):not(.mat-form-field-disabled):not(.mat-form-field-invalid)\r\n            .mat-form-field-flex:hover~.mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $primary-a-900;\r\n    }\r\n    .mat-form-field-ripple {\r\n      display: none;\r\n    }\r\n    .mat-form-field-subscript-wrapper {\r\n      margin-top: 5px;\r\n    }\r\n    .mat-error {\r\n      font-family: $font-family-basic;\r\n      font-size: $tiny-font-size;\r\n      color: $supportive-alert-500;\r\n      line-height: 12px;\r\n    }\r\n\r\n    // disabled\r\n    &.mat-form-field-disabled {\r\n      .mat-input-element {\r\n        color: $gray-scale-600;\r\n      }\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $gray-scale-400;\r\n      }\r\n    }\r\n\r\n    // error state\r\n    &.ng-invalid {\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-500;\r\n      }\r\n      &.mat-form-field .mat-form-field-flex:hover~.mat-form-field-underline,\r\n      &.mat-form-field.mat-focused .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-700;\r\n      }\r\n    }\r\n\r\n    // readonly\r\n    &.p-input-text-readonly:not(.p-input-link) {\r\n      &:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover~.mat-form-field-underline,\r\n\r\n      .mat-form-field-underline {\r\n        box-shadow: none;\r\n      }\r\n    }\r\n\r\n    //icon\r\n    .mat-form-field-suffix {\r\n      align-self: flex-end;\r\n    }\r\n    &-icon {\r\n      padding-bottom: 6px;\r\n      .mat-form-field-disabled &,\r\n      .p-input-readonly & {\r\n        display: none;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "./input-text.component.scss"
                 }
             ],
@@ -5349,6 +5504,158 @@
             "templateData": "<mat-tab-group class=\"p-tabs\"\r\n               [disableRipple]=\"true\"\r\n               animationDuration=\"0ms\">\r\n  <mat-tab *ngFor=\"let tab of tabGroup\"\r\n            class=\"p-tabs-button\"\r\n            [disabled]=\"tab.disabled\">\r\n    <ng-template mat-tab-label>\r\n      <p-icon *ngIf=\"tab.tabButton.labelIcon?.iconName\"\r\n              class=\"p-tabs-icon\"\r\n              [iconName]=\"tab.tabButton.labelIcon?.iconName\"\r\n              [width]=\"15\"></p-icon>\r\n      <span class=\"p-tabs-label paragraph-1-default\">\r\n        {{tab.tabButton.labelName}}\r\n      </span>\r\n      <span *ngIf=\"tab.tabButton.labelNotification\"\r\n            class=\"p-tabs-notification hidden-text\">\r\n        has notification\r\n      </span>\r\n      <span *ngIf=\"tab.tabButton.labelCounter\"\r\n            class=\"p-tabs-counter paragraph-3-medium\">\r\n        <span class=\"hidden-text\">counter is</span>\r\n        <span class=\"p-tabs-counter-value\">\r\n          {{tab.tabButton.labelCounter}}\r\n        </span>\r\n      </span>\r\n    </ng-template>\r\n    {{tab.tabPanel}}\r\n  </mat-tab>\r\n</mat-tab-group>\r\n"
         },
         {
+            "name": "TextareaComponent",
+            "id": "component-TextareaComponent-8ba0d0dfa43a3c58bb0c1ab6ec509711",
+            "file": "projects/design-system-lib/src/lib/input/textarea/textarea.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-textarea",
+            "styleUrls": [
+                "./textarea.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./textarea.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "ariaLabel",
+                    "line": 14,
+                    "type": "string"
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "line": 17,
+                    "type": "boolean"
+                },
+                {
+                    "name": "errorMessage",
+                    "line": 16,
+                    "type": "string"
+                },
+                {
+                    "name": "label",
+                    "line": 13,
+                    "type": "string"
+                },
+                {
+                    "name": "matcher",
+                    "line": 21,
+                    "type": "ErrorStateMatcher"
+                },
+                {
+                    "name": "placeholder",
+                    "line": 15,
+                    "type": "string"
+                },
+                {
+                    "name": "readonly",
+                    "defaultValue": "false",
+                    "line": 18,
+                    "type": "boolean"
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "TextareaEnum",
+                    "line": 22
+                },
+                {
+                    "name": "validators",
+                    "line": 20,
+                    "type": "ValidatorFn[]"
+                },
+                {
+                    "name": "value",
+                    "line": 19,
+                    "type": "string"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "formFieldControl",
+                    "type": "FormControl",
+                    "optional": false,
+                    "description": "",
+                    "line": 23,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "sub",
+                    "type": "SubscriptionLike",
+                    "optional": false,
+                    "description": "",
+                    "line": 24,
+                    "modifierKind": [
+                        112
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "clearValue",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 47
+                },
+                {
+                    "name": "ngOnDestroy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 40
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 34
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, Input, OnDestroy, OnInit} from '@angular/core';\r\nimport {FormControl, ValidatorFn} from '@angular/forms';\r\nimport {ErrorStateMatcher} from '@angular/material/core';\r\nimport {SubscriptionLike} from 'rxjs';\r\nimport {TextareaEnum} from './textarea.enum';\r\n\r\n@Component({\r\n  selector: 'p-textarea',\r\n  templateUrl: './textarea.component.html',\r\n  styleUrls: ['./textarea.component.scss'],\r\n})\r\nexport class TextareaComponent implements OnInit, OnDestroy {\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string;\r\n  @Input() placeholder: string;\r\n  @Input() errorMessage: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() readonly: boolean = false;\r\n  @Input() value: string;\r\n  @Input() validators: ValidatorFn[];\r\n  @Input() matcher: ErrorStateMatcher;\r\n  @Input() size = TextareaEnum;\r\n  public formFieldControl: FormControl;\r\n  private sub: SubscriptionLike;\r\n\r\n  public get classes(): string[] {\r\n    const classParams = [];\r\n    this.readonly ? classParams.push('p-input-readonly') : null;\r\n    !this.errorMessage ? classParams.push('no-error-message') : null;\r\n    classParams.push(`${this.size}`);\r\n    return classParams;\r\n  }\r\n\r\n  ngOnInit(): void {\r\n    this.formFieldControl = new FormControl(\r\n      {value: this.value, disabled: this.disabled},\r\n      this.validators);\r\n  }\r\n\r\n  ngOnDestroy(): void {\r\n    if (this.sub) {\r\n      this.sub.unsubscribe();\r\n      this.sub = null;\r\n    }\r\n  }\r\n\r\n  clearValue(): void {\r\n    this.formFieldControl.setValue('');\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../outline/input-outline.component\";\r\n\r\n.p-textarea {\r\n  width: auto;\r\n  &.small ::ng-deep .mat-form-field-flex {\r\n    width: $input-text-width;\r\n    height: calc(100px);\r\n}\r\n\r\n  &.extendedHeight ::ng-deep .mat-form-field-flex {\r\n    width: $input-text-width;\r\n    height: calc(285px);\r\n  }\r\n\r\n  &.medium ::ng-deep .mat-form-field-flex {\r\n    width: 530px;\r\n    height: 100px;\r\n  }\r\n\r\n  &.large ::ng-deep .mat-form-field-flex {\r\n    width: 1150px;\r\n    height: 100px;\r\n  }\r\n\r\n  ::ng-deep &.mat-form-field-appearance-outline .mat-form-field-infix {\r\n    height: calc(100% - 2px);\r\n    padding-top: $input-text-padding ;\r\n    padding-bottom: $input-text-padding;\r\n  }\r\n\r\n  &-input {\r\n    font-family: $font-family-basic;\r\n    font-size: $small-font-size;\r\n    color: $primary-a-900;\r\n    max-width: calc(100% - #{$input-text-padding} * 2 - 2px);\r\n    height: 100%;\r\n    padding-right: $input-text-padding;\r\n    padding-left: $input-text-padding;\r\n    caret-color: $primary-a-900;\r\n    resize: none;\r\n  }\r\n}\r\n\r\n",
+                    "styleUrl": "./textarea.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "implements": [
+                "OnInit",
+                "OnDestroy"
+            ],
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 26
+                    }
+                }
+            },
+            "templateData": "<mat-form-field class=\"p-input-outline p-textarea\"\r\n                appearance=\"outline\"\r\n                floatLabel=\"always\"\r\n                [ngClass]=\"classes\">\r\n\r\n  <mat-label class=\"p-input-text-label paragraph-3-default\">{{label}}</mat-label>\r\n\r\n  <textarea matInput\r\n         [placeholder]=\"placeholder\"\r\n         [readonly]=\"readonly\"\r\n         attr.aria-label=\"{{ariaLabel}}\"\r\n         [formControl]=\"formFieldControl\"\r\n         [errorStateMatcher]=\"matcher\"\r\n         autocomplete=\"off\"\r\n         onfocus=\"this.select()\"\r\n         class=\"p-textarea-input\"></textarea>\r\n\r\n  <mat-error *ngIf=\"formFieldControl.invalid\"\r\n             class=\"p-input-text-error\">\r\n    {{errorMessage}}\r\n  </mat-error>\r\n</mat-form-field>\r\n"
+        },
+        {
             "name": "ToggleComponent",
             "id": "component-ToggleComponent-de3608518d970bbce9bddc253539896d",
             "file": "projects/design-system-lib/src/lib/toggle/toggle.component.ts",
@@ -5404,7 +5711,7 @@
         },
         {
             "name": "ToolbarComponent",
-            "id": "component-ToolbarComponent-a2c62962bdb5dc6830334f14fc97b61b",
+            "id": "component-ToolbarComponent-61dc37b4b25bb48c75b170b95ab9cb29",
             "file": "projects/design-system-lib/src/lib/toolbar/toolbar.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -5435,7 +5742,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {IActionButton} from '../../action-button/action-button.interface';\r\n\r\n@Component({\r\n  selector: 'p-toolbar',\r\n  templateUrl: './toolbar.component.html',\r\n  styleUrls: ['./toolbar.component.scss'],\r\n})\r\nexport class ToolbarComponent {\r\n  @Input() toolbar: IActionButton[];\r\n}\r\n",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {IActionButton} from '../action-button/action-button.interface';\r\n\r\n@Component({\r\n  selector: 'p-toolbar',\r\n  templateUrl: './toolbar.component.html',\r\n  styleUrls: ['./toolbar.component.scss'],\r\n})\r\nexport class ToolbarComponent {\r\n  @Input() toolbar: IActionButton[];\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -5959,6 +6266,9 @@
                             "name": "InputHeaderComponent"
                         },
                         {
+                            "name": "InputLinkComponent"
+                        },
+                        {
                             "name": "InputNumericComponent"
                         },
                         {
@@ -5969,6 +6279,9 @@
                         },
                         {
                             "name": "InputTextTableLayoutComponent"
+                        },
+                        {
+                            "name": "TextareaComponent"
                         }
                     ]
                 },
@@ -5976,7 +6289,13 @@
                     "type": "imports",
                     "elements": [
                         {
+                            "name": "ButtonModule"
+                        },
+                        {
                             "name": "IconModule"
+                        },
+                        {
+                            "name": "ModalModule"
                         }
                     ]
                 },
@@ -5990,6 +6309,9 @@
                             "name": "InputHeaderComponent"
                         },
                         {
+                            "name": "InputLinkComponent"
+                        },
+                        {
                             "name": "InputNumericComponent"
                         },
                         {
@@ -6000,6 +6322,9 @@
                         },
                         {
                             "name": "InputTextTableLayoutComponent"
+                        },
+                        {
+                            "name": "TextareaComponent"
                         }
                     ]
                 },
@@ -6455,17 +6780,17 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
+                "file": "src/environments/environment.ts",
                 "type": "object",
-                "defaultValue": "{\r\n  production: true\r\n}"
+                "defaultValue": "{\r\n  production: false\r\n}"
             },
             {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
+                "file": "src/environments/environment.prod.ts",
                 "type": "object",
-                "defaultValue": "{\r\n  production: false\r\n}"
+                "defaultValue": "{\r\n  production: true\r\n}"
             },
             {
                 "name": "ErrorMessage",
@@ -6567,17 +6892,17 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
-                "type": "Story<CheckboxPageComponent>",
-                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "Story<CheckboxGroupPageComponent>",
+                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
-                "type": "Story<CheckboxGroupPageComponent>",
-                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "Story<CheckboxPageComponent>",
+                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -6661,14 +6986,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/icons/icon.stories.ts",
-                "type": "Story<IconComponent>",
-                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/colors/Color-palette.stories.ts",
                 "type": "Story<ColorPaletteComponent>",
                 "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
@@ -6680,6 +6997,14 @@
                 "file": "src/stories/input-text/input-text.stories.ts",
                 "type": "Story<InputTextComponent>",
                 "defaultValue": "(args: InputTextComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/icons/icon.stories.ts",
+                "type": "Story<IconComponent>",
+                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -6893,6 +7218,31 @@
                 "subtype": "enum",
                 "description": "",
                 "file": "projects/design-system-lib/src/lib/modal/modal.enum.ts"
+            },
+            {
+                "name": "TextareaEnum",
+                "childs": [
+                    {
+                        "name": "Small",
+                        "value": "small"
+                    },
+                    {
+                        "name": "ExtendedHeight",
+                        "value": "extendedHeight"
+                    },
+                    {
+                        "name": "Medium",
+                        "value": "medium"
+                    },
+                    {
+                        "name": "Large",
+                        "value": "large"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "description": "",
+                "file": "projects/design-system-lib/src/lib/input/textarea/textarea.enum.ts"
             }
         ],
         "groupedVariables": {
@@ -7010,16 +7360,6 @@
                     "type": "literal type"
                 }
             ],
-            "src/environments/environment.prod.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.prod.ts",
-                    "type": "object",
-                    "defaultValue": "{\r\n  production: true\r\n}"
-                }
-            ],
             "src/environments/environment.ts": [
                 {
                     "name": "environment",
@@ -7028,6 +7368,16 @@
                     "file": "src/environments/environment.ts",
                     "type": "object",
                     "defaultValue": "{\r\n  production: false\r\n}"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: true\r\n}"
                 }
             ],
             "src/stories/input-text/input-text.stories.ts": [
@@ -7435,6 +7785,33 @@
                     "description": "",
                     "file": "projects/design-system-lib/src/lib/modal/modal.enum.ts"
                 }
+            ],
+            "projects/design-system-lib/src/lib/input/textarea/textarea.enum.ts": [
+                {
+                    "name": "TextareaEnum",
+                    "childs": [
+                        {
+                            "name": "Small",
+                            "value": "small"
+                        },
+                        {
+                            "name": "ExtendedHeight",
+                            "value": "extendedHeight"
+                        },
+                        {
+                            "name": "Medium",
+                            "value": "medium"
+                        },
+                        {
+                            "name": "Large",
+                            "value": "large"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "description": "",
+                    "file": "projects/design-system-lib/src/lib/input/textarea/textarea.enum.ts"
+                }
             ]
         },
         "groupedTypeAliases": {}
@@ -7454,7 +7831,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/design-system-lib/src/action-button/action-button.component.ts",
+                "filePath": "projects/design-system-lib/src/lib/action-button/action-button.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "ActionButtonComponent",
@@ -7463,7 +7840,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/design-system-lib/src/action-button/action-button.interface.ts",
+                "filePath": "projects/design-system-lib/src/lib/action-button/action-button.interface.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "IActionButton",
@@ -7598,6 +7975,15 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/design-system-lib/src/lib/input/link/input-link.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "InputLinkComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/15",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/design-system-lib/src/lib/input/numeric/input-numeric.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -7649,6 +8035,15 @@
                 "name": "IInputText",
                 "coveragePercent": 0,
                 "coverageCount": "0/12",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/input/textarea/textarea.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TextareaComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/16",
                 "status": "low"
             },
             {

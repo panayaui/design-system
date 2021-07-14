@@ -1,0 +1,184 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+import {TextareaComponent} from 'projects/design-system-lib/src/public-api';
+import {InputModule} from 'projects/design-system-lib/src/public-api';
+import {Validators} from '@angular/forms';
+import {CustomErrorStateMatcher} from './custom-error-state-matcher';
+import {TextareaEnum} from 'projects/design-system-lib/src/public-api';
+
+<Meta title='Components/Textarea/Large'
+  component={TextareaComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [InputModule]
+    })
+  ]}
+  args={{
+    ariaLabel: 'Label',
+    value: 'Input text',
+    size: TextareaEnum.Large
+  }}
+/>
+
+export const Template = (args) => <TextareaComponent {...args} />
+
+# Textarea Large
+
+###### Selector
+
+```html
+// size: TextareaEnum.Large
+<p-textarea></p-textarea>
+```
+
+###### No Label
+<Canvas>
+  <p className="story-title">Default</p>
+  <Story name="Default"
+     args={{
+     }}>
+     {Template.bind({})}
+  </Story>
+  <p className="story-title">Error</p>
+  <Story name="Error State"
+    args={{
+        ariaLabel: 'Label',
+        value: null,
+        validators: Validators.required
+    }}>
+    {Template.bind({})}
+  </Story>
+  <p className="story-title">Error Message</p>
+  <Story name="Error Message"
+    args={{
+        ariaLabel: 'Label',
+        value: null,
+        validators: Validators.required,
+        errorMessage: 'Validation text',
+        matcher: new CustomErrorStateMatcher()
+    }}>
+    {Template.bind({})}
+  </Story>
+  <p className="story-title">Disabled</p>
+  <Story name="Regular Disabled"
+    args={{
+        ariaLabel: 'Label',
+        value: 'Input text',
+        disabled: true
+    }}>
+  {Template.bind({})}
+  </Story>
+  <p className="story-title">Readonly</p>
+  <Story name="Regular Readonly"
+    args={{
+        ariaLabel: 'Label',
+        value: 'Input text',
+        readonly: true
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Label
+<Canvas>
+  <p className="story-title">Regular</p>
+  <Story name="Label"
+     args={{
+         label: 'Label',
+         value: 'Input text',
+     }}>
+     {Template.bind({})}
+  </Story>
+  <p className="story-title">Error</p>
+  <Story name="Label Error State"
+    args={{
+        label: 'Label',
+        value: null,
+        validators: Validators.required
+    }}>
+    {Template.bind({})}
+  </Story>
+  <p className="story-title">Error Message</p>
+  <Story name="Label Error Message"
+    args={{
+        label: 'Label',
+        value: null,
+        validators: Validators.required,
+        errorMessage: 'Validation text',
+        matcher: new CustomErrorStateMatcher()
+    }}>
+    {Template.bind({})}
+  </Story>
+  <p className="story-title">Disabled</p>
+  <Story name="Label Regular Disabled"
+    args={{
+        label: 'Label',
+        value: 'Input text',
+        disabled: true
+    }}>
+  {Template.bind({})}
+  </Story>
+  <p className="story-title">Readonly</p>
+  <Story name="Label Regular Readonly"
+    args={{
+        ariaLabel: 'Label',
+        value: 'Input text',
+        readonly: true
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Component
+```ts
+export class TextareaComponent implements OnInit, OnDestroy {
+  @Input() label: string;
+  @Input() ariaLabel: string;
+  @Input() placeholder: string;
+  @Input() errorMessage: string;
+  @Input() disabled: boolean = false;
+  @Input() readonly: boolean = false;
+  @Input() value: string;
+  @Input() validators: ValidatorFn[];
+  @Input() matcher: ErrorStateMatcher;
+  @Input() size = TextareaEnum;
+  public formFieldControl: FormControl;
+  private sub: SubscriptionLike;
+
+  public get classes(): string[] {
+    const classParams = [];
+    this.readonly ? classParams.push('p-input-readonly') : null;
+    !this.errorMessage ? classParams.push('no-error-message') : null;
+    classParams.push(`${this.size}`);
+    return classParams;
+  }
+
+  ngOnInit(): void {
+    this.formFieldControl = new FormControl(
+      {value: this.value, disabled: this.disabled},
+      this.validators);
+  }
+
+  ngOnDestroy(): void {
+    if (this.sub) {
+      this.sub.unsubscribe();
+      this.sub = null;
+    }
+  }
+
+  clearValue(): void {
+    this.formFieldControl.setValue('');
+  }
+}
+```
+###### TextareaEnum
+```ts
+export enum TextareaEnum {
+  Small = 'small',
+  ExtendedHeight = 'extendedHeight',
+  Medium = 'medium',
+  Large = 'large'
+}
+```
+
+

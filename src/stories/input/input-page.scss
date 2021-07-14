@@ -1,6 +1,8 @@
 #numeric-input,
 #input-outline,
-#input-text {
+#input-text,
+#textarea-small,
+#textarea-extended-height {
   &~ .sbdocs .innerZoomElementWrapper > div {
     $label-width: 150px;
     $regular-item-width: 250px;
@@ -59,6 +61,20 @@
     }
     .story-title {
       line-height: 24px;
+    }
+  }
+}
+
+#textarea-medium,
+#textarea-large {
+  &~ .sbdocs .innerZoomElementWrapper > div {
+    $label-width: 150px;
+
+    &:nth-child(odd){
+      width: $label-width;
+    }
+    &:nth-child(even){
+      width: calc(100% - #{$label-width});
     }
   }
 }
