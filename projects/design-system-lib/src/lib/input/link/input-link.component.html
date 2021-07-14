@@ -16,7 +16,10 @@
          [formControl]="formFieldControl"
          [errorStateMatcher]="matcher"
          (click)="openModal()"
-         class="p-input-text-input">
+         class="p-input-text-input"
+         [matTooltip]="value"
+         matTooltipPosition="above"
+         matTooltipClass="p-tooltip above">
 
   <p-button *ngIf="formFieldControl.value !== ''"
             class="p-input-text-icon edit-link"
@@ -25,7 +28,10 @@
             [buttonType]="buttonType.IsIcon"
             iconBefore="link"
             iconBeforeWidth="16"
-            (onClickTask)="openModal()"></p-button>
+            (onClickTask)="openModal()"
+            matTooltip="Edit Link"
+            matTooltipPosition="above"
+            matTooltipClass="p-tooltip above"></p-button>
 
   <p-button *ngIf="formFieldControl.value !== ''"
             class="p-input-text-icon remove-link"
@@ -34,7 +40,10 @@
             [buttonType]="buttonType.IsIcon"
             iconBefore="link"
             iconBeforeWidth="16"
-            (onClickTask)="removeLink()"></p-button>
+            (onClickTask)="removeLink()"
+            matTooltip="Unlink"
+            matTooltipPosition="above"
+            matTooltipClass="p-tooltip above"></p-button>
 
   <mat-error *ngIf="formFieldControl.invalid"
              class="p-input-text-error">

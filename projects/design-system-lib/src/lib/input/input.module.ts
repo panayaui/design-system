@@ -17,6 +17,8 @@ import {InputTextTableLayoutComponent} from './table-layout/input-text-table-lay
 import {TextareaComponent} from './textarea/textarea.component';
 import {InputLinkComponent} from './link/input-link.component';
 import {ButtonModule} from '../button/button.module';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {ModalModule} from '../modal/modal.module';
 
 @NgModule({
   imports: [
@@ -29,7 +31,9 @@ import {ButtonModule} from '../button/button.module';
     MatNativeDateModule,
     IconModule,
     MatIconModule,
-    ButtonModule
+    ButtonModule,
+    MatTooltipModule,
+    ModalModule
   ],
   declarations: [
     InputNumericComponent,
