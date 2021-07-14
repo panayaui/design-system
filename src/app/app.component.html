@@ -1,43 +1,71 @@
 <!--<div>-->
-  <!--<p-menu-tab-group [menuTriggerName]="menuTriggerName"-->
-               <!--[menuList]="menuList"-->
-               <!--[footerBtnFirst]="footerBtnFirst"-->
-               <!--[footerBtnLast]="footerBtnLast"-->
-               <!--[filterAriaLabel]="filterAriaLabel"-->
-               <!--[filterPlaceholder]="filterPlaceholder"-->
-               <!--[headerBtnFirst]="headerBtnFirst"-->
-               <!--[headerBtnLast]="headerBtnLast"-->
-               <!--[checkboxList]="checkboxList"></p-menu-tab-group>-->
+<!--<p-menu-tabs [menuTriggerName]="menuTriggerName"-->
+<!--[menuList]="menuList"-->
+<!--[footerBtnFirst]="footerBtnFirst"-->
+<!--[footerBtnLast]="footerBtnLast"-->
+<!--[filterAriaLabel]="filterAriaLabel"-->
+<!--[filterPlaceholder]="filterPlaceholder"-->
+<!--[headerBtnFirst]="headerBtnFirst"-->
+<!--[headerBtnLast]="headerBtnLast"-->
+<!--[checkboxList]="checkboxList"></p-menu-tabs>-->
 <!--</div>-->
 
+<!--<button #tooltip="matTooltip"-->
+<!--[matTooltip]="'message'"-->
+<!--[matTooltipClass]="'p-tooltip'"-->
+<!--class="p-btn p-btn-small p-btn-primary"-->
+<!--&gt;-->
+<!--Hover-->
+<!--</button>-->
 
+<!--<p-button iconAfter="chevron-down"-->
+<!--iconAfterWidth="17"-->
+<!--iconAfterHeight="17"-->
+<!--[label]="menuTriggerName"-->
+<!--[buttonType]="'tertiary'" ></p-button>-
 <!--<p class="paragraph-3-semibold">some words</p>-->
 
 <!--<p-input-header [value]="'some text'"></p-input-header>-->
 
 <!--<p-input-text [value]="'some text'"></p-input-text>-->
 
-<!--<p-menu-multi-select-->
-<!--[menuTriggerName]="'trigger'"-->
-<!--[menuList]="menuList"-->
-<!--[headerBtnFirst]="headerBtnFirst"-->
-<!--[headerBtnLast]="headerBtnLast"-->
-<!--[footerBtnFirst]="footerBtnFirst"-->
-<!--[footerBtnLast]="footerBtnLast"></p-menu-multi-select>-->
+<p-menu-single-select [menuList]="menuList">
+<p-label-main label="trigger"
+[type]="labelType.CRITICAL"
+[isTriggerMenu]="true"></p-label-main>
+</p-menu-single-select>
 
-<!--<p-menu-single-select-->
-<!--[menuTriggerName]="'trigger'"-->
-<!--[menuList]="menuList"></p-menu-single-select>-->
+<p-menu-multi-select [menuList]="menuList"
+[headerBtnFirst]="headerBtnFirst"
+[headerBtnLast]="headerBtnLast"
+[footerBtnFirst]="footerBtnFirst"
+[footerBtnLast]="footerBtnLast">
+<p-input-text [value]="'Menu Multiple'"></p-input-text>
+</p-menu-multi-select>
 
-<p-tab-group [tabGroup]="tabGroup"></p-tab-group>
+<p-menu-tabs [menuList]="menuList"
+[headerBtnFirst]="headerBtnFirst"
+[headerBtnLast]="headerBtnLast"
+[footerBtnFirst]="footerBtnFirst"
+[footerBtnLast]="footerBtnLast">
+<p-input-text [value]="'Menu Tabs'"></p-input-text>
+</p-menu-tabs>
+
+<p-menu-radio-group [menuList]="menuListRadio"
+                    [footerBtnFirst]="footerBtnFirst"
+                    [footerBtnLast]="footerBtnLast">
+  <p-input-text [value]="'Menu Radio Group'"></p-input-text>
+</p-menu-radio-group>
 
 
+<p-menu-free-text [menuList]="menuListFreeText"
+[footerBtnFirst]="footerBtnFirst"
+[footerBtnLast]="footerBtnLast">
+<p-input-text [value]="'Menu Free Text'"></p-input-text>
+</p-menu-free-text>
 
-<button #tooltip="matTooltip"
-        [matTooltip]="'message'"
-        [matTooltipClass]="'p-tooltip left'"
-        [matTooltipPosition]="'above'"
-        class="p-btn p-btn-small p-btn-primary"
->
-  Hover
-</button>
+<p-menu-range [inputMax]="inputMax" [inputMin]="inputMin"
+[footerBtnFirst]="footerBtnFirst"
+[footerBtnLast]="footerBtnLast">
+<p-input-text [value]="'Menu Range'"></p-input-text>
+</p-menu-range>

@@ -4,14 +4,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-import {
-  ButtonModule,
-  CheckboxModule,
-  InputModule,
-  MenuModule,
-  TabGroupComponent,
-  TabGroupModule
-} from 'projects/design-system-lib/src/public-api';
+import {ButtonModule, CheckboxModule, InputModule, LabelModule, MenuModule} from 'projects/design-system-lib/src/public-api';
 import {AlertModule} from 'projects/design-system-lib/src/lib/alert/alert.module';
 import {CommonModule} from '@angular/common';
 import {MatMenuModule} from '@angular/material/menu';
@@ -31,7 +24,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatTooltipModule,
     BrowserAnimationsModule,
     InputModule,
-    TabGroupModule
+    ButtonModule,
+    LabelModule
   ],
   providers: [],
   bootstrap: [AppComponent]

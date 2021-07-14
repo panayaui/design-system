@@ -1,13 +1,8 @@
 <div class="p-menu-trigger"
      [matMenuTriggerFor]="menu"
      #menuTrigger="matMenuTrigger">
-  <p-button iconAfter="chevron-down"
-            iconAfterWidth="17"
-            iconAfterHeight="17"
-            [label]="menuTriggerName"
-            [buttonType]="'tertiary'" ></p-button>
+  <ng-content></ng-content>
 </div>
-
 
 <!--menu-single-select window-->
 <mat-menu #menu="matMenu" class="p-menu p-menu-single" [overlapTrigger]="false">
