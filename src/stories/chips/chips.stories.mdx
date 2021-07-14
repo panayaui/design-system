@@ -18,21 +18,18 @@ import {ChipsModule} from 'projects/design-system-lib/src/public-api';
       {
         label: 'Type',
         iconRemove: true,
-        iconMenuTrigger: true,
         values: ['Defect'],
         full: true
       },
       {
         label: 'Dev owner',
         iconRemove: true,
-        iconMenuTrigger: true,
         values: ['James Lee', 'Niv Dan'],
         full: true
       },
       {
         label: 'Creation date',
         iconRemove: true,
-        iconMenuTrigger: true,
         values: ['All'],
         full: false
       }
@@ -65,21 +62,18 @@ export const Template = (args) => <ChipsComponent {...args} />
         {
           label: 'Type',
           iconRemove: false,
-          iconMenuTrigger: true,
           values: ['Defect'],
           full: true
         },
         {
           label: 'Dev owner',
           iconRemove: false,
-          iconMenuTrigger: true,
           values: ['James Lee', 'Niv Dan'],
           full: true
         },
         {
           label: 'Creation date',
           iconRemove: false,
-          iconMenuTrigger: true,
           values: ['All'],
           full: false
         }
@@ -95,7 +89,6 @@ export interface IChip {
   label: string;
   values?: string[];
   iconRemove?: boolean;
-  iconMenuTrigger?: boolean;
   full?: boolean;
   active?: boolean;
 }

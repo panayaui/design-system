@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {IChip} from '../chip-button.interface';
+import {ButtonTypeEnum} from '../../button/button-type.enum';
 
 @Component({
   selector: 'p-chips',
@@ -9,6 +10,7 @@ import {IChip} from '../chip-button.interface';
 export class ChipsComponent {
   @Input() chips: IChip[];
   @Input() ariaLabel: string;
+  public buttonType = ButtonTypeEnum;
 
   valuesInTooltip(values: string[]): string {
     let tooltipText = '';
