@@ -1565,7 +1565,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<!--<div>-->\r\n<!--<p-menu-tabs [menuTriggerName]=\"menuTriggerName\"-->\r\n<!--[menuList]=\"menuList\"-->\r\n<!--[footerBtnFirst]=\"footerBtnFirst\"-->\r\n<!--[footerBtnLast]=\"footerBtnLast\"-->\r\n<!--[filterAriaLabel]=\"filterAriaLabel\"-->\r\n<!--[filterPlaceholder]=\"filterPlaceholder\"-->\r\n<!--[headerBtnFirst]=\"headerBtnFirst\"-->\r\n<!--[headerBtnLast]=\"headerBtnLast\"-->\r\n<!--[checkboxList]=\"checkboxList\"></p-menu-tabs>-->\r\n<!--</div>-->\r\n\r\n<!--<button #tooltip=\"matTooltip\"-->\r\n<!--[matTooltip]=\"'message'\"-->\r\n<!--[matTooltipClass]=\"'p-tooltip'\"-->\r\n<!--class=\"p-btn p-btn-small p-btn-primary\"-->\r\n<!--&gt;-->\r\n<!--Hover-->\r\n<!--</button>-->\r\n\r\n<!--<p-button iconAfter=\"chevron-down\"-->\r\n<!--iconAfterWidth=\"17\"-->\r\n<!--iconAfterHeight=\"17\"-->\r\n<!--[label]=\"menuTriggerName\"-->\r\n<!--[buttonType]=\"'tertiary'\" ></p-button>-\r\n<!--<p class=\"paragraph-3-semibold\">some words</p>-->\r\n\r\n<!--<p-input-header [value]=\"'some text'\"></p-input-header>-->\r\n\r\n<!--<p-input-text [value]=\"'some text'\"></p-input-text>-->\r\n\r\n<!--<p-menu-single-select [menuList]=\"menuList\">-->\r\n<!--<p-label-main label=\"trigger\"-->\r\n<!--[type]=\"labelType.CRITICAL\"-->\r\n<!--[isTriggerMenu]=\"true\"></p-label-main>-->\r\n<!--</p-menu-single-select>-->\r\n\r\n<!--<p-menu-multi-select [menuList]=\"menuList\"-->\r\n<!--[headerBtnFirst]=\"headerBtnFirst\"-->\r\n<!--[headerBtnLast]=\"headerBtnLast\"-->\r\n<!--[footerBtnFirst]=\"footerBtnFirst\"-->\r\n<!--[footerBtnLast]=\"footerBtnLast\">-->\r\n<!--<p-input-text [value]=\"'Menu Multiple'\"></p-input-text>-->\r\n<!--</p-menu-multi-select>-->\r\n\r\n<!--<p-menu-tabs [menuList]=\"menuList\"-->\r\n<!--[headerBtnFirst]=\"headerBtnFirst\"-->\r\n<!--[headerBtnLast]=\"headerBtnLast\"-->\r\n<!--[footerBtnFirst]=\"footerBtnFirst\"-->\r\n<!--[footerBtnLast]=\"footerBtnLast\">-->\r\n<!--<p-input-text [value]=\"'Menu Tabs'\"></p-input-text>-->\r\n<!--</p-menu-tabs>-->\r\n\r\n<p-menu-radio-group [menuList]=\"menuListRadio\"\r\n                    [footerBtnFirst]=\"footerBtnFirst\"\r\n                    [footerBtnLast]=\"footerBtnLast\">\r\n  <p-input-text [value]=\"'Menu Radio Group'\"></p-input-text>\r\n</p-menu-radio-group>\r\n\r\n\r\n<!--<p-menu-free-text [menuList]=\"menuListFreeText\"-->\r\n<!--[footerBtnFirst]=\"footerBtnFirst\"-->\r\n<!--[footerBtnLast]=\"footerBtnLast\">-->\r\n<!--<p-input-text [value]=\"'Menu Free Text'\"></p-input-text>-->\r\n<!--</p-menu-free-text>-->\r\n\r\n<!--<p-menu-range [inputMax]=\"inputMax\" [inputMin]=\"inputMin\"-->\r\n<!--[footerBtnFirst]=\"footerBtnFirst\"-->\r\n<!--[footerBtnLast]=\"footerBtnLast\">-->\r\n<!--<p-input-text [value]=\"'Menu Range'\"></p-input-text>-->\r\n<!--</p-menu-range>-->\r\n"
+            "templateData": "<p-menu-single-select [menuList]=\"menuList\">\r\n  <p-input-text [value]=\"'Menu Multiple'\"></p-input-text>\r\n</p-menu-single-select>\r\n\r\n<p-menu-multi-select [menuList]=\"menuList\"\r\n[headerBtnFirst]=\"headerBtnFirst\"\r\n[headerBtnLast]=\"headerBtnLast\"\r\n[footerBtnFirst]=\"footerBtnFirst\"\r\n[footerBtnLast]=\"footerBtnLast\">\r\n<p-input-text [value]=\"'Menu Multiple'\"></p-input-text>\r\n</p-menu-multi-select>\r\n\r\n<p-menu-tabs [menuList]=\"menuList\"\r\n[headerBtnFirst]=\"headerBtnFirst\"\r\n[headerBtnLast]=\"headerBtnLast\"\r\n[footerBtnFirst]=\"footerBtnFirst\"\r\n[footerBtnLast]=\"footerBtnLast\">\r\n<p-input-text [value]=\"'Menu Tabs'\"></p-input-text>\r\n</p-menu-tabs>\r\n\r\n<p-menu-radio-group [menuList]=\"menuListRadio\"\r\n                    [footerBtnFirst]=\"footerBtnFirst\"\r\n                    [footerBtnLast]=\"footerBtnLast\">\r\n  <p-input-text [value]=\"'Menu Radio Group'\"></p-input-text>\r\n</p-menu-radio-group>\r\n\r\n\r\n<p-menu-free-text [menuList]=\"menuListFreeText\"\r\n[footerBtnFirst]=\"footerBtnFirst\"\r\n[footerBtnLast]=\"footerBtnLast\">\r\n<p-input-text [value]=\"'Menu Free Text'\"></p-input-text>\r\n</p-menu-free-text>\r\n\r\n<p-menu-range [inputMax]=\"inputMax\" [inputMin]=\"inputMin\"\r\n[footerBtnFirst]=\"footerBtnFirst\"\r\n[footerBtnLast]=\"footerBtnLast\">\r\n<p-input-text [value]=\"'Menu Range'\"></p-input-text>\r\n</p-menu-range>\r\n"
         },
         {
             "name": "ButtonComponent",
@@ -2242,6 +2242,196 @@
             ],
             "stylesData": "",
             "templateData": "<div class=\"page\">\r\n  <header class=\"page-header\">\r\n    <h1 class=\"page-title\">Colors / <span class=\"page-title-highlighted\">Scheme</span></h1>\r\n  </header>\r\n\r\n  <main class=\"page-main\">\r\n    <div *ngIf=\"palette\" class=\"color-scheme\">\r\n      <div *ngFor=\"let group of palette | keyvalue: originalOrder\"\r\n           class=\"color-scheme-group {{group.key}}\">\r\n        <ng-template [ngIf]=\"group.key === 'gray'\" [ngIfElse]=\"regularTitle\">\r\n          <h2 class=\"color-scheme-title\">Grayscale</h2>\r\n        </ng-template>\r\n\r\n        <ng-template #regularTitle>\r\n          <h2 class=\"color-scheme-title\">{{group.key}}</h2>\r\n        </ng-template>\r\n\r\n        <div class=\"color-scheme-container\">\r\n          <div *ngFor=\"let column of group.value | keyvalue: originalOrder\"\r\n               class=\"color-column color-{{group.key}}-{{column.key}}\">\r\n            <div *ngFor=\"let box of column.value | keyvalue: reverseKeyOrder\"\r\n                 class=\"color-box {{group.key}}-{{column.key}}-{{box.key}} {{box.value.labelColor}}\">\r\n              <p class=\"color-box-class\">${{group.key}}-{{column.key}}-{{box.key}}</p>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </main>\r\n</div>\r\n"
+        },
+        {
+            "name": "ComboComponent",
+            "id": "component-ComboComponent-692e27aecff76e18a19bfd4281da20a1",
+            "file": "src/stories/menu/combo-box/combo.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-combo",
+            "styleUrls": [
+                "./combo.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./combo.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "buttonFirst",
+                    "line": 15,
+                    "type": "IMenuButton"
+                },
+                {
+                    "name": "buttonLast",
+                    "line": 16,
+                    "type": "IMenuButton"
+                },
+                {
+                    "name": "data",
+                    "defaultValue": "{\r\n    icon: { iconName: 'bell'},\r\n    messageMain: 'Notification message.',\r\n    actionName: 'Action',\r\n    messageSub: 'Notification message.',\r\n    closeBtnName: 'Close'\r\n  }",
+                    "line": 19
+                },
+                {
+                    "name": "singleMenuList",
+                    "line": 14,
+                    "type": "any"
+                },
+                {
+                    "name": "singleMenuTrigger",
+                    "line": 13,
+                    "type": "IActionButton"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "checkboxList",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 34
+                },
+                {
+                    "name": "filterAriaLabel",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 30
+                },
+                {
+                    "name": "filterPlaceholder",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 31
+                },
+                {
+                    "name": "footerBtnFirst",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 28
+                },
+                {
+                    "name": "footerBtnLast",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 29
+                },
+                {
+                    "name": "headerBtnFirst",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 32
+                },
+                {
+                    "name": "headerBtnLast",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 33
+                },
+                {
+                    "name": "inputMax",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 40
+                },
+                {
+                    "name": "inputMin",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 39
+                },
+                {
+                    "name": "labelType",
+                    "defaultValue": "LabelTypesEnum",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 36
+                },
+                {
+                    "name": "menuList",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 27
+                },
+                {
+                    "name": "menuListFreeText",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 38
+                },
+                {
+                    "name": "menuListRadio",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 37
+                },
+                {
+                    "name": "menuTriggerName",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 26
+                },
+                {
+                    "name": "validator",
+                    "defaultValue": "Validators.required",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 35
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 44
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport {ButtonTypeEnum, IActionButton, IMenuButton} from 'projects/design-system-lib/src/public-api';\r\nimport {Validators} from '@angular/forms';\r\nimport {LabelTypesEnum} from 'projects/design-system-lib/src/lib/labels/label-types.enum';\r\n\r\n@Component({\r\n  selector: 'p-combo',\r\n  templateUrl: './combo.component.html',\r\n  styleUrls: ['./combo.component.scss']\r\n})\r\nexport class ComboComponent implements OnInit {\r\n  // single select + action button\r\n  @Input() singleMenuTrigger: IActionButton;\r\n  @Input() singleMenuList: any;\r\n  @Input() buttonFirst: IMenuButton;\r\n  @Input() buttonLast: IMenuButton;\r\n\r\n\r\n  @Input() data = {\r\n    icon: { iconName: 'bell'},\r\n    messageMain: 'Notification message.',\r\n    actionName: 'Action',\r\n    messageSub: 'Notification message.',\r\n    closeBtnName: 'Close'\r\n  };\r\n  menuTriggerName: string;\r\n  menuList: any;\r\n  footerBtnFirst: any;\r\n  footerBtnLast: any;\r\n  filterAriaLabel: string;\r\n  filterPlaceholder: string;\r\n  headerBtnFirst: any;\r\n  headerBtnLast: any;\r\n  checkboxList: any;\r\n  validator = Validators.required;\r\n  labelType = LabelTypesEnum;\r\n  menuListRadio: any;\r\n  menuListFreeText: any;\r\n  inputMin: any;\r\n  inputMax: any;\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {\r\n    this.menuTriggerName = 'Menu';\r\n    this.menuList = [\r\n      { name: 'Alabama',\r\n        disabled: false\r\n      },\r\n      { name: 'Alaska disabled',\r\n        disabled: true\r\n      },\r\n      { name: 'California',\r\n        disabled: false\r\n      },\r\n      { name: 'Colorado',\r\n        disabled: false\r\n      },\r\n      { name: 'Delaware',\r\n        disabled: false\r\n      },\r\n      { name: 'Florida selected disabled',\r\n        disabled: true,\r\n        selected: true\r\n      },\r\n      { name: 'Georgia',\r\n        disabled: false\r\n      },\r\n      { name: 'Hawaii',\r\n        disabled: false\r\n      },\r\n      { name: 'Idaho',\r\n        disabled: true\r\n      },\r\n      { name: 'Illinois',\r\n        disabled: false\r\n      },\r\n      { name: 'Indiana',\r\n        disabled: false\r\n      },\r\n      { name: 'Iowa',\r\n        disabled: false\r\n      },\r\n      { name: 'Kansas',\r\n        disabled: true,\r\n        selected: true\r\n      },\r\n      { name: 'Kentucky',\r\n        disabled: false\r\n      }\r\n    ];\r\n\r\n    this.footerBtnFirst = {\r\n      label: 'Done',\r\n      buttonType: ButtonTypeEnum.Primary\r\n    };\r\n    this.footerBtnLast = {\r\n      label: 'Cancel',\r\n      buttonType: ButtonTypeEnum.Secondary\r\n    };\r\n    this.filterAriaLabel = 'Find Label';\r\n    this.filterPlaceholder = 'Find Label';\r\n\r\n    this.headerBtnFirst = {\r\n      label: 'Clear selected',\r\n      buttonType: ButtonTypeEnum.Tertiary,\r\n      icon: {\r\n        iconName: 'eraser',\r\n        width: '15',\r\n        height: '15'\r\n      }\r\n    };\r\n    this.headerBtnLast = {\r\n      label: 'Not equal to'\r\n    };\r\n    this.checkboxList = [\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Next'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      }\r\n    ];\r\n    this.menuListRadio =  [\r\n      { label: 'All' },\r\n      { label: 'Today' },\r\n      { label: 'Yesterday' },\r\n      { label: 'Tomorrow' },\r\n      { label: 'This',\r\n        menuList: [\r\n          { name: 'week (Starts Sunday)', selected: true},\r\n          { name: 'week (Starts Monday)'},\r\n          { name: 'month'},\r\n          { name: 'year'}\r\n        ]\r\n      },\r\n      { label: 'Last',\r\n        numericInputValue: 1,\r\n        menuList: [\r\n          { name: 'Day(s)', selected: true},\r\n          { name: 'Week(s)'},\r\n          { name: 'Month(s)'},\r\n          { name: 'Year(s)'}\r\n        ]\r\n      },\r\n      { label: 'Next',\r\n        numericInputValue: 1,\r\n        menuList: [\r\n          { name: 'Day(s)', selected: true},\r\n          { name: 'Week(s)'},\r\n          { name: 'Month(s)'},\r\n          { name: 'Year(s)'}\r\n        ]\r\n      },\r\n      { label: 'Blanks' },\r\n      { label: 'Between',\r\n        dateStart: {\r\n          ariaLabel: 'date start'\r\n        },\r\n        dateEnd: {\r\n          ariaLabel: 'date start'\r\n        }\r\n      }\r\n    ];\r\n    this.menuListFreeText = [\r\n      { name: 'Contains', inputValue: '', selected: true },\r\n      { name: 'Not contains', inputValue: 'smth', selected: false },\r\n      { name: 'Empty', selected: false },\r\n      { name: 'Not empty', selected: false }\r\n    ];\r\n    this.inputMin = { label: 'Min', value: null };\r\n    this.inputMax = { label: 'Max', value: 1 };\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./combo.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 40
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "combo\r\n\r\n<!--<div *ngIf=\"singleMenuTrigger.label\">-->\r\n  <!--<p-menu-single-select [singleMenuList]=\"menuList\"-->\r\n                        <!--[buttonFirst]=\"buttonFirst\"-->\r\n                        <!--[buttonLast]=\"buttonLast\">-->\r\n    <!--<p-action-button [label]=\"singleMenuTrigger.label\"-->\r\n                     <!--[iconBeforeName]=\"singleMenuTrigger.iconBeforeName\"-->\r\n                     <!--[iconBeforeWidth]=\"singleMenuTrigger.iconBeforeWidth\"-->\r\n                     <!--[iconBeforeHeight]=\"singleMenuTrigger.iconBeforeHeight\"-->\r\n                     <!--[iconBeforeStrokeWidth]=singleMenuTrigger.iconBeforeStrokeWidth\"-->\r\n                     <!--[iconBeforeStrokeColor]=\"singleMenuTrigger.iconBeforeStrokeColor\"-->\r\n                     <!--[isMenuTrigger]=\"true\"-->\r\n                     <!--[isStandalone]=\"singleMenuTrigger.isStandalone\"></p-action-button>-->\r\n  <!--</p-menu-single-select>-->\r\n<!--</div>-->\r\n\r\n\r\n<!--<p-menu-multi-select [menuList]=\"menuList\"-->\r\n<!--[headerBtnFirst]=\"headerBtnFirst\"-->\r\n<!--[headerBtnLast]=\"headerBtnLast\"-->\r\n<!--[footerBtnFirst]=\"footerBtnFirst\"-->\r\n<!--[footerBtnLast]=\"footerBtnLast\">-->\r\n<!--<p-input-text [value]=\"'Menu Multiple'\"></p-input-text>-->\r\n<!--</p-menu-multi-select>-->\r\n\r\n<!--<p-menu-tabs [menuList]=\"menuList\"-->\r\n<!--[headerBtnFirst]=\"headerBtnFirst\"-->\r\n<!--[headerBtnLast]=\"headerBtnLast\"-->\r\n<!--[footerBtnFirst]=\"footerBtnFirst\"-->\r\n<!--[footerBtnLast]=\"footerBtnLast\">-->\r\n<!--<p-input-text [value]=\"'Menu Tabs'\"></p-input-text>-->\r\n<!--</p-menu-tabs>-->\r\n\r\n<!--<p-menu-radio-group [menuList]=\"menuListRadio\"-->\r\n                    <!--[footerBtnFirst]=\"footerBtnFirst\"-->\r\n                    <!--[footerBtnLast]=\"footerBtnLast\">-->\r\n  <!--<p-input-text [value]=\"'Menu Radio Group'\"></p-input-text>-->\r\n<!--</p-menu-radio-group>-->\r\n\r\n\r\n<!--<p-menu-free-text [menuList]=\"menuListFreeText\"-->\r\n<!--[footerBtnFirst]=\"footerBtnFirst\"-->\r\n<!--[footerBtnLast]=\"footerBtnLast\">-->\r\n<!--<p-input-text [value]=\"'Menu Free Text'\"></p-input-text>-->\r\n<!--</p-menu-free-text>-->\r\n\r\n<!--<p-menu-range [inputMax]=\"inputMax\" [inputMin]=\"inputMin\"-->\r\n<!--[footerBtnFirst]=\"footerBtnFirst\"-->\r\n<!--[footerBtnLast]=\"footerBtnLast\">-->\r\n<!--<p-input-text [value]=\"'Menu Range'\"></p-input-text>-->\r\n<!--</p-menu-range>-->\r\n"
         },
         {
             "name": "DatepickerComponent",
@@ -6274,6 +6464,59 @@
             ]
         },
         {
+            "name": "ComboModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ComboComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "ActionButtonModule"
+                        },
+                        {
+                            "name": "ButtonModule"
+                        },
+                        {
+                            "name": "InputModule"
+                        },
+                        {
+                            "name": "LabelModule"
+                        },
+                        {
+                            "name": "MenuModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ComboComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "IconModule",
             "children": [
                 {
@@ -6945,6 +7188,14 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
+                "type": "Story<CheckboxGroupComponent>",
+                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "PageTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
                 "type": "Story<CheckboxGroupPageComponent>",
                 "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
@@ -6956,14 +7207,6 @@
                 "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
                 "type": "Story<CheckboxPageComponent>",
                 "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "PageTemplate",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
-                "type": "Story<CheckboxGroupComponent>",
-                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -7047,17 +7290,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/colors/Color-palette.stories.ts",
-                "type": "Story<ColorPaletteComponent>",
-                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/icons/icon.stories.ts",
+                "type": "Story<IconComponent>",
+                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/icons/icon.stories.ts",
-                "type": "Story<IconComponent>",
-                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/colors/Color-palette.stories.ts",
+                "type": "Story<ColorPaletteComponent>",
+                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -7071,17 +7314,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/styles/typography-styles.stories.ts",
-                "type": "Story<TypographyStylesComponent>",
-                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
+                "type": "Story<TypographyFontFamilyComponent>",
+                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
-                "type": "Story<TypographyFontFamilyComponent>",
-                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/styles/typography-styles.stories.ts",
+                "type": "Story<TypographyStylesComponent>",
+                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Toggles",
@@ -8709,6 +8952,15 @@
                 "name": "CustomErrorStateMatcher",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/menu/combo-box/combo.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ComboComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/23",
                 "status": "low"
             },
             {

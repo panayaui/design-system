@@ -1,0 +1,50 @@
+<ng-container *ngIf="singleMenuTrigger.label">
+  <p-menu-single-select [menuList]="singleMenuList"
+                        [buttonFirst]="buttonFirst"
+                        [buttonLast]="buttonLast">
+    <p-action-button [label]="singleMenuTrigger.label"
+                     [iconBeforeName]="singleMenuTrigger.iconBeforeName"
+                     [iconBeforeWidth]="singleMenuTrigger.iconBeforeWidth"
+                     [iconBeforeHeight]="singleMenuTrigger.iconBeforeHeight"
+                     [iconBeforeStrokeWidth]="singleMenuTrigger.iconBeforeStrokeWidth"
+                     [iconBeforeStrokeColor]="singleMenuTrigger.iconBeforeStrokeColor"
+                     [isMenuTrigger]="true"
+                     [isStandalone]="singleMenuTrigger.isStandalone"></p-action-button>
+  </p-menu-single-select>
+</ng-container>
+
+
+<!--<p-menu-multi-select [menuList]="menuList"-->
+<!--[headerBtnFirst]="headerBtnFirst"-->
+<!--[headerBtnLast]="headerBtnLast"-->
+<!--[footerBtnFirst]="footerBtnFirst"-->
+<!--[footerBtnLast]="footerBtnLast">-->
+<!--<p-input-text [value]="'Menu Multiple'"></p-input-text>-->
+<!--</p-menu-multi-select>-->
+
+<!--<p-menu-tabs [menuList]="menuList"-->
+<!--[headerBtnFirst]="headerBtnFirst"-->
+<!--[headerBtnLast]="headerBtnLast"-->
+<!--[footerBtnFirst]="footerBtnFirst"-->
+<!--[footerBtnLast]="footerBtnLast">-->
+<!--<p-input-text [value]="'Menu Tabs'"></p-input-text>-->
+<!--</p-menu-tabs>-->
+
+<!--<p-menu-radio-group [menuList]="menuListRadio"-->
+                    <!--[footerBtnFirst]="footerBtnFirst"-->
+                    <!--[footerBtnLast]="footerBtnLast">-->
+  <!--<p-input-text [value]="'Menu Radio Group'"></p-input-text>-->
+<!--</p-menu-radio-group>-->
+
+
+<!--<p-menu-free-text [menuList]="menuListFreeText"-->
+<!--[footerBtnFirst]="footerBtnFirst"-->
+<!--[footerBtnLast]="footerBtnLast">-->
+<!--<p-input-text [value]="'Menu Free Text'"></p-input-text>-->
+<!--</p-menu-free-text>-->
+
+<!--<p-menu-range [inputMax]="inputMax" [inputMin]="inputMin"-->
+<!--[footerBtnFirst]="footerBtnFirst"-->
+<!--[footerBtnLast]="footerBtnLast">-->
+<!--<p-input-text [value]="'Menu Range'"></p-input-text>-->
+<!--</p-menu-range>-->
