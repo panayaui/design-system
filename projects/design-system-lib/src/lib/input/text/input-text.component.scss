@@ -36,7 +36,7 @@
       box-shadow: inset 0px -1px 0px $gray-scale-600;
     }
     &.mat-form-field.mat-focused .mat-form-field-underline,
-    &:not(.mat-form-field-disabled):not(.mat-form-field-invalid)
+    &:not(.p-input-link):not(.mat-form-field-disabled):not(.mat-form-field-invalid)
             .mat-form-field-flex:hover~.mat-form-field-underline {
       background-color: transparent;
       box-shadow: inset 0px -1px 0px $primary-a-900;
@@ -76,7 +76,7 @@
     }
 
     // readonly
-    &.p-input-text-readonly {
+    &.p-input-text-readonly:not(.p-input-link) {
       &:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover~.mat-form-field-underline,
 
       .mat-form-field-underline {

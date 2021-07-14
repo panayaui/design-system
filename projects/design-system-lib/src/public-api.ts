@@ -27,6 +27,7 @@ export * from './lib/input/header/input-header.component';
 export * from './lib/input/datepicker/datepicker.component';
 export * from './lib/input/textarea/textarea.component';
 export * from './lib/input/textarea/textarea.enum';
+export * from './lib/input/link/input-link.component';
 
 export * from './lib/alert/alert.module';
 export * from './lib/alert/alert.component';

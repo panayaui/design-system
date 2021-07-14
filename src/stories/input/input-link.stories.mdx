@@ -1,0 +1,59 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+import {InputLinkComponent} from 'projects/design-system-lib/src/public-api';
+import {InputModule} from 'projects/design-system-lib/src/public-api';
+import {Validators} from '@angular/forms';
+import {CustomErrorStateMatcher} from './custom-error-state-matcher';
+
+<Meta title='Components/Input/Link'
+  component={InputLinkComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [InputModule]
+    })
+  ]}
+  args={{
+    ariaLabel: 'Label',
+    placeholder: 'Add link',
+    value: ''
+  }}
+/>
+
+export const Template = (args) => <InputLinkComponent {...args} />
+
+# Input Link
+
+###### Selector
+
+```html
+  <p-input-link></p-input-link>
+```
+
+###### No Value
+<Canvas>
+  <Story name="No value"
+     args={{
+     }}>
+     {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Value Entered
+<Canvas>
+  <Story name="Value entered"
+     args={{
+        value: 'Email notification view in different situations',
+     }}>
+     {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Component
+```ts
+export class InputTextComponent implements OnInit {
+
+
+```
+
+
+

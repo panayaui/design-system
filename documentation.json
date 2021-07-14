@@ -2696,6 +2696,112 @@
             "templateData": "<mat-form-field class=\"p-input-outline p-input-header\"\r\n                appearance=\"outline\"\r\n                [class.p-input-readonly]=\"readonlyState\"\r\n                floatLabel=\"always\">\r\n\r\n  <input matInput\r\n         #inputField\r\n         [type]=\"type\"\r\n         [placeholder]=\"placeholder\"\r\n         [readonly]=\"readonlyState\"\r\n         attr.aria-label=\"{{ariaLabel}}\"\r\n         [formControl]=\"formFieldControl\"\r\n         [errorStateMatcher]=\"matcher\"\r\n         autocomplete=\"off\"\r\n         (focus)=\"onInputFocused()\"\r\n         (blur)=\"onInputBlur()\"\r\n         class=\"p-input-text-input\"\r\n         [class.readonly]=\"readonlyState\">\r\n\r\n  <p-icon class=\"p-input-outline-icon\"\r\n          matSuffix\r\n          iconName=\"edit-3\"\r\n          width=\"18\"\r\n          height=\"auto\">\r\n  </p-icon>\r\n\r\n</mat-form-field>\r\n"
         },
         {
+            "name": "InputLinkComponent",
+            "id": "component-InputLinkComponent-6d588a660bb078313ef32edc10c900f2",
+            "file": "projects/design-system-lib/src/lib/input/link/input-link.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-input-link",
+            "styleUrls": [
+                "./input-link.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./input-link.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "ariaLabel",
+                    "line": 11,
+                    "type": "string"
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "line": 14,
+                    "type": "boolean"
+                },
+                {
+                    "name": "errorMessage",
+                    "line": 13,
+                    "type": "string"
+                },
+                {
+                    "name": "matcher",
+                    "line": 17,
+                    "type": "ErrorStateMatcher"
+                },
+                {
+                    "name": "placeholder",
+                    "line": 12,
+                    "type": "string"
+                },
+                {
+                    "name": "validators",
+                    "line": 16,
+                    "type": "ValidatorFn[]"
+                },
+                {
+                    "name": "value",
+                    "line": 15,
+                    "type": "string"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "formFieldControl",
+                    "type": "FormControl",
+                    "optional": false,
+                    "description": "",
+                    "line": 18,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20
+                },
+                {
+                    "name": "openModal",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 26
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport {FormControl, ValidatorFn} from '@angular/forms';\r\nimport {ErrorStateMatcher} from '@angular/material/core';\r\n\r\n@Component({\r\n  selector: 'p-input-link',\r\n  templateUrl: './input-link.component.html',\r\n  styleUrls: ['./input-link.component.scss'],\r\n})\r\nexport class InputLinkComponent implements OnInit {\r\n  @Input() ariaLabel: string;\r\n  @Input() placeholder: string;\r\n  @Input() errorMessage: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() value: string;\r\n  @Input() validators: ValidatorFn[];\r\n  @Input() matcher: ErrorStateMatcher;\r\n  public formFieldControl: FormControl;\r\n\r\n  ngOnInit(): void {\r\n    this.formFieldControl = new FormControl(\r\n      {value: this.value, disabled: this.disabled},\r\n      this.validators);\r\n  }\r\n\r\n  openModal(): void {\r\n    console.log('modal');\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n.p-input-text {\r\n  ::ng-deep & {\r\n    // material styles override\r\n    &.mat-form-field-appearance-standard.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {\r\n      width: 100%;\r\n      transform: translateY(-23px);\r\n    }\r\n    .mat-form-field-label-wrapper {\r\n      top: -16px;\r\n      padding-top: 16px;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-label,\r\n    &.mat-form-field.mat-form-field-invalid .mat-form-field-label {\r\n      color: $gray-scale-700;\r\n    }\r\n    .p-input-text-input {\r\n      font-family: $font-family-basic;\r\n      font-size: $small-font-size;\r\n      max-width: $input-text-width - $input-text-padding;\r\n      line-height: 20px;\r\n      color: $primary-a-900;\r\n      padding-left: $input-text-padding;\r\n      caret-color: $primary-a-900;\r\n    }\r\n    .mat-form-field-infix {\r\n      width: $input-text-width;\r\n      padding-bottom: 6px;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-flex {\r\n      padding-top: 0;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $gray-scale-600;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-underline,\r\n    &:not(.mat-form-field-disabled):not(.mat-form-field-invalid)\r\n            .mat-form-field-flex:hover~.mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $primary-a-900;\r\n    }\r\n    .mat-form-field-ripple {\r\n      display: none;\r\n    }\r\n    .mat-form-field-subscript-wrapper {\r\n      margin-top: 5px;\r\n    }\r\n    .mat-error {\r\n      font-family: $font-family-basic;\r\n      font-size: $tiny-font-size;\r\n      color: $supportive-alert-500;\r\n      line-height: 12px;\r\n    }\r\n\r\n    // disabled\r\n    &.mat-form-field-disabled {\r\n      .mat-input-element {\r\n        color: $gray-scale-600;\r\n      }\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $gray-scale-400;\r\n      }\r\n    }\r\n\r\n    // error state\r\n    &.ng-invalid {\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-500;\r\n      }\r\n      &.mat-form-field .mat-form-field-flex:hover~.mat-form-field-underline,\r\n      &.mat-form-field.mat-focused .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-700;\r\n      }\r\n    }\r\n\r\n    // readonly\r\n    &.p-input-text-readonly {\r\n      &:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover~.mat-form-field-underline,\r\n\r\n      .mat-form-field-underline {\r\n        box-shadow: none;\r\n      }\r\n    }\r\n\r\n    //icon\r\n    .mat-form-field-suffix {\r\n      align-self: flex-end;\r\n    }\r\n    &-icon {\r\n      padding-bottom: 6px;\r\n      .mat-form-field-disabled &,\r\n      .p-input-readonly & {\r\n        display: none;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+                    "styleUrl": "./input-link.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<mat-form-field class=\"p-input-text p-input-link\"\r\n                appearance=\"standard\"\r\n                [ngClass]=\"{'p-input-text-readonly' : readonly}\"\r\n                floatLabel=\"always\">\r\n  <p-icon *ngIf=\"formFieldControl.value === ''\"\r\n          class=\"p-input-text-icon\"\r\n          matPrefix\r\n          [iconName]=\"eye\"\r\n          width=\"16\"\r\n          height=\"16\">\r\n  </p-icon>\r\n  <input matInput\r\n         type=\"text\"\r\n         [placeholder]=\"placeholder\"\r\n         [readonly]=\"true\"\r\n         attr.aria-label=\"{{ariaLabel}}\"\r\n         [formControl]=\"formFieldControl\"\r\n         [errorStateMatcher]=\"matcher\"\r\n         (click)=\"openModal()\"\r\n         class=\"p-input-text-input\">\r\n  <p-icon *ngIf=\"formFieldControl.value !== ''\"\r\n          class=\"p-input-text-icon\"\r\n          matSuffix\r\n          [iconName]=\"eye\"\r\n          width=\"16\"\r\n          height=\"16\">\r\n  </p-icon>\r\n  <mat-error *ngIf=\"formFieldControl.invalid\"\r\n             class=\"p-input-text-error\">\r\n    {{errorMessage}}\r\n  </mat-error>\r\n</mat-form-field>\r\n"
+        },
+        {
             "name": "InputNumericComponent",
             "id": "component-InputNumericComponent-0a5dff7835f31e0ef6e38e5ff551c8a6",
             "file": "projects/design-system-lib/src/lib/input/numeric/input-numeric.component.ts",
@@ -3103,7 +3209,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$input-text-width: 220px;\r\n$input-text-padding: 8px;\r\n\r\n.p-input-text {\r\n  ::ng-deep & {\r\n    // material styles override\r\n    &.mat-form-field-appearance-standard.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {\r\n      width: 100%;\r\n      transform: translateY(-23px);\r\n    }\r\n    .mat-form-field-label-wrapper {\r\n      top: -16px;\r\n      padding-top: 16px;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-label,\r\n    &.mat-form-field.mat-form-field-invalid .mat-form-field-label {\r\n      color: $gray-scale-700;\r\n    }\r\n    .p-input-text-input {\r\n      font-family: $font-family-basic;\r\n      font-size: $small-font-size;\r\n      max-width: $input-text-width - $input-text-padding;\r\n      line-height: 20px;\r\n      color: $primary-a-900;\r\n      padding-left: $input-text-padding;\r\n      caret-color: $primary-a-900;\r\n    }\r\n    .mat-form-field-infix {\r\n      width: $input-text-width;\r\n      padding-bottom: 6px;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-flex {\r\n      padding-top: 0;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $gray-scale-600;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-underline,\r\n    &:not(.mat-form-field-disabled):not(.mat-form-field-invalid)\r\n            .mat-form-field-flex:hover~.mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $primary-a-900;\r\n    }\r\n    .mat-form-field-ripple {\r\n      display: none;\r\n    }\r\n    .mat-form-field-subscript-wrapper {\r\n      margin-top: 5px;\r\n    }\r\n    .mat-error {\r\n      font-family: $font-family-basic;\r\n      font-size: $tiny-font-size;\r\n      color: $supportive-alert-500;\r\n      line-height: 12px;\r\n    }\r\n\r\n    // disabled\r\n    &.mat-form-field-disabled {\r\n      .mat-input-element {\r\n        color: $gray-scale-600;\r\n      }\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $gray-scale-400;\r\n      }\r\n    }\r\n\r\n    // error state\r\n    &.ng-invalid {\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-500;\r\n      }\r\n      &.mat-form-field .mat-form-field-flex:hover~.mat-form-field-underline,\r\n      &.mat-form-field.mat-focused .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-700;\r\n      }\r\n    }\r\n\r\n    // readonly\r\n    &.p-input-text-readonly {\r\n      &:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover~.mat-form-field-underline,\r\n\r\n      .mat-form-field-underline {\r\n        box-shadow: none;\r\n      }\r\n    }\r\n\r\n    //icon\r\n    .mat-form-field-suffix {\r\n      align-self: flex-end;\r\n    }\r\n    &-icon {\r\n      padding-bottom: 6px;\r\n      .mat-form-field-disabled &,\r\n      .p-input-readonly & {\r\n        display: none;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n.p-input-text {\r\n  ::ng-deep & {\r\n    // material styles override\r\n    &.mat-form-field-appearance-standard.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {\r\n      width: 100%;\r\n      transform: translateY(-23px);\r\n    }\r\n    .mat-form-field-label-wrapper {\r\n      top: -16px;\r\n      padding-top: 16px;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-label,\r\n    &.mat-form-field.mat-form-field-invalid .mat-form-field-label {\r\n      color: $gray-scale-700;\r\n    }\r\n    .p-input-text-input {\r\n      font-family: $font-family-basic;\r\n      font-size: $small-font-size;\r\n      max-width: $input-text-width - $input-text-padding;\r\n      line-height: 20px;\r\n      color: $primary-a-900;\r\n      padding-left: $input-text-padding;\r\n      caret-color: $primary-a-900;\r\n    }\r\n    .mat-form-field-infix {\r\n      width: $input-text-width;\r\n      padding-bottom: 6px;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-flex {\r\n      padding-top: 0;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $gray-scale-600;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-underline,\r\n    &:not(.mat-form-field-disabled):not(.mat-form-field-invalid)\r\n            .mat-form-field-flex:hover~.mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $primary-a-900;\r\n    }\r\n    .mat-form-field-ripple {\r\n      display: none;\r\n    }\r\n    .mat-form-field-subscript-wrapper {\r\n      margin-top: 5px;\r\n    }\r\n    .mat-error {\r\n      font-family: $font-family-basic;\r\n      font-size: $tiny-font-size;\r\n      color: $supportive-alert-500;\r\n      line-height: 12px;\r\n    }\r\n\r\n    // disabled\r\n    &.mat-form-field-disabled {\r\n      .mat-input-element {\r\n        color: $gray-scale-600;\r\n      }\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $gray-scale-400;\r\n      }\r\n    }\r\n\r\n    // error state\r\n    &.ng-invalid {\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-500;\r\n      }\r\n      &.mat-form-field .mat-form-field-flex:hover~.mat-form-field-underline,\r\n      &.mat-form-field.mat-focused .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-700;\r\n      }\r\n    }\r\n\r\n    // readonly\r\n    &.p-input-text-readonly {\r\n      &:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover~.mat-form-field-underline,\r\n\r\n      .mat-form-field-underline {\r\n        box-shadow: none;\r\n      }\r\n    }\r\n\r\n    //icon\r\n    .mat-form-field-suffix {\r\n      align-self: flex-end;\r\n    }\r\n    &-icon {\r\n      padding-bottom: 6px;\r\n      .mat-form-field-disabled &,\r\n      .p-input-readonly & {\r\n        display: none;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "./input-text.component.scss"
                 }
             ],
@@ -5350,7 +5456,7 @@
         },
         {
             "name": "TextareaComponent",
-            "id": "component-TextareaComponent-cbcb4ed28af910d9c3b594bb24a70b9d",
+            "id": "component-TextareaComponent-8ba0d0dfa43a3c58bb0c1ab6ec509711",
             "file": "projects/design-system-lib/src/lib/input/textarea/textarea.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -5450,7 +5556,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 43
+                    "line": 47
                 },
                 {
                     "name": "ngOnDestroy",
@@ -5458,7 +5564,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 36
+                    "line": 40
                 },
                 {
                     "name": "ngOnInit",
@@ -5466,7 +5572,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 30
+                    "line": 34
                 }
             ],
             "hostBindings": [],
@@ -5474,11 +5580,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input, OnDestroy, OnInit} from '@angular/core';\r\nimport {FormControl, ValidatorFn} from '@angular/forms';\r\nimport {ErrorStateMatcher} from '@angular/material/core';\r\nimport {SubscriptionLike} from 'rxjs';\r\nimport {TextareaEnum} from './textarea.enum';\r\n\r\n@Component({\r\n  selector: 'p-textarea',\r\n  templateUrl: './textarea.component.html',\r\n  styleUrls: ['./textarea.component.scss'],\r\n})\r\nexport class TextareaComponent implements OnInit, OnDestroy {\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string;\r\n  @Input() placeholder: string;\r\n  @Input() errorMessage: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() readonly: boolean = false;\r\n  @Input() value: string;\r\n  @Input() validators: ValidatorFn[];\r\n  @Input() matcher: ErrorStateMatcher;\r\n  @Input() size = TextareaEnum;\r\n  public formFieldControl: FormControl;\r\n  private sub: SubscriptionLike;\r\n\r\n  public get classes(): string {\r\n    return `p-textarea ${this.size}`;\r\n  }\r\n\r\n  ngOnInit(): void {\r\n    this.formFieldControl = new FormControl(\r\n      {value: this.value, disabled: this.disabled},\r\n      this.validators);\r\n  }\r\n\r\n  ngOnDestroy(): void {\r\n    if (this.sub) {\r\n      this.sub.unsubscribe();\r\n      this.sub = null;\r\n    }\r\n  }\r\n\r\n  clearValue(): void {\r\n    this.formFieldControl.setValue('');\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, Input, OnDestroy, OnInit} from '@angular/core';\r\nimport {FormControl, ValidatorFn} from '@angular/forms';\r\nimport {ErrorStateMatcher} from '@angular/material/core';\r\nimport {SubscriptionLike} from 'rxjs';\r\nimport {TextareaEnum} from './textarea.enum';\r\n\r\n@Component({\r\n  selector: 'p-textarea',\r\n  templateUrl: './textarea.component.html',\r\n  styleUrls: ['./textarea.component.scss'],\r\n})\r\nexport class TextareaComponent implements OnInit, OnDestroy {\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string;\r\n  @Input() placeholder: string;\r\n  @Input() errorMessage: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() readonly: boolean = false;\r\n  @Input() value: string;\r\n  @Input() validators: ValidatorFn[];\r\n  @Input() matcher: ErrorStateMatcher;\r\n  @Input() size = TextareaEnum;\r\n  public formFieldControl: FormControl;\r\n  private sub: SubscriptionLike;\r\n\r\n  public get classes(): string[] {\r\n    const classParams = [];\r\n    this.readonly ? classParams.push('p-input-readonly') : null;\r\n    !this.errorMessage ? classParams.push('no-error-message') : null;\r\n    classParams.push(`${this.size}`);\r\n    return classParams;\r\n  }\r\n\r\n  ngOnInit(): void {\r\n    this.formFieldControl = new FormControl(\r\n      {value: this.value, disabled: this.disabled},\r\n      this.validators);\r\n  }\r\n\r\n  ngOnDestroy(): void {\r\n    if (this.sub) {\r\n      this.sub.unsubscribe();\r\n      this.sub = null;\r\n    }\r\n  }\r\n\r\n  clearValue(): void {\r\n    this.formFieldControl.setValue('');\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../outline/input-outline.component\";\r\n\r\n.p-textarea {\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  color: $primary-a-900;\r\n  max-width: calc(100% - #{$input-text-padding} * 2 - 2px);\r\n  margin-top: 1px;\r\n  padding-left: $input-text-padding;\r\n  padding-right: $input-text-padding;\r\n  caret-color: $primary-a-900;\r\n  resize: none;\r\n\r\n  &.small {\r\n    height: 100px;\r\n  }\r\n\r\n  &.extendedHeight {\r\n    height: 285px;\r\n  }\r\n\r\n  &.medium {\r\n    width: 530px;\r\n    height: 100px;\r\n  }\r\n\r\n  &.large {\r\n    width: 1150px;\r\n    height: 100px;\r\n  }\r\n\r\n  ::ng-deep &.mat-input-element {\r\n    padding-top: $gap-base;\r\n    padding-bottom: $gap-base;\r\n  }\r\n}\r\n\r\n::ng-deep .p-input-outline.mat-form-field-appearance-outline .mat-form-field-infix {\r\n  height: auto;\r\n}\r\n",
+                    "data": "@import \"../outline/input-outline.component\";\r\n\r\n.p-textarea {\r\n  width: auto;\r\n  &.small ::ng-deep .mat-form-field-flex {\r\n    width: $input-text-width;\r\n    height: calc(100px);\r\n}\r\n\r\n  &.extendedHeight ::ng-deep .mat-form-field-flex {\r\n    width: $input-text-width;\r\n    height: calc(285px);\r\n  }\r\n\r\n  &.medium ::ng-deep .mat-form-field-flex {\r\n    width: 530px;\r\n    height: 100px;\r\n  }\r\n\r\n  &.large ::ng-deep .mat-form-field-flex {\r\n    width: 1150px;\r\n    height: 100px;\r\n  }\r\n\r\n  ::ng-deep &.mat-form-field-appearance-outline .mat-form-field-infix {\r\n    height: calc(100% - 2px);\r\n    padding-top: $input-text-padding ;\r\n    padding-bottom: $input-text-padding;\r\n  }\r\n\r\n  &-input {\r\n    font-family: $font-family-basic;\r\n    font-size: $small-font-size;\r\n    color: $primary-a-900;\r\n    max-width: calc(100% - #{$input-text-padding} * 2 - 2px);\r\n    height: 100%;\r\n    padding-right: $input-text-padding;\r\n    padding-left: $input-text-padding;\r\n    caret-color: $primary-a-900;\r\n    resize: none;\r\n  }\r\n}\r\n\r\n",
                     "styleUrl": "./textarea.component.scss"
                 }
             ],
@@ -5492,13 +5598,13 @@
                     "name": "classes",
                     "getSignature": {
                         "name": "classes",
-                        "type": "string",
-                        "returnType": "string",
+                        "type": "[]",
+                        "returnType": "string[]",
                         "line": 26
                     }
                 }
             },
-            "templateData": "<mat-form-field class=\"p-input-outline\"\r\n                appearance=\"outline\"\r\n                [ngClass]=\"{'p-input-readonly' : readonly, 'no-error-message': !errorMessage}\"\r\n                floatLabel=\"always\">\r\n\r\n  <mat-label class=\"p-input-text-label paragraph-3-default\">{{label}}</mat-label>\r\n\r\n  <textarea matInput\r\n         [placeholder]=\"placeholder\"\r\n         [readonly]=\"readonly\"\r\n         attr.aria-label=\"{{ariaLabel}}\"\r\n         [formControl]=\"formFieldControl\"\r\n         [errorStateMatcher]=\"matcher\"\r\n         autocomplete=\"off\"\r\n         onfocus=\"this.select()\"\r\n         [ngClass]=\"classes\"></textarea>\r\n\r\n  <mat-error *ngIf=\"formFieldControl.invalid\"\r\n             class=\"p-input-text-error\">\r\n    {{errorMessage}}\r\n  </mat-error>\r\n</mat-form-field>\r\n"
+            "templateData": "<mat-form-field class=\"p-input-outline p-textarea\"\r\n                appearance=\"outline\"\r\n                floatLabel=\"always\"\r\n                [ngClass]=\"classes\">\r\n\r\n  <mat-label class=\"p-input-text-label paragraph-3-default\">{{label}}</mat-label>\r\n\r\n  <textarea matInput\r\n         [placeholder]=\"placeholder\"\r\n         [readonly]=\"readonly\"\r\n         attr.aria-label=\"{{ariaLabel}}\"\r\n         [formControl]=\"formFieldControl\"\r\n         [errorStateMatcher]=\"matcher\"\r\n         autocomplete=\"off\"\r\n         onfocus=\"this.select()\"\r\n         class=\"p-textarea-input\"></textarea>\r\n\r\n  <mat-error *ngIf=\"formFieldControl.invalid\"\r\n             class=\"p-input-text-error\">\r\n    {{errorMessage}}\r\n  </mat-error>\r\n</mat-form-field>\r\n"
         },
         {
             "name": "ToggleComponent",
@@ -6111,6 +6217,9 @@
                             "name": "InputHeaderComponent"
                         },
                         {
+                            "name": "InputLinkComponent"
+                        },
+                        {
                             "name": "InputNumericComponent"
                         },
                         {
@@ -6143,6 +6252,9 @@
                         },
                         {
                             "name": "InputHeaderComponent"
+                        },
+                        {
+                            "name": "InputLinkComponent"
                         },
                         {
                             "name": "InputNumericComponent"
@@ -6725,17 +6837,17 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
-                "type": "Story<CheckboxPageComponent>",
-                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
+                "type": "Story<CheckboxGroupComponent>",
+                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
-                "type": "Story<CheckboxGroupComponent>",
-                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "Story<CheckboxPageComponent>",
+                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -6819,6 +6931,14 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/colors/Color-palette.stories.ts",
+                "type": "Story<ColorPaletteComponent>",
+                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/icons/icon.stories.ts",
                 "type": "Story<IconComponent>",
                 "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
@@ -6830,14 +6950,6 @@
                 "file": "src/stories/input-text/input-text.stories.ts",
                 "type": "Story<InputTextComponent>",
                 "defaultValue": "(args: InputTextComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/colors/Color-palette.stories.ts",
-                "type": "Story<ColorPaletteComponent>",
-                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -7805,6 +7917,15 @@
                 "name": "InputHeaderComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/24",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/input/link/input-link.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "InputLinkComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/11",
                 "status": "low"
             },
             {
