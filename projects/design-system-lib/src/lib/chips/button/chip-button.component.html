@@ -19,12 +19,9 @@
       {{value}}
     </li>
   </ul>
-  <p-button class="p-chip-menuTrigger"
-            ariaLabel="Open Menu"
-            [buttonType]="buttonType.IsIcon"
-            iconBefore="chevron-down"
-            iconBeforeWidth="14"
-            iconBeforeStrokeWidth="2"
-            (onClickTask)="openMenu()"></p-button>
+  <p-icon class="p-chip-menuTrigger"
+          iconName="chevron-down"
+          width="14"
+          [strokeWidth]="2"></p-icon>
 </mat-basic-chip>
 

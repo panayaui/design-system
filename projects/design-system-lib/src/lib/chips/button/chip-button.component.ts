@@ -23,8 +23,4 @@ export class ChipButtonComponent {
   removeChip(): void {
     console.log('remove chip');
   }
-
-  openMenu(): void {
-    console.log('open menu');
-  }
 }

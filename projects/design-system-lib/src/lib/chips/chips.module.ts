@@ -14,7 +14,8 @@ import {ButtonModule} from '../button/button.module';
     BrowserAnimationsModule,
     MatChipsModule,
     MatTooltipModule,
-    ButtonModule
+    ButtonModule,
+    IconModule
   ],
   declarations: [
     ChipsComponent,
