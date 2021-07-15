@@ -14,7 +14,7 @@ export class ComboComponent implements OnInit {
   @Input() buttonType = ButtonTypeEnum;
 
   // single select + action button / button
-  @Input() singleMenuTrigger: IActionButton | IButton;
+  @Input() singleMenuTrigger: IInputText;
   @Input() singleMenuList: any;
   @Input() groupTitle: any;
   @Input() buttonFirst: IMenuButton;
@@ -22,8 +22,8 @@ export class ComboComponent implements OnInit {
   @Input() filterAriaLabel: string;
   @Input() filterPlaceholder: string;
 
-  // multi select + input
-  @Input() multiMenuTrigger: IInputText;
+  // multi select + action button
+  @Input() multiMenuTrigger: IActionButton;
   @Input() multiMenuList: any;
   @Input() headerBtnFirst: IMenuButton;
   @Input() headerBtnLast: ICheckbox;

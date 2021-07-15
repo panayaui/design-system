@@ -43,21 +43,28 @@
                      [iconBeforeStrokeColor]="singleMenuTrigger.iconBeforeStrokeColor"
                      [isMenuTrigger]="true"
                      [isStandalone]="singleMenuTrigger.isStandalone"></p-action-button>
+    <!--<p-input-text [value]="multiMenuTrigger.value"-->
+                  <!--[ariaLabel]="multiMenuTrigger.ariaLabel"-->
+                  <!--[iconName]="multiMenuTrigger.iconName"></p-input-text>-->
     <!-- -->
   </p-menu-single-select>
 </ng-container>
 
-<ng-container *ngIf="(multiMenuTrigger?.label || multiMenuTrigger?.ariaLabel)
-                      && !filterPlaceholder && !headerBtnFirst">
+<ng-container *ngIf="multiMenuTrigger?.label && !filterPlaceholder && !headerBtnFirst">
   <p-menu-multi-select [menuList]="multiMenuList"
                         [headerBtnFirst]="headerBtnFirst"
                         [headerBtnLast]="headerBtnLast"
                         [footerBtnFirst]="footerBtnFirst"
                         [footerBtnLast]="footerBtnLast">
     <!--ng-content-->
-    <p-input-text [value]="multiMenuTrigger.value"
-                  [ariaLabel]="multiMenuTrigger.ariaLabel"
-                  [iconName]="multiMenuTrigger.iconName"></p-input-text>
+    <p-action-button [label]="multiMenuTrigger.label"
+                     [iconBeforeName]="multiMenuTrigger.iconBeforeName"
+                     [iconBeforeWidth]="multiMenuTrigger.iconBeforeWidth"
+                     [iconBeforeHeight]="multiMenuTrigger.iconBeforeHeight"
+                     [iconBeforeStrokeWidth]="multiMenuTrigger.iconBeforeStrokeWidth"
+                     [iconBeforeStrokeColor]="multiMenuTrigger.iconBeforeStrokeColor"
+                     [isMenuTrigger]="true"
+                     [isStandalone]="multiMenuTrigger.isStandalone"></p-action-button>
     <!-- -->
   </p-menu-multi-select>
 </ng-container>
@@ -70,9 +77,14 @@
                        [footerBtnFirst]="footerBtnFirst"
                        [footerBtnLast]="footerBtnLast">
     <!--ng-content-->
-    <p-input-text [value]="multiMenuTrigger.value"
-                  [ariaLabel]="multiMenuTrigger.ariaLabel"
-                  [iconName]="multiMenuTrigger.iconName"></p-input-text>
+    <p-action-button [label]="multiMenuTrigger.label"
+                     [iconBeforeName]="multiMenuTrigger.iconBeforeName"
+                     [iconBeforeWidth]="multiMenuTrigger.iconBeforeWidth"
+                     [iconBeforeHeight]="multiMenuTrigger.iconBeforeHeight"
+                     [iconBeforeStrokeWidth]="multiMenuTrigger.iconBeforeStrokeWidth"
+                     [iconBeforeStrokeColor]="multiMenuTrigger.iconBeforeStrokeColor"
+                     [isMenuTrigger]="true"
+                     [isStandalone]="multiMenuTrigger.isStandalone"></p-action-button>
     <!-- -->
   </p-menu-multi-select>
 </ng-container>
@@ -87,9 +99,14 @@
                        [footerBtnFirst]="footerBtnFirst"
                        [footerBtnLast]="footerBtnLast">
     <!--ng-content-->
-    <p-input-text [value]="multiMenuTrigger.value"
-                  [ariaLabel]="multiMenuTrigger.ariaLabel"
-                  [iconName]="multiMenuTrigger.iconName"></p-input-text>
+    <p-action-button [label]="multiMenuTrigger.label"
+                     [iconBeforeName]="multiMenuTrigger.iconBeforeName"
+                     [iconBeforeWidth]="multiMenuTrigger.iconBeforeWidth"
+                     [iconBeforeHeight]="multiMenuTrigger.iconBeforeHeight"
+                     [iconBeforeStrokeWidth]="multiMenuTrigger.iconBeforeStrokeWidth"
+                     [iconBeforeStrokeColor]="multiMenuTrigger.iconBeforeStrokeColor"
+                     [isMenuTrigger]="true"
+                     [isStandalone]="multiMenuTrigger.isStandalone"></p-action-button>
     <!-- -->
   </p-menu-multi-select>
 </ng-container>

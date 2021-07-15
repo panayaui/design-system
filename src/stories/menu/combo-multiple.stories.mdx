@@ -16,9 +16,10 @@ import {stateGroups} from './stateGroups';
     ]}
     args={{
       multiMenuTrigger: {
-        ariaLabel: 'Label',
-        value: 'Input text',
-        iconName: 'chevron-down'
+        label: 'Action item',
+        iconBeforeName: 'columns',
+        iconBeforeWidth: '17',
+        isStandalone: true
       },
       multiMenuList: [
         { name: 'Alabama',
@@ -133,7 +134,6 @@ export const Template = (args) => <ComboComponent {...args} />
 import {MatMenuModule} from '@angular/material/menu';
 
 export class MenuMultiSelectComponent implements OnInit, OnDestroy {
-  @Input() menuTriggerName: string;
   @Input() menuList: any[];
   @Input() filterPlaceholder: string; // if there is a search and buttons
   @Input() filterAriaLabel: string;
@@ -142,11 +142,10 @@ export class MenuMultiSelectComponent implements OnInit, OnDestroy {
   @Input() footerBtnFirst: IMenuButton;
   @Input() footerBtnLast: IMenuButton;
   @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;
-  private selectedList: any[] = [];
-  public selectedShown: any[] = [];
   public filteredList: any[];
   public formFieldControl: FormControl;
   private sub: SubscriptionLike;
+
 }
 
 export interface IMenuButton {
@@ -164,9 +163,14 @@ export interface IMenuButton {
                       [footerBtnFirst]="footerBtnFirst"
                       [footerBtnLast]="footerBtnLast">
   <!--ng-content-->
-  <p-input-text [value]="multiMenuTrigger.value"
-                [ariaLabel]="multiMenuTrigger.ariaLabel"
-                [iconName]="multiMenuTrigger.iconName"></p-input-text>
+  <p-action-button [label]="multiMenuTrigger.label"
+                    [iconBeforeName]="multiMenuTrigger.iconBeforeName"
+                    [iconBeforeWidth]="multiMenuTrigger.iconBeforeWidth"
+                    [iconBeforeHeight]="multiMenuTrigger.iconBeforeHeight"
+                    [iconBeforeStrokeWidth]="multiMenuTrigger.iconBeforeStrokeWidth"
+                    [iconBeforeStrokeColor]="multiMenuTrigger.iconBeforeStrokeColor"
+                    [isMenuTrigger]="true"
+                    [isStandalone]="multiMenuTrigger.isStandalone"></p-action-button>
   <!-- -->
 </p-menu-multi-select>
 ```
