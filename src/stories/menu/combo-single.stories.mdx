@@ -16,10 +16,9 @@ import {stateGroups} from './stateGroups';
     ]}
     args={{
       singleMenuTrigger: {
-        label: 'Action item',
-        iconBeforeName: 'sliders',
-        iconBeforeWidth: '17',
-        isStandalone: true
+        ariaLabel: 'Label',
+        value: 'Input text',
+        iconName: 'chevron-down'
       },
       singleMenuList: [
         { name: 'Menu item',
@@ -68,9 +67,6 @@ export const Template = (args) => <ComboComponent {...args} />
 <Canvas>
   <Story name="Single Select"
     args={{
-      singleMenuTrigger: {
-        label: 'Label'
-      }
     }}>
     {Template.bind({})}
   </Story>
@@ -90,7 +86,7 @@ export const Template = (args) => <ComboComponent {...args} />
   <Story name="Single Select with Filter"
     args={{
       singleMenuTrigger: {
-        label: 'Filter',
+        label: 'Action item',
         iconBeforeName: 'sliders',
         iconBeforeWidth: '17',
         isStandalone: true
@@ -110,7 +106,6 @@ export const Template = (args) => <ComboComponent {...args} />
 import {MatMenuModule} from '@angular/material/menu';
 
 export class MenuSingleSelectComponent implements OnInit, OnDestroy {
-  @Input() menuTriggerName: string;
   @Input() menuList: any[];
   @Input() groupTitle: boolean = false; // true if there is a group title
   @Input() filterPlaceholder: string; // if there is a search and buttons

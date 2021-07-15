@@ -1,9 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ButtonTypeEnum, IActionButton, IButton, IMenuButton} from 'projects/design-system-lib/src/public-api';
+import {ButtonTypeEnum, IActionButton, IMenuButton, ICheckbox, IInputText} from 'projects/design-system-lib/src/public-api';
 import {Validators} from '@angular/forms';
 import {LabelTypesEnum} from 'projects/design-system-lib/src/lib/labels/label-types.enum';
-import {ICheckbox} from '../../../../projects/design-system-lib/src/lib/checkbox/checkbox.interface';
-import {IInputText} from '../../../../projects/design-system-lib/src/lib/input/text/input-text.interface';
 
 @Component({
   selector: 'p-combo',
@@ -14,7 +12,7 @@ export class ComboComponent implements OnInit {
   @Input() buttonType = ButtonTypeEnum;
 
   // single select + action button / button
-  @Input() singleMenuTrigger: IInputText;
+  @Input() singleMenuTrigger: IInputText | IActionButton;
   @Input() singleMenuList: any;
   @Input() groupTitle: any;
   @Input() buttonFirst: IMenuButton;

@@ -2,7 +2,6 @@ import {Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild} fr
 import {FormControl} from '@angular/forms';
 import {SubscriptionLike} from 'rxjs';
 import {IMenuButton} from '../menu-button.interface';
-import {ButtonTypeEnum} from '../../button/button-type.enum';
 import {MatMenuTrigger} from '@angular/material/menu';
 
 @Component({
@@ -11,7 +10,6 @@ import {MatMenuTrigger} from '@angular/material/menu';
   styleUrls: ['./menu-single-select.component.scss'],
 })
 export class MenuSingleSelectComponent implements OnInit, OnDestroy {
-  @Input() menuTriggerName: string;
   @Input() menuList: any[];
   @Input() groupTitle: boolean = false; // true if there is a group title
   @Input() filterPlaceholder: string; // if there is a search and buttons
@@ -23,7 +21,6 @@ export class MenuSingleSelectComponent implements OnInit, OnDestroy {
   public filteredList: any[];
   public formFieldControl: FormControl;
   private sub: SubscriptionLike;
-  public buttonTypeEnum: ButtonTypeEnum;
 
   ngOnInit(): void {
     this.filteredList = this.menuList;
