@@ -1,3 +1,4 @@
+<!--Singe select-->
 <ng-container *ngIf="singleMenuTrigger && !groupTitle">
   <p-menu-single-select [menuList]="singleMenuList"
                         [buttonFirst]="buttonFirst"
@@ -43,6 +44,7 @@
   </p-menu-single-select>
 </ng-container>
 
+<!--Multi select-->
 <ng-container *ngIf="multiMenuTrigger && !filterPlaceholder && !headerBtnFirst">
   <p-menu-multi-select [menuList]="multiMenuList"
                         [headerBtnFirst]="headerBtnFirst"
@@ -102,6 +104,22 @@
   </p-menu-multi-select>
 </ng-container>
 
+<!--Radio group-->
+<ng-container *ngIf="radioMenuTrigger">
+  <p-menu-radio-group [menuList]="radioMenuList"
+                      [footerBtnFirst]="footerBtnFirst"
+                      [footerBtnLast]="footerBtnLast">
+    <!--ng-content-->
+    <p-chip-button [label]="radioMenuTrigger.label"
+                    [values]="radioMenuTrigger.values"
+                    [iconRemove]="radioMenuTrigger.iconRemove"
+                    [full]="radioMenuTrigger.full"
+                    [active]="radioMenuTrigger.active"></p-chip-button>
+    <!-- -->
+  </p-menu-radio-group>
+</ng-container>
+
+
 <!--<p-menu-tabs [menuList]="menuList"-->
 <!--[headerBtnFirst]="headerBtnFirst"-->
 <!--[headerBtnLast]="headerBtnLast"-->
@@ -110,11 +128,6 @@
 <!--<p-input-text [value]="'Menu Tabs'"></p-input-text>-->
 <!--</p-menu-tabs>-->
 
-<!--<p-menu-radio-group [menuList]="menuListRadio"-->
-                    <!--[footerBtnFirst]="footerBtnFirst"-->
-                    <!--[footerBtnLast]="footerBtnLast">-->
-  <!--<p-input-text [value]="'Menu Radio Group'"></p-input-text>-->
-<!--</p-menu-radio-group>-->
 
 
 <!--<p-menu-free-text [menuList]="menuListFreeText"-->

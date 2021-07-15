@@ -1,0 +1,187 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+
+import {ComboComponent} from './combobox/combo.component';
+import {ComboModule} from './combobox/combo.module';
+import {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';
+
+<Meta title='Components/Menu/Radio Group'
+    component={ComboComponent}
+    decorators={[
+      moduleMetadata({
+          imports: [ComboModule]
+      })
+    ]}
+    args={{
+      radioMenuTrigger: {
+          label: 'Label',
+          iconRemove: true,
+          values: ['Filter', 'Filter'],
+          full: true
+      },
+      radioMenuList: [
+       { label: 'All' },
+        { label: 'Today' },
+        { label: 'Yesterday' },
+        { label: 'Tomorrow' },
+        { label: 'This',
+          menuList: [
+             { name: 'week (Starts Sunday)', selected: true},
+             { name: 'week (Starts Monday)'},
+             { name: 'month'},
+             { name: 'year'}
+          ]
+        },
+        { label: 'Last',
+          numericInputValue: 1,
+          menuList: [
+            { name: 'Day(s)', selected: true},
+            { name: 'Week(s)'},
+            { name: 'Month(s)'},
+            { name: 'Year(s)'}
+          ]
+        },
+        { label: 'Next',
+          numericInputValue: 1,
+          menuList: [
+            { name: 'Day(s)', selected: true},
+            { name: 'Week(s)'},
+            { name: 'Month(s)'},
+            { name: 'Year(s)'}
+          ]
+        },
+        { label: 'Blanks' },
+        { label: 'Between',
+          dateStart: {
+            ariaLabel: 'date start'
+          },
+          dateEnd: {
+            ariaLabel: 'date start'
+          }
+        }
+      ],
+      footerBtnFirst: {
+        label: 'Done',
+        buttonType: ButtonTypeEnum.Primary
+      },
+      footerBtnLast: {
+        label: 'Cancel',
+        buttonType: ButtonTypeEnum.Secondary
+      }
+    }}
+ />
+
+export const Template = (args) => <ComboComponent {...args} />
+
+# Radio Group Menu
+
+###### Selector
+```html
+<p-menu-radio-group></p-menu-radio-group>
+```
+
+<Canvas>
+  <Story name="Radio"
+    args={{
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Usage
+```ts
+import {MatMenuModule} from '@angular/material/menu';
+
+export class MenuRadioGroupComponent {
+  @Input() menuTriggerName: string;
+  @Input() menuList: IMenuRadioOption[];
+  @Input() footerBtnFirst: IMenuButton;
+  @Input() footerBtnLast: IMenuButton;
+  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;
+  public inputNumericSize = InputNumericSizeEnum;
+
+  findMenuTriggerName(menuList): void {
+    return menuList.find( item => item.selected === true).name;
+  }
+
+  selectCompleted(): void {
+    this.menuTrigger.closeMenu();
+  }
+
+  selectCanceled(): void {
+    this.menuTrigger.closeMenu();
+  }
+}
+
+interface IMenuRadioOption extends IRadioButton {
+  numericInputValue?: number;
+  menuList?: any[];
+  dateStart?: IDatepicker;
+  dateEnd?: IDatepicker;
+}
+```
+```html
+<button [matMenuTriggerFor]="menu"
+        #menuTrigger="matMenuTrigger"
+        class="p-btn p-btn-small p-btn-tertiary">
+    {{menuTriggerName}}
+</button>
+
+<!--menu window-->
+<mat-menu #menu="matMenu" class="p-menu-radio" [overlapTrigger]="false">
+  <div class="p-menu-container" (click)="$event.stopPropagation()"
+                                (keydown)="$event.stopPropagation()">
+    <ul class="p-menu-body">
+      <li class="p-menu-body-item" *ngFor="let option of menuList">
+        <p-radio-button class="p-menu-option-radio"
+                        [value]="option"
+                        [label]="option.label"
+                        [checked]="option.checked"
+                        [disabled]="option.disabled">
+        </p-radio-button>
+
+        <p-input-numeric *ngIf="option.numericInputValue"
+                          class="p-menu-option-input"
+                          [size]="inputNumericSize.Small"
+                          [value]="option.numericInputValue">
+        </p-input-numeric>
+
+        <div class="p-menu-option-link" *ngIf="option.menuList">
+          <p-menu-single-select class="p-menu-option-submenu"
+                                [menuTriggerName]="findMenuTriggerName(option.menuList)"
+                                [menuList]="option.menuList">
+          </p-menu-single-select>
+        </div>
+
+        <div class="p-menu-option-dates" *ngIf="option.dateStart && option.dateEnd">
+          <p-datepicker class="p-menu-option-datepicker start"
+                        [ariaLabel]="option.dateStart.ariaLabel"
+                        [placeholder]="option.dateStart.placeholder"
+                        [disabled]="option.dateStart.disabled"
+                        [readonly]="option.dateStart.readonly"
+                        [value]="option.dateStart.value">
+          </p-datepicker>
+          <span class="p-menu-option-dates-ampersand paragraph-2-default">and</span>
+          <p-datepicker class="p-menu-option-datepicker end"
+                        [ariaLabel]="option.dateEnd.ariaLabel"
+                        [placeholder]="option.dateEnd.placeholder"
+                        [disabled]="option.dateEnd.disabled"
+                        [readonly]="option.dateEnd.readonly"
+                        [value]="option.dateEnd.value">
+          </p-datepicker>
+        </div>
+      </li>
+    </ul>
+    <div class="p-menu-footer">
+      <p-button class="p-menu-footer-btn"
+                [label]="footerBtnFirst.label"
+                [buttonType]="footerBtnFirst.buttonType"
+                (click)="selectCompleted()"></p-button>
+      <p-button class="p-menu-footer-btn"
+                [label]="footerBtnLast.label"
+                [buttonType]="footerBtnLast.buttonType"
+                (click)="selectCanceled()"></p-button>
+    </div>
+  </div>
+</mat-menu>
+```

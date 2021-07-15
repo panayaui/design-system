@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ButtonTypeEnum, IActionButton, IMenuButton, ICheckbox, IInputText} from 'projects/design-system-lib/src/public-api';
+import {ButtonTypeEnum, IActionButton, IMenuButton, ICheckbox, IInputText, IChip} from 'projects/design-system-lib/src/public-api';
 import {Validators} from '@angular/forms';
 import {LabelTypesEnum} from 'projects/design-system-lib/src/lib/labels/label-types.enum';
 
@@ -28,6 +28,10 @@ export class ComboComponent implements OnInit {
   @Input() footerBtnFirst: IMenuButton;
   @Input() footerBtnLast: IMenuButton;
 
+  // radio group + chip
+  @Input() radioMenuTrigger: IChip;
+  @Input() radioMenuList: any;
+
   @Input() data = {
     icon: { iconName: 'bell'},
     messageMain: 'Notification message.',
@@ -49,77 +53,7 @@ export class ComboComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-  //   this.menuTriggerName = 'Menu';
-  //   this.menuList = [
-  //     { name: 'Alabama',
-  //       disabled: false
-  //     },
-  //     { name: 'Alaska disabled',
-  //       disabled: true
-  //     },
-  //     { name: 'California',
-  //       disabled: false
-  //     },
-  //     { name: 'Colorado',
-  //       disabled: false
-  //     },
-  //     { name: 'Delaware',
-  //       disabled: false
-  //     },
-  //     { name: 'Florida selected disabled',
-  //       disabled: true,
-  //       selected: true
-  //     },
-  //     { name: 'Georgia',
-  //       disabled: false
-  //     },
-  //     { name: 'Hawaii',
-  //       disabled: false
-  //     },
-  //     { name: 'Idaho',
-  //       disabled: true
-  //     },
-  //     { name: 'Illinois',
-  //       disabled: false
-  //     },
-  //     { name: 'Indiana',
-  //       disabled: false
-  //     },
-  //     { name: 'Iowa',
-  //       disabled: false
-  //     },
-  //     { name: 'Kansas',
-  //       disabled: true,
-  //       selected: true
-  //     },
-  //     { name: 'Kentucky',
-  //       disabled: false
-  //     }
-  //   ];
-  //
-  //   this.footerBtnFirst = {
-  //     label: 'Done',
-  //     buttonType: ButtonTypeEnum.Primary
-  //   };
-  //   this.footerBtnLast = {
-  //     label: 'Cancel',
-  //     buttonType: ButtonTypeEnum.Secondary
-  //   };
-  //   this.filterAriaLabel = 'Find Label';
-  //   this.filterPlaceholder = 'Find Label';
-  //
-  //   this.headerBtnFirst = {
-  //     label: 'Clear selected',
-  //     buttonType: ButtonTypeEnum.Tertiary,
-  //     icon: {
-  //       iconName: 'eraser',
-  //       width: '15',
-  //       height: '15'
-  //     }
-  //   };
-  //   this.headerBtnLast = {
-  //     label: 'Not equal to'
-  //   };
+
   //   this.checkboxList = [
   //     {
   //       checkbox: { label: 'Last'},
