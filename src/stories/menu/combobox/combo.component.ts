@@ -2,6 +2,8 @@ import {Component, Input, OnInit} from '@angular/core';
 import {ButtonTypeEnum, IActionButton, IButton, IMenuButton} from 'projects/design-system-lib/src/public-api';
 import {Validators} from '@angular/forms';
 import {LabelTypesEnum} from 'projects/design-system-lib/src/lib/labels/label-types.enum';
+import {ICheckbox} from '../../../../projects/design-system-lib/src/lib/checkbox/checkbox.interface';
+import {IInputText} from '../../../../projects/design-system-lib/src/lib/input/text/input-text.interface';
 
 @Component({
   selector: 'p-combo',
@@ -11,7 +13,7 @@ import {LabelTypesEnum} from 'projects/design-system-lib/src/lib/labels/label-ty
 export class ComboComponent implements OnInit {
   @Input() buttonType = ButtonTypeEnum;
 
-  // single select + action button
+  // single select + action button / button
   @Input() singleMenuTrigger: IActionButton | IButton;
   @Input() singleMenuList: any;
   @Input() groupTitle: any;
@@ -20,8 +22,13 @@ export class ComboComponent implements OnInit {
   @Input() filterAriaLabel: string;
   @Input() filterPlaceholder: string;
 
-
-
+  // multi select + input
+  @Input() multiMenuTrigger: IInputText;
+  @Input() multiMenuList: any;
+  @Input() headerBtnFirst: IMenuButton;
+  @Input() headerBtnLast: ICheckbox;
+  @Input() footerBtnFirst: IMenuButton;
+  @Input() footerBtnLast: IMenuButton;
 
   @Input() data = {
     icon: { iconName: 'bell'},
@@ -32,11 +39,7 @@ export class ComboComponent implements OnInit {
   };
   menuTriggerName: string;
   menuList: any;
-  footerBtnFirst: any;
-  footerBtnLast: any;
 
-  headerBtnFirst: any;
-  headerBtnLast: any;
   checkboxList: any;
   validator = Validators.required;
   labelType = LabelTypesEnum;

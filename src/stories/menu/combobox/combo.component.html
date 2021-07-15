@@ -1,4 +1,4 @@
-<ng-container *ngIf="singleMenuTrigger.label && !groupTitle">
+<ng-container *ngIf="singleMenuTrigger?.label && !groupTitle">
   <p-menu-single-select [menuList]="singleMenuList"
                         [buttonFirst]="buttonFirst"
                         [buttonLast]="buttonLast">
@@ -9,13 +9,13 @@
   </p-menu-single-select>
 </ng-container>
 
-<ng-container *ngIf="singleMenuTrigger.label && groupTitle && !filterPlaceholder">
+<ng-container *ngIf="singleMenuTrigger?.label && groupTitle && !filterPlaceholder">
   <p-menu-single-select [menuList]="singleMenuList"
                         [groupTitle]="groupTitle"
                         [buttonFirst]="buttonFirst"
                         [buttonLast]="buttonLast">
     <!--ng-content-->
-    <p-action-button [label]="singleMenuTrigger.label"
+    <p-action-button [label]="singleMenuTrigger?.label"
                      [iconBeforeName]="singleMenuTrigger.iconBeforeName"
                      [iconBeforeWidth]="singleMenuTrigger.iconBeforeWidth"
                      [iconBeforeHeight]="singleMenuTrigger.iconBeforeHeight"
@@ -27,7 +27,7 @@
   </p-menu-single-select>
 </ng-container>
 
-<ng-container *ngIf="singleMenuTrigger.label && groupTitle && filterPlaceholder">
+<ng-container *ngIf="singleMenuTrigger?.label && groupTitle && filterPlaceholder">
   <p-menu-single-select [menuList]="singleMenuList"
                         [groupTitle]="groupTitle"
                         [filterAriaLabel]="filterAriaLabel"
@@ -47,13 +47,19 @@
   </p-menu-single-select>
 </ng-container>
 
-<!--<p-menu-multi-select [menuList]="menuList"-->
-<!--[headerBtnFirst]="headerBtnFirst"-->
-<!--[headerBtnLast]="headerBtnLast"-->
-<!--[footerBtnFirst]="footerBtnFirst"-->
-<!--[footerBtnLast]="footerBtnLast">-->
-<!--<p-input-text [value]="'Menu Multiple'"></p-input-text>-->
-<!--</p-menu-multi-select>-->
+<ng-container *ngIf="multiMenuTrigger?.label || multiMenuTrigger?.ariaLabel">
+  <p-menu-multi-select [menuList]="multiMenuList"
+                        [headerBtnFirst]="headerBtnFirst"
+                        [headerBtnLast]="headerBtnLast"
+                        [footerBtnFirst]="footerBtnFirst"
+                        [footerBtnLast]="footerBtnLast">
+    <!--ng-content-->
+    <p-input-text [value]="multiMenuTrigger.value"
+                  [ariaLabel]="multiMenuTrigger.ariaLabel"
+                  [iconName]="multiMenuTrigger.iconName"></p-input-text>
+    <!-- -->
+  </p-menu-multi-select>
+</ng-container>
 
 <!--<p-menu-tabs [menuList]="menuList"-->
 <!--[headerBtnFirst]="headerBtnFirst"-->
