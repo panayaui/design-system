@@ -13,7 +13,7 @@ import {MatMenuTrigger} from '@angular/material/menu';
 export class MenuSingleSelectComponent implements OnInit, OnDestroy {
   @Input() menuTriggerName: string;
   @Input() menuList: any[];
-  @Input() groupTitle: boolean = false; // if there is a group title
+  @Input() groupTitle: boolean = false; // true if there is a group title
   @Input() filterPlaceholder: string; // if there is a search and buttons
   @Input() filterAriaLabel: string;
   @Input() buttonFirst: IMenuButton;

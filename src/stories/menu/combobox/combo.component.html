@@ -1,7 +1,20 @@
-<ng-container *ngIf="singleMenuTrigger.label">
+<ng-container *ngIf="singleMenuTrigger.label && !groupTitle">
   <p-menu-single-select [menuList]="singleMenuList"
                         [buttonFirst]="buttonFirst"
                         [buttonLast]="buttonLast">
+    <!--ng-content-->
+    <p-button [label]="singleMenuTrigger.label"
+              [buttonType]="buttonType.Primary"></p-button>
+    <!-- -->
+  </p-menu-single-select>
+</ng-container>
+
+<ng-container *ngIf="singleMenuTrigger.label && groupTitle && !filterPlaceholder">
+  <p-menu-single-select [menuList]="singleMenuList"
+                        [groupTitle]="groupTitle"
+                        [buttonFirst]="buttonFirst"
+                        [buttonLast]="buttonLast">
+    <!--ng-content-->
     <p-action-button [label]="singleMenuTrigger.label"
                      [iconBeforeName]="singleMenuTrigger.iconBeforeName"
                      [iconBeforeWidth]="singleMenuTrigger.iconBeforeWidth"
@@ -10,9 +23,29 @@
                      [iconBeforeStrokeColor]="singleMenuTrigger.iconBeforeStrokeColor"
                      [isMenuTrigger]="true"
                      [isStandalone]="singleMenuTrigger.isStandalone"></p-action-button>
+    <!-- -->
   </p-menu-single-select>
 </ng-container>
 
+<ng-container *ngIf="singleMenuTrigger.label && groupTitle && filterPlaceholder">
+  <p-menu-single-select [menuList]="singleMenuList"
+                        [groupTitle]="groupTitle"
+                        [filterAriaLabel]="filterAriaLabel"
+                        [filterPlaceholder]="filterPlaceholder"
+                        [buttonFirst]="buttonFirst"
+                        [buttonLast]="buttonLast">
+    <!--ng-content-->
+    <p-action-button [label]="singleMenuTrigger.label"
+                     [iconBeforeName]="singleMenuTrigger.iconBeforeName"
+                     [iconBeforeWidth]="singleMenuTrigger.iconBeforeWidth"
+                     [iconBeforeHeight]="singleMenuTrigger.iconBeforeHeight"
+                     [iconBeforeStrokeWidth]="singleMenuTrigger.iconBeforeStrokeWidth"
+                     [iconBeforeStrokeColor]="singleMenuTrigger.iconBeforeStrokeColor"
+                     [isMenuTrigger]="true"
+                     [isStandalone]="singleMenuTrigger.isStandalone"></p-action-button>
+    <!-- -->
+  </p-menu-single-select>
+</ng-container>
 
 <!--<p-menu-multi-select [menuList]="menuList"-->
 <!--[headerBtnFirst]="headerBtnFirst"-->
