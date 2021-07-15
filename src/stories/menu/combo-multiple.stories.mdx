@@ -66,18 +66,6 @@ import {stateGroups} from './stateGroups';
           disabled: false
         }
       ],
-      headerBtnFirst: {
-        label: 'Clear selected',
-        buttonType: ButtonTypeEnum.Tertiary,
-        icon: {
-          iconName: 'eraser',
-          width: '15',
-          height: '15'
-        }
-      },
-      headerBtnLast: {
-        label: 'Not equal to'
-      },
       footerBtnFirst: {
         label: 'Done',
         buttonType: ButtonTypeEnum.Primary
@@ -97,9 +85,44 @@ export const Template = (args) => <ComboComponent {...args} />
 ```html
 <p-menu-multi-select></p-menu-multi-select>
 ```
+###### Simple
 <Canvas>
   <Story name="Multi Select"
     args={{
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Filter
+<Canvas>
+  <Story name="Multi Select with Filter"
+    args={{
+      filterAriaLabel: 'Find Label',
+      filterPlaceholder: 'Find Label'
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Filter and Header Buttons
+<Canvas>
+  <Story name="Multi Select with Filter and Header Buttons"
+    args={{
+      filterAriaLabel: 'Find Label',
+      filterPlaceholder: 'Find Label',
+      headerBtnFirst: {
+        label: 'Clear selected',
+        buttonType: ButtonTypeEnum.Tertiary,
+        icon: {
+          iconName: 'eraser',
+          width: '15',
+          height: '15'
+        }
+      },
+      headerBtnLast: {
+        label: 'Not equal to'
+      },
     }}>
     {Template.bind({})}
   </Story>
@@ -109,20 +132,21 @@ export const Template = (args) => <ComboComponent {...args} />
 ```ts
 import {MatMenuModule} from '@angular/material/menu';
 
-export class MenuSingleSelectComponent implements OnInit, OnDestroy {
+export class MenuMultiSelectComponent implements OnInit, OnDestroy {
   @Input() menuTriggerName: string;
   @Input() menuList: any[];
-  @Input() groupTitle: boolean = false; // true if there is a group title
   @Input() filterPlaceholder: string; // if there is a search and buttons
   @Input() filterAriaLabel: string;
-  @Input() buttonFirst: IMenuButton;
-  @Input() buttonLast: IMenuButton;
-  @Output() onClickTask: EventEmitter<any> = new EventEmitter();
+  @Input() headerBtnFirst: IMenuButton;
+  @Input() headerBtnLast: ICheckbox;
+  @Input() footerBtnFirst: IMenuButton;
+  @Input() footerBtnLast: IMenuButton;
   @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;
+  private selectedList: any[] = [];
+  public selectedShown: any[] = [];
   public filteredList: any[];
   public formFieldControl: FormControl;
   private sub: SubscriptionLike;
-  public buttonTypeEnum: ButtonTypeEnum;
 }
 
 export interface IMenuButton {
@@ -132,21 +156,17 @@ export interface IMenuButton {
 }
 ```
 ```html
-<p-menu-single-select [menuList]="singleMenuList"
-                      [groupTitle]="groupTitle"
-                      [filterAriaLabel]="filterAriaLabel"
+<p-menu-multi-select [menuList]="multiMenuList"
                       [filterPlaceholder]="filterPlaceholder"
-                      [buttonFirst]="buttonFirst"
-                      [buttonLast]="buttonLast">
+                      [filterAriaLabel]="filterAriaLabel"
+                      [headerBtnFirst]="headerBtnFirst"
+                      [headerBtnLast]="headerBtnLast"
+                      [footerBtnFirst]="footerBtnFirst"
+                      [footerBtnLast]="footerBtnLast">
   <!--ng-content-->
-  <p-action-button [label]="singleMenuTrigger.label"
-                    [iconBeforeName]="singleMenuTrigger.iconBeforeName"
-                    [iconBeforeWidth]="singleMenuTrigger.iconBeforeWidth"
-                    [iconBeforeHeight]="singleMenuTrigger.iconBeforeHeight"
-                    [iconBeforeStrokeWidth]="singleMenuTrigger.iconBeforeStrokeWidth"
-                    [iconBeforeStrokeColor]="singleMenuTrigger.iconBeforeStrokeColor"
-                    [isMenuTrigger]="true"
-                    [isStandalone]="singleMenuTrigger.isStandalone"></p-action-button>
+  <p-input-text [value]="multiMenuTrigger.value"
+                [ariaLabel]="multiMenuTrigger.ariaLabel"
+                [iconName]="multiMenuTrigger.iconName"></p-input-text>
   <!-- -->
-</p-menu-single-select>
+</p-menu-multi-select>
 ```

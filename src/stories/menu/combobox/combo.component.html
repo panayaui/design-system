@@ -47,12 +47,45 @@
   </p-menu-single-select>
 </ng-container>
 
-<ng-container *ngIf="multiMenuTrigger?.label || multiMenuTrigger?.ariaLabel">
+<ng-container *ngIf="(multiMenuTrigger?.label || multiMenuTrigger?.ariaLabel)
+                      && !filterPlaceholder && !headerBtnFirst">
   <p-menu-multi-select [menuList]="multiMenuList"
                         [headerBtnFirst]="headerBtnFirst"
                         [headerBtnLast]="headerBtnLast"
                         [footerBtnFirst]="footerBtnFirst"
                         [footerBtnLast]="footerBtnLast">
+    <!--ng-content-->
+    <p-input-text [value]="multiMenuTrigger.value"
+                  [ariaLabel]="multiMenuTrigger.ariaLabel"
+                  [iconName]="multiMenuTrigger.iconName"></p-input-text>
+    <!-- -->
+  </p-menu-multi-select>
+</ng-container>
+
+<ng-container *ngIf="(multiMenuTrigger?.label || multiMenuTrigger?.ariaLabel)
+                      && filterPlaceholder && !headerBtnFirst">
+  <p-menu-multi-select [menuList]="multiMenuList"
+                       [filterPlaceholder]="filterPlaceholder"
+                       [filterAriaLabel]="filterAriaLabel"
+                       [footerBtnFirst]="footerBtnFirst"
+                       [footerBtnLast]="footerBtnLast">
+    <!--ng-content-->
+    <p-input-text [value]="multiMenuTrigger.value"
+                  [ariaLabel]="multiMenuTrigger.ariaLabel"
+                  [iconName]="multiMenuTrigger.iconName"></p-input-text>
+    <!-- -->
+  </p-menu-multi-select>
+</ng-container>
+
+<ng-container *ngIf="(multiMenuTrigger?.label || multiMenuTrigger?.ariaLabel)
+                      && filterPlaceholder && headerBtnFirst">
+  <p-menu-multi-select [menuList]="multiMenuList"
+                       [filterPlaceholder]="filterPlaceholder"
+                       [filterAriaLabel]="filterAriaLabel"
+                       [headerBtnFirst]="headerBtnFirst"
+                       [headerBtnLast]="headerBtnLast"
+                       [footerBtnFirst]="footerBtnFirst"
+                       [footerBtnLast]="footerBtnLast">
     <!--ng-content-->
     <p-input-text [value]="multiMenuTrigger.value"
                   [ariaLabel]="multiMenuTrigger.ariaLabel"
