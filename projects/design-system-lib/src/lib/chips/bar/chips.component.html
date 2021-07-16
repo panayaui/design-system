@@ -5,7 +5,8 @@
                   [ngClass]="{'full' : chip.full, 'active' : chip.active }"
                   [matTooltip]="valuesInTooltip(chip.values)"
                   matTooltipPosition="above"
-                  matTooltipClass="p-tooltip above">
+                  matTooltipClass="p-tooltip above"
+                  (click)="onClickTask.emit($event)">
     <p-button *ngIf="chip.iconRemove"
               class="p-chip-remove"
               matChipRemove

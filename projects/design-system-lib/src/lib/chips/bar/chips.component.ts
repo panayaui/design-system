@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {IChip} from '../chip-button.interface';
 import {ButtonTypeEnum} from '../../button/button-type.enum';
 
@@ -10,6 +10,7 @@ import {ButtonTypeEnum} from '../../button/button-type.enum';
 export class ChipsComponent {
   @Input() chips: IChip[];
   @Input() ariaLabel: string;
+  @Output() onClickTask: EventEmitter<any> = new EventEmitter();
   public buttonType = ButtonTypeEnum;
 
   valuesInTooltip(values: string[]): string {

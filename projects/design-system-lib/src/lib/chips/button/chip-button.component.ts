@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {ButtonTypeEnum} from '../../button/button-type.enum';
 
 @Component({
@@ -12,6 +12,7 @@ export class ChipButtonComponent {
   @Input() iconRemove: boolean;
   @Input() full: boolean;
   @Input() active: boolean;
+  @Output() onClickTask: EventEmitter<any> = new EventEmitter();
   public buttonType = ButtonTypeEnum;
 
   public get valuesInTooltip(): string {

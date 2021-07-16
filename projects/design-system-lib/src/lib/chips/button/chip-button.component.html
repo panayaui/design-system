@@ -3,7 +3,8 @@
                 [ngClass]="{'full' : full, 'active' : active }"
                 [matTooltip]="valuesInTooltip"
                 matTooltipPosition="above"
-                matTooltipClass="p-tooltip above">
+                matTooltipClass="p-tooltip above"
+                (click)="onClickTask.emit($event)">
   <p-button *ngIf="iconRemove"
             class="p-chip-remove"
             matChipRemove
@@ -12,7 +13,7 @@
             iconBefore="x"
             iconBeforeWidth="12"
             iconBeforeStrokeWidth="2"
-            (onClickTask)="removeChip()"></p-button>
+            (click)="removeChip()"></p-button>
   <span class="p-chip-label paragraph-2-default">{{label}}</span>
   <ul class="p-chip-values paragraph-2-default" *ngIf="values?.length">
     <li class="p-chip-value-item" *ngFor="let value of values">
