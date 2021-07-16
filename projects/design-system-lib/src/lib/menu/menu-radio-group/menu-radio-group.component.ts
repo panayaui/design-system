@@ -34,6 +34,10 @@ export class MenuRadioGroupComponent {
     return menuList.find( item => item.selected === true).name;
   }
 
+  openMenu(): void {
+    this.menuTrigger.openMenu();
+  }
+
   selectCompleted(): void {
     this.menuTrigger.closeMenu();
   }

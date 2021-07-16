@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {ButtonTypeEnum, IActionButton, IMenuButton, ICheckbox, IInputText, IChip} from 'projects/design-system-lib/src/public-api';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
+import {ButtonTypeEnum, IActionButton, IMenuButton, ICheckbox, IInputText, IChip, MenuRadioGroupComponent} from 'projects/design-system-lib/src/public-api';
 import {Validators} from '@angular/forms';
 import {LabelTypesEnum} from 'projects/design-system-lib/src/lib/labels/label-types.enum';
 
@@ -31,6 +31,11 @@ export class ComboComponent implements OnInit {
   // radio group + chip
   @Input() radioMenuTrigger: IChip;
   @Input() radioMenuList: any;
+  @ViewChild(MenuRadioGroupComponent) child: MenuRadioGroupComponent;
+  openRadioMenu(): void {
+    this.child.openMenu();
+  }
+
 
   @Input() data = {
     icon: { iconName: 'bell'},
