@@ -32,8 +32,6 @@ export class MenuTabsComponent implements OnInit, OnDestroy {
     inputNum?: IInputNumeric
   }[];
   @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;
-  private selectedList: any[] = [];
-  public selectedShown: any[] = [];
   public filteredList: any[];
   public customControl: FormControl;
   private sub: SubscriptionLike;
@@ -69,11 +67,13 @@ export class MenuTabsComponent implements OnInit, OnDestroy {
 
   onOptionSelected(item): void {
     console.log(item);
-    this.selectedList.push(item);
+  }
+
+  openMenu(): void {
+    this.menuTrigger.openMenu();
   }
 
   selectCompleted(): void {
-    this.selectedShown = this.selectedList;
     this.menuTrigger.closeMenu();
   }
 

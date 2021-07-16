@@ -1,7 +1,15 @@
 import {Component, Input, OnInit, ViewChild} from '@angular/core';
-import {ButtonTypeEnum, IActionButton, IMenuButton, ICheckbox, IInputText, IChip, MenuRadioGroupComponent} from 'projects/design-system-lib/src/public-api';
-import {Validators} from '@angular/forms';
-import {LabelTypesEnum} from 'projects/design-system-lib/src/lib/labels/label-types.enum';
+import {ButtonTypeEnum,
+  IActionButton,
+  IMenuButton,
+  ICheckbox,
+  IInputText,
+  IChip,
+  MenuRadioGroupComponent,
+  MenuTabsComponent,
+  IInputNumeric
+} from 'projects/design-system-lib/src/public-api';
+
 
 @Component({
   selector: 'p-combo',
@@ -31,29 +39,16 @@ export class ComboComponent implements OnInit {
   // radio group + chip
   @Input() radioMenuTrigger: IChip;
   @Input() radioMenuList: any;
-  @ViewChild(MenuRadioGroupComponent) child: MenuRadioGroupComponent;
-  openRadioMenu(): void {
-    this.child.openMenu();
-  }
+  @ViewChild(MenuRadioGroupComponent) radioMenu: MenuRadioGroupComponent;
 
-
-  @Input() data = {
-    icon: { iconName: 'bell'},
-    messageMain: 'Notification message.',
-    actionName: 'Action',
-    messageSub: 'Notification message.',
-    closeBtnName: 'Close'
-  };
-  menuTriggerName: string;
-  menuList: any;
-
-  checkboxList: any;
-  validator = Validators.required;
-  labelType = LabelTypesEnum;
-  menuListRadio: any;
-  menuListFreeText: any;
-  inputMin: any;
-  inputMax: any;
+  // tabs + chip
+  @Input() tabsMenuTrigger: IChip;
+  @Input() tabsMenuList: any;
+  @Input() checkboxList: {
+    checkbox: ICheckbox,
+    inputNum?: IInputNumeric
+  }[];
+  @ViewChild(MenuTabsComponent) tabsMenu: MenuRadioGroupComponent;
 
   constructor() {}
 
@@ -130,5 +125,13 @@ export class ComboComponent implements OnInit {
   //   ];
   //   this.inputMin = { label: 'Min', value: null };
   //   this.inputMax = { label: 'Max', value: 1 };
+  }
+
+  openRadioMenu(): void {
+    this.radioMenu.openMenu();
+  }
+
+  openTabsMenu(): void {
+    this.tabsMenu.openMenu();
   }
 }

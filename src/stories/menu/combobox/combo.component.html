@@ -120,14 +120,26 @@
   </p-menu-radio-group>
 </ng-container>
 
-
-<!--<p-menu-tabs [menuList]="menuList"-->
-<!--[headerBtnFirst]="headerBtnFirst"-->
-<!--[headerBtnLast]="headerBtnLast"-->
-<!--[footerBtnFirst]="footerBtnFirst"-->
-<!--[footerBtnLast]="footerBtnLast">-->
-<!--<p-input-text [value]="'Menu Tabs'"></p-input-text>-->
-<!--</p-menu-tabs>-->
+<!--Tabs-->
+<ng-container *ngIf="tabsMenuTrigger">
+  <p-menu-tabs [menuList]="tabsMenuList"
+               [filterPlaceholder]="filterPlaceholder"
+               [filterAriaLabel]="filterAriaLabel"
+               [headerBtnFirst]="headerBtnFirst"
+               [headerBtnLast]="headerBtnLast"
+               [footerBtnFirst]="footerBtnFirst"
+               [footerBtnLast]="footerBtnLast"
+               [checkboxList]="checkboxList">
+    <!--ng-content-->
+    <p-chip-button [label]="tabsMenuTrigger.label"
+                   [values]="tabsMenuTrigger.values"
+                   [iconRemove]="tabsMenuTrigger.iconRemove"
+                   [full]="tabsMenuTrigger.full"
+                   [active]="tabsMenuTrigger.active"
+                   (onClickTask)="openTabsMenu()"></p-chip-button>
+    <!-- -->
+  </p-menu-tabs>
+</ng-container>
 
 
 
