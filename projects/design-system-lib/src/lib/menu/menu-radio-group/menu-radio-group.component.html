@@ -26,7 +26,13 @@
         <div class="p-menu-option-link" *ngIf="option.menuList">
           <p-menu-single-select class="p-menu-option-submenu"
                                 [menuList]="option.menuList">
-            {{findMenuTriggerName(option.menuList)}}
+            <!--ng-content-->
+            <p-button iconAfter="chevron-down"
+                      iconAfterWidth="17"
+                      iconAfterHeight="17"
+                      [label]="findMenuTriggerName(option.menuList)"
+                      [buttonType]="buttonType.Tertiary" ></p-button>
+            <!-- -->
           </p-menu-single-select>
         </div>
 
