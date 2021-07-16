@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, ViewChild} from '@angular/core';
+import {Component, Input, ViewChild} from '@angular/core';
 import {ButtonTypeEnum,
   IActionButton,
   IMenuButton,
@@ -7,6 +7,8 @@ import {ButtonTypeEnum,
   IChip,
   MenuRadioGroupComponent,
   MenuTabsComponent,
+  MenuRangeComponent,
+  MenuFreeTextComponent,
   IInputNumeric
 } from 'projects/design-system-lib/src/public-api';
 
@@ -16,7 +18,7 @@ import {ButtonTypeEnum,
   templateUrl: './combo.component.html',
   styleUrls: ['./combo.component.scss']
 })
-export class ComboComponent implements OnInit {
+export class ComboComponent {
   @Input() buttonType = ButtonTypeEnum;
 
   // single select + action button / button
@@ -50,82 +52,19 @@ export class ComboComponent implements OnInit {
   }[];
   @ViewChild(MenuTabsComponent) tabsMenu: MenuRadioGroupComponent;
 
+  // range + chip
+  @Input() rangeMenuTrigger: IChip;
+  @Input() rangeMenuList: any;
+  @Input() inputMin: IInputNumeric;
+  @Input() inputMax: IInputNumeric;
+  @ViewChild(MenuRangeComponent) rangeMenu: MenuRangeComponent;
+
+  // free text + chip
+  @Input() freeTextMenuTrigger: IChip;
+  @Input() freeTextMenuList: any;
+  @ViewChild(MenuFreeTextComponent) freeTextMenu: MenuFreeTextComponent;
+
   constructor() {}
-
-  ngOnInit(): void {
-
-  //   this.checkboxList = [
-  //     {
-  //       checkbox: { label: 'Last'},
-  //       inputNum: { label: 'Release(s)', value: 1}
-  //     },
-  //     {
-  //       checkbox: { label: 'Last'},
-  //       inputNum: { label: 'Release(s)', value: 1}
-  //     },
-  //     {
-  //       checkbox: { label: 'Last'},
-  //       inputNum: { label: 'Release(s)', value: 1}
-  //     },
-  //     {
-  //       checkbox: { label: 'Last'},
-  //       inputNum: { label: 'Release(s)', value: 1}
-  //     },
-  //     {
-  //       checkbox: { label: 'Next'},
-  //       inputNum: { label: 'Release(s)', value: 1}
-  //     }
-  //   ];
-  //   this.menuListRadio =  [
-  //     { label: 'All' },
-  //     { label: 'Today' },
-  //     { label: 'Yesterday' },
-  //     { label: 'Tomorrow' },
-  //     { label: 'This',
-  //       menuList: [
-  //         { name: 'week (Starts Sunday)', selected: true},
-  //         { name: 'week (Starts Monday)'},
-  //         { name: 'month'},
-  //         { name: 'year'}
-  //       ]
-  //     },
-  //     { label: 'Last',
-  //       numericInputValue: 1,
-  //       menuList: [
-  //         { name: 'Day(s)', selected: true},
-  //         { name: 'Week(s)'},
-  //         { name: 'Month(s)'},
-  //         { name: 'Year(s)'}
-  //       ]
-  //     },
-  //     { label: 'Next',
-  //       numericInputValue: 1,
-  //       menuList: [
-  //         { name: 'Day(s)', selected: true},
-  //         { name: 'Week(s)'},
-  //         { name: 'Month(s)'},
-  //         { name: 'Year(s)'}
-  //       ]
-  //     },
-  //     { label: 'Blanks' },
-  //     { label: 'Between',
-  //       dateStart: {
-  //         ariaLabel: 'date start'
-  //       },
-  //       dateEnd: {
-  //         ariaLabel: 'date start'
-  //       }
-  //     }
-  //   ];
-  //   this.menuListFreeText = [
-  //     { name: 'Contains', inputValue: '', selected: true },
-  //     { name: 'Not contains', inputValue: 'smth', selected: false },
-  //     { name: 'Empty', selected: false },
-  //     { name: 'Not empty', selected: false }
-  //   ];
-  //   this.inputMin = { label: 'Min', value: null };
-  //   this.inputMax = { label: 'Max', value: 1 };
-  }
 
   openRadioMenu(): void {
     this.radioMenu.openMenu();
@@ -133,5 +72,13 @@ export class ComboComponent implements OnInit {
 
   openTabsMenu(): void {
     this.tabsMenu.openMenu();
+  }
+
+  openRangeMenu(): void {
+    this.rangeMenu.openMenu();
+  }
+
+  openFreeTextMenu(): void {
+    this.freeTextMenu.openMenu();
   }
 }

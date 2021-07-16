@@ -18,7 +18,6 @@ interface IMenuFreeTextItem {
   styleUrls: ['./menu-free-text.component.scss'],
 })
 export class MenuFreeTextComponent implements OnInit{
-  @Input() menuTriggerName: string;
   @Input() menuList: IMenuFreeTextItem[];
   @Input() footerBtnFirst: IMenuButton;
   @Input() footerBtnLast: IMenuButton;
@@ -32,6 +31,10 @@ export class MenuFreeTextComponent implements OnInit{
 
   selectCompleted(): void {
     this.menuTrigger.closeMenu();
+  }
+
+  openMenu(): void {
+    this.menuTrigger.openMenu();
   }
 
   selectCanceled(): void {

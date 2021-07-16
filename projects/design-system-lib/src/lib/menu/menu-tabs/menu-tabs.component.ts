@@ -19,7 +19,6 @@ import {InputNumericSizeEnum} from '../../input/numeric/input-numeric-size.enum'
   styleUrls: ['./menu-tabs.component.scss'],
 })
 export class MenuTabsComponent implements OnInit, OnDestroy {
-  @Input() menuTriggerName: string;
   @Input() menuList: any[];
   @Input() filterPlaceholder: string; // if there is a search and buttons
   @Input() filterAriaLabel: string;

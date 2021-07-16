@@ -1,0 +1,93 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+
+import {ComboComponent} from './combobox/combo.component';
+import {ComboModule} from './combobox/combo.module';
+import {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';
+
+<Meta title='Components/Menu/Free Text'
+    component={ComboComponent}
+    decorators={[
+      moduleMetadata({
+          imports: [ComboModule]
+      })
+    ]}  
+    args={{
+      freeTextMenuTrigger: {
+          label: 'Label',
+          iconRemove: true,
+          values: ['Filter', 'Filter'],
+          full: true
+      },
+      freeTextMenuList: [
+        { name: 'Contains', inputValue: '', selected: true },
+        { name: 'Not contains', inputValue: 'smth', selected: false },
+        { name: 'Empty', selected: false },
+        { name: 'Not empty', selected: false }
+      ],
+      footerBtnFirst: {
+        label: 'Done',
+        buttonType: ButtonTypeEnum.Primary
+      },
+      footerBtnLast: {
+        label: 'Cancel',
+        buttonType: ButtonTypeEnum.Secondary
+      }
+    }}  
+ />
+
+export const Template = (args) => <ComboComponent {...args} />
+
+# Free Text Menu
+
+###### Selector
+```html
+<p-menu-free-text></p-menu-free-text>
+```
+<Canvas>
+  <Story name="Free Text"
+    args={{ 
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Usage
+```ts
+import {MatMenuModule} from '@angular/material/menu';
+
+export class MenuFreeTextComponent implements OnInit{
+  @Input() menuList: IMenuFreeTextItem[];
+  @Input() footerBtnFirst: IMenuButton;
+  @Input() footerBtnLast: IMenuButton;
+  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;
+  public selectedItem: IMenuFreeTextItem;
+  public isInputShown: boolean;
+}
+
+interface IMenuFreeTextItem {
+  name: string;
+  inputValue?: string;
+  selected?: boolean;
+}
+
+export interface IMenuButton {
+  label: string;
+  buttonType: ButtonTypeEnum;
+  icon: IIcon;
+}
+```
+```html
+<p-menu-free-text [menuList]="freeTextMenuList"
+                  [footerBtnFirst]="footerBtnFirst"
+                  [footerBtnLast]="footerBtnLast">
+  <!--ng-content-->
+  <p-chip-button [label]="freeTextMenuTrigger.label"
+                  [values]="freeTextMenuTrigger.values"
+                  [iconRemove]="freeTextMenuTrigger.iconRemove"
+                  [full]="freeTextMenuTrigger.full"
+                  [active]="freeTextMenuTrigger.active"
+                  (onClickTask)="openFreeTextMenu()"></p-chip-button>
+  <!-- -->
+</p-menu-free-text>
+```

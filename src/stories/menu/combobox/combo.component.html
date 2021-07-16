@@ -141,16 +141,37 @@
   </p-menu-tabs>
 </ng-container>
 
+<!--Range-->
+<ng-container *ngIf="rangeMenuTrigger">
+  <p-menu-range [inputMax]="inputMax"
+                [inputMin]="inputMin"
+                [footerBtnFirst]="footerBtnFirst"
+                [footerBtnLast]="footerBtnLast">
+    <!--ng-content-->
+    <p-chip-button [label]="rangeMenuTrigger.label"
+                   [values]="rangeMenuTrigger.values"
+                   [iconRemove]="rangeMenuTrigger.iconRemove"
+                   [full]="rangeMenuTrigger.full"
+                   [active]="rangeMenuTrigger.active"
+                   (onClickTask)="openRangeMenu()"></p-chip-button>
+    <!-- -->
+  </p-menu-range>
+</ng-container>
+
+<!--Range-->
+<ng-container *ngIf="freeTextMenuTrigger">
+  <p-menu-free-text [menuList]="freeTextMenuList"
+                    [footerBtnFirst]="footerBtnFirst"
+                    [footerBtnLast]="footerBtnLast">
+    <!--ng-content-->
+    <p-chip-button [label]="freeTextMenuTrigger.label"
+                   [values]="freeTextMenuTrigger.values"
+                   [iconRemove]="freeTextMenuTrigger.iconRemove"
+                   [full]="freeTextMenuTrigger.full"
+                   [active]="freeTextMenuTrigger.active"
+                   (onClickTask)="openFreeTextMenu()"></p-chip-button>
+    <!-- -->
+  </p-menu-free-text>
+</ng-container>
 
 
-<!--<p-menu-free-text [menuList]="menuListFreeText"-->
-<!--[footerBtnFirst]="footerBtnFirst"-->
-<!--[footerBtnLast]="footerBtnLast">-->
-<!--<p-input-text [value]="'Menu Free Text'"></p-input-text>-->
-<!--</p-menu-free-text>-->
-
-<!--<p-menu-range [inputMax]="inputMax" [inputMin]="inputMin"-->
-<!--[footerBtnFirst]="footerBtnFirst"-->
-<!--[footerBtnLast]="footerBtnLast">-->
-<!--<p-input-text [value]="'Menu Range'"></p-input-text>-->
-<!--</p-menu-range>-->

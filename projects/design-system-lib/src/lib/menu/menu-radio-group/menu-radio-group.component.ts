@@ -23,7 +23,6 @@ interface IMenuRadioOption extends IRadioButton {
   styleUrls: ['./menu-radio-group.component.scss'],
 })
 export class MenuRadioGroupComponent {
-  @Input() menuTriggerName: string;
   @Input() menuList: IMenuRadioOption[];
   @Input() footerBtnFirst: IMenuButton;
   @Input() footerBtnLast: IMenuButton;
