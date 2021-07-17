@@ -20,8 +20,13 @@ $menu-width: 250px;
   }
   // every option
   .p-btn {
+    font-weight: 600;
     padding-right: $menu-padding;
     padding-left: $menu-padding;
+  }
+
+  .p-btn-icon-after .p-btn-label {
+    margin-right: 4px;
   }
 
   .p-input-outline {

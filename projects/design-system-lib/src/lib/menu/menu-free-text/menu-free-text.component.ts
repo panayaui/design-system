@@ -5,6 +5,7 @@ import {
 } from '@angular/core';
 import {MatMenuTrigger} from '@angular/material/menu';
 import {IMenuButton} from '../menu-button.interface';
+import {ButtonTypeEnum} from '../../button/button-type.enum';
 
 interface IMenuFreeTextItem {
   name: string;
@@ -24,6 +25,7 @@ export class MenuFreeTextComponent implements OnInit{
   @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;
   public selectedItem: IMenuFreeTextItem;
   public isInputShown: boolean;
+  public buttonType = ButtonTypeEnum;
 
   ngOnInit(): void {
     this.findSelectedItem();
