@@ -2,7 +2,6 @@
 
 .p-input-link {
   color: $secondary-a-700;
-  width: $input-text-width;
 
   ::placeholder {
     color: $secondary-a-700;
@@ -10,7 +9,7 @@
 
   .p-input-text-input {
     color: $secondary-a-700;
-    max-width: calc(100% - #{$gap-base} - #{$gap-small});
+    width: calc(100% - #{$gap-base} - #{$gap-small});
     @include ellipsis;
   }
 
