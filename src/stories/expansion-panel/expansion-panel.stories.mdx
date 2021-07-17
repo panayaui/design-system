@@ -46,6 +46,7 @@ export const Template = (args) => <ExpansionPanelComponent {...args} />
 ```ts
   <p-expansion-panel></p-expansion-panel>
 ```
+###### Title + Subtitle
 <Canvas>
   <Story name="Subtitle"
     args={{
@@ -54,21 +55,44 @@ export const Template = (args) => <ExpansionPanelComponent {...args} />
   </Story>
 </Canvas>
 
-The sidenav expansion panel's width = 100%. 
+###### No Subtitle
+<Canvas>
+  <Story name="No Subtitle"
+    args={{
+      expansionPanel: [{
+        header: { titleMain: 'TItle level 1' },
+        content: loremIpsum
+      },
+      {
+        header: { titleMain: 'TItle level 1' },
+        content: loremIpsum
+      },
+      {
+        header: { titleMain: 'TItle level 1' },
+        content: loremIpsum
+      },
+      {
+        header: { titleMain: 'TItle level 1' },
+        content: loremIpsum
+      },
+      {
+        header: { titleMain: 'TItle level 1' },
+        content: loremIpsum
+      }
+    ]
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
 
-In this example width = 280px is set on its parent contaner.
 
-###### ISidenavMain
+###### IExpansionPanel
 ```ts
-export interface ISidenavMain {
+export interface IExpansionPanel {
   header: {
-    headerName: string,
-    headerIcon?: string,
+    titleMain: string,
+    titleSub?: string,
   };
-  content: {
-    name: string,
-    link: string,
-    selected: boolean
-  }[];
+  content: any;
 }
 ```
