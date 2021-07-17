@@ -35,17 +35,13 @@ export class InputLinkComponent implements OnInit {
       headerText: 'Lorem Ipsum Title',
         textParagraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ipsum orci, imperdiet quis cursus sed, efficitur vitae risus. Quisque lacinia, risus eu rhoncus eleifend.',
         actions: [{
-        label: 'Some',
+        label: 'Action',
         buttonType: ButtonTypeEnum.Primary,
       },
-        {
-          label: 'Action',
-          buttonType: ButtonTypeEnum.Secondary,
-        },
-        {
-          label: 'Cancel',
-          buttonType: ButtonTypeEnum.Tertiary,
-        }]
+      {
+        label: 'Cancel',
+        buttonType: ButtonTypeEnum.Secondary,
+      }]
     };
     const panelClass = ['p-modal', 'p-modal-small'];
     const dialogRef = this.dialog.open(ModalComponent, {

@@ -1,7 +1,6 @@
 import {
   Component,
   Input,
-  OnInit,
   ViewChild
 } from '@angular/core';
 import {MatMenuTrigger} from '@angular/material/menu';
@@ -9,6 +8,7 @@ import {IMenuButton} from '../menu-button.interface';
 import {IRadioButton} from '../../radio-button/radio-button.interface';
 import {InputNumericSizeEnum} from '../../input/numeric/input-numeric-size.enum';
 import {IDatepicker} from '../../input/datepicker/datepicker.interface';
+import {ButtonTypeEnum} from '../../button/button-type.enum';
 
 interface IMenuRadioOption extends IRadioButton {
   numericInputValue?: number;
@@ -23,15 +23,19 @@ interface IMenuRadioOption extends IRadioButton {
   styleUrls: ['./menu-radio-group.component.scss'],
 })
 export class MenuRadioGroupComponent {
-  @Input() menuTriggerName: string;
   @Input() menuList: IMenuRadioOption[];
   @Input() footerBtnFirst: IMenuButton;
   @Input() footerBtnLast: IMenuButton;
   @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;
   public inputNumericSize = InputNumericSizeEnum;
+  public buttonType = ButtonTypeEnum;
 
   findMenuTriggerName(menuList): void {
     return menuList.find( item => item.selected === true).name;
+  }
+
+  openMenu(): void {
+    this.menuTrigger.openMenu();
   }
 
   selectCompleted(): void {

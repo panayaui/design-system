@@ -12,10 +12,8 @@ $menu-radio-padding: 24px;
 .p-menu {
   &-body {
     @include resetUl;
-    height: calc(100%);
     padding-top: $gap-double;
     padding-right: $menu-radio-padding - $menu-padding;
-    padding-bottom: $menu-footer-height;
     padding-left: $menu-radio-padding - $menu-padding;
   }
   &-footer {

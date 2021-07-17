@@ -1,0 +1,25 @@
+<mat-accordion class="p-accordion" multi>
+  <mat-expansion-panel *ngFor="let panel of expansionPanel"
+                       class="p-expansion-panel"
+                       hideToggle>
+    <mat-expansion-panel-header class="p-expansion-panel-header">
+      <p-icon class="p-expansion-panel-icon"
+              iconName="chevron-down"
+              width="17"
+              height="auto"
+              strokeWidth="2.5">
+      </p-icon>
+      <span class="p-expansion-panel-title-main paragraph-2-default">
+        {{panel.header.titleMain}}
+      </span>
+      <span *ngIf="panel.header.titleSub" class="p-expansion-panel-title-sub paragraph-2-default">
+        {{panel.header.titleSub}}
+      </span>
+    </mat-expansion-panel-header>
+
+    <!--expanded content-->
+    <div class="p-expansion-panel-content">
+      {{panel.content}}
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>

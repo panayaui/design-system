@@ -1,10 +1,10 @@
 @import "../../assets/styles/custom";
 
 .p-input-text {
+  width: $input-text-width;
   ::ng-deep & {
     // material styles override
     &.mat-form-field-appearance-standard.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
-      width: 100%;
       transform: translateY(-23px);
     }
     .mat-form-field-label-wrapper {
@@ -18,14 +18,13 @@
     .p-input-text-input {
       font-family: $font-family-basic;
       font-size: $small-font-size;
-      max-width: $input-text-width - $input-text-padding;
+      width: calc(100% - #{$input-text-padding});
       line-height: 20px;
       color: $primary-a-900;
       padding-left: $input-text-padding;
       caret-color: $primary-a-900;
     }
     .mat-form-field-infix {
-      width: $input-text-width;
       padding-bottom: 6px;
     }
     &.mat-form-field-appearance-standard .mat-form-field-flex {
@@ -36,16 +35,22 @@
       box-shadow: inset 0px -1px 0px $gray-scale-600;
     }
     &.mat-form-field.mat-focused .mat-form-field-underline,
-    &:not(.p-input-link):not(.mat-form-field-disabled):not(.mat-form-field-invalid)
-            .mat-form-field-flex:hover~.mat-form-field-underline {
-      background-color: transparent;
-      box-shadow: inset 0px -1px 0px $primary-a-900;
+    &:not(.mat-form-field-disabled):not(.mat-form-field-invalid)
+            .mat-form-field-flex:hover {
+      & ~.mat-form-field-underline {
+        background-color: transparent;
+        box-shadow: inset 0px -1px 0px $primary-a-900;
+      }
+      .mat-form-field-suffix {
+        opacity: 1;
+      }
     }
     .mat-form-field-ripple {
       display: none;
     }
     .mat-form-field-subscript-wrapper {
       margin-top: 5px;
+      transform: translateY(22px);
     }
     .mat-error {
       font-family: $font-family-basic;
@@ -87,6 +92,7 @@
     //icon
     .mat-form-field-suffix {
       align-self: flex-end;
+      opacity: 0;
     }
     &-icon {
       padding-bottom: 6px;
@@ -95,5 +101,19 @@
         display: none;
       }
     }
+  }
+
+  // no padding for error message on the bottom of mat-form-field
+  .p-input-text-label {
+    padding-bottom: 6px;
+  }
+  ::ng-deep .mat-form-field-wrapper {
+    padding-bottom: 0;
+  }
+  ::ng-deep .mat-form-field-infix {
+    border-top: 0;
+  }
+  ::ng-deep .mat-form-field-underline {
+    position: static;
   }
 }

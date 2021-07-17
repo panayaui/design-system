@@ -9,7 +9,8 @@ $header-height: 64px;
 $footer-height: 72px;
 $padding-left: $gap-double-plus;
 $padding-right: $gap-double;
-$content-text-max-width: 490px;
+$content-text-max-width-small: 500px;
+$content-text-max-width-large: 600px;
 
 $fullScreen-top: 64px;
 $fullScreen-margin: 32px;
@@ -85,7 +86,14 @@ $fullScreen-height: calc(100% - #{$fullScreen-top} - #{$fullScreen-margin});
     padding-left: $padding-left;
     flex: 1 0 100%;
     &-text {
-      max-width: $content-text-max-width;
+      ::ng-deep .p-modal-small &,
+      ::ng-deep .p-modal-medium & {
+        max-width: $content-text-max-width-small;
+      }
+      ::ng-deep .p-modal-large &,
+      ::ng-deep .p-modal-fullScreen & {
+        max-width: $content-text-max-width-large;
+      }
     }
     .p-modal-header + & {
       padding-top: $gap-base;

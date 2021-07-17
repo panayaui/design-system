@@ -1,0 +1,138 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+
+import {ComboComponent} from './combobox/combo.component';
+import {ComboModule} from './combobox/combo.module';
+import {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';
+
+<Meta title='Components/Menu/Radio Group'
+    component={ComboComponent}
+    decorators={[
+      moduleMetadata({
+          imports: [ComboModule]
+      })
+    ]}
+    args={{
+      radioMenuTrigger: {
+          label: 'Label',
+          iconRemove: true,
+          values: ['Filter', 'Filter'],
+          full: true
+      },
+      radioMenuList: [
+       { label: 'All' },
+        { label: 'Today' },
+        { label: 'Yesterday' },
+        { label: 'Tomorrow' },
+        { label: 'This',
+          menuList: [
+             { name: 'week (Starts Sunday)', selected: true},
+             { name: 'week (Starts Monday)'},
+             { name: 'month'},
+             { name: 'year'}
+          ]
+        },
+        { label: 'Last',
+          numericInputValue: 1,
+          menuList: [
+            { name: 'Day(s)', selected: true},
+            { name: 'Week(s)'},
+            { name: 'Month(s)'},
+            { name: 'Year(s)'}
+          ]
+        },
+        { label: 'Next',
+          numericInputValue: 1,
+          menuList: [
+            { name: 'Day(s)', selected: true},
+            { name: 'Week(s)'},
+            { name: 'Month(s)'},
+            { name: 'Year(s)'}
+          ]
+        },
+        { label: 'Blanks' },
+        { label: 'Between',
+          dateStart: {
+            ariaLabel: 'date start'
+          },
+          dateEnd: {
+            ariaLabel: 'date start'
+          }
+        }
+      ],
+      footerBtnFirst: {
+        label: 'Done',
+        buttonType: ButtonTypeEnum.Primary
+      },
+      footerBtnLast: {
+        label: 'Cancel',
+        buttonType: ButtonTypeEnum.Secondary
+      }
+    }}
+ />
+
+export const Template = (args) => <ComboComponent {...args} />
+
+# Radio Group Menu
+
+###### Selector
+```html
+<p-menu-radio-group></p-menu-radio-group>
+```
+
+<Canvas>
+  <Story name="Radio"
+    args={{
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Usage
+```ts
+import {MatMenuModule} from '@angular/material/menu';
+export class MenuRadioGroupComponent {
+  @Input() menuList: IMenuRadioOption[];
+  @Input() footerBtnFirst: IMenuButton;
+  @Input() footerBtnLast: IMenuButton;
+  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;
+  public inputNumericSize = InputNumericSizeEnum;
+
+  findMenuTriggerName(menuList): void {
+    return menuList.find( item => item.selected === true).name;
+  }
+
+  openMenu(): void {
+    this.menuTrigger.openMenu();
+  }
+
+  selectCompleted(): void {
+    this.menuTrigger.closeMenu();
+  }
+
+  selectCanceled(): void {
+    this.menuTrigger.closeMenu();
+  }
+}
+
+interface IMenuRadioOption extends IRadioButton {
+  numericInputValue?: number;
+  menuList?: any[];
+  dateStart?: IDatepicker;
+  dateEnd?: IDatepicker;
+}
+```
+```html
+<p-menu-radio-group [menuList]="radioMenuList"
+                    [footerBtnFirst]="footerBtnFirst"
+                    [footerBtnLast]="footerBtnLast">
+  <!--ng-content-->
+  <p-chip-button [label]="radioMenuTrigger.label"
+                  [values]="radioMenuTrigger.values"
+                  [iconRemove]="radioMenuTrigger.iconRemove"
+                  [full]="radioMenuTrigger.full"
+                  [active]="radioMenuTrigger.active"
+                  (onClickTask)="openRadioMenu()"></p-chip-button>
+  <!-- -->
+</p-menu-radio-group>
+```

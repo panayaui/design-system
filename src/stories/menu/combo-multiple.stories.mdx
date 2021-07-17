@@ -1,0 +1,176 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+
+import {ComboComponent} from './combobox/combo.component';
+import {ComboModule} from './combobox/combo.module';
+import {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';
+
+import {stateGroups} from './stateGroups';
+
+<Meta title='Components/Menu/Multi Select'
+    component={ComboComponent}
+    decorators={[
+      moduleMetadata({
+          imports: [ComboModule]
+      })
+    ]}
+    args={{
+      multiMenuTrigger: {
+        label: 'Action item',
+        iconBeforeName: 'columns',
+        iconBeforeWidth: '17',
+        isStandalone: true
+      },
+      multiMenuList: [
+        { name: 'Alabama',
+          disabled: false
+        },
+        { name: 'Alaska disabled',
+          disabled: true
+        },
+        { name: 'California',
+          disabled: false
+        },
+        { name: 'Colorado',
+          disabled: false
+        },
+        { name: 'Delaware',
+          disabled: false
+        },
+        { name: 'Florida selected disabled',
+          disabled: true,
+          selected: true
+        },
+        { name: 'Georgia',
+          disabled: false
+        },
+        { name: 'Hawaii',
+          disabled: false
+        },
+        { name: 'Idaho',
+          disabled: true
+        },
+        { name: 'Illinois',
+          disabled: false
+        },
+        { name: 'Indiana',
+          disabled: false
+        },
+        { name: 'Iowa',
+          disabled: false
+        },
+        { name: 'Kansas',
+          disabled: true,
+          selected: true
+        },
+        { name: 'Kentucky',
+          disabled: false
+        }
+      ],
+      footerBtnFirst: {
+        label: 'Done',
+        buttonType: ButtonTypeEnum.Primary
+      },
+      footerBtnLast: {
+        label: 'Cancel',
+        buttonType: ButtonTypeEnum.Secondary
+      }
+    }}
+ />
+
+export const Template = (args) => <ComboComponent {...args} />
+
+# Multi select menu
+
+###### Selector
+```html
+<p-menu-multi-select></p-menu-multi-select>
+```
+###### Simple
+<Canvas>
+  <Story name="Multi Select"
+    args={{
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Filter
+<Canvas>
+  <Story name="Multi Select with Filter"
+    args={{
+      filterAriaLabel: 'Find Label',
+      filterPlaceholder: 'Find Label'
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Filter and Header Buttons
+<Canvas>
+  <Story name="Multi Select with Filter and Header Buttons"
+    args={{
+      filterAriaLabel: 'Find Label',
+      filterPlaceholder: 'Find Label',
+      headerBtnFirst: {
+        label: 'Clear selected',
+        buttonType: ButtonTypeEnum.Tertiary,
+        icon: {
+          iconName: 'eraser',
+          width: '15',
+          height: '15'
+        }
+      },
+      headerBtnLast: {
+        label: 'Not equal to'
+      },
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Usage
+```ts
+import {MatMenuModule} from '@angular/material/menu';
+
+export class MenuMultiSelectComponent implements OnInit, OnDestroy {
+  @Input() menuList: any[];
+  @Input() filterPlaceholder: string; // if there is a search and buttons
+  @Input() filterAriaLabel: string;
+  @Input() headerBtnFirst: IMenuButton;
+  @Input() headerBtnLast: ICheckbox;
+  @Input() footerBtnFirst: IMenuButton;
+  @Input() footerBtnLast: IMenuButton;
+  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;
+  public filteredList: any[];
+  public formFieldControl: FormControl;
+  private sub: SubscriptionLike;
+
+}
+
+export interface IMenuButton {
+  label: string;
+  buttonType: ButtonTypeEnum;
+  icon: IIcon;
+}
+```
+```html
+<p-menu-multi-select [menuList]="multiMenuList"
+                      [filterPlaceholder]="filterPlaceholder"
+                      [filterAriaLabel]="filterAriaLabel"
+                      [headerBtnFirst]="headerBtnFirst"
+                      [headerBtnLast]="headerBtnLast"
+                      [footerBtnFirst]="footerBtnFirst"
+                      [footerBtnLast]="footerBtnLast">
+  <!--ng-content-->
+  <p-action-button [label]="multiMenuTrigger.label"
+                    [iconBeforeName]="multiMenuTrigger.iconBeforeName"
+                    [iconBeforeWidth]="multiMenuTrigger.iconBeforeWidth"
+                    [iconBeforeHeight]="multiMenuTrigger.iconBeforeHeight"
+                    [iconBeforeStrokeWidth]="multiMenuTrigger.iconBeforeStrokeWidth"
+                    [iconBeforeStrokeColor]="multiMenuTrigger.iconBeforeStrokeColor"
+                    [isMenuTrigger]="true"
+                    [isStandalone]="multiMenuTrigger.isStandalone"></p-action-button>
+  <!-- -->
+</p-menu-multi-select>
+```

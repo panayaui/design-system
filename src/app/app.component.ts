@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';
 import {InputNumericSizeEnum} from 'projects/design-system-lib/src/public-api';
 import {ReactiveFormsModule, Validators} from '@angular/forms';
+import {LabelTypesEnum} from 'projects/design-system-lib/src/lib/labels/label-types.enum';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,7 @@ export class AppComponent implements OnInit {
     messageSub: 'Notification message.',
     closeBtnName: 'Close'
   };
-  menuTriggerName: 'Multi select';
+  menuTriggerName: string;
   menuList: any;
   footerBtnFirst: any;
   footerBtnLast: any;
@@ -26,11 +27,16 @@ export class AppComponent implements OnInit {
   headerBtnLast: any;
   checkboxList: any;
   validator = Validators.required;
-  tabGroup: any;
+  labelType = LabelTypesEnum;
+  menuListRadio: any;
+  menuListFreeText: any;
+  inputMin: any;
+  inputMax: any;
 
   constructor() {}
 
   ngOnInit(): void {
+    this.menuTriggerName = 'Menu';
     this.menuList = [
       { name: 'Alabama',
         disabled: false
@@ -91,11 +97,11 @@ export class AppComponent implements OnInit {
 
     this.headerBtnFirst = {
       label: 'Clear selected',
-        buttonType: ButtonTypeEnum.Tertiary,
-        icon: {
+      buttonType: ButtonTypeEnum.Tertiary,
+      icon: {
         iconName: 'eraser',
-          width: '15',
-          height: '15'
+        width: '15',
+        height: '15'
       }
     };
     this.headerBtnLast = {
@@ -123,41 +129,54 @@ export class AppComponent implements OnInit {
         inputNum: { label: 'Release(s)', value: 1}
       }
     ];
-    this.tabGroup =  [{
-      tabButton: { labelName: 'Tab Name' },
-      tabPanel: 'January Panel'
-    },
-    {
-      tabButton: { labelName: 'February' },
-      tabPanel: 'February Panel'
-    },
-    {
-      tabButton: { labelName: 'March' },
-      tabPanel: 'March Panel'
-    },
-    {
-      tabButton: { labelName: 'April' },
-      tabPanel: 'April Panel'
-    },
-    {
-      tabButton: { labelName: 'May' },
-      tabPanel: 'May Panel'
-    },
-    {
-      tabButton: { labelName: 'June' },
-      tabPanel: 'June Panel'
-    },
-    {
-      tabButton: { labelName: 'July' },
-      tabPanel: 'July Panel'
-    },
-    {
-      tabButton: { labelName: 'August' },
-      tabPanel: 'August Panel'
-    },
-    {
-      tabButton: { labelName: 'September' },
-      tabPanel: 'September Panel'
-    }];
+    this.menuListRadio =  [
+      { label: 'All' },
+      { label: 'Today' },
+      { label: 'Yesterday' },
+      { label: 'Tomorrow' },
+      { label: 'This',
+        menuList: [
+          { name: 'week (Starts Sunday)', selected: true},
+          { name: 'week (Starts Monday)'},
+          { name: 'month'},
+          { name: 'year'}
+        ]
+      },
+      { label: 'Last',
+        numericInputValue: 1,
+        menuList: [
+          { name: 'Day(s)', selected: true},
+          { name: 'Week(s)'},
+          { name: 'Month(s)'},
+          { name: 'Year(s)'}
+        ]
+      },
+      { label: 'Next',
+        numericInputValue: 1,
+        menuList: [
+          { name: 'Day(s)', selected: true},
+          { name: 'Week(s)'},
+          { name: 'Month(s)'},
+          { name: 'Year(s)'}
+        ]
+      },
+      { label: 'Blanks' },
+      { label: 'Between',
+        dateStart: {
+          ariaLabel: 'date start'
+        },
+        dateEnd: {
+          ariaLabel: 'date start'
+        }
+      }
+    ];
+    this.menuListFreeText = [
+      { name: 'Contains', inputValue: '', selected: true },
+      { name: 'Not contains', inputValue: 'smth', selected: false },
+      { name: 'Empty', selected: false },
+      { name: 'Not empty', selected: false }
+    ];
+    this.inputMin = { label: 'Min', value: null };
+    this.inputMax = { label: 'Max', value: 1 };
   }
 }

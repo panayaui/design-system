@@ -1,0 +1,177 @@
+<!--Singe select-->
+<ng-container *ngIf="singleMenuTrigger && !groupTitle">
+  <p-menu-single-select [menuList]="singleMenuList"
+                        [buttonFirst]="buttonFirst"
+                        [buttonLast]="buttonLast">
+    <!--ng-content-->
+    <p-input-text [value]="singleMenuTrigger.value"
+                  [ariaLabel]="singleMenuTrigger.ariaLabel"
+                  [iconName]="singleMenuTrigger.iconName"></p-input-text>
+    <!-- -->
+  </p-menu-single-select>
+</ng-container>
+
+<ng-container *ngIf="singleMenuTrigger && groupTitle && !filterPlaceholder">
+  <p-menu-single-select [menuList]="singleMenuList"
+                        [groupTitle]="groupTitle"
+                        [buttonFirst]="buttonFirst"
+                        [buttonLast]="buttonLast">
+    <!--ng-content-->
+    <p-input-text [value]="singleMenuTrigger.value"
+                  [ariaLabel]="singleMenuTrigger.ariaLabel"
+                  [iconName]="singleMenuTrigger.iconName"></p-input-text>
+    <!-- -->
+  </p-menu-single-select>
+</ng-container>
+
+<ng-container *ngIf="singleMenuTrigger && groupTitle && filterPlaceholder">
+  <p-menu-single-select [menuList]="singleMenuList"
+                        [groupTitle]="groupTitle"
+                        [filterAriaLabel]="filterAriaLabel"
+                        [filterPlaceholder]="filterPlaceholder"
+                        [buttonFirst]="buttonFirst"
+                        [buttonLast]="buttonLast">
+    <!--ng-content-->
+    <p-action-button [label]="singleMenuTrigger.label"
+                     [iconBeforeName]="singleMenuTrigger.iconBeforeName"
+                     [iconBeforeWidth]="singleMenuTrigger.iconBeforeWidth"
+                     [iconBeforeHeight]="singleMenuTrigger.iconBeforeHeight"
+                     [iconBeforeStrokeWidth]="singleMenuTrigger.iconBeforeStrokeWidth"
+                     [iconBeforeStrokeColor]="singleMenuTrigger.iconBeforeStrokeColor"
+                     [isMenuTrigger]="true"
+                     [isStandalone]="singleMenuTrigger.isStandalone"></p-action-button>
+    <!-- -->
+  </p-menu-single-select>
+</ng-container>
+
+<!--Multi select-->
+<ng-container *ngIf="multiMenuTrigger && !filterPlaceholder && !headerBtnFirst">
+  <p-menu-multi-select [menuList]="multiMenuList"
+                        [headerBtnFirst]="headerBtnFirst"
+                        [headerBtnLast]="headerBtnLast"
+                        [footerBtnFirst]="footerBtnFirst"
+                        [footerBtnLast]="footerBtnLast">
+    <!--ng-content-->
+    <p-action-button [label]="multiMenuTrigger.label"
+                     [iconBeforeName]="multiMenuTrigger.iconBeforeName"
+                     [iconBeforeWidth]="multiMenuTrigger.iconBeforeWidth"
+                     [iconBeforeHeight]="multiMenuTrigger.iconBeforeHeight"
+                     [iconBeforeStrokeWidth]="multiMenuTrigger.iconBeforeStrokeWidth"
+                     [iconBeforeStrokeColor]="multiMenuTrigger.iconBeforeStrokeColor"
+                     [isMenuTrigger]="true"
+                     [isStandalone]="multiMenuTrigger.isStandalone"></p-action-button>
+    <!-- -->
+  </p-menu-multi-select>
+</ng-container>
+
+<ng-container *ngIf="multiMenuTrigger && filterPlaceholder && !headerBtnFirst">
+  <p-menu-multi-select [menuList]="multiMenuList"
+                       [filterPlaceholder]="filterPlaceholder"
+                       [filterAriaLabel]="filterAriaLabel"
+                       [footerBtnFirst]="footerBtnFirst"
+                       [footerBtnLast]="footerBtnLast">
+    <!--ng-content-->
+    <p-action-button [label]="multiMenuTrigger.label"
+                     [iconBeforeName]="multiMenuTrigger.iconBeforeName"
+                     [iconBeforeWidth]="multiMenuTrigger.iconBeforeWidth"
+                     [iconBeforeHeight]="multiMenuTrigger.iconBeforeHeight"
+                     [iconBeforeStrokeWidth]="multiMenuTrigger.iconBeforeStrokeWidth"
+                     [iconBeforeStrokeColor]="multiMenuTrigger.iconBeforeStrokeColor"
+                     [isMenuTrigger]="true"
+                     [isStandalone]="multiMenuTrigger.isStandalone"></p-action-button>
+    <!-- -->
+  </p-menu-multi-select>
+</ng-container>
+
+<ng-container *ngIf="multiMenuTrigger && filterPlaceholder && headerBtnFirst">
+  <p-menu-multi-select [menuList]="multiMenuList"
+                       [filterPlaceholder]="filterPlaceholder"
+                       [filterAriaLabel]="filterAriaLabel"
+                       [headerBtnFirst]="headerBtnFirst"
+                       [headerBtnLast]="headerBtnLast"
+                       [footerBtnFirst]="footerBtnFirst"
+                       [footerBtnLast]="footerBtnLast">
+    <!--ng-content-->
+    <p-action-button [label]="multiMenuTrigger.label"
+                     [iconBeforeName]="multiMenuTrigger.iconBeforeName"
+                     [iconBeforeWidth]="multiMenuTrigger.iconBeforeWidth"
+                     [iconBeforeHeight]="multiMenuTrigger.iconBeforeHeight"
+                     [iconBeforeStrokeWidth]="multiMenuTrigger.iconBeforeStrokeWidth"
+                     [iconBeforeStrokeColor]="multiMenuTrigger.iconBeforeStrokeColor"
+                     [isMenuTrigger]="true"
+                     [isStandalone]="multiMenuTrigger.isStandalone"></p-action-button>
+    <!-- -->
+  </p-menu-multi-select>
+</ng-container>
+
+<!--Radio group-->
+<ng-container *ngIf="radioMenuTrigger">
+  <p-menu-radio-group [menuList]="radioMenuList"
+                      [footerBtnFirst]="footerBtnFirst"
+                      [footerBtnLast]="footerBtnLast">
+    <!--ng-content-->
+    <p-chip-button [label]="radioMenuTrigger.label"
+                    [values]="radioMenuTrigger.values"
+                    [iconRemove]="radioMenuTrigger.iconRemove"
+                    [full]="radioMenuTrigger.full"
+                    [active]="radioMenuTrigger.active"
+                    (onClickTask)="openRadioMenu()"></p-chip-button>
+    <!-- -->
+  </p-menu-radio-group>
+</ng-container>
+
+<!--Tabs-->
+<ng-container *ngIf="tabsMenuTrigger">
+  <p-menu-tabs [menuList]="tabsMenuList"
+               [filterPlaceholder]="filterPlaceholder"
+               [filterAriaLabel]="filterAriaLabel"
+               [headerBtnFirst]="headerBtnFirst"
+               [headerBtnLast]="headerBtnLast"
+               [footerBtnFirst]="footerBtnFirst"
+               [footerBtnLast]="footerBtnLast"
+               [checkboxList]="checkboxList">
+    <!--ng-content-->
+    <p-chip-button [label]="tabsMenuTrigger.label"
+                   [values]="tabsMenuTrigger.values"
+                   [iconRemove]="tabsMenuTrigger.iconRemove"
+                   [full]="tabsMenuTrigger.full"
+                   [active]="tabsMenuTrigger.active"
+                   (onClickTask)="openTabsMenu()"></p-chip-button>
+    <!-- -->
+  </p-menu-tabs>
+</ng-container>
+
+<!--Range-->
+<ng-container *ngIf="rangeMenuTrigger">
+  <p-menu-range [inputMax]="inputMax"
+                [inputMin]="inputMin"
+                [footerBtnFirst]="footerBtnFirst"
+                [footerBtnLast]="footerBtnLast">
+    <!--ng-content-->
+    <p-chip-button [label]="rangeMenuTrigger.label"
+                   [values]="rangeMenuTrigger.values"
+                   [iconRemove]="rangeMenuTrigger.iconRemove"
+                   [full]="rangeMenuTrigger.full"
+                   [active]="rangeMenuTrigger.active"
+                   (onClickTask)="openRangeMenu()"></p-chip-button>
+    <!-- -->
+  </p-menu-range>
+</ng-container>
+
+<!--Range-->
+<ng-container *ngIf="freeTextMenuTrigger">
+  <p-menu-free-text [menuList]="freeTextMenuList"
+                    [footerBtnFirst]="footerBtnFirst"
+                    [footerBtnLast]="footerBtnLast">
+    <!--ng-content-->
+    <p-chip-button [label]="freeTextMenuTrigger.label"
+                   [values]="freeTextMenuTrigger.values"
+                   [iconRemove]="freeTextMenuTrigger.iconRemove"
+                   [full]="freeTextMenuTrigger.full"
+                   [active]="freeTextMenuTrigger.active"
+                   (onClickTask)="openFreeTextMenu()"></p-chip-button>
+    <!-- -->
+  </p-menu-free-text>
+</ng-container>
+
+

@@ -1,8 +1,8 @@
-<button [matMenuTriggerFor]="menu"
-        #menuTrigger="matMenuTrigger"
-        class="p-btn p-btn-small p-btn-tertiary">
-    {{menuTriggerName}}
-</button>
+<div class="p-menu-trigger"
+     [matMenuTriggerFor]="menu"
+     #menuTrigger="matMenuTrigger">
+  <ng-content></ng-content>
+</div>
 
 <!--menu window-->
 <mat-menu #menu="matMenu" class="p-menu p-menu-text" [overlapTrigger]="false">
@@ -10,9 +10,9 @@
                                 (keydown)="$event.stopPropagation()">
     <div class="p-menu-body">
       <p-menu-single-select class="p-menu-submenu"
-                            [menuTriggerName]="selectedItem?.name"
                             [menuList]="menuList"
                             (onClickTask)="setSelectedItem($event)">
+        {{selectedItem?.name}}
       </p-menu-single-select>
       <p-input-outline *ngIf="isInputShown"
                        class="p-menu-text-input"

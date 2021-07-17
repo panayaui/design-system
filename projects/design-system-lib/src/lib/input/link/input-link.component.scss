@@ -2,7 +2,6 @@
 
 .p-input-link {
   color: $secondary-a-700;
-  width: $input-text-width;
 
   ::placeholder {
     color: $secondary-a-700;
@@ -10,7 +9,7 @@
 
   .p-input-text-input {
     color: $secondary-a-700;
-    max-width: calc(100% - #{$gap-base} - #{$gap-small});
+    width: calc(100% - #{$gap-base} - #{$gap-small});
     @include ellipsis;
   }
 
@@ -22,18 +21,22 @@
     margin-left: $gap-base;
   }
 
+  .p-input-text-input {
+    cursor: pointer;
+  }
+
   ::ng-deep .mat-form-field-prefix + .mat-form-field-infix .p-input-text-input {
     padding-left: $gap-small;
   }
 
   ::ng-deep .mat-form-field-suffix {
-    padding-bottom: 3px;
+    display: flex;
+    align-items: center;
   }
 
   // hover
   &:not(.mat-form-field-disabled):not(.mat-form-field-invalid):hover {
     color: $secondary-a-800;
-    width: $input-text-width;
 
     ::placeholder {
       color: $secondary-a-800;

@@ -1,0 +1,83 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+
+import {ComboComponent} from './combobox/combo.component';
+import {ComboModule} from './combobox/combo.module';
+import {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';
+
+<Meta title='Components/Menu/Range'
+    component={ComboComponent}
+    decorators={[
+      moduleMetadata({
+          imports: [ComboModule]
+      })
+    ]}  
+    args={{
+      rangeMenuTrigger: {
+          label: 'Label',
+          iconRemove: true,
+          values: ['Filter', 'Filter'],
+          full: true
+      },
+      inputMin: { label: 'Min', value: null },
+      inputMax: { label: 'Max', value: 1 },
+      footerBtnFirst: {
+        label: 'Done',
+        buttonType: ButtonTypeEnum.Primary
+      },
+      footerBtnLast: {
+        label: 'Cancel',
+        buttonType: ButtonTypeEnum.Secondary
+      }
+    }}  
+ />
+
+export const Template = (args) => <ComboComponent {...args} />
+
+# Range Menu
+
+###### Selector
+```html
+<p-menu-range></p-menu-range>
+```
+<Canvas>
+  <Story name="Range Menu"
+    args={{ 
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Usage
+```ts
+import {MatMenuModule} from '@angular/material/menu';
+
+export class MenuRangeComponent {
+  @Input() inputMin: IInputNumeric;
+  @Input() inputMax: IInputNumeric;
+  @Input() footerBtnFirst: IMenuButton;
+  @Input() footerBtnLast: IMenuButton;
+  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger
+}
+
+export interface IMenuButton {
+  label: string;
+  buttonType: ButtonTypeEnum;
+  icon: IIcon;
+}
+```
+```html
+<p-menu-range [inputMax]="inputMax"
+              [inputMin]="inputMin"
+              [footerBtnFirst]="footerBtnFirst"
+              [footerBtnLast]="footerBtnLast">
+  <!--ng-content-->
+  <p-chip-button [label]="rangeMenuTrigger.label"
+                  [values]="rangeMenuTrigger.values"
+                  [iconRemove]="rangeMenuTrigger.iconRemove"
+                  [full]="rangeMenuTrigger.full"
+                  [active]="rangeMenuTrigger.active"
+                  (onClickTask)="openRangeMenu()"></p-chip-button>
+  <!-- -->
+</p-menu-range>
+```

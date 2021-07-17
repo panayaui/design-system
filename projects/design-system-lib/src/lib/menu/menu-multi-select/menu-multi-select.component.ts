@@ -17,7 +17,6 @@ import {ICheckbox} from '../../checkbox/checkbox.interface';
   styleUrls: ['./menu-multi-select.component.scss'],
 })
 export class MenuMultiSelectComponent implements OnInit, OnDestroy {
-  @Input() menuTriggerName: string;
   @Input() menuList: any[];
   @Input() filterPlaceholder: string; // if there is a search and buttons
   @Input() filterAriaLabel: string;
@@ -26,8 +25,6 @@ export class MenuMultiSelectComponent implements OnInit, OnDestroy {
   @Input() footerBtnFirst: IMenuButton;
   @Input() footerBtnLast: IMenuButton;
   @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;
-  private selectedList: any[] = [];
-  public selectedShown: any[] = [];
   public filteredList: any[];
   public formFieldControl: FormControl;
   private sub: SubscriptionLike;
@@ -58,11 +55,9 @@ export class MenuMultiSelectComponent implements OnInit, OnDestroy {
 
   onOptionSelected(item): void {
     console.log(item);
-    this.selectedList.push(item);
   }
 
   selectCompleted(): void {
-    this.selectedShown = this.selectedList;
     this.menuTrigger.closeMenu();
   }
 

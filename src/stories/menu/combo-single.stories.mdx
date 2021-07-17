@@ -1,0 +1,147 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+
+import {ComboComponent} from './combobox/combo.component';
+import {ComboModule} from './combobox/combo.module';
+import {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';
+
+import {stateGroups} from './stateGroups';
+
+<Meta title='Components/Menu/Single Select'
+    component={ComboComponent}
+    decorators={[
+      moduleMetadata({
+          imports: [ComboModule]
+      })
+    ]}
+    args={{
+      singleMenuTrigger: {
+        ariaLabel: 'Label',
+        value: 'Input text',
+        iconName: 'chevron-down'
+      },
+      singleMenuList: [
+        { name: 'Menu item',
+          disabled: false
+        },
+        { name: 'Menu item disabled',
+          disabled: true
+        },
+        { name: 'Menu item Selected',
+          disabled: false,
+          selected: true
+        },
+        { name: 'Menu item',
+          disabled: false
+        }
+      ],
+      buttonFirst: {
+        label: 'Share',
+        buttonType: ButtonTypeEnum.Tertiary,
+        icon: {
+          iconName: 'eraser',
+          width: '15',
+          height: '15'
+        }
+      },
+      buttonLast: {
+        label: 'Reset',
+        buttonType: ButtonTypeEnum.Tertiary,
+        icon: {
+          iconName: 'eraser',
+          width: '15',
+          height: '15'
+        }
+      }
+    }}
+ />
+
+export const Template = (args) => <ComboComponent {...args} />
+
+# Single select menu
+
+###### Selector
+```html
+<p-menu-single-select></p-menu-single-select>
+```
+<Canvas>
+  <Story name="Single Select"
+    args={{
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Single Select with Group"
+    args={{
+      groupTitle: true,
+      singleMenuList: stateGroups
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Single Select with Filter"
+    args={{
+      singleMenuTrigger: {
+        label: 'Action item',
+        iconBeforeName: 'sliders',
+        iconBeforeWidth: '17',
+        isStandalone: true
+      },
+      singleMenuList: stateGroups,
+      groupTitle: true,
+      filterAriaLabel: 'Find Label',
+      filterPlaceholder: 'Find Label' 
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+###### Usage
+```ts
+import {MatMenuModule} from '@angular/material/menu';
+
+export class MenuSingleSelectComponent implements OnInit, OnDestroy {
+  @Input() menuList: any[];
+  @Input() groupTitle: boolean = false; // true if there is a group title
+  @Input() filterPlaceholder: string; // if there is a search and buttons
+  @Input() filterAriaLabel: string;
+  @Input() buttonFirst: IMenuButton;
+  @Input() buttonLast: IMenuButton;
+  @Output() onClickTask: EventEmitter<any> = new EventEmitter();
+  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;
+  public filteredList: any[];
+  public formFieldControl: FormControl;
+  private sub: SubscriptionLike;
+  public buttonTypeEnum: ButtonTypeEnum;
+}
+
+export interface IMenuButton {
+  label: string;
+  buttonType: ButtonTypeEnum;
+  icon: IIcon;
+}
+```
+```html
+<p-menu-single-select [menuList]="singleMenuList"
+                      [groupTitle]="groupTitle"
+                      [filterAriaLabel]="filterAriaLabel"
+                      [filterPlaceholder]="filterPlaceholder"
+                      [buttonFirst]="buttonFirst"
+                      [buttonLast]="buttonLast">
+  <!--ng-content-->
+  <p-action-button [label]="singleMenuTrigger.label"
+                    [iconBeforeName]="singleMenuTrigger.iconBeforeName"
+                    [iconBeforeWidth]="singleMenuTrigger.iconBeforeWidth"
+                    [iconBeforeHeight]="singleMenuTrigger.iconBeforeHeight"
+                    [iconBeforeStrokeWidth]="singleMenuTrigger.iconBeforeStrokeWidth"
+                    [iconBeforeStrokeColor]="singleMenuTrigger.iconBeforeStrokeColor"
+                    [isMenuTrigger]="true"
+                    [isStandalone]="singleMenuTrigger.isStandalone"></p-action-button>
+  <!-- -->
+</p-menu-single-select>
+```

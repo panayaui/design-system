@@ -1,8 +1,8 @@
-<button [matMenuTriggerFor]="menu"
-        #menuTrigger="matMenuTrigger"
-        class="p-btn p-btn-small p-btn-tertiary">
-    {{menuTriggerName}}
-</button>
+<div class="p-menu-trigger"
+     [matMenuTriggerFor]="menu"
+     #menuTrigger="matMenuTrigger">
+  <ng-content></ng-content>
+</div>
 
 <!--menu window-->
 <mat-menu #menu="matMenu" class="p-menu p-menu-radio" [overlapTrigger]="false">
@@ -23,11 +23,18 @@
                           [value]="option.numericInputValue">
         </p-input-numeric>
 
-        <p-menu-single-select *ngIf="option.menuList"
-          class="p-menu-option-submenu"
-                              [menuTriggerName]="findMenuTriggerName(option.menuList)"
-                              [menuList]="option.menuList">
-        </p-menu-single-select>
+        <div class="p-menu-option-link" *ngIf="option.menuList">
+          <p-menu-single-select class="p-menu-option-submenu"
+                                [menuList]="option.menuList">
+            <!--ng-content-->
+            <p-button iconAfter="chevron-down"
+                      iconAfterWidth="17"
+                      iconAfterHeight="17"
+                      [label]="findMenuTriggerName(option.menuList)"
+                      [buttonType]="buttonType.Tertiary" ></p-button>
+            <!-- -->
+          </p-menu-single-select>
+        </div>
 
         <div class="p-menu-option-dates" *ngIf="option.dateStart && option.dateEnd">
           <p-datepicker class="p-menu-option-datepicker start"

@@ -1,6 +1,6 @@
 import {
   Component,
-  Input, OnInit,
+  Input,
   ViewChild
 } from '@angular/core';
 import {MatMenuTrigger} from '@angular/material/menu';
@@ -15,13 +15,16 @@ import {IInputNumeric} from '../../input/numeric/input-numeric.interface';
   styleUrls: ['./menu-range.component.scss'],
 })
 export class MenuRangeComponent {
-  @Input() menuTriggerName: string;
   @Input() inputMin: IInputNumeric;
   @Input() inputMax: IInputNumeric;
   @Input() footerBtnFirst: IMenuButton;
   @Input() footerBtnLast: IMenuButton;
   @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger
   public inputNumericSize = InputNumericSizeEnum;
+
+  openMenu(): void {
+    this.menuTrigger.openMenu();
+  }
 
   selectCompleted(): void {
     this.menuTrigger.closeMenu();

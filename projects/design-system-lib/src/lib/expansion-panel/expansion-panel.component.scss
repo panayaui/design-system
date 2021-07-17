@@ -1,0 +1,111 @@
+@import "../assets/styles/custom";
+
+$header-height: 40px;
+$padding-left: $gap-double-plus;
+$padding-right: $gap-double-plus;
+$padding-top-content: $gap-double;
+$padding-bottom-content: $gap-double;
+$border: 1px solid $gray-scale-400;
+$expand-width: 14px;
+
+::ng-deep .p-accordion {
+  &.mat-accordion {
+    .mat-expansion-panel,
+    .mat-expansion-panel:first-of-type,
+    .mat-expansion-panel:last-of-type {
+      margin-top: $gap-small;
+      background-color: $gray-scale-1;
+      border-radius: 0;
+    }
+  }
+
+  .mat-expansion-panel:not([class*=mat-elevation-z]) {
+    box-shadow: none;
+  }
+
+  .mat-expansion-panel-spacing {
+    margin: 0;
+  }
+
+  .p-expansion-panel-header {
+    height: $header-height;
+    padding-right: $padding-right;
+    padding-left: $padding-left;
+    border: $border;
+    &.mat-expanded {
+      height: $header-height;
+    }
+  }
+
+  .mat-expanded {
+    .p-expansion-panel-header {
+      background-color: $primary-c-50;
+    }
+
+    .p-expansion-panel-icon {
+      transform: rotate(0);
+    }
+  }
+
+  .mat-content {
+    color: $primary-a-900;
+    align-items: center;
+  }
+
+  .p-expansion-panel-title-main {
+    font-weight: 700;
+  }
+
+  .p-expansion-panel-title-sub {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 1px;
+      height: 15px;
+      background-color: currentColor;
+      margin-right: 10px;
+    }
+  }
+
+  .mat-expansion-panel-content {
+    border-right: $border;
+    border-bottom: $border;
+    border-left: $border;
+  }
+
+  .mat-expansion-panel-body {
+    padding: $padding-top-content $padding-right $padding-bottom-content $padding-left;
+  }
+
+  .p-expansion-panel-icon {
+    margin-right: 10px;
+    transform: rotate(-90deg);
+    transition: transform 280ms;
+  }
+}
+
+// focus & hover
+::ng-deep .mat-expansion-panel {
+  .mat-expansion-panel-header.cdk-keyboard-focused:not([aria-disabled=true]),
+  .mat-expansion-panel-header.cdk-program-focused:not([aria-disabled=true]),
+  &:not(.mat-expanded) .mat-expansion-panel-header:hover:not([aria-disabled=true]) {
+    background-color: $primary-c-50;
+  }
+}
+
+::ng-deep .p-expansion-panel-header.mat-expansion-panel-header.mat-expanded {
+  &:focus,
+  &:hover {
+    background-color: $primary-c-50;
+  }
+}
+
+::ng-deep .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:hover:not([aria-disabled=true]),
+::ng-deep .p-expansion-panel-header.mat-expansion-panel-header.mat-expanded:hover {
+  .mat-content {
+    color: $secondary-a-700;
+  }
+}

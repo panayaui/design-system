@@ -1,0 +1,98 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+import {ExpansionPanelComponent} from 'projects/design-system-lib/src/public-api';
+import {ExpansionPanelModule} from 'projects/design-system-lib/src/public-api';
+import {loremIpsum} from './loremIpsum';
+
+<Meta title='Components/Expansion Panel'
+  component={ExpansionPanelComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [
+        ExpansionPanelModule
+      ]
+    })
+  ]}
+  args={{ 
+    expansionPanel: [{
+      header: { titleMain: 'TItle level 1', titleSub: 'TItle level 2' },
+      content: loremIpsum
+    },
+    {
+      header: { titleMain: 'TItle level 1', titleSub: 'TItle level 2' },
+      content: loremIpsum
+    },
+    {
+      header: { titleMain: 'TItle level 1', titleSub: 'TItle level 2' },
+      content: loremIpsum
+    },
+    {
+      header: { titleMain: 'TItle level 1', titleSub: 'TItle level 2' },
+      content: loremIpsum
+    },
+    {
+      header: { titleMain: 'TItle level 1', titleSub: 'TItle level 2' },
+      content: loremIpsum
+    }
+   ]
+  }}
+/>
+
+export const Template = (args) => <ExpansionPanelComponent {...args} />
+
+# Expansion Panel
+
+###### Selector
+```ts
+  <p-expansion-panel></p-expansion-panel>
+```
+###### Title + Subtitle
+<Canvas>
+  <Story name="Subtitle"
+    args={{
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### No Subtitle
+<Canvas>
+  <Story name="No Subtitle"
+    args={{
+      expansionPanel: [{
+        header: { titleMain: 'TItle level 1' },
+        content: loremIpsum
+      },
+      {
+        header: { titleMain: 'TItle level 1' },
+        content: loremIpsum
+      },
+      {
+        header: { titleMain: 'TItle level 1' },
+        content: loremIpsum
+      },
+      {
+        header: { titleMain: 'TItle level 1' },
+        content: loremIpsum
+      },
+      {
+        header: { titleMain: 'TItle level 1' },
+        content: loremIpsum
+      }
+    ]
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+###### IExpansionPanel
+```ts
+export interface IExpansionPanel {
+  header: {
+    titleMain: string,
+    titleSub?: string,
+  };
+  content: any;
+}
+```

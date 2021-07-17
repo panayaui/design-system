@@ -1,16 +1,8 @@
-<button [matMenuTriggerFor]="menu"
-        #menuTrigger="matMenuTrigger"
-        class="p-btn p-btn-small p-btn-tertiary">
-  <ng-template [ngIf]="!selectedShown?.length" [ngIfElse]="selectedItems">
-    {{menuTriggerName}}
-  </ng-template>
-
-  <ng-template #selectedItems>
-    <ng-container *ngFor="let item of selectedShown">
-      <span class="p-menu-trigger-result">{{item.name}}</span>
-    </ng-container>
-  </ng-template>
-</button>
+<div class="p-menu-trigger"
+     [matMenuTriggerFor]="menu"
+     #menuTrigger="matMenuTrigger">
+  <ng-content></ng-content>
+</div>
 
 <!--menu window-->
 <mat-menu #menu="matMenu" class="p-menu p-menu-multiple" [overlapTrigger]="false">
@@ -32,7 +24,7 @@
                 [iconBeforeHeight]="headerBtnFirst.icon.height"
                 [buttonType]="headerBtnFirst.buttonType"
                 [disabled]="!filteredList.length"></p-button>
-      <p-checkbox *ngIf="headerBtnFirst"
+      <p-checkbox *ngIf="headerBtnLast"
                   class="p-menu-btn-line"
                   [label]="headerBtnLast.label"
                   [checked]="headerBtnLast.checked"

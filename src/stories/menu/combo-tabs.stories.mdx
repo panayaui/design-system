@@ -1,0 +1,166 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+
+import {ComboComponent} from './combobox/combo.component';
+import {ComboModule} from './combobox/combo.module';
+import {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';
+
+import {stateGroups} from './stateGroups';
+
+<Meta title='Components/Menu/Menu Tabs'
+    component={ComboComponent}
+    decorators={[
+      moduleMetadata({
+          imports: [ComboModule]
+      })
+    ]}  
+    args={{
+      tabsMenuTrigger: {
+          label: 'Label',
+          iconRemove: true,
+          values: ['Filter', 'Filter'],
+          full: true
+      },
+      tabsMenuList: [
+        { name: 'Alabama',
+          disabled: false
+        },
+        { name: 'Alaska disabled',
+          disabled: true
+        },
+        { name: 'California',
+          disabled: false
+        },
+        { name: 'Colorado',
+          disabled: false
+        },
+        { name: 'Delaware',
+          disabled: false
+        },
+        { name: 'Florida selected disabled',
+          disabled: true,
+          selected: true
+        },
+        { name: 'Georgia',
+          disabled: false
+        },
+        { name: 'Hawaii',
+          disabled: false
+        },
+        { name: 'Idaho',
+          disabled: true
+        },
+        { name: 'Illinois',
+          disabled: false
+        },
+        { name: 'Indiana',
+          disabled: false
+        },
+        { name: 'Iowa',
+          disabled: false
+        },
+        { name: 'Kansas',
+          disabled: true,
+          selected: true
+        },
+        { name: 'Kentucky',
+          disabled: false
+        }
+      ],
+      filterAriaLabel: 'Find Label',
+      filterPlaceholder: 'Find Label',
+      footerBtnFirst: {
+        label: 'Done',
+        buttonType: ButtonTypeEnum.Primary
+      },
+      footerBtnLast: {
+        label: 'Cancel',
+        buttonType: ButtonTypeEnum.Secondary
+      },
+      headerBtnFirst: {
+        label: 'Clear selected',
+        buttonType: ButtonTypeEnum.Tertiary,
+        icon: {
+          iconName: 'eraser',
+          width: '15',
+          height: '15'
+        }
+      },
+      headerBtnLast: {
+        label: 'Not equal to'
+      },
+      checkboxList: [
+        { 
+          checkbox: { label: 'Last'},
+          inputNum: { label: 'Release(s)', value: 1}
+        },
+        { 
+          checkbox: { label: 'Current release'}
+        },
+        { 
+          checkbox: { label: 'Last'},
+          inputNum: { label: 'Release(s)', value: 1}
+        }
+      ]
+    }}  
+ />
+
+export const Template = (args) => <ComboComponent {...args} />
+
+# Tabs Select
+
+###### Selector
+```html
+<p-menu-tabs></p-menu-tabs>
+```
+
+<Canvas>
+  <Story name="Tabs Select"
+    args={{ 
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Usage
+```ts
+export class MenuTabsComponent implements OnInit, OnDestroy {
+  @Input() menuList: any[];
+  @Input() filterPlaceholder: string; // if there is a search and buttons
+  @Input() filterAriaLabel: string;
+  @Input() headerBtnFirst: IMenuButton;
+  @Input() headerBtnLast: ICheckbox;
+  @Input() footerBtnFirst: IMenuButton;
+  @Input() footerBtnLast: IMenuButton;
+  @Input() checkboxList: {
+    checkbox: ICheckbox,
+    inputNum?: IInputNumeric
+  }[];
+  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;
+  public filteredList: any[];
+  public customControl: FormControl;
+  private sub: SubscriptionLike;
+  public tabSpecificName: string;
+  public tabRelativeName: string;
+  public inputNumericSize = InputNumericSizeEnum;
+}
+```
+```html
+<p-menu-tabs [menuList]="tabsMenuList"
+              [filterPlaceholder]="filterPlaceholder"
+              [filterAriaLabel]="filterAriaLabel"
+              [headerBtnFirst]="headerBtnFirst"
+              [headerBtnLast]="headerBtnLast"
+              [footerBtnFirst]="footerBtnFirst"
+              [footerBtnLast]="footerBtnLast"
+              [checkboxList]="checkboxList">
+  <!--ng-content-->
+  <p-chip-button [label]="tabsMenuTrigger.label"
+                  [values]="tabsMenuTrigger.values"
+                  [iconRemove]="tabsMenuTrigger.iconRemove"
+                  [full]="tabsMenuTrigger.full"
+                  [active]="tabsMenuTrigger.active"
+                  (onClickTask)="openTabsMenu()"></p-chip-button>
+  <!-- -->
+</p-menu-tabs>
+```

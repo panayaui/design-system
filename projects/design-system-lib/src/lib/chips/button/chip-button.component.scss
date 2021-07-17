@@ -11,6 +11,7 @@ $chip-height: 27px;
   background-color: $gray-scale-1;
   border: 1px solid currentColor;
   border-radius: 16px;
+  cursor: pointer;
   &:hover,
   &:active,
   &.active {
@@ -19,7 +20,7 @@ $chip-height: 27px;
 
   &-label {
     margin-left: $gap-small;
-    :after {
+    &:after {
       content: ':';
     }
   }
@@ -39,12 +40,13 @@ $chip-height: 27px;
     }
   }
 
-  &-remove {
-    //margin-right: $gap-small;
-  }
-
+  &-remove,
   &-menuTrigger {
-    //margin-left: $gap-small;
+    display: flex;
+    align-items: center;
+    ::ng-deep .p-btn-isIcon {
+      padding: 0;
+    }
   }
 
   &.full {

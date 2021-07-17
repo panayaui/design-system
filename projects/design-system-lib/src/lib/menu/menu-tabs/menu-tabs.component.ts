@@ -19,7 +19,6 @@ import {InputNumericSizeEnum} from '../../input/numeric/input-numeric-size.enum'
   styleUrls: ['./menu-tabs.component.scss'],
 })
 export class MenuTabsComponent implements OnInit, OnDestroy {
-  @Input() menuTriggerName: string;
   @Input() menuList: any[];
   @Input() filterPlaceholder: string; // if there is a search and buttons
   @Input() filterAriaLabel: string;
@@ -29,11 +28,9 @@ export class MenuTabsComponent implements OnInit, OnDestroy {
   @Input() footerBtnLast: IMenuButton;
   @Input() checkboxList: {
     checkbox: ICheckbox,
-    inputNum: IInputNumeric
+    inputNum?: IInputNumeric
   }[];
   @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;
-  private selectedList: any[] = [];
-  public selectedShown: any[] = [];
   public filteredList: any[];
   public customControl: FormControl;
   private sub: SubscriptionLike;
@@ -69,11 +66,13 @@ export class MenuTabsComponent implements OnInit, OnDestroy {
 
   onOptionSelected(item): void {
     console.log(item);
-    this.selectedList.push(item);
+  }
+
+  openMenu(): void {
+    this.menuTrigger.openMenu();
   }
 
   selectCompleted(): void {
-    this.selectedShown = this.selectedList;
     this.menuTrigger.closeMenu();
   }
 

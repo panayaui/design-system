@@ -13,8 +13,8 @@ import {ChipsModule} from 'projects/design-system-lib/src/public-api';
     })
   ]}
   args={{
+    label: 'Type',
     iconRemove: true,
-    iconMenuTrigger: true,
     values: ['Unassaigned', 'Released', 'Something very very long long']
   }}
 />
@@ -25,11 +25,11 @@ export const Template = (args) => <ChipButtonComponent {...args} />
 
 ###### Selector
 ```ts
-  // for standalone use
-  <p-chip-button></p-chip-button>
+// for standalone use
+<p-chip-button></p-chip-button>
 
-  // to show a line of chips 
-  <p-chips></p-chips>
+// to show a line of chips 
+<p-chips></p-chips>
 ```
 ###### With Remove Icon
 <Canvas>
@@ -75,7 +75,6 @@ export interface IChip {
   label: string;
   values?: string[];
   iconRemove?: boolean;
-  iconMenuTrigger?: boolean;
   full?: boolean;
   active?: boolean;
 }
