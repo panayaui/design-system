@@ -1,0 +1,18 @@
+<mat-accordion class="p-accordion" multi>
+  <mat-expansion-panel *ngFor="let panel of expansionPanel"
+                       class="p-expansion-panel">
+    <mat-expansion-panel-header class="p-expansion-panel-header">
+      <span class="p-expansion-panel-title-main paragraph-2-default">
+        {{panel.header.titleMain}}
+      </span>
+      <span class="p-expansion-panel-title-sub paragraph-2-default">
+        {{panel.header.titleSub}}
+      </span>
+    </mat-expansion-panel-header>
+
+    <!--expanded content-->
+    <div class="p-expansion-panel-content">
+      {{panel.content}}
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>

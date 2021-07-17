@@ -78,3 +78,7 @@ export * from './lib/chips/chips.module';
 export * from './lib/chips/bar/chips.component';
 export * from './lib/chips/chip-button.interface';
 export * from './lib/chips/button/chip-button.component';
+
+export * from './lib/expansion-panel/expansion-panel.module';
+export * from './lib/expansion-panel/expansion-panel.component';
+export * from './lib/expansion-panel/expansion-panel.interface';

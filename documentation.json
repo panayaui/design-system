@@ -422,6 +422,32 @@
             "methods": []
         },
         {
+            "name": "IExpansionPanel",
+            "id": "interface-IExpansionPanel-85372f4a288e0eebaa7a6065e11baf34",
+            "file": "projects/design-system-lib/src/lib/expansion-panel/expansion-panel.interface.ts",
+            "type": "interface",
+            "sourceCode": "export interface IExpansionPanel {\r\n  header: {\r\n    headerName: string,\r\n    headerIcon?: string,\r\n  };\r\n  content: {\r\n    name: string,\r\n    link: string,\r\n    selected: boolean\r\n  }[];\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "content",
+                    "type": "literal type[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "header",
+                    "type": "literal type",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
             "name": "IIcon",
             "id": "interface-IIcon-82b68807905acccaafbefdcbabe091c3",
             "file": "projects/design-system-lib/src/lib/icon/icon.interface.ts",
@@ -2251,7 +2277,7 @@
         },
         {
             "name": "ComboComponent",
-            "id": "component-ComboComponent-d6aa706dc305f92f579a46f684bafdba",
+            "id": "component-ComboComponent-5916e01d7c17e9e75fad863cf10de984",
             "file": "src/stories/menu/combobox/combo.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2488,7 +2514,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input, ViewChild} from '@angular/core';\r\nimport {ButtonTypeEnum,\r\n  IActionButton,\r\n  IMenuButton,\r\n  ICheckbox,\r\n  IInputText,\r\n  IChip,\r\n  MenuRadioGroupComponent,\r\n  MenuTabsComponent,\r\n  MenuRangeComponent,\r\n  MenuFreeTextComponent,\r\n  IInputNumeric\r\n} from 'projects/design-system-lib/src/public-api';\r\n\r\n\r\n@Component({\r\n  selector: 'p-combo',\r\n  templateUrl: './combo.component.html',\r\n  styleUrls: ['./combo.component.scss']\r\n})\r\nexport class ComboComponent {\r\n  @Input() buttonType = ButtonTypeEnum;\r\n\r\n  // single select + action button / button\r\n  @Input() singleMenuTrigger: IInputText | IActionButton;\r\n  @Input() singleMenuList: any;\r\n  @Input() groupTitle: any;\r\n  @Input() buttonFirst: IMenuButton;\r\n  @Input() buttonLast: IMenuButton;\r\n  @Input() filterAriaLabel: string;\r\n  @Input() filterPlaceholder: string;\r\n\r\n  // multi select + action button\r\n  @Input() multiMenuTrigger: IActionButton;\r\n  @Input() multiMenuList: any;\r\n  @Input() headerBtnFirst: IMenuButton;\r\n  @Input() headerBtnLast: ICheckbox;\r\n  @Input() footerBtnFirst: IMenuButton;\r\n  @Input() footerBtnLast: IMenuButton;\r\n\r\n  // radio group + chip\r\n  @Input() radioMenuTrigger: IChip;\r\n  @Input() radioMenuList: any;\r\n  @ViewChild(MenuRadioGroupComponent) radioMenu: MenuRadioGroupComponent;\r\n\r\n  // tabs + chip\r\n  @Input() tabsMenuTrigger: IChip;\r\n  @Input() tabsMenuList: any;\r\n  @Input() checkboxList: {\r\n    checkbox: ICheckbox,\r\n    inputNum?: IInputNumeric\r\n  }[];\r\n  @ViewChild(MenuTabsComponent) tabsMenu: MenuRadioGroupComponent;\r\n\r\n  // range + chip\r\n  @Input() rangeMenuTrigger: IChip;\r\n  @Input() rangeMenuList: any;\r\n  @Input() inputMin: IInputNumeric;\r\n  @Input() inputMax: IInputNumeric;\r\n  @ViewChild(MenuRangeComponent) rangeMenu: MenuRangeComponent;\r\n\r\n  // free text + chip\r\n  @Input() freeTextMenuTrigger: IChip;\r\n  @Input() freeTextMenuList: any;\r\n  @ViewChild(MenuFreeTextComponent) freeTextMenu: MenuFreeTextComponent;\r\n\r\n  constructor() {}\r\n\r\n  openRadioMenu(): void {\r\n    this.radioMenu.openMenu();\r\n  }\r\n\r\n  openTabsMenu(): void {\r\n    this.tabsMenu.openMenu();\r\n  }\r\n\r\n  openRangeMenu(): void {\r\n    this.rangeMenu.openMenu();\r\n  }\r\n\r\n  openFreeTextMenu(): void {\r\n    this.freeTextMenu.openMenu();\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, Input, ViewChild} from '@angular/core';\r\nimport {ButtonTypeEnum,\r\n  IActionButton,\r\n  IMenuButton,\r\n  ICheckbox,\r\n  IInputText,\r\n  IChip,\r\n  MenuRadioGroupComponent,\r\n  MenuTabsComponent,\r\n  MenuRangeComponent,\r\n  MenuFreeTextComponent,\r\n  IInputNumeric\r\n} from 'projects/design-system-lib/src/public-api';\r\n\r\n\r\n@Component({\r\n  selector: 'p-combo',\r\n  templateUrl: './combo.component.html',\r\n  styleUrls: ['./combo.component.scss']\r\n})\r\nexport class ComboComponent {\r\n  @Input() buttonType = ButtonTypeEnum;\r\n\r\n  // single select + input / action button\r\n  @Input() singleMenuTrigger: IInputText | IActionButton;\r\n  @Input() singleMenuList: any;\r\n  @Input() groupTitle: any;\r\n  @Input() buttonFirst: IMenuButton;\r\n  @Input() buttonLast: IMenuButton;\r\n  @Input() filterAriaLabel: string;\r\n  @Input() filterPlaceholder: string;\r\n\r\n  // multi select + action button\r\n  @Input() multiMenuTrigger: IActionButton;\r\n  @Input() multiMenuList: any;\r\n  @Input() headerBtnFirst: IMenuButton;\r\n  @Input() headerBtnLast: ICheckbox;\r\n  @Input() footerBtnFirst: IMenuButton;\r\n  @Input() footerBtnLast: IMenuButton;\r\n\r\n  // radio group + chip\r\n  @Input() radioMenuTrigger: IChip;\r\n  @Input() radioMenuList: any;\r\n  @ViewChild(MenuRadioGroupComponent) radioMenu: MenuRadioGroupComponent;\r\n\r\n  // tabs + chip\r\n  @Input() tabsMenuTrigger: IChip;\r\n  @Input() tabsMenuList: any;\r\n  @Input() checkboxList: {\r\n    checkbox: ICheckbox,\r\n    inputNum?: IInputNumeric\r\n  }[];\r\n  @ViewChild(MenuTabsComponent) tabsMenu: MenuRadioGroupComponent;\r\n\r\n  // range + chip\r\n  @Input() rangeMenuTrigger: IChip;\r\n  @Input() rangeMenuList: any;\r\n  @Input() inputMin: IInputNumeric;\r\n  @Input() inputMax: IInputNumeric;\r\n  @ViewChild(MenuRangeComponent) rangeMenu: MenuRangeComponent;\r\n\r\n  // free text + chip\r\n  @Input() freeTextMenuTrigger: IChip;\r\n  @Input() freeTextMenuList: any;\r\n  @ViewChild(MenuFreeTextComponent) freeTextMenu: MenuFreeTextComponent;\r\n\r\n  constructor() {}\r\n\r\n  openRadioMenu(): void {\r\n    this.radioMenu.openMenu();\r\n  }\r\n\r\n  openTabsMenu(): void {\r\n    this.tabsMenu.openMenu();\r\n  }\r\n\r\n  openRangeMenu(): void {\r\n    this.rangeMenu.openMenu();\r\n  }\r\n\r\n  openFreeTextMenu(): void {\r\n    this.freeTextMenu.openMenu();\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2619,6 +2645,84 @@
             ],
             "stylesData": "",
             "templateData": "<mat-form-field class=\"p-datepicker p-input-text\" appearance=\"standard\">\r\n  <input matInput\r\n         [matDatepicker]=\"picker\"\r\n         class=\"p-input-text-input\"\r\n         attr.aria-label=\"{{ariaLabel}}\"\r\n         autocomplete=\"off\"\r\n         readonly\r\n         (click)=\"openDatepicker()\"\r\n         (focus)=\"openDatepicker()\">\r\n  <p-icon class=\"p-datepicker-icon\"\r\n          [class.shown]=\"isOpened\"\r\n          iconName=\"calendar\"\r\n          width=\"16\"\r\n          height=\"auto\">\r\n  </p-icon>\r\n  <mat-datepicker #picker\r\n                  (closed)=\"streamClosed()\"\r\n                  panelClass=\"p-datepicker-panel\"></mat-datepicker>\r\n</mat-form-field>\r\n\r\n<!--<p class=\"p-datepicker-preview paragraph-2-link\">-->\r\n  <!--Tuesday, March 16, 2021-->\r\n<!--</p>-->\r\n"
+        },
+        {
+            "name": "ExpansionPanelComponent",
+            "id": "component-ExpansionPanelComponent-4dff628f9a8ade8de9ad370b34d4e8c2",
+            "file": "projects/design-system-lib/src/lib/expansion-panel/expansion-panel.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-expansion-panel",
+            "styleUrls": [
+                "./expansion-panel.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./expansion-panel.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "expansionPanel",
+                    "line": 10,
+                    "type": "IExpansionPanel[]"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "onPanelClicked",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": ""
+                        },
+                        {
+                            "name": "panel",
+                            "type": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "panel",
+                            "type": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {IExpansionPanel} from './expansion-panel.interface';\r\n\r\n@Component({\r\n  selector: 'p-expansion-panel',\r\n  templateUrl: './expansion-panel.component.html',\r\n  styleUrls: ['./expansion-panel.component.scss'],\r\n})\r\nexport class ExpansionPanelComponent {\r\n  @Input() expansionPanel: IExpansionPanel[];\r\n\r\n  onPanelClicked(event, panel): void {\r\n    console.log(panel);\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../../../../../src/stories/assets/styles/custom\";\r\n\r\n$header-height: 62px;\r\n$padding-right: 8px;\r\n$padding-left-main: 36px;\r\n$padding-left-content: 56px;\r\n$expand-width: 14px;\r\n$border: 1px solid $gray-scale-600;\r\n\r\n.p-sidenav {\r\n  ::ng-deep &.main .mat-expansion-panel:not([class*=mat-elevation-z]) {\r\n    border-top: $border;\r\n  }\r\n  ::ng-deep &.main .mat-expansion-panel-header {\r\n    font-family: $font-family-accent;\r\n    font-weight: 600;\r\n    font-size: $small-font-size;\r\n    letter-spacing: 0.08em;\r\n    text-transform: uppercase;\r\n    color: $primary-a-900;\r\n    padding-right: $padding-right;\r\n    padding-left: $padding-left-main;\r\n    border-right: $border;\r\n    border-left: $border;\r\n    &,\r\n    &.mat-expanded {\r\n      height: $header-height;\r\n    }\r\n    &.mat-expanded {\r\n      color: $secondary-a-700;\r\n      font-weight: 700;\r\n    }\r\n  }\r\n\r\n  .p-sidenav-header-icon {\r\n    margin-right: 10px;\r\n  }\r\n\r\n  &-content-item {\r\n    border-top: 1px solid $gray-scale-400;\r\n  }\r\n\r\n  &-content-link {\r\n    @include resetLink;\r\n    display: flex;\r\n    align-items: center;\r\n    font-family: $font-family-basic;\r\n    font-weight: 600;\r\n    font-size: $small-font-size;\r\n    text-transform: capitalize;\r\n    width: 100%;\r\n    height: 100%;\r\n    padding-right: $padding-right;\r\n    padding-left: $padding-left-content;\r\n    border-right: $border;\r\n    border-left: $border;\r\n    outline: none;\r\n    position: relative;\r\n    &:focus,\r\n    &:hover {\r\n      background: $primary-c-50;\r\n    }\r\n    &.selected {\r\n\r\n    }\r\n  }\r\n\r\n  ::ng-deep .mat-expansion-indicator:after {\r\n    content: 'Expand';\r\n    display: block;\r\n    font-size: 0;\r\n    width: $expand-width;\r\n    height: $expand-width;\r\n    //background-image: url('../../assets/images/plus.svg');\r\n    background-repeat: no-repeat;\r\n    background-position: center center;\r\n    background-size: initial;\r\n    border: none;\r\n    padding: 0;\r\n    transform: none;\r\n  }\r\n\r\n  ::ng-deep .mat-expanded .mat-expansion-indicator::after {\r\n    content: 'Collapse';\r\n    //background-image: url('../../assets/images/minus.svg');\r\n  }\r\n}\r\n\r\n\r\n",
+                    "styleUrl": "./expansion-panel.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<mat-accordion class=\"p-sidenav main\" multi>\r\n  <mat-expansion-panel *ngFor=\"let panel of sidenav\"\r\n                       class=\"p-sidenav-panel\">\r\n    <mat-expansion-panel-header class=\"p-sidenav-header\">\r\n      <p-icon *ngIf=\"panel.header.headerIcon?.iconName\"\r\n              class=\"p-sidenav-header-icon\"\r\n              [iconName]=\"panel.header.headerIcon.iconName\"\r\n              [width]=\"17\"></p-icon>\r\n      {{panel.header.headerName}}\r\n    </mat-expansion-panel-header>\r\n\r\n    <!--expanded content-->\r\n    <ul class=\"p-sidenav-content\">\r\n      <li class=\"p-sidenav-content-item\" *ngFor=\"let content of panel.content\">\r\n        <a href=\"{{content.link}}\"\r\n           class=\"p-sidenav-content-link\"\r\n           [class.selected]=\"content.selected\">\r\n          {{content.name}}\r\n        </a>\r\n      </li>\r\n    </ul>\r\n  </mat-expansion-panel>\r\n</mat-accordion>\r\n"
         },
         {
             "name": "IconComponent",
@@ -3140,7 +3244,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../text/input-text.component\";\r\n\r\n.p-input-link {\r\n  color: $secondary-a-700;\r\n  width: $input-text-width;\r\n\r\n  ::placeholder {\r\n    color: $secondary-a-700;\r\n  }\r\n\r\n  .p-input-text-input {\r\n    color: $secondary-a-700;\r\n    max-width: calc(100% - #{$gap-base} - #{$gap-small});\r\n    @include ellipsis;\r\n  }\r\n\r\n  ::ng-deep .mat-form-field-infix {\r\n    width: auto;\r\n  }\r\n\r\n  &-prefix {\r\n    margin-left: $gap-base;\r\n  }\r\n\r\n  .p-input-text-input {\r\n    cursor: pointer;\r\n  }\r\n\r\n  ::ng-deep .mat-form-field-prefix + .mat-form-field-infix .p-input-text-input {\r\n    padding-left: $gap-small;\r\n  }\r\n\r\n  ::ng-deep .mat-form-field-suffix {\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n\r\n  // hover\r\n  &:not(.mat-form-field-disabled):not(.mat-form-field-invalid):hover {\r\n    color: $secondary-a-800;\r\n\r\n    ::placeholder {\r\n      color: $secondary-a-800;\r\n    }\r\n\r\n    .p-input-text-input {\r\n      color: $secondary-a-800;\r\n      @include ellipsis;\r\n    }\r\n  }\r\n}\r\n\r\n",
+                    "data": "@import \"../text/input-text.component\";\r\n\r\n.p-input-link {\r\n  color: $secondary-a-700;\r\n\r\n  ::placeholder {\r\n    color: $secondary-a-700;\r\n  }\r\n\r\n  .p-input-text-input {\r\n    color: $secondary-a-700;\r\n    width: calc(100% - #{$gap-base} - #{$gap-small});\r\n    @include ellipsis;\r\n  }\r\n\r\n  ::ng-deep .mat-form-field-infix {\r\n    width: auto;\r\n  }\r\n\r\n  &-prefix {\r\n    margin-left: $gap-base;\r\n  }\r\n\r\n  .p-input-text-input {\r\n    cursor: pointer;\r\n  }\r\n\r\n  ::ng-deep .mat-form-field-prefix + .mat-form-field-infix .p-input-text-input {\r\n    padding-left: $gap-small;\r\n  }\r\n\r\n  ::ng-deep .mat-form-field-suffix {\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n\r\n  // hover\r\n  &:not(.mat-form-field-disabled):not(.mat-form-field-invalid):hover {\r\n    color: $secondary-a-800;\r\n\r\n    ::placeholder {\r\n      color: $secondary-a-800;\r\n    }\r\n\r\n    .p-input-text-input {\r\n      color: $secondary-a-800;\r\n      @include ellipsis;\r\n    }\r\n  }\r\n}\r\n\r\n",
                     "styleUrl": "./input-link.component.scss"
                 }
             ],
@@ -3287,7 +3391,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$input-numeric-width: 55px;\r\n$input-numeric-padding: 8px;\r\n\r\n.p-input-numeric {\r\n  &-small {\r\n    width: 56px;\r\n  }\r\n  &-medium {\r\n    width: 112px;\r\n  }\r\n  &-large {\r\n    width: 224px;\r\n  }\r\n\r\n  &-container {\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n\r\n  &-label {\r\n    font-family: $font-family-basic;\r\n    font-weight: 400;\r\n    font-size: $small-font-size;\r\n    color: $primary-a-900;\r\n    padding-bottom: 15px;\r\n    &.disabled {\r\n      color: $gray-scale-600;\r\n    }\r\n    &.first {\r\n      margin-right: 8px;\r\n    }\r\n    &.last {\r\n      margin-left: 8px;\r\n    }\r\n  }\r\n\r\n  ::ng-deep & {\r\n    // material styles override\r\n    .p-input-numeric-input {\r\n      font-family: $font-family-basic;\r\n      font-size: $small-font-size;\r\n      width: 100%;\r\n      line-height: 20px;\r\n      color: $primary-a-900;\r\n      caret-color: $primary-a-900;\r\n    }\r\n    .mat-form-field-infix {\r\n      width: $input-numeric-width;\r\n      padding-top: 0;\r\n      padding-bottom: 6px;\r\n      padding-left: $input-numeric-padding;\r\n    }\r\n    .mat-form-field-label-wrapper {\r\n      padding-top: 0;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-flex {\r\n      padding-top: 0;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $gray-scale-600;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-underline,\r\n    &:not(.mat-form-field-disabled):not(.mat-form-field-invalid)\r\n            .mat-form-field-flex:hover~.mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $primary-a-900;\r\n    }\r\n    .mat-form-field-ripple {\r\n      display: none;\r\n    }\r\n    .mat-form-field-subscript-wrapper {\r\n      margin-top: 5px;\r\n      overflow: visible;\r\n    }\r\n    .mat-error {\r\n      font-family: $font-family-basic;\r\n      font-size: $tiny-font-size;\r\n      color: $supportive-alert-500;\r\n      line-height: 12px;\r\n      white-space: nowrap;\r\n    }\r\n\r\n    // disabled\r\n    &.mat-form-field-disabled {\r\n      .mat-input-element {\r\n        color: $gray-scale-600;\r\n      }\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $gray-scale-400;\r\n      }\r\n    }\r\n\r\n    // error state\r\n    &.ng-invalid {\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-500;\r\n      }\r\n      &.mat-form-field .mat-form-field-flex:hover~.mat-form-field-underline,\r\n      &.mat-form-field.mat-focused .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-700;\r\n      }\r\n    }\r\n\r\n    // readonly\r\n    &.p-input-numeric-readonly {\r\n      &:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover~.mat-form-field-underline,\r\n\r\n      .mat-form-field-underline {\r\n        box-shadow: none;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n::ng-deep .no-error-message {\r\n  .p-input-numeric-label {\r\n    padding-bottom: 6px;\r\n  }\r\n  .mat-form-field-wrapper {\r\n    padding-bottom: 0;\r\n  }\r\n  .mat-form-field-infix {\r\n    border-top: 0;\r\n  }\r\n  .mat-form-field-underline {\r\n    color: red;\r\n    position: static;\r\n  }\r\n}\r\n",
+                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$input-numeric-width: 55px;\r\n$input-numeric-padding: 8px;\r\n\r\n.p-input-numeric {\r\n  &-small {\r\n    width: 56px;\r\n  }\r\n  &-medium {\r\n    width: 112px;\r\n  }\r\n  &-large {\r\n    width: 224px;\r\n  }\r\n\r\n  &-container {\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n\r\n  &-label {\r\n    font-family: $font-family-basic;\r\n    font-weight: 400;\r\n    font-size: $small-font-size;\r\n    color: $primary-a-900;\r\n    padding-bottom: 15px;\r\n    &.disabled {\r\n      color: $gray-scale-600;\r\n    }\r\n    &.first {\r\n      margin-right: 8px;\r\n    }\r\n    &.last {\r\n      margin-left: 8px;\r\n    }\r\n  }\r\n\r\n  ::ng-deep & {\r\n    // material styles override\r\n    .p-input-numeric-input {\r\n      font-family: $font-family-basic;\r\n      font-size: $small-font-size;\r\n      width: 100%;\r\n      line-height: 20px;\r\n      color: $primary-a-900;\r\n      caret-color: $primary-a-900;\r\n    }\r\n    .mat-form-field-infix {\r\n      width: $input-numeric-width;\r\n      padding-top: 0;\r\n      padding-bottom: 6px;\r\n      padding-left: $input-numeric-padding;\r\n    }\r\n    .mat-form-field-label-wrapper {\r\n      padding-top: 0;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-flex {\r\n      padding-top: 0;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $gray-scale-600;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-underline,\r\n    &:not(.mat-form-field-disabled):not(.mat-form-field-invalid)\r\n            .mat-form-field-flex:hover~.mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $primary-a-900;\r\n    }\r\n    .mat-form-field-ripple {\r\n      display: none;\r\n    }\r\n    .mat-form-field-subscript-wrapper {\r\n      margin-top: 5px;\r\n      overflow: visible;\r\n    }\r\n    .mat-error {\r\n      font-family: $font-family-basic;\r\n      font-size: $tiny-font-size;\r\n      color: $supportive-alert-500;\r\n      line-height: 12px;\r\n      white-space: nowrap;\r\n    }\r\n\r\n    // disabled\r\n    &.mat-form-field-disabled {\r\n      .mat-input-element {\r\n        color: $gray-scale-600;\r\n      }\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $gray-scale-400;\r\n      }\r\n    }\r\n\r\n    // error state\r\n    &.ng-invalid {\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-500;\r\n      }\r\n      &.mat-form-field .mat-form-field-flex:hover~.mat-form-field-underline,\r\n      &.mat-form-field.mat-focused .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-700;\r\n      }\r\n    }\r\n\r\n    // readonly\r\n    &.p-input-numeric-readonly {\r\n      &:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover~.mat-form-field-underline,\r\n\r\n      .mat-form-field-underline {\r\n        box-shadow: none;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n::ng-deep .no-error-message {\r\n  .p-input-numeric-label {\r\n    padding-bottom: 6px;\r\n  }\r\n  .mat-form-field-wrapper {\r\n    padding-bottom: 0;\r\n  }\r\n  .mat-form-field-infix {\r\n    border-top: 0;\r\n  }\r\n  .mat-form-field-underline {\r\n    position: static;\r\n  }\r\n}\r\n",
                     "styleUrl": "./input-numeric.component.scss"
                 }
             ],
@@ -3578,7 +3682,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n.p-input-text {\r\n  ::ng-deep & {\r\n    // material styles override\r\n    &.mat-form-field-appearance-standard.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {\r\n      width: 100%;\r\n      transform: translateY(-23px);\r\n    }\r\n    .mat-form-field-label-wrapper {\r\n      top: -16px;\r\n      padding-top: 16px;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-label,\r\n    &.mat-form-field.mat-form-field-invalid .mat-form-field-label {\r\n      color: $gray-scale-700;\r\n    }\r\n    .p-input-text-input {\r\n      font-family: $font-family-basic;\r\n      font-size: $small-font-size;\r\n      max-width: $input-text-width - $input-text-padding;\r\n      line-height: 20px;\r\n      color: $primary-a-900;\r\n      padding-left: $input-text-padding;\r\n      caret-color: $primary-a-900;\r\n    }\r\n    .mat-form-field-infix {\r\n      width: $input-text-width;\r\n      padding-bottom: 6px;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-flex {\r\n      padding-top: 0;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $gray-scale-600;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-underline,\r\n    &:not(.mat-form-field-disabled):not(.mat-form-field-invalid)\r\n            .mat-form-field-flex:hover~.mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $primary-a-900;\r\n    }\r\n    .mat-form-field-ripple {\r\n      display: none;\r\n    }\r\n    .mat-form-field-subscript-wrapper {\r\n      margin-top: 5px;\r\n    }\r\n    .mat-error {\r\n      font-family: $font-family-basic;\r\n      font-size: $tiny-font-size;\r\n      color: $supportive-alert-500;\r\n      line-height: 12px;\r\n    }\r\n\r\n    // disabled\r\n    &.mat-form-field-disabled {\r\n      .mat-input-element {\r\n        color: $gray-scale-600;\r\n      }\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $gray-scale-400;\r\n      }\r\n    }\r\n\r\n    // error state\r\n    &.ng-invalid {\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-500;\r\n      }\r\n      &.mat-form-field .mat-form-field-flex:hover~.mat-form-field-underline,\r\n      &.mat-form-field.mat-focused .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-700;\r\n      }\r\n    }\r\n\r\n    // readonly\r\n    &.p-input-text-readonly:not(.p-input-link) {\r\n      &:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover~.mat-form-field-underline,\r\n\r\n      .mat-form-field-underline {\r\n        box-shadow: none;\r\n      }\r\n    }\r\n\r\n    //icon\r\n    .mat-form-field-suffix {\r\n      align-self: flex-end;\r\n    }\r\n    &-icon {\r\n      padding-bottom: 6px;\r\n      .mat-form-field-disabled &,\r\n      .p-input-readonly & {\r\n        display: none;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n.p-input-text {\r\n  width: $input-text-width;\r\n  ::ng-deep & {\r\n    // material styles override\r\n    &.mat-form-field-appearance-standard.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {\r\n      transform: translateY(-23px);\r\n    }\r\n    .mat-form-field-label-wrapper {\r\n      top: -16px;\r\n      padding-top: 16px;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-label,\r\n    &.mat-form-field.mat-form-field-invalid .mat-form-field-label {\r\n      color: $gray-scale-700;\r\n    }\r\n    .p-input-text-input {\r\n      font-family: $font-family-basic;\r\n      font-size: $small-font-size;\r\n      width: calc(100% - #{$input-text-padding});\r\n      line-height: 20px;\r\n      color: $primary-a-900;\r\n      padding-left: $input-text-padding;\r\n      caret-color: $primary-a-900;\r\n    }\r\n    .mat-form-field-infix {\r\n      padding-bottom: 6px;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-flex {\r\n      padding-top: 0;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $gray-scale-600;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-underline,\r\n    &:not(.mat-form-field-disabled):not(.mat-form-field-invalid)\r\n            .mat-form-field-flex:hover {\r\n      & ~.mat-form-field-underline {\r\n        background-color: transparent;\r\n        box-shadow: inset 0px -1px 0px $primary-a-900;\r\n      }\r\n      .mat-form-field-suffix {\r\n        opacity: 1;\r\n      }\r\n    }\r\n    .mat-form-field-ripple {\r\n      display: none;\r\n    }\r\n    .mat-form-field-subscript-wrapper {\r\n      margin-top: 5px;\r\n      transform: translateY(22px);\r\n    }\r\n    .mat-error {\r\n      font-family: $font-family-basic;\r\n      font-size: $tiny-font-size;\r\n      color: $supportive-alert-500;\r\n      line-height: 12px;\r\n    }\r\n\r\n    // disabled\r\n    &.mat-form-field-disabled {\r\n      .mat-input-element {\r\n        color: $gray-scale-600;\r\n      }\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $gray-scale-400;\r\n      }\r\n    }\r\n\r\n    // error state\r\n    &.ng-invalid {\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-500;\r\n      }\r\n      &.mat-form-field .mat-form-field-flex:hover~.mat-form-field-underline,\r\n      &.mat-form-field.mat-focused .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-700;\r\n      }\r\n    }\r\n\r\n    // readonly\r\n    &.p-input-text-readonly:not(.p-input-link) {\r\n      &:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover~.mat-form-field-underline,\r\n\r\n      .mat-form-field-underline {\r\n        box-shadow: none;\r\n      }\r\n    }\r\n\r\n    //icon\r\n    .mat-form-field-suffix {\r\n      align-self: flex-end;\r\n      opacity: 0;\r\n    }\r\n    &-icon {\r\n      padding-bottom: 6px;\r\n      .mat-form-field-disabled &,\r\n      .p-input-readonly & {\r\n        display: none;\r\n      }\r\n    }\r\n  }\r\n\r\n  // no padding for error message on the bottom of mat-form-field\r\n  .p-input-text-label {\r\n    padding-bottom: 6px;\r\n  }\r\n  ::ng-deep .mat-form-field-wrapper {\r\n    padding-bottom: 0;\r\n  }\r\n  ::ng-deep .mat-form-field-infix {\r\n    border-top: 0;\r\n  }\r\n  ::ng-deep .mat-form-field-underline {\r\n    position: static;\r\n  }\r\n}\r\n",
                     "styleUrl": "./input-text.component.scss"
                 }
             ],
@@ -6548,6 +6652,43 @@
             ]
         },
         {
+            "name": "ExpansionPanelModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ExpansionPanelComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ExpansionPanelComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "IconModule",
             "children": [
                 {
@@ -7115,17 +7256,17 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
+                "file": "src/environments/environment.ts",
                 "type": "object",
-                "defaultValue": "{\r\n  production: true\r\n}"
+                "defaultValue": "{\r\n  production: false\r\n}"
             },
             {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
+                "file": "src/environments/environment.prod.ts",
                 "type": "object",
-                "defaultValue": "{\r\n  production: false\r\n}"
+                "defaultValue": "{\r\n  production: true\r\n}"
             },
             {
                 "name": "ErrorMessage",
@@ -7219,6 +7360,14 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
+                "type": "Story<CheckboxGroupComponent>",
+                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "PageTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
                 "type": "Story<CheckboxGroupPageComponent>",
                 "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
@@ -7230,14 +7379,6 @@
                 "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
                 "type": "Story<CheckboxPageComponent>",
                 "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "PageTemplate",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
-                "type": "Story<CheckboxGroupComponent>",
-                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -7695,16 +7836,6 @@
                     "type": "literal type"
                 }
             ],
-            "src/environments/environment.prod.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.prod.ts",
-                    "type": "object",
-                    "defaultValue": "{\r\n  production: true\r\n}"
-                }
-            ],
             "src/environments/environment.ts": [
                 {
                     "name": "environment",
@@ -7713,6 +7844,16 @@
                     "file": "src/environments/environment.ts",
                     "type": "object",
                     "defaultValue": "{\r\n  production: false\r\n}"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: true\r\n}"
                 }
             ],
             "src/stories/input-text/input-text.stories.ts": [
@@ -8262,6 +8403,24 @@
                 "name": "IChip",
                 "coveragePercent": 0,
                 "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/expansion-panel/expansion-panel.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ExpansionPanelComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/expansion-panel/expansion-panel.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "IExpansionPanel",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {

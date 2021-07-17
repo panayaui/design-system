@@ -1,0 +1,74 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+import {ExpansionPanelComponent} from 'projects/design-system-lib/src/public-api';
+import {ExpansionPanelModule} from 'projects/design-system-lib/src/public-api';
+import {loremIpsum} from './loremIpsum';
+
+<Meta title='Components/Expansion Panel'
+  component={ExpansionPanelComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [
+        ExpansionPanelModule
+      ]
+    })
+  ]}
+  args={{ 
+    expansionPanel: [{
+      header: { titleMain: 'TItle level 1', titleSub: 'TItle level 2' },
+      content: loremIpsum
+    },
+    {
+      header: { titleMain: 'TItle level 1', titleSub: 'TItle level 2' },
+      content: loremIpsum
+    },
+    {
+      header: { titleMain: 'TItle level 1', titleSub: 'TItle level 2' },
+      content: loremIpsum
+    },
+    {
+      header: { titleMain: 'TItle level 1', titleSub: 'TItle level 2' },
+      content: loremIpsum
+    },
+    {
+      header: { titleMain: 'TItle level 1', titleSub: 'TItle level 2' },
+      content: loremIpsum
+    }
+   ]
+  }}
+/>
+
+export const Template = (args) => <ExpansionPanelComponent {...args} />
+
+# Expansion Panel
+
+###### Selector
+```ts
+  <p-expansion-panel></p-expansion-panel>
+```
+<Canvas>
+  <Story name="Subtitle"
+    args={{
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+The sidenav expansion panel's width = 100%. 
+
+In this example width = 280px is set on its parent contaner.
+
+###### ISidenavMain
+```ts
+export interface ISidenavMain {
+  header: {
+    headerName: string,
+    headerIcon?: string,
+  };
+  content: {
+    name: string,
+    link: string,
+    selected: boolean
+  }[];
+}
+```
