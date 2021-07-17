@@ -423,14 +423,14 @@
         },
         {
             "name": "IExpansionPanel",
-            "id": "interface-IExpansionPanel-85372f4a288e0eebaa7a6065e11baf34",
+            "id": "interface-IExpansionPanel-efc27f797265662ce742c5bee2d5f881",
             "file": "projects/design-system-lib/src/lib/expansion-panel/expansion-panel.interface.ts",
             "type": "interface",
-            "sourceCode": "export interface IExpansionPanel {\r\n  header: {\r\n    headerName: string,\r\n    headerIcon?: string,\r\n  };\r\n  content: {\r\n    name: string,\r\n    link: string,\r\n    selected: boolean\r\n  }[];\r\n}\r\n",
+            "sourceCode": "export interface IExpansionPanel {\r\n  header: {\r\n    titleMain: string,\r\n    titleSub?: string,\r\n  };\r\n  content: any;\r\n}\r\n",
             "properties": [
                 {
                     "name": "content",
-                    "type": "literal type[]",
+                    "type": "any",
                     "optional": false,
                     "description": "",
                     "line": 6
@@ -735,31 +735,31 @@
         },
         {
             "name": "IMenuFreeTextItem",
-            "id": "interface-IMenuFreeTextItem-44212343f85905a7a5742ae7a78b7932",
+            "id": "interface-IMenuFreeTextItem-6c4922bfbba5b0c56719495c3d300aa3",
             "file": "projects/design-system-lib/src/lib/menu/menu-free-text/menu-free-text.component.ts",
             "type": "interface",
-            "sourceCode": "import {\r\n  Component,\r\n  Input, OnInit,\r\n  ViewChild\r\n} from '@angular/core';\r\nimport {MatMenuTrigger} from '@angular/material/menu';\r\nimport {IMenuButton} from '../menu-button.interface';\r\n\r\ninterface IMenuFreeTextItem {\r\n  name: string;\r\n  inputValue?: string;\r\n  selected?: boolean;\r\n}\r\n\r\n@Component({\r\n  selector: 'p-menu-free-text',\r\n  templateUrl: './menu-free-text.component.html',\r\n  styleUrls: ['./menu-free-text.component.scss'],\r\n})\r\nexport class MenuFreeTextComponent implements OnInit{\r\n  @Input() menuList: IMenuFreeTextItem[];\r\n  @Input() footerBtnFirst: IMenuButton;\r\n  @Input() footerBtnLast: IMenuButton;\r\n  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;\r\n  public selectedItem: IMenuFreeTextItem;\r\n  public isInputShown: boolean;\r\n\r\n  ngOnInit(): void {\r\n    this.findSelectedItem();\r\n  }\r\n\r\n  selectCompleted(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  openMenu(): void {\r\n    this.menuTrigger.openMenu();\r\n  }\r\n\r\n  selectCanceled(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  findSelectedItem(): void {\r\n    this.selectedItem = this.menuList.find( item => item.selected );\r\n    this.isInputShown = this.selectedItem.hasOwnProperty('inputValue');\r\n  }\r\n\r\n  setSelectedItem(newSelectedItem): void {\r\n    this.selectedItem.selected = false;\r\n    newSelectedItem.selected = true;\r\n    this.findSelectedItem();\r\n  }\r\n}\r\n",
+            "sourceCode": "import {\r\n  Component,\r\n  Input, OnInit,\r\n  ViewChild\r\n} from '@angular/core';\r\nimport {MatMenuTrigger} from '@angular/material/menu';\r\nimport {IMenuButton} from '../menu-button.interface';\r\nimport {ButtonTypeEnum} from '../../button/button-type.enum';\r\n\r\ninterface IMenuFreeTextItem {\r\n  name: string;\r\n  inputValue?: string;\r\n  selected?: boolean;\r\n}\r\n\r\n@Component({\r\n  selector: 'p-menu-free-text',\r\n  templateUrl: './menu-free-text.component.html',\r\n  styleUrls: ['./menu-free-text.component.scss'],\r\n})\r\nexport class MenuFreeTextComponent implements OnInit{\r\n  @Input() menuList: IMenuFreeTextItem[];\r\n  @Input() footerBtnFirst: IMenuButton;\r\n  @Input() footerBtnLast: IMenuButton;\r\n  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;\r\n  public selectedItem: IMenuFreeTextItem;\r\n  public isInputShown: boolean;\r\n  public buttonType = ButtonTypeEnum;\r\n\r\n  ngOnInit(): void {\r\n    this.findSelectedItem();\r\n  }\r\n\r\n  selectCompleted(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  openMenu(): void {\r\n    this.menuTrigger.openMenu();\r\n  }\r\n\r\n  selectCanceled(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  findSelectedItem(): void {\r\n    this.selectedItem = this.menuList.find( item => item.selected );\r\n    this.isInputShown = this.selectedItem.hasOwnProperty('inputValue');\r\n  }\r\n\r\n  setSelectedItem(newSelectedItem): void {\r\n    this.selectedItem.selected = false;\r\n    newSelectedItem.selected = true;\r\n    this.findSelectedItem();\r\n  }\r\n}\r\n",
             "properties": [
                 {
                     "name": "inputValue",
                     "type": "string",
                     "optional": true,
                     "description": "",
-                    "line": 11
+                    "line": 12
                 },
                 {
                     "name": "name",
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 10
+                    "line": 11
                 },
                 {
                     "name": "selected",
                     "type": "boolean",
                     "optional": true,
                     "description": "",
-                    "line": 12
+                    "line": 13
                 }
             ],
             "indexSignatures": [],
@@ -1798,7 +1798,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../../../src/stories/assets/styles/custom\";\r\n\r\n::ng-deep.p-checkbox {\r\n  // material styles override\r\n  .mat-checkbox-label {\r\n    font-family: $font-family-basic;\r\n    font-size: $small-font-size;\r\n  }\r\n  .mat-checkbox-frame {\r\n    background-color: $gray-scale-1;\r\n    border-width: 1px;\r\n    border-color: $gray-scale-400;\r\n  }\r\n  .mat-ripple-element {\r\n    display: none;\r\n  }\r\n\r\n  // hover\r\n  // focus\r\n  &:not(.mat-checkbox-disabled):hover,\r\n  &.cdk-focused {\r\n    .mat-checkbox-frame {\r\n      border-color: $secondary-a-700;\r\n    }\r\n    .mat-checkbox-mixedmark {\r\n      background-color: $secondary-a-700;\r\n    }\r\n  }\r\n\r\n  // disabled\r\n  &.mat-checkbox-disabled {\r\n    &:not(.mat-checkbox-checked) .mat-checkbox-frame {\r\n      background-color: $primary-c-50;\r\n      border-color: $gray-scale-400;\r\n    }\r\n    .mat-checkbox-label {\r\n      color: $gray-scale-600;\r\n    }\r\n  }\r\n\r\n  // checked\r\n  &.mat-checkbox-checked {\r\n    .mat-checkbox-background {\r\n      background-color: $secondary-a-700;\r\n    }\r\n    // checked + hover\r\n    &:not(.mat-checkbox-disabled):hover {\r\n      .mat-checkbox-background {\r\n        background-color: $secondary-a-800;\r\n      }\r\n    }\r\n\r\n    // checked + disabled\r\n    &.mat-checkbox-disabled {\r\n      .mat-checkbox-background {\r\n        background-color: $secondary-a-200;\r\n      }\r\n    }\r\n  }\r\n  .mat-checkbox-checkmark-path {\r\n    stroke: $gray-scale-1 !important;\r\n    stroke-width: 3px;\r\n  }\r\n  .mat-checkbox-checkmark {\r\n    width: 88%;\r\n    left: 1px;\r\n  }\r\n  .mat-checkbox-checkmark {\r\n    fill: $gray-scale-1;\r\n  }\r\n\r\n  // select all\r\n  &.select-all {\r\n    .mat-checkbox-frame {\r\n      border-color: $primary-a-900;\r\n    }\r\n  }\r\n\r\n  // indeterminate\r\n  &.mat-checkbox-indeterminate {\r\n    .mat-checkbox-background {\r\n      background-color: transparent;\r\n    }\r\n    .mat-checkbox-frame {\r\n      border-width: 1px;\r\n      border-color: $primary-a-900;\r\n    }\r\n    .mat-checkbox-checkmark {\r\n      transform: rotate(0);\r\n    }\r\n  }\r\n  .mat-checkbox-mixedmark {\r\n    width: calc(100% - 8px);\r\n    height: 2px;\r\n    background-color: $primary-a-900;\r\n  }\r\n}\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n::ng-deep.p-checkbox {\r\n  // material styles override\r\n  .mat-checkbox-label {\r\n    font-family: $font-family-basic;\r\n    font-size: $small-font-size;\r\n  }\r\n  .mat-checkbox-frame {\r\n    background-color: $gray-scale-1;\r\n    border-width: 1px;\r\n    border-color: $gray-scale-400;\r\n  }\r\n  .mat-ripple-element {\r\n    display: none;\r\n  }\r\n\r\n  // hover\r\n  // focus\r\n  &:not(.mat-checkbox-disabled):hover,\r\n  &.cdk-focused {\r\n    .mat-checkbox-frame {\r\n      border-color: $secondary-a-700;\r\n    }\r\n    .mat-checkbox-mixedmark {\r\n      background-color: $secondary-a-700;\r\n    }\r\n  }\r\n\r\n  // disabled\r\n  &.mat-checkbox-disabled {\r\n    &:not(.mat-checkbox-checked) .mat-checkbox-frame {\r\n      background-color: $primary-c-50;\r\n      border-color: $gray-scale-400;\r\n    }\r\n    .mat-checkbox-label {\r\n      color: $gray-scale-600;\r\n    }\r\n  }\r\n\r\n  // checked\r\n  &.mat-checkbox-checked {\r\n    .mat-checkbox-background {\r\n      background-color: $secondary-a-700;\r\n    }\r\n    // checked + hover\r\n    &:not(.mat-checkbox-disabled):hover {\r\n      .mat-checkbox-background {\r\n        background-color: $secondary-a-800;\r\n      }\r\n    }\r\n\r\n    // checked + disabled\r\n    &.mat-checkbox-disabled {\r\n      .mat-checkbox-background {\r\n        background-color: $secondary-a-200;\r\n      }\r\n    }\r\n  }\r\n  .mat-checkbox-checkmark-path {\r\n    stroke: $gray-scale-1 !important;\r\n    stroke-width: 3px;\r\n  }\r\n  .mat-checkbox-checkmark {\r\n    width: 88%;\r\n    left: 1px;\r\n  }\r\n  .mat-checkbox-checkmark {\r\n    fill: $gray-scale-1;\r\n  }\r\n\r\n  // select all\r\n  &.select-all {\r\n    .mat-checkbox-frame {\r\n      border-color: $primary-a-900;\r\n    }\r\n  }\r\n\r\n  // indeterminate\r\n  &.mat-checkbox-indeterminate {\r\n    .mat-checkbox-background {\r\n      background-color: transparent;\r\n    }\r\n    .mat-checkbox-frame {\r\n      border-width: 1px;\r\n      border-color: $primary-a-900;\r\n    }\r\n    .mat-checkbox-checkmark {\r\n      transform: rotate(0);\r\n    }\r\n  }\r\n  .mat-checkbox-mixedmark {\r\n    width: calc(100% - 8px);\r\n    height: 2px;\r\n    background-color: $primary-a-900;\r\n  }\r\n}\r\n",
                     "styleUrl": "./checkbox.component.scss"
                 }
             ],
@@ -2648,7 +2648,7 @@
         },
         {
             "name": "ExpansionPanelComponent",
-            "id": "component-ExpansionPanelComponent-4dff628f9a8ade8de9ad370b34d4e8c2",
+            "id": "component-ExpansionPanelComponent-7d63752fb32394183074b7d4f1ecf5ef",
             "file": "projects/design-system-lib/src/lib/expansion-panel/expansion-panel.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2673,56 +2673,22 @@
             ],
             "outputsClass": [],
             "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "onPanelClicked",
-                    "args": [
-                        {
-                            "name": "event",
-                            "type": ""
-                        },
-                        {
-                            "name": "panel",
-                            "type": ""
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 12,
-                    "jsdoctags": [
-                        {
-                            "name": "event",
-                            "type": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        },
-                        {
-                            "name": "panel",
-                            "type": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
-                }
-            ],
+            "methodsClass": [],
             "hostBindings": [],
             "hostListeners": [],
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {IExpansionPanel} from './expansion-panel.interface';\r\n\r\n@Component({\r\n  selector: 'p-expansion-panel',\r\n  templateUrl: './expansion-panel.component.html',\r\n  styleUrls: ['./expansion-panel.component.scss'],\r\n})\r\nexport class ExpansionPanelComponent {\r\n  @Input() expansionPanel: IExpansionPanel[];\r\n\r\n  onPanelClicked(event, panel): void {\r\n    console.log(panel);\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {IExpansionPanel} from './expansion-panel.interface';\r\n\r\n@Component({\r\n  selector: 'p-expansion-panel',\r\n  templateUrl: './expansion-panel.component.html',\r\n  styleUrls: ['./expansion-panel.component.scss'],\r\n})\r\nexport class ExpansionPanelComponent {\r\n  @Input() expansionPanel: IExpansionPanel[];\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../../../src/stories/assets/styles/custom\";\r\n\r\n$header-height: 62px;\r\n$padding-right: 8px;\r\n$padding-left-main: 36px;\r\n$padding-left-content: 56px;\r\n$expand-width: 14px;\r\n$border: 1px solid $gray-scale-600;\r\n\r\n.p-sidenav {\r\n  ::ng-deep &.main .mat-expansion-panel:not([class*=mat-elevation-z]) {\r\n    border-top: $border;\r\n  }\r\n  ::ng-deep &.main .mat-expansion-panel-header {\r\n    font-family: $font-family-accent;\r\n    font-weight: 600;\r\n    font-size: $small-font-size;\r\n    letter-spacing: 0.08em;\r\n    text-transform: uppercase;\r\n    color: $primary-a-900;\r\n    padding-right: $padding-right;\r\n    padding-left: $padding-left-main;\r\n    border-right: $border;\r\n    border-left: $border;\r\n    &,\r\n    &.mat-expanded {\r\n      height: $header-height;\r\n    }\r\n    &.mat-expanded {\r\n      color: $secondary-a-700;\r\n      font-weight: 700;\r\n    }\r\n  }\r\n\r\n  .p-sidenav-header-icon {\r\n    margin-right: 10px;\r\n  }\r\n\r\n  &-content-item {\r\n    border-top: 1px solid $gray-scale-400;\r\n  }\r\n\r\n  &-content-link {\r\n    @include resetLink;\r\n    display: flex;\r\n    align-items: center;\r\n    font-family: $font-family-basic;\r\n    font-weight: 600;\r\n    font-size: $small-font-size;\r\n    text-transform: capitalize;\r\n    width: 100%;\r\n    height: 100%;\r\n    padding-right: $padding-right;\r\n    padding-left: $padding-left-content;\r\n    border-right: $border;\r\n    border-left: $border;\r\n    outline: none;\r\n    position: relative;\r\n    &:focus,\r\n    &:hover {\r\n      background: $primary-c-50;\r\n    }\r\n    &.selected {\r\n\r\n    }\r\n  }\r\n\r\n  ::ng-deep .mat-expansion-indicator:after {\r\n    content: 'Expand';\r\n    display: block;\r\n    font-size: 0;\r\n    width: $expand-width;\r\n    height: $expand-width;\r\n    //background-image: url('../../assets/images/plus.svg');\r\n    background-repeat: no-repeat;\r\n    background-position: center center;\r\n    background-size: initial;\r\n    border: none;\r\n    padding: 0;\r\n    transform: none;\r\n  }\r\n\r\n  ::ng-deep .mat-expanded .mat-expansion-indicator::after {\r\n    content: 'Collapse';\r\n    //background-image: url('../../assets/images/minus.svg');\r\n  }\r\n}\r\n\r\n\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$header-height: 40px;\r\n$padding-left: $gap-double-plus;\r\n$padding-right: $gap-double-plus;\r\n$padding-top-content: $gap-double;\r\n$padding-bottom-content: $gap-double;\r\n$border: 1px solid $gray-scale-400;\r\n$expand-width: 14px;\r\n\r\n::ng-deep .p-accordion {\r\n  &.mat-accordion {\r\n    .mat-expansion-panel,\r\n    .mat-expansion-panel:first-of-type,\r\n    .mat-expansion-panel:last-of-type {\r\n      margin-top: $gap-small;\r\n      background-color: $gray-scale-1;\r\n      border-radius: 0;\r\n    }\r\n  }\r\n\r\n  .mat-expansion-panel:not([class*=mat-elevation-z]) {\r\n    box-shadow: none;\r\n  }\r\n\r\n  .mat-expansion-panel-spacing {\r\n    margin: 0;\r\n  }\r\n\r\n  .p-expansion-panel-header {\r\n    height: $header-height;\r\n    padding-right: $padding-right;\r\n    padding-left: $padding-left;\r\n    border: $border;\r\n    &.mat-expanded {\r\n      height: $header-height;\r\n    }\r\n  }\r\n\r\n  .mat-expanded {\r\n    .p-expansion-panel-header {\r\n      background-color: $primary-c-50;\r\n    }\r\n\r\n    .p-expansion-panel-icon {\r\n      transform: rotate(0);\r\n    }\r\n  }\r\n\r\n  .mat-content {\r\n    color: $primary-a-900;\r\n    align-items: center;\r\n  }\r\n\r\n  .p-expansion-panel-title-main {\r\n    font-weight: 700;\r\n  }\r\n\r\n  .p-expansion-panel-title-sub {\r\n    display: flex;\r\n    align-items: center;\r\n    margin-left: 10px;\r\n    &:before {\r\n      content: '';\r\n      display: inline-block;\r\n      width: 1px;\r\n      height: 15px;\r\n      background-color: currentColor;\r\n      margin-right: 10px;\r\n    }\r\n  }\r\n\r\n  .mat-expansion-panel-content {\r\n    border-right: $border;\r\n    border-bottom: $border;\r\n    border-left: $border;\r\n  }\r\n\r\n  .mat-expansion-panel-body {\r\n    padding: $padding-top-content $padding-right $padding-bottom-content $padding-left;\r\n  }\r\n\r\n  .p-expansion-panel-icon {\r\n    margin-right: 10px;\r\n    transform: rotate(-90deg);\r\n    transition: transform 280ms;\r\n  }\r\n}\r\n\r\n// focus & hover\r\n::ng-deep .mat-expansion-panel {\r\n  .mat-expansion-panel-header.cdk-keyboard-focused:not([aria-disabled=true]),\r\n  .mat-expansion-panel-header.cdk-program-focused:not([aria-disabled=true]),\r\n  &:not(.mat-expanded) .mat-expansion-panel-header:hover:not([aria-disabled=true]) {\r\n    background-color: $primary-c-50;\r\n  }\r\n}\r\n\r\n::ng-deep .p-expansion-panel-header.mat-expansion-panel-header.mat-expanded {\r\n  &:focus,\r\n  &:hover {\r\n    background-color: $primary-c-50;\r\n  }\r\n}\r\n\r\n::ng-deep .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:hover:not([aria-disabled=true]),\r\n::ng-deep .p-expansion-panel-header.mat-expansion-panel-header.mat-expanded:hover {\r\n  .mat-content {\r\n    color: $secondary-a-700;\r\n  }\r\n}\r\n",
                     "styleUrl": "./expansion-panel.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<mat-accordion class=\"p-sidenav main\" multi>\r\n  <mat-expansion-panel *ngFor=\"let panel of sidenav\"\r\n                       class=\"p-sidenav-panel\">\r\n    <mat-expansion-panel-header class=\"p-sidenav-header\">\r\n      <p-icon *ngIf=\"panel.header.headerIcon?.iconName\"\r\n              class=\"p-sidenav-header-icon\"\r\n              [iconName]=\"panel.header.headerIcon.iconName\"\r\n              [width]=\"17\"></p-icon>\r\n      {{panel.header.headerName}}\r\n    </mat-expansion-panel-header>\r\n\r\n    <!--expanded content-->\r\n    <ul class=\"p-sidenav-content\">\r\n      <li class=\"p-sidenav-content-item\" *ngFor=\"let content of panel.content\">\r\n        <a href=\"{{content.link}}\"\r\n           class=\"p-sidenav-content-link\"\r\n           [class.selected]=\"content.selected\">\r\n          {{content.name}}\r\n        </a>\r\n      </li>\r\n    </ul>\r\n  </mat-expansion-panel>\r\n</mat-accordion>\r\n"
+            "templateData": "<mat-accordion class=\"p-accordion\" multi>\r\n  <mat-expansion-panel *ngFor=\"let panel of expansionPanel\"\r\n                       class=\"p-expansion-panel\"\r\n                       hideToggle>\r\n    <mat-expansion-panel-header class=\"p-expansion-panel-header\">\r\n      <p-icon class=\"p-expansion-panel-icon\"\r\n              iconName=\"chevron-down\"\r\n              width=\"17\"\r\n              height=\"auto\"\r\n              strokeWidth=\"2.5\">\r\n      </p-icon>\r\n      <span class=\"p-expansion-panel-title-main paragraph-2-default\">\r\n        {{panel.header.titleMain}}\r\n      </span>\r\n      <span *ngIf=\"panel.header.titleSub\" class=\"p-expansion-panel-title-sub paragraph-2-default\">\r\n        {{panel.header.titleSub}}\r\n      </span>\r\n    </mat-expansion-panel-header>\r\n\r\n    <!--expanded content-->\r\n    <div class=\"p-expansion-panel-content\">\r\n      {{panel.content}}\r\n    </div>\r\n  </mat-expansion-panel>\r\n</mat-accordion>\r\n"
         },
         {
             "name": "IconComponent",
@@ -4142,7 +4108,7 @@
         },
         {
             "name": "MenuFreeTextComponent",
-            "id": "component-MenuFreeTextComponent-44212343f85905a7a5742ae7a78b7932",
+            "id": "component-MenuFreeTextComponent-6c4922bfbba5b0c56719495c3d300aa3",
             "file": "projects/design-system-lib/src/lib/menu/menu-free-text/menu-free-text.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -4161,28 +4127,39 @@
             "inputsClass": [
                 {
                     "name": "footerBtnFirst",
-                    "line": 22,
-                    "type": "IMenuButton"
-                },
-                {
-                    "name": "footerBtnLast",
                     "line": 23,
                     "type": "IMenuButton"
                 },
                 {
+                    "name": "footerBtnLast",
+                    "line": 24,
+                    "type": "IMenuButton"
+                },
+                {
                     "name": "menuList",
-                    "line": 21,
+                    "line": 22,
                     "type": "IMenuFreeTextItem[]"
                 }
             ],
             "outputsClass": [],
             "propertiesClass": [
                 {
+                    "name": "buttonType",
+                    "defaultValue": "ButtonTypeEnum",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 28,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
                     "name": "isInputShown",
                     "type": "boolean",
                     "optional": false,
                     "description": "",
-                    "line": 26,
+                    "line": 27,
                     "modifierKind": [
                         114
                     ]
@@ -4192,7 +4169,7 @@
                     "type": "MatMenuTrigger",
                     "optional": false,
                     "description": "",
-                    "line": 24,
+                    "line": 25,
                     "decorators": [
                         {
                             "name": "ViewChild",
@@ -4205,7 +4182,7 @@
                     "type": "IMenuFreeTextItem",
                     "optional": false,
                     "description": "",
-                    "line": 25,
+                    "line": 26,
                     "modifierKind": [
                         114
                     ]
@@ -4218,7 +4195,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 44
+                    "line": 46
                 },
                 {
                     "name": "ngOnInit",
@@ -4226,7 +4203,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 28
+                    "line": 30
                 },
                 {
                     "name": "openMenu",
@@ -4234,7 +4211,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 36
+                    "line": 38
                 },
                 {
                     "name": "selectCanceled",
@@ -4242,7 +4219,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 40
+                    "line": 42
                 },
                 {
                     "name": "selectCompleted",
@@ -4250,7 +4227,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 32
+                    "line": 34
                 },
                 {
                     "name": "setSelectedItem",
@@ -4263,7 +4240,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 49,
+                    "line": 51,
                     "jsdoctags": [
                         {
                             "name": "newSelectedItem",
@@ -4280,11 +4257,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {\r\n  Component,\r\n  Input, OnInit,\r\n  ViewChild\r\n} from '@angular/core';\r\nimport {MatMenuTrigger} from '@angular/material/menu';\r\nimport {IMenuButton} from '../menu-button.interface';\r\n\r\ninterface IMenuFreeTextItem {\r\n  name: string;\r\n  inputValue?: string;\r\n  selected?: boolean;\r\n}\r\n\r\n@Component({\r\n  selector: 'p-menu-free-text',\r\n  templateUrl: './menu-free-text.component.html',\r\n  styleUrls: ['./menu-free-text.component.scss'],\r\n})\r\nexport class MenuFreeTextComponent implements OnInit{\r\n  @Input() menuList: IMenuFreeTextItem[];\r\n  @Input() footerBtnFirst: IMenuButton;\r\n  @Input() footerBtnLast: IMenuButton;\r\n  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;\r\n  public selectedItem: IMenuFreeTextItem;\r\n  public isInputShown: boolean;\r\n\r\n  ngOnInit(): void {\r\n    this.findSelectedItem();\r\n  }\r\n\r\n  selectCompleted(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  openMenu(): void {\r\n    this.menuTrigger.openMenu();\r\n  }\r\n\r\n  selectCanceled(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  findSelectedItem(): void {\r\n    this.selectedItem = this.menuList.find( item => item.selected );\r\n    this.isInputShown = this.selectedItem.hasOwnProperty('inputValue');\r\n  }\r\n\r\n  setSelectedItem(newSelectedItem): void {\r\n    this.selectedItem.selected = false;\r\n    newSelectedItem.selected = true;\r\n    this.findSelectedItem();\r\n  }\r\n}\r\n",
+            "sourceCode": "import {\r\n  Component,\r\n  Input, OnInit,\r\n  ViewChild\r\n} from '@angular/core';\r\nimport {MatMenuTrigger} from '@angular/material/menu';\r\nimport {IMenuButton} from '../menu-button.interface';\r\nimport {ButtonTypeEnum} from '../../button/button-type.enum';\r\n\r\ninterface IMenuFreeTextItem {\r\n  name: string;\r\n  inputValue?: string;\r\n  selected?: boolean;\r\n}\r\n\r\n@Component({\r\n  selector: 'p-menu-free-text',\r\n  templateUrl: './menu-free-text.component.html',\r\n  styleUrls: ['./menu-free-text.component.scss'],\r\n})\r\nexport class MenuFreeTextComponent implements OnInit{\r\n  @Input() menuList: IMenuFreeTextItem[];\r\n  @Input() footerBtnFirst: IMenuButton;\r\n  @Input() footerBtnLast: IMenuButton;\r\n  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;\r\n  public selectedItem: IMenuFreeTextItem;\r\n  public isInputShown: boolean;\r\n  public buttonType = ButtonTypeEnum;\r\n\r\n  ngOnInit(): void {\r\n    this.findSelectedItem();\r\n  }\r\n\r\n  selectCompleted(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  openMenu(): void {\r\n    this.menuTrigger.openMenu();\r\n  }\r\n\r\n  selectCanceled(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  findSelectedItem(): void {\r\n    this.selectedItem = this.menuList.find( item => item.selected );\r\n    this.isInputShown = this.selectedItem.hasOwnProperty('inputValue');\r\n  }\r\n\r\n  setSelectedItem(newSelectedItem): void {\r\n    this.selectedItem.selected = false;\r\n    newSelectedItem.selected = true;\r\n    this.findSelectedItem();\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../menu/menu-base.component\";\r\n\r\n$menu-footer-height: $btn-small-height + $menu-padding * 3;\r\n$menu-width: 250px;\r\n\r\n// mat-menu-panel\r\n::ng-deep .p-menu.p-menu-text {\r\n  //panel\r\n  &.mat-menu-panel {\r\n    width: $menu-width;\r\n  }\r\n\r\n  .p-menu-body {\r\n    padding: $menu-padding $menu-padding 0 $menu-padding;\r\n  }\r\n\r\n  .p-menu-footer {\r\n    padding: $menu-padding $menu-padding * 2 $menu-padding * 2 $menu-padding * 2;\r\n    position: static;\r\n  }\r\n  // every option\r\n  .p-btn {\r\n    padding-right: $menu-padding;\r\n    padding-left: $menu-padding;\r\n  }\r\n\r\n  .p-input-outline {\r\n    margin-top: $menu-padding;\r\n    margin-bottom: $menu-padding * 2;\r\n  }\r\n}\r\n\r\n",
+                    "data": "@import \"../menu/menu-base.component\";\r\n\r\n$menu-footer-height: $btn-small-height + $menu-padding * 3;\r\n$menu-width: 250px;\r\n\r\n// mat-menu-panel\r\n::ng-deep .p-menu.p-menu-text {\r\n  //panel\r\n  &.mat-menu-panel {\r\n    width: $menu-width;\r\n  }\r\n\r\n  .p-menu-body {\r\n    padding: $menu-padding $menu-padding 0 $menu-padding;\r\n  }\r\n\r\n  .p-menu-footer {\r\n    padding: $menu-padding $menu-padding * 2 $menu-padding * 2 $menu-padding * 2;\r\n    position: static;\r\n  }\r\n  // every option\r\n  .p-btn {\r\n    font-weight: 600;\r\n    padding-right: $menu-padding;\r\n    padding-left: $menu-padding;\r\n  }\r\n\r\n  .p-btn-icon-after .p-btn-label {\r\n    margin-right: 4px;\r\n  }\r\n\r\n  .p-input-outline {\r\n    margin-top: $menu-padding;\r\n    margin-bottom: $menu-padding * 2;\r\n  }\r\n}\r\n\r\n",
                     "styleUrl": "./menu-free-text.component.scss"
                 }
             ],
@@ -4292,7 +4269,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"p-menu-trigger\"\r\n     [matMenuTriggerFor]=\"menu\"\r\n     #menuTrigger=\"matMenuTrigger\">\r\n  <ng-content></ng-content>\r\n</div>\r\n\r\n<!--menu window-->\r\n<mat-menu #menu=\"matMenu\" class=\"p-menu p-menu-text\" [overlapTrigger]=\"false\">\r\n  <div class=\"p-menu-container\" (click)=\"$event.stopPropagation()\"\r\n                                (keydown)=\"$event.stopPropagation()\">\r\n    <div class=\"p-menu-body\">\r\n      <p-menu-single-select class=\"p-menu-submenu\"\r\n                            [menuList]=\"menuList\"\r\n                            (onClickTask)=\"setSelectedItem($event)\">\r\n        {{selectedItem?.name}}\r\n      </p-menu-single-select>\r\n      <p-input-outline *ngIf=\"isInputShown\"\r\n                       class=\"p-menu-text-input\"\r\n                       ariaLabel=\"Free text\"\r\n                       placeholder=\"Type here\"\r\n                       [value]=\"inputValue\">\r\n      </p-input-outline>\r\n    </div>\r\n    <div class=\"p-menu-footer\">\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnFirst.label\"\r\n                [buttonType]=\"footerBtnFirst.buttonType\"\r\n                (click)=\"selectCompleted()\"></p-button>\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnLast.label\"\r\n                [buttonType]=\"footerBtnLast.buttonType\"\r\n                (click)=\"selectCanceled()\"></p-button>\r\n    </div>\r\n  </div>\r\n</mat-menu>\r\n"
+            "templateData": "<div class=\"p-menu-trigger\"\r\n     [matMenuTriggerFor]=\"menu\"\r\n     #menuTrigger=\"matMenuTrigger\">\r\n  <ng-content></ng-content>\r\n</div>\r\n\r\n<!--menu window-->\r\n<mat-menu #menu=\"matMenu\" class=\"p-menu p-menu-text\" [overlapTrigger]=\"false\">\r\n  <div class=\"p-menu-container\" (click)=\"$event.stopPropagation()\"\r\n                                (keydown)=\"$event.stopPropagation()\">\r\n    <div class=\"p-menu-body\">\r\n      <p-menu-single-select class=\"p-menu-submenu\"\r\n                            [menuList]=\"menuList\"\r\n                            (onClickTask)=\"setSelectedItem($event)\">\r\n        <!--ng-content-->\r\n        <p-button iconAfter=\"chevron-down\"\r\n                  iconAfterWidth=\"17\"\r\n                  iconAfterHeight=\"17\"\r\n                  iconAfterStrokeWidth=\"2\"\r\n                  [label]=\"selectedItem?.name\"\r\n                  [buttonType]=\"buttonType.Tertiary\" ></p-button>\r\n        <!-- -->\r\n      </p-menu-single-select>\r\n      <p-input-outline *ngIf=\"isInputShown\"\r\n                       class=\"p-menu-text-input\"\r\n                       ariaLabel=\"Free text\"\r\n                       placeholder=\"Type here\"\r\n                       [value]=\"inputValue\">\r\n      </p-input-outline>\r\n    </div>\r\n    <div class=\"p-menu-footer\">\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnFirst.label\"\r\n                [buttonType]=\"footerBtnFirst.buttonType\"\r\n                (click)=\"selectCompleted()\"></p-button>\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnLast.label\"\r\n                [buttonType]=\"footerBtnLast.buttonType\"\r\n                (click)=\"selectCanceled()\"></p-button>\r\n    </div>\r\n  </div>\r\n</mat-menu>\r\n"
         },
         {
             "name": "MenuMultiSelectComponent",
@@ -6668,7 +6645,11 @@
                 },
                 {
                     "type": "imports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "IconModule"
+                        }
+                    ]
                 },
                 {
                     "type": "exports",
@@ -7256,17 +7237,17 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
+                "file": "src/environments/environment.prod.ts",
                 "type": "object",
-                "defaultValue": "{\r\n  production: false\r\n}"
+                "defaultValue": "{\r\n  production: true\r\n}"
             },
             {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
+                "file": "src/environments/environment.ts",
                 "type": "object",
-                "defaultValue": "{\r\n  production: true\r\n}"
+                "defaultValue": "{\r\n  production: false\r\n}"
             },
             {
                 "name": "ErrorMessage",
@@ -7307,6 +7288,14 @@
                 "file": "src/stories/input-text/input-text-table-layout.stories.ts",
                 "type": "object",
                 "defaultValue": "{\r\n  ...InputTextStories.NoLabel.args, ariaLabel: 'Cell long long Label', errorMessage: 'Validation text', validators: Validators.required, matcher: new CustomErrorStateMatcher()\r\n}"
+            },
+            {
+                "name": "loremIpsum",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/expansion-panel/loremIpsum.ts",
+                "type": "string",
+                "defaultValue": "'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat ornare lobortis varius luctus nisl. Dui odio pellentesque ultricies ut nibh risus. Sed ultrices diam eget enim fringilla arcu odio vitae condimentum. Facilisi bibendum malesuada id aliquam sed rhoncus, a. Amet elit purus ultrices feugiat adipiscing eu. Tempus cursus leo nec enim sed arcu, at dignissim sagittis. Erat non ut nulla dignissim tristique non. Commodo egestas sed mi egestas augue.'"
             },
             {
                 "name": "loremIpsum",
@@ -7360,17 +7349,17 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
-                "type": "Story<CheckboxGroupComponent>",
-                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "Story<CheckboxGroupPageComponent>",
+                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
-                "type": "Story<CheckboxGroupPageComponent>",
-                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
+                "type": "Story<CheckboxGroupComponent>",
+                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -7486,17 +7475,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
-                "type": "Story<TypographyFontFamilyComponent>",
-                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/styles/typography-styles.stories.ts",
+                "type": "Story<TypographyStylesComponent>",
+                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/styles/typography-styles.stories.ts",
-                "type": "Story<TypographyStylesComponent>",
-                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
+                "type": "Story<TypographyFontFamilyComponent>",
+                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Toggles",
@@ -7836,16 +7825,6 @@
                     "type": "literal type"
                 }
             ],
-            "src/environments/environment.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.ts",
-                    "type": "object",
-                    "defaultValue": "{\r\n  production: false\r\n}"
-                }
-            ],
             "src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -7854,6 +7833,16 @@
                     "file": "src/environments/environment.prod.ts",
                     "type": "object",
                     "defaultValue": "{\r\n  production: true\r\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: false\r\n}"
                 }
             ],
             "src/stories/input-text/input-text.stories.ts": [
@@ -7958,6 +7947,16 @@
                     "file": "src/stories/input-text/input-text-table-layout.stories.ts",
                     "type": "",
                     "defaultValue": "PageTemplate.bind({})"
+                }
+            ],
+            "src/stories/expansion-panel/loremIpsum.ts": [
+                {
+                    "name": "loremIpsum",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/expansion-panel/loremIpsum.ts",
+                    "type": "string",
+                    "defaultValue": "'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat ornare lobortis varius luctus nisl. Dui odio pellentesque ultricies ut nibh risus. Sed ultrices diam eget enim fringilla arcu odio vitae condimentum. Facilisi bibendum malesuada id aliquam sed rhoncus, a. Amet elit purus ultrices feugiat adipiscing eu. Tempus cursus leo nec enim sed arcu, at dignissim sagittis. Erat non ut nulla dignissim tristique non. Commodo egestas sed mi egestas augue.'"
                 }
             ],
             "src/stories/modal/loremIpsum.ts": [
@@ -8411,7 +8410,7 @@
                 "linktype": "component",
                 "name": "ExpansionPanelComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {
@@ -8573,7 +8572,7 @@
                 "linktype": "component",
                 "name": "MenuFreeTextComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/13",
+                "coverageCount": "0/14",
                 "status": "low"
             },
             {
@@ -9002,6 +9001,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "palette",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/expansion-panel/loremIpsum.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "loremIpsum",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

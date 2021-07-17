@@ -12,7 +12,14 @@
       <p-menu-single-select class="p-menu-submenu"
                             [menuList]="menuList"
                             (onClickTask)="setSelectedItem($event)">
-        {{selectedItem?.name}}
+        <!--ng-content-->
+        <p-button iconAfter="chevron-down"
+                  iconAfterWidth="17"
+                  iconAfterHeight="17"
+                  iconAfterStrokeWidth="2"
+                  [label]="selectedItem?.name"
+                  [buttonType]="buttonType.Tertiary" ></p-button>
+        <!-- -->
       </p-menu-single-select>
       <p-input-outline *ngIf="isInputShown"
                        class="p-menu-text-input"
