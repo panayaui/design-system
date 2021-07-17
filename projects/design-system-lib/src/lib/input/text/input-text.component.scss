@@ -50,6 +50,7 @@
     }
     .mat-form-field-subscript-wrapper {
       margin-top: 5px;
+      transform: translateY(22px);
     }
     .mat-error {
       font-family: $font-family-basic;
@@ -100,5 +101,19 @@
         display: none;
       }
     }
+  }
+
+  // no padding for error message on the bottom of mat-form-field
+  .p-input-text-label {
+    padding-bottom: 6px;
+  }
+  ::ng-deep .mat-form-field-wrapper {
+    padding-bottom: 0;
+  }
+  ::ng-deep .mat-form-field-infix {
+    border-top: 0;
+  }
+  ::ng-deep .mat-form-field-underline {
+    position: static;
   }
 }

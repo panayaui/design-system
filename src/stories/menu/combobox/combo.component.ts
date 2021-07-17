@@ -21,7 +21,7 @@ import {ButtonTypeEnum,
 export class ComboComponent {
   @Input() buttonType = ButtonTypeEnum;
 
-  // single select + action button / button
+  // single select + input / action button
   @Input() singleMenuTrigger: IInputText | IActionButton;
   @Input() singleMenuList: any;
   @Input() groupTitle: any;
