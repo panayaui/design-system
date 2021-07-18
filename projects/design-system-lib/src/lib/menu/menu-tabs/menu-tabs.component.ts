@@ -1,8 +1,8 @@
 import {
-  Component,
+  Component, EventEmitter,
   Input,
   OnDestroy,
-  OnInit,
+  OnInit, Output,
   ViewChild
 } from '@angular/core';
 import {FormControl} from '@angular/forms';
@@ -30,6 +30,7 @@ export class MenuTabsComponent implements OnInit, OnDestroy {
     checkbox: ICheckbox,
     inputNum?: IInputNumeric
   }[];
+  @Output() onClickTask: EventEmitter<any> = new EventEmitter();
   @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;
   public filteredList: any[];
   public customControl: FormControl;
@@ -37,6 +38,7 @@ export class MenuTabsComponent implements OnInit, OnDestroy {
   public tabSpecificName: string;
   public tabRelativeName: string;
   public inputNumericSize = InputNumericSizeEnum;
+  private selectedList: any[];
 
   ngOnInit(): void {
     this.filteredList = this.menuList;
@@ -51,6 +53,7 @@ export class MenuTabsComponent implements OnInit, OnDestroy {
     }
     this.tabSpecificName = 'Specific';
     this.tabRelativeName = 'Relative';
+    this.selectedList = [];
   }
 
   ngOnDestroy(): void {
@@ -65,7 +68,7 @@ export class MenuTabsComponent implements OnInit, OnDestroy {
   }
 
   onOptionSelected(item): void {
-    console.log(item);
+    this.selectedList.push(item);
   }
 
   openMenu(): void {
@@ -73,6 +76,7 @@ export class MenuTabsComponent implements OnInit, OnDestroy {
   }
 
   selectCompleted(): void {
+    this.onClickTask.emit(this.selectedList);
     this.menuTrigger.closeMenu();
   }
 

@@ -74,6 +74,13 @@ export class ComboComponent {
     this.tabsMenu.openMenu();
   }
 
+  publishArray(selectedList, trigger): void {
+    console.log(selectedList);
+    const selectedNames: string[] = [];
+    selectedList.forEach( item => selectedNames.push(item.name));
+    trigger.values = selectedNames;
+  }
+
   openRangeMenu(): void {
     this.rangeMenu.openMenu();
   }

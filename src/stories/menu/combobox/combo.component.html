@@ -129,7 +129,8 @@
                [headerBtnLast]="headerBtnLast"
                [footerBtnFirst]="footerBtnFirst"
                [footerBtnLast]="footerBtnLast"
-               [checkboxList]="checkboxList">
+               [checkboxList]="checkboxList"
+               (onClickTask)="publishArray($event, tabsMenuTrigger)">
     <!--ng-content-->
     <p-chip-button [label]="tabsMenuTrigger.label"
                    [values]="tabsMenuTrigger.values"

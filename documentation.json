@@ -2277,7 +2277,7 @@
         },
         {
             "name": "ComboComponent",
-            "id": "component-ComboComponent-5916e01d7c17e9e75fad863cf10de984",
+            "id": "component-ComboComponent-af810f44935e25f05a6166d6a8e4ff71",
             "file": "src/stories/menu/combobox/combo.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2482,7 +2482,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 81
+                    "line": 88
                 },
                 {
                     "name": "openRadioMenu",
@@ -2498,7 +2498,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 77
+                    "line": 84
                 },
                 {
                     "name": "openTabsMenu",
@@ -2507,6 +2507,39 @@
                     "returnType": "void",
                     "typeParameters": [],
                     "line": 73
+                },
+                {
+                    "name": "publishChip",
+                    "args": [
+                        {
+                            "name": "selectedList",
+                            "type": ""
+                        },
+                        {
+                            "name": "trigger",
+                            "type": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 77,
+                    "jsdoctags": [
+                        {
+                            "name": "selectedList",
+                            "type": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "trigger",
+                            "type": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
                 }
             ],
             "hostBindings": [],
@@ -2514,7 +2547,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input, ViewChild} from '@angular/core';\r\nimport {ButtonTypeEnum,\r\n  IActionButton,\r\n  IMenuButton,\r\n  ICheckbox,\r\n  IInputText,\r\n  IChip,\r\n  MenuRadioGroupComponent,\r\n  MenuTabsComponent,\r\n  MenuRangeComponent,\r\n  MenuFreeTextComponent,\r\n  IInputNumeric\r\n} from 'projects/design-system-lib/src/public-api';\r\n\r\n\r\n@Component({\r\n  selector: 'p-combo',\r\n  templateUrl: './combo.component.html',\r\n  styleUrls: ['./combo.component.scss']\r\n})\r\nexport class ComboComponent {\r\n  @Input() buttonType = ButtonTypeEnum;\r\n\r\n  // single select + input / action button\r\n  @Input() singleMenuTrigger: IInputText | IActionButton;\r\n  @Input() singleMenuList: any;\r\n  @Input() groupTitle: any;\r\n  @Input() buttonFirst: IMenuButton;\r\n  @Input() buttonLast: IMenuButton;\r\n  @Input() filterAriaLabel: string;\r\n  @Input() filterPlaceholder: string;\r\n\r\n  // multi select + action button\r\n  @Input() multiMenuTrigger: IActionButton;\r\n  @Input() multiMenuList: any;\r\n  @Input() headerBtnFirst: IMenuButton;\r\n  @Input() headerBtnLast: ICheckbox;\r\n  @Input() footerBtnFirst: IMenuButton;\r\n  @Input() footerBtnLast: IMenuButton;\r\n\r\n  // radio group + chip\r\n  @Input() radioMenuTrigger: IChip;\r\n  @Input() radioMenuList: any;\r\n  @ViewChild(MenuRadioGroupComponent) radioMenu: MenuRadioGroupComponent;\r\n\r\n  // tabs + chip\r\n  @Input() tabsMenuTrigger: IChip;\r\n  @Input() tabsMenuList: any;\r\n  @Input() checkboxList: {\r\n    checkbox: ICheckbox,\r\n    inputNum?: IInputNumeric\r\n  }[];\r\n  @ViewChild(MenuTabsComponent) tabsMenu: MenuRadioGroupComponent;\r\n\r\n  // range + chip\r\n  @Input() rangeMenuTrigger: IChip;\r\n  @Input() rangeMenuList: any;\r\n  @Input() inputMin: IInputNumeric;\r\n  @Input() inputMax: IInputNumeric;\r\n  @ViewChild(MenuRangeComponent) rangeMenu: MenuRangeComponent;\r\n\r\n  // free text + chip\r\n  @Input() freeTextMenuTrigger: IChip;\r\n  @Input() freeTextMenuList: any;\r\n  @ViewChild(MenuFreeTextComponent) freeTextMenu: MenuFreeTextComponent;\r\n\r\n  constructor() {}\r\n\r\n  openRadioMenu(): void {\r\n    this.radioMenu.openMenu();\r\n  }\r\n\r\n  openTabsMenu(): void {\r\n    this.tabsMenu.openMenu();\r\n  }\r\n\r\n  openRangeMenu(): void {\r\n    this.rangeMenu.openMenu();\r\n  }\r\n\r\n  openFreeTextMenu(): void {\r\n    this.freeTextMenu.openMenu();\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, Input, ViewChild} from '@angular/core';\r\nimport {ButtonTypeEnum,\r\n  IActionButton,\r\n  IMenuButton,\r\n  ICheckbox,\r\n  IInputText,\r\n  IChip,\r\n  MenuRadioGroupComponent,\r\n  MenuTabsComponent,\r\n  MenuRangeComponent,\r\n  MenuFreeTextComponent,\r\n  IInputNumeric\r\n} from 'projects/design-system-lib/src/public-api';\r\n\r\n\r\n@Component({\r\n  selector: 'p-combo',\r\n  templateUrl: './combo.component.html',\r\n  styleUrls: ['./combo.component.scss']\r\n})\r\nexport class ComboComponent {\r\n  @Input() buttonType = ButtonTypeEnum;\r\n\r\n  // single select + input / action button\r\n  @Input() singleMenuTrigger: IInputText | IActionButton;\r\n  @Input() singleMenuList: any;\r\n  @Input() groupTitle: any;\r\n  @Input() buttonFirst: IMenuButton;\r\n  @Input() buttonLast: IMenuButton;\r\n  @Input() filterAriaLabel: string;\r\n  @Input() filterPlaceholder: string;\r\n\r\n  // multi select + action button\r\n  @Input() multiMenuTrigger: IActionButton;\r\n  @Input() multiMenuList: any;\r\n  @Input() headerBtnFirst: IMenuButton;\r\n  @Input() headerBtnLast: ICheckbox;\r\n  @Input() footerBtnFirst: IMenuButton;\r\n  @Input() footerBtnLast: IMenuButton;\r\n\r\n  // radio group + chip\r\n  @Input() radioMenuTrigger: IChip;\r\n  @Input() radioMenuList: any;\r\n  @ViewChild(MenuRadioGroupComponent) radioMenu: MenuRadioGroupComponent;\r\n\r\n  // tabs + chip\r\n  @Input() tabsMenuTrigger: IChip;\r\n  @Input() tabsMenuList: any;\r\n  @Input() checkboxList: {\r\n    checkbox: ICheckbox,\r\n    inputNum?: IInputNumeric\r\n  }[];\r\n  @ViewChild(MenuTabsComponent) tabsMenu: MenuRadioGroupComponent;\r\n\r\n  // range + chip\r\n  @Input() rangeMenuTrigger: IChip;\r\n  @Input() rangeMenuList: any;\r\n  @Input() inputMin: IInputNumeric;\r\n  @Input() inputMax: IInputNumeric;\r\n  @ViewChild(MenuRangeComponent) rangeMenu: MenuRangeComponent;\r\n\r\n  // free text + chip\r\n  @Input() freeTextMenuTrigger: IChip;\r\n  @Input() freeTextMenuList: any;\r\n  @ViewChild(MenuFreeTextComponent) freeTextMenu: MenuFreeTextComponent;\r\n\r\n  constructor() {}\r\n\r\n  openRadioMenu(): void {\r\n    this.radioMenu.openMenu();\r\n  }\r\n\r\n  openTabsMenu(): void {\r\n    this.tabsMenu.openMenu();\r\n  }\r\n\r\n  publishChip(selectedList, trigger): void {\r\n    console.log(selectedList);\r\n    const selectedNames: string[] = [];\r\n    selectedList.forEach( item => selectedNames.push(item.name));\r\n    trigger.values = selectedNames;\r\n  }\r\n\r\n  openRangeMenu(): void {\r\n    this.rangeMenu.openMenu();\r\n  }\r\n\r\n  openFreeTextMenu(): void {\r\n    this.freeTextMenu.openMenu();\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2529,7 +2562,7 @@
                 "args": [],
                 "line": 65
             },
-            "templateData": "<!--Singe select-->\r\n<ng-container *ngIf=\"singleMenuTrigger && !groupTitle\">\r\n  <p-menu-single-select [menuList]=\"singleMenuList\"\r\n                        [buttonFirst]=\"buttonFirst\"\r\n                        [buttonLast]=\"buttonLast\">\r\n    <!--ng-content-->\r\n    <p-input-text [value]=\"singleMenuTrigger.value\"\r\n                  [ariaLabel]=\"singleMenuTrigger.ariaLabel\"\r\n                  [iconName]=\"singleMenuTrigger.iconName\"></p-input-text>\r\n    <!-- -->\r\n  </p-menu-single-select>\r\n</ng-container>\r\n\r\n<ng-container *ngIf=\"singleMenuTrigger && groupTitle && !filterPlaceholder\">\r\n  <p-menu-single-select [menuList]=\"singleMenuList\"\r\n                        [groupTitle]=\"groupTitle\"\r\n                        [buttonFirst]=\"buttonFirst\"\r\n                        [buttonLast]=\"buttonLast\">\r\n    <!--ng-content-->\r\n    <p-input-text [value]=\"singleMenuTrigger.value\"\r\n                  [ariaLabel]=\"singleMenuTrigger.ariaLabel\"\r\n                  [iconName]=\"singleMenuTrigger.iconName\"></p-input-text>\r\n    <!-- -->\r\n  </p-menu-single-select>\r\n</ng-container>\r\n\r\n<ng-container *ngIf=\"singleMenuTrigger && groupTitle && filterPlaceholder\">\r\n  <p-menu-single-select [menuList]=\"singleMenuList\"\r\n                        [groupTitle]=\"groupTitle\"\r\n                        [filterAriaLabel]=\"filterAriaLabel\"\r\n                        [filterPlaceholder]=\"filterPlaceholder\"\r\n                        [buttonFirst]=\"buttonFirst\"\r\n                        [buttonLast]=\"buttonLast\">\r\n    <!--ng-content-->\r\n    <p-action-button [label]=\"singleMenuTrigger.label\"\r\n                     [iconBeforeName]=\"singleMenuTrigger.iconBeforeName\"\r\n                     [iconBeforeWidth]=\"singleMenuTrigger.iconBeforeWidth\"\r\n                     [iconBeforeHeight]=\"singleMenuTrigger.iconBeforeHeight\"\r\n                     [iconBeforeStrokeWidth]=\"singleMenuTrigger.iconBeforeStrokeWidth\"\r\n                     [iconBeforeStrokeColor]=\"singleMenuTrigger.iconBeforeStrokeColor\"\r\n                     [isMenuTrigger]=\"true\"\r\n                     [isStandalone]=\"singleMenuTrigger.isStandalone\"></p-action-button>\r\n    <!-- -->\r\n  </p-menu-single-select>\r\n</ng-container>\r\n\r\n<!--Multi select-->\r\n<ng-container *ngIf=\"multiMenuTrigger && !filterPlaceholder && !headerBtnFirst\">\r\n  <p-menu-multi-select [menuList]=\"multiMenuList\"\r\n                        [headerBtnFirst]=\"headerBtnFirst\"\r\n                        [headerBtnLast]=\"headerBtnLast\"\r\n                        [footerBtnFirst]=\"footerBtnFirst\"\r\n                        [footerBtnLast]=\"footerBtnLast\">\r\n    <!--ng-content-->\r\n    <p-action-button [label]=\"multiMenuTrigger.label\"\r\n                     [iconBeforeName]=\"multiMenuTrigger.iconBeforeName\"\r\n                     [iconBeforeWidth]=\"multiMenuTrigger.iconBeforeWidth\"\r\n                     [iconBeforeHeight]=\"multiMenuTrigger.iconBeforeHeight\"\r\n                     [iconBeforeStrokeWidth]=\"multiMenuTrigger.iconBeforeStrokeWidth\"\r\n                     [iconBeforeStrokeColor]=\"multiMenuTrigger.iconBeforeStrokeColor\"\r\n                     [isMenuTrigger]=\"true\"\r\n                     [isStandalone]=\"multiMenuTrigger.isStandalone\"></p-action-button>\r\n    <!-- -->\r\n  </p-menu-multi-select>\r\n</ng-container>\r\n\r\n<ng-container *ngIf=\"multiMenuTrigger && filterPlaceholder && !headerBtnFirst\">\r\n  <p-menu-multi-select [menuList]=\"multiMenuList\"\r\n                       [filterPlaceholder]=\"filterPlaceholder\"\r\n                       [filterAriaLabel]=\"filterAriaLabel\"\r\n                       [footerBtnFirst]=\"footerBtnFirst\"\r\n                       [footerBtnLast]=\"footerBtnLast\">\r\n    <!--ng-content-->\r\n    <p-action-button [label]=\"multiMenuTrigger.label\"\r\n                     [iconBeforeName]=\"multiMenuTrigger.iconBeforeName\"\r\n                     [iconBeforeWidth]=\"multiMenuTrigger.iconBeforeWidth\"\r\n                     [iconBeforeHeight]=\"multiMenuTrigger.iconBeforeHeight\"\r\n                     [iconBeforeStrokeWidth]=\"multiMenuTrigger.iconBeforeStrokeWidth\"\r\n                     [iconBeforeStrokeColor]=\"multiMenuTrigger.iconBeforeStrokeColor\"\r\n                     [isMenuTrigger]=\"true\"\r\n                     [isStandalone]=\"multiMenuTrigger.isStandalone\"></p-action-button>\r\n    <!-- -->\r\n  </p-menu-multi-select>\r\n</ng-container>\r\n\r\n<ng-container *ngIf=\"multiMenuTrigger && filterPlaceholder && headerBtnFirst\">\r\n  <p-menu-multi-select [menuList]=\"multiMenuList\"\r\n                       [filterPlaceholder]=\"filterPlaceholder\"\r\n                       [filterAriaLabel]=\"filterAriaLabel\"\r\n                       [headerBtnFirst]=\"headerBtnFirst\"\r\n                       [headerBtnLast]=\"headerBtnLast\"\r\n                       [footerBtnFirst]=\"footerBtnFirst\"\r\n                       [footerBtnLast]=\"footerBtnLast\">\r\n    <!--ng-content-->\r\n    <p-action-button [label]=\"multiMenuTrigger.label\"\r\n                     [iconBeforeName]=\"multiMenuTrigger.iconBeforeName\"\r\n                     [iconBeforeWidth]=\"multiMenuTrigger.iconBeforeWidth\"\r\n                     [iconBeforeHeight]=\"multiMenuTrigger.iconBeforeHeight\"\r\n                     [iconBeforeStrokeWidth]=\"multiMenuTrigger.iconBeforeStrokeWidth\"\r\n                     [iconBeforeStrokeColor]=\"multiMenuTrigger.iconBeforeStrokeColor\"\r\n                     [isMenuTrigger]=\"true\"\r\n                     [isStandalone]=\"multiMenuTrigger.isStandalone\"></p-action-button>\r\n    <!-- -->\r\n  </p-menu-multi-select>\r\n</ng-container>\r\n\r\n<!--Radio group-->\r\n<ng-container *ngIf=\"radioMenuTrigger\">\r\n  <p-menu-radio-group [menuList]=\"radioMenuList\"\r\n                      [footerBtnFirst]=\"footerBtnFirst\"\r\n                      [footerBtnLast]=\"footerBtnLast\">\r\n    <!--ng-content-->\r\n    <p-chip-button [label]=\"radioMenuTrigger.label\"\r\n                    [values]=\"radioMenuTrigger.values\"\r\n                    [iconRemove]=\"radioMenuTrigger.iconRemove\"\r\n                    [full]=\"radioMenuTrigger.full\"\r\n                    [active]=\"radioMenuTrigger.active\"\r\n                    (onClickTask)=\"openRadioMenu()\"></p-chip-button>\r\n    <!-- -->\r\n  </p-menu-radio-group>\r\n</ng-container>\r\n\r\n<!--Tabs-->\r\n<ng-container *ngIf=\"tabsMenuTrigger\">\r\n  <p-menu-tabs [menuList]=\"tabsMenuList\"\r\n               [filterPlaceholder]=\"filterPlaceholder\"\r\n               [filterAriaLabel]=\"filterAriaLabel\"\r\n               [headerBtnFirst]=\"headerBtnFirst\"\r\n               [headerBtnLast]=\"headerBtnLast\"\r\n               [footerBtnFirst]=\"footerBtnFirst\"\r\n               [footerBtnLast]=\"footerBtnLast\"\r\n               [checkboxList]=\"checkboxList\">\r\n    <!--ng-content-->\r\n    <p-chip-button [label]=\"tabsMenuTrigger.label\"\r\n                   [values]=\"tabsMenuTrigger.values\"\r\n                   [iconRemove]=\"tabsMenuTrigger.iconRemove\"\r\n                   [full]=\"tabsMenuTrigger.full\"\r\n                   [active]=\"tabsMenuTrigger.active\"\r\n                   (onClickTask)=\"openTabsMenu()\"></p-chip-button>\r\n    <!-- -->\r\n  </p-menu-tabs>\r\n</ng-container>\r\n\r\n<!--Range-->\r\n<ng-container *ngIf=\"rangeMenuTrigger\">\r\n  <p-menu-range [inputMax]=\"inputMax\"\r\n                [inputMin]=\"inputMin\"\r\n                [footerBtnFirst]=\"footerBtnFirst\"\r\n                [footerBtnLast]=\"footerBtnLast\">\r\n    <!--ng-content-->\r\n    <p-chip-button [label]=\"rangeMenuTrigger.label\"\r\n                   [values]=\"rangeMenuTrigger.values\"\r\n                   [iconRemove]=\"rangeMenuTrigger.iconRemove\"\r\n                   [full]=\"rangeMenuTrigger.full\"\r\n                   [active]=\"rangeMenuTrigger.active\"\r\n                   (onClickTask)=\"openRangeMenu()\"></p-chip-button>\r\n    <!-- -->\r\n  </p-menu-range>\r\n</ng-container>\r\n\r\n<!--Range-->\r\n<ng-container *ngIf=\"freeTextMenuTrigger\">\r\n  <p-menu-free-text [menuList]=\"freeTextMenuList\"\r\n                    [footerBtnFirst]=\"footerBtnFirst\"\r\n                    [footerBtnLast]=\"footerBtnLast\">\r\n    <!--ng-content-->\r\n    <p-chip-button [label]=\"freeTextMenuTrigger.label\"\r\n                   [values]=\"freeTextMenuTrigger.values\"\r\n                   [iconRemove]=\"freeTextMenuTrigger.iconRemove\"\r\n                   [full]=\"freeTextMenuTrigger.full\"\r\n                   [active]=\"freeTextMenuTrigger.active\"\r\n                   (onClickTask)=\"openFreeTextMenu()\"></p-chip-button>\r\n    <!-- -->\r\n  </p-menu-free-text>\r\n</ng-container>\r\n\r\n\r\n"
+            "templateData": "<!--Singe select-->\r\n<ng-container *ngIf=\"singleMenuTrigger && !groupTitle\">\r\n  <p-menu-single-select [menuList]=\"singleMenuList\"\r\n                        [buttonFirst]=\"buttonFirst\"\r\n                        [buttonLast]=\"buttonLast\">\r\n    <!--ng-content-->\r\n    <p-input-text [value]=\"singleMenuTrigger.value\"\r\n                  [ariaLabel]=\"singleMenuTrigger.ariaLabel\"\r\n                  [iconName]=\"singleMenuTrigger.iconName\"></p-input-text>\r\n    <!-- -->\r\n  </p-menu-single-select>\r\n</ng-container>\r\n\r\n<ng-container *ngIf=\"singleMenuTrigger && groupTitle && !filterPlaceholder\">\r\n  <p-menu-single-select [menuList]=\"singleMenuList\"\r\n                        [groupTitle]=\"groupTitle\"\r\n                        [buttonFirst]=\"buttonFirst\"\r\n                        [buttonLast]=\"buttonLast\">\r\n    <!--ng-content-->\r\n    <p-input-text [value]=\"singleMenuTrigger.value\"\r\n                  [ariaLabel]=\"singleMenuTrigger.ariaLabel\"\r\n                  [iconName]=\"singleMenuTrigger.iconName\"></p-input-text>\r\n    <!-- -->\r\n  </p-menu-single-select>\r\n</ng-container>\r\n\r\n<ng-container *ngIf=\"singleMenuTrigger && groupTitle && filterPlaceholder\">\r\n  <p-menu-single-select [menuList]=\"singleMenuList\"\r\n                        [groupTitle]=\"groupTitle\"\r\n                        [filterAriaLabel]=\"filterAriaLabel\"\r\n                        [filterPlaceholder]=\"filterPlaceholder\"\r\n                        [buttonFirst]=\"buttonFirst\"\r\n                        [buttonLast]=\"buttonLast\">\r\n    <!--ng-content-->\r\n    <p-action-button [label]=\"singleMenuTrigger.label\"\r\n                     [iconBeforeName]=\"singleMenuTrigger.iconBeforeName\"\r\n                     [iconBeforeWidth]=\"singleMenuTrigger.iconBeforeWidth\"\r\n                     [iconBeforeHeight]=\"singleMenuTrigger.iconBeforeHeight\"\r\n                     [iconBeforeStrokeWidth]=\"singleMenuTrigger.iconBeforeStrokeWidth\"\r\n                     [iconBeforeStrokeColor]=\"singleMenuTrigger.iconBeforeStrokeColor\"\r\n                     [isMenuTrigger]=\"true\"\r\n                     [isStandalone]=\"singleMenuTrigger.isStandalone\"></p-action-button>\r\n    <!-- -->\r\n  </p-menu-single-select>\r\n</ng-container>\r\n\r\n<!--Multi select-->\r\n<ng-container *ngIf=\"multiMenuTrigger && !filterPlaceholder && !headerBtnFirst\">\r\n  <p-menu-multi-select [menuList]=\"multiMenuList\"\r\n                        [headerBtnFirst]=\"headerBtnFirst\"\r\n                        [headerBtnLast]=\"headerBtnLast\"\r\n                        [footerBtnFirst]=\"footerBtnFirst\"\r\n                        [footerBtnLast]=\"footerBtnLast\">\r\n    <!--ng-content-->\r\n    <p-action-button [label]=\"multiMenuTrigger.label\"\r\n                     [iconBeforeName]=\"multiMenuTrigger.iconBeforeName\"\r\n                     [iconBeforeWidth]=\"multiMenuTrigger.iconBeforeWidth\"\r\n                     [iconBeforeHeight]=\"multiMenuTrigger.iconBeforeHeight\"\r\n                     [iconBeforeStrokeWidth]=\"multiMenuTrigger.iconBeforeStrokeWidth\"\r\n                     [iconBeforeStrokeColor]=\"multiMenuTrigger.iconBeforeStrokeColor\"\r\n                     [isMenuTrigger]=\"true\"\r\n                     [isStandalone]=\"multiMenuTrigger.isStandalone\"></p-action-button>\r\n    <!-- -->\r\n  </p-menu-multi-select>\r\n</ng-container>\r\n\r\n<ng-container *ngIf=\"multiMenuTrigger && filterPlaceholder && !headerBtnFirst\">\r\n  <p-menu-multi-select [menuList]=\"multiMenuList\"\r\n                       [filterPlaceholder]=\"filterPlaceholder\"\r\n                       [filterAriaLabel]=\"filterAriaLabel\"\r\n                       [footerBtnFirst]=\"footerBtnFirst\"\r\n                       [footerBtnLast]=\"footerBtnLast\">\r\n    <!--ng-content-->\r\n    <p-action-button [label]=\"multiMenuTrigger.label\"\r\n                     [iconBeforeName]=\"multiMenuTrigger.iconBeforeName\"\r\n                     [iconBeforeWidth]=\"multiMenuTrigger.iconBeforeWidth\"\r\n                     [iconBeforeHeight]=\"multiMenuTrigger.iconBeforeHeight\"\r\n                     [iconBeforeStrokeWidth]=\"multiMenuTrigger.iconBeforeStrokeWidth\"\r\n                     [iconBeforeStrokeColor]=\"multiMenuTrigger.iconBeforeStrokeColor\"\r\n                     [isMenuTrigger]=\"true\"\r\n                     [isStandalone]=\"multiMenuTrigger.isStandalone\"></p-action-button>\r\n    <!-- -->\r\n  </p-menu-multi-select>\r\n</ng-container>\r\n\r\n<ng-container *ngIf=\"multiMenuTrigger && filterPlaceholder && headerBtnFirst\">\r\n  <p-menu-multi-select [menuList]=\"multiMenuList\"\r\n                       [filterPlaceholder]=\"filterPlaceholder\"\r\n                       [filterAriaLabel]=\"filterAriaLabel\"\r\n                       [headerBtnFirst]=\"headerBtnFirst\"\r\n                       [headerBtnLast]=\"headerBtnLast\"\r\n                       [footerBtnFirst]=\"footerBtnFirst\"\r\n                       [footerBtnLast]=\"footerBtnLast\">\r\n    <!--ng-content-->\r\n    <p-action-button [label]=\"multiMenuTrigger.label\"\r\n                     [iconBeforeName]=\"multiMenuTrigger.iconBeforeName\"\r\n                     [iconBeforeWidth]=\"multiMenuTrigger.iconBeforeWidth\"\r\n                     [iconBeforeHeight]=\"multiMenuTrigger.iconBeforeHeight\"\r\n                     [iconBeforeStrokeWidth]=\"multiMenuTrigger.iconBeforeStrokeWidth\"\r\n                     [iconBeforeStrokeColor]=\"multiMenuTrigger.iconBeforeStrokeColor\"\r\n                     [isMenuTrigger]=\"true\"\r\n                     [isStandalone]=\"multiMenuTrigger.isStandalone\"></p-action-button>\r\n    <!-- -->\r\n  </p-menu-multi-select>\r\n</ng-container>\r\n\r\n<!--Radio group-->\r\n<ng-container *ngIf=\"radioMenuTrigger\">\r\n  <p-menu-radio-group [menuList]=\"radioMenuList\"\r\n                      [footerBtnFirst]=\"footerBtnFirst\"\r\n                      [footerBtnLast]=\"footerBtnLast\">\r\n    <!--ng-content-->\r\n    <p-chip-button [label]=\"radioMenuTrigger.label\"\r\n                    [values]=\"radioMenuTrigger.values\"\r\n                    [iconRemove]=\"radioMenuTrigger.iconRemove\"\r\n                    [full]=\"radioMenuTrigger.full\"\r\n                    [active]=\"radioMenuTrigger.active\"\r\n                    (onClickTask)=\"openRadioMenu()\"></p-chip-button>\r\n    <!-- -->\r\n  </p-menu-radio-group>\r\n</ng-container>\r\n\r\n<!--Tabs-->\r\n<ng-container *ngIf=\"tabsMenuTrigger\">\r\n  <p-menu-tabs [menuList]=\"tabsMenuList\"\r\n               [filterPlaceholder]=\"filterPlaceholder\"\r\n               [filterAriaLabel]=\"filterAriaLabel\"\r\n               [headerBtnFirst]=\"headerBtnFirst\"\r\n               [headerBtnLast]=\"headerBtnLast\"\r\n               [footerBtnFirst]=\"footerBtnFirst\"\r\n               [footerBtnLast]=\"footerBtnLast\"\r\n               [checkboxList]=\"checkboxList\"\r\n               (onClickTask)=\"publishChip($event, tabsMenuTrigger)\">\r\n    <!--ng-content-->\r\n    <p-chip-button [label]=\"tabsMenuTrigger.label\"\r\n                   [values]=\"tabsMenuTrigger.values\"\r\n                   [iconRemove]=\"tabsMenuTrigger.iconRemove\"\r\n                   [full]=\"tabsMenuTrigger.full\"\r\n                   [active]=\"tabsMenuTrigger.active\"\r\n                   (onClickTask)=\"openTabsMenu()\"></p-chip-button>\r\n    <!-- -->\r\n  </p-menu-tabs>\r\n</ng-container>\r\n\r\n<!--Range-->\r\n<ng-container *ngIf=\"rangeMenuTrigger\">\r\n  <p-menu-range [inputMax]=\"inputMax\"\r\n                [inputMin]=\"inputMin\"\r\n                [footerBtnFirst]=\"footerBtnFirst\"\r\n                [footerBtnLast]=\"footerBtnLast\">\r\n    <!--ng-content-->\r\n    <p-chip-button [label]=\"rangeMenuTrigger.label\"\r\n                   [values]=\"rangeMenuTrigger.values\"\r\n                   [iconRemove]=\"rangeMenuTrigger.iconRemove\"\r\n                   [full]=\"rangeMenuTrigger.full\"\r\n                   [active]=\"rangeMenuTrigger.active\"\r\n                   (onClickTask)=\"openRangeMenu()\"></p-chip-button>\r\n    <!-- -->\r\n  </p-menu-range>\r\n</ng-container>\r\n\r\n<!--Range-->\r\n<ng-container *ngIf=\"freeTextMenuTrigger\">\r\n  <p-menu-free-text [menuList]=\"freeTextMenuList\"\r\n                    [footerBtnFirst]=\"footerBtnFirst\"\r\n                    [footerBtnLast]=\"footerBtnLast\">\r\n    <!--ng-content-->\r\n    <p-chip-button [label]=\"freeTextMenuTrigger.label\"\r\n                   [values]=\"freeTextMenuTrigger.values\"\r\n                   [iconRemove]=\"freeTextMenuTrigger.iconRemove\"\r\n                   [full]=\"freeTextMenuTrigger.full\"\r\n                   [active]=\"freeTextMenuTrigger.active\"\r\n                   (onClickTask)=\"openFreeTextMenu()\"></p-chip-button>\r\n    <!-- -->\r\n  </p-menu-free-text>\r\n</ng-container>\r\n\r\n\r\n"
         },
         {
             "name": "DatepickerComponent",
@@ -4459,7 +4492,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../menu/menu-base.component\";\r\n\r\n$menu-item-height: 32px;\r\n$menu-item-margin-top: $gap-small;\r\n$input-text-height: 32px;\r\n$input-text-padding: $menu-padding;\r\n$menu-header-height: $input-text-height + $menu-padding * 3 + 1px;\r\n$menu-header-extended-height: $input-text-height + ($menu-padding * 4.5) + ($menu-item-height * 2) + 1px;\r\n\r\n::ng-deep .p-menu-multiple-item.mat-list-option.mat-list-item {\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  color: $primary-a-900;\r\n  height: $menu-item-height;\r\n  line-height: $menu-item-height;\r\n  padding: 0 $menu-padding;\r\n  & + & {\r\n    margin-top: $menu-item-margin-top;\r\n  }\r\n  &:hover,\r\n  &.cdk-focused {\r\n    background-color: $primary-c-50;\r\n    .mat-pseudo-checkbox:not(.mat-pseudo-checkbox-checked) {\r\n      border-color: $secondary-a-700;\r\n    }\r\n  }\r\n  &[disabled] {\r\n    color: $gray-scale-600;\r\n  }\r\n  .mat-list-item-content.mat-list-item-content-reverse {\r\n    flex-direction: row;\r\n    padding: 0;\r\n    .mat-list-text {\r\n      display: inline;\r\n      padding-left: $menu-padding;\r\n      padding-right: 0;\r\n      @include ellipsis;\r\n    }\r\n  }\r\n\r\n  .mat-pseudo-checkbox:not(.mat-pseudo-checkbox-checked) {\r\n    border: 1px solid $gray-scale-400;\r\n    background-color: $gray-scale-1;\r\n  }\r\n\r\n  // checked\r\n  .mat-pseudo-checkbox-checked {\r\n    background-color: $secondary-a-700;\r\n    &:after {\r\n      width: 7px;\r\n      height: 2px;\r\n      top: 3.4px;\r\n      left: 1.5px;\r\n    }\r\n  }\r\n\r\n  // disabled\r\n  &.mat-list-item-disabled {\r\n    background-color: transparent;\r\n    .mat-pseudo-checkbox:not(.mat-pseudo-checkbox-checked) {\r\n      background-color: $primary-c-50;\r\n      border-color: $gray-scale-400;\r\n    }\r\n    .mat-pseudo-checkbox-checked {\r\n      background-color: $secondary-a-200;\r\n    }\r\n    .mat-list-text {\r\n      color: $gray-scale-600;\r\n    }\r\n  }\r\n}\r\n\r\n// results on the trigger\r\n.p-menu-trigger-result {\r\n  & + & {\r\n    margin-left: 5px;\r\n  }\r\n  &:not(:last-child):after {\r\n    content: ',';\r\n    display: inline;\r\n  }\r\n}\r\n\r\n.p-menu {\r\n  &-header {\r\n    width: 100%;\r\n    padding: $menu-padding;\r\n    background-color: $menu-background;\r\n    border-bottom: 1px solid $gray-scale-400;\r\n    position: absolute;\r\n    z-index: 1;\r\n\r\n    .p-menu-form-field + .p-menu-btn-line {\r\n      margin-top: $menu-padding;\r\n    }\r\n    .p-menu-btn-line + .p-menu-btn-line {\r\n      margin-top: 4px;\r\n    }\r\n  }\r\n\r\n  &-body {\r\n    height: calc(100% - #{$menu-footer-height});\r\n    min-height: $menu-body-min-height;\r\n    padding-top: $menu-padding;\r\n    padding-right: 0;\r\n    padding-bottom: 0;\r\n    padding-left: $menu-padding;\r\n    // no buttons after input\r\n    .p-menu-header:not(.extended) + & {\r\n      min-height: $menu-header-height + $menu-body-min-height;\r\n      padding-top: $menu-header-height;\r\n    }\r\n    // there are buttons after input\r\n    .p-menu-header.extended + & {\r\n      min-height: $menu-header-extended-height + $menu-body-min-height;\r\n      padding-top: $menu-header-extended-height;\r\n    }\r\n\r\n    &-container {\r\n      height: 100%;\r\n      padding-top: 0;\r\n      padding-right: $menu-padding;\r\n      overflow: auto;\r\n    }\r\n  }\r\n\r\n  &-btn-line {\r\n    display: block;\r\n    width: 100%;\r\n    height: $menu-item-height;\r\n    ::ng-deep .p-btn {\r\n      @extend %btn-line;\r\n      justify-content: flex-start;\r\n    }\r\n    ::ng-deep .p-btn-icon-before {\r\n      .p-btn-label {\r\n        margin-left: $menu-padding;\r\n      }\r\n    }\r\n    ::ng-deep .p-checkbox {\r\n      display: inline-flex;\r\n      align-items: center;\r\n      @extend %btn-line;\r\n      &:not(.mat-checkbox-disabled):hover {\r\n        background-color: $primary-c-50;\r\n      }\r\n      .mat-checkbox-label {\r\n        font-weight: 500;\r\n      }\r\n    }\r\n    .p-menu-input + & {\r\n      margin-top: $menu-padding;\r\n    }\r\n  }\r\n}\r\n\r\n\r\n",
+                    "data": "@import \"../menu/menu-base.component\";\r\n\r\n$menu-item-height: 32px;\r\n$menu-item-margin-top: $gap-small;\r\n$input-text-height: 32px;\r\n$input-text-padding: $menu-padding;\r\n$menu-header-height: $input-text-height + $menu-padding * 3 + 1px;\r\n$menu-header-extended-height: $input-text-height + ($menu-padding * 4.5) + ($menu-item-height * 2) + 1px;\r\n$menu-header-half-extended-height: $input-text-height + ($menu-padding * 4) + $menu-item-height + 1px;\r\n\r\n::ng-deep .p-menu-multiple-item.mat-list-option.mat-list-item {\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  color: $primary-a-900;\r\n  height: $menu-item-height;\r\n  line-height: $menu-item-height;\r\n  padding: 0 $menu-padding;\r\n  & + & {\r\n    margin-top: $menu-item-margin-top;\r\n  }\r\n  &:hover,\r\n  &.cdk-focused {\r\n    background-color: $primary-c-50;\r\n    .mat-pseudo-checkbox:not(.mat-pseudo-checkbox-checked) {\r\n      border-color: $secondary-a-700;\r\n    }\r\n  }\r\n  &[disabled] {\r\n    color: $gray-scale-600;\r\n  }\r\n  .mat-list-item-content.mat-list-item-content-reverse {\r\n    flex-direction: row;\r\n    padding: 0;\r\n    .mat-list-text {\r\n      display: inline;\r\n      padding-left: $menu-padding;\r\n      padding-right: 0;\r\n      @include ellipsis;\r\n    }\r\n  }\r\n\r\n  .mat-pseudo-checkbox:not(.mat-pseudo-checkbox-checked) {\r\n    border: 1px solid $gray-scale-400;\r\n    background-color: $gray-scale-1;\r\n  }\r\n\r\n  // checked\r\n  .mat-pseudo-checkbox-checked {\r\n    background-color: $secondary-a-700;\r\n    &:after {\r\n      width: 7px;\r\n      height: 2px;\r\n      top: 3.4px;\r\n      left: 1.5px;\r\n    }\r\n  }\r\n\r\n  // disabled\r\n  &.mat-list-item-disabled {\r\n    background-color: transparent;\r\n    .mat-pseudo-checkbox:not(.mat-pseudo-checkbox-checked) {\r\n      background-color: $primary-c-50;\r\n      border-color: $gray-scale-400;\r\n    }\r\n    .mat-pseudo-checkbox-checked {\r\n      background-color: $secondary-a-200;\r\n    }\r\n    .mat-list-text {\r\n      color: $gray-scale-600;\r\n    }\r\n  }\r\n}\r\n\r\n// results on the trigger\r\n.p-menu-trigger-result {\r\n  & + & {\r\n    margin-left: 5px;\r\n  }\r\n  &:not(:last-child):after {\r\n    content: ',';\r\n    display: inline;\r\n  }\r\n}\r\n\r\n.p-menu {\r\n  &-header {\r\n    width: 100%;\r\n    padding: $menu-padding;\r\n    background-color: $menu-background;\r\n    border-bottom: 1px solid $gray-scale-400;\r\n    position: absolute;\r\n    z-index: 1;\r\n\r\n    .p-menu-form-field + .p-menu-btn-line {\r\n      margin-top: $menu-padding;\r\n    }\r\n    .p-menu-btn-line + .p-menu-btn-line {\r\n      margin-top: 4px;\r\n    }\r\n  }\r\n\r\n  &-body {\r\n    height: calc(100% - #{$menu-footer-height});\r\n    min-height: $menu-body-min-height;\r\n    padding-top: $menu-padding;\r\n    padding-right: 0;\r\n    padding-bottom: 0;\r\n    padding-left: $menu-padding;\r\n    // no buttons after input\r\n    .p-menu-header:not(.extended):not(.half-extended) + & {\r\n      min-height: $menu-header-height + $menu-body-min-height;\r\n      padding-top: $menu-header-height;\r\n    }\r\n    // there are 2 buttons after input\r\n    .p-menu-header.extended + & {\r\n      min-height: $menu-header-extended-height + $menu-body-min-height;\r\n      padding-top: $menu-header-extended-height;\r\n    }\r\n    // there are 1 button after input\r\n    .p-menu-header.half-extended + & {\r\n      min-height: $menu-header-half-extended-height + $menu-body-min-height;\r\n      padding-top: $menu-header-half-extended-height;\r\n    }\r\n\r\n    &-container {\r\n      height: 100%;\r\n      padding-top: 0;\r\n      padding-right: $menu-padding;\r\n      overflow: auto;\r\n    }\r\n  }\r\n\r\n  &-btn-line {\r\n    display: block;\r\n    width: 100%;\r\n    height: $menu-item-height;\r\n    ::ng-deep .p-btn {\r\n      @extend %btn-line;\r\n      justify-content: flex-start;\r\n    }\r\n    ::ng-deep .p-btn-icon-before {\r\n      .p-btn-label {\r\n        margin-left: $menu-padding;\r\n      }\r\n    }\r\n    ::ng-deep .p-checkbox {\r\n      display: inline-flex;\r\n      align-items: center;\r\n      @extend %btn-line;\r\n      &:not(.mat-checkbox-disabled):hover {\r\n        background-color: $primary-c-50;\r\n      }\r\n      .mat-checkbox-label {\r\n        font-weight: 500;\r\n      }\r\n    }\r\n    .p-menu-input + & {\r\n      margin-top: $menu-padding;\r\n    }\r\n  }\r\n}\r\n\r\n\r\n",
                     "styleUrl": "./menu-multi-select.component.scss"
                 }
             ],
@@ -4468,7 +4501,7 @@
                 "OnInit",
                 "OnDestroy"
             ],
-            "templateData": "<div class=\"p-menu-trigger\"\r\n     [matMenuTriggerFor]=\"menu\"\r\n     #menuTrigger=\"matMenuTrigger\">\r\n  <ng-content></ng-content>\r\n</div>\r\n\r\n<!--menu window-->\r\n<mat-menu #menu=\"matMenu\" class=\"p-menu p-menu-multiple\" [overlapTrigger]=\"false\">\r\n  <div class=\"p-menu-container\" (click)=\"$event.stopPropagation()\"\r\n                                          (keydown)=\"$event.stopPropagation()\">\r\n    <div class=\"p-menu-header\" *ngIf=\"filterPlaceholder\"\r\n         [class.extended]=\"headerBtnFirst && headerBtnLast\">\r\n      <p-input-outline class=\"p-menu-input\"\r\n                       [ariaLabel]=\"filterAriaLabel\"\r\n                       [placeholder]=\"filterPlaceholder\"\r\n                       [isSearch]=\"true\"\r\n                       (onSearch)=\"alterList($event)\">\r\n      </p-input-outline>\r\n      <p-button *ngIf=\"headerBtnFirst\"\r\n                class=\"p-menu-btn-line\"\r\n                [label]=\"headerBtnFirst.label\"\r\n                [iconBefore]=\"headerBtnFirst.icon.iconName\"\r\n                [iconBeforeWidth]=\"headerBtnFirst.icon.width\"\r\n                [iconBeforeHeight]=\"headerBtnFirst.icon.height\"\r\n                [buttonType]=\"headerBtnFirst.buttonType\"\r\n                [disabled]=\"!filteredList.length\"></p-button>\r\n      <p-checkbox *ngIf=\"headerBtnLast\"\r\n                  class=\"p-menu-btn-line\"\r\n                  [label]=\"headerBtnLast.label\"\r\n                  [checked]=\"headerBtnLast.checked\"\r\n                  [disabled]=\"!filteredList.length\"></p-checkbox>\r\n    </div>\r\n\r\n    <div class=\"p-menu-body\">\r\n      <ng-template [ngIf]=\"filteredList.length\" [ngIfElse]=\"emptyState\">\r\n        <mat-selection-list class=\"p-menu-body-container\">\r\n          <mat-list-option class=\"p-menu-multiple-item\"\r\n                           *ngFor=\"let item of filteredList\"\r\n                           [disableRipple]=\"true\"\r\n                           [disabled]=\"item.disabled\"\r\n                           [selected]=\"item.selected\"\r\n                           (click)=\"onOptSelected(item)\">\r\n            {{item.name}}\r\n          </mat-list-option>\r\n        </mat-selection-list>\r\n      </ng-template>\r\n\r\n      <ng-template #emptyState>\r\n        <div class=\"p-menu-empty\">\r\n          <p class=\"p-menu-empty-state paragraph-1-default\">\r\n            No data found\r\n          </p>\r\n        </div>\r\n      </ng-template>\r\n\r\n    </div>\r\n\r\n    <div class=\"p-menu-footer\">\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnFirst.label\"\r\n                [buttonType]=\"footerBtnFirst.buttonType\"\r\n                (click)=\"selectCompleted()\"></p-button>\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnLast.label\"\r\n                [buttonType]=\"footerBtnLast.buttonType\"\r\n                (click)=\"selectCanceled()\"></p-button>\r\n    </div>\r\n  </div>\r\n</mat-menu>\r\n"
+            "templateData": "<div class=\"p-menu-trigger\"\r\n     [matMenuTriggerFor]=\"menu\"\r\n     #menuTrigger=\"matMenuTrigger\">\r\n  <ng-content></ng-content>\r\n</div>\r\n\r\n<!--menu window-->\r\n<mat-menu #menu=\"matMenu\" class=\"p-menu p-menu-multiple\" [overlapTrigger]=\"false\">\r\n  <div class=\"p-menu-container\" (click)=\"$event.stopPropagation()\"\r\n                                          (keydown)=\"$event.stopPropagation()\">\r\n    <div class=\"p-menu-header\" *ngIf=\"filterPlaceholder\"\r\n         [ngClass]=\"{'extended' : headerBtnFirst && headerBtnLast, 'half-extended' : headerBtnFirst && !headerBtnLast}\">\r\n      <p-input-outline class=\"p-menu-input\"\r\n                       [ariaLabel]=\"filterAriaLabel\"\r\n                       [placeholder]=\"filterPlaceholder\"\r\n                       [isSearch]=\"true\"\r\n                       (onSearch)=\"alterList($event)\">\r\n      </p-input-outline>\r\n      <p-button *ngIf=\"headerBtnFirst\"\r\n                class=\"p-menu-btn-line\"\r\n                [label]=\"headerBtnFirst.label\"\r\n                [iconBefore]=\"headerBtnFirst.icon.iconName\"\r\n                [iconBeforeWidth]=\"headerBtnFirst.icon.width\"\r\n                [iconBeforeHeight]=\"headerBtnFirst.icon.height\"\r\n                [buttonType]=\"headerBtnFirst.buttonType\"\r\n                [disabled]=\"!filteredList.length\"></p-button>\r\n      <p-checkbox *ngIf=\"headerBtnLast\"\r\n                  class=\"p-menu-btn-line\"\r\n                  [label]=\"headerBtnLast.label\"\r\n                  [checked]=\"headerBtnLast.checked\"\r\n                  [disabled]=\"!filteredList.length\"></p-checkbox>\r\n    </div>\r\n\r\n    <div class=\"p-menu-body\">\r\n      <ng-template [ngIf]=\"filteredList.length\" [ngIfElse]=\"emptyState\">\r\n        <mat-selection-list class=\"p-menu-body-container\">\r\n          <mat-list-option class=\"p-menu-multiple-item\"\r\n                           *ngFor=\"let item of filteredList\"\r\n                           [disableRipple]=\"true\"\r\n                           [disabled]=\"item.disabled\"\r\n                           [selected]=\"item.selected\"\r\n                           (click)=\"onOptionSelected(item)\">\r\n            {{item.name}}\r\n          </mat-list-option>\r\n        </mat-selection-list>\r\n      </ng-template>\r\n\r\n      <ng-template #emptyState>\r\n        <div class=\"p-menu-empty\">\r\n          <p class=\"p-menu-empty-state paragraph-1-default\">\r\n            No data found\r\n          </p>\r\n        </div>\r\n      </ng-template>\r\n\r\n    </div>\r\n\r\n    <div class=\"p-menu-footer\">\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnFirst.label\"\r\n                [buttonType]=\"footerBtnFirst.buttonType\"\r\n                (click)=\"selectCompleted()\"></p-button>\r\n      <p-button class=\"p-menu-footer-btn\"\r\n                [label]=\"footerBtnLast.label\"\r\n                [buttonType]=\"footerBtnLast.buttonType\"\r\n                (click)=\"selectCanceled()\"></p-button>\r\n    </div>\r\n  </div>\r\n</mat-menu>\r\n"
         },
         {
             "name": "MenuRadioGroupComponent",
@@ -4923,7 +4956,7 @@
         },
         {
             "name": "MenuTabsComponent",
-            "id": "component-MenuTabsComponent-98e286fb98d2b4410d0debdd970c0e60",
+            "id": "component-MenuTabsComponent-7325e0f317dccb6f2c0bf9afc251e33d",
             "file": "projects/design-system-lib/src/lib/menu/menu-tabs/menu-tabs.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -4981,14 +5014,21 @@
                     "type": "any[]"
                 }
             ],
-            "outputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "onClickTask",
+                    "defaultValue": "new EventEmitter()",
+                    "line": 33,
+                    "type": "EventEmitter<any>"
+                }
+            ],
             "propertiesClass": [
                 {
                     "name": "customControl",
                     "type": "FormControl",
                     "optional": false,
                     "description": "",
-                    "line": 35,
+                    "line": 36,
                     "modifierKind": [
                         114
                     ]
@@ -4998,7 +5038,7 @@
                     "type": "any[]",
                     "optional": false,
                     "description": "",
-                    "line": 34,
+                    "line": 35,
                     "modifierKind": [
                         114
                     ]
@@ -5009,7 +5049,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 39,
+                    "line": 40,
                     "modifierKind": [
                         114
                     ]
@@ -5019,7 +5059,7 @@
                     "type": "MatMenuTrigger",
                     "optional": false,
                     "description": "",
-                    "line": 33,
+                    "line": 34,
                     "decorators": [
                         {
                             "name": "ViewChild",
@@ -5028,11 +5068,21 @@
                     ]
                 },
                 {
+                    "name": "selectedList",
+                    "type": "any[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 41,
+                    "modifierKind": [
+                        112
+                    ]
+                },
+                {
                     "name": "sub",
                     "type": "SubscriptionLike",
                     "optional": false,
                     "description": "",
-                    "line": 36,
+                    "line": 37,
                     "modifierKind": [
                         112
                     ]
@@ -5042,7 +5092,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 38,
+                    "line": 39,
                     "modifierKind": [
                         114
                     ]
@@ -5052,7 +5102,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 37,
+                    "line": 38,
                     "modifierKind": [
                         114
                     ]
@@ -5070,7 +5120,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 63,
+                    "line": 66,
                     "jsdoctags": [
                         {
                             "name": "value",
@@ -5087,7 +5137,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 56
+                    "line": 59
                 },
                 {
                     "name": "ngOnInit",
@@ -5095,7 +5145,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 41
+                    "line": 43
                 },
                 {
                     "name": "onOptionSelected",
@@ -5108,7 +5158,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 67,
+                    "line": 70,
                     "jsdoctags": [
                         {
                             "name": "item",
@@ -5125,7 +5175,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 71
+                    "line": 74
                 },
                 {
                     "name": "selectCanceled",
@@ -5133,7 +5183,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 79
+                    "line": 83
                 },
                 {
                     "name": "selectCompleted",
@@ -5141,7 +5191,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 75
+                    "line": 78
                 }
             ],
             "hostBindings": [],
@@ -5149,11 +5199,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {\r\n  Component,\r\n  Input,\r\n  OnDestroy,\r\n  OnInit,\r\n  ViewChild\r\n} from '@angular/core';\r\nimport {FormControl} from '@angular/forms';\r\nimport {SubscriptionLike} from 'rxjs';\r\nimport {MatMenuTrigger} from '@angular/material/menu';\r\nimport {IMenuButton} from '../menu-button.interface';\r\nimport {ICheckbox} from '../../checkbox/checkbox.interface';\r\nimport {IInputNumeric} from '../../input/numeric/input-numeric.interface';\r\nimport {InputNumericSizeEnum} from '../../input/numeric/input-numeric-size.enum';\r\n\r\n@Component({\r\n  selector: 'p-menu-tabs',\r\n  templateUrl: './menu-tabs.component.html',\r\n  styleUrls: ['./menu-tabs.component.scss'],\r\n})\r\nexport class MenuTabsComponent implements OnInit, OnDestroy {\r\n  @Input() menuList: any[];\r\n  @Input() filterPlaceholder: string; // if there is a search and buttons\r\n  @Input() filterAriaLabel: string;\r\n  @Input() headerBtnFirst: IMenuButton;\r\n  @Input() headerBtnLast: ICheckbox;\r\n  @Input() footerBtnFirst: IMenuButton;\r\n  @Input() footerBtnLast: IMenuButton;\r\n  @Input() checkboxList: {\r\n    checkbox: ICheckbox,\r\n    inputNum?: IInputNumeric\r\n  }[];\r\n  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;\r\n  public filteredList: any[];\r\n  public customControl: FormControl;\r\n  private sub: SubscriptionLike;\r\n  public tabSpecificName: string;\r\n  public tabRelativeName: string;\r\n  public inputNumericSize = InputNumericSizeEnum;\r\n\r\n  ngOnInit(): void {\r\n    this.filteredList = this.menuList;\r\n    if (this.filterPlaceholder) {\r\n      this.customControl = new FormControl('');\r\n      this.sub = this.customControl.valueChanges.subscribe((value: string) => {\r\n        this.alterList(value);\r\n      });\r\n    }\r\n    if (!this.filterAriaLabel && this.filterPlaceholder) {\r\n      this.filterAriaLabel = this.filterPlaceholder;\r\n    }\r\n    this.tabSpecificName = 'Specific';\r\n    this.tabRelativeName = 'Relative';\r\n  }\r\n\r\n  ngOnDestroy(): void {\r\n    if (this.filterPlaceholder && this.sub) {\r\n      this.sub.unsubscribe();\r\n      this.sub = null;\r\n    }\r\n  }\r\n\r\n  alterList(value: string): void {\r\n    this.filteredList = this.menuList.filter( item => item.name.toLowerCase().indexOf(value.toLowerCase()) > -1);\r\n  }\r\n\r\n  onOptionSelected(item): void {\r\n    console.log(item);\r\n  }\r\n\r\n  openMenu(): void {\r\n    this.menuTrigger.openMenu();\r\n  }\r\n\r\n  selectCompleted(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  selectCanceled(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n}\r\n",
+            "sourceCode": "import {\r\n  Component, EventEmitter,\r\n  Input,\r\n  OnDestroy,\r\n  OnInit, Output,\r\n  ViewChild\r\n} from '@angular/core';\r\nimport {FormControl} from '@angular/forms';\r\nimport {SubscriptionLike} from 'rxjs';\r\nimport {MatMenuTrigger} from '@angular/material/menu';\r\nimport {IMenuButton} from '../menu-button.interface';\r\nimport {ICheckbox} from '../../checkbox/checkbox.interface';\r\nimport {IInputNumeric} from '../../input/numeric/input-numeric.interface';\r\nimport {InputNumericSizeEnum} from '../../input/numeric/input-numeric-size.enum';\r\n\r\n@Component({\r\n  selector: 'p-menu-tabs',\r\n  templateUrl: './menu-tabs.component.html',\r\n  styleUrls: ['./menu-tabs.component.scss'],\r\n})\r\nexport class MenuTabsComponent implements OnInit, OnDestroy {\r\n  @Input() menuList: any[];\r\n  @Input() filterPlaceholder: string; // if there is a search and buttons\r\n  @Input() filterAriaLabel: string;\r\n  @Input() headerBtnFirst: IMenuButton;\r\n  @Input() headerBtnLast: ICheckbox;\r\n  @Input() footerBtnFirst: IMenuButton;\r\n  @Input() footerBtnLast: IMenuButton;\r\n  @Input() checkboxList: {\r\n    checkbox: ICheckbox,\r\n    inputNum?: IInputNumeric\r\n  }[];\r\n  @Output() onClickTask: EventEmitter<any> = new EventEmitter();\r\n  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;\r\n  public filteredList: any[];\r\n  public customControl: FormControl;\r\n  private sub: SubscriptionLike;\r\n  public tabSpecificName: string;\r\n  public tabRelativeName: string;\r\n  public inputNumericSize = InputNumericSizeEnum;\r\n  private selectedList: any[];\r\n\r\n  ngOnInit(): void {\r\n    this.filteredList = this.menuList;\r\n    if (this.filterPlaceholder) {\r\n      this.customControl = new FormControl('');\r\n      this.sub = this.customControl.valueChanges.subscribe((value: string) => {\r\n        this.alterList(value);\r\n      });\r\n    }\r\n    if (!this.filterAriaLabel && this.filterPlaceholder) {\r\n      this.filterAriaLabel = this.filterPlaceholder;\r\n    }\r\n    this.tabSpecificName = 'Specific';\r\n    this.tabRelativeName = 'Relative';\r\n    this.selectedList = [];\r\n  }\r\n\r\n  ngOnDestroy(): void {\r\n    if (this.filterPlaceholder && this.sub) {\r\n      this.sub.unsubscribe();\r\n      this.sub = null;\r\n    }\r\n  }\r\n\r\n  alterList(value: string): void {\r\n    this.filteredList = this.menuList.filter( item => item.name.toLowerCase().indexOf(value.toLowerCase()) > -1);\r\n  }\r\n\r\n  onOptionSelected(item): void {\r\n    this.selectedList.push(item);\r\n  }\r\n\r\n  openMenu(): void {\r\n    this.menuTrigger.openMenu();\r\n  }\r\n\r\n  selectCompleted(): void {\r\n    this.onClickTask.emit(this.selectedList);\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  selectCanceled(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../menu/menu-base.component\";\r\n\r\n$menu-item-height: 32px;\r\n$menu-item-margin-top: 4px;\r\n$input-text-height: 32px;\r\n$input-text-padding: 8px;\r\n$tabs-width: 84px;\r\n$tabs-height: 28px;\r\n$tabs-header-height: 60px;\r\n$menu-header-height: $input-text-height + $menu-padding * 4 + 1px;\r\n$menu-header-extended-height: $input-text-height + ($menu-padding * 4.5) + ($menu-item-height * 2) + 1px;\r\n$menu-min-width: 250px;\r\n\r\n%menu-item {\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  color: $primary-a-900;\r\n  height: $menu-item-height;\r\n  line-height: $menu-item-height;\r\n  padding: 0 8px;\r\n  & + & {\r\n    margin-top: $menu-item-margin-top;\r\n  }\r\n  &:hover,\r\n  &.cdk-focused {\r\n    background-color: $primary-c-50;\r\n  }\r\n  &[disabled] {\r\n    color: $gray-scale-600;\r\n  }\r\n}\r\n\r\n::ng-deep .p-menu.p-menu-tabs.mat-menu-panel {\r\n    min-width: $menu-min-width;\r\n}\r\n\r\n::ng-deep .p-menu-multiple-item.mat-list-option.mat-list-item {\r\n  @extend %menu-item;\r\n  .mat-list-item-content.mat-list-item-content-reverse {\r\n    flex-direction: row;\r\n    padding: 0;\r\n    .mat-list-text {\r\n      display: inline;\r\n      padding-left: 8px;\r\n      padding-right: 0;\r\n      @include ellipsis;\r\n    }\r\n  }\r\n\r\n  .mat-pseudo-checkbox:not(.mat-pseudo-checkbox-checked) {\r\n    border: 1px solid $gray-scale-400;\r\n    background-color: $gray-scale-1;\r\n  }\r\n\r\n  // checked\r\n  .mat-pseudo-checkbox-checked {\r\n    background-color: $secondary-a-700;\r\n    &:after {\r\n      width: 7px;\r\n      height: 2px;\r\n      top: 3.4px;\r\n      left: 1.5px;\r\n    }\r\n  }\r\n\r\n  // disabled\r\n  &.mat-list-item-disabled {\r\n    background-color: transparent;\r\n    .mat-pseudo-checkbox:not(.mat-pseudo-checkbox-checked) {\r\n      background-color: $primary-c-50;\r\n      border-color: $gray-scale-400;\r\n    }\r\n    .mat-pseudo-checkbox-checked {\r\n      background-color: $secondary-a-200;\r\n    }\r\n    .mat-list-text {\r\n      color: $gray-scale-600;\r\n    }\r\n  }\r\n}\r\n\r\n// results on the trigger\r\n.p-menu-trigger-result {\r\n  & + & {\r\n    margin-left: 5px;\r\n  }\r\n  &:not(:last-child):after {\r\n    content: ',';\r\n    display: inline;\r\n  }\r\n}\r\n\r\n.p-menu {\r\n  &-header {\r\n    width: 100%;\r\n    padding: $menu-padding;\r\n    background-color: $menu-background;\r\n    border-bottom: 1px solid $gray-scale-400;\r\n    position: absolute;\r\n    z-index: 1;\r\n\r\n    .p-menu-form-field + .p-menu-btn-line {\r\n      margin-top: $menu-padding;\r\n    }\r\n    .p-menu-btn-line + .p-menu-btn-line {\r\n      margin-top: 4px;\r\n    }\r\n  }\r\n\r\n  &-body {\r\n    height: 100%;\r\n    min-height: $menu-body-min-height;\r\n    padding-top: $menu-padding;\r\n    padding-right: 0;\r\n    padding-bottom: 0;\r\n    padding-left: $menu-padding;\r\n    // there are buttons after input\r\n    .p-menu-header.extended + & {\r\n      min-height: $menu-header-extended-height + $menu-body-min-height + $menu-footer-height;\r\n      padding-top: $menu-header-extended-height;\r\n    }\r\n\r\n    &-container {\r\n      height: 100%;\r\n      padding-top: 0;\r\n      padding-right: $menu-padding;\r\n      overflow: auto;\r\n    }\r\n  }\r\n\r\n  &-footer {\r\n    justify-content: center;\r\n    align-items: center;\r\n    width: 100%;\r\n    padding-top: $menu-padding * 2;\r\n    padding-bottom: $menu-padding * 2;\r\n  }\r\n\r\n  &-btn-line {\r\n    display: block;\r\n    width: 100%;\r\n    height: $menu-item-height;\r\n    ::ng-deep .p-btn {\r\n      @extend %btn-line;\r\n      justify-content: flex-start;\r\n    }\r\n    ::ng-deep .p-btn-icon-before {\r\n      .p-btn-label {\r\n        margin-left: $menu-padding;\r\n      }\r\n    }\r\n    ::ng-deep .p-checkbox {\r\n      display: inline-flex;\r\n      align-items: center;\r\n      @extend %btn-line;\r\n      &:not(.mat-checkbox-disabled):hover {\r\n        background-color: $primary-c-50;\r\n      }\r\n      .mat-checkbox-label {\r\n        font-weight: 500;\r\n      }\r\n    }\r\n    .p-menu-input + & {\r\n      margin-top: $menu-padding;\r\n    }\r\n  }\r\n\r\n  &-empty {\r\n    height: calc(100% - 62px);\r\n  }\r\n}\r\n\r\n// tabs\r\n::ng-deep .p-menu-tab-group {\r\n  max-height: $menu-max-height;\r\n  height: calc(100% - #{$menu-footer-height});\r\n  .mat-tab-list {\r\n    width: 100%;\r\n    height: $tabs-header-height;\r\n  }\r\n  .mat-tab-header {\r\n    border-color: $gray-scale-400;\r\n  }\r\n  .mat-tab-labels {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    height: 100%;\r\n  }\r\n  .mat-tab-label {\r\n    font-family: $font-family-basic;\r\n    font-size: $small-font-size;\r\n    font-weight: 500;\r\n    width: $tabs-width;\r\n    height: $tabs-height;\r\n    min-width: unset;\r\n    padding: 0;\r\n    opacity: 1;\r\n    transition: all 400ms;\r\n    &-active {\r\n      color: $gray-scale-1;\r\n      background-color: $secondary-a-700;\r\n      font-weight: 600;\r\n      //&:hover ,\r\n      //&:focus {\r\n      //  background-color: $secondary-a-800;\r\n      //}\r\n      &:disabled {\r\n        color: $gray-scale-600;\r\n        background-color: $secondary-a-100;\r\n        border: 1px solid $gray-scale-400;\r\n      }\r\n    }\r\n    &:not(.mat-tab-label-active) {\r\n      color: $primary-a-900;\r\n      background-color: $gray-scale-1;\r\n      border: 1px solid $gray-scale-400;\r\n      font-weight: 400;\r\n      &:hover,\r\n      &:focus {\r\n        border-color: $dev-c-300;\r\n      }\r\n      &:disabled {\r\n        color: $gray-scale-600;\r\n        background-color: $primary-c-50;\r\n      }\r\n    }\r\n  }\r\n  .mat-ink-bar {\r\n    display: none;\r\n  }\r\n  .mat-tab-body-content {\r\n    overflow: hidden;\r\n  }\r\n  .p-menu-tabs-panel {\r\n    height: 100%;\r\n    &.relative {\r\n      padding-top: $menu-padding;\r\n      padding-left: $menu-padding;\r\n    }\r\n  }\r\n}\r\n\r\n// relative panel styles\r\n.p-menu-check {\r\n  &-list {\r\n    @include resetUl;\r\n    height: 100%;\r\n    padding-right: $menu-padding;\r\n    overflow: auto;\r\n  }\r\n  &-item {\r\n    display: flex;\r\n    align-items: center;\r\n    overflow: hidden;\r\n    @extend %menu-item;\r\n    ::ng-deep .p-checkbox {\r\n      display: inline-flex;\r\n    }\r\n  }\r\n  &-input {\r\n    margin-left: 20px;\r\n    margin-top: 7px;\r\n  }\r\n}\r\n\r\n\r\n",
+                    "data": "@import \"../menu/menu-base.component\";\r\n\r\n$menu-item-height: 32px;\r\n$menu-item-margin-top: 4px;\r\n$input-text-height: 32px;\r\n$input-text-padding: 8px;\r\n$tabs-width: 84px;\r\n$tabs-height: 28px;\r\n$tabs-header-height: 60px;\r\n$menu-header-height: $input-text-height + $menu-padding * 4 + 1px;\r\n$menu-header-extended-height: $input-text-height + ($menu-padding * 4.5) + ($menu-item-height * 2) + 1px;\r\n$menu-min-width: 250px;\r\n\r\n%menu-item {\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  color: $primary-a-900;\r\n  height: $menu-item-height;\r\n  line-height: $menu-item-height;\r\n  padding: 0 8px;\r\n  & + & {\r\n    margin-top: $menu-item-margin-top;\r\n  }\r\n  &:hover,\r\n  &.cdk-focused {\r\n    background-color: $primary-c-50;\r\n  }\r\n  &[disabled] {\r\n    color: $gray-scale-600;\r\n  }\r\n}\r\n\r\n::ng-deep .p-menu.p-menu-tabs.mat-menu-panel {\r\n    min-width: $menu-min-width;\r\n}\r\n\r\n::ng-deep .p-menu-multiple-item.mat-list-option.mat-list-item {\r\n  @extend %menu-item;\r\n  .mat-list-item-content.mat-list-item-content-reverse {\r\n    flex-direction: row;\r\n    padding: 0;\r\n    .mat-list-text {\r\n      display: inline;\r\n      padding-left: 8px;\r\n      padding-right: 0;\r\n      @include ellipsis;\r\n    }\r\n  }\r\n\r\n  .mat-pseudo-checkbox:not(.mat-pseudo-checkbox-checked) {\r\n    border: 1px solid $gray-scale-400;\r\n    background-color: $gray-scale-1;\r\n  }\r\n\r\n  // checked\r\n  .mat-pseudo-checkbox-checked {\r\n    background-color: $secondary-a-700;\r\n    &:after {\r\n      width: 7px;\r\n      height: 2px;\r\n      top: 3.4px;\r\n      left: 1.5px;\r\n    }\r\n  }\r\n\r\n  // disabled\r\n  &.mat-list-item-disabled {\r\n    background-color: transparent;\r\n    .mat-pseudo-checkbox:not(.mat-pseudo-checkbox-checked) {\r\n      background-color: $primary-c-50;\r\n      border-color: $gray-scale-400;\r\n    }\r\n    .mat-pseudo-checkbox-checked {\r\n      background-color: $secondary-a-200;\r\n    }\r\n    .mat-list-text {\r\n      color: $gray-scale-600;\r\n    }\r\n  }\r\n}\r\n\r\n// results on the trigger\r\n.p-menu-trigger-result {\r\n  & + & {\r\n    margin-left: 5px;\r\n  }\r\n  &:not(:last-child):after {\r\n    content: ',';\r\n    display: inline;\r\n  }\r\n}\r\n\r\n.p-menu {\r\n  &-header {\r\n    width: 100%;\r\n    padding: $menu-padding;\r\n    background-color: $menu-background;\r\n    border-bottom: 1px solid $gray-scale-400;\r\n    position: absolute;\r\n    z-index: 1;\r\n\r\n    .p-menu-form-field + .p-menu-btn-line {\r\n      margin-top: $menu-padding;\r\n    }\r\n    .p-menu-btn-line + .p-menu-btn-line {\r\n      margin-top: 4px;\r\n    }\r\n  }\r\n\r\n  &-body {\r\n    height: 100%;\r\n    min-height: $menu-body-min-height;\r\n    padding-top: $menu-padding;\r\n    padding-right: 0;\r\n    padding-bottom: 0;\r\n    padding-left: $menu-padding;\r\n    // there are buttons after input\r\n    .p-menu-header.extended + & {\r\n      min-height: $menu-header-extended-height + $menu-body-min-height;\r\n      padding-top: $menu-header-extended-height;\r\n    }\r\n\r\n    &-container {\r\n      height: 100%;\r\n      padding-top: 0;\r\n      padding-right: $menu-padding;\r\n      overflow: auto;\r\n    }\r\n  }\r\n\r\n  &-footer {\r\n    align-items: center;\r\n    width: 100%;\r\n    padding-top: $menu-padding * 2;\r\n    padding-bottom: $menu-padding * 2;\r\n  }\r\n\r\n  &-btn-line {\r\n    display: block;\r\n    width: 100%;\r\n    height: $menu-item-height;\r\n    ::ng-deep .p-btn {\r\n      @extend %btn-line;\r\n      justify-content: flex-start;\r\n    }\r\n    ::ng-deep .p-btn-icon-before {\r\n      .p-btn-label {\r\n        margin-left: $menu-padding;\r\n      }\r\n    }\r\n    ::ng-deep .p-checkbox {\r\n      display: inline-flex;\r\n      align-items: center;\r\n      @extend %btn-line;\r\n      &:not(.mat-checkbox-disabled):hover {\r\n        background-color: $primary-c-50;\r\n      }\r\n      .mat-checkbox-label {\r\n        font-weight: 500;\r\n      }\r\n    }\r\n    .p-menu-input + & {\r\n      margin-top: $menu-padding;\r\n    }\r\n  }\r\n}\r\n\r\n// tabs\r\n::ng-deep .p-menu-tab-group {\r\n  max-height: $menu-max-height;\r\n  height: calc(100% - #{$menu-footer-height});\r\n  .mat-tab-list {\r\n    width: 100%;\r\n    height: $tabs-header-height;\r\n  }\r\n  .mat-tab-header {\r\n    border-color: $gray-scale-400;\r\n  }\r\n  .mat-tab-labels {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    height: 100%;\r\n  }\r\n  .mat-tab-label {\r\n    font-family: $font-family-basic;\r\n    font-size: $small-font-size;\r\n    font-weight: 400;\r\n    width: $tabs-width;\r\n    height: $tabs-height;\r\n    min-width: unset;\r\n    padding: 0;\r\n    opacity: 1;\r\n    transition: all 400ms;\r\n    &-active {\r\n      color: $gray-scale-1;\r\n      background-color: $secondary-a-700;\r\n      //&:hover ,\r\n      //&:focus {\r\n      //  background-color: $secondary-a-800;\r\n      //}\r\n      &:disabled {\r\n        color: $gray-scale-600;\r\n        background-color: $secondary-a-100;\r\n        border: 1px solid $gray-scale-400;\r\n      }\r\n    }\r\n    &:not(.mat-tab-label-active) {\r\n      color: $primary-a-900;\r\n      background-color: $gray-scale-1;\r\n      border: 1px solid $gray-scale-400;\r\n      &:hover,\r\n      &:focus {\r\n        border-color: $dev-c-300;\r\n      }\r\n      &:disabled {\r\n        color: $gray-scale-600;\r\n        background-color: $primary-c-50;\r\n      }\r\n    }\r\n  }\r\n  .mat-ink-bar {\r\n    display: none;\r\n  }\r\n  .mat-tab-body-content {\r\n    overflow: hidden;\r\n  }\r\n  .p-menu-tabs-panel {\r\n    height: 100%;\r\n    &.relative {\r\n      padding-top: $menu-padding;\r\n      padding-left: $menu-padding;\r\n    }\r\n  }\r\n}\r\n\r\n// relative panel styles\r\n.p-menu-check {\r\n  &-list {\r\n    @include resetUl;\r\n    height: 100%;\r\n    padding-right: $menu-padding;\r\n    overflow: auto;\r\n  }\r\n  &-item {\r\n    display: flex;\r\n    align-items: center;\r\n    overflow: hidden;\r\n    @extend %menu-item;\r\n    ::ng-deep .p-checkbox {\r\n      display: inline-flex;\r\n    }\r\n  }\r\n  &-input {\r\n    margin-left: 20px;\r\n    margin-top: 7px;\r\n  }\r\n}\r\n\r\n\r\n",
                     "styleUrl": "./menu-tabs.component.scss"
                 }
             ],
@@ -7349,17 +7399,17 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
-                "type": "Story<CheckboxGroupPageComponent>",
-                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
+                "type": "Story<CheckboxGroupComponent>",
+                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
-                "type": "Story<CheckboxGroupComponent>",
-                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "Story<CheckboxGroupPageComponent>",
+                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -7451,14 +7501,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/colors/Color-palette.stories.ts",
-                "type": "Story<ColorPaletteComponent>",
-                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/icons/icon.stories.ts",
                 "type": "Story<IconComponent>",
                 "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
@@ -7475,9 +7517,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/styles/typography-styles.stories.ts",
-                "type": "Story<TypographyStylesComponent>",
-                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/colors/Color-palette.stories.ts",
+                "type": "Story<ColorPaletteComponent>",
+                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -7486,6 +7528,14 @@
                 "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
                 "type": "Story<TypographyFontFamilyComponent>",
                 "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/typography/styles/typography-styles.stories.ts",
+                "type": "Story<TypographyStylesComponent>",
+                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Toggles",
@@ -8635,7 +8685,7 @@
                 "linktype": "component",
                 "name": "MenuTabsComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/23",
+                "coverageCount": "0/25",
                 "status": "low"
             },
             {
@@ -9159,7 +9209,7 @@
                 "linktype": "component",
                 "name": "ComboComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/35",
+                "coverageCount": "0/36",
                 "status": "low"
             },
             {
