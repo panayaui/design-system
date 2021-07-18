@@ -116,7 +116,7 @@ $menu-min-width: 250px;
     padding-left: $menu-padding;
     // there are buttons after input
     .p-menu-header.extended + & {
-      min-height: $menu-header-extended-height + $menu-body-min-height + $menu-footer-height;
+      min-height: $menu-header-extended-height + $menu-body-min-height;
       padding-top: $menu-header-extended-height;
     }
 
@@ -164,10 +164,6 @@ $menu-min-width: 250px;
       margin-top: $menu-padding;
     }
   }
-
-  &-empty {
-    height: calc(100% - 62px);
-  }
 }
 
 // tabs
@@ -190,7 +186,7 @@ $menu-min-width: 250px;
   .mat-tab-label {
     font-family: $font-family-basic;
     font-size: $small-font-size;
-    font-weight: 500;
+    font-weight: 400;
     width: $tabs-width;
     height: $tabs-height;
     min-width: unset;
@@ -200,7 +196,6 @@ $menu-min-width: 250px;
     &-active {
       color: $gray-scale-1;
       background-color: $secondary-a-700;
-      font-weight: 600;
       //&:hover ,
       //&:focus {
       //  background-color: $secondary-a-800;
@@ -215,7 +210,6 @@ $menu-min-width: 250px;
       color: $primary-a-900;
       background-color: $gray-scale-1;
       border: 1px solid $gray-scale-400;
-      font-weight: 400;
       &:hover,
       &:focus {
         border-color: $dev-c-300;
