@@ -1,0 +1,103 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+
+import {DaterangeComponent} from 'projects/design-system-lib/src/public-api';
+import {InputModule} from 'projects/design-system-lib/src/public-api';
+import {Validators} from '@angular/forms';
+
+<Meta title='Components/Daterange' 
+  component={DaterangeComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [InputModule]
+    })
+  ]} 
+/>
+
+export const Template = (args) => <DaterangeComponent {...args} />
+
+# Daterange
+
+###### Selector
+```html
+  <p-daterange></p-daterange>
+```
+###### Example
+<Canvas>
+  <Story name="Daterange"
+     args={{
+         label: 'Label',
+         ariaLabel: 'Label',
+         value: 100,
+         validators: Validators.required
+     }}>
+     {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Component
+```ts
+export class DaterangeComponent {
+  @Input() ariaLabel: string;
+  @Input() placeholder: string;
+  @Input() disabled: boolean = false;
+  @Input() value: string;
+  @Output() dateChange: EventEmitter<any> = new EventEmitter();
+  @Output() dateInput: EventEmitter<any> = new EventEmitter();
+  @ViewChild('picker') picker;
+  @ViewChild('inputEndDate') inputEndDate: ElementRef;
+  public isOpened: boolean = false;
+  public isFilled: boolean = false;
+
+  openDatepicker(): void {
+    this.isOpened = true;
+    this.picker.open();
+  }
+
+  streamClosed(): void {
+    this.inputEndDate.nativeElement.value ? this.isFilled = true : this.isFilled = false;
+    this.isOpened = false;
+  }
+}
+```
+```html
+<mat-form-field class="p-daterange p-datepicker p-input-text"
+                appearance="standard">
+  <mat-date-range-input [rangePicker]="picker"
+                        class="p-input-text-input"
+                        [class.filled]="isFilled">
+    <input matStartDate
+           attr.aria-label="Start date"
+           autocomplete="off"
+           readonly
+           class="p-input-text-input-start"
+           (click)="openDatepicker()"
+           (focus)="openDatepicker()">
+    <input matEndDate
+           #inputEndDate
+           attr.aria-label="End date"
+           autocomplete="off"
+           readonly
+           class="p-input-text-input-end"
+           (click)="openDatepicker()"
+           (focus)="openDatepicker()">
+  </mat-date-range-input>
+  <p-icon class="p-datepicker-icon"
+          [class.shown]="isOpened"
+          iconName="calendar"
+          width="16"
+          height="auto"
+          (click)="openDatepicker()">
+  </p-icon>
+  <mat-date-range-picker #picker
+                         (closed)="streamClosed()"
+                         panelClass="p-datepicker-panel">
+  </mat-date-range-picker>
+</mat-form-field>
+```
+
+Element "p-datepicker-preview" has all neccessary properties according to Figma.
+It could be added into the custom header of MatDatePicker. In this case remove comment from the property "transform: translateY(300px)" in datepicker.component.scss. 
+```html
+<mat-datepicker #picker [calendarHeaderComponent]="exampleHeader"></mat-datepicker>
+```

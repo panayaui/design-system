@@ -1,0 +1,31 @@
+<div class="p-split">
+  <button class="p-btn p-split-main"
+          [ngClass]="classes"
+          [disabled]="disabled"
+          attr.aria-label="{{ariaLabel}}"
+          (click)="onClickTask.emit($event)">
+    <p-icon *ngIf="iconBefore"
+            class="p-btn-icon-pre"
+            [iconName]="iconBefore"
+            [width]="iconBeforeWidth"
+            [height]="iconBeforeHeight"
+            [stroke]="iconBeforeStrokeColor"
+            [strokeWidth]="iconBeforeStrokeWidth"
+            [disabled]="disabled"></p-icon>
+    <span class="p-btn-label" *ngIf="label">{{label}}</span>
+  </button>
+
+  <button class="p-btn p-split-arrow"
+          [ngClass]="classes"
+          [disabled]="disabled"
+          attr.aria-label="Open Menu"
+          (click)="onClickTrigger.emit($event)">
+    <p-icon class="p-split-arrow-icon"
+            iconName="chevron-down"
+            width="17"
+            height="17"
+            strokeWidth="2"
+            [disabled]="disabled"></p-icon>
+  </button>
+</div>
+

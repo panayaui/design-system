@@ -1,15 +1,13 @@
 import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
 import {moduleMetadata} from '@storybook/angular';
 import {ToggleComponent} from 'projects/design-system-lib/src/public-api';
-import {IconModule} from 'projects/design-system-lib/src/lib/icon/icon.module';
+import {ToggleModule} from 'projects/design-system-lib/src/public-api';
 
 <Meta title='Components/Toggle'
   component={ToggleComponent}
   decorators={[
     moduleMetadata({
-      imports: [
-        IconModule
-      ]
+      imports: [ToggleModule]
     })
   ]}  
 />

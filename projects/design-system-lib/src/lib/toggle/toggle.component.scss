@@ -7,12 +7,29 @@ $min-size: 28px;
   display: inline-flex;
   align-items: center;
 
+  &-item {
+    position: relative;
+    &:hover .p-toggle-button:not(:disabled) + .p-toggle-label {
+      box-shadow: inset 1px 0 0 $secondary-a-700,
+                  inset -1px 0 0 $secondary-a-700,
+                  inset 0 -1px 0 $secondary-a-700,
+                  inset 0 1px 0 $secondary-a-700;
+    }
+    .first + &.last:hover .p-toggle-button:not(:checked):not(:disabled) + .p-toggle-label {
+      box-shadow: inset 1px 0 0 $secondary-a-700,
+                  inset -1px 0 0 $secondary-a-700,
+                  inset 0 -1px 0 $secondary-a-700,
+                  inset 0 1px 0 $secondary-a-700;
+    }
+  }
+
   &-button {
     position: absolute;
     opacity: 0;
     width: 100%;
     height: 100%;
     margin: 0;
+    cursor: pointer;
   }
 
   &-label {
@@ -27,7 +44,6 @@ $min-size: 28px;
     line-height: $min-size;
     background-color: $gray-scale-1;
     transition: all 300ms;
-    cursor: pointer;
     &:not(.p-toggle-label-icon) {
       padding-right: 16px;
       padding-left: 16px;
