@@ -1472,7 +1472,7 @@
         },
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-e1d8a1f12df8ccb8d0f4c233f716dc7d",
+            "id": "component-AppComponent-a330a11f6abe1f96dd492415228e0172",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1597,6 +1597,22 @@
                     "line": 20
                 },
                 {
+                    "name": "optionsList",
+                    "defaultValue": "[{\r\n    optionName: 'First',\r\n    checked: true\r\n  },\r\n  {\r\n    optionName: 'Second'\r\n  }]",
+                    "type": "[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 36
+                },
+                {
+                    "name": "optionsListName",
+                    "defaultValue": "'twoLabelsToggle'",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 35
+                },
+                {
                     "name": "validator",
                     "defaultValue": "Validators.required",
                     "type": "",
@@ -1612,7 +1628,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 38
+                    "line": 46
                 }
             ],
             "hostBindings": [],
@@ -1620,7 +1636,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';\r\nimport {InputNumericSizeEnum} from 'projects/design-system-lib/src/public-api';\r\nimport {ReactiveFormsModule, Validators} from '@angular/forms';\r\nimport {LabelTypesEnum} from 'projects/design-system-lib/src/lib/labels/label-types.enum';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.scss']\r\n})\r\nexport class AppComponent implements OnInit {\r\n  @Input() data = {\r\n    icon: { iconName: 'bell'},\r\n    messageMain: 'Notification message.',\r\n    actionName: 'Action',\r\n    messageSub: 'Notification message.',\r\n    closeBtnName: 'Close'\r\n  };\r\n  menuTriggerName: string;\r\n  menuList: any;\r\n  footerBtnFirst: any;\r\n  footerBtnLast: any;\r\n  filterAriaLabel: string;\r\n  filterPlaceholder: string;\r\n  headerBtnFirst: any;\r\n  headerBtnLast: any;\r\n  checkboxList: any;\r\n  validator = Validators.required;\r\n  labelType = LabelTypesEnum;\r\n  menuListRadio: any;\r\n  menuListFreeText: any;\r\n  inputMin: any;\r\n  inputMax: any;\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {\r\n    this.menuTriggerName = 'Menu';\r\n    this.menuList = [\r\n      { name: 'Alabama',\r\n        disabled: false\r\n      },\r\n      { name: 'Alaska disabled',\r\n        disabled: true\r\n      },\r\n      { name: 'California',\r\n        disabled: false\r\n      },\r\n      { name: 'Colorado',\r\n        disabled: false\r\n      },\r\n      { name: 'Delaware',\r\n        disabled: false\r\n      },\r\n      { name: 'Florida selected disabled',\r\n        disabled: true,\r\n        selected: true\r\n      },\r\n      { name: 'Georgia',\r\n        disabled: false\r\n      },\r\n      { name: 'Hawaii',\r\n        disabled: false\r\n      },\r\n      { name: 'Idaho',\r\n        disabled: true\r\n      },\r\n      { name: 'Illinois',\r\n        disabled: false\r\n      },\r\n      { name: 'Indiana',\r\n        disabled: false\r\n      },\r\n      { name: 'Iowa',\r\n        disabled: false\r\n      },\r\n      { name: 'Kansas',\r\n        disabled: true,\r\n        selected: true\r\n      },\r\n      { name: 'Kentucky',\r\n        disabled: false\r\n      }\r\n    ];\r\n\r\n    this.footerBtnFirst = {\r\n      label: 'Done',\r\n      buttonType: ButtonTypeEnum.Primary\r\n    };\r\n    this.footerBtnLast = {\r\n      label: 'Cancel',\r\n      buttonType: ButtonTypeEnum.Secondary\r\n    };\r\n    this.filterAriaLabel = 'Find Label';\r\n    this.filterPlaceholder = 'Find Label';\r\n\r\n    this.headerBtnFirst = {\r\n      label: 'Clear selected',\r\n      buttonType: ButtonTypeEnum.Tertiary,\r\n      icon: {\r\n        iconName: 'eraser',\r\n        width: '15',\r\n        height: '15'\r\n      }\r\n    };\r\n    this.headerBtnLast = {\r\n      label: 'Not equal to'\r\n    };\r\n    this.checkboxList = [\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Next'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      }\r\n    ];\r\n    this.menuListRadio =  [\r\n      { label: 'All' },\r\n      { label: 'Today' },\r\n      { label: 'Yesterday' },\r\n      { label: 'Tomorrow' },\r\n      { label: 'This',\r\n        menuList: [\r\n          { name: 'week (Starts Sunday)', selected: true},\r\n          { name: 'week (Starts Monday)'},\r\n          { name: 'month'},\r\n          { name: 'year'}\r\n        ]\r\n      },\r\n      { label: 'Last',\r\n        numericInputValue: 1,\r\n        menuList: [\r\n          { name: 'Day(s)', selected: true},\r\n          { name: 'Week(s)'},\r\n          { name: 'Month(s)'},\r\n          { name: 'Year(s)'}\r\n        ]\r\n      },\r\n      { label: 'Next',\r\n        numericInputValue: 1,\r\n        menuList: [\r\n          { name: 'Day(s)', selected: true},\r\n          { name: 'Week(s)'},\r\n          { name: 'Month(s)'},\r\n          { name: 'Year(s)'}\r\n        ]\r\n      },\r\n      { label: 'Blanks' },\r\n      { label: 'Between',\r\n        dateStart: {\r\n          ariaLabel: 'date start'\r\n        },\r\n        dateEnd: {\r\n          ariaLabel: 'date start'\r\n        }\r\n      }\r\n    ];\r\n    this.menuListFreeText = [\r\n      { name: 'Contains', inputValue: '', selected: true },\r\n      { name: 'Not contains', inputValue: 'smth', selected: false },\r\n      { name: 'Empty', selected: false },\r\n      { name: 'Not empty', selected: false }\r\n    ];\r\n    this.inputMin = { label: 'Min', value: null };\r\n    this.inputMax = { label: 'Max', value: 1 };\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';\r\nimport {InputNumericSizeEnum} from 'projects/design-system-lib/src/public-api';\r\nimport {ReactiveFormsModule, Validators} from '@angular/forms';\r\nimport {LabelTypesEnum} from 'projects/design-system-lib/src/lib/labels/label-types.enum';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.scss']\r\n})\r\nexport class AppComponent implements OnInit {\r\n  @Input() data = {\r\n    icon: { iconName: 'bell'},\r\n    messageMain: 'Notification message.',\r\n    actionName: 'Action',\r\n    messageSub: 'Notification message.',\r\n    closeBtnName: 'Close'\r\n  };\r\n  menuTriggerName: string;\r\n  menuList: any;\r\n  footerBtnFirst: any;\r\n  footerBtnLast: any;\r\n  filterAriaLabel: string;\r\n  filterPlaceholder: string;\r\n  headerBtnFirst: any;\r\n  headerBtnLast: any;\r\n  checkboxList: any;\r\n  validator = Validators.required;\r\n  labelType = LabelTypesEnum;\r\n  menuListRadio: any;\r\n  menuListFreeText: any;\r\n  inputMin: any;\r\n  inputMax: any;\r\n  optionsListName = 'twoLabelsToggle';\r\n  optionsList = [{\r\n    optionName: 'First',\r\n    checked: true\r\n  },\r\n  {\r\n    optionName: 'Second'\r\n  }];\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {\r\n    this.menuTriggerName = 'Menu';\r\n    this.menuList = [\r\n      { name: 'Alabama',\r\n        disabled: false\r\n      },\r\n      { name: 'Alaska disabled',\r\n        disabled: true\r\n      },\r\n      { name: 'California',\r\n        disabled: false\r\n      },\r\n      { name: 'Colorado',\r\n        disabled: false\r\n      },\r\n      { name: 'Delaware',\r\n        disabled: false\r\n      },\r\n      { name: 'Florida selected disabled',\r\n        disabled: true,\r\n        selected: true\r\n      },\r\n      { name: 'Georgia',\r\n        disabled: false\r\n      },\r\n      { name: 'Hawaii',\r\n        disabled: false\r\n      },\r\n      { name: 'Idaho',\r\n        disabled: true\r\n      },\r\n      { name: 'Illinois',\r\n        disabled: false\r\n      },\r\n      { name: 'Indiana',\r\n        disabled: false\r\n      },\r\n      { name: 'Iowa',\r\n        disabled: false\r\n      },\r\n      { name: 'Kansas',\r\n        disabled: true,\r\n        selected: true\r\n      },\r\n      { name: 'Kentucky',\r\n        disabled: false\r\n      }\r\n    ];\r\n\r\n    this.footerBtnFirst = {\r\n      label: 'Done',\r\n      buttonType: ButtonTypeEnum.Primary\r\n    };\r\n    this.footerBtnLast = {\r\n      label: 'Cancel',\r\n      buttonType: ButtonTypeEnum.Secondary\r\n    };\r\n    this.filterAriaLabel = 'Find Label';\r\n    this.filterPlaceholder = 'Find Label';\r\n\r\n    this.headerBtnFirst = {\r\n      label: 'Clear selected',\r\n      buttonType: ButtonTypeEnum.Tertiary,\r\n      icon: {\r\n        iconName: 'eraser',\r\n        width: '15',\r\n        height: '15'\r\n      }\r\n    };\r\n    this.headerBtnLast = {\r\n      label: 'Not equal to'\r\n    };\r\n    this.checkboxList = [\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Next'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      }\r\n    ];\r\n    this.menuListRadio =  [\r\n      { label: 'All' },\r\n      { label: 'Today' },\r\n      { label: 'Yesterday' },\r\n      { label: 'Tomorrow' },\r\n      { label: 'This',\r\n        menuList: [\r\n          { name: 'week (Starts Sunday)', selected: true},\r\n          { name: 'week (Starts Monday)'},\r\n          { name: 'month'},\r\n          { name: 'year'}\r\n        ]\r\n      },\r\n      { label: 'Last',\r\n        numericInputValue: 1,\r\n        menuList: [\r\n          { name: 'Day(s)', selected: true},\r\n          { name: 'Week(s)'},\r\n          { name: 'Month(s)'},\r\n          { name: 'Year(s)'}\r\n        ]\r\n      },\r\n      { label: 'Next',\r\n        numericInputValue: 1,\r\n        menuList: [\r\n          { name: 'Day(s)', selected: true},\r\n          { name: 'Week(s)'},\r\n          { name: 'Month(s)'},\r\n          { name: 'Year(s)'}\r\n        ]\r\n      },\r\n      { label: 'Blanks' },\r\n      { label: 'Between',\r\n        dateStart: {\r\n          ariaLabel: 'date start'\r\n        },\r\n        dateEnd: {\r\n          ariaLabel: 'date start'\r\n        }\r\n      }\r\n    ];\r\n    this.menuListFreeText = [\r\n      { name: 'Contains', inputValue: '', selected: true },\r\n      { name: 'Not contains', inputValue: 'smth', selected: false },\r\n      { name: 'Empty', selected: false },\r\n      { name: 'Not empty', selected: false }\r\n    ];\r\n    this.inputMin = { label: 'Min', value: null };\r\n    this.inputMax = { label: 'Max', value: 1 };\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1633,12 +1649,12 @@
                 "name": "constructor",
                 "description": "",
                 "args": [],
-                "line": 34
+                "line": 42
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<!--<div>-->\r\n<!--<p-menu-tabs [menuTriggerName]=\"menuTriggerName\"-->\r\n<!--[menuList]=\"menuList\"-->\r\n<!--[footerBtnFirst]=\"footerBtnFirst\"-->\r\n<!--[footerBtnLast]=\"footerBtnLast\"-->\r\n<!--[filterAriaLabel]=\"filterAriaLabel\"-->\r\n<!--[filterPlaceholder]=\"filterPlaceholder\"-->\r\n<!--[headerBtnFirst]=\"headerBtnFirst\"-->\r\n<!--[headerBtnLast]=\"headerBtnLast\"-->\r\n<!--[checkboxList]=\"checkboxList\"></p-menu-tabs>-->\r\n<!--</div>-->\r\n\r\n<!--<button #tooltip=\"matTooltip\"-->\r\n<!--[matTooltip]=\"'message'\"-->\r\n<!--[matTooltipClass]=\"'p-tooltip'\"-->\r\n<!--class=\"p-btn p-btn-small p-btn-primary\"-->\r\n<!--&gt;-->\r\n<!--Hover-->\r\n<!--</button>-->\r\n\r\n<!--<p-button iconAfter=\"chevron-down\"-->\r\n<!--iconAfterWidth=\"17\"-->\r\n<!--iconAfterHeight=\"17\"-->\r\n<!--[label]=\"menuTriggerName\"-->\r\n<!--[buttonType]=\"'tertiary'\" ></p-button>-\r\n<!--<p class=\"paragraph-3-semibold\">some words</p>-->\r\n\r\n<!--<p-input-header [value]=\"'some text'\"></p-input-header>-->\r\n\r\n<!--<p-input-text [value]=\"'some text'\"></p-input-text>-->\r\n\r\n<p-menu-single-select [menuList]=\"menuList\">\r\n<p-label-main label=\"trigger\"\r\n[type]=\"labelType.CRITICAL\"\r\n[isTriggerMenu]=\"true\"></p-label-main>\r\n</p-menu-single-select>\r\n\r\n<p-menu-multi-select [menuList]=\"menuList\"\r\n[headerBtnFirst]=\"headerBtnFirst\"\r\n[headerBtnLast]=\"headerBtnLast\"\r\n[footerBtnFirst]=\"footerBtnFirst\"\r\n[footerBtnLast]=\"footerBtnLast\">\r\n<p-input-text [value]=\"'Menu Multiple'\"></p-input-text>\r\n</p-menu-multi-select>\r\n\r\n<p-menu-tabs [menuList]=\"menuList\"\r\n[headerBtnFirst]=\"headerBtnFirst\"\r\n[headerBtnLast]=\"headerBtnLast\"\r\n[footerBtnFirst]=\"footerBtnFirst\"\r\n[footerBtnLast]=\"footerBtnLast\">\r\n<p-input-text [value]=\"'Menu Tabs'\"></p-input-text>\r\n</p-menu-tabs>\r\n\r\n<p-menu-radio-group [menuList]=\"menuListRadio\"\r\n                    [footerBtnFirst]=\"footerBtnFirst\"\r\n                    [footerBtnLast]=\"footerBtnLast\">\r\n  <p-input-text [value]=\"'Menu Radio Group'\"></p-input-text>\r\n</p-menu-radio-group>\r\n\r\n\r\n<p-menu-free-text [menuList]=\"menuListFreeText\"\r\n[footerBtnFirst]=\"footerBtnFirst\"\r\n[footerBtnLast]=\"footerBtnLast\">\r\n<p-input-text [value]=\"'Menu Free Text'\"></p-input-text>\r\n</p-menu-free-text>\r\n\r\n<p-menu-range [inputMax]=\"inputMax\" [inputMin]=\"inputMin\"\r\n[footerBtnFirst]=\"footerBtnFirst\"\r\n[footerBtnLast]=\"footerBtnLast\">\r\n<p-input-text [value]=\"'Menu Range'\"></p-input-text>\r\n</p-menu-range>\r\n"
+            "templateData": "<p-toggle [optionsList]=\"optionsList\"\r\n[optionsListName]=\"optionsListName\"></p-toggle>\r\n"
         },
         {
             "name": "ButtonComponent",
@@ -1761,7 +1777,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n::ng-deep .p-btn {\r\n  @include resetButton;\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  font-weight: 500;\r\n  line-height: 20px;\r\n  min-width: 80px;\r\n  padding-right: $gap-double-plus;\r\n  padding-left: $gap-double-plus;\r\n  border-radius: $btn-border-radius;\r\n  white-space: nowrap;\r\n  transition: all 400ms;\r\n\r\n  &-large {\r\n    height: $btn-large-height;\r\n  }\r\n\r\n  &-small {\r\n    height: $btn-small-height;\r\n  }\r\n\r\n  &:disabled {\r\n    pointer-events: none;\r\n  }\r\n\r\n  &-primary {\r\n    color: $gray-scale-1;\r\n    background-color: $secondary-a-700;\r\n    &:hover {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:focus {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      background-color: $secondary-a-50;\r\n    }\r\n  }\r\n\r\n  &-secondary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    border: 1px solid $secondary-a-700;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      border-color: $secondary-a-500;\r\n    }\r\n  }\r\n\r\n  &-tertiary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n    }\r\n  }\r\n\r\n  &-distructive {\r\n    color: $gray-scale-1;\r\n    background-color: $supportive-alert-500;\r\n    &:hover {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:focus {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-600;\r\n      background-color: $supportive-alert-50;\r\n    }\r\n  }\r\n\r\n  // class of the action-button\r\n  &-icon-before {\r\n    padding-left: $gap-double;\r\n    .p-btn-label {\r\n      margin-left: $gap-base;\r\n    }\r\n  }\r\n  // class of the action-button\r\n  &-icon-after {\r\n    padding-right: $gap-double;\r\n    .p-btn-label {\r\n      margin-right: $gap-base;\r\n    }\r\n  }\r\n\r\n  // class of the icon\r\n  &-icon-pre,\r\n  &-icon-post {\r\n    display: inline-flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n  }\r\n\r\n  &-isIcon {\r\n    line-height: unset;\r\n    min-width: unset;\r\n    padding: $gap-small;\r\n  }\r\n}\r\n\r\n\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n::ng-deep .p-btn {\r\n  @include resetButton;\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  font-weight: 500;\r\n  line-height: 20px;\r\n  min-width: 80px;\r\n  padding-right: $gap-double-plus;\r\n  padding-left: $gap-double-plus;\r\n  border-radius: $btn-border-radius;\r\n  white-space: nowrap;\r\n  transition: all 400ms;\r\n\r\n  &-large {\r\n    height: $btn-large-height;\r\n  }\r\n\r\n  &-small {\r\n    height: $btn-small-height;\r\n  }\r\n\r\n  &:disabled {\r\n    pointer-events: none;\r\n  }\r\n\r\n  &-primary {\r\n    color: $gray-scale-1;\r\n    background-color: $secondary-a-700;\r\n    &:hover {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:focus {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-700;\r\n      background-color: $secondary-a-50;\r\n    }\r\n  }\r\n\r\n  &-secondary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    border: 1px solid $secondary-a-700;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-700;\r\n      border-color: $secondary-a-500;\r\n    }\r\n  }\r\n\r\n  &-tertiary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-700;\r\n    }\r\n  }\r\n\r\n  &-distructive {\r\n    color: $gray-scale-1;\r\n    background-color: $supportive-alert-500;\r\n    &:hover {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:focus {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-700;\r\n      background-color: $supportive-alert-50;\r\n    }\r\n  }\r\n\r\n  // class of the action-button\r\n  &-icon-before {\r\n    padding-left: $gap-double;\r\n    .p-btn-label {\r\n      margin-left: $gap-base;\r\n    }\r\n  }\r\n  // class of the action-button\r\n  &-icon-after {\r\n    padding-right: $gap-double;\r\n    .p-btn-label {\r\n      margin-right: $gap-base;\r\n    }\r\n  }\r\n\r\n  // class of the icon\r\n  &-icon-pre,\r\n  &-icon-post {\r\n    display: inline-flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n  }\r\n\r\n  &-isIcon {\r\n    line-height: unset;\r\n    min-width: unset;\r\n    padding: $gap-small;\r\n  }\r\n}\r\n\r\n\r\n",
                     "styleUrl": "./button.component.scss"
                 }
             ],
@@ -2728,7 +2744,7 @@
         },
         {
             "name": "DaterangeComponent",
-            "id": "component-DaterangeComponent-8f7fd43bc12e67c54aebe0f3f82a413d",
+            "id": "component-DaterangeComponent-307bdd76348ba6b0d7d83e80b40393f4",
             "file": "projects/design-system-lib/src/lib/input/daterange/daterange.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2783,12 +2799,36 @@
             ],
             "propertiesClass": [
                 {
+                    "name": "inputEndDate",
+                    "type": "ElementRef",
+                    "optional": false,
+                    "description": "",
+                    "line": 42,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'inputEndDate'"
+                        }
+                    ]
+                },
+                {
+                    "name": "isFilled",
+                    "defaultValue": "false",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 44,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
                     "name": "isOpened",
                     "defaultValue": "false",
                     "type": "boolean",
                     "optional": false,
                     "description": "",
-                    "line": 42,
+                    "line": 43,
                     "modifierKind": [
                         114
                     ]
@@ -2814,7 +2854,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 44
+                    "line": 46
                 },
                 {
                     "name": "streamClosed",
@@ -2822,7 +2862,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 49
+                    "line": 51
                 }
             ],
             "hostBindings": [],
@@ -2830,16 +2870,16 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, EventEmitter, Input, Output, ViewChild} from '@angular/core';\r\nimport {formatDate } from '@angular/common';\r\nimport {DateAdapter, MAT_DATE_FORMATS, NativeDateAdapter} from '@angular/material/core';\r\n\r\n// export const PICK_FORMATS = {\r\n//   parse: {dateInput: {month: 'short', year: 'numeric', day: 'numeric'}},\r\n//   display: {\r\n//     dateInput: 'input',\r\n//     monthYearLabel: {year: 'numeric', month: 'short'},\r\n//     dateA11yLabel: {year: 'numeric', month: 'long', day: 'numeric'},\r\n//     monthYearA11yLabel: {year: 'numeric', month: 'long'}\r\n//   }\r\n// };\r\n//\r\n// class PickDateAdapter extends NativeDateAdapter {\r\n//   format(date: Date, displayFormat: Object): string {\r\n//     if (displayFormat === 'input') {\r\n//       return formatDate(date,'dd-MMM-yyyy', this.locale);\r\n//     } else {\r\n//       return date.toDateString();\r\n//     }\r\n//   }\r\n// }\r\n\r\n@Component({\r\n  selector: 'p-daterange',\r\n  templateUrl: './daterange.component.html',\r\n  styleUrls: ['./daterange.component.scss'],\r\n  // providers: [\r\n  //   {provide: DateAdapter, useClass: PickDateAdapter},\r\n  //   {provide: MAT_DATE_FORMATS, useValue: PICK_FORMATS}\r\n  // ]\r\n})\r\nexport class DaterangeComponent {\r\n  @Input() ariaLabel: string;\r\n  @Input() placeholder: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() value: string;\r\n  @Output() dateChange: EventEmitter<any> = new EventEmitter();\r\n  @Output() dateInput: EventEmitter<any> = new EventEmitter();\r\n  @ViewChild('picker') picker;\r\n  public isOpened: boolean = false;\r\n\r\n  openDatepicker(): void {\r\n    this.isOpened = true;\r\n    this.picker.open();\r\n  }\r\n\r\n  streamClosed(): void {\r\n    this.isOpened = false;\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';\r\nimport {formatDate } from '@angular/common';\r\nimport {DateAdapter, MAT_DATE_FORMATS, NativeDateAdapter} from '@angular/material/core';\r\n\r\n// export const PICK_FORMATS = {\r\n//   parse: {dateInput: {month: 'short', year: 'numeric', day: 'numeric'}},\r\n//   display: {\r\n//     dateInput: 'input',\r\n//     monthYearLabel: {year: 'numeric', month: 'short'},\r\n//     dateA11yLabel: {year: 'numeric', month: 'long', day: 'numeric'},\r\n//     monthYearA11yLabel: {year: 'numeric', month: 'long'}\r\n//   }\r\n// };\r\n//\r\n// class PickDateAdapter extends NativeDateAdapter {\r\n//   format(date: Date, displayFormat: Object): string {\r\n//     if (displayFormat === 'input') {\r\n//       return formatDate(date,'dd-MMM-yyyy', this.locale);\r\n//     } else {\r\n//       return date.toDateString();\r\n//     }\r\n//   }\r\n// }\r\n\r\n@Component({\r\n  selector: 'p-daterange',\r\n  templateUrl: './daterange.component.html',\r\n  styleUrls: ['./daterange.component.scss'],\r\n  // providers: [\r\n  //   {provide: DateAdapter, useClass: PickDateAdapter},\r\n  //   {provide: MAT_DATE_FORMATS, useValue: PICK_FORMATS}\r\n  // ]\r\n})\r\nexport class DaterangeComponent {\r\n  @Input() ariaLabel: string;\r\n  @Input() placeholder: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() value: string;\r\n  @Output() dateChange: EventEmitter<any> = new EventEmitter();\r\n  @Output() dateInput: EventEmitter<any> = new EventEmitter();\r\n  @ViewChild('picker') picker;\r\n  @ViewChild('inputEndDate') inputEndDate: ElementRef;\r\n  public isOpened: boolean = false;\r\n  public isFilled: boolean = false;\r\n\r\n  openDatepicker(): void {\r\n    this.isOpened = true;\r\n    this.picker.open();\r\n  }\r\n\r\n  streamClosed(): void {\r\n    this.inputEndDate.nativeElement.value ? this.isFilled = true : this.isFilled = false;\r\n    this.isOpened = false;\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../assets/styles/custom\";\r\n@import '../text/input-text.component';\r\n\r\n$date-hover-focus-selector: \".mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover, .cdk-keyboard-focused .mat-calendar-body-active, .cdk-program-focused .mat-calendar-body-active\";\r\n$date-hover-selector: \".mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover\";\r\n$date-content-selector: \".mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical)\";\r\n\r\n// input trigger & icon & preview (Tuesday, March 16, 2021)\r\n.p-datepicker {\r\n  cursor: pointer;\r\n  .p-input-text-input {\r\n    cursor: pointer;\r\n  }\r\n  ::ng-deep &.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon-button {\r\n    width: 30px;\r\n    height: 30px;\r\n  }\r\n  .p-datepicker-icon {\r\n    font-size: 15px;\r\n    color: $primary-a-900;\r\n    opacity: 0;\r\n    transition: opacity 280ms;\r\n    position: absolute;\r\n    right: 0;\r\n    top: 8px;\r\n  }\r\n  ::ng-deep .mat-form-field-flex:hover .p-datepicker-icon,\r\n  .p-datepicker-icon.shown {\r\n      opacity: 1;\r\n  }\r\n  ::ng-deep .cdk-program-focused,\r\n  ::ng-deep .cdk-keyboard-focused {\r\n    .mat-button-focus-overlay {\r\n      opacity: 0;\r\n    }\r\n  }\r\n  ::ng-deep .mat-button-ripple {\r\n    display: none;\r\n  }\r\n\r\n  &-preview {\r\n    text-align: center;\r\n    //transform: translateY(300px);\r\n  }\r\n}\r\n\r\n// datepicker panel\r\n::ng-deep .mat-datepicker-content {\r\n  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1),\r\n              0px 2px 6px rgba(0, 0, 0, 0.04),\r\n              0px -3px 6px rgba(0, 0, 0, 0.04);\r\n}\r\n\r\n::ng-deep .p-datepicker-panel {\r\n  // header buttons\r\n  .mat-calendar-controls {\r\n    margin: 0;\r\n    justify-content: space-between;\r\n  }\r\n  .mat-calendar-period-button {\r\n    font-family: $font-family-basic;\r\n    font-size: $small-font-size;\r\n    color: $secondary-a-700;\r\n    height: $btn-small-height;\r\n    line-height: $btn-small-height;\r\n    border-radius: $btn-border-radius;\r\n    order: 2;\r\n    &:hover,\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n  }\r\n  .mat-calendar-previous-button,\r\n  .mat-calendar-next-button {\r\n    width: 36px;\r\n    height: 36px;\r\n    &:after {\r\n      margin: 13px;\r\n      border-color: $primary-a-900;\r\n      //border-top-width: 1.5px;\r\n    }\r\n    &:hover,\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n  }\r\n\r\n  .mat-calendar-previous-button {\r\n    order: 1;\r\n    &:after {\r\n      //border-left-width: 1.5px;\r\n    }\r\n  }\r\n  .mat-calendar-next-button {\r\n    order: 3;\r\n    &:after {\r\n      //border-right-width: 1.5px;\r\n    }\r\n  }\r\n\r\n  .mat-calendar-spacer {\r\n    display: none;\r\n  }\r\n\r\n  .mat-calendar-arrow {\r\n    display: none;\r\n  }\r\n  // hover\r\n  .mat-button:hover:not(.mat-button-disabled),\r\n  .mat-calendar-controls .mat-icon-button {\r\n    .mat-button-focus-overlay {\r\n      display: none;\r\n    }\r\n  }\r\n\r\n  // month\r\n  mat-month-view .mat-calendar-table {\r\n    margin-top: $gap-base;\r\n  }\r\n\r\n  // days of week\r\n  .mat-calendar-table-header th {\r\n    font-family: $font-family-basic;\r\n    font-size: $base-font-size;\r\n    color: $gray-scale-800;\r\n  }\r\n\r\n  // divider line\r\n  .mat-calendar-table-header-divider {\r\n    display: none;\r\n  }\r\n\r\n  // current month indication\r\n  tr:first-child .mat-calendar-body-label {\r\n    font-size: 0;\r\n    &[colspan=\"7\"] {\r\n      display: none;\r\n    }\r\n  }\r\n\r\n  // dates\r\n  .mat-calendar-body-cell-content {\r\n    font-family: $font-family-basic;\r\n    font-size: $small-font-size;\r\n    color: $primary-a-900;\r\n  }\r\n\r\n  // hover & focus\r\n  #{$date-hover-focus-selector} {\r\n    &>#{$date-content-selector}:not(.mat-calendar-body-today) {\r\n      background-color: $secondary-a-50;\r\n    }\r\n  }\r\n\r\n  // today\r\n  .mat-calendar-body-today:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {\r\n    background-color: $secondary-a-200;\r\n    border: none;\r\n  }\r\n\r\n  // today on hover & focus\r\n  #{$date-hover-focus-selector} {\r\n    &>.mat-calendar-body-today#{$date-content-selector} {\r\n      background-color: $secondary-a-200;\r\n    }\r\n  }\r\n\r\n  // selected\r\n  .mat-calendar-body-selected {\r\n    font-weight: 500;\r\n    color: $gray-scale-1;\r\n    background-color: $secondary-a-700;\r\n    box-shadow: none;\r\n  }\r\n\r\n  #{$date-hover-selector} {\r\n    &>.mat-calendar-body-selected {\r\n      color: $gray-scale-1;\r\n      background-color: $secondary-a-800;\r\n    }\r\n  }\r\n\r\n  // years\r\n  mat-multi-year-view,\r\n  mat-year-view {\r\n    .mat-calendar-body-cell-content {\r\n      height: 32px;\r\n    }\r\n  }\r\n}\r\n\r\n",
+                    "data": "@import \"../../assets/styles/custom\";\r\n@import '../datepicker/datepicker.component';\r\n\r\n$date-hover-focus-selector: \".mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover, .cdk-keyboard-focused .mat-calendar-body-active, .cdk-program-focused .mat-calendar-body-active\";\r\n$date-hover-selector: \".mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover\";\r\n$date-content-selector: \".mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical)\";\r\n\r\n::ng-deep .p-daterange {\r\n  .p-input-text-input {\r\n    width: 100%;\r\n  }\r\n\r\n  .mat-date-range-input-separator {\r\n    opacity: 0;\r\n    transition: none;\r\n  }\r\n\r\n  .filled .mat-date-range-input-separator {\r\n    opacity: 1;\r\n  }\r\n}\r\n\r\n::ng-deep .cdk-overlay-pane.mat-datepicker-popup {\r\n  padding-top: 2px;\r\n}\r\n\r\n",
                     "styleUrl": "./daterange.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<mat-form-field class=\"p-datepicker p-input-text\" appearance=\"standard\">\r\n  <input matInput\r\n         [matDatepicker]=\"picker\"\r\n         class=\"p-input-text-input\"\r\n         attr.aria-label=\"{{ariaLabel}}\"\r\n         autocomplete=\"off\"\r\n         readonly\r\n         (click)=\"openDatepicker()\"\r\n         (focus)=\"openDatepicker()\">\r\n  <p-icon class=\"p-datepicker-icon\"\r\n          [class.shown]=\"isOpened\"\r\n          iconName=\"calendar\"\r\n          width=\"16\"\r\n          height=\"auto\">\r\n  </p-icon>\r\n  <mat-datepicker #picker\r\n                  (closed)=\"streamClosed()\"\r\n                  panelClass=\"p-datepicker-panel\"></mat-datepicker>\r\n</mat-form-field>\r\n\r\n<!--<p class=\"p-datepicker-preview paragraph-2-link\">-->\r\n  <!--Tuesday, March 16, 2021-->\r\n<!--</p>-->\r\n"
+            "templateData": "<mat-form-field class=\"p-daterange p-datepicker p-input-text\"\r\n                appearance=\"standard\">\r\n  <mat-date-range-input [rangePicker]=\"picker\"\r\n                        class=\"p-input-text-input\"\r\n                        [class.filled]=\"isFilled\">\r\n    <input matStartDate\r\n           attr.aria-label=\"Start date\"\r\n           autocomplete=\"off\"\r\n           readonly\r\n           class=\"p-input-text-input-start\"\r\n           (click)=\"openDatepicker()\"\r\n           (focus)=\"openDatepicker()\">\r\n    <input matEndDate\r\n           #inputEndDate\r\n           attr.aria-label=\"End date\"\r\n           autocomplete=\"off\"\r\n           readonly\r\n           class=\"p-input-text-input-end\"\r\n           (click)=\"openDatepicker()\"\r\n           (focus)=\"openDatepicker()\">\r\n  </mat-date-range-input>\r\n  <p-icon class=\"p-datepicker-icon\"\r\n          [class.shown]=\"isOpened\"\r\n          iconName=\"calendar\"\r\n          width=\"16\"\r\n          height=\"auto\"\r\n          (click)=\"openDatepicker()\">\r\n  </p-icon>\r\n  <mat-date-range-picker #picker\r\n                         (closed)=\"streamClosed()\"\r\n                         panelClass=\"p-datepicker-panel\">\r\n  </mat-date-range-picker>\r\n</mat-form-field>\r\n\r\n<!--<p class=\"p-datepicker-preview paragraph-2-link\">-->\r\n  <!--Tuesday, March 16, 2021-->\r\n<!--</p>-->\r\n"
         },
         {
             "name": "ExpansionPanelComponent",
@@ -5365,7 +5405,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../menu/menu-base.component\";\r\n\r\n$menu-item-height: 32px;\r\n$menu-item-margin-top: 4px;\r\n$input-text-height: 32px;\r\n$input-text-padding: 8px;\r\n$tabs-width: 84px;\r\n$tabs-height: 28px;\r\n$tabs-header-height: 60px;\r\n$menu-header-height: $input-text-height + $menu-padding * 4 + 1px;\r\n$menu-header-extended-height: $input-text-height + ($menu-padding * 4.5) + ($menu-item-height * 2) + 1px;\r\n$menu-min-width: 250px;\r\n\r\n%menu-item {\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  color: $primary-a-900;\r\n  height: $menu-item-height;\r\n  line-height: $menu-item-height;\r\n  padding: 0 8px;\r\n  & + & {\r\n    margin-top: $menu-item-margin-top;\r\n  }\r\n  &:hover,\r\n  &.cdk-focused {\r\n    background-color: $primary-c-50;\r\n  }\r\n  &[disabled] {\r\n    color: $gray-scale-600;\r\n  }\r\n}\r\n\r\n::ng-deep .p-menu.p-menu-tabs.mat-menu-panel {\r\n    min-width: $menu-min-width;\r\n}\r\n\r\n::ng-deep .p-menu-multiple-item.mat-list-option.mat-list-item {\r\n  @extend %menu-item;\r\n  .mat-list-item-content.mat-list-item-content-reverse {\r\n    flex-direction: row;\r\n    padding: 0;\r\n    .mat-list-text {\r\n      display: inline;\r\n      padding-left: 8px;\r\n      padding-right: 0;\r\n      @include ellipsis;\r\n    }\r\n  }\r\n\r\n  .mat-pseudo-checkbox:not(.mat-pseudo-checkbox-checked) {\r\n    border: 1px solid $gray-scale-400;\r\n    background-color: $gray-scale-1;\r\n  }\r\n\r\n  // checked\r\n  .mat-pseudo-checkbox-checked {\r\n    background-color: $secondary-a-700;\r\n    &:after {\r\n      width: 7px;\r\n      height: 2px;\r\n      top: 3.4px;\r\n      left: 1.5px;\r\n    }\r\n  }\r\n\r\n  // disabled\r\n  &.mat-list-item-disabled {\r\n    background-color: transparent;\r\n    .mat-pseudo-checkbox:not(.mat-pseudo-checkbox-checked) {\r\n      background-color: $primary-c-50;\r\n      border-color: $gray-scale-400;\r\n    }\r\n    .mat-pseudo-checkbox-checked {\r\n      background-color: $secondary-a-200;\r\n    }\r\n    .mat-list-text {\r\n      color: $gray-scale-600;\r\n    }\r\n  }\r\n}\r\n\r\n// results on the trigger\r\n.p-menu-trigger-result {\r\n  & + & {\r\n    margin-left: 5px;\r\n  }\r\n  &:not(:last-child):after {\r\n    content: ',';\r\n    display: inline;\r\n  }\r\n}\r\n\r\n.p-menu {\r\n  &-header {\r\n    width: 100%;\r\n    padding: $menu-padding;\r\n    background-color: $menu-background;\r\n    border-bottom: 1px solid $gray-scale-400;\r\n    position: absolute;\r\n    z-index: 1;\r\n\r\n    .p-menu-form-field + .p-menu-btn-line {\r\n      margin-top: $menu-padding;\r\n    }\r\n    .p-menu-btn-line + .p-menu-btn-line {\r\n      margin-top: 4px;\r\n    }\r\n  }\r\n\r\n  &-body {\r\n    height: 100%;\r\n    min-height: $menu-body-min-height;\r\n    padding-top: $menu-padding;\r\n    padding-right: 0;\r\n    padding-bottom: 0;\r\n    padding-left: $menu-padding;\r\n    // there are buttons after input\r\n    .p-menu-header.extended + & {\r\n      min-height: $menu-header-extended-height + $menu-body-min-height;\r\n      padding-top: $menu-header-extended-height;\r\n    }\r\n\r\n    &-container {\r\n      height: 100%;\r\n      padding-top: 0;\r\n      padding-right: $menu-padding;\r\n      overflow: auto;\r\n    }\r\n  }\r\n\r\n  &-footer {\r\n    align-items: center;\r\n    width: 100%;\r\n    padding-top: $menu-padding * 2;\r\n    padding-bottom: $menu-padding * 2;\r\n  }\r\n\r\n  &-btn-line {\r\n    display: block;\r\n    width: 100%;\r\n    height: $menu-item-height;\r\n    ::ng-deep .p-btn {\r\n      @extend %btn-line;\r\n      justify-content: flex-start;\r\n    }\r\n    ::ng-deep .p-btn-icon-before {\r\n      .p-btn-label {\r\n        margin-left: $menu-padding;\r\n      }\r\n    }\r\n    ::ng-deep .p-checkbox {\r\n      display: inline-flex;\r\n      align-items: center;\r\n      @extend %btn-line;\r\n      &:not(.mat-checkbox-disabled):hover {\r\n        background-color: $primary-c-50;\r\n      }\r\n      .mat-checkbox-label {\r\n        font-weight: 500;\r\n      }\r\n    }\r\n    .p-menu-input + & {\r\n      margin-top: $menu-padding;\r\n    }\r\n  }\r\n}\r\n\r\n// tabs\r\n::ng-deep .p-menu-tab-group {\r\n  max-height: $menu-max-height;\r\n  height: calc(100% - #{$menu-footer-height});\r\n  .mat-tab-list {\r\n    width: 100%;\r\n    height: $tabs-header-height;\r\n  }\r\n  .mat-tab-header {\r\n    border-color: $gray-scale-400;\r\n  }\r\n  .mat-tab-labels {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    height: 100%;\r\n  }\r\n  .mat-tab-label {\r\n    font-family: $font-family-basic;\r\n    font-size: $small-font-size;\r\n    font-weight: 400;\r\n    width: $tabs-width;\r\n    height: $tabs-height;\r\n    min-width: unset;\r\n    padding: 0;\r\n    opacity: 1;\r\n    transition: all 400ms;\r\n    &-active {\r\n      color: $gray-scale-1;\r\n      background-color: $secondary-a-700;\r\n      //&:hover ,\r\n      //&:focus {\r\n      //  background-color: $secondary-a-800;\r\n      //}\r\n      &:disabled {\r\n        color: $gray-scale-600;\r\n        background-color: $secondary-a-100;\r\n        border: 1px solid $gray-scale-400;\r\n      }\r\n    }\r\n    &:not(.mat-tab-label-active) {\r\n      color: $primary-a-900;\r\n      background-color: $gray-scale-1;\r\n      border: 1px solid $gray-scale-400;\r\n      &:hover,\r\n      &:focus {\r\n        border-color: $dev-c-300;\r\n      }\r\n      &:disabled {\r\n        color: $gray-scale-600;\r\n        background-color: $primary-c-50;\r\n      }\r\n    }\r\n  }\r\n  .mat-ink-bar {\r\n    display: none;\r\n  }\r\n  .mat-tab-body-content {\r\n    overflow: hidden;\r\n  }\r\n  .p-menu-tabs-panel {\r\n    height: 100%;\r\n    &.relative {\r\n      padding-top: $menu-padding;\r\n      padding-left: $menu-padding;\r\n    }\r\n  }\r\n}\r\n\r\n// relative panel styles\r\n.p-menu-check {\r\n  &-list {\r\n    @include resetUl;\r\n    height: 100%;\r\n    padding-right: $menu-padding;\r\n    overflow: auto;\r\n  }\r\n  &-item {\r\n    display: flex;\r\n    align-items: center;\r\n    overflow: hidden;\r\n    @extend %menu-item;\r\n    ::ng-deep .p-checkbox {\r\n      display: inline-flex;\r\n    }\r\n  }\r\n  &-input {\r\n    margin-left: 20px;\r\n    margin-top: 7px;\r\n  }\r\n}\r\n\r\n\r\n",
+                    "data": "@import \"../menu/menu-base.component\";\r\n\r\n$menu-item-height: 32px;\r\n$menu-item-margin-top: 4px;\r\n$input-text-height: 32px;\r\n$input-text-padding: 8px;\r\n$tabs-width: 84px;\r\n$tabs-height: 28px;\r\n$tabs-header-height: 60px;\r\n$menu-header-height: $input-text-height + $menu-padding * 4 + 1px;\r\n$menu-header-extended-height: $input-text-height + ($menu-padding * 4.5) + ($menu-item-height * 2) + 1px;\r\n$menu-min-width: 250px;\r\n\r\n%menu-item {\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  color: $primary-a-900;\r\n  height: $menu-item-height;\r\n  line-height: $menu-item-height;\r\n  padding: 0 8px;\r\n  & + & {\r\n    margin-top: $menu-item-margin-top;\r\n  }\r\n  &:hover,\r\n  &.cdk-focused {\r\n    background-color: $primary-c-50;\r\n  }\r\n  &[disabled] {\r\n    color: $gray-scale-600;\r\n  }\r\n}\r\n\r\n::ng-deep .p-menu.p-menu-tabs.mat-menu-panel {\r\n    min-width: $menu-min-width;\r\n}\r\n\r\n::ng-deep .p-menu-multiple-item.mat-list-option.mat-list-item {\r\n  @extend %menu-item;\r\n  .mat-list-item-content.mat-list-item-content-reverse {\r\n    flex-direction: row;\r\n    padding: 0;\r\n    .mat-list-text {\r\n      display: inline;\r\n      padding-left: 8px;\r\n      padding-right: 0;\r\n      @include ellipsis;\r\n    }\r\n  }\r\n\r\n  .mat-pseudo-checkbox:not(.mat-pseudo-checkbox-checked) {\r\n    border: 1px solid $gray-scale-400;\r\n    background-color: $gray-scale-1;\r\n  }\r\n\r\n  // checked\r\n  .mat-pseudo-checkbox-checked {\r\n    background-color: $secondary-a-700;\r\n    &:after {\r\n      width: 7px;\r\n      height: 2px;\r\n      top: 3.4px;\r\n      left: 1.5px;\r\n    }\r\n  }\r\n\r\n  // disabled\r\n  &.mat-list-item-disabled {\r\n    background-color: transparent;\r\n    .mat-pseudo-checkbox:not(.mat-pseudo-checkbox-checked) {\r\n      background-color: $primary-c-50;\r\n      border-color: $gray-scale-400;\r\n    }\r\n    .mat-pseudo-checkbox-checked {\r\n      background-color: $secondary-a-200;\r\n    }\r\n    .mat-list-text {\r\n      color: $gray-scale-600;\r\n    }\r\n  }\r\n}\r\n\r\n// results on the trigger\r\n.p-menu-trigger-result {\r\n  & + & {\r\n    margin-left: 5px;\r\n  }\r\n  &:not(:last-child):after {\r\n    content: ',';\r\n    display: inline;\r\n  }\r\n}\r\n\r\n.p-menu {\r\n  &-header {\r\n    width: 100%;\r\n    padding: $menu-padding;\r\n    background-color: $menu-background;\r\n    border-bottom: 1px solid $gray-scale-400;\r\n    position: absolute;\r\n    z-index: 1;\r\n\r\n    .p-menu-form-field + .p-menu-btn-line {\r\n      margin-top: $menu-padding;\r\n    }\r\n    .p-menu-btn-line + .p-menu-btn-line {\r\n      margin-top: 4px;\r\n    }\r\n  }\r\n\r\n  &-body {\r\n    height: 100%;\r\n    min-height: $menu-body-min-height;\r\n    padding-top: $menu-padding;\r\n    padding-right: 0;\r\n    padding-bottom: 0;\r\n    padding-left: $menu-padding;\r\n    // there are buttons after input\r\n    .p-menu-header.extended + & {\r\n      min-height: $menu-header-extended-height + $menu-body-min-height;\r\n      padding-top: $menu-header-extended-height;\r\n    }\r\n\r\n    &-container {\r\n      height: 100%;\r\n      padding-top: 0;\r\n      padding-right: $menu-padding;\r\n      overflow: auto;\r\n    }\r\n  }\r\n\r\n  &-footer {\r\n    align-items: center;\r\n    width: 100%;\r\n    padding-top: $menu-padding * 2;\r\n    padding-bottom: $menu-padding * 2;\r\n  }\r\n\r\n  &-btn-line {\r\n    display: block;\r\n    width: 100%;\r\n    height: $menu-item-height;\r\n    ::ng-deep .p-btn {\r\n      @extend %btn-line;\r\n      justify-content: flex-start;\r\n    }\r\n    ::ng-deep .p-btn-icon-before {\r\n      .p-btn-label {\r\n        margin-left: $menu-padding;\r\n      }\r\n    }\r\n    ::ng-deep .p-checkbox {\r\n      display: inline-flex;\r\n      align-items: center;\r\n      @extend %btn-line;\r\n      &:not(.mat-checkbox-disabled):hover {\r\n        background-color: $primary-c-50;\r\n      }\r\n      .mat-checkbox-label {\r\n        font-weight: 500;\r\n      }\r\n    }\r\n    .p-menu-input + & {\r\n      margin-top: $menu-padding;\r\n    }\r\n  }\r\n}\r\n\r\n// tabs\r\n::ng-deep .p-menu-tab-group {\r\n  max-height: $menu-max-height;\r\n  height: calc(100% - #{$menu-footer-height});\r\n  .mat-tab-list {\r\n    width: 100%;\r\n    height: $tabs-header-height;\r\n  }\r\n  .mat-tab-header {\r\n    border-color: $gray-scale-400;\r\n  }\r\n  .mat-tab-labels {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    height: 100%;\r\n  }\r\n  .mat-tab-label {\r\n    font-family: $font-family-basic;\r\n    font-size: $small-font-size;\r\n    font-weight: 400;\r\n    width: $tabs-width;\r\n    height: $tabs-height;\r\n    min-width: unset;\r\n    padding: 0;\r\n    opacity: 1;\r\n    transition: all 400ms;\r\n    &-active {\r\n      color: $gray-scale-1;\r\n      background-color: $secondary-a-700;\r\n      //&:hover ,\r\n      //&:focus {\r\n      //  background-color: $secondary-a-800;\r\n      //}\r\n      &:disabled {\r\n        color: $gray-scale-600;\r\n        background-color: $secondary-a-100;\r\n        border: 1px solid $gray-scale-400;\r\n      }\r\n    }\r\n    &:not(.mat-tab-label-active) {\r\n      color: $primary-a-900;\r\n      background-color: $gray-scale-1;\r\n      border: 1px solid $gray-scale-400;\r\n      &:hover,\r\n      &:focus {\r\n        border-color: $secondary-a-700;\r\n      }\r\n      &:disabled {\r\n        color: $gray-scale-600;\r\n        background-color: $primary-c-50;\r\n      }\r\n    }\r\n  }\r\n  .mat-ink-bar {\r\n    display: none;\r\n  }\r\n  .mat-tab-body-content {\r\n    overflow: hidden;\r\n  }\r\n  .p-menu-tabs-panel {\r\n    height: 100%;\r\n    &.relative {\r\n      padding-top: $menu-padding;\r\n      padding-left: $menu-padding;\r\n    }\r\n  }\r\n}\r\n\r\n// relative panel styles\r\n.p-menu-check {\r\n  &-list {\r\n    @include resetUl;\r\n    height: 100%;\r\n    padding-right: $menu-padding;\r\n    overflow: auto;\r\n  }\r\n  &-item {\r\n    display: flex;\r\n    align-items: center;\r\n    overflow: hidden;\r\n    @extend %menu-item;\r\n    ::ng-deep .p-checkbox {\r\n      display: inline-flex;\r\n    }\r\n  }\r\n  &-input {\r\n    margin-left: 20px;\r\n    margin-top: 7px;\r\n  }\r\n}\r\n\r\n\r\n",
                     "styleUrl": "./menu-tabs.component.scss"
                 }
             ],
@@ -6032,6 +6072,183 @@
             "templateData": "<div class=\"page slide-toggles\">\r\n    <header class=\"page-header\">\r\n      <h1 class=\"page-title\">Toggle / <span class=\"page-header-highlighted\">Items</span></h1>\r\n    </header>\r\n\r\n    <main class=\"page-main\">\r\n      <ul class=\"page-list header-list\">\r\n        <li class=\"list-header\"></li>\r\n        <li class=\"list-header\">[checked]=true</li>\r\n        <li class=\"list-header\">\r\n          [checked]=true\r\n          <br/>\r\n          [disabled]=true\r\n        </li>\r\n        <li class=\"list-header\">\r\n          [checked]=false\r\n        </li>\r\n        <li class=\"list-header\">\r\n          [checked]=false\r\n          <br/>\r\n          [disabled]=true\r\n        </li>\r\n      </ul>\r\n\r\n      <ul *ngFor=\"let toggleType of slideTogglePage | keyvalue: originalOrder\"\r\n          class=\"page-list content-list {{toggleType.key}}\">\r\n        <li class=\"list-header\">\r\n          [{{toggleType.key}}]=\"Label\"\r\n        </li>\r\n        <li *ngFor=\"let toggle of toggleType.value\" class=\"list-item\">\r\n          <p-slide-toggle [label]=\"toggle.label\"\r\n                          [ariaLabel]=\"toggle.ariaLabel\"\r\n                          [checked]=\"toggle.checked\"\r\n                          [disabled]=\"toggle.disabled\">\r\n          </p-slide-toggle>\r\n        </li>\r\n      </ul>\r\n\r\n    </main>\r\n</div>\r\n"
         },
         {
+            "name": "SplitButtonComponent",
+            "id": "component-SplitButtonComponent-5408cbe42dce8278fedffd9b6811492d",
+            "file": "projects/design-system-lib/src/lib/button/split-button/split-button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-split-button",
+            "styleUrls": [
+                "./split-button.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./split-button.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "ariaLabel",
+                    "line": 11,
+                    "type": "string",
+                    "inheritance": {
+                        "file": "ButtonComponent"
+                    }
+                },
+                {
+                    "name": "buttonType",
+                    "defaultValue": "ButtonTypeEnum.Primary",
+                    "line": 24,
+                    "type": "ButtonTypeEnum",
+                    "inheritance": {
+                        "file": "ButtonComponent"
+                    }
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "line": 13,
+                    "type": "boolean",
+                    "inheritance": {
+                        "file": "ButtonComponent"
+                    }
+                },
+                {
+                    "name": "iconAfter",
+                    "line": 19,
+                    "type": "string",
+                    "inheritance": {
+                        "file": "ButtonComponent"
+                    }
+                },
+                {
+                    "name": "iconAfterHeight",
+                    "defaultValue": "'auto'",
+                    "line": 21,
+                    "type": "string",
+                    "inheritance": {
+                        "file": "ButtonComponent"
+                    }
+                },
+                {
+                    "name": "iconAfterStrokeColor",
+                    "line": 23,
+                    "type": "string",
+                    "inheritance": {
+                        "file": "ButtonComponent"
+                    }
+                },
+                {
+                    "name": "iconAfterStrokeWidth",
+                    "line": 22,
+                    "type": "number",
+                    "inheritance": {
+                        "file": "ButtonComponent"
+                    }
+                },
+                {
+                    "name": "iconAfterWidth",
+                    "defaultValue": "'auto'",
+                    "line": 20,
+                    "type": "string",
+                    "inheritance": {
+                        "file": "ButtonComponent"
+                    }
+                },
+                {
+                    "name": "iconBefore",
+                    "line": 14,
+                    "type": "string",
+                    "inheritance": {
+                        "file": "ButtonComponent"
+                    }
+                },
+                {
+                    "name": "iconBeforeHeight",
+                    "defaultValue": "'auto'",
+                    "line": 16,
+                    "type": "string",
+                    "inheritance": {
+                        "file": "ButtonComponent"
+                    }
+                },
+                {
+                    "name": "iconBeforeStrokeColor",
+                    "line": 18,
+                    "type": "string",
+                    "inheritance": {
+                        "file": "ButtonComponent"
+                    }
+                },
+                {
+                    "name": "iconBeforeStrokeWidth",
+                    "line": 17,
+                    "type": "number",
+                    "inheritance": {
+                        "file": "ButtonComponent"
+                    }
+                },
+                {
+                    "name": "iconBeforeWidth",
+                    "defaultValue": "'auto'",
+                    "line": 15,
+                    "type": "string",
+                    "inheritance": {
+                        "file": "ButtonComponent"
+                    }
+                },
+                {
+                    "name": "label",
+                    "line": 10,
+                    "type": "string",
+                    "inheritance": {
+                        "file": "ButtonComponent"
+                    }
+                },
+                {
+                    "name": "large",
+                    "defaultValue": "false",
+                    "line": 12,
+                    "type": "boolean",
+                    "inheritance": {
+                        "file": "ButtonComponent"
+                    }
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClickTask",
+                    "defaultValue": "new EventEmitter()",
+                    "line": 25,
+                    "type": "EventEmitter<any>",
+                    "inheritance": {
+                        "file": "ButtonComponent"
+                    }
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, EventEmitter, Input, Output} from '@angular/core';\r\nimport {ButtonTypeEnum} from '../button-type.enum';\r\nimport {ButtonComponent} from '../button.component';\r\n\r\n@Component({\r\n  selector: 'p-split-button',\r\n  templateUrl: './split-button.component.html',\r\n  styleUrls: ['./split-button.component.scss'],\r\n})\r\nexport class SplitButtonComponent extends ButtonComponent {\r\n  // @Input() label: string;\r\n  // @Input() ariaLabel: string;\r\n  // @Input() large: boolean = false;\r\n  // @Input() disabled: boolean = false;\r\n  // @Input() iconBefore: string;\r\n  // @Input() iconBeforeWidth: string = 'auto';\r\n  // @Input() iconBeforeHeight: string = 'auto';\r\n  // @Input() iconBeforeStrokeWidth: number;\r\n  // @Input() iconBeforeStrokeColor: string;\r\n  // @Input() iconAfter: string;\r\n  // @Input() iconAfterWidth: string = 'auto';\r\n  // @Input() iconAfterHeight: string = 'auto';\r\n  // @Input() iconAfterStrokeWidth: number;\r\n  // @Input() iconAfterStrokeColor: string;\r\n  // @Input() buttonType: ButtonTypeEnum = ButtonTypeEnum.Primary;\r\n  // @Output() onClickTask: EventEmitter<any> = new EventEmitter();\r\n  //\r\n  // public get classes(): string[] {\r\n  //   const classParams = [];\r\n  //   this.iconBefore ? classParams.push('p-btn-icon-before') : null;\r\n  //   this.iconAfter ? classParams.push('p-btn-icon-after') : null;\r\n  //   classParams.push(`p-btn-${this.buttonType}`);\r\n  //   if (this.buttonType !== ButtonTypeEnum.IsIcon) {\r\n  //     this.large  ? classParams.push('p-btn-large') : classParams.push('p-btn-small');\r\n  //   }\r\n  //   return classParams;\r\n  // }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../button.component\";\r\n\r\n::ng-deep .p-btn {\r\n  @include resetButton;\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  font-weight: 500;\r\n  line-height: 20px;\r\n  min-width: 80px;\r\n  padding-right: $gap-double-plus;\r\n  padding-left: $gap-double-plus;\r\n  border-radius: $btn-border-radius;\r\n  white-space: nowrap;\r\n  transition: all 400ms;\r\n\r\n  &-large {\r\n    height: $btn-large-height;\r\n  }\r\n\r\n  &-small {\r\n    height: $btn-small-height;\r\n  }\r\n\r\n  &:disabled {\r\n    pointer-events: none;\r\n  }\r\n\r\n  &-primary {\r\n    color: $gray-scale-1;\r\n    background-color: $secondary-a-700;\r\n    &:hover {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:focus {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-700;\r\n      background-color: $secondary-a-50;\r\n    }\r\n  }\r\n\r\n  &-secondary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    border: 1px solid $secondary-a-700;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-700;\r\n      border-color: $secondary-a-500;\r\n    }\r\n  }\r\n\r\n  &-tertiary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-700;\r\n    }\r\n  }\r\n\r\n  &-distructive {\r\n    color: $gray-scale-1;\r\n    background-color: $supportive-alert-500;\r\n    &:hover {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:focus {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-700;\r\n      background-color: $supportive-alert-50;\r\n    }\r\n  }\r\n\r\n  // class of the action-button\r\n  &-icon-before {\r\n    padding-left: $gap-double;\r\n    .p-btn-label {\r\n      margin-left: $gap-base;\r\n    }\r\n  }\r\n  // class of the action-button\r\n  &-icon-after {\r\n    padding-right: $gap-double;\r\n    .p-btn-label {\r\n      margin-right: $gap-base;\r\n    }\r\n  }\r\n\r\n  // class of the icon\r\n  &-icon-pre,\r\n  &-icon-post {\r\n    display: inline-flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n  }\r\n\r\n  &-isIcon {\r\n    line-height: unset;\r\n    min-width: unset;\r\n    padding: $gap-small;\r\n  }\r\n}\r\n\r\n\r\n",
+                    "styleUrl": "./split-button.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": "ButtonComponent",
+            "templateData": "<button class=\"p-btn\"\r\n        [ngClass]=\"classes\"\r\n        [disabled]=\"disabled\"\r\n        attr.aria-label=\"{{ariaLabel}}\"\r\n        (click)=\"onClickTask.emit($event)\">\r\n  <p-icon *ngIf=\"iconBefore\"\r\n          class=\"p-btn-icon-pre\"\r\n          [iconName]=\"iconBefore\"\r\n          [width]=\"iconBeforeWidth\"\r\n          [height]=\"iconBeforeHeight\"\r\n          [stroke]=\"iconBeforeStrokeColor\"\r\n          [strokeWidth]=\"iconBeforeStrokeWidth\"\r\n          [disabled]=\"disabled\"></p-icon>\r\n  <span class=\"p-btn-label\" *ngIf=\"label\">{{label}}</span>\r\n  <p-icon *ngIf=\"iconAfter\"\r\n          class=\"p-btn-icon-post\"\r\n          [iconName]=\"iconAfter\"\r\n          [width]=\"iconAfterWidth\"\r\n          [height]=\"iconAfterHeight\"\r\n          [stroke]=\"iconAfterStrokeColor\"\r\n          [strokeWidth]=\"iconAfterStrokeWidth\"\r\n          [disabled]=\"disabled\"></p-icon>\r\n</button>\r\n"
+        },
+        {
             "name": "TabGroupComponent",
             "id": "component-TabGroupComponent-b46e934de549bed10ddfcfe55dcec7d2",
             "file": "projects/design-system-lib/src/lib/tab-group/tab-group.component.ts",
@@ -6274,7 +6491,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$border-radius: 2px;\r\n$min-size: 28px;\r\n\r\n.p-toggle {\r\n  display: inline-flex;\r\n  align-items: center;\r\n\r\n  &-button {\r\n    position: absolute;\r\n    opacity: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n    margin: 0;\r\n  }\r\n\r\n  &-label {\r\n    display: block;\r\n    font-family: $font-family-basic;\r\n    font-size: $small-font-size;\r\n    font-weight: 400;\r\n    color: $primary-a-900;\r\n    text-align: center;\r\n    text-transform: capitalize;\r\n    height: $min-size;\r\n    line-height: $min-size;\r\n    background-color: $gray-scale-1;\r\n    transition: all 300ms;\r\n    cursor: pointer;\r\n    &:not(.p-toggle-label-icon) {\r\n      padding-right: 16px;\r\n      padding-left: 16px;\r\n    }\r\n\r\n    .first & {\r\n      border-top-left-radius: $border-radius;\r\n      border-bottom-left-radius: $border-radius;\r\n      box-shadow: inset 1px 0 0 $gray-scale-400,\r\n                  inset 0 -1px 0 $gray-scale-400,\r\n                  inset 0 1px 0 $gray-scale-400;\r\n    }\r\n\r\n    .middle & {\r\n      box-shadow: inset 1px 0 0 $gray-scale-400,\r\n                  inset -1px 0 0 $gray-scale-400,\r\n                  inset 0 -1px 0 $gray-scale-400,\r\n                  inset 0 1px 0 $gray-scale-400;\r\n    }\r\n\r\n    .last & {\r\n      border-top-right-radius: $border-radius;\r\n      border-bottom-right-radius: $border-radius;\r\n      box-shadow: inset -1px 0px 0px $gray-scale-400,\r\n                  inset 0px -1px 0px $gray-scale-400,\r\n                  inset 0px 1px 0px $gray-scale-400;\r\n    }\r\n\r\n    .first + .last .p-toggle-button:not(:checked) + &,\r\n    .first + .last .p-toggle-button:checked:disabled + &{\r\n      box-shadow: inset 1px 0 0 $gray-scale-400,\r\n                  inset -1px 0 0 $gray-scale-400,\r\n                  inset 0 -1px 0 $gray-scale-400,\r\n                  inset 0 1px 0 $gray-scale-400;\r\n    }\r\n  }\r\n\r\n  &-button:checked:not(:disabled) + .p-toggle-label {\r\n    color: $gray-scale-1;\r\n    background-color: $secondary-a-700;\r\n    box-shadow: none;\r\n  }\r\n\r\n  &-button:disabled + .p-toggle-label {\r\n    color: $gray-scale-600;\r\n    background-color: $primary-c-50;\r\n  }\r\n\r\n  &-button:checked:disabled + .p-toggle-label {\r\n    color: $gray-scale-600;\r\n    background-color: $secondary-a-100;\r\n  }\r\n\r\n  &-icon {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    min-width: $min-size;\r\n    height: 100%;\r\n    padding-right: 6px;\r\n    padding-left: 6px;\r\n  }\r\n}\r\n\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$border-radius: 2px;\r\n$min-size: 28px;\r\n\r\n.p-toggle {\r\n  display: inline-flex;\r\n  align-items: center;\r\n\r\n  &-item {\r\n    position: relative;\r\n    &:hover .p-toggle-button:not(:disabled) + .p-toggle-label {\r\n      box-shadow: inset 1px 0 0 $secondary-a-700,\r\n                  inset -1px 0 0 $secondary-a-700,\r\n                  inset 0 -1px 0 $secondary-a-700,\r\n                  inset 0 1px 0 $secondary-a-700;\r\n    }\r\n    .first + &.last:hover .p-toggle-button:not(:checked):not(:disabled) + .p-toggle-label {\r\n      box-shadow: inset 1px 0 0 $secondary-a-700,\r\n                  inset -1px 0 0 $secondary-a-700,\r\n                  inset 0 -1px 0 $secondary-a-700,\r\n                  inset 0 1px 0 $secondary-a-700;\r\n    }\r\n  }\r\n\r\n  &-button {\r\n    position: absolute;\r\n    opacity: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n    margin: 0;\r\n    cursor: pointer;\r\n  }\r\n\r\n  &-label {\r\n    display: block;\r\n    font-family: $font-family-basic;\r\n    font-size: $small-font-size;\r\n    font-weight: 400;\r\n    color: $primary-a-900;\r\n    text-align: center;\r\n    text-transform: capitalize;\r\n    height: $min-size;\r\n    line-height: $min-size;\r\n    background-color: $gray-scale-1;\r\n    transition: all 300ms;\r\n    &:not(.p-toggle-label-icon) {\r\n      padding-right: 16px;\r\n      padding-left: 16px;\r\n    }\r\n\r\n    .first & {\r\n      border-top-left-radius: $border-radius;\r\n      border-bottom-left-radius: $border-radius;\r\n      box-shadow: inset 1px 0 0 $gray-scale-400,\r\n                  inset 0 -1px 0 $gray-scale-400,\r\n                  inset 0 1px 0 $gray-scale-400;\r\n    }\r\n\r\n    .middle & {\r\n      box-shadow: inset 1px 0 0 $gray-scale-400,\r\n                  inset -1px 0 0 $gray-scale-400,\r\n                  inset 0 -1px 0 $gray-scale-400,\r\n                  inset 0 1px 0 $gray-scale-400;\r\n    }\r\n\r\n    .last & {\r\n      border-top-right-radius: $border-radius;\r\n      border-bottom-right-radius: $border-radius;\r\n      box-shadow: inset -1px 0px 0px $gray-scale-400,\r\n                  inset 0px -1px 0px $gray-scale-400,\r\n                  inset 0px 1px 0px $gray-scale-400;\r\n    }\r\n\r\n    .first + .last .p-toggle-button:not(:checked) + &,\r\n    .first + .last .p-toggle-button:checked:disabled + &{\r\n      box-shadow: inset 1px 0 0 $gray-scale-400,\r\n                  inset -1px 0 0 $gray-scale-400,\r\n                  inset 0 -1px 0 $gray-scale-400,\r\n                  inset 0 1px 0 $gray-scale-400;\r\n    }\r\n  }\r\n\r\n  &-button:checked:not(:disabled) + .p-toggle-label {\r\n    color: $gray-scale-1;\r\n    background-color: $secondary-a-700;\r\n    box-shadow: none;\r\n  }\r\n\r\n  &-button:disabled + .p-toggle-label {\r\n    color: $gray-scale-600;\r\n    background-color: $primary-c-50;\r\n  }\r\n\r\n  &-button:checked:disabled + .p-toggle-label {\r\n    color: $gray-scale-600;\r\n    background-color: $secondary-a-100;\r\n  }\r\n\r\n  &-icon {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    min-width: $min-size;\r\n    height: 100%;\r\n    padding-right: 6px;\r\n    padding-left: 6px;\r\n  }\r\n}\r\n\r\n",
                     "styleUrl": "./toggle.component.scss"
                 }
             ],
@@ -6612,6 +6829,9 @@
                         },
                         {
                             "name": "MenuModule"
+                        },
+                        {
+                            "name": "ToggleModule"
                         }
                     ]
                 },
@@ -6674,6 +6894,9 @@
                     "elements": [
                         {
                             "name": "ButtonComponent"
+                        },
+                        {
+                            "name": "SplitButtonComponent"
                         }
                     ]
                 },
@@ -6690,6 +6913,9 @@
                     "elements": [
                         {
                             "name": "ButtonComponent"
+                        },
+                        {
+                            "name": "SplitButtonComponent"
                         }
                     ]
                 },
@@ -7575,17 +7801,17 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
-                "type": "Story<CheckboxGroupPageComponent>",
-                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "Story<CheckboxPageComponent>",
+                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
-                "type": "Story<CheckboxPageComponent>",
-                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "Story<CheckboxGroupPageComponent>",
+                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -7693,17 +7919,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
-                "type": "Story<TypographyFontFamilyComponent>",
-                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/styles/typography-styles.stories.ts",
+                "type": "Story<TypographyStylesComponent>",
+                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/styles/typography-styles.stories.ts",
-                "type": "Story<TypographyStylesComponent>",
-                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
+                "type": "Story<TypographyFontFamilyComponent>",
+                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Toggles",
@@ -8578,6 +8804,15 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/design-system-lib/src/lib/button/split-button/split-button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SplitButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/17",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/design-system-lib/src/lib/checkbox/checkbox.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -8682,7 +8917,7 @@
                 "linktype": "component",
                 "name": "DaterangeComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/11",
+                "coverageCount": "0/13",
                 "status": "low"
             },
             {
@@ -9035,7 +9270,7 @@
                 "linktype": "component",
                 "name": "AppComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/19",
+                "coverageCount": "0/21",
                 "status": "low"
             },
             {

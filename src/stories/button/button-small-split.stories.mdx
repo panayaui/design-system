@@ -1,0 +1,95 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+
+import {SplitButtonComponent} from 'projects/design-system-lib/src/public-api';
+import {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';
+import {ButtonModule} from 'projects/design-system-lib/src/public-api';
+
+<Meta title='Components/Button/Split'
+  component={SplitButtonComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [ButtonModule]
+    })
+  ]}
+/>
+
+export const Template = (args) => <SplitButtonComponent {...args} />
+
+# Button Split
+
+###### Selector
+```ts
+  <p-split-button></p-split-button>
+```
+
+###### Default
+<Canvas>
+  <p className="story-title">Primary</p>
+  <p className="story-title">Secondary</p>
+  <Story name="Primary"
+    args={{
+      label: 'Label',
+      buttonType: ButtonTypeEnum.Primary
+    }}>
+    {Template.bind({})}
+  </Story>
+    <Story name="Secondary"
+    args={{
+      label: 'Label',
+      buttonType: ButtonTypeEnum.Secondary
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Disabled
+<Canvas>
+  <p className="story-title">Primary</p>
+  <p className="story-title">Secondary</p>
+  <Story name="Primary Disabled"
+    args={{
+      label: 'Label',
+      disabled: true,
+      buttonType: ButtonTypeEnum.Primary
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Secondary Disabled"
+    args={{
+      label: 'Label',
+      disabled: true,
+      buttonType: ButtonTypeEnum.Secondary
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Component
+```ts
+export class ButtonComponent {
+  @Input() label: string;
+  @Input() large: boolean = false;
+  @Input() disabled: boolean = false;
+  @Input() iconBefore: string;
+  @Input() iconBeforeWidth: string = 'auto';
+  @Input() iconBeforeHeight: string = 'auto';
+  @Input() iconBeforeStrokeWidth: number;
+  @Input() iconAfter: string;
+  @Input() iconAfterWidth: string = 'auto';
+  @Input() iconAfterHeight: string = 'auto';
+  @Input() iconAfterStrokeWidth: number;
+  @Input() buttonType: ButtonTypeEnum = ButtonTypeEnum.Primary;
+  @Output() onClickTask: EventEmitter<any> = new EventEmitter();
+}
+```
+
+###### Types
+```ts
+export enum ButtonTypeEnum {
+  Primary = 'primary',
+  Secondary = 'secondary',
+  Tertiary = 'tertiary',
+  Distructive = 'distructive'
+}
+```
