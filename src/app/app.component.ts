@@ -32,6 +32,14 @@ export class AppComponent implements OnInit {
   menuListFreeText: any;
   inputMin: any;
   inputMax: any;
+  optionsListName = 'twoLabelsToggle';
+  optionsList = [{
+    optionName: 'First',
+    checked: true
+  },
+  {
+    optionName: 'Second'
+  }];
 
   constructor() {}
 
