@@ -6,6 +6,7 @@ $input-text-height: 32px;
 $input-text-padding: $menu-padding;
 $menu-header-height: $input-text-height + $menu-padding * 3 + 1px;
 $menu-header-extended-height: $input-text-height + ($menu-padding * 4.5) + ($menu-item-height * 2) + 1px;
+$menu-header-half-extended-height: $input-text-height + ($menu-padding * 4) + $menu-item-height + 1px;
 
 ::ng-deep .p-menu-multiple-item.mat-list-option.mat-list-item {
   font-family: $font-family-basic;
@@ -106,14 +107,19 @@ $menu-header-extended-height: $input-text-height + ($menu-padding * 4.5) + ($men
     padding-bottom: 0;
     padding-left: $menu-padding;
     // no buttons after input
-    .p-menu-header:not(.extended) + & {
+    .p-menu-header:not(.extended):not(.half-extended) + & {
       min-height: $menu-header-height + $menu-body-min-height;
       padding-top: $menu-header-height;
     }
-    // there are buttons after input
+    // there are 2 buttons after input
     .p-menu-header.extended + & {
       min-height: $menu-header-extended-height + $menu-body-min-height;
       padding-top: $menu-header-extended-height;
+    }
+    // there are 1 button after input
+    .p-menu-header.half-extended + & {
+      min-height: $menu-header-half-extended-height + $menu-body-min-height;
+      padding-top: $menu-header-half-extended-height;
     }
 
     &-container {

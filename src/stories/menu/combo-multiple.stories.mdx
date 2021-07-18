@@ -106,9 +106,9 @@ export const Template = (args) => <ComboComponent {...args} />
   </Story>
 </Canvas>
 
-###### Filter and Header Buttons
+###### Filter and Two Header Buttons
 <Canvas>
-  <Story name="Multi Select with Filter and Header Buttons"
+  <Story name="Filter and Two Header Buttons"
     args={{
       filterAriaLabel: 'Find Label',
       filterPlaceholder: 'Find Label',
@@ -124,6 +124,26 @@ export const Template = (args) => <ComboComponent {...args} />
       headerBtnLast: {
         label: 'Not equal to'
       },
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Filter and One Header Button
+<Canvas>
+  <Story name="Filter and One Header Button"
+    args={{
+      filterAriaLabel: 'Find Label',
+      filterPlaceholder: 'Find Label',
+      headerBtnFirst: {
+        label: 'Clear selected',
+        buttonType: ButtonTypeEnum.Tertiary,
+        icon: {
+          iconName: 'eraser',
+          width: '15',
+          height: '15'
+        }
+      }
     }}>
     {Template.bind({})}
   </Story>
