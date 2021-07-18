@@ -1,0 +1,37 @@
+<mat-form-field class="p-daterange p-datepicker p-input-text"
+                appearance="standard">
+  <mat-date-range-input [rangePicker]="picker"
+                        class="p-input-text-input"
+                        [class.filled]="isFilled">
+    <input matStartDate
+           attr.aria-label="Start date"
+           autocomplete="off"
+           readonly
+           class="p-input-text-input-start"
+           (click)="openDatepicker()"
+           (focus)="openDatepicker()">
+    <input matEndDate
+           #inputEndDate
+           attr.aria-label="End date"
+           autocomplete="off"
+           readonly
+           class="p-input-text-input-end"
+           (click)="openDatepicker()"
+           (focus)="openDatepicker()">
+  </mat-date-range-input>
+  <p-icon class="p-datepicker-icon"
+          [class.shown]="isOpened"
+          iconName="calendar"
+          width="16"
+          height="auto"
+          (click)="openDatepicker()">
+  </p-icon>
+  <mat-date-range-picker #picker
+                         (closed)="streamClosed()"
+                         panelClass="p-datepicker-panel">
+  </mat-date-range-picker>
+</mat-form-field>
+
+<!--<p class="p-datepicker-preview paragraph-2-link">-->
+  <!--Tuesday, March 16, 2021-->
+<!--</p>-->

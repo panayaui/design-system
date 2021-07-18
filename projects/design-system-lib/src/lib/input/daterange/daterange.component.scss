@@ -1,0 +1,26 @@
+@import "../../assets/styles/custom";
+@import '../datepicker/datepicker.component';
+
+$date-hover-focus-selector: ".mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover, .cdk-keyboard-focused .mat-calendar-body-active, .cdk-program-focused .mat-calendar-body-active";
+$date-hover-selector: ".mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover";
+$date-content-selector: ".mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical)";
+
+::ng-deep .p-daterange {
+  .p-input-text-input {
+    width: 100%;
+  }
+
+  .mat-date-range-input-separator {
+    opacity: 0;
+    transition: none;
+  }
+
+  .filled .mat-date-range-input-separator {
+    opacity: 1;
+  }
+}
+
+::ng-deep .cdk-overlay-pane.mat-datepicker-popup {
+  padding-top: 2px;
+}
+

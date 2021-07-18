@@ -1,28 +1,30 @@
 import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
 import {moduleMetadata} from '@storybook/angular';
 
-import {DatepickerComponent} from 'projects/design-system-lib/src/public-api';
+import {DaterangeComponent} from 'projects/design-system-lib/src/public-api';
 import {InputModule} from 'projects/design-system-lib/src/public-api';
 import {Validators} from '@angular/forms';
 
-<Meta title='Components/Datepicker' component={DatepickerComponent}
-decorators={[
-  moduleMetadata({
-    imports: [InputModule]
-        })
-]} />
+<Meta title='Components/Daterange' 
+  component={DaterangeComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [InputModule]
+    })
+  ]} 
+/>
 
-export const Template = (args) => <DatepickerComponent {...args} />
+export const Template = (args) => <DaterangeComponent {...args} />
 
-# Datepicker
+# Daterange
 
 ###### Selector
 ```html
-  <p-datepicker></p-datepicker>
+  <p-daterange></p-daterange>
 ```
 ###### Example
 <Canvas>
-  <Story name="Datepicker"
+  <Story name="Daterange"
      args={{
          label: 'Label',
          ariaLabel: 'Label',

@@ -19,6 +19,7 @@ import {InputLinkComponent} from './link/input-link.component';
 import {ButtonModule} from '../button/button.module';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {ModalModule} from '../modal/modal.module';
+import {DaterangeComponent} from './daterange/daterange.component';
 
 @NgModule({
   imports: [
@@ -41,6 +42,7 @@ import {ModalModule} from '../modal/modal.module';
     InputOutlineComponent,
     InputHeaderComponent,
     DatepickerComponent,
+    DaterangeComponent,
     InputTextTableLayoutComponent,
     TextareaComponent,
     InputLinkComponent
@@ -51,6 +53,7 @@ import {ModalModule} from '../modal/modal.module';
     InputOutlineComponent,
     InputHeaderComponent,
     DatepickerComponent,
+    DaterangeComponent,
     InputTextTableLayoutComponent,
     TextareaComponent,
     InputLinkComponent

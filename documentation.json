@@ -422,6 +422,53 @@
             "methods": []
         },
         {
+            "name": "IDaterange",
+            "id": "interface-IDaterange-0ed54fc800636df2d017aa0579b72a11",
+            "file": "projects/design-system-lib/src/lib/input/daterange/daterange.interface.ts",
+            "type": "interface",
+            "sourceCode": "export interface IDaterange {\r\n  ariaLabel?: string;\r\n  placeholder?: string;\r\n  disabled?: boolean;\r\n  readonly?: boolean;\r\n  value?: string;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "ariaLabel",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "disabled",
+                    "type": "boolean",
+                    "optional": true,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "placeholder",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "readonly",
+                    "type": "boolean",
+                    "optional": true,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "value",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 6
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
             "name": "IExpansionPanel",
             "id": "interface-IExpansionPanel-efc27f797265662ce742c5bee2d5f881",
             "file": "projects/design-system-lib/src/lib/expansion-panel/expansion-panel.interface.ts",
@@ -2277,7 +2324,7 @@
         },
         {
             "name": "ComboComponent",
-            "id": "component-ComboComponent-af810f44935e25f05a6166d6a8e4ff71",
+            "id": "component-ComboComponent-5c6635f29b3db678e2ce37f26ce64628",
             "file": "src/stories/menu/combobox/combo.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2509,7 +2556,7 @@
                     "line": 73
                 },
                 {
-                    "name": "publishChip",
+                    "name": "publishArray",
                     "args": [
                         {
                             "name": "selectedList",
@@ -2547,7 +2594,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input, ViewChild} from '@angular/core';\r\nimport {ButtonTypeEnum,\r\n  IActionButton,\r\n  IMenuButton,\r\n  ICheckbox,\r\n  IInputText,\r\n  IChip,\r\n  MenuRadioGroupComponent,\r\n  MenuTabsComponent,\r\n  MenuRangeComponent,\r\n  MenuFreeTextComponent,\r\n  IInputNumeric\r\n} from 'projects/design-system-lib/src/public-api';\r\n\r\n\r\n@Component({\r\n  selector: 'p-combo',\r\n  templateUrl: './combo.component.html',\r\n  styleUrls: ['./combo.component.scss']\r\n})\r\nexport class ComboComponent {\r\n  @Input() buttonType = ButtonTypeEnum;\r\n\r\n  // single select + input / action button\r\n  @Input() singleMenuTrigger: IInputText | IActionButton;\r\n  @Input() singleMenuList: any;\r\n  @Input() groupTitle: any;\r\n  @Input() buttonFirst: IMenuButton;\r\n  @Input() buttonLast: IMenuButton;\r\n  @Input() filterAriaLabel: string;\r\n  @Input() filterPlaceholder: string;\r\n\r\n  // multi select + action button\r\n  @Input() multiMenuTrigger: IActionButton;\r\n  @Input() multiMenuList: any;\r\n  @Input() headerBtnFirst: IMenuButton;\r\n  @Input() headerBtnLast: ICheckbox;\r\n  @Input() footerBtnFirst: IMenuButton;\r\n  @Input() footerBtnLast: IMenuButton;\r\n\r\n  // radio group + chip\r\n  @Input() radioMenuTrigger: IChip;\r\n  @Input() radioMenuList: any;\r\n  @ViewChild(MenuRadioGroupComponent) radioMenu: MenuRadioGroupComponent;\r\n\r\n  // tabs + chip\r\n  @Input() tabsMenuTrigger: IChip;\r\n  @Input() tabsMenuList: any;\r\n  @Input() checkboxList: {\r\n    checkbox: ICheckbox,\r\n    inputNum?: IInputNumeric\r\n  }[];\r\n  @ViewChild(MenuTabsComponent) tabsMenu: MenuRadioGroupComponent;\r\n\r\n  // range + chip\r\n  @Input() rangeMenuTrigger: IChip;\r\n  @Input() rangeMenuList: any;\r\n  @Input() inputMin: IInputNumeric;\r\n  @Input() inputMax: IInputNumeric;\r\n  @ViewChild(MenuRangeComponent) rangeMenu: MenuRangeComponent;\r\n\r\n  // free text + chip\r\n  @Input() freeTextMenuTrigger: IChip;\r\n  @Input() freeTextMenuList: any;\r\n  @ViewChild(MenuFreeTextComponent) freeTextMenu: MenuFreeTextComponent;\r\n\r\n  constructor() {}\r\n\r\n  openRadioMenu(): void {\r\n    this.radioMenu.openMenu();\r\n  }\r\n\r\n  openTabsMenu(): void {\r\n    this.tabsMenu.openMenu();\r\n  }\r\n\r\n  publishChip(selectedList, trigger): void {\r\n    console.log(selectedList);\r\n    const selectedNames: string[] = [];\r\n    selectedList.forEach( item => selectedNames.push(item.name));\r\n    trigger.values = selectedNames;\r\n  }\r\n\r\n  openRangeMenu(): void {\r\n    this.rangeMenu.openMenu();\r\n  }\r\n\r\n  openFreeTextMenu(): void {\r\n    this.freeTextMenu.openMenu();\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, Input, ViewChild} from '@angular/core';\r\nimport {ButtonTypeEnum,\r\n  IActionButton,\r\n  IMenuButton,\r\n  ICheckbox,\r\n  IInputText,\r\n  IChip,\r\n  MenuRadioGroupComponent,\r\n  MenuTabsComponent,\r\n  MenuRangeComponent,\r\n  MenuFreeTextComponent,\r\n  IInputNumeric\r\n} from 'projects/design-system-lib/src/public-api';\r\n\r\n\r\n@Component({\r\n  selector: 'p-combo',\r\n  templateUrl: './combo.component.html',\r\n  styleUrls: ['./combo.component.scss']\r\n})\r\nexport class ComboComponent {\r\n  @Input() buttonType = ButtonTypeEnum;\r\n\r\n  // single select + input / action button\r\n  @Input() singleMenuTrigger: IInputText | IActionButton;\r\n  @Input() singleMenuList: any;\r\n  @Input() groupTitle: any;\r\n  @Input() buttonFirst: IMenuButton;\r\n  @Input() buttonLast: IMenuButton;\r\n  @Input() filterAriaLabel: string;\r\n  @Input() filterPlaceholder: string;\r\n\r\n  // multi select + action button\r\n  @Input() multiMenuTrigger: IActionButton;\r\n  @Input() multiMenuList: any;\r\n  @Input() headerBtnFirst: IMenuButton;\r\n  @Input() headerBtnLast: ICheckbox;\r\n  @Input() footerBtnFirst: IMenuButton;\r\n  @Input() footerBtnLast: IMenuButton;\r\n\r\n  // radio group + chip\r\n  @Input() radioMenuTrigger: IChip;\r\n  @Input() radioMenuList: any;\r\n  @ViewChild(MenuRadioGroupComponent) radioMenu: MenuRadioGroupComponent;\r\n\r\n  // tabs + chip\r\n  @Input() tabsMenuTrigger: IChip;\r\n  @Input() tabsMenuList: any;\r\n  @Input() checkboxList: {\r\n    checkbox: ICheckbox,\r\n    inputNum?: IInputNumeric\r\n  }[];\r\n  @ViewChild(MenuTabsComponent) tabsMenu: MenuRadioGroupComponent;\r\n\r\n  // range + chip\r\n  @Input() rangeMenuTrigger: IChip;\r\n  @Input() rangeMenuList: any;\r\n  @Input() inputMin: IInputNumeric;\r\n  @Input() inputMax: IInputNumeric;\r\n  @ViewChild(MenuRangeComponent) rangeMenu: MenuRangeComponent;\r\n\r\n  // free text + chip\r\n  @Input() freeTextMenuTrigger: IChip;\r\n  @Input() freeTextMenuList: any;\r\n  @ViewChild(MenuFreeTextComponent) freeTextMenu: MenuFreeTextComponent;\r\n\r\n  constructor() {}\r\n\r\n  openRadioMenu(): void {\r\n    this.radioMenu.openMenu();\r\n  }\r\n\r\n  openTabsMenu(): void {\r\n    this.tabsMenu.openMenu();\r\n  }\r\n\r\n  publishArray(selectedList, trigger): void {\r\n    console.log(selectedList);\r\n    const selectedNames: string[] = [];\r\n    selectedList.forEach( item => selectedNames.push(item.name));\r\n    trigger.values = selectedNames;\r\n  }\r\n\r\n  openRangeMenu(): void {\r\n    this.rangeMenu.openMenu();\r\n  }\r\n\r\n  openFreeTextMenu(): void {\r\n    this.freeTextMenu.openMenu();\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2562,7 +2609,7 @@
                 "args": [],
                 "line": 65
             },
-            "templateData": "<!--Singe select-->\r\n<ng-container *ngIf=\"singleMenuTrigger && !groupTitle\">\r\n  <p-menu-single-select [menuList]=\"singleMenuList\"\r\n                        [buttonFirst]=\"buttonFirst\"\r\n                        [buttonLast]=\"buttonLast\">\r\n    <!--ng-content-->\r\n    <p-input-text [value]=\"singleMenuTrigger.value\"\r\n                  [ariaLabel]=\"singleMenuTrigger.ariaLabel\"\r\n                  [iconName]=\"singleMenuTrigger.iconName\"></p-input-text>\r\n    <!-- -->\r\n  </p-menu-single-select>\r\n</ng-container>\r\n\r\n<ng-container *ngIf=\"singleMenuTrigger && groupTitle && !filterPlaceholder\">\r\n  <p-menu-single-select [menuList]=\"singleMenuList\"\r\n                        [groupTitle]=\"groupTitle\"\r\n                        [buttonFirst]=\"buttonFirst\"\r\n                        [buttonLast]=\"buttonLast\">\r\n    <!--ng-content-->\r\n    <p-input-text [value]=\"singleMenuTrigger.value\"\r\n                  [ariaLabel]=\"singleMenuTrigger.ariaLabel\"\r\n                  [iconName]=\"singleMenuTrigger.iconName\"></p-input-text>\r\n    <!-- -->\r\n  </p-menu-single-select>\r\n</ng-container>\r\n\r\n<ng-container *ngIf=\"singleMenuTrigger && groupTitle && filterPlaceholder\">\r\n  <p-menu-single-select [menuList]=\"singleMenuList\"\r\n                        [groupTitle]=\"groupTitle\"\r\n                        [filterAriaLabel]=\"filterAriaLabel\"\r\n                        [filterPlaceholder]=\"filterPlaceholder\"\r\n                        [buttonFirst]=\"buttonFirst\"\r\n                        [buttonLast]=\"buttonLast\">\r\n    <!--ng-content-->\r\n    <p-action-button [label]=\"singleMenuTrigger.label\"\r\n                     [iconBeforeName]=\"singleMenuTrigger.iconBeforeName\"\r\n                     [iconBeforeWidth]=\"singleMenuTrigger.iconBeforeWidth\"\r\n                     [iconBeforeHeight]=\"singleMenuTrigger.iconBeforeHeight\"\r\n                     [iconBeforeStrokeWidth]=\"singleMenuTrigger.iconBeforeStrokeWidth\"\r\n                     [iconBeforeStrokeColor]=\"singleMenuTrigger.iconBeforeStrokeColor\"\r\n                     [isMenuTrigger]=\"true\"\r\n                     [isStandalone]=\"singleMenuTrigger.isStandalone\"></p-action-button>\r\n    <!-- -->\r\n  </p-menu-single-select>\r\n</ng-container>\r\n\r\n<!--Multi select-->\r\n<ng-container *ngIf=\"multiMenuTrigger && !filterPlaceholder && !headerBtnFirst\">\r\n  <p-menu-multi-select [menuList]=\"multiMenuList\"\r\n                        [headerBtnFirst]=\"headerBtnFirst\"\r\n                        [headerBtnLast]=\"headerBtnLast\"\r\n                        [footerBtnFirst]=\"footerBtnFirst\"\r\n                        [footerBtnLast]=\"footerBtnLast\">\r\n    <!--ng-content-->\r\n    <p-action-button [label]=\"multiMenuTrigger.label\"\r\n                     [iconBeforeName]=\"multiMenuTrigger.iconBeforeName\"\r\n                     [iconBeforeWidth]=\"multiMenuTrigger.iconBeforeWidth\"\r\n                     [iconBeforeHeight]=\"multiMenuTrigger.iconBeforeHeight\"\r\n                     [iconBeforeStrokeWidth]=\"multiMenuTrigger.iconBeforeStrokeWidth\"\r\n                     [iconBeforeStrokeColor]=\"multiMenuTrigger.iconBeforeStrokeColor\"\r\n                     [isMenuTrigger]=\"true\"\r\n                     [isStandalone]=\"multiMenuTrigger.isStandalone\"></p-action-button>\r\n    <!-- -->\r\n  </p-menu-multi-select>\r\n</ng-container>\r\n\r\n<ng-container *ngIf=\"multiMenuTrigger && filterPlaceholder && !headerBtnFirst\">\r\n  <p-menu-multi-select [menuList]=\"multiMenuList\"\r\n                       [filterPlaceholder]=\"filterPlaceholder\"\r\n                       [filterAriaLabel]=\"filterAriaLabel\"\r\n                       [footerBtnFirst]=\"footerBtnFirst\"\r\n                       [footerBtnLast]=\"footerBtnLast\">\r\n    <!--ng-content-->\r\n    <p-action-button [label]=\"multiMenuTrigger.label\"\r\n                     [iconBeforeName]=\"multiMenuTrigger.iconBeforeName\"\r\n                     [iconBeforeWidth]=\"multiMenuTrigger.iconBeforeWidth\"\r\n                     [iconBeforeHeight]=\"multiMenuTrigger.iconBeforeHeight\"\r\n                     [iconBeforeStrokeWidth]=\"multiMenuTrigger.iconBeforeStrokeWidth\"\r\n                     [iconBeforeStrokeColor]=\"multiMenuTrigger.iconBeforeStrokeColor\"\r\n                     [isMenuTrigger]=\"true\"\r\n                     [isStandalone]=\"multiMenuTrigger.isStandalone\"></p-action-button>\r\n    <!-- -->\r\n  </p-menu-multi-select>\r\n</ng-container>\r\n\r\n<ng-container *ngIf=\"multiMenuTrigger && filterPlaceholder && headerBtnFirst\">\r\n  <p-menu-multi-select [menuList]=\"multiMenuList\"\r\n                       [filterPlaceholder]=\"filterPlaceholder\"\r\n                       [filterAriaLabel]=\"filterAriaLabel\"\r\n                       [headerBtnFirst]=\"headerBtnFirst\"\r\n                       [headerBtnLast]=\"headerBtnLast\"\r\n                       [footerBtnFirst]=\"footerBtnFirst\"\r\n                       [footerBtnLast]=\"footerBtnLast\">\r\n    <!--ng-content-->\r\n    <p-action-button [label]=\"multiMenuTrigger.label\"\r\n                     [iconBeforeName]=\"multiMenuTrigger.iconBeforeName\"\r\n                     [iconBeforeWidth]=\"multiMenuTrigger.iconBeforeWidth\"\r\n                     [iconBeforeHeight]=\"multiMenuTrigger.iconBeforeHeight\"\r\n                     [iconBeforeStrokeWidth]=\"multiMenuTrigger.iconBeforeStrokeWidth\"\r\n                     [iconBeforeStrokeColor]=\"multiMenuTrigger.iconBeforeStrokeColor\"\r\n                     [isMenuTrigger]=\"true\"\r\n                     [isStandalone]=\"multiMenuTrigger.isStandalone\"></p-action-button>\r\n    <!-- -->\r\n  </p-menu-multi-select>\r\n</ng-container>\r\n\r\n<!--Radio group-->\r\n<ng-container *ngIf=\"radioMenuTrigger\">\r\n  <p-menu-radio-group [menuList]=\"radioMenuList\"\r\n                      [footerBtnFirst]=\"footerBtnFirst\"\r\n                      [footerBtnLast]=\"footerBtnLast\">\r\n    <!--ng-content-->\r\n    <p-chip-button [label]=\"radioMenuTrigger.label\"\r\n                    [values]=\"radioMenuTrigger.values\"\r\n                    [iconRemove]=\"radioMenuTrigger.iconRemove\"\r\n                    [full]=\"radioMenuTrigger.full\"\r\n                    [active]=\"radioMenuTrigger.active\"\r\n                    (onClickTask)=\"openRadioMenu()\"></p-chip-button>\r\n    <!-- -->\r\n  </p-menu-radio-group>\r\n</ng-container>\r\n\r\n<!--Tabs-->\r\n<ng-container *ngIf=\"tabsMenuTrigger\">\r\n  <p-menu-tabs [menuList]=\"tabsMenuList\"\r\n               [filterPlaceholder]=\"filterPlaceholder\"\r\n               [filterAriaLabel]=\"filterAriaLabel\"\r\n               [headerBtnFirst]=\"headerBtnFirst\"\r\n               [headerBtnLast]=\"headerBtnLast\"\r\n               [footerBtnFirst]=\"footerBtnFirst\"\r\n               [footerBtnLast]=\"footerBtnLast\"\r\n               [checkboxList]=\"checkboxList\"\r\n               (onClickTask)=\"publishChip($event, tabsMenuTrigger)\">\r\n    <!--ng-content-->\r\n    <p-chip-button [label]=\"tabsMenuTrigger.label\"\r\n                   [values]=\"tabsMenuTrigger.values\"\r\n                   [iconRemove]=\"tabsMenuTrigger.iconRemove\"\r\n                   [full]=\"tabsMenuTrigger.full\"\r\n                   [active]=\"tabsMenuTrigger.active\"\r\n                   (onClickTask)=\"openTabsMenu()\"></p-chip-button>\r\n    <!-- -->\r\n  </p-menu-tabs>\r\n</ng-container>\r\n\r\n<!--Range-->\r\n<ng-container *ngIf=\"rangeMenuTrigger\">\r\n  <p-menu-range [inputMax]=\"inputMax\"\r\n                [inputMin]=\"inputMin\"\r\n                [footerBtnFirst]=\"footerBtnFirst\"\r\n                [footerBtnLast]=\"footerBtnLast\">\r\n    <!--ng-content-->\r\n    <p-chip-button [label]=\"rangeMenuTrigger.label\"\r\n                   [values]=\"rangeMenuTrigger.values\"\r\n                   [iconRemove]=\"rangeMenuTrigger.iconRemove\"\r\n                   [full]=\"rangeMenuTrigger.full\"\r\n                   [active]=\"rangeMenuTrigger.active\"\r\n                   (onClickTask)=\"openRangeMenu()\"></p-chip-button>\r\n    <!-- -->\r\n  </p-menu-range>\r\n</ng-container>\r\n\r\n<!--Range-->\r\n<ng-container *ngIf=\"freeTextMenuTrigger\">\r\n  <p-menu-free-text [menuList]=\"freeTextMenuList\"\r\n                    [footerBtnFirst]=\"footerBtnFirst\"\r\n                    [footerBtnLast]=\"footerBtnLast\">\r\n    <!--ng-content-->\r\n    <p-chip-button [label]=\"freeTextMenuTrigger.label\"\r\n                   [values]=\"freeTextMenuTrigger.values\"\r\n                   [iconRemove]=\"freeTextMenuTrigger.iconRemove\"\r\n                   [full]=\"freeTextMenuTrigger.full\"\r\n                   [active]=\"freeTextMenuTrigger.active\"\r\n                   (onClickTask)=\"openFreeTextMenu()\"></p-chip-button>\r\n    <!-- -->\r\n  </p-menu-free-text>\r\n</ng-container>\r\n\r\n\r\n"
+            "templateData": "<!--Singe select-->\r\n<ng-container *ngIf=\"singleMenuTrigger && !groupTitle\">\r\n  <p-menu-single-select [menuList]=\"singleMenuList\"\r\n                        [buttonFirst]=\"buttonFirst\"\r\n                        [buttonLast]=\"buttonLast\">\r\n    <!--ng-content-->\r\n    <p-input-text [value]=\"singleMenuTrigger.value\"\r\n                  [ariaLabel]=\"singleMenuTrigger.ariaLabel\"\r\n                  [iconName]=\"singleMenuTrigger.iconName\"></p-input-text>\r\n    <!-- -->\r\n  </p-menu-single-select>\r\n</ng-container>\r\n\r\n<ng-container *ngIf=\"singleMenuTrigger && groupTitle && !filterPlaceholder\">\r\n  <p-menu-single-select [menuList]=\"singleMenuList\"\r\n                        [groupTitle]=\"groupTitle\"\r\n                        [buttonFirst]=\"buttonFirst\"\r\n                        [buttonLast]=\"buttonLast\">\r\n    <!--ng-content-->\r\n    <p-input-text [value]=\"singleMenuTrigger.value\"\r\n                  [ariaLabel]=\"singleMenuTrigger.ariaLabel\"\r\n                  [iconName]=\"singleMenuTrigger.iconName\"></p-input-text>\r\n    <!-- -->\r\n  </p-menu-single-select>\r\n</ng-container>\r\n\r\n<ng-container *ngIf=\"singleMenuTrigger && groupTitle && filterPlaceholder\">\r\n  <p-menu-single-select [menuList]=\"singleMenuList\"\r\n                        [groupTitle]=\"groupTitle\"\r\n                        [filterAriaLabel]=\"filterAriaLabel\"\r\n                        [filterPlaceholder]=\"filterPlaceholder\"\r\n                        [buttonFirst]=\"buttonFirst\"\r\n                        [buttonLast]=\"buttonLast\">\r\n    <!--ng-content-->\r\n    <p-action-button [label]=\"singleMenuTrigger.label\"\r\n                     [iconBeforeName]=\"singleMenuTrigger.iconBeforeName\"\r\n                     [iconBeforeWidth]=\"singleMenuTrigger.iconBeforeWidth\"\r\n                     [iconBeforeHeight]=\"singleMenuTrigger.iconBeforeHeight\"\r\n                     [iconBeforeStrokeWidth]=\"singleMenuTrigger.iconBeforeStrokeWidth\"\r\n                     [iconBeforeStrokeColor]=\"singleMenuTrigger.iconBeforeStrokeColor\"\r\n                     [isMenuTrigger]=\"true\"\r\n                     [isStandalone]=\"singleMenuTrigger.isStandalone\"></p-action-button>\r\n    <!-- -->\r\n  </p-menu-single-select>\r\n</ng-container>\r\n\r\n<!--Multi select-->\r\n<ng-container *ngIf=\"multiMenuTrigger && !filterPlaceholder && !headerBtnFirst\">\r\n  <p-menu-multi-select [menuList]=\"multiMenuList\"\r\n                        [headerBtnFirst]=\"headerBtnFirst\"\r\n                        [headerBtnLast]=\"headerBtnLast\"\r\n                        [footerBtnFirst]=\"footerBtnFirst\"\r\n                        [footerBtnLast]=\"footerBtnLast\">\r\n    <!--ng-content-->\r\n    <p-action-button [label]=\"multiMenuTrigger.label\"\r\n                     [iconBeforeName]=\"multiMenuTrigger.iconBeforeName\"\r\n                     [iconBeforeWidth]=\"multiMenuTrigger.iconBeforeWidth\"\r\n                     [iconBeforeHeight]=\"multiMenuTrigger.iconBeforeHeight\"\r\n                     [iconBeforeStrokeWidth]=\"multiMenuTrigger.iconBeforeStrokeWidth\"\r\n                     [iconBeforeStrokeColor]=\"multiMenuTrigger.iconBeforeStrokeColor\"\r\n                     [isMenuTrigger]=\"true\"\r\n                     [isStandalone]=\"multiMenuTrigger.isStandalone\"></p-action-button>\r\n    <!-- -->\r\n  </p-menu-multi-select>\r\n</ng-container>\r\n\r\n<ng-container *ngIf=\"multiMenuTrigger && filterPlaceholder && !headerBtnFirst\">\r\n  <p-menu-multi-select [menuList]=\"multiMenuList\"\r\n                       [filterPlaceholder]=\"filterPlaceholder\"\r\n                       [filterAriaLabel]=\"filterAriaLabel\"\r\n                       [footerBtnFirst]=\"footerBtnFirst\"\r\n                       [footerBtnLast]=\"footerBtnLast\">\r\n    <!--ng-content-->\r\n    <p-action-button [label]=\"multiMenuTrigger.label\"\r\n                     [iconBeforeName]=\"multiMenuTrigger.iconBeforeName\"\r\n                     [iconBeforeWidth]=\"multiMenuTrigger.iconBeforeWidth\"\r\n                     [iconBeforeHeight]=\"multiMenuTrigger.iconBeforeHeight\"\r\n                     [iconBeforeStrokeWidth]=\"multiMenuTrigger.iconBeforeStrokeWidth\"\r\n                     [iconBeforeStrokeColor]=\"multiMenuTrigger.iconBeforeStrokeColor\"\r\n                     [isMenuTrigger]=\"true\"\r\n                     [isStandalone]=\"multiMenuTrigger.isStandalone\"></p-action-button>\r\n    <!-- -->\r\n  </p-menu-multi-select>\r\n</ng-container>\r\n\r\n<ng-container *ngIf=\"multiMenuTrigger && filterPlaceholder && headerBtnFirst\">\r\n  <p-menu-multi-select [menuList]=\"multiMenuList\"\r\n                       [filterPlaceholder]=\"filterPlaceholder\"\r\n                       [filterAriaLabel]=\"filterAriaLabel\"\r\n                       [headerBtnFirst]=\"headerBtnFirst\"\r\n                       [headerBtnLast]=\"headerBtnLast\"\r\n                       [footerBtnFirst]=\"footerBtnFirst\"\r\n                       [footerBtnLast]=\"footerBtnLast\">\r\n    <!--ng-content-->\r\n    <p-action-button [label]=\"multiMenuTrigger.label\"\r\n                     [iconBeforeName]=\"multiMenuTrigger.iconBeforeName\"\r\n                     [iconBeforeWidth]=\"multiMenuTrigger.iconBeforeWidth\"\r\n                     [iconBeforeHeight]=\"multiMenuTrigger.iconBeforeHeight\"\r\n                     [iconBeforeStrokeWidth]=\"multiMenuTrigger.iconBeforeStrokeWidth\"\r\n                     [iconBeforeStrokeColor]=\"multiMenuTrigger.iconBeforeStrokeColor\"\r\n                     [isMenuTrigger]=\"true\"\r\n                     [isStandalone]=\"multiMenuTrigger.isStandalone\"></p-action-button>\r\n    <!-- -->\r\n  </p-menu-multi-select>\r\n</ng-container>\r\n\r\n<!--Radio group-->\r\n<ng-container *ngIf=\"radioMenuTrigger\">\r\n  <p-menu-radio-group [menuList]=\"radioMenuList\"\r\n                      [footerBtnFirst]=\"footerBtnFirst\"\r\n                      [footerBtnLast]=\"footerBtnLast\">\r\n    <!--ng-content-->\r\n    <p-chip-button [label]=\"radioMenuTrigger.label\"\r\n                    [values]=\"radioMenuTrigger.values\"\r\n                    [iconRemove]=\"radioMenuTrigger.iconRemove\"\r\n                    [full]=\"radioMenuTrigger.full\"\r\n                    [active]=\"radioMenuTrigger.active\"\r\n                    (onClickTask)=\"openRadioMenu()\"></p-chip-button>\r\n    <!-- -->\r\n  </p-menu-radio-group>\r\n</ng-container>\r\n\r\n<!--Tabs-->\r\n<ng-container *ngIf=\"tabsMenuTrigger\">\r\n  <p-menu-tabs [menuList]=\"tabsMenuList\"\r\n               [filterPlaceholder]=\"filterPlaceholder\"\r\n               [filterAriaLabel]=\"filterAriaLabel\"\r\n               [headerBtnFirst]=\"headerBtnFirst\"\r\n               [headerBtnLast]=\"headerBtnLast\"\r\n               [footerBtnFirst]=\"footerBtnFirst\"\r\n               [footerBtnLast]=\"footerBtnLast\"\r\n               [checkboxList]=\"checkboxList\"\r\n               (onClickTask)=\"publishArray($event, tabsMenuTrigger)\">\r\n    <!--ng-content-->\r\n    <p-chip-button [label]=\"tabsMenuTrigger.label\"\r\n                   [values]=\"tabsMenuTrigger.values\"\r\n                   [iconRemove]=\"tabsMenuTrigger.iconRemove\"\r\n                   [full]=\"tabsMenuTrigger.full\"\r\n                   [active]=\"tabsMenuTrigger.active\"\r\n                   (onClickTask)=\"openTabsMenu()\"></p-chip-button>\r\n    <!-- -->\r\n  </p-menu-tabs>\r\n</ng-container>\r\n\r\n<!--Range-->\r\n<ng-container *ngIf=\"rangeMenuTrigger\">\r\n  <p-menu-range [inputMax]=\"inputMax\"\r\n                [inputMin]=\"inputMin\"\r\n                [footerBtnFirst]=\"footerBtnFirst\"\r\n                [footerBtnLast]=\"footerBtnLast\">\r\n    <!--ng-content-->\r\n    <p-chip-button [label]=\"rangeMenuTrigger.label\"\r\n                   [values]=\"rangeMenuTrigger.values\"\r\n                   [iconRemove]=\"rangeMenuTrigger.iconRemove\"\r\n                   [full]=\"rangeMenuTrigger.full\"\r\n                   [active]=\"rangeMenuTrigger.active\"\r\n                   (onClickTask)=\"openRangeMenu()\"></p-chip-button>\r\n    <!-- -->\r\n  </p-menu-range>\r\n</ng-container>\r\n\r\n<!--Range-->\r\n<ng-container *ngIf=\"freeTextMenuTrigger\">\r\n  <p-menu-free-text [menuList]=\"freeTextMenuList\"\r\n                    [footerBtnFirst]=\"footerBtnFirst\"\r\n                    [footerBtnLast]=\"footerBtnLast\">\r\n    <!--ng-content-->\r\n    <p-chip-button [label]=\"freeTextMenuTrigger.label\"\r\n                   [values]=\"freeTextMenuTrigger.values\"\r\n                   [iconRemove]=\"freeTextMenuTrigger.iconRemove\"\r\n                   [full]=\"freeTextMenuTrigger.full\"\r\n                   [active]=\"freeTextMenuTrigger.active\"\r\n                   (onClickTask)=\"openFreeTextMenu()\"></p-chip-button>\r\n    <!-- -->\r\n  </p-menu-free-text>\r\n</ng-container>\r\n\r\n\r\n"
         },
         {
             "name": "DatepickerComponent",
@@ -2674,6 +2721,121 @@
                 {
                     "data": "@import \"../../assets/styles/custom\";\r\n@import '../text/input-text.component';\r\n\r\n$date-hover-focus-selector: \".mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover, .cdk-keyboard-focused .mat-calendar-body-active, .cdk-program-focused .mat-calendar-body-active\";\r\n$date-hover-selector: \".mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover\";\r\n$date-content-selector: \".mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical)\";\r\n\r\n// input trigger & icon & preview (Tuesday, March 16, 2021)\r\n.p-datepicker {\r\n  cursor: pointer;\r\n  .p-input-text-input {\r\n    cursor: pointer;\r\n  }\r\n  ::ng-deep &.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon-button {\r\n    width: 30px;\r\n    height: 30px;\r\n  }\r\n  .p-datepicker-icon {\r\n    font-size: 15px;\r\n    color: $primary-a-900;\r\n    opacity: 0;\r\n    transition: opacity 280ms;\r\n    position: absolute;\r\n    right: 0;\r\n    top: 8px;\r\n  }\r\n  ::ng-deep .mat-form-field-flex:hover .p-datepicker-icon,\r\n  .p-datepicker-icon.shown {\r\n      opacity: 1;\r\n  }\r\n  ::ng-deep .cdk-program-focused,\r\n  ::ng-deep .cdk-keyboard-focused {\r\n    .mat-button-focus-overlay {\r\n      opacity: 0;\r\n    }\r\n  }\r\n  ::ng-deep .mat-button-ripple {\r\n    display: none;\r\n  }\r\n\r\n  &-preview {\r\n    text-align: center;\r\n    //transform: translateY(300px);\r\n  }\r\n}\r\n\r\n// datepicker panel\r\n::ng-deep .mat-datepicker-content {\r\n  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1),\r\n              0px 2px 6px rgba(0, 0, 0, 0.04),\r\n              0px -3px 6px rgba(0, 0, 0, 0.04);\r\n}\r\n\r\n::ng-deep .p-datepicker-panel {\r\n  // header buttons\r\n  .mat-calendar-controls {\r\n    margin: 0;\r\n    justify-content: space-between;\r\n  }\r\n  .mat-calendar-period-button {\r\n    font-family: $font-family-basic;\r\n    font-size: $small-font-size;\r\n    color: $secondary-a-700;\r\n    height: $btn-small-height;\r\n    line-height: $btn-small-height;\r\n    border-radius: $btn-border-radius;\r\n    order: 2;\r\n    &:hover,\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n  }\r\n  .mat-calendar-previous-button,\r\n  .mat-calendar-next-button {\r\n    width: 36px;\r\n    height: 36px;\r\n    &:after {\r\n      margin: 13px;\r\n      border-color: $primary-a-900;\r\n      //border-top-width: 1.5px;\r\n    }\r\n    &:hover,\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n  }\r\n\r\n  .mat-calendar-previous-button {\r\n    order: 1;\r\n    &:after {\r\n      //border-left-width: 1.5px;\r\n    }\r\n  }\r\n  .mat-calendar-next-button {\r\n    order: 3;\r\n    &:after {\r\n      //border-right-width: 1.5px;\r\n    }\r\n  }\r\n\r\n  .mat-calendar-spacer {\r\n    display: none;\r\n  }\r\n\r\n  .mat-calendar-arrow {\r\n    display: none;\r\n  }\r\n  // hover\r\n  .mat-button:hover:not(.mat-button-disabled),\r\n  .mat-calendar-controls .mat-icon-button {\r\n    .mat-button-focus-overlay {\r\n      display: none;\r\n    }\r\n  }\r\n\r\n  // month\r\n  mat-month-view .mat-calendar-table {\r\n    margin-top: $gap-base;\r\n  }\r\n\r\n  // days of week\r\n  .mat-calendar-table-header th {\r\n    font-family: $font-family-basic;\r\n    font-size: $base-font-size;\r\n    color: $gray-scale-800;\r\n  }\r\n\r\n  // divider line\r\n  .mat-calendar-table-header-divider {\r\n    display: none;\r\n  }\r\n\r\n  // current month indication\r\n  tr:first-child .mat-calendar-body-label {\r\n    font-size: 0;\r\n    &[colspan=\"7\"] {\r\n      display: none;\r\n    }\r\n  }\r\n\r\n  // dates\r\n  .mat-calendar-body-cell-content {\r\n    font-family: $font-family-basic;\r\n    font-size: $small-font-size;\r\n    color: $primary-a-900;\r\n  }\r\n\r\n  // hover & focus\r\n  #{$date-hover-focus-selector} {\r\n    &>#{$date-content-selector}:not(.mat-calendar-body-today) {\r\n      background-color: $secondary-a-50;\r\n    }\r\n  }\r\n\r\n  // today\r\n  .mat-calendar-body-today:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {\r\n    background-color: $secondary-a-200;\r\n    border: none;\r\n  }\r\n\r\n  // today on hover & focus\r\n  #{$date-hover-focus-selector} {\r\n    &>.mat-calendar-body-today#{$date-content-selector} {\r\n      background-color: $secondary-a-200;\r\n    }\r\n  }\r\n\r\n  // selected\r\n  .mat-calendar-body-selected {\r\n    font-weight: 500;\r\n    color: $gray-scale-1;\r\n    background-color: $secondary-a-700;\r\n    box-shadow: none;\r\n  }\r\n\r\n  #{$date-hover-selector} {\r\n    &>.mat-calendar-body-selected {\r\n      color: $gray-scale-1;\r\n      background-color: $secondary-a-800;\r\n    }\r\n  }\r\n\r\n  // years\r\n  mat-multi-year-view,\r\n  mat-year-view {\r\n    .mat-calendar-body-cell-content {\r\n      height: 32px;\r\n    }\r\n  }\r\n}\r\n\r\n",
                     "styleUrl": "./datepicker.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<mat-form-field class=\"p-datepicker p-input-text\" appearance=\"standard\">\r\n  <input matInput\r\n         [matDatepicker]=\"picker\"\r\n         class=\"p-input-text-input\"\r\n         attr.aria-label=\"{{ariaLabel}}\"\r\n         autocomplete=\"off\"\r\n         readonly\r\n         (click)=\"openDatepicker()\"\r\n         (focus)=\"openDatepicker()\">\r\n  <p-icon class=\"p-datepicker-icon\"\r\n          [class.shown]=\"isOpened\"\r\n          iconName=\"calendar\"\r\n          width=\"16\"\r\n          height=\"auto\">\r\n  </p-icon>\r\n  <mat-datepicker #picker\r\n                  (closed)=\"streamClosed()\"\r\n                  panelClass=\"p-datepicker-panel\"></mat-datepicker>\r\n</mat-form-field>\r\n\r\n<!--<p class=\"p-datepicker-preview paragraph-2-link\">-->\r\n  <!--Tuesday, March 16, 2021-->\r\n<!--</p>-->\r\n"
+        },
+        {
+            "name": "DaterangeComponent",
+            "id": "component-DaterangeComponent-8f7fd43bc12e67c54aebe0f3f82a413d",
+            "file": "projects/design-system-lib/src/lib/input/daterange/daterange.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-daterange",
+            "styleUrls": [
+                "./daterange.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./daterange.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "ariaLabel",
+                    "line": 35,
+                    "type": "string"
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "line": 37,
+                    "type": "boolean"
+                },
+                {
+                    "name": "placeholder",
+                    "line": 36,
+                    "type": "string"
+                },
+                {
+                    "name": "value",
+                    "line": 38,
+                    "type": "string"
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "dateChange",
+                    "defaultValue": "new EventEmitter()",
+                    "line": 39,
+                    "type": "EventEmitter<any>"
+                },
+                {
+                    "name": "dateInput",
+                    "defaultValue": "new EventEmitter()",
+                    "line": 40,
+                    "type": "EventEmitter<any>"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "isOpened",
+                    "defaultValue": "false",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 42,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "picker",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 41,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'picker'"
+                        }
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "openDatepicker",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 44
+                },
+                {
+                    "name": "streamClosed",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 49
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, EventEmitter, Input, Output, ViewChild} from '@angular/core';\r\nimport {formatDate } from '@angular/common';\r\nimport {DateAdapter, MAT_DATE_FORMATS, NativeDateAdapter} from '@angular/material/core';\r\n\r\n// export const PICK_FORMATS = {\r\n//   parse: {dateInput: {month: 'short', year: 'numeric', day: 'numeric'}},\r\n//   display: {\r\n//     dateInput: 'input',\r\n//     monthYearLabel: {year: 'numeric', month: 'short'},\r\n//     dateA11yLabel: {year: 'numeric', month: 'long', day: 'numeric'},\r\n//     monthYearA11yLabel: {year: 'numeric', month: 'long'}\r\n//   }\r\n// };\r\n//\r\n// class PickDateAdapter extends NativeDateAdapter {\r\n//   format(date: Date, displayFormat: Object): string {\r\n//     if (displayFormat === 'input') {\r\n//       return formatDate(date,'dd-MMM-yyyy', this.locale);\r\n//     } else {\r\n//       return date.toDateString();\r\n//     }\r\n//   }\r\n// }\r\n\r\n@Component({\r\n  selector: 'p-daterange',\r\n  templateUrl: './daterange.component.html',\r\n  styleUrls: ['./daterange.component.scss'],\r\n  // providers: [\r\n  //   {provide: DateAdapter, useClass: PickDateAdapter},\r\n  //   {provide: MAT_DATE_FORMATS, useValue: PICK_FORMATS}\r\n  // ]\r\n})\r\nexport class DaterangeComponent {\r\n  @Input() ariaLabel: string;\r\n  @Input() placeholder: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() value: string;\r\n  @Output() dateChange: EventEmitter<any> = new EventEmitter();\r\n  @Output() dateInput: EventEmitter<any> = new EventEmitter();\r\n  @ViewChild('picker') picker;\r\n  public isOpened: boolean = false;\r\n\r\n  openDatepicker(): void {\r\n    this.isOpened = true;\r\n    this.picker.open();\r\n  }\r\n\r\n  streamClosed(): void {\r\n    this.isOpened = false;\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../../assets/styles/custom\";\r\n@import '../text/input-text.component';\r\n\r\n$date-hover-focus-selector: \".mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover, .cdk-keyboard-focused .mat-calendar-body-active, .cdk-program-focused .mat-calendar-body-active\";\r\n$date-hover-selector: \".mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover\";\r\n$date-content-selector: \".mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical)\";\r\n\r\n// input trigger & icon & preview (Tuesday, March 16, 2021)\r\n.p-datepicker {\r\n  cursor: pointer;\r\n  .p-input-text-input {\r\n    cursor: pointer;\r\n  }\r\n  ::ng-deep &.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon-button {\r\n    width: 30px;\r\n    height: 30px;\r\n  }\r\n  .p-datepicker-icon {\r\n    font-size: 15px;\r\n    color: $primary-a-900;\r\n    opacity: 0;\r\n    transition: opacity 280ms;\r\n    position: absolute;\r\n    right: 0;\r\n    top: 8px;\r\n  }\r\n  ::ng-deep .mat-form-field-flex:hover .p-datepicker-icon,\r\n  .p-datepicker-icon.shown {\r\n      opacity: 1;\r\n  }\r\n  ::ng-deep .cdk-program-focused,\r\n  ::ng-deep .cdk-keyboard-focused {\r\n    .mat-button-focus-overlay {\r\n      opacity: 0;\r\n    }\r\n  }\r\n  ::ng-deep .mat-button-ripple {\r\n    display: none;\r\n  }\r\n\r\n  &-preview {\r\n    text-align: center;\r\n    //transform: translateY(300px);\r\n  }\r\n}\r\n\r\n// datepicker panel\r\n::ng-deep .mat-datepicker-content {\r\n  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1),\r\n              0px 2px 6px rgba(0, 0, 0, 0.04),\r\n              0px -3px 6px rgba(0, 0, 0, 0.04);\r\n}\r\n\r\n::ng-deep .p-datepicker-panel {\r\n  // header buttons\r\n  .mat-calendar-controls {\r\n    margin: 0;\r\n    justify-content: space-between;\r\n  }\r\n  .mat-calendar-period-button {\r\n    font-family: $font-family-basic;\r\n    font-size: $small-font-size;\r\n    color: $secondary-a-700;\r\n    height: $btn-small-height;\r\n    line-height: $btn-small-height;\r\n    border-radius: $btn-border-radius;\r\n    order: 2;\r\n    &:hover,\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n  }\r\n  .mat-calendar-previous-button,\r\n  .mat-calendar-next-button {\r\n    width: 36px;\r\n    height: 36px;\r\n    &:after {\r\n      margin: 13px;\r\n      border-color: $primary-a-900;\r\n      //border-top-width: 1.5px;\r\n    }\r\n    &:hover,\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n  }\r\n\r\n  .mat-calendar-previous-button {\r\n    order: 1;\r\n    &:after {\r\n      //border-left-width: 1.5px;\r\n    }\r\n  }\r\n  .mat-calendar-next-button {\r\n    order: 3;\r\n    &:after {\r\n      //border-right-width: 1.5px;\r\n    }\r\n  }\r\n\r\n  .mat-calendar-spacer {\r\n    display: none;\r\n  }\r\n\r\n  .mat-calendar-arrow {\r\n    display: none;\r\n  }\r\n  // hover\r\n  .mat-button:hover:not(.mat-button-disabled),\r\n  .mat-calendar-controls .mat-icon-button {\r\n    .mat-button-focus-overlay {\r\n      display: none;\r\n    }\r\n  }\r\n\r\n  // month\r\n  mat-month-view .mat-calendar-table {\r\n    margin-top: $gap-base;\r\n  }\r\n\r\n  // days of week\r\n  .mat-calendar-table-header th {\r\n    font-family: $font-family-basic;\r\n    font-size: $base-font-size;\r\n    color: $gray-scale-800;\r\n  }\r\n\r\n  // divider line\r\n  .mat-calendar-table-header-divider {\r\n    display: none;\r\n  }\r\n\r\n  // current month indication\r\n  tr:first-child .mat-calendar-body-label {\r\n    font-size: 0;\r\n    &[colspan=\"7\"] {\r\n      display: none;\r\n    }\r\n  }\r\n\r\n  // dates\r\n  .mat-calendar-body-cell-content {\r\n    font-family: $font-family-basic;\r\n    font-size: $small-font-size;\r\n    color: $primary-a-900;\r\n  }\r\n\r\n  // hover & focus\r\n  #{$date-hover-focus-selector} {\r\n    &>#{$date-content-selector}:not(.mat-calendar-body-today) {\r\n      background-color: $secondary-a-50;\r\n    }\r\n  }\r\n\r\n  // today\r\n  .mat-calendar-body-today:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {\r\n    background-color: $secondary-a-200;\r\n    border: none;\r\n  }\r\n\r\n  // today on hover & focus\r\n  #{$date-hover-focus-selector} {\r\n    &>.mat-calendar-body-today#{$date-content-selector} {\r\n      background-color: $secondary-a-200;\r\n    }\r\n  }\r\n\r\n  // selected\r\n  .mat-calendar-body-selected {\r\n    font-weight: 500;\r\n    color: $gray-scale-1;\r\n    background-color: $secondary-a-700;\r\n    box-shadow: none;\r\n  }\r\n\r\n  #{$date-hover-selector} {\r\n    &>.mat-calendar-body-selected {\r\n      color: $gray-scale-1;\r\n      background-color: $secondary-a-800;\r\n    }\r\n  }\r\n\r\n  // years\r\n  mat-multi-year-view,\r\n  mat-year-view {\r\n    .mat-calendar-body-cell-content {\r\n      height: 32px;\r\n    }\r\n  }\r\n}\r\n\r\n",
+                    "styleUrl": "./daterange.component.scss"
                 }
             ],
             "stylesData": "",
@@ -6770,6 +6932,9 @@
                             "name": "DatepickerComponent"
                         },
                         {
+                            "name": "DaterangeComponent"
+                        },
+                        {
                             "name": "InputHeaderComponent"
                         },
                         {
@@ -6811,6 +6976,9 @@
                     "elements": [
                         {
                             "name": "DatepickerComponent"
+                        },
+                        {
+                            "name": "DaterangeComponent"
                         },
                         {
                             "name": "InputHeaderComponent"
@@ -7501,9 +7669,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/icons/icon.stories.ts",
-                "type": "Story<IconComponent>",
-                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/colors/Color-palette.stories.ts",
+                "type": "Story<ColorPaletteComponent>",
+                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -7517,9 +7685,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/colors/Color-palette.stories.ts",
-                "type": "Story<ColorPaletteComponent>",
-                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/icons/icon.stories.ts",
+                "type": "Story<IconComponent>",
+                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -8504,6 +8672,24 @@
                 "type": "interface",
                 "linktype": "interface",
                 "name": "IDatepicker",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/input/daterange/daterange.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DaterangeComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/11",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/input/daterange/daterange.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "IDaterange",
                 "coveragePercent": 0,
                 "coverageCount": "0/6",
                 "status": "low"

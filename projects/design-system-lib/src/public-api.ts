@@ -25,9 +25,12 @@ export * from './lib/input/table-layout/input-text-table-layout.component';
 export * from './lib/input/outline/input-outline.component';
 export * from './lib/input/header/input-header.component';
 export * from './lib/input/datepicker/datepicker.component';
+export * from './lib/input/datepicker/datepicker.interface';
 export * from './lib/input/textarea/textarea.component';
 export * from './lib/input/textarea/textarea.enum';
 export * from './lib/input/link/input-link.component';
+export * from './lib/input/daterange/daterange.component';
+export * from './lib/input/daterange/daterange.interface';
 
 export * from './lib/alert/alert.module';
 export * from './lib/alert/alert.component';
