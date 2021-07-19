@@ -23,10 +23,9 @@ export const Template = (args) => <SplitButtonComponent {...args} />
   <p-split-button></p-split-button>
 ```
 
-###### Default
+###### Small
 <Canvas>
-  <p className="story-title">Primary</p>
-  <p className="story-title">Secondary</p>
+  <p className="story-title">Default</p>
   <Story name="Primary"
     args={{
       label: 'Label',
@@ -41,12 +40,7 @@ export const Template = (args) => <SplitButtonComponent {...args} />
     }}>
     {Template.bind({})}
   </Story>
-</Canvas>
-
-###### Disabled
-<Canvas>
-  <p className="story-title">Primary</p>
-  <p className="story-title">Secondary</p>
+  <p className="story-title">Disabled</p>
   <Story name="Primary Disabled"
     args={{
       label: 'Label',
@@ -60,6 +54,130 @@ export const Template = (args) => <SplitButtonComponent {...args} />
       label: 'Label',
       disabled: true,
       buttonType: ButtonTypeEnum.Secondary
+    }}>
+    {Template.bind({})}
+  </Story>
+  <p className="story-title">Icon</p>
+  <Story name="Primary With Icon"
+    args={{
+      label: 'Label',
+      buttonType: ButtonTypeEnum.Primary,
+      iconBefore: 'eye',
+      iconBeforeWidth: '17'
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Secondary With Icon"
+    args={{
+      label: 'Label',
+      buttonType: ButtonTypeEnum.Secondary,
+      iconBefore: 'eye',
+      iconBeforeWidth: '17'
+    }}>
+    {Template.bind({})}
+  </Story>
+  <p className="story-title">Disabled</p>
+  <Story name="Primary With Icon Disabled"
+    args={{
+      label: 'Label',
+      disabled: true,
+      buttonType: ButtonTypeEnum.Primary,
+      iconBefore: 'eye',
+      iconBeforeWidth: '17'
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Secondary With Icon Disabled"
+    args={{
+      label: 'Label',
+      disabled: true,
+      buttonType: ButtonTypeEnum.Secondary,
+      iconBefore: 'eye',
+      iconBeforeWidth: '17'
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Large
+<Canvas>
+  <p className="story-title">Default</p>
+  <Story name="Large Primary"
+    args={{ 
+      label: 'Label',
+      large: true,
+      buttonType: ButtonTypeEnum.Primary
+    }}>
+    {Template.bind({})}
+  </Story>
+    <Story name="Large Secondary"
+    args={{
+      label: 'Label',
+      large: true,
+      buttonType: ButtonTypeEnum.Secondary
+    }}>
+    {Template.bind({})}
+  </Story>
+  <p className="story-title">Disabled</p>
+  <Story name="Large Primary Disabled"
+    args={{
+      label: 'Label',
+      disabled: true,
+      large: true,
+      buttonType: ButtonTypeEnum.Primary
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Large Secondary Disabled"
+    args={{
+      label: 'Label',
+      disabled: true,
+      large: true,
+      buttonType: ButtonTypeEnum.Secondary
+    }}>
+    {Template.bind({})}
+  </Story>
+  <p className="story-title">Icon</p>
+  <Story name="Large Primary With Icon"
+    args={{
+      label: 'Label',
+      large: true,
+      buttonType: ButtonTypeEnum.Primary,
+      iconBefore: 'eye',
+      iconBeforeWidth: '17'
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Large Secondary With Icon"
+    args={{
+      label: 'Label',
+      large: true,
+      buttonType: ButtonTypeEnum.Secondary,
+      iconBefore: 'eye',
+      iconBeforeWidth: '17'
+    }}>
+    {Template.bind({})}
+  </Story>
+  <p className="story-title">Disabled</p>
+  <Story name="Large Primary With Icon Disabled"
+    args={{
+      label: 'Label',
+      disabled: true,
+      large: true,
+      buttonType: ButtonTypeEnum.Primary,
+      iconBefore: 'eye',
+      iconBeforeWidth: '17'
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Large Secondary With Icon Disabled"
+    args={{
+      label: 'Label',
+      disabled: true,
+      large: true,
+      buttonType: ButtonTypeEnum.Secondary,
+      iconBefore: 'eye',
+      iconBeforeWidth: '17'
     }}>
     {Template.bind({})}
   </Story>
@@ -81,6 +199,9 @@ export class ButtonComponent {
   @Input() iconAfterStrokeWidth: number;
   @Input() buttonType: ButtonTypeEnum = ButtonTypeEnum.Primary;
   @Output() onClickTask: EventEmitter<any> = new EventEmitter();
+}
+export class SplitButtonComponent extends ButtonComponent {
+  @Output() onClickTrigger: EventEmitter<any> = new EventEmitter();
 }
 ```
 
