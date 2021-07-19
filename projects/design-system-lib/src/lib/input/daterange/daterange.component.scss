@@ -20,6 +20,23 @@ $date-content-selector: ".mat-calendar-body-cell-content:not(.mat-calendar-body-
   }
 }
 
+::ng-deep .mat-calendar-body-in-range {
+  .mat-calendar-body-cell-content,
+  &:before,
+  &:after {
+    font-weight: 500;
+    color: $gray-scale-1;
+    background-color: $secondary-a-700;
+  }
+  &:hover {
+    .mat-calendar-body-cell-content,
+    &:before,
+    &:after {
+      background-color: $secondary-a-800 !important;
+    }
+  }
+}
+
 ::ng-deep .cdk-overlay-pane.mat-datepicker-popup {
   padding-top: 2px;
 }
