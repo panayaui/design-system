@@ -18,7 +18,7 @@
       <input matInput
              [type]="type"
              [placeholder]="placeholder"
-             [readonly]="readonly"
+             [readonly]="readonly || notEditable"
              attr.aria-label="{{ariaLabel}}"
              [formControl]="formFieldControl"
              [errorStateMatcher]="matcher"

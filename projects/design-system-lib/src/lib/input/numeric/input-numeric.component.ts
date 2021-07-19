@@ -16,6 +16,7 @@ export class InputNumericComponent implements OnInit {
   @Input() errorMessage: string;
   @Input() disabled: boolean = false;
   @Input() readonly: boolean = false;
+  @Input() notEditable: boolean = false; // readonly input that looks like regular one (with underline)
   @Input() value: number;
   @Input() validators: ValidatorFn[];
   @Input() labelLast: boolean = false;
