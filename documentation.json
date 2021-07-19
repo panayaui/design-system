@@ -3038,7 +3038,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n:host {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n.p-icon {\r\n  display: inline-flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n// custom icons\r\n.p-icon-custom {\r\n  background-repeat: no-repeat;\r\n  background-size: contain;\r\n  &-eraser {\r\n    background-image: url('../assets/images/icons/eraser.svg');\r\n  }\r\n  &-eraser-disabled {\r\n    background-image: url('../assets/images/icons/eraser-disabled.svg');\r\n  }\r\n  &-unlink {\r\n    background-image: url('../assets/images/icons/unlink.svg');\r\n  }\r\n\r\n}\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n:host {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n.p-icon {\r\n  display: inline-flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n// custom icons\r\n.p-icon-custom {\r\n  background-repeat: no-repeat;\r\n  background-size: contain;\r\n  &-eraser {\r\n    background-image: url('../assets/images/icons/eraser.svg');\r\n  }\r\n  &-eraser-disabled {\r\n    background-image: url('../assets/images/icons/eraser-disabled.svg');\r\n  }\r\n  &-unlink {\r\n    background-image: url('../assets/images/icons/unlink.svg');\r\n  }\r\n  &-first {\r\n    background-image: url('../assets/images/icons/first.svg');\r\n  }\r\n  &-first-disabled {\r\n    background-image: url('../assets/images/icons/first-disabled.svg');\r\n  }\r\n  &-last {\r\n    background-image: url('../assets/images/icons/last.svg');\r\n  }\r\n  &-last-disabled {\r\n    background-image: url('../assets/images/icons/last-disabled.svg');\r\n  }\r\n}\r\n",
                     "styleUrl": "./icon.component.scss"
                 }
             ],
@@ -4953,7 +4953,7 @@
         },
         {
             "name": "MenuSingleSelectComponent",
-            "id": "component-MenuSingleSelectComponent-c34c1285536752a91ba81321ca03215e",
+            "id": "component-MenuSingleSelectComponent-17ccb13d0a71c5a8961e17f00c3dc4ff",
             "file": "projects/design-system-lib/src/lib/menu/menu-single-select/menu-single-select.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -5067,7 +5067,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 45,
+                    "line": 46,
                     "jsdoctags": [
                         {
                             "name": "value",
@@ -5084,7 +5084,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 38
+                    "line": 39
                 },
                 {
                     "name": "ngOnInit",
@@ -5109,7 +5109,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 59,
+                    "line": 60,
                     "jsdoctags": [
                         {
                             "name": "$event",
@@ -5133,7 +5133,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 55
+                    "line": 56
                 }
             ],
             "hostBindings": [],
@@ -5141,7 +5141,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild} from '@angular/core';\r\nimport {FormControl} from '@angular/forms';\r\nimport {SubscriptionLike} from 'rxjs';\r\nimport {IMenuButton} from '../menu-button.interface';\r\nimport {MatMenuTrigger} from '@angular/material/menu';\r\n\r\n@Component({\r\n  selector: 'p-menu-single-select',\r\n  templateUrl: './menu-single-select.component.html',\r\n  styleUrls: ['./menu-single-select.component.scss'],\r\n})\r\nexport class MenuSingleSelectComponent implements OnInit, OnDestroy {\r\n  @Input() menuList: any[];\r\n  @Input() groupTitle: boolean = false; // true if there is a group title\r\n  @Input() filterPlaceholder: string; // if there is a search and buttons\r\n  @Input() filterAriaLabel: string;\r\n  @Input() buttonFirst: IMenuButton;\r\n  @Input() buttonLast: IMenuButton;\r\n  @Output() onClickTask: EventEmitter<any> = new EventEmitter();\r\n  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;\r\n  public filteredList: any[];\r\n  public formFieldControl: FormControl;\r\n  private sub: SubscriptionLike;\r\n\r\n  ngOnInit(): void {\r\n    this.filteredList = this.menuList;\r\n    if (this.filterPlaceholder) {\r\n      this.formFieldControl = new FormControl('');\r\n      this.sub = this.formFieldControl.valueChanges.subscribe((value: string) => {\r\n        this.alterList(value);\r\n      });\r\n    }\r\n    if (!this.filterAriaLabel && this.filterPlaceholder) {\r\n      this.filterAriaLabel = this.filterPlaceholder;\r\n    }\r\n  }\r\n\r\n  ngOnDestroy(): void {\r\n    if (this.filterPlaceholder && this.sub) {\r\n      this.sub.unsubscribe();\r\n      this.sub = null;\r\n    }\r\n  }\r\n\r\n  alterList(value: string): void {\r\n    this.filteredList = [];\r\n    this.menuList.forEach(group => {\r\n      const filteredGroup = group.names.filter( name => name.name.toLowerCase().indexOf(value.toLowerCase()) > -1);\r\n      if (filteredGroup.length > 0) {\r\n        this.filteredList.push(Object.assign({}, group, group.names = filteredGroup));\r\n      }\r\n    });\r\n  }\r\n\r\n  selectCompleted(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  onSelectedItem($event, item): void {\r\n    console.log(item);\r\n    this.onClickTask.emit(item);\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild} from '@angular/core';\r\nimport {FormControl} from '@angular/forms';\r\nimport {SubscriptionLike} from 'rxjs';\r\nimport {IMenuButton} from '../menu-button.interface';\r\nimport {MatMenuTrigger} from '@angular/material/menu';\r\n\r\n@Component({\r\n  selector: 'p-menu-single-select',\r\n  templateUrl: './menu-single-select.component.html',\r\n  styleUrls: ['./menu-single-select.component.scss'],\r\n})\r\nexport class MenuSingleSelectComponent implements OnInit, OnDestroy {\r\n  @Input() menuList: any[];\r\n  @Input() groupTitle: boolean = false; // true if there is a group title\r\n  @Input() filterPlaceholder: string; // if there is a search and buttons\r\n  @Input() filterAriaLabel: string;\r\n  @Input() buttonFirst: IMenuButton;\r\n  @Input() buttonLast: IMenuButton;\r\n  @Output() onClickTask: EventEmitter<any> = new EventEmitter();\r\n  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;\r\n  public filteredList: any[];\r\n  public formFieldControl: FormControl;\r\n  private sub: SubscriptionLike;\r\n\r\n  ngOnInit(): void {\r\n    console.log(this.menuList);\r\n    this.filteredList = this.menuList;\r\n    if (this.filterPlaceholder) {\r\n      this.formFieldControl = new FormControl('');\r\n      this.sub = this.formFieldControl.valueChanges.subscribe((value: string) => {\r\n        this.alterList(value);\r\n      });\r\n    }\r\n    if (!this.filterAriaLabel && this.filterPlaceholder) {\r\n      this.filterAriaLabel = this.filterPlaceholder;\r\n    }\r\n  }\r\n\r\n  ngOnDestroy(): void {\r\n    if (this.filterPlaceholder && this.sub) {\r\n      this.sub.unsubscribe();\r\n      this.sub = null;\r\n    }\r\n  }\r\n\r\n  alterList(value: string): void {\r\n    this.filteredList = [];\r\n    this.menuList.forEach(group => {\r\n      const filteredGroup = group.names.filter( name => name.name.toLowerCase().indexOf(value.toLowerCase()) > -1);\r\n      if (filteredGroup.length > 0) {\r\n        this.filteredList.push(Object.assign({}, group, group.names = filteredGroup));\r\n      }\r\n    });\r\n  }\r\n\r\n  selectCompleted(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  onSelectedItem($event, item): void {\r\n    console.log(item);\r\n    this.onClickTask.emit(item);\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -5644,7 +5644,7 @@
         },
         {
             "name": "PaginatorComponent",
-            "id": "component-PaginatorComponent-6c4cca1ee53711621c099d6a7597bbf3",
+            "id": "component-PaginatorComponent-cbb60ed8c18f6fd9de2b2dc4ae790938",
             "file": "projects/design-system-lib/src/lib/paginator/paginator.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -5662,77 +5662,134 @@
             "viewProviders": [],
             "inputsClass": [
                 {
-                    "name": "disabled",
-                    "defaultValue": "false",
-                    "line": 10,
-                    "type": "boolean"
+                    "name": "currentPage",
+                    "defaultValue": "1",
+                    "line": 12
                 },
                 {
-                    "name": "iconBeforeHeight",
-                    "defaultValue": "'auto'",
-                    "line": 13,
-                    "type": "string"
+                    "name": "pageSize",
+                    "defaultValue": "50",
+                    "line": 21
                 },
                 {
-                    "name": "iconBeforeName",
-                    "line": 11,
-                    "type": "string"
+                    "name": "pageSizeOptions",
+                    "line": 18,
+                    "type": "literal type[]"
                 },
                 {
-                    "name": "iconBeforeStrokeColor",
+                    "name": "totalPages",
                     "line": 15,
-                    "type": "string"
-                },
-                {
-                    "name": "iconBeforeStrokeWidth",
-                    "line": 14,
                     "type": "number"
-                },
-                {
-                    "name": "iconBeforeWidth",
-                    "defaultValue": "'auto'",
-                    "line": 12,
-                    "type": "string"
-                },
-                {
-                    "name": "isMenuTrigger",
-                    "defaultValue": "false",
-                    "line": 16,
-                    "type": "boolean"
-                },
-                {
-                    "name": "isStandalone",
-                    "defaultValue": "true",
-                    "line": 17,
-                    "type": "boolean"
-                },
-                {
-                    "name": "label",
-                    "line": 9,
-                    "type": "string"
                 }
             ],
-            "outputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "firstPageClicked",
+                    "defaultValue": "new EventEmitter()",
+                    "line": 31,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "lastPageClicked",
+                    "defaultValue": "new EventEmitter()",
+                    "line": 33,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "nextPageClicked",
+                    "defaultValue": "new EventEmitter()",
+                    "line": 29,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "pageNumberClicked",
+                    "defaultValue": "new EventEmitter()",
+                    "line": 35,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "pageSizeChanged",
+                    "defaultValue": "new EventEmitter<number>()",
+                    "line": 24,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "prevPageClicked",
+                    "defaultValue": "new EventEmitter()",
+                    "line": 27,
+                    "type": "EventEmitter"
+                }
+            ],
             "propertiesClass": [
                 {
-                    "name": "isActive",
-                    "defaultValue": "false",
-                    "type": "boolean",
+                    "name": "buttonType",
+                    "defaultValue": "ButtonTypeEnum",
+                    "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 18,
+                    "line": 40,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "inputNumericSize",
+                    "defaultValue": "InputNumericSizeEnum",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 41,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "pagesList",
+                    "defaultValue": "[]",
+                    "type": "number[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 43,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "step",
+                    "defaultValue": "5",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 42,
                     "modifierKind": [
                         114
                     ]
                 }
             ],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "definePagesList",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 63
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 45
+                }
+            ],
             "hostBindings": [],
             "hostListeners": [],
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'p-paginator',\r\n  templateUrl: './paginator.component.html',\r\n  styleUrls: ['./paginator.component.scss'],\r\n})\r\nexport class PaginatorComponent {\r\n  @Input() label: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() iconBeforeName: string;\r\n  @Input() iconBeforeWidth: string = 'auto';\r\n  @Input() iconBeforeHeight: string = 'auto';\r\n  @Input() iconBeforeStrokeWidth: number;\r\n  @Input() iconBeforeStrokeColor: string;\r\n  @Input() isMenuTrigger: boolean = false;\r\n  @Input() isStandalone: boolean = true;\r\n  public isActive: boolean = false;\r\n}\r\n",
+            "sourceCode": "import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';\r\nimport {ButtonTypeEnum} from '../button/button-type.enum';\r\nimport {InputNumericSizeEnum} from '../input/numeric/input-numeric-size.enum';\r\n\r\n@Component({\r\n  selector: 'p-paginator',\r\n  templateUrl: './paginator.component.html',\r\n  styleUrls: ['./paginator.component.scss'],\r\n})\r\nexport class PaginatorComponent implements OnInit {\r\n  @Input()\r\n  currentPage = 1; // based 1\r\n\r\n  @Input()\r\n  totalPages: number;\r\n\r\n  @Input()\r\n  pageSizeOptions?: { name: any }[];\r\n\r\n  @Input()\r\n  pageSize = 50;\r\n\r\n  @Output()\r\n  pageSizeChanged = new EventEmitter<number>();\r\n\r\n  @Output()\r\n  prevPageClicked = new EventEmitter();\r\n  @Output()\r\n  nextPageClicked = new EventEmitter();\r\n  @Output()\r\n  firstPageClicked = new EventEmitter();\r\n  @Output()\r\n  lastPageClicked = new EventEmitter();\r\n  @Output()\r\n  pageNumberClicked = new EventEmitter();\r\n  /*\r\n  @Output()\r\n  onPageNumberInput = new EventEmitter<number>();\r\n*/\r\n  public buttonType = ButtonTypeEnum;\r\n  public inputNumericSize = InputNumericSizeEnum;\r\n  public step: number = 5;\r\n  public pagesList: number[] = [];\r\n\r\n  ngOnInit(): void {\r\n    if (!this.pageSizeOptions) this.pageSizeOptions = [\r\n      {name: 25},\r\n      {name: 50},\r\n      {name: 100}\r\n    ];\r\n    console.log(this.pageSizeOptions);\r\n    this.definePagesList();\r\n  }\r\n\r\n  get canMoveToPrevious(): boolean {\r\n    return this.currentPage > 1;\r\n  }\r\n\r\n  get canMoveToNext(): boolean {\r\n    return this.currentPage < this.totalPages;\r\n  }\r\n\r\n  definePagesList(): void {\r\n    let lastShown = 1;\r\n    if (this.pagesList.length) {\r\n      lastShown = this.pagesList.length;\r\n    }\r\n    for ( let i = lastShown; i <= this.step; i++) {\r\n      this.pagesList.push(i);\r\n    }\r\n    console.log(this.pagesList);\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -5741,7 +5798,30 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<button class=\"p-action-btn\"\r\n        [ngClass]=\"{'menu-trigger' : isMenuTrigger, 'active' : isActive, 'standalone' : isStandalone}\"\r\n        [disabled]=\"disabled\"\r\n        (click)=\"isActive = true\"\r\n        (blur)=\"isActive = false\">\r\n  <p-icon *ngIf=\"iconBeforeName\"\r\n          class=\"p-action-btn-icon\"\r\n          [iconName]=\"iconBeforeName\"\r\n          [width]=\"iconBeforeWidth\"\r\n          [height]=\"iconBeforeHeight\"\r\n          [stroke]=\"iconBeforeStrokeColor\"\r\n          [strokeWidth]=\"iconBeforeStrokeWidth\"\r\n          [disabled]=\"disabled\"></p-icon>\r\n  <span class=\"p-action-btn-label\">{{label}}</span>\r\n  <p-icon *ngIf=\"isMenuTrigger\"\r\n          class=\"p-action-btn-arrow\"\r\n          iconName=\"chevron-down\"\r\n          [width]=\"17\"\r\n          [disabled]=\"disabled\"></p-icon>\r\n</button>\r\n"
+            "implements": [
+                "OnInit"
+            ],
+            "accessors": {
+                "canMoveToPrevious": {
+                    "name": "canMoveToPrevious",
+                    "getSignature": {
+                        "name": "canMoveToPrevious",
+                        "type": "boolean",
+                        "returnType": "boolean",
+                        "line": 55
+                    }
+                },
+                "canMoveToNext": {
+                    "name": "canMoveToNext",
+                    "getSignature": {
+                        "name": "canMoveToNext",
+                        "type": "boolean",
+                        "returnType": "boolean",
+                        "line": 59
+                    }
+                }
+            },
+            "templateData": "<div class=\"p-paginator\">\r\n  <p-button class=\"p-paginator-arrow first\"\r\n            ariaLabel=\"Move to the first page\"\r\n            [disabled]=\"!canMoveToPrevious\"\r\n            iconBefore=\"first\"\r\n            iconBeforeWidth=\"10\"\r\n            iconBeforeHeight=\"10\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"firstPageClicked.emit()\"></p-button>\r\n  <p-button class=\"p-paginator-arrow prev\"\r\n            ariaLabel=\"Move to the previous page\"\r\n            [disabled]=\"!canMoveToPrevious\"\r\n            iconBefore=\"chevron-left\"\r\n            iconBeforeWidth=\"17\"\r\n            iconBeforeStrokeWidth=\"2\"\r\n            [iconBeforeStrokeColor]=\"!canMoveToPrevious ? '#B3B3B3' : 'currentColor'\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"prevPageClicked.emit()\"></p-button>\r\n\r\n  <ul class=\"p-paginator-list\">\r\n    <li class=\"p-paginator-item\" *ngIf=\"!canMoveToNext\">\r\n      <p-button class=\"p-paginator-page more\"\r\n                ariaLabel=\"Show other {{ step }} pages\"\r\n                iconBefore=\"more-horizontal\"\r\n                iconBeforeWidth=\"17\"\r\n                iconBeforeStrokeWidth=\"2\"\r\n                [iconBeforeStrokeColor]=\"!canMoveToNext ? '#B3B3B3' : 'currentColor'\"\r\n                [buttonType]=\"buttonType.IsIcon\"\r\n                (click)=\"definePagesList()\"></p-button>\r\n    </li>\r\n    <li class=\"p-paginator-item\" *ngFor=\"let pageNumber of pagesList\">\r\n      <p-button class=\"p-paginator-page\"\r\n                [label]=\"pageNumber\"\r\n                [ariaLabel]=\"'Move to page ' + pageNumber\"\r\n                [buttonType]=\"buttonType.Tertiary\"\r\n                (click)=\"pageNumberClicked.emit()\"></p-button>\r\n    </li>\r\n    <li class=\"p-paginator-item\" *ngIf=\"canMoveToNext\">\r\n      <p-button class=\"p-paginator-page more\"\r\n                ariaLabel=\"Show other {{ step }} pages\"\r\n                iconBefore=\"more-horizontal\"\r\n                iconBeforeWidth=\"17\"\r\n                iconBeforeStrokeWidth=\"2\"\r\n                [buttonType]=\"buttonType.IsIcon\"\r\n                (click)=\"definePagesList()\"></p-button>\r\n    </li>\r\n  </ul>\r\n\r\n  <p-button class=\"p-paginator-arrow next\"\r\n            ariaLabel=\"Move to the next page\"\r\n            [disabled]=\"!canMoveToNext\"\r\n            iconBefore=\"chevron-right\"\r\n            iconBeforeWidth=\"17\"\r\n            iconBeforeStrokeWidth=\"2\"\r\n            [iconBeforeStrokeColor]=\"!canMoveToNext ? '#B3B3B3' : 'currentColor'\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"nextPageClicked.emit()\"></p-button>\r\n  <p-button class=\"p-paginator-arrow last\"\r\n            ariaLabel=\"Move to the last page\"\r\n            [disabled]=\"!canMoveToNext\"\r\n            iconBefore=\"last\"\r\n            iconBeforeWidth=\"10\"\r\n            iconBeforeHeight=\"10\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"lastPageClicked.emit()\"></p-button>\r\n\r\n  <p-menu-single-select class=\"p-paginator-select\"\r\n                        [menuList]=\"pageSizeOptions\"\r\n                        (onClickTask)=\"pageSizeChanged.emit($event)\">\r\n    <!--ng-content-->\r\n    <p-input-numeric class=\"p-paginator-input\"\r\n                     label=\"Items per page\"\r\n                     [value]=\"pageSize\"\r\n                     [size]=\"inputNumericSize.Small\"\r\n                     [labelLast]=\"true\"\r\n                     [readonly]=\"true\"></p-input-numeric>\r\n    <!-- -->\r\n  </p-menu-single-select>\r\n\r\n  <span>Items per page</span>\r\n</div>\r\n"
         },
         {
             "name": "RadioButtonComponent",
@@ -7539,7 +7619,16 @@
                     "type": "imports",
                     "elements": [
                         {
+                            "name": "ButtonModule"
+                        },
+                        {
                             "name": "IconModule"
+                        },
+                        {
+                            "name": "InputModule"
+                        },
+                        {
+                            "name": "MenuModule"
                         }
                     ]
                 },
@@ -8051,17 +8140,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input-text/input-text.stories.ts",
-                "type": "Story<InputTextComponent>",
-                "defaultValue": "(args: InputTextComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/icons/icon.stories.ts",
+                "type": "Story<IconComponent>",
+                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/icons/icon.stories.ts",
-                "type": "Story<IconComponent>",
-                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/input-text/input-text.stories.ts",
+                "type": "Story<InputTextComponent>",
+                "defaultValue": "(args: InputTextComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -9290,7 +9379,7 @@
                 "linktype": "component",
                 "name": "PaginatorComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/11",
+                "coverageCount": "0/17",
                 "status": "low"
             },
             {

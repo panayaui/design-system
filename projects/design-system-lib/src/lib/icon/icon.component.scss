@@ -25,5 +25,16 @@
   &-unlink {
     background-image: url('../assets/images/icons/unlink.svg');
   }
-
+  &-first {
+    background-image: url('../assets/images/icons/first.svg');
+  }
+  &-first-disabled {
+    background-image: url('../assets/images/icons/first-disabled.svg');
+  }
+  &-last {
+    background-image: url('../assets/images/icons/last.svg');
+  }
+  &-last-disabled {
+    background-image: url('../assets/images/icons/last-disabled.svg');
+  }
 }

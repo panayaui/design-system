@@ -23,6 +23,7 @@ export class MenuSingleSelectComponent implements OnInit, OnDestroy {
   private sub: SubscriptionLike;
 
   ngOnInit(): void {
+    console.log(this.menuList);
     this.filteredList = this.menuList;
     if (this.filterPlaceholder) {
       this.formFieldControl = new FormControl('');

@@ -1,55 +1,11 @@
 @import "../assets/styles/custom";
 
-$action-btn-height: 38px;
-
-.p-action-btn {
-  @include resetButton;
+.p-paginator {
   display: flex;
   align-items: center;
-  font-family: $font-family-basic;
-  font-size: $small-font-size;
-  height: $action-btn-height;
-  padding-right: $gap-base;
-  padding-left: $gap-base;
-  border-radius: $btn-border-radius;
-  white-space: nowrap;
-
-  &.standalone {
-    color: $secondary-a-700;
-    font-weight: 600;
-    &:not(:disabled):not(.active):hover,
-    &:not(:disabled):not(.active):focus {
-      background-color: $primary-c-50;
-    }
-  }
-  &:not(.standalone) {
-    color: $primary-a-900;
-    font-weight: 400;
-    &:not(:disabled):not(.active):hover,
-    &:not(:disabled):not(.active):focus {
-      color: $secondary-a-700;
-    }
-  }
-
-  &.active {
-    color: $secondary-a-700;
-    background-color: $primary-c-50;
-  }
-
-  &:disabled {
-    color: $gray-scale-600;
-    pointer-events: none;
-  }
-
-  // class of the before icon
-  &-icon {
-    margin-right: $gap-small;
-  }
-
-  // class of the after icon (chevron-down)
-  &-arrow {
-    margin-left: $gap-small;
+  &-list {
+    display: flex;
+    align-items: center;
+    @include resetUl;
   }
 }
-
-

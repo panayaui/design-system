@@ -1,53 +1,79 @@
 <div class="p-paginator">
-  <div>
-    <p-button ariaLabel="Move to the first page"
-              [disabled]="!canMoveToPrevious"
-              iconBefore="chevron-left"
-              iconBeforeWidth="17"
-              [buttonType]="buttonType.IsIcon"
-              (click)="firstPageClicked.emit()"></p-button>
-    <p-button ariaLabel="Move to the previous page"
-              [disabled]="!canMoveToPrevious"
-              iconBefore="chevron-left"
-              iconBeforeWidth="17"
-              [buttonType]="buttonType.IsIcon"
-              (click)="prevPageClicked.emit()"></p-button>
-    <!--
-    <p-field-numeric
-        class="panaya-page-input"
-        [min]="1"
-        [max]="totalPages"
-        [value]="currentPage"
-        (valueChange)="onPageNumberInput.emit($event)"
-    ></p-field-numeric>-->
-    {{ currentPage + ' of ' + totalPages }}
+  <p-button class="p-paginator-arrow first"
+            ariaLabel="Move to the first page"
+            [disabled]="!canMoveToPrevious"
+            iconBefore="first"
+            iconBeforeWidth="10"
+            iconBeforeHeight="10"
+            [buttonType]="buttonType.IsIcon"
+            (click)="firstPageClicked.emit()"></p-button>
+  <p-button class="p-paginator-arrow prev"
+            ariaLabel="Move to the previous page"
+            [disabled]="!canMoveToPrevious"
+            iconBefore="chevron-left"
+            iconBeforeWidth="17"
+            iconBeforeStrokeWidth="2"
+            [iconBeforeStrokeColor]="!canMoveToPrevious ? '#B3B3B3' : 'currentColor'"
+            [buttonType]="buttonType.IsIcon"
+            (click)="prevPageClicked.emit()"></p-button>
 
-    <p-button ariaLabel="Move to the next page"
-              [disabled]="!canMoveToNext"
-              iconBefore="chevron-right"
-              iconBeforeWidth="17"
-              [buttonType]="buttonType.IsIcon"
-              (click)="nextPageClicked.emit()"></p-button>
-    <p-button ariaLabel="Move to the last page"
-              [disabled]="!canMoveToNext"
-              iconBefore="chevron-right"
-              iconBeforeWidth="17"
-              [buttonType]="buttonType.IsIcon"
-              (click)="lastPageClicked.emit()"></p-button>
-  </div>
+  <ul class="p-paginator-list">
+    <li class="p-paginator-item" *ngIf="!canMoveToNext">
+      <p-button class="p-paginator-page more"
+                ariaLabel="Show other {{ step }} pages"
+                iconBefore="more-horizontal"
+                iconBeforeWidth="17"
+                iconBeforeStrokeWidth="2"
+                [iconBeforeStrokeColor]="!canMoveToNext ? '#B3B3B3' : 'currentColor'"
+                [buttonType]="buttonType.IsIcon"
+                (click)="definePagesList()"></p-button>
+    </li>
+    <li class="p-paginator-item" *ngFor="let pageNumber of pagesList">
+      <p-button class="p-paginator-page"
+                [label]="pageNumber"
+                [ariaLabel]="'Move to page ' + pageNumber"
+                [buttonType]="buttonType.Tertiary"
+                (click)="pageNumberClicked.emit()"></p-button>
+    </li>
+    <li class="p-paginator-item" *ngIf="canMoveToNext">
+      <p-button class="p-paginator-page more"
+                ariaLabel="Show other {{ step }} pages"
+                iconBefore="more-horizontal"
+                iconBeforeWidth="17"
+                iconBeforeStrokeWidth="2"
+                [buttonType]="buttonType.IsIcon"
+                (click)="definePagesList()"></p-button>
+    </li>
+  </ul>
 
-  <!--<p-field-single-select-->
-    <!--[list]="pageSizeOptions | extract: pageSizeToOption"-->
-    <!--idField="id"-->
-    <!--nameField="id"-->
-    <!--[value]="pageSize"-->
-    <!--(valueChange)="pageSizeChanged.emit($event)"-->
-  <!--&gt;-->
-  <!--</p-field-single-select>-->
-  items per page
+  <p-button class="p-paginator-arrow next"
+            ariaLabel="Move to the next page"
+            [disabled]="!canMoveToNext"
+            iconBefore="chevron-right"
+            iconBeforeWidth="17"
+            iconBeforeStrokeWidth="2"
+            [iconBeforeStrokeColor]="!canMoveToNext ? '#B3B3B3' : 'currentColor'"
+            [buttonType]="buttonType.IsIcon"
+            (click)="nextPageClicked.emit()"></p-button>
+  <p-button class="p-paginator-arrow last"
+            ariaLabel="Move to the last page"
+            [disabled]="!canMoveToNext"
+            iconBefore="last"
+            iconBeforeWidth="10"
+            iconBeforeHeight="10"
+            [buttonType]="buttonType.IsIcon"
+            (click)="lastPageClicked.emit()"></p-button>
 
-  <div>
-    Content
-    <ng-content></ng-content>
-  </div>
+  <p-menu-single-select class="p-paginator-select"
+                        [menuList]="pageSizeOptions"
+                        (onClickTask)="pageSizeChanged.emit($event)">
+    <!--ng-content-->
+    <p-input-numeric class="p-paginator-input"
+                     label="Items per page"
+                     [value]="pageSize"
+                     [size]="inputNumericSize.Small"
+                     [labelLast]="true"
+                     [readonly]="true"></p-input-numeric>
+    <!-- -->
+  </p-menu-single-select>
 </div>
