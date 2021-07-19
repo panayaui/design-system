@@ -2874,7 +2874,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../assets/styles/custom\";\r\n@import '../datepicker/datepicker.component';\r\n\r\n$date-hover-focus-selector: \".mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover, .cdk-keyboard-focused .mat-calendar-body-active, .cdk-program-focused .mat-calendar-body-active\";\r\n$date-hover-selector: \".mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover\";\r\n$date-content-selector: \".mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical)\";\r\n\r\n::ng-deep .p-daterange {\r\n  .p-input-text-input {\r\n    width: 100%;\r\n  }\r\n\r\n  .mat-date-range-input-separator {\r\n    opacity: 0;\r\n    transition: none;\r\n  }\r\n\r\n  .filled .mat-date-range-input-separator {\r\n    opacity: 1;\r\n  }\r\n}\r\n\r\n::ng-deep .cdk-overlay-pane.mat-datepicker-popup {\r\n  padding-top: 2px;\r\n}\r\n\r\n",
+                    "data": "@import \"../../assets/styles/custom\";\r\n@import '../datepicker/datepicker.component';\r\n\r\n$date-hover-focus-selector: \".mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover, .cdk-keyboard-focused .mat-calendar-body-active, .cdk-program-focused .mat-calendar-body-active\";\r\n$date-hover-selector: \".mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover\";\r\n$date-content-selector: \".mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical)\";\r\n\r\n::ng-deep .p-daterange {\r\n  .p-input-text-input {\r\n    width: 100%;\r\n  }\r\n\r\n  .mat-date-range-input-separator {\r\n    opacity: 0;\r\n    transition: none;\r\n  }\r\n\r\n  .filled .mat-date-range-input-separator {\r\n    opacity: 1;\r\n  }\r\n}\r\n\r\n::ng-deep .mat-calendar-body-in-range {\r\n  .mat-calendar-body-cell-content,\r\n  &:before,\r\n  &:after {\r\n    font-weight: 500;\r\n    color: $gray-scale-1;\r\n    background-color: $secondary-a-700;\r\n  }\r\n  &:hover {\r\n    .mat-calendar-body-cell-content,\r\n    &:before,\r\n    &:after {\r\n      background-color: $secondary-a-800 !important;\r\n    }\r\n  }\r\n}\r\n\r\n::ng-deep .cdk-overlay-pane.mat-datepicker-popup {\r\n  padding-top: 2px;\r\n}\r\n\r\n",
                     "styleUrl": "./daterange.component.scss"
                 }
             ],
@@ -6073,7 +6073,7 @@
         },
         {
             "name": "SplitButtonComponent",
-            "id": "component-SplitButtonComponent-18cc766c82536c7300c5532193f1477f",
+            "id": "component-SplitButtonComponent-77d8cd62dd5d3a759011a52b725eb408",
             "file": "projects/design-system-lib/src/lib/button/split-button/split-button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -6222,7 +6222,7 @@
                 {
                     "name": "onClickTrigger",
                     "defaultValue": "new EventEmitter()",
-                    "line": 39,
+                    "line": 11,
                     "type": "EventEmitter<any>"
                 },
                 {
@@ -6242,7 +6242,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, EventEmitter, Input, Output} from '@angular/core';\r\nimport {ButtonTypeEnum} from '../button-type.enum';\r\nimport {ButtonComponent} from '../button.component';\r\n\r\n@Component({\r\n  selector: 'p-split-button',\r\n  templateUrl: './split-button.component.html',\r\n  styleUrls: ['./split-button.component.scss'],\r\n})\r\nexport class SplitButtonComponent extends ButtonComponent {\r\n  // @Input() label: string;\r\n  // @Input() ariaLabel: string;\r\n  // @Input() large: boolean = false;\r\n  // @Input() disabled: boolean = false;\r\n  // @Input() iconBefore: string;\r\n  // @Input() iconBeforeWidth: string = 'auto';\r\n  // @Input() iconBeforeHeight: string = 'auto';\r\n  // @Input() iconBeforeStrokeWidth: number;\r\n  // @Input() iconBeforeStrokeColor: string;\r\n  // @Input() iconAfter: string;\r\n  // @Input() iconAfterWidth: string = 'auto';\r\n  // @Input() iconAfterHeight: string = 'auto';\r\n  // @Input() iconAfterStrokeWidth: number;\r\n  // @Input() iconAfterStrokeColor: string;\r\n  // @Input() buttonType: ButtonTypeEnum = ButtonTypeEnum.Primary;\r\n  // @Output() onClickTask: EventEmitter<any> = new EventEmitter();\r\n  //\r\n  // public get classes(): string[] {\r\n  //   const classParams = [];\r\n  //   this.iconBefore ? classParams.push('p-btn-icon-before') : null;\r\n  //   this.iconAfter ? classParams.push('p-btn-icon-after') : null;\r\n  //   classParams.push(`p-btn-${this.buttonType}`);\r\n  //   if (this.buttonType !== ButtonTypeEnum.IsIcon) {\r\n  //     this.large  ? classParams.push('p-btn-large') : classParams.push('p-btn-small');\r\n  //   }\r\n  //   return classParams;\r\n  // }\r\n\r\n  @Output() onClickTrigger: EventEmitter<any> = new EventEmitter();\r\n\r\n}\r\n",
+            "sourceCode": "import {Component, EventEmitter, Input, Output} from '@angular/core';\r\nimport {ButtonTypeEnum} from '../button-type.enum';\r\nimport {ButtonComponent} from '../button.component';\r\n\r\n@Component({\r\n  selector: 'p-split-button',\r\n  templateUrl: './split-button.component.html',\r\n  styleUrls: ['./split-button.component.scss'],\r\n})\r\nexport class SplitButtonComponent extends ButtonComponent {\r\n  @Output() onClickTrigger: EventEmitter<any> = new EventEmitter();\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -7687,17 +7687,17 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
+                "file": "src/environments/environment.prod.ts",
                 "type": "object",
-                "defaultValue": "{\r\n  production: false\r\n}"
+                "defaultValue": "{\r\n  production: true\r\n}"
             },
             {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
+                "file": "src/environments/environment.ts",
                 "type": "object",
-                "defaultValue": "{\r\n  production: true\r\n}"
+                "defaultValue": "{\r\n  production: false\r\n}"
             },
             {
                 "name": "ErrorMessage",
@@ -7799,17 +7799,17 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
-                "type": "Story<CheckboxGroupComponent>",
-                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "Story<CheckboxGroupPageComponent>",
+                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
-                "type": "Story<CheckboxGroupPageComponent>",
-                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
+                "type": "Story<CheckboxGroupComponent>",
+                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -7909,14 +7909,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/icons/icon.stories.ts",
-                "type": "Story<IconComponent>",
-                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/input-text/input-text.stories.ts",
                 "type": "Story<InputTextComponent>",
                 "defaultValue": "(args: InputTextComponent) => ({\r\n  props: args,\r\n})"
@@ -7925,9 +7917,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/styles/typography-styles.stories.ts",
-                "type": "Story<TypographyStylesComponent>",
-                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/icons/icon.stories.ts",
+                "type": "Story<IconComponent>",
+                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -7936,6 +7928,14 @@
                 "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
                 "type": "Story<TypographyFontFamilyComponent>",
                 "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/typography/styles/typography-styles.stories.ts",
+                "type": "Story<TypographyStylesComponent>",
+                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Toggles",
@@ -8275,16 +8275,6 @@
                     "type": "literal type"
                 }
             ],
-            "src/environments/environment.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.ts",
-                    "type": "object",
-                    "defaultValue": "{\r\n  production: false\r\n}"
-                }
-            ],
             "src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -8293,6 +8283,16 @@
                     "file": "src/environments/environment.prod.ts",
                     "type": "object",
                     "defaultValue": "{\r\n  production: true\r\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: false\r\n}"
                 }
             ],
             "src/stories/input-text/input-text.stories.ts": [
