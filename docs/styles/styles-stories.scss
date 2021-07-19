@@ -73,6 +73,12 @@ p {
   }
 }
 
+#button-split {
+  & ~ .sbdocs .innerZoomElementWrapper > div {
+    width: calc(100% / 3);
+  }
+}
+
 #tooltip {
   & ~ .sbdocs .innerZoomElementWrapper > div {
     width: calc(100% / 6);
