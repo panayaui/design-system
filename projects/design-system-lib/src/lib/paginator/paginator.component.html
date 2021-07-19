@@ -1,0 +1,53 @@
+<div class="p-paginator">
+  <div>
+    <p-button ariaLabel="Move to the first page"
+              [disabled]="!canMoveToPrevious"
+              iconBefore="chevron-left"
+              iconBeforeWidth="17"
+              [buttonType]="buttonType.IsIcon"
+              (click)="firstPageClicked.emit()"></p-button>
+    <p-button ariaLabel="Move to the previous page"
+              [disabled]="!canMoveToPrevious"
+              iconBefore="chevron-left"
+              iconBeforeWidth="17"
+              [buttonType]="buttonType.IsIcon"
+              (click)="prevPageClicked.emit()"></p-button>
+    <!--
+    <p-field-numeric
+        class="panaya-page-input"
+        [min]="1"
+        [max]="totalPages"
+        [value]="currentPage"
+        (valueChange)="onPageNumberInput.emit($event)"
+    ></p-field-numeric>-->
+    {{ currentPage + ' of ' + totalPages }}
+
+    <p-button ariaLabel="Move to the next page"
+              [disabled]="!canMoveToNext"
+              iconBefore="chevron-right"
+              iconBeforeWidth="17"
+              [buttonType]="buttonType.IsIcon"
+              (click)="nextPageClicked.emit()"></p-button>
+    <p-button ariaLabel="Move to the last page"
+              [disabled]="!canMoveToNext"
+              iconBefore="chevron-right"
+              iconBeforeWidth="17"
+              [buttonType]="buttonType.IsIcon"
+              (click)="lastPageClicked.emit()"></p-button>
+  </div>
+
+  <!--<p-field-single-select-->
+    <!--[list]="pageSizeOptions | extract: pageSizeToOption"-->
+    <!--idField="id"-->
+    <!--nameField="id"-->
+    <!--[value]="pageSize"-->
+    <!--(valueChange)="pageSizeChanged.emit($event)"-->
+  <!--&gt;-->
+  <!--</p-field-single-select>-->
+  items per page
+
+  <div>
+    Content
+    <ng-content></ng-content>
+  </div>
+</div>

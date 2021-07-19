@@ -2874,7 +2874,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../assets/styles/custom\";\r\n@import '../datepicker/datepicker.component';\r\n\r\n$date-hover-focus-selector: \".mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover, .cdk-keyboard-focused .mat-calendar-body-active, .cdk-program-focused .mat-calendar-body-active\";\r\n$date-hover-selector: \".mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover\";\r\n$date-content-selector: \".mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical)\";\r\n\r\n::ng-deep .p-daterange {\r\n  .p-input-text-input {\r\n    width: 100%;\r\n  }\r\n\r\n  .mat-date-range-input-separator {\r\n    opacity: 0;\r\n    transition: none;\r\n  }\r\n\r\n  .filled .mat-date-range-input-separator {\r\n    opacity: 1;\r\n  }\r\n}\r\n\r\n::ng-deep .cdk-overlay-pane.mat-datepicker-popup {\r\n  padding-top: 2px;\r\n}\r\n\r\n",
+                    "data": "@import \"../../assets/styles/custom\";\r\n@import '../datepicker/datepicker.component';\r\n\r\n$date-hover-focus-selector: \".mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover, .cdk-keyboard-focused .mat-calendar-body-active, .cdk-program-focused .mat-calendar-body-active\";\r\n$date-hover-selector: \".mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover\";\r\n$date-content-selector: \".mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical)\";\r\n\r\n::ng-deep .p-daterange {\r\n  .p-input-text-input {\r\n    width: 100%;\r\n  }\r\n\r\n  .mat-date-range-input-separator {\r\n    opacity: 0;\r\n    transition: none;\r\n  }\r\n\r\n  .filled .mat-date-range-input-separator {\r\n    opacity: 1;\r\n  }\r\n}\r\n\r\n::ng-deep .mat-calendar-body-in-range {\r\n  .mat-calendar-body-cell-content,\r\n  &:before,\r\n  &:after {\r\n    font-weight: 500;\r\n    color: $gray-scale-1;\r\n    background-color: $secondary-a-700;\r\n  }\r\n  &:hover {\r\n    .mat-calendar-body-cell-content,\r\n    &:before,\r\n    &:after {\r\n      background-color: $secondary-a-800 !important;\r\n    }\r\n  }\r\n}\r\n\r\n::ng-deep .cdk-overlay-pane.mat-datepicker-popup {\r\n  padding-top: 2px;\r\n}\r\n\r\n",
                     "styleUrl": "./daterange.component.scss"
                 }
             ],
@@ -2918,7 +2918,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$header-height: 40px;\r\n$padding-left: $gap-double-plus;\r\n$padding-right: $gap-double-plus;\r\n$padding-top-content: $gap-double;\r\n$padding-bottom-content: $gap-double;\r\n$border: 1px solid $gray-scale-400;\r\n$expand-width: 14px;\r\n\r\n::ng-deep .p-accordion {\r\n  &.mat-accordion {\r\n    .mat-expansion-panel,\r\n    .mat-expansion-panel:first-of-type,\r\n    .mat-expansion-panel:last-of-type {\r\n      margin-top: $gap-small;\r\n      background-color: $gray-scale-1;\r\n      border-radius: 0;\r\n    }\r\n  }\r\n\r\n  .mat-expansion-panel:not([class*=mat-elevation-z]) {\r\n    box-shadow: none;\r\n  }\r\n\r\n  .mat-expansion-panel-spacing {\r\n    margin: 0;\r\n  }\r\n\r\n  .p-expansion-panel-header {\r\n    height: $header-height;\r\n    padding-right: $padding-right;\r\n    padding-left: $padding-left;\r\n    border: $border;\r\n    &.mat-expanded {\r\n      height: $header-height;\r\n    }\r\n  }\r\n\r\n  .mat-expanded {\r\n    .p-expansion-panel-header {\r\n      background-color: $primary-c-50;\r\n    }\r\n\r\n    .p-expansion-panel-icon {\r\n      transform: rotate(0);\r\n    }\r\n  }\r\n\r\n  .mat-content {\r\n    color: $primary-a-900;\r\n    align-items: center;\r\n  }\r\n\r\n  .p-expansion-panel-title-main {\r\n    font-weight: 700;\r\n  }\r\n\r\n  .p-expansion-panel-title-sub {\r\n    display: flex;\r\n    align-items: center;\r\n    margin-left: 10px;\r\n    &:before {\r\n      content: '';\r\n      display: inline-block;\r\n      width: 1px;\r\n      height: 15px;\r\n      background-color: currentColor;\r\n      margin-right: 10px;\r\n    }\r\n  }\r\n\r\n  .mat-expansion-panel-content {\r\n    border-right: $border;\r\n    border-bottom: $border;\r\n    border-left: $border;\r\n  }\r\n\r\n  .mat-expansion-panel-body {\r\n    padding: $padding-top-content $padding-right $padding-bottom-content $padding-left;\r\n  }\r\n\r\n  .p-expansion-panel-icon {\r\n    margin-right: 10px;\r\n    transform: rotate(-90deg);\r\n    transition: transform 280ms;\r\n  }\r\n}\r\n\r\n// focus & hover\r\n::ng-deep .mat-expansion-panel {\r\n  .mat-expansion-panel-header.cdk-keyboard-focused:not([aria-disabled=true]),\r\n  .mat-expansion-panel-header.cdk-program-focused:not([aria-disabled=true]),\r\n  &:not(.mat-expanded) .mat-expansion-panel-header:hover:not([aria-disabled=true]) {\r\n    background-color: $primary-c-50;\r\n  }\r\n}\r\n\r\n::ng-deep .p-expansion-panel-header.mat-expansion-panel-header.mat-expanded {\r\n  &:focus,\r\n  &:hover {\r\n    background-color: $primary-c-50;\r\n  }\r\n}\r\n\r\n::ng-deep .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:hover:not([aria-disabled=true]),\r\n::ng-deep .p-expansion-panel-header.mat-expansion-panel-header.mat-expanded:hover {\r\n  .mat-content {\r\n    color: $secondary-a-700;\r\n  }\r\n}\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$header-height: 40px;\r\n$padding-left: $gap-double;\r\n$padding-right: $gap-double;\r\n$padding-top-content: $gap-double;\r\n$padding-bottom-content: $gap-double;\r\n$border: 1px solid $gray-scale-400;\r\n$expand-width: 14px;\r\n\r\n::ng-deep .p-accordion {\r\n  &.mat-accordion {\r\n    .mat-expansion-panel,\r\n    .mat-expansion-panel:first-of-type,\r\n    .mat-expansion-panel:last-of-type {\r\n      margin-top: $gap-small;\r\n      background-color: $gray-scale-1;\r\n      border-radius: 0;\r\n    }\r\n  }\r\n\r\n  .mat-expansion-panel:not([class*=mat-elevation-z]) {\r\n    box-shadow: none;\r\n  }\r\n\r\n  .mat-expansion-panel-spacing {\r\n    margin: 0;\r\n  }\r\n\r\n  .p-expansion-panel-header {\r\n    height: $header-height;\r\n    padding-right: $padding-right;\r\n    padding-left: $padding-left;\r\n    border: $border;\r\n    &.mat-expanded {\r\n      height: $header-height;\r\n    }\r\n  }\r\n\r\n  .mat-expanded {\r\n    .p-expansion-panel-header {\r\n      background-color: $primary-c-50;\r\n    }\r\n\r\n    .p-expansion-panel-icon {\r\n      transform: rotate(0);\r\n    }\r\n  }\r\n\r\n  .mat-content {\r\n    color: $primary-a-900;\r\n    align-items: center;\r\n  }\r\n\r\n  .p-expansion-panel-title-main {\r\n    font-weight: 700;\r\n  }\r\n\r\n  .p-expansion-panel-title-sub {\r\n    display: flex;\r\n    align-items: center;\r\n    margin-left: 10px;\r\n    &:before {\r\n      content: '';\r\n      display: inline-block;\r\n      width: 1px;\r\n      height: 15px;\r\n      background-color: currentColor;\r\n      margin-right: 10px;\r\n    }\r\n  }\r\n\r\n  .mat-expansion-panel-content {\r\n    border-right: $border;\r\n    border-bottom: $border;\r\n    border-left: $border;\r\n  }\r\n\r\n  .mat-expansion-panel-body {\r\n    padding: $padding-top-content 24px $padding-bottom-content 24px;\r\n  }\r\n\r\n  .p-expansion-panel-icon {\r\n    margin-right: $gap-base;\r\n    transform: rotate(-90deg);\r\n    transition: transform 280ms;\r\n  }\r\n}\r\n\r\n// focus & hover\r\n::ng-deep .mat-expansion-panel {\r\n  .mat-expansion-panel-header.cdk-keyboard-focused:not([aria-disabled=true]),\r\n  .mat-expansion-panel-header.cdk-program-focused:not([aria-disabled=true]),\r\n  &:not(.mat-expanded) .mat-expansion-panel-header:hover:not([aria-disabled=true]) {\r\n    background-color: $primary-c-50;\r\n  }\r\n}\r\n\r\n::ng-deep .p-expansion-panel-header.mat-expansion-panel-header.mat-expanded {\r\n  &:focus,\r\n  &:hover {\r\n    background-color: $primary-c-50;\r\n  }\r\n}\r\n\r\n::ng-deep .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:hover:not([aria-disabled=true]),\r\n::ng-deep .p-expansion-panel-header.mat-expansion-panel-header.mat-expanded:hover {\r\n  .mat-content {\r\n    color: $secondary-a-700;\r\n  }\r\n}\r\n",
                     "styleUrl": "./expansion-panel.component.scss"
                 }
             ],
@@ -5643,6 +5643,107 @@
             "templateData": "<p-button [label]=\"triggerBtnName\"\r\n          [buttonType]=\"buttonType.Secondary\"\r\n          (click)=\"openDialog()\">\r\n</p-button>\r\n"
         },
         {
+            "name": "PaginatorComponent",
+            "id": "component-PaginatorComponent-6c4cca1ee53711621c099d6a7597bbf3",
+            "file": "projects/design-system-lib/src/lib/paginator/paginator.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-paginator",
+            "styleUrls": [
+                "./paginator.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./paginator.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "line": 10,
+                    "type": "boolean"
+                },
+                {
+                    "name": "iconBeforeHeight",
+                    "defaultValue": "'auto'",
+                    "line": 13,
+                    "type": "string"
+                },
+                {
+                    "name": "iconBeforeName",
+                    "line": 11,
+                    "type": "string"
+                },
+                {
+                    "name": "iconBeforeStrokeColor",
+                    "line": 15,
+                    "type": "string"
+                },
+                {
+                    "name": "iconBeforeStrokeWidth",
+                    "line": 14,
+                    "type": "number"
+                },
+                {
+                    "name": "iconBeforeWidth",
+                    "defaultValue": "'auto'",
+                    "line": 12,
+                    "type": "string"
+                },
+                {
+                    "name": "isMenuTrigger",
+                    "defaultValue": "false",
+                    "line": 16,
+                    "type": "boolean"
+                },
+                {
+                    "name": "isStandalone",
+                    "defaultValue": "true",
+                    "line": 17,
+                    "type": "boolean"
+                },
+                {
+                    "name": "label",
+                    "line": 9,
+                    "type": "string"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "isActive",
+                    "defaultValue": "false",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 18,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'p-paginator',\r\n  templateUrl: './paginator.component.html',\r\n  styleUrls: ['./paginator.component.scss'],\r\n})\r\nexport class PaginatorComponent {\r\n  @Input() label: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() iconBeforeName: string;\r\n  @Input() iconBeforeWidth: string = 'auto';\r\n  @Input() iconBeforeHeight: string = 'auto';\r\n  @Input() iconBeforeStrokeWidth: number;\r\n  @Input() iconBeforeStrokeColor: string;\r\n  @Input() isMenuTrigger: boolean = false;\r\n  @Input() isStandalone: boolean = true;\r\n  public isActive: boolean = false;\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$action-btn-height: 38px;\r\n\r\n.p-action-btn {\r\n  @include resetButton;\r\n  display: flex;\r\n  align-items: center;\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  height: $action-btn-height;\r\n  padding-right: $gap-base;\r\n  padding-left: $gap-base;\r\n  border-radius: $btn-border-radius;\r\n  white-space: nowrap;\r\n\r\n  &.standalone {\r\n    color: $secondary-a-700;\r\n    font-weight: 600;\r\n    &:not(:disabled):not(.active):hover,\r\n    &:not(:disabled):not(.active):focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n  }\r\n  &:not(.standalone) {\r\n    color: $primary-a-900;\r\n    font-weight: 400;\r\n    &:not(:disabled):not(.active):hover,\r\n    &:not(:disabled):not(.active):focus {\r\n      color: $secondary-a-700;\r\n    }\r\n  }\r\n\r\n  &.active {\r\n    color: $secondary-a-700;\r\n    background-color: $primary-c-50;\r\n  }\r\n\r\n  &:disabled {\r\n    color: $gray-scale-600;\r\n    pointer-events: none;\r\n  }\r\n\r\n  // class of the before icon\r\n  &-icon {\r\n    margin-right: $gap-small;\r\n  }\r\n\r\n  // class of the after icon (chevron-down)\r\n  &-arrow {\r\n    margin-left: $gap-small;\r\n  }\r\n}\r\n\r\n\r\n",
+                    "styleUrl": "./paginator.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<button class=\"p-action-btn\"\r\n        [ngClass]=\"{'menu-trigger' : isMenuTrigger, 'active' : isActive, 'standalone' : isStandalone}\"\r\n        [disabled]=\"disabled\"\r\n        (click)=\"isActive = true\"\r\n        (blur)=\"isActive = false\">\r\n  <p-icon *ngIf=\"iconBeforeName\"\r\n          class=\"p-action-btn-icon\"\r\n          [iconName]=\"iconBeforeName\"\r\n          [width]=\"iconBeforeWidth\"\r\n          [height]=\"iconBeforeHeight\"\r\n          [stroke]=\"iconBeforeStrokeColor\"\r\n          [strokeWidth]=\"iconBeforeStrokeWidth\"\r\n          [disabled]=\"disabled\"></p-icon>\r\n  <span class=\"p-action-btn-label\">{{label}}</span>\r\n  <p-icon *ngIf=\"isMenuTrigger\"\r\n          class=\"p-action-btn-arrow\"\r\n          iconName=\"chevron-down\"\r\n          [width]=\"17\"\r\n          [disabled]=\"disabled\"></p-icon>\r\n</button>\r\n"
+        },
+        {
             "name": "RadioButtonComponent",
             "id": "component-RadioButtonComponent-4867504d7fc1334b23be9b71c8fb58d5",
             "file": "projects/design-system-lib/src/lib/radio-button/radio-button/radio-button.component.ts",
@@ -6073,7 +6174,7 @@
         },
         {
             "name": "SplitButtonComponent",
-            "id": "component-SplitButtonComponent-18cc766c82536c7300c5532193f1477f",
+            "id": "component-SplitButtonComponent-77d8cd62dd5d3a759011a52b725eb408",
             "file": "projects/design-system-lib/src/lib/button/split-button/split-button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -6222,7 +6323,7 @@
                 {
                     "name": "onClickTrigger",
                     "defaultValue": "new EventEmitter()",
-                    "line": 39,
+                    "line": 11,
                     "type": "EventEmitter<any>"
                 },
                 {
@@ -6242,7 +6343,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, EventEmitter, Input, Output} from '@angular/core';\r\nimport {ButtonTypeEnum} from '../button-type.enum';\r\nimport {ButtonComponent} from '../button.component';\r\n\r\n@Component({\r\n  selector: 'p-split-button',\r\n  templateUrl: './split-button.component.html',\r\n  styleUrls: ['./split-button.component.scss'],\r\n})\r\nexport class SplitButtonComponent extends ButtonComponent {\r\n  // @Input() label: string;\r\n  // @Input() ariaLabel: string;\r\n  // @Input() large: boolean = false;\r\n  // @Input() disabled: boolean = false;\r\n  // @Input() iconBefore: string;\r\n  // @Input() iconBeforeWidth: string = 'auto';\r\n  // @Input() iconBeforeHeight: string = 'auto';\r\n  // @Input() iconBeforeStrokeWidth: number;\r\n  // @Input() iconBeforeStrokeColor: string;\r\n  // @Input() iconAfter: string;\r\n  // @Input() iconAfterWidth: string = 'auto';\r\n  // @Input() iconAfterHeight: string = 'auto';\r\n  // @Input() iconAfterStrokeWidth: number;\r\n  // @Input() iconAfterStrokeColor: string;\r\n  // @Input() buttonType: ButtonTypeEnum = ButtonTypeEnum.Primary;\r\n  // @Output() onClickTask: EventEmitter<any> = new EventEmitter();\r\n  //\r\n  // public get classes(): string[] {\r\n  //   const classParams = [];\r\n  //   this.iconBefore ? classParams.push('p-btn-icon-before') : null;\r\n  //   this.iconAfter ? classParams.push('p-btn-icon-after') : null;\r\n  //   classParams.push(`p-btn-${this.buttonType}`);\r\n  //   if (this.buttonType !== ButtonTypeEnum.IsIcon) {\r\n  //     this.large  ? classParams.push('p-btn-large') : classParams.push('p-btn-small');\r\n  //   }\r\n  //   return classParams;\r\n  // }\r\n\r\n  @Output() onClickTrigger: EventEmitter<any> = new EventEmitter();\r\n\r\n}\r\n",
+            "sourceCode": "import {Component, EventEmitter, Input, Output} from '@angular/core';\r\nimport {ButtonTypeEnum} from '../button-type.enum';\r\nimport {ButtonComponent} from '../button.component';\r\n\r\n@Component({\r\n  selector: 'p-split-button',\r\n  templateUrl: './split-button.component.html',\r\n  styleUrls: ['./split-button.component.scss'],\r\n})\r\nexport class SplitButtonComponent extends ButtonComponent {\r\n  @Output() onClickTrigger: EventEmitter<any> = new EventEmitter();\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -7420,6 +7521,47 @@
             ]
         },
         {
+            "name": "PaginatorModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "PaginatorComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "IconModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "PaginatorComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "RadioButtonModule",
             "children": [
                 {
@@ -7687,17 +7829,17 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
+                "file": "src/environments/environment.prod.ts",
                 "type": "object",
-                "defaultValue": "{\r\n  production: false\r\n}"
+                "defaultValue": "{\r\n  production: true\r\n}"
             },
             {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
+                "file": "src/environments/environment.ts",
                 "type": "object",
-                "defaultValue": "{\r\n  production: true\r\n}"
+                "defaultValue": "{\r\n  production: false\r\n}"
             },
             {
                 "name": "ErrorMessage",
@@ -7901,9 +8043,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/icons/icon.stories.ts",
-                "type": "Story<IconComponent>",
-                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/colors/Color-palette.stories.ts",
+                "type": "Story<ColorPaletteComponent>",
+                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -7917,17 +8059,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/colors/Color-palette.stories.ts",
-                "type": "Story<ColorPaletteComponent>",
-                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
-                "type": "Story<TypographyFontFamilyComponent>",
-                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/icons/icon.stories.ts",
+                "type": "Story<IconComponent>",
+                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -7936,6 +8070,14 @@
                 "file": "src/stories/typography/styles/typography-styles.stories.ts",
                 "type": "Story<TypographyStylesComponent>",
                 "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
+                "type": "Story<TypographyFontFamilyComponent>",
+                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Toggles",
@@ -8275,16 +8417,6 @@
                     "type": "literal type"
                 }
             ],
-            "src/environments/environment.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.ts",
-                    "type": "object",
-                    "defaultValue": "{\r\n  production: false\r\n}"
-                }
-            ],
             "src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -8293,6 +8425,16 @@
                     "file": "src/environments/environment.prod.ts",
                     "type": "object",
                     "defaultValue": "{\r\n  production: true\r\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: false\r\n}"
                 }
             ],
             "src/stories/input-text/input-text.stories.ts": [
@@ -9140,6 +9282,15 @@
                 "name": "IModalData",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/paginator/paginator.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PaginatorComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/11",
                 "status": "low"
             },
             {

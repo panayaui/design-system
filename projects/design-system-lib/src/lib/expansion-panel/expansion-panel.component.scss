@@ -1,8 +1,8 @@
 @import "../assets/styles/custom";
 
 $header-height: 40px;
-$padding-left: $gap-double-plus;
-$padding-right: $gap-double-plus;
+$padding-left: $gap-double;
+$padding-right: $gap-double;
 $padding-top-content: $gap-double;
 $padding-bottom-content: $gap-double;
 $border: 1px solid $gray-scale-400;
@@ -77,11 +77,11 @@ $expand-width: 14px;
   }
 
   .mat-expansion-panel-body {
-    padding: $padding-top-content $padding-right $padding-bottom-content $padding-left;
+    padding: $padding-top-content 24px $padding-bottom-content 24px;
   }
 
   .p-expansion-panel-icon {
-    margin-right: 10px;
+    margin-right: $gap-base;
     transform: rotate(-90deg);
     transition: transform 280ms;
   }
