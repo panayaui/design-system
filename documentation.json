@@ -748,6 +748,72 @@
             "methods": []
         },
         {
+            "name": "IInputTextTable",
+            "id": "interface-IInputTextTable-7a1ec82784b5d061a7b3ee7b9485d3cf",
+            "file": "projects/design-system-lib/src/lib/input/table-layout/input-text-table.interface.ts",
+            "type": "interface",
+            "sourceCode": "import {IInputTextTableLine} from './input-text-table-line.interface';\r\n\r\nexport interface IInputTextTable {\r\n  title: string;\r\n  singleTableData: IInputTextTableLine[];\r\n  isHidden?: boolean;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "isHidden",
+                    "type": "boolean",
+                    "optional": true,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "singleTableData",
+                    "type": "IInputTextTableLine[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "title",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
+            "name": "IInputTextTableLine",
+            "id": "interface-IInputTextTableLine-e521eb228df218e8ec55313830f40bc6",
+            "file": "projects/design-system-lib/src/lib/input/table-layout/input-text-table-line.interface.ts",
+            "type": "interface",
+            "sourceCode": "import {IInputText} from '../text/input-text.interface';\r\n\r\nexport interface IInputTextTableLine {\r\n  tableHeader: string;\r\n  tableData: IInputText;\r\n  transitionDelay?: number;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "tableData",
+                    "type": "IInputText",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "tableHeader",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "transitionDelay",
+                    "type": "number",
+                    "optional": true,
+                    "description": "",
+                    "line": 6
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
             "name": "IMenuButton",
             "id": "interface-IMenuButton-17b6b4ae8f4d81dda8470d7cd6ca64d9",
             "file": "projects/design-system-lib/src/lib/menu/menu-button.interface.ts",
@@ -3889,7 +3955,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n.p-input-text {\r\n  width: $input-text-width;\r\n  ::ng-deep & {\r\n    // material styles override\r\n    &.mat-form-field-appearance-standard.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {\r\n      transform: translateY(-23px);\r\n    }\r\n    .mat-form-field-label-wrapper {\r\n      top: -16px;\r\n      padding-top: 16px;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-label,\r\n    &.mat-form-field.mat-form-field-invalid .mat-form-field-label {\r\n      color: $gray-scale-700;\r\n    }\r\n    .p-input-text-input {\r\n      font-family: $font-family-basic;\r\n      font-size: $small-font-size;\r\n      width: calc(100% - #{$input-text-padding});\r\n      line-height: 20px;\r\n      color: $primary-a-900;\r\n      padding-left: $input-text-padding;\r\n      caret-color: $primary-a-900;\r\n    }\r\n    .mat-form-field-infix {\r\n      padding-bottom: 6px;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-flex {\r\n      padding-top: 0;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $gray-scale-600;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-underline,\r\n    &:not(.mat-form-field-disabled):not(.mat-form-field-invalid)\r\n            .mat-form-field-flex:hover {\r\n      & ~.mat-form-field-underline {\r\n        background-color: transparent;\r\n        box-shadow: inset 0px -1px 0px $primary-a-900;\r\n      }\r\n      .mat-form-field-suffix {\r\n        opacity: 1;\r\n      }\r\n    }\r\n    .mat-form-field-ripple {\r\n      display: none;\r\n    }\r\n    .mat-form-field-subscript-wrapper {\r\n      margin-top: 5px;\r\n      transform: translateY(22px);\r\n    }\r\n    .mat-error {\r\n      font-family: $font-family-basic;\r\n      font-size: $tiny-font-size;\r\n      color: $supportive-alert-500;\r\n      line-height: 12px;\r\n    }\r\n\r\n    // disabled\r\n    &.mat-form-field-disabled {\r\n      .mat-input-element {\r\n        color: $gray-scale-600;\r\n      }\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $gray-scale-400;\r\n      }\r\n    }\r\n\r\n    // error state\r\n    &.ng-invalid {\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-500;\r\n      }\r\n      &.mat-form-field .mat-form-field-flex:hover~.mat-form-field-underline,\r\n      &.mat-form-field.mat-focused .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-700;\r\n      }\r\n    }\r\n\r\n    // readonly\r\n    &.p-input-text-readonly:not(.p-input-link) {\r\n      &:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover~.mat-form-field-underline,\r\n\r\n      .mat-form-field-underline {\r\n        box-shadow: none;\r\n      }\r\n    }\r\n\r\n    //icon\r\n    .mat-form-field-suffix {\r\n      align-self: flex-end;\r\n      opacity: 0;\r\n    }\r\n    &-icon {\r\n      padding-bottom: 6px;\r\n      .mat-form-field-disabled &,\r\n      .p-input-readonly & {\r\n        display: none;\r\n      }\r\n    }\r\n  }\r\n\r\n  // no padding for error message on the bottom of mat-form-field\r\n  .p-input-text-label {\r\n    padding-bottom: 6px;\r\n  }\r\n  ::ng-deep .mat-form-field-wrapper {\r\n    padding-bottom: 0;\r\n  }\r\n  ::ng-deep .mat-form-field-infix {\r\n    border-top: 0;\r\n  }\r\n  ::ng-deep .mat-form-field-underline {\r\n    position: static;\r\n  }\r\n}\r\n",
+                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n.p-input-text {\r\n  width: $input-text-width;\r\n  ::ng-deep & {\r\n    // material styles override\r\n    &.mat-form-field-appearance-standard.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {\r\n      transform: translateY(-23px);\r\n    }\r\n    .mat-form-field-label-wrapper {\r\n      top: -16px;\r\n      padding-top: 16px;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-label,\r\n    &.mat-form-field.mat-form-field-invalid .mat-form-field-label {\r\n      color: $gray-scale-700;\r\n    }\r\n    .p-input-text-input {\r\n      font-family: $font-family-basic;\r\n      font-size: $small-font-size;\r\n      width: calc(100% - #{$input-text-padding});\r\n      line-height: 20px;\r\n      color: $primary-a-900;\r\n      padding-left: $input-text-padding;\r\n      caret-color: $primary-a-900;\r\n    }\r\n    .mat-form-field-infix {\r\n      padding-bottom: 6px;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-flex {\r\n      padding-top: 0;\r\n    }\r\n    &.mat-form-field-appearance-standard .mat-form-field-underline {\r\n      background-color: transparent;\r\n      box-shadow: inset 0px -1px 0px $gray-scale-600;\r\n    }\r\n    &.mat-form-field.mat-focused .mat-form-field-underline,\r\n    &:not(.mat-form-field-disabled):not(.mat-form-field-invalid)\r\n            .mat-form-field-flex:hover {\r\n      & ~.mat-form-field-underline {\r\n        background-color: transparent;\r\n        box-shadow: inset 0px -1px 0px $primary-a-900;\r\n      }\r\n      .mat-form-field-suffix {\r\n        opacity: 1;\r\n      }\r\n    }\r\n    .mat-form-field-ripple {\r\n      display: none;\r\n    }\r\n    .mat-form-field-subscript-wrapper {\r\n      margin-top: $gap-small;\r\n      transform: translateY(22px);\r\n    }\r\n    .mat-error {\r\n      font-family: $font-family-basic;\r\n      font-size: $tiny-font-size;\r\n      color: $supportive-alert-500;\r\n      line-height: 12px;\r\n    }\r\n\r\n    // disabled\r\n    &.mat-form-field-disabled {\r\n      .mat-input-element {\r\n        color: $gray-scale-600;\r\n      }\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $gray-scale-400;\r\n      }\r\n    }\r\n\r\n    // error state\r\n    &.ng-invalid {\r\n      .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-500;\r\n      }\r\n      &.mat-form-field .mat-form-field-flex:hover~.mat-form-field-underline,\r\n      &.mat-form-field.mat-focused .mat-form-field-underline {\r\n        box-shadow: inset 0px -1px 0px $supportive-alert-700;\r\n      }\r\n    }\r\n\r\n    // readonly\r\n    &.p-input-text-readonly:not(.p-input-link) {\r\n      &:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover~.mat-form-field-underline,\r\n\r\n      .mat-form-field-underline {\r\n        box-shadow: none;\r\n      }\r\n    }\r\n\r\n    //icon\r\n    .mat-form-field-suffix {\r\n      align-self: flex-end;\r\n      opacity: 0;\r\n    }\r\n    &-icon {\r\n      padding-bottom: 6px;\r\n      .mat-form-field-disabled &,\r\n      .p-input-readonly & {\r\n        display: none;\r\n      }\r\n    }\r\n  }\r\n\r\n  // no padding for error message on the bottom of mat-form-field\r\n  .p-input-text-label {\r\n    padding-bottom: 6px;\r\n  }\r\n  ::ng-deep .mat-form-field-wrapper {\r\n    padding-bottom: 0;\r\n  }\r\n  ::ng-deep .mat-form-field-infix {\r\n    border-top: 0;\r\n  }\r\n  ::ng-deep .mat-form-field-underline {\r\n    position: static;\r\n  }\r\n}\r\n",
                     "styleUrl": "./input-text.component.scss"
                 }
             ],
@@ -3901,7 +3967,7 @@
         },
         {
             "name": "InputTextTableLayoutComponent",
-            "id": "component-InputTextTableLayoutComponent-15f0dbd3d2ec2e8fca69e2963f3ba0de",
+            "id": "component-InputTextTableLayoutComponent-efe110653321b4782e5717eb41e4af34",
             "file": "projects/design-system-lib/src/lib/input/table-layout/input-text-table-layout.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3921,44 +3987,72 @@
                 {
                     "name": "table",
                     "line": 11,
-                    "type": "literal type"
-                },
-                {
-                    "name": "title",
-                    "line": 10,
-                    "type": "string"
+                    "type": "IInputTextTable[]"
                 }
             ],
             "outputsClass": [],
             "propertiesClass": [
                 {
-                    "name": "isTableVisible",
-                    "defaultValue": "true",
-                    "type": "boolean",
+                    "name": "tableToRender",
+                    "type": "IInputTextTable[]",
                     "optional": false,
                     "description": "",
-                    "line": 15,
+                    "line": 12,
                     "modifierKind": [
                         114
                     ]
                 }
             ],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14
+                },
+                {
+                    "name": "toggleTable",
+                    "args": [
+                        {
+                            "name": "tableInd",
+                            "type": "number"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20,
+                    "jsdoctags": [
+                        {
+                            "name": "tableInd",
+                            "type": "number",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
             "hostBindings": [],
             "hostListeners": [],
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {IInputText} from '../text/input-text.interface';\r\n\r\n@Component({\r\n  selector: 'p-input-text-table-layout',\r\n  templateUrl: './input-text-table-layout.component.html',\r\n  styleUrls: ['./input-text-table-layout.component.scss'],\r\n})\r\nexport class InputTextTableLayoutComponent {\r\n  @Input() title: string;\r\n  @Input() table: {\r\n    tableHeader: string,\r\n    tableData: IInputText\r\n  };\r\n  public isTableVisible: boolean = true;\r\n}\r\n\r\n\r\n",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport {IInputTextTable} from './input-text-table.interface';\r\nimport {IInputText} from '../text/input-text.interface';\r\n\r\n@Component({\r\n  selector: 'p-input-text-table-layout',\r\n  templateUrl: './input-text-table-layout.component.html',\r\n  styleUrls: ['./input-text-table-layout.component.scss'],\r\n})\r\nexport class InputTextTableLayoutComponent implements OnInit {\r\n  @Input() table: IInputTextTable[];\r\n  public tableToRender: IInputTextTable[];\r\n\r\n  ngOnInit(): void {\r\n    this.tableToRender = this.table.map( singleTable => {\r\n      return {...singleTable, isHidden: false};\r\n    });\r\n  }\r\n\r\n  toggleTable(tableInd: number): void {\r\n    let delay = 0;\r\n    let delayStep: number;\r\n    this.tableToRender[tableInd].isHidden ? delayStep = -100 : delayStep = 100;\r\n    this.tableToRender[tableInd].singleTableData.forEach( line => {\r\n      delay += delayStep;\r\n      line.transitionDelay = delay;\r\n    });\r\n  }\r\n}\r\n\r\n\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$table-header-max-width: 240px;\r\n$table-header-padding-right: 40px;\r\n$table-height: 325px;\r\n\r\n.input-table {\r\n  border-collapse: collapse;\r\n\r\n  &-header {\r\n    font-family: $font-family-basic;\r\n    font-size: $base-font-size;\r\n    font-weight: 400;\r\n    color: $gray-scale-700;\r\n    text-align: left;\r\n    text-transform: capitalize;\r\n    max-width: $table-header-max-width;\r\n    padding-right: $table-header-padding-right;\r\n    padding-bottom: 26px;\r\n    &-text {\r\n      @include clamp;\r\n    }\r\n  }\r\n\r\n  &-data {\r\n    ::ng-deep .mat-form-field-infix {\r\n      padding-top: 0;\r\n      border-top-width: 5px;\r\n    }\r\n  }\r\n\r\n  &-trigger {\r\n    @include resetButton;\r\n    margin-bottom: 15px;\r\n    &-icon {\r\n      display: flex;\r\n      margin-right: 12.5px;\r\n    }\r\n  }\r\n\r\n  &-container {\r\n    height: 0;\r\n    padding-left: 22px;\r\n    transition: height 225ms cubic-bezier(0.4, 0, 0.2, 1);\r\n    overflow: hidden;\r\n    &.visible {\r\n      height: 325px;\r\n    }\r\n  }\r\n}\r\n",
+                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$table-header-max-width: 240px;\r\n$table-header-padding-right: 40px;\r\n$row-height: 52px;\r\n\r\n.input-table {\r\n  border-collapse: collapse;\r\n\r\n  &-row {\r\n    height: $row-height;\r\n    opacity: 1;\r\n    transition: opacity 300ms;\r\n    &.hidden {\r\n      opacity: 0;\r\n    }\r\n  }\r\n\r\n  &-header {\r\n    font-family: $font-family-basic;\r\n    font-size: $base-font-size;\r\n    font-weight: 400;\r\n    color: $gray-scale-700;\r\n    text-align: left;\r\n    text-transform: capitalize;\r\n    max-width: $table-header-max-width;\r\n    padding-right: $table-header-padding-right;\r\n    padding-bottom: $gap-base;\r\n    &-text {\r\n      @include clamp;\r\n    }\r\n  }\r\n\r\n  &-data {\r\n    ::ng-deep .mat-form-field-infix {\r\n      padding-top: 0;\r\n      border-top-width: 5px;\r\n    }\r\n  }\r\n\r\n  &-trigger {\r\n    @include resetButton;\r\n    color: $primary-a-900;\r\n    margin-bottom: 15px;\r\n    &-icon {\r\n      display: flex;\r\n      margin-right: 12.5px;\r\n    }\r\n  }\r\n\r\n  //&-container {\r\n  //  padding-left: 22px;\r\n  //  transition: height 225ms cubic-bezier(0.4, 0, 0.2, 1);\r\n  //  overflow: hidden;\r\n  //}\r\n}\r\n",
                     "styleUrl": "./input-text-table-layout.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"input-table-wrapper\">\r\n  <button class=\"input-table-trigger headline-2-bold\" (click)=\"isTableVisible = !isTableVisible\">\r\n    <p-icon class=\"input-table-trigger-icon\"\r\n            iconName=\"chevron-down\"\r\n            width=\"16\"\r\n            height=\"auto\"\r\n            strokeWidth=\"3\"></p-icon>\r\n    {{title}}\r\n  </button>\r\n  <div class=\"input-table-container\"\r\n       [class.visible]=\"isTableVisible\"\r\n       tabindex=\"-1\"\r\n       attr.aria-label=\"{{title}}\">\r\n    <table class=\"input-table\">\r\n      <tbody class=\"input-table-body\">\r\n      <ng-container *ngFor=\"let input of table\">\r\n        <tr class=\"input-table-row\">\r\n          <th class=\"input-table-header\">\r\n            <span class=\"input-table-header-text paragraph-2-default\">{{input.tableHeader}}</span>\r\n          </th>\r\n          <td class=\"input-table-data\">\r\n            <p-input-text [type]=\"input.tableData.type\"\r\n                          [label]=\"input.tableData.label\"\r\n                          [ariaLabel]=\"input.tableData.ariaLabel\"\r\n                          [placeholder]=\"input.tableData.placeholder\"\r\n                          [errorMessage]=\"input.tableData.errorMessage\"\r\n                          [disabled]=\"input.tableData.disabled\"\r\n                          [readonly]=\"input.tableData.readonly\"\r\n                          [value]=\"input.tableData.value\"\r\n                          [validators]=\"input.tableData.validators\"\r\n                          [matcher]=\"input.tableData.matcher\"\r\n                          [iconName]=\"input.tableData.iconName\">\r\n            </p-input-text>\r\n          </td>\r\n        </tr>\r\n      </ng-container>\r\n      </tbody>\r\n    </table>\r\n  </div>\r\n</div>\r\n"
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<table class=\"input-table\">\r\n  <tbody class=\"input-table-body\">\r\n  <ng-container *ngFor=\"let singleTable of tableToRender; let i = index\">\r\n    <!--title-->\r\n    <tr class=\"input-table-row\">\r\n      <th class=\"input-table-header title\">\r\n        <button class=\"input-table-trigger headline-2-bold\"\r\n                (click)=\"toggleTable(i)\">\r\n          <p-icon class=\"input-table-trigger-icon\"\r\n                  iconName=\"chevron-down\"\r\n                  width=\"16\"\r\n                  height=\"auto\"\r\n                  strokeWidth=\"3\"></p-icon>\r\n          {{singleTable.title}}\r\n        </button>\r\n      </th>\r\n    </tr>\r\n\r\n    <!--input rows-->\r\n    <ng-container *ngFor=\"let input of singleTable.singleTableData\">\r\n      <tr class=\"input-table-row\"\r\n          [class.hidden]=\"singleTable.isHidden\">\r\n        <th class=\"input-table-header\">\r\n          <span class=\"input-table-header-text paragraph-2-default\">\r\n            {{input.tableHeader}}\r\n          </span>\r\n        </th>\r\n        <td class=\"input-table-data\">\r\n          <p-input-text [type]=\"input.tableData.type\"\r\n                        [label]=\"input.tableData.label\"\r\n                        [ariaLabel]=\"input.tableData.ariaLabel\"\r\n                        [placeholder]=\"input.tableData.placeholder\"\r\n                        [errorMessage]=\"input.tableData.errorMessage\"\r\n                        [disabled]=\"input.tableData.disabled\"\r\n                        [readonly]=\"input.tableData.readonly\"\r\n                        [value]=\"input.tableData.value\"\r\n                        [validators]=\"input.tableData.validators\"\r\n                        [matcher]=\"input.tableData.matcher\"\r\n                        [iconName]=\"input.tableData.iconName\">\r\n          </p-input-text>\r\n        </td>\r\n      </tr>\r\n    </ng-container>\r\n  </ng-container>\r\n\r\n  </tbody>\r\n</table>\r\n\r\n"
         },
         {
             "name": "LabelMainComponent",
@@ -7945,33 +8039,17 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
-                "type": "object",
-                "defaultValue": "{\r\n  production: true\r\n}"
-            },
-            {
-                "name": "environment",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/environments/environment.ts",
                 "type": "object",
                 "defaultValue": "{\r\n  production: false\r\n}"
             },
             {
-                "name": "ErrorMessage",
+                "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input/input-text.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "ErrorState",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/input/input-text.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
+                "file": "src/environments/environment.prod.ts",
+                "type": "object",
+                "defaultValue": "{\r\n  production: true\r\n}"
             },
             {
                 "name": "Examples",
@@ -7988,14 +8066,6 @@
                 "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "inputObj",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/input/input-text-table-layout.ts",
-                "type": "object",
-                "defaultValue": "{\r\n  ...InputTextStories.NoLabel.args, ariaLabel: 'Cell long long Label', errorMessage: 'Validation text', validators: Validators.required, matcher: new CustomErrorStateMatcher()\r\n}"
             },
             {
                 "name": "inputObj",
@@ -8033,33 +8103,9 @@
                 "name": "NoLabel",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input/input-text.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "NoLabel",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts",
                 "type": "",
                 "defaultValue": "SlideToggleTemplate.bind({})"
-            },
-            {
-                "name": "PageTemplate",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/input/input-text-table-layout.ts",
-                "type": "Story<InputTextTableLayoutComponent>",
-                "defaultValue": "(args: InputTextTableLayoutComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "PageTemplate",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
-                "type": "Story<CheckboxGroupPageComponent>",
-                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -8076,6 +8122,14 @@
                 "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
                 "type": "Story<CheckboxPageComponent>",
                 "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "PageTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "Story<CheckboxGroupPageComponent>",
+                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -8116,6 +8170,14 @@
                 "type": "literal type"
             },
             {
+                "name": "singleTable",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/input/inputTable.ts",
+                "type": "object",
+                "defaultValue": "{\r\n  title: 'Resolution',\r\n  singleTableData: [\r\n    {\r\n      tableHeader: 'Cell Header',\r\n      tableData: {\r\n        ariaLabel: 'Cell long long Label',\r\n        value: 'Input text',\r\n        errorMessage: 'Validation text',\r\n        validators: Validators.required,\r\n        matcher: new CustomErrorStateMatcher()\r\n      }\r\n    },\r\n    {\r\n      tableHeader: 'Cell Header',\r\n      tableData: {\r\n        ariaLabel: 'Cell long long Label',\r\n        value: 'Input text',\r\n        errorMessage: 'Validation text',\r\n        validators: Validators.required,\r\n        matcher: new CustomErrorStateMatcher()\r\n      }\r\n    },\r\n    {\r\n      tableHeader: 'Cell Header',\r\n      tableData: {\r\n        ariaLabel: 'Cell long long Label',\r\n        value: 'Input text',\r\n        errorMessage: 'Validation text',\r\n        validators: Validators.required,\r\n        matcher: new CustomErrorStateMatcher()\r\n      }\r\n    },\r\n    {\r\n      tableHeader: 'Cell Header',\r\n      tableData: {\r\n        ariaLabel: 'Cell long long Label',\r\n        value: 'Input text',\r\n        errorMessage: 'Validation text',\r\n        validators: Validators.required,\r\n        matcher: new CustomErrorStateMatcher()\r\n      }\r\n    },\r\n    {\r\n      tableHeader: 'Cell Header',\r\n      tableData: {\r\n        ariaLabel: 'Cell long long Label',\r\n        value: '',\r\n        errorMessage: 'Validation text',\r\n        validators: Validators.required,\r\n        matcher: new CustomErrorStateMatcher()\r\n      }\r\n    },\r\n    {\r\n      tableHeader: 'Cell Header',\r\n      tableData: {\r\n        ariaLabel: 'Cell long long Label',\r\n        value: 'Input text',\r\n        errorMessage: 'Validation text',\r\n        validators: Validators.required,\r\n        matcher: new CustomErrorStateMatcher()\r\n      }\r\n    },\r\n  ]\r\n}"
+            },
+            {
                 "name": "SlideToggleTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -8140,28 +8202,12 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "TableLayout",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/input/input-text-table-layout.ts",
-                "type": "",
-                "defaultValue": "PageTemplate.bind({})"
-            },
-            {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/colors/Color-palette.stories.ts",
                 "type": "Story<ColorPaletteComponent>",
                 "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/input/input-text.stories.ts",
-                "type": "Story<InputTextComponent>",
-                "defaultValue": "(args: InputTextComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -8175,17 +8221,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/styles/typography-styles.stories.ts",
-                "type": "Story<TypographyStylesComponent>",
-                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
+                "type": "Story<TypographyFontFamilyComponent>",
+                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
-                "type": "Story<TypographyFontFamilyComponent>",
-                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/styles/typography-styles.stories.ts",
+                "type": "Story<TypographyStylesComponent>",
+                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Toggles",
@@ -8210,14 +8256,6 @@
                 "file": "src/stories/checkbox/checkbox.stories.ts",
                 "type": "",
                 "defaultValue": "CheckboxTemplate.bind({})"
-            },
-            {
-                "name": "WithLabel",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/input/input-text.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "WithLabel",
@@ -8525,16 +8563,6 @@
                     "type": "literal type"
                 }
             ],
-            "src/environments/environment.prod.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.prod.ts",
-                    "type": "object",
-                    "defaultValue": "{\r\n  production: true\r\n}"
-                }
-            ],
             "src/environments/environment.ts": [
                 {
                     "name": "environment",
@@ -8545,46 +8573,14 @@
                     "defaultValue": "{\r\n  production: false\r\n}"
                 }
             ],
-            "src/stories/input/input-text.stories.ts": [
+            "src/environments/environment.prod.ts": [
                 {
-                    "name": "ErrorMessage",
+                    "name": "environment",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/input/input-text.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "ErrorState",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/input/input-text.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "NoLabel",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/input/input-text.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/input/input-text.stories.ts",
-                    "type": "Story<InputTextComponent>",
-                    "defaultValue": "(args: InputTextComponent) => ({\r\n  props: args,\r\n})"
-                },
-                {
-                    "name": "WithLabel",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/input/input-text.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
+                    "file": "src/environments/environment.prod.ts",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: true\r\n}"
                 }
             ],
             "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts": [
@@ -8621,32 +8617,6 @@
                     "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
                     "type": "Story<TypographyFontFamilyComponent>",
                     "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
-                }
-            ],
-            "src/stories/input/input-text-table-layout.ts": [
-                {
-                    "name": "inputObj",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/input/input-text-table-layout.ts",
-                    "type": "object",
-                    "defaultValue": "{\r\n  ...InputTextStories.NoLabel.args, ariaLabel: 'Cell long long Label', errorMessage: 'Validation text', validators: Validators.required, matcher: new CustomErrorStateMatcher()\r\n}"
-                },
-                {
-                    "name": "PageTemplate",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/input/input-text-table-layout.ts",
-                    "type": "Story<InputTextTableLayoutComponent>",
-                    "defaultValue": "(args: InputTextTableLayoutComponent) => ({\r\n  props: args,\r\n})"
-                },
-                {
-                    "name": "TableLayout",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/input/input-text-table-layout.ts",
-                    "type": "",
-                    "defaultValue": "PageTemplate.bind({})"
                 }
             ],
             "src/stories/input/inputObj.ts": [
@@ -8747,6 +8717,16 @@
                     "file": "src/stories/icons/icon.stories.ts",
                     "type": "Story<IconComponent>",
                     "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/stories/input/inputTable.ts": [
+                {
+                    "name": "singleTable",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/input/inputTable.ts",
+                    "type": "object",
+                    "defaultValue": "{\r\n  title: 'Resolution',\r\n  singleTableData: [\r\n    {\r\n      tableHeader: 'Cell Header',\r\n      tableData: {\r\n        ariaLabel: 'Cell long long Label',\r\n        value: 'Input text',\r\n        errorMessage: 'Validation text',\r\n        validators: Validators.required,\r\n        matcher: new CustomErrorStateMatcher()\r\n      }\r\n    },\r\n    {\r\n      tableHeader: 'Cell Header',\r\n      tableData: {\r\n        ariaLabel: 'Cell long long Label',\r\n        value: 'Input text',\r\n        errorMessage: 'Validation text',\r\n        validators: Validators.required,\r\n        matcher: new CustomErrorStateMatcher()\r\n      }\r\n    },\r\n    {\r\n      tableHeader: 'Cell Header',\r\n      tableData: {\r\n        ariaLabel: 'Cell long long Label',\r\n        value: 'Input text',\r\n        errorMessage: 'Validation text',\r\n        validators: Validators.required,\r\n        matcher: new CustomErrorStateMatcher()\r\n      }\r\n    },\r\n    {\r\n      tableHeader: 'Cell Header',\r\n      tableData: {\r\n        ariaLabel: 'Cell long long Label',\r\n        value: 'Input text',\r\n        errorMessage: 'Validation text',\r\n        validators: Validators.required,\r\n        matcher: new CustomErrorStateMatcher()\r\n      }\r\n    },\r\n    {\r\n      tableHeader: 'Cell Header',\r\n      tableData: {\r\n        ariaLabel: 'Cell long long Label',\r\n        value: '',\r\n        errorMessage: 'Validation text',\r\n        validators: Validators.required,\r\n        matcher: new CustomErrorStateMatcher()\r\n      }\r\n    },\r\n    {\r\n      tableHeader: 'Cell Header',\r\n      tableData: {\r\n        ariaLabel: 'Cell long long Label',\r\n        value: 'Input text',\r\n        errorMessage: 'Validation text',\r\n        validators: Validators.required,\r\n        matcher: new CustomErrorStateMatcher()\r\n      }\r\n    },\r\n  ]\r\n}"
                 }
             ],
             "src/stories/menu/stateGroups.ts": [
@@ -9227,6 +9207,24 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "InputTextTableLayoutComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/input/table-layout/input-text-table-line.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "IInputTextTableLine",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/input/table-layout/input-text-table.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "IInputTextTable",
                 "coveragePercent": 0,
                 "coverageCount": "0/4",
                 "status": "low"
@@ -9773,91 +9771,21 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/input/input-text-table-layout.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "inputObj",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/input/input-text-table-layout.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "PageTemplate",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/input/input-text-table-layout.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "TableLayout",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/input/input-text.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "ErrorMessage",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/input/input-text.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "ErrorState",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/input/input-text.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "NoLabel",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/input/input-text.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/input/input-text.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "WithLabel",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
                 "filePath": "src/stories/input/inputObj.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "inputObj",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/input/inputTable.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "singleTable",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

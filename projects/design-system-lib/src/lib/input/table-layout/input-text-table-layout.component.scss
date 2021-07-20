@@ -2,7 +2,6 @@
 
 $table-header-max-width: 240px;
 $table-header-padding-right: 40px;
-$table-height: 325px;
 $row-height: 52px;
 
 .input-table {
@@ -10,6 +9,11 @@ $row-height: 52px;
 
   &-row {
     height: $row-height;
+    opacity: 1;
+    transition: opacity 300ms;
+    &.hidden {
+      opacity: 0;
+    }
   }
 
   &-header {
@@ -36,20 +40,11 @@ $row-height: 52px;
 
   &-trigger {
     @include resetButton;
+    color: $primary-a-900;
     margin-bottom: 15px;
     &-icon {
       display: flex;
       margin-right: 12.5px;
-    }
-  }
-
-  &-container {
-    height: 0;
-    padding-left: 22px;
-    transition: height 225ms cubic-bezier(0.4, 0, 0.2, 1);
-    overflow: hidden;
-    &.visible {
-      height: 325px;
     }
   }
 }
