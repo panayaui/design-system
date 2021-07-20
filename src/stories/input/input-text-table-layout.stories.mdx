@@ -1,0 +1,115 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+
+import {InputTextTableLayoutComponent} from 'projects/design-system-lib/src/public-api';
+import {InputModule} from 'projects/design-system-lib/src/public-api';
+import {Validators} from '@angular/forms';
+import {CustomErrorStateMatcher} from './custom-error-state-matcher';
+import {singleTable} from './inputTable.ts';
+
+<Meta title='Components/Input/Table Layout'
+  component={InputTextTableLayoutComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [InputModule]
+    })
+  ]}
+/>
+
+export const Template = (args) => <InputTextTableLayoutComponent {...args} />
+
+# Input Text Table Layout
+
+###### Selector
+
+```html
+  <p-input-text-table-layout></p-input-text-table-layout>
+```
+
+###### One Table
+<Canvas>
+  <Story name="One Table"
+     args={{
+       table: [
+        singleTable
+       ]
+     }}>
+     {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Two Tables
+<Canvas>
+  <Story name="Two Tables"
+     args={{
+       table: [
+        singleTable,
+        singleTable
+       ]
+     }}>
+     {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Component
+```ts
+export class InputTextTableLayoutComponent implements OnInit {
+  @Input() table: IInputTextTable[];
+  public tableToRender: IInputTextTable[];
+
+  ngOnInit(): void {
+    this.tableToRender = this.table.map( singleTable => {
+      return {...singleTable, isHidden: false};
+    });
+  }
+
+  toggleTable(tableInd: number): void {
+    const timer = 100;
+    let delay: number;
+    let delayStep: number;
+    this.tableToRender[tableInd].isHidden = !this.tableToRender[tableInd].isHidden;
+    if (this.tableToRender[tableInd].isHidden) {
+      delay = (this.tableToRender[tableInd].singleTableData.length + 1) * timer;
+      delayStep = timer * -1;
+    }
+    else {
+      delay = 0;
+      delayStep = timer;
+    }
+    this.tableToRender[tableInd].singleTableData.forEach( line => {
+      delay += delayStep;
+      line.transitionDelay = delay;
+    });
+  }
+}
+```
+
+```ts
+export interface IInputTextTable {
+  title: string;
+  singleTableData: IInputTextTableLine[];
+  isHidden?: boolean;
+}
+
+export interface IInputTextTableLine {
+  tableHeader: string;
+  tableData: IInputText;
+  transitionDelay?: number;
+}
+
+export interface IInputText {
+  type?: string;
+  label?: string;
+  ariaLabel?: string;
+  placeholder?: string;
+  errorMessage?: string;
+  disabled?: boolean;
+  readonly?: boolean;
+  value: string;
+  validators: ValidatorFn[];
+  matcher?: ErrorStateMatcher;
+  iconName?: string;
+}
+```
+
+

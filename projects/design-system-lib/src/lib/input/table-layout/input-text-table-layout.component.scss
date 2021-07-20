@@ -1,11 +1,20 @@
-@import "../../../../../../src/stories/assets/styles/custom";
+@import "../../assets/styles/custom";
 
 $table-header-max-width: 240px;
 $table-header-padding-right: 40px;
-$table-height: 325px;
+$row-height: 52px;
 
 .input-table {
   border-collapse: collapse;
+
+  &-row {
+    height: $row-height;
+    opacity: 1;
+    transition: opacity 300ms;
+    &.hidden {
+      opacity: 0;
+    }
+  }
 
   &-header {
     font-family: $font-family-basic;
@@ -16,7 +25,7 @@ $table-height: 325px;
     text-transform: capitalize;
     max-width: $table-header-max-width;
     padding-right: $table-header-padding-right;
-    padding-bottom: 26px;
+    padding-bottom: $gap-base;
     &-text {
       @include clamp;
     }
@@ -31,20 +40,11 @@ $table-height: 325px;
 
   &-trigger {
     @include resetButton;
+    color: $primary-a-900;
     margin-bottom: 15px;
     &-icon {
       display: flex;
       margin-right: 12.5px;
-    }
-  }
-
-  &-container {
-    height: 0;
-    padding-left: 22px;
-    transition: height 225ms cubic-bezier(0.4, 0, 0.2, 1);
-    overflow: hidden;
-    &.visible {
-      height: 325px;
     }
   }
 }

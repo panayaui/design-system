@@ -72,3 +72,10 @@ $menu-body-min-height: 103px;
     }
   }
 }
+
+::ng-deep .p-menu-trigger {
+  &,
+  & input {
+    cursor: pointer;
+  }
+}
