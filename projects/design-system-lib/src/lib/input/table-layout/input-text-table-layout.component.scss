@@ -3,9 +3,14 @@
 $table-header-max-width: 240px;
 $table-header-padding-right: 40px;
 $table-height: 325px;
+$row-height: 52px;
 
 .input-table {
   border-collapse: collapse;
+
+  &-row {
+    height: $row-height;
+  }
 
   &-header {
     font-family: $font-family-basic;
@@ -16,7 +21,7 @@ $table-height: 325px;
     text-transform: capitalize;
     max-width: $table-header-max-width;
     padding-right: $table-header-padding-right;
-    padding-bottom: 26px;
+    padding-bottom: $gap-base;
     &-text {
       @include clamp;
     }

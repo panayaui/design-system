@@ -49,7 +49,7 @@
       display: none;
     }
     .mat-form-field-subscript-wrapper {
-      margin-top: 5px;
+      margin-top: $gap-small;
       transform: translateY(22px);
     }
     .mat-error {
