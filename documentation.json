@@ -1777,7 +1777,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n::ng-deep .p-btn {\r\n  @include resetButton;\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  font-weight: 500;\r\n  line-height: 20px;\r\n  min-width: 80px;\r\n  padding-right: $gap-double-plus;\r\n  padding-left: $gap-double-plus;\r\n  border-radius: $btn-border-radius;\r\n  white-space: nowrap;\r\n  transition: all 400ms;\r\n\r\n  &-large {\r\n    height: $btn-large-height;\r\n  }\r\n\r\n  &-small {\r\n    height: $btn-small-height;\r\n  }\r\n\r\n  &:disabled {\r\n    pointer-events: none;\r\n  }\r\n\r\n  &-primary {\r\n    color: $gray-scale-1;\r\n    background-color: $secondary-a-700;\r\n    &:hover {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:focus {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-700;\r\n      background-color: $secondary-a-50;\r\n    }\r\n  }\r\n\r\n  &-secondary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    border: 1px solid $secondary-a-700;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-700;\r\n      border-color: $secondary-a-500;\r\n    }\r\n  }\r\n\r\n  &-tertiary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-700;\r\n    }\r\n  }\r\n\r\n  &-distructive {\r\n    color: $gray-scale-1;\r\n    background-color: $supportive-alert-500;\r\n    &:hover {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:focus {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-700;\r\n      background-color: $supportive-alert-50;\r\n    }\r\n  }\r\n\r\n  // class of the action-button\r\n  &-icon-before {\r\n    padding-left: $gap-double;\r\n    .p-btn-label {\r\n      margin-left: $gap-base;\r\n    }\r\n  }\r\n  // class of the action-button\r\n  &-icon-after {\r\n    padding-right: $gap-double;\r\n    .p-btn-label {\r\n      margin-right: $gap-base;\r\n    }\r\n  }\r\n\r\n  // class of the icon\r\n  &-icon-pre,\r\n  &-icon-post {\r\n    display: inline-flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n  }\r\n\r\n  &-isIcon {\r\n    line-height: unset;\r\n    min-width: unset;\r\n    padding: $gap-small;\r\n  }\r\n}\r\n\r\n\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n::ng-deep .p-btn {\r\n  @include resetButton;\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  font-weight: 500;\r\n  line-height: 20px;\r\n  min-width: 80px;\r\n  padding-right: $gap-double-plus;\r\n  padding-left: $gap-double-plus;\r\n  border-radius: $btn-border-radius;\r\n  white-space: nowrap;\r\n  transition: all 400ms;\r\n\r\n  &-large {\r\n    height: $btn-large-height;\r\n  }\r\n\r\n  &-small {\r\n    height: $btn-small-height;\r\n  }\r\n\r\n  &:disabled {\r\n    pointer-events: none;\r\n  }\r\n\r\n  &-primary {\r\n    color: $gray-scale-1;\r\n    background-color: $secondary-a-700;\r\n    &:hover {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:focus {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-700;\r\n      background-color: $secondary-a-50;\r\n    }\r\n  }\r\n\r\n  &-secondary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    border: 1px solid $secondary-a-700;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-700;\r\n      border-color: $secondary-a-500;\r\n    }\r\n  }\r\n\r\n  &-tertiary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-700;\r\n    }\r\n  }\r\n\r\n  &-distructive {\r\n    color: $gray-scale-1;\r\n    background-color: $supportive-alert-500;\r\n    &:hover {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:focus {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-700;\r\n      background-color: $supportive-alert-50;\r\n    }\r\n  }\r\n\r\n  // class of the action-button\r\n  &-icon-before {\r\n    padding-left: $gap-double;\r\n    .p-btn-label {\r\n      margin-left: $gap-base;\r\n    }\r\n  }\r\n  // class of the action-button\r\n  &-icon-after {\r\n    padding-right: $gap-double;\r\n    .p-btn-label {\r\n      margin-right: $gap-base;\r\n    }\r\n  }\r\n\r\n  // class of the icon\r\n  &-icon-pre,\r\n  &-icon-post {\r\n    display: inline-flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n  }\r\n\r\n  &-isIcon {\r\n    line-height: unset;\r\n    min-width: unset;\r\n    padding: $gap-small;\r\n    &:disabled {\r\n      color: $gray-scale-700;\r\n    }\r\n  }\r\n}\r\n\r\n\r\n",
                     "styleUrl": "./button.component.scss"
                 }
             ],
@@ -3477,7 +3477,7 @@
         },
         {
             "name": "InputNumericComponent",
-            "id": "component-InputNumericComponent-0a5dff7835f31e0ef6e38e5ff551c8a6",
+            "id": "component-InputNumericComponent-9b114ecf0864f7493d43ba856bf165ea",
             "file": "projects/design-system-lib/src/lib/input/numeric/input-numeric.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3518,13 +3518,19 @@
                 {
                     "name": "labelLast",
                     "defaultValue": "false",
-                    "line": 21,
+                    "line": 22,
                     "type": "boolean"
                 },
                 {
                     "name": "matcher",
-                    "line": 23,
+                    "line": 24,
                     "type": "ErrorStateMatcher"
+                },
+                {
+                    "name": "notEditable",
+                    "defaultValue": "false",
+                    "line": 19,
+                    "type": "boolean"
                 },
                 {
                     "name": "placeholder",
@@ -3540,7 +3546,7 @@
                 {
                     "name": "size",
                     "defaultValue": "InputNumericSizeEnum.Large",
-                    "line": 22,
+                    "line": 23,
                     "type": "InputNumericSizeEnum"
                 },
                 {
@@ -3551,12 +3557,12 @@
                 },
                 {
                     "name": "validators",
-                    "line": 20,
+                    "line": 21,
                     "type": "ValidatorFn[]"
                 },
                 {
                     "name": "value",
-                    "line": 19,
+                    "line": 20,
                     "type": "number"
                 }
             ],
@@ -3567,7 +3573,7 @@
                     "type": "FormControl",
                     "optional": false,
                     "description": "",
-                    "line": 24,
+                    "line": 25,
                     "modifierKind": [
                         114
                     ]
@@ -3580,7 +3586,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 33
+                    "line": 34
                 }
             ],
             "hostBindings": [],
@@ -3588,7 +3594,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport {FormControl, ValidatorFn} from '@angular/forms';\r\nimport {InputNumericSizeEnum} from './input-numeric-size.enum';\r\nimport {ErrorStateMatcher} from '@angular/material/core';\r\n\r\n@Component({\r\n  selector: 'p-input-numeric',\r\n  templateUrl: './input-numeric.component.html',\r\n  styleUrls: ['./input-numeric.component.scss'],\r\n})\r\nexport class InputNumericComponent implements OnInit {\r\n  @Input() type: string = 'number';\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string; // required\r\n  @Input() placeholder: number;\r\n  @Input() errorMessage: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() readonly: boolean = false;\r\n  @Input() value: number;\r\n  @Input() validators: ValidatorFn[];\r\n  @Input() labelLast: boolean = false;\r\n  @Input() size: InputNumericSizeEnum = InputNumericSizeEnum.Large;\r\n  @Input() matcher: ErrorStateMatcher;\r\n  public formFieldControl: FormControl;\r\n\r\n  public get classes(): string[] {\r\n    const classParams = [];\r\n    this.readonly ? classParams.push('p-input-numeric-readonly') : null;\r\n    classParams.push(`p-input-numeric-${this.size}`);\r\n    return classParams;\r\n  }\r\n\r\n  ngOnInit(): void {\r\n    this.formFieldControl = new FormControl(\r\n      {value: this.value, disabled: this.disabled},\r\n      this.validators);\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport {FormControl, ValidatorFn} from '@angular/forms';\r\nimport {InputNumericSizeEnum} from './input-numeric-size.enum';\r\nimport {ErrorStateMatcher} from '@angular/material/core';\r\n\r\n@Component({\r\n  selector: 'p-input-numeric',\r\n  templateUrl: './input-numeric.component.html',\r\n  styleUrls: ['./input-numeric.component.scss'],\r\n})\r\nexport class InputNumericComponent implements OnInit {\r\n  @Input() type: string = 'number';\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string; // required\r\n  @Input() placeholder: number;\r\n  @Input() errorMessage: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() readonly: boolean = false;\r\n  @Input() notEditable: boolean = false; // readonly input that looks like regular one (with underline)\r\n  @Input() value: number;\r\n  @Input() validators: ValidatorFn[];\r\n  @Input() labelLast: boolean = false;\r\n  @Input() size: InputNumericSizeEnum = InputNumericSizeEnum.Large;\r\n  @Input() matcher: ErrorStateMatcher;\r\n  public formFieldControl: FormControl;\r\n\r\n  public get classes(): string[] {\r\n    const classParams = [];\r\n    this.readonly ? classParams.push('p-input-numeric-readonly') : null;\r\n    classParams.push(`p-input-numeric-${this.size}`);\r\n    return classParams;\r\n  }\r\n\r\n  ngOnInit(): void {\r\n    this.formFieldControl = new FormControl(\r\n      {value: this.value, disabled: this.disabled},\r\n      this.validators);\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3607,11 +3613,11 @@
                         "name": "classes",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 26
+                        "line": 27
                     }
                 }
             },
-            "templateData": "<div class=\"p-input-numeric-container\" [class.no-error-message]=\"!errorMessage\">\r\n  <ng-template [ngIf]=\"label\" [ngIfElse]=\"noLabel\">\r\n\r\n    <label *ngIf=\"!labelLast\" class=\"p-input-numeric-label first\" [ngClass]=\"{'disabled' : disabled}\">\r\n      {{label}}\r\n    </label>\r\n    <ng-container *ngTemplateOutlet=\"noLabel\"></ng-container>\r\n    <label *ngIf=\"labelLast\" class=\"p-input-numeric-label last\" [ngClass]=\"{'disabled' : disabled}\">\r\n      {{label}}\r\n    </label>\r\n  </ng-template>\r\n\r\n  <ng-template #noLabel>\r\n    <mat-form-field class=\"p-input-numeric\"\r\n                    appearance=\"standard\"\r\n                    [ngClass]=\"classes\"\r\n                    floatLabel=\"always\">\r\n      <input matInput\r\n             [type]=\"type\"\r\n             [placeholder]=\"placeholder\"\r\n             [readonly]=\"readonly\"\r\n             attr.aria-label=\"{{ariaLabel}}\"\r\n             [formControl]=\"formFieldControl\"\r\n             [errorStateMatcher]=\"matcher\"\r\n             autocomplete=\"off\"\r\n             onfocus=\"this.select()\"\r\n             class=\"p-input-numeric-input\">\r\n      <mat-error *ngIf=\"formFieldControl.invalid\"\r\n                 class=\"p-input-numeric-error\">\r\n        {{errorMessage}}\r\n      </mat-error>\r\n    </mat-form-field>\r\n  </ng-template>\r\n</div>\r\n"
+            "templateData": "<div class=\"p-input-numeric-container\" [class.no-error-message]=\"!errorMessage\">\r\n  <ng-template [ngIf]=\"label\" [ngIfElse]=\"noLabel\">\r\n\r\n    <label *ngIf=\"!labelLast\" class=\"p-input-numeric-label first\" [ngClass]=\"{'disabled' : disabled}\">\r\n      {{label}}\r\n    </label>\r\n    <ng-container *ngTemplateOutlet=\"noLabel\"></ng-container>\r\n    <label *ngIf=\"labelLast\" class=\"p-input-numeric-label last\" [ngClass]=\"{'disabled' : disabled}\">\r\n      {{label}}\r\n    </label>\r\n  </ng-template>\r\n\r\n  <ng-template #noLabel>\r\n    <mat-form-field class=\"p-input-numeric\"\r\n                    appearance=\"standard\"\r\n                    [ngClass]=\"classes\"\r\n                    floatLabel=\"always\">\r\n      <input matInput\r\n             [type]=\"type\"\r\n             [placeholder]=\"placeholder\"\r\n             [readonly]=\"readonly || notEditable\"\r\n             attr.aria-label=\"{{ariaLabel}}\"\r\n             [formControl]=\"formFieldControl\"\r\n             [errorStateMatcher]=\"matcher\"\r\n             autocomplete=\"off\"\r\n             onfocus=\"this.select()\"\r\n             class=\"p-input-numeric-input\">\r\n      <mat-error *ngIf=\"formFieldControl.invalid\"\r\n                 class=\"p-input-numeric-error\">\r\n        {{errorMessage}}\r\n      </mat-error>\r\n    </mat-form-field>\r\n  </ng-template>\r\n</div>\r\n"
         },
         {
             "name": "InputOutlineComponent",
@@ -3894,59 +3900,6 @@
             "templateData": "<mat-form-field class=\"p-input-text\"\r\n                appearance=\"standard\"\r\n                [ngClass]=\"{'p-input-text-readonly' : readonly}\"\r\n                floatLabel=\"always\">\r\n  <mat-label class=\"p-input-text-label paragraph-3-default\">{{label}}</mat-label>\r\n  <input matInput\r\n         [type]=\"type\"\r\n         [placeholder]=\"placeholder\"\r\n         [readonly]=\"readonly\"\r\n         attr.aria-label=\"{{ariaLabel}}\"\r\n         [formControl]=\"formFieldControl\"\r\n         [errorStateMatcher]=\"matcher\"\r\n         onfocus=\"this.select()\"\r\n         class=\"p-input-text-input\">\r\n  <p-icon *ngIf=\"iconName\"\r\n          class=\"p-input-text-icon\"\r\n          matSuffix\r\n          [iconName]=\"iconName\"\r\n          width=\"16\"\r\n          height=\"16\">\r\n  </p-icon>\r\n  <mat-error *ngIf=\"formFieldControl.invalid\"\r\n             class=\"p-input-text-error\">\r\n    {{errorMessage}}\r\n  </mat-error>\r\n</mat-form-field>\r\n"
         },
         {
-            "name": "InputTextPageComponent",
-            "id": "component-InputTextPageComponent-5ccd3658571e2b6881c3496584af3a38",
-            "file": "src/stories/input-text/input-text-page/input-text-page.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "p-input-text-page",
-            "styleUrls": [
-                "./input-text-page.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./input-text-page.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [
-                {
-                    "name": "inputTextPage",
-                    "line": 10,
-                    "type": "any"
-                }
-            ],
-            "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "originalOrder",
-                    "defaultValue": "() => {...}",
-                    "type": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 12
-                }
-            ],
-            "methodsClass": [],
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "",
-            "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {KeyValue} from '@angular/common';\r\n\r\n@Component({\r\n  selector: 'p-input-text-page',\r\n  templateUrl: './input-text-page.component.html',\r\n  styleUrls: ['./input-text-page.component.scss'],\r\n})\r\nexport default class InputTextPageComponent {\r\n  @Input() inputTextPage: any;\r\n\r\n  originalOrder = (a: KeyValue<number, string>, b: KeyValue<number, string>): number => {\r\n    return 0;\r\n  }\r\n}\r\n\r\n\r\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": ".page-input-text {\r\n  .header-list .list-header:not(:first-child),\r\n  .list-item {\r\n    height: 100px;\r\n  }\r\n}\r\n",
-                    "styleUrl": "./input-text-page.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "templateData": "<div class=\"page page-input-text\">\r\n    <header class=\"page-header\">\r\n      <h1 class=\"page-title\">Text Input / <span class=\"page-header-highlighted\">Base</span></h1>\r\n    </header>\r\n\r\n    <main class=\"page-main\">\r\n      <ul class=\"page-list header-list\">\r\n        <li class=\"list-header\"></li>\r\n        <li class=\"list-header\">\r\n          Default\r\n        </li>\r\n        <li class=\"list-header\">\r\n          Disabled\r\n        </li>\r\n        <li class=\"list-header\">\r\n          View only\r\n        </li>\r\n      </ul>\r\n\r\n      <ul *ngFor=\"let inputType of inputTextPage | keyvalue: originalOrder\"\r\n          class=\"page-list content-list\">\r\n        <li class=\"list-header\">\r\n          {{inputType.value.title}}\r\n        </li>\r\n        <li *ngFor=\"let input of inputType.value.list\" class=\"list-item\">\r\n          <p-input-text [type]=\"input.type\"\r\n                        [label]=\"input.label\"\r\n                        [ariaLabel]=\"input.ariaLabel\"\r\n                        [placeholder]=\"input.placeholder\"\r\n                        [errorMessage]=\"input.errorMessage\"\r\n                        [disabled]=\"input.disabled\"\r\n                        [readonly]=\"input.readonly\"\r\n                        [value]=\"input.value\"\r\n                        [validators]=\"input.validators\">\r\n          </p-input-text>\r\n        </li>\r\n        <ng-container *ngIf=\"inputType.value.list.length === 1\">\r\n          <li class=\"list-item\"></li>\r\n          <li class=\"list-item\"></li>\r\n        </ng-container>\r\n      </ul>\r\n    </main>\r\n</div>\r\n"
-        },
-        {
             "name": "InputTextTableLayoutComponent",
             "id": "component-InputTextTableLayoutComponent-15f0dbd3d2ec2e8fca69e2963f3ba0de",
             "file": "projects/design-system-lib/src/lib/input/table-layout/input-text-table-layout.component.ts",
@@ -4000,7 +3953,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../../../../src/stories/assets/styles/custom\";\r\n\r\n$table-header-max-width: 240px;\r\n$table-header-padding-right: 40px;\r\n$table-height: 325px;\r\n\r\n.input-table {\r\n  border-collapse: collapse;\r\n\r\n  &-header {\r\n    font-family: $font-family-basic;\r\n    font-size: $base-font-size;\r\n    font-weight: 400;\r\n    color: $gray-scale-700;\r\n    text-align: left;\r\n    text-transform: capitalize;\r\n    max-width: $table-header-max-width;\r\n    padding-right: $table-header-padding-right;\r\n    padding-bottom: 26px;\r\n    &-text {\r\n      @include clamp;\r\n    }\r\n  }\r\n\r\n  &-data {\r\n    ::ng-deep .mat-form-field-infix {\r\n      padding-top: 0;\r\n      border-top-width: 5px;\r\n    }\r\n  }\r\n\r\n  &-trigger {\r\n    @include resetButton;\r\n    margin-bottom: 15px;\r\n    &-icon {\r\n      display: flex;\r\n      margin-right: 12.5px;\r\n    }\r\n  }\r\n\r\n  &-container {\r\n    height: 0;\r\n    padding-left: 22px;\r\n    transition: height 225ms cubic-bezier(0.4, 0, 0.2, 1);\r\n    overflow: hidden;\r\n    &.visible {\r\n      height: 325px;\r\n    }\r\n  }\r\n}\r\n",
+                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$table-header-max-width: 240px;\r\n$table-header-padding-right: 40px;\r\n$table-height: 325px;\r\n\r\n.input-table {\r\n  border-collapse: collapse;\r\n\r\n  &-header {\r\n    font-family: $font-family-basic;\r\n    font-size: $base-font-size;\r\n    font-weight: 400;\r\n    color: $gray-scale-700;\r\n    text-align: left;\r\n    text-transform: capitalize;\r\n    max-width: $table-header-max-width;\r\n    padding-right: $table-header-padding-right;\r\n    padding-bottom: 26px;\r\n    &-text {\r\n      @include clamp;\r\n    }\r\n  }\r\n\r\n  &-data {\r\n    ::ng-deep .mat-form-field-infix {\r\n      padding-top: 0;\r\n      border-top-width: 5px;\r\n    }\r\n  }\r\n\r\n  &-trigger {\r\n    @include resetButton;\r\n    margin-bottom: 15px;\r\n    &-icon {\r\n      display: flex;\r\n      margin-right: 12.5px;\r\n    }\r\n  }\r\n\r\n  &-container {\r\n    height: 0;\r\n    padding-left: 22px;\r\n    transition: height 225ms cubic-bezier(0.4, 0, 0.2, 1);\r\n    overflow: hidden;\r\n    &.visible {\r\n      height: 325px;\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "./input-text-table-layout.component.scss"
                 }
             ],
@@ -4330,7 +4283,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$menu-padding: $gap-base;\r\n$menu-background: $gray-scale-1;\r\n$menu-footer-height: $btn-small-height + $menu-padding * 4;\r\n$menu-min-width: 230px;\r\n$menu-max-height: 75vh;\r\n$menu-body-min-height: 103px;\r\n\r\n%btn-line {\r\n  width: 100%;\r\n  height: 100%;\r\n  padding-right: $menu-padding;\r\n  padding-left: $menu-padding;\r\n}\r\n\r\n::ng-deep .p-menu.mat-menu-panel {\r\n  min-width: $menu-min-width;\r\n  max-height: $menu-max-height;\r\n  background-color: $menu-background;\r\n  border-radius: 0;\r\n  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1),\r\n  0 2px 6px rgba(0, 0, 0, 0.04),\r\n  0 -3px 6px rgba(0, 0, 0, 0.04);\r\n  overflow: hidden;\r\n  .mat-menu-content {\r\n    height: 100%;\r\n    padding: 0;\r\n    position: relative;\r\n  }\r\n}\r\n\r\n\r\n.p-menu {\r\n  &-container {\r\n    height: 100%;\r\n  }\r\n  &-footer {\r\n    display: flex;\r\n    align-items: center;\r\n    width: 100%;\r\n    height: $menu-footer-height;\r\n    padding: $menu-padding * 2;\r\n    background-color: $menu-background;\r\n    bottom: 0;\r\n    left: 0;\r\n    z-index: 1;\r\n    &-btn {\r\n      & + & {\r\n        margin-left: $menu-padding;\r\n      }\r\n    }\r\n  }\r\n  &-empty {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    height: 100%;\r\n    padding-right: $menu-padding;\r\n    padding-bottom: $menu-padding;\r\n    &-state {\r\n      &:before {\r\n        content: '';\r\n        display: block;\r\n        height: 30px;\r\n        margin-bottom: 7px;\r\n        background-image: url('../../assets/images/no-data.svg');\r\n        background-repeat: no-repeat;\r\n        background-position: center;\r\n        background-size: contain;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$menu-padding: $gap-base;\r\n$menu-background: $gray-scale-1;\r\n$menu-footer-height: $btn-small-height + $menu-padding * 4;\r\n$menu-min-width: 230px;\r\n$menu-max-height: 75vh;\r\n$menu-body-min-height: 103px;\r\n\r\n%btn-line {\r\n  width: 100%;\r\n  height: 100%;\r\n  padding-right: $menu-padding;\r\n  padding-left: $menu-padding;\r\n}\r\n\r\n::ng-deep .p-menu.mat-menu-panel {\r\n  min-width: $menu-min-width;\r\n  max-height: $menu-max-height;\r\n  background-color: $menu-background;\r\n  border-radius: 0;\r\n  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1),\r\n  0 2px 6px rgba(0, 0, 0, 0.04),\r\n  0 -3px 6px rgba(0, 0, 0, 0.04);\r\n  overflow: hidden;\r\n  .mat-menu-content {\r\n    height: 100%;\r\n    padding: 0;\r\n    position: relative;\r\n  }\r\n}\r\n\r\n\r\n.p-menu {\r\n  &-container {\r\n    height: 100%;\r\n  }\r\n  &-footer {\r\n    display: flex;\r\n    align-items: center;\r\n    width: 100%;\r\n    height: $menu-footer-height;\r\n    padding: $menu-padding * 2;\r\n    background-color: $menu-background;\r\n    bottom: 0;\r\n    left: 0;\r\n    z-index: 1;\r\n    &-btn {\r\n      & + & {\r\n        margin-left: $menu-padding;\r\n      }\r\n    }\r\n  }\r\n  &-empty {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    height: 100%;\r\n    padding-right: $menu-padding;\r\n    padding-bottom: $menu-padding;\r\n    &-state {\r\n      &:before {\r\n        content: '';\r\n        display: block;\r\n        height: 30px;\r\n        margin-bottom: 7px;\r\n        background-image: url('../../assets/images/no-data.svg');\r\n        background-repeat: no-repeat;\r\n        background-position: center;\r\n        background-size: contain;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n::ng-deep .p-menu-trigger {\r\n  &,\r\n  & input {\r\n    cursor: pointer;\r\n  }\r\n}\r\n",
                     "styleUrl": "./menu-base.component.scss"
                 }
             ],
@@ -4953,7 +4906,7 @@
         },
         {
             "name": "MenuSingleSelectComponent",
-            "id": "component-MenuSingleSelectComponent-17ccb13d0a71c5a8961e17f00c3dc4ff",
+            "id": "component-MenuSingleSelectComponent-c34c1285536752a91ba81321ca03215e",
             "file": "projects/design-system-lib/src/lib/menu/menu-single-select/menu-single-select.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -5067,7 +5020,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 46,
+                    "line": 45,
                     "jsdoctags": [
                         {
                             "name": "value",
@@ -5084,7 +5037,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 39
+                    "line": 38
                 },
                 {
                     "name": "ngOnInit",
@@ -5109,7 +5062,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 60,
+                    "line": 59,
                     "jsdoctags": [
                         {
                             "name": "$event",
@@ -5133,7 +5086,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 56
+                    "line": 55
                 }
             ],
             "hostBindings": [],
@@ -5141,7 +5094,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild} from '@angular/core';\r\nimport {FormControl} from '@angular/forms';\r\nimport {SubscriptionLike} from 'rxjs';\r\nimport {IMenuButton} from '../menu-button.interface';\r\nimport {MatMenuTrigger} from '@angular/material/menu';\r\n\r\n@Component({\r\n  selector: 'p-menu-single-select',\r\n  templateUrl: './menu-single-select.component.html',\r\n  styleUrls: ['./menu-single-select.component.scss'],\r\n})\r\nexport class MenuSingleSelectComponent implements OnInit, OnDestroy {\r\n  @Input() menuList: any[];\r\n  @Input() groupTitle: boolean = false; // true if there is a group title\r\n  @Input() filterPlaceholder: string; // if there is a search and buttons\r\n  @Input() filterAriaLabel: string;\r\n  @Input() buttonFirst: IMenuButton;\r\n  @Input() buttonLast: IMenuButton;\r\n  @Output() onClickTask: EventEmitter<any> = new EventEmitter();\r\n  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;\r\n  public filteredList: any[];\r\n  public formFieldControl: FormControl;\r\n  private sub: SubscriptionLike;\r\n\r\n  ngOnInit(): void {\r\n    console.log(this.menuList);\r\n    this.filteredList = this.menuList;\r\n    if (this.filterPlaceholder) {\r\n      this.formFieldControl = new FormControl('');\r\n      this.sub = this.formFieldControl.valueChanges.subscribe((value: string) => {\r\n        this.alterList(value);\r\n      });\r\n    }\r\n    if (!this.filterAriaLabel && this.filterPlaceholder) {\r\n      this.filterAriaLabel = this.filterPlaceholder;\r\n    }\r\n  }\r\n\r\n  ngOnDestroy(): void {\r\n    if (this.filterPlaceholder && this.sub) {\r\n      this.sub.unsubscribe();\r\n      this.sub = null;\r\n    }\r\n  }\r\n\r\n  alterList(value: string): void {\r\n    this.filteredList = [];\r\n    this.menuList.forEach(group => {\r\n      const filteredGroup = group.names.filter( name => name.name.toLowerCase().indexOf(value.toLowerCase()) > -1);\r\n      if (filteredGroup.length > 0) {\r\n        this.filteredList.push(Object.assign({}, group, group.names = filteredGroup));\r\n      }\r\n    });\r\n  }\r\n\r\n  selectCompleted(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  onSelectedItem($event, item): void {\r\n    console.log(item);\r\n    this.onClickTask.emit(item);\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild} from '@angular/core';\r\nimport {FormControl} from '@angular/forms';\r\nimport {SubscriptionLike} from 'rxjs';\r\nimport {IMenuButton} from '../menu-button.interface';\r\nimport {MatMenuTrigger} from '@angular/material/menu';\r\n\r\n@Component({\r\n  selector: 'p-menu-single-select',\r\n  templateUrl: './menu-single-select.component.html',\r\n  styleUrls: ['./menu-single-select.component.scss'],\r\n})\r\nexport class MenuSingleSelectComponent implements OnInit, OnDestroy {\r\n  @Input() menuList: any[];\r\n  @Input() groupTitle: boolean = false; // true if there is a group title\r\n  @Input() filterPlaceholder: string; // if there is a search and buttons\r\n  @Input() filterAriaLabel: string;\r\n  @Input() buttonFirst: IMenuButton;\r\n  @Input() buttonLast: IMenuButton;\r\n  @Output() onClickTask: EventEmitter<any> = new EventEmitter();\r\n  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;\r\n  public filteredList: any[];\r\n  public formFieldControl: FormControl;\r\n  private sub: SubscriptionLike;\r\n\r\n  ngOnInit(): void {\r\n    this.filteredList = this.menuList;\r\n    if (this.filterPlaceholder) {\r\n      this.formFieldControl = new FormControl('');\r\n      this.sub = this.formFieldControl.valueChanges.subscribe((value: string) => {\r\n        this.alterList(value);\r\n      });\r\n    }\r\n    if (!this.filterAriaLabel && this.filterPlaceholder) {\r\n      this.filterAriaLabel = this.filterPlaceholder;\r\n    }\r\n  }\r\n\r\n  ngOnDestroy(): void {\r\n    if (this.filterPlaceholder && this.sub) {\r\n      this.sub.unsubscribe();\r\n      this.sub = null;\r\n    }\r\n  }\r\n\r\n  alterList(value: string): void {\r\n    this.filteredList = [];\r\n    this.menuList.forEach(group => {\r\n      const filteredGroup = group.names.filter( name => name.name.toLowerCase().indexOf(value.toLowerCase()) > -1);\r\n      if (filteredGroup.length > 0) {\r\n        this.filteredList.push(Object.assign({}, group, group.names = filteredGroup));\r\n      }\r\n    });\r\n  }\r\n\r\n  selectCompleted(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  onSelectedItem($event, item): void {\r\n    console.log(item);\r\n    this.onClickTask.emit(item);\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -5644,7 +5597,7 @@
         },
         {
             "name": "PaginatorComponent",
-            "id": "component-PaginatorComponent-cbb60ed8c18f6fd9de2b2dc4ae790938",
+            "id": "component-PaginatorComponent-3b914b0d4b22a13a4077c0bc47012f25",
             "file": "projects/design-system-lib/src/lib/paginator/paginator.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -5733,6 +5686,16 @@
                     ]
                 },
                 {
+                    "name": "firstInList",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 44,
+                    "modifierKind": [
+                        112
+                    ]
+                },
+                {
                     "name": "inputNumericSize",
                     "defaultValue": "InputNumericSizeEnum",
                     "type": "",
@@ -5744,12 +5707,43 @@
                     ]
                 },
                 {
-                    "name": "pagesList",
-                    "defaultValue": "[]",
+                    "name": "lastInList",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 45,
+                    "modifierKind": [
+                        112
+                    ]
+                },
+                {
+                    "name": "lessBtnDisabled",
+                    "defaultValue": "true",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 46,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "moreBtnDisabled",
+                    "defaultValue": "false",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 47,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "pageList",
                     "type": "number[]",
                     "optional": false,
                     "description": "",
-                    "line": 43,
+                    "line": 42,
                     "modifierKind": [
                         114
                     ]
@@ -5760,7 +5754,7 @@
                     "type": "number",
                     "optional": false,
                     "description": "",
-                    "line": 42,
+                    "line": 43,
                     "modifierKind": [
                         114
                     ]
@@ -5768,12 +5762,45 @@
             ],
             "methodsClass": [
                 {
-                    "name": "definePagesList",
+                    "name": "buildPagesList",
                     "args": [],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 63
+                    "line": 90
+                },
+                {
+                    "name": "definePagesList",
+                    "args": [
+                        {
+                            "name": "$event",
+                            "type": "any"
+                        },
+                        {
+                            "name": "increasePageNumber",
+                            "type": "boolean"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 68,
+                    "jsdoctags": [
+                        {
+                            "name": "$event",
+                            "type": "any",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "increasePageNumber",
+                            "type": "boolean",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
                 },
                 {
                     "name": "ngOnInit",
@@ -5781,7 +5808,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 45
+                    "line": 49
                 }
             ],
             "hostBindings": [],
@@ -5789,11 +5816,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';\r\nimport {ButtonTypeEnum} from '../button/button-type.enum';\r\nimport {InputNumericSizeEnum} from '../input/numeric/input-numeric-size.enum';\r\n\r\n@Component({\r\n  selector: 'p-paginator',\r\n  templateUrl: './paginator.component.html',\r\n  styleUrls: ['./paginator.component.scss'],\r\n})\r\nexport class PaginatorComponent implements OnInit {\r\n  @Input()\r\n  currentPage = 1; // based 1\r\n\r\n  @Input()\r\n  totalPages: number;\r\n\r\n  @Input()\r\n  pageSizeOptions?: { name: any }[];\r\n\r\n  @Input()\r\n  pageSize = 50;\r\n\r\n  @Output()\r\n  pageSizeChanged = new EventEmitter<number>();\r\n\r\n  @Output()\r\n  prevPageClicked = new EventEmitter();\r\n  @Output()\r\n  nextPageClicked = new EventEmitter();\r\n  @Output()\r\n  firstPageClicked = new EventEmitter();\r\n  @Output()\r\n  lastPageClicked = new EventEmitter();\r\n  @Output()\r\n  pageNumberClicked = new EventEmitter();\r\n  /*\r\n  @Output()\r\n  onPageNumberInput = new EventEmitter<number>();\r\n*/\r\n  public buttonType = ButtonTypeEnum;\r\n  public inputNumericSize = InputNumericSizeEnum;\r\n  public step: number = 5;\r\n  public pagesList: number[] = [];\r\n\r\n  ngOnInit(): void {\r\n    if (!this.pageSizeOptions) this.pageSizeOptions = [\r\n      {name: 25},\r\n      {name: 50},\r\n      {name: 100}\r\n    ];\r\n    console.log(this.pageSizeOptions);\r\n    this.definePagesList();\r\n  }\r\n\r\n  get canMoveToPrevious(): boolean {\r\n    return this.currentPage > 1;\r\n  }\r\n\r\n  get canMoveToNext(): boolean {\r\n    return this.currentPage < this.totalPages;\r\n  }\r\n\r\n  definePagesList(): void {\r\n    let lastShown = 1;\r\n    if (this.pagesList.length) {\r\n      lastShown = this.pagesList.length;\r\n    }\r\n    for ( let i = lastShown; i <= this.step; i++) {\r\n      this.pagesList.push(i);\r\n    }\r\n    console.log(this.pagesList);\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';\r\nimport {ButtonTypeEnum} from '../button/button-type.enum';\r\nimport {InputNumericSizeEnum} from '../input/numeric/input-numeric-size.enum';\r\n\r\n@Component({\r\n  selector: 'p-paginator',\r\n  templateUrl: './paginator.component.html',\r\n  styleUrls: ['./paginator.component.scss'],\r\n})\r\nexport class PaginatorComponent implements OnInit {\r\n  @Input()\r\n  currentPage = 1; // based 1\r\n\r\n  @Input()\r\n  totalPages: number;\r\n\r\n  @Input()\r\n  pageSizeOptions?: { name: any }[];\r\n\r\n  @Input()\r\n  pageSize = 50;\r\n\r\n  @Output()\r\n  pageSizeChanged = new EventEmitter<number>();\r\n\r\n  @Output()\r\n  prevPageClicked = new EventEmitter();\r\n  @Output()\r\n  nextPageClicked = new EventEmitter();\r\n  @Output()\r\n  firstPageClicked = new EventEmitter();\r\n  @Output()\r\n  lastPageClicked = new EventEmitter();\r\n  @Output()\r\n  pageNumberClicked = new EventEmitter();\r\n  /*\r\n  @Output()\r\n  onPageNumberInput = new EventEmitter<number>();\r\n*/\r\n  public buttonType = ButtonTypeEnum;\r\n  public inputNumericSize = InputNumericSizeEnum;\r\n  public pageList: number[];\r\n  public step: number = 5;\r\n  private firstInList: number;\r\n  private lastInList: number;\r\n  public lessBtnDisabled: boolean = true;\r\n  public moreBtnDisabled: boolean = false;\r\n\r\n  ngOnInit(): void {\r\n    if (!this.pageSizeOptions) this.pageSizeOptions = [\r\n      {name: 25},\r\n      {name: 50},\r\n      {name: 100}\r\n    ];\r\n    this.firstInList = 1;\r\n    this.lastInList = this.firstInList + this.step - 1;\r\n    this.buildPagesList();\r\n  }\r\n\r\n  get canMoveToPrevious(): boolean {\r\n    return this.currentPage > 1;\r\n  }\r\n\r\n  get canMoveToNext(): boolean {\r\n    return this.currentPage < this.totalPages;\r\n  }\r\n\r\n  definePagesList($event: any, increasePageNumber: boolean): void {\r\n    this.moreBtnDisabled = false;\r\n    this.lessBtnDisabled = false;\r\n    if (increasePageNumber) {\r\n      this.firstInList += this.step;\r\n      this.lastInList += this.step;\r\n      if (this.lastInList >= this.totalPages) {\r\n        this.moreBtnDisabled = true;\r\n      }\r\n    }\r\n    else {\r\n      this.firstInList -= this.step;\r\n      this.lastInList -= this.step;\r\n      if (this.firstInList <= 1) {\r\n        this.firstInList = 1;\r\n        this.lastInList = this.firstInList + this.step - 1;\r\n        this.lessBtnDisabled = true;\r\n      }\r\n    }\r\n    this.buildPagesList();\r\n  }\r\n\r\n  buildPagesList(): void {\r\n    this.pageList = [];\r\n    for ( let i = this.firstInList; i <= this.lastInList; i++) {\r\n      this.pageList.push(i);\r\n    }\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$action-btn-height: 38px;\r\n\r\n.p-action-btn {\r\n  @include resetButton;\r\n  display: flex;\r\n  align-items: center;\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  height: $action-btn-height;\r\n  padding-right: $gap-base;\r\n  padding-left: $gap-base;\r\n  border-radius: $btn-border-radius;\r\n  white-space: nowrap;\r\n\r\n  &.standalone {\r\n    color: $secondary-a-700;\r\n    font-weight: 600;\r\n    &:not(:disabled):not(.active):hover,\r\n    &:not(:disabled):not(.active):focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n  }\r\n  &:not(.standalone) {\r\n    color: $primary-a-900;\r\n    font-weight: 400;\r\n    &:not(:disabled):not(.active):hover,\r\n    &:not(:disabled):not(.active):focus {\r\n      color: $secondary-a-700;\r\n    }\r\n  }\r\n\r\n  &.active {\r\n    color: $secondary-a-700;\r\n    background-color: $primary-c-50;\r\n  }\r\n\r\n  &:disabled {\r\n    color: $gray-scale-600;\r\n    pointer-events: none;\r\n  }\r\n\r\n  // class of the before icon\r\n  &-icon {\r\n    margin-right: $gap-small;\r\n  }\r\n\r\n  // class of the after icon (chevron-down)\r\n  &-arrow {\r\n    margin-left: $gap-small;\r\n  }\r\n}\r\n\r\n\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n%paginator-btn {\r\n  width: 24px;\r\n  height: 32px;\r\n  &:not(.disabled):hover{\r\n    background-color: $primary-c-50;\r\n  }\r\n}\r\n\r\n.p-paginator {\r\n  display: flex;\r\n  align-items: center;\r\n\r\n  &-arrow {\r\n    ::ng-deep .p-btn {\r\n      @extend %paginator-btn;\r\n    }\r\n    & ~ & {\r\n      margin-left: $gap-base;\r\n    }\r\n  }\r\n\r\n  &-list {\r\n    display: flex;\r\n    align-items: center;\r\n    @include resetUl;\r\n  }\r\n\r\n  &-item {\r\n    margin-left: $gap-base;\r\n  }\r\n\r\n  &-page {\r\n    ::ng-deep .p-btn {\r\n      min-width: unset;\r\n      padding-right: 0;\r\n      padding-left: 0;\r\n      background-color: transparent;\r\n      @extend %paginator-btn;\r\n      &:not(:disabled) {\r\n        color: $primary-a-900;\r\n      }\r\n    }\r\n  }\r\n\r\n  &-select {\r\n    margin-left: $gap-double;\r\n    align-self: flex-end;\r\n  }\r\n}\r\n",
                     "styleUrl": "./paginator.component.scss"
                 }
             ],
@@ -5808,7 +5835,7 @@
                         "name": "canMoveToPrevious",
                         "type": "boolean",
                         "returnType": "boolean",
-                        "line": 55
+                        "line": 60
                     }
                 },
                 "canMoveToNext": {
@@ -5817,11 +5844,11 @@
                         "name": "canMoveToNext",
                         "type": "boolean",
                         "returnType": "boolean",
-                        "line": 59
+                        "line": 64
                     }
                 }
             },
-            "templateData": "<div class=\"p-paginator\">\r\n  <p-button class=\"p-paginator-arrow first\"\r\n            ariaLabel=\"Move to the first page\"\r\n            [disabled]=\"!canMoveToPrevious\"\r\n            iconBefore=\"first\"\r\n            iconBeforeWidth=\"10\"\r\n            iconBeforeHeight=\"10\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"firstPageClicked.emit()\"></p-button>\r\n  <p-button class=\"p-paginator-arrow prev\"\r\n            ariaLabel=\"Move to the previous page\"\r\n            [disabled]=\"!canMoveToPrevious\"\r\n            iconBefore=\"chevron-left\"\r\n            iconBeforeWidth=\"17\"\r\n            iconBeforeStrokeWidth=\"2\"\r\n            [iconBeforeStrokeColor]=\"!canMoveToPrevious ? '#B3B3B3' : 'currentColor'\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"prevPageClicked.emit()\"></p-button>\r\n\r\n  <ul class=\"p-paginator-list\">\r\n    <li class=\"p-paginator-item\" *ngIf=\"!canMoveToNext\">\r\n      <p-button class=\"p-paginator-page more\"\r\n                ariaLabel=\"Show other {{ step }} pages\"\r\n                iconBefore=\"more-horizontal\"\r\n                iconBeforeWidth=\"17\"\r\n                iconBeforeStrokeWidth=\"2\"\r\n                [iconBeforeStrokeColor]=\"!canMoveToNext ? '#B3B3B3' : 'currentColor'\"\r\n                [buttonType]=\"buttonType.IsIcon\"\r\n                (click)=\"definePagesList()\"></p-button>\r\n    </li>\r\n    <li class=\"p-paginator-item\" *ngFor=\"let pageNumber of pagesList\">\r\n      <p-button class=\"p-paginator-page\"\r\n                [label]=\"pageNumber\"\r\n                [ariaLabel]=\"'Move to page ' + pageNumber\"\r\n                [buttonType]=\"buttonType.Tertiary\"\r\n                (click)=\"pageNumberClicked.emit()\"></p-button>\r\n    </li>\r\n    <li class=\"p-paginator-item\" *ngIf=\"canMoveToNext\">\r\n      <p-button class=\"p-paginator-page more\"\r\n                ariaLabel=\"Show other {{ step }} pages\"\r\n                iconBefore=\"more-horizontal\"\r\n                iconBeforeWidth=\"17\"\r\n                iconBeforeStrokeWidth=\"2\"\r\n                [buttonType]=\"buttonType.IsIcon\"\r\n                (click)=\"definePagesList()\"></p-button>\r\n    </li>\r\n  </ul>\r\n\r\n  <p-button class=\"p-paginator-arrow next\"\r\n            ariaLabel=\"Move to the next page\"\r\n            [disabled]=\"!canMoveToNext\"\r\n            iconBefore=\"chevron-right\"\r\n            iconBeforeWidth=\"17\"\r\n            iconBeforeStrokeWidth=\"2\"\r\n            [iconBeforeStrokeColor]=\"!canMoveToNext ? '#B3B3B3' : 'currentColor'\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"nextPageClicked.emit()\"></p-button>\r\n  <p-button class=\"p-paginator-arrow last\"\r\n            ariaLabel=\"Move to the last page\"\r\n            [disabled]=\"!canMoveToNext\"\r\n            iconBefore=\"last\"\r\n            iconBeforeWidth=\"10\"\r\n            iconBeforeHeight=\"10\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"lastPageClicked.emit()\"></p-button>\r\n\r\n  <p-menu-single-select class=\"p-paginator-select\"\r\n                        [menuList]=\"pageSizeOptions\"\r\n                        (onClickTask)=\"pageSizeChanged.emit($event)\">\r\n    <!--ng-content-->\r\n    <p-input-numeric class=\"p-paginator-input\"\r\n                     label=\"Items per page\"\r\n                     [value]=\"pageSize\"\r\n                     [size]=\"inputNumericSize.Small\"\r\n                     [labelLast]=\"true\"\r\n                     [readonly]=\"true\"></p-input-numeric>\r\n    <!-- -->\r\n  </p-menu-single-select>\r\n\r\n  <span>Items per page</span>\r\n</div>\r\n"
+            "templateData": "<div class=\"p-paginator\">\r\n  <p-button class=\"p-paginator-arrow first\"\r\n            [class.disabled]=\"!canMoveToPrevious\"\r\n            ariaLabel=\"Move to the first page\"\r\n            [disabled]=\"!canMoveToPrevious\"\r\n            iconBefore=\"first\"\r\n            iconBeforeWidth=\"10\"\r\n            iconBeforeHeight=\"10\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"firstPageClicked.emit()\"></p-button>\r\n  <p-button class=\"p-paginator-arrow prev\"\r\n            [class.disabled]=\"!canMoveToPrevious\"\r\n            ariaLabel=\"Move to the previous page\"\r\n            [disabled]=\"!canMoveToPrevious\"\r\n            iconBefore=\"chevron-left\"\r\n            iconBeforeWidth=\"17\"\r\n            iconBeforeStrokeWidth=\"2\"\r\n            [iconBeforeStrokeColor]=\"!canMoveToPrevious ? '#B3B3B3' : 'currentColor'\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"prevPageClicked.emit()\"></p-button>\r\n  <ul class=\"p-paginator-list\">\r\n    <li class=\"p-paginator-item\">\r\n      <p-button class=\"p-paginator-page less\"\r\n                ariaLabel=\"Show other {{ step }} pages\"\r\n                iconBefore=\"more-horizontal\"\r\n                iconBeforeWidth=\"17\"\r\n                iconBeforeStrokeWidth=\"2\"\r\n                [disabled]=\"lessBtnDisabled\"\r\n                [iconBeforeStrokeColor]=\"!canMoveToNext ? '#B3B3B3' : 'currentColor'\"\r\n                [buttonType]=\"buttonType.IsIcon\"\r\n                (onClickTask)=\"definePagesList($event, false)\"></p-button>\r\n    </li>\r\n    <li class=\"p-paginator-item\" *ngFor=\"let pageNumber of pageList\">\r\n      <p-button class=\"p-paginator-page\"\r\n                [label]=\"pageNumber\"\r\n                [ariaLabel]=\"'Move to page ' + pageNumber\"\r\n                [buttonType]=\"buttonType.Tertiary\"\r\n                (click)=\"pageNumberClicked.emit()\"></p-button>\r\n    </li>\r\n    <li class=\"p-paginator-item\">\r\n      <p-button class=\"p-paginator-page more\"\r\n                ariaLabel=\"Show other {{ step }} pages\"\r\n                iconBefore=\"more-horizontal\"\r\n                iconBeforeWidth=\"17\"\r\n                iconBeforeStrokeWidth=\"2\"\r\n                [disabled]=\"moreBtnDisabled\"\r\n                [buttonType]=\"buttonType.IsIcon\"\r\n                (onClickTask)=\"definePagesList($event, true)\"></p-button>\r\n    </li>\r\n  </ul>\r\n\r\n  <p-button class=\"p-paginator-arrow next\"\r\n            [class.disabled]=\"!canMoveToNext\"\r\n            ariaLabel=\"Move to the next page\"\r\n            [disabled]=\"!canMoveToNext\"\r\n            iconBefore=\"chevron-right\"\r\n            iconBeforeWidth=\"17\"\r\n            iconBeforeStrokeWidth=\"2\"\r\n            [iconBeforeStrokeColor]=\"!canMoveToNext ? '#B3B3B3' : 'currentColor'\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"nextPageClicked.emit()\"></p-button>\r\n  <p-button class=\"p-paginator-arrow last\"\r\n            [class.disabled]=\"!canMoveToNext\"\r\n            ariaLabel=\"Move to the last page\"\r\n            [disabled]=\"!canMoveToNext\"\r\n            iconBefore=\"last\"\r\n            iconBeforeWidth=\"10\"\r\n            iconBeforeHeight=\"10\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"lastPageClicked.emit()\"></p-button>\r\n\r\n  <p-menu-single-select class=\"p-paginator-select\"\r\n                        [menuList]=\"pageSizeOptions\"\r\n                        (onClickTask)=\"pageSizeChanged.emit($event)\">\r\n    <!--ng-content-->\r\n    <p-input-numeric class=\"p-paginator-input\"\r\n                     label=\"Items per page\"\r\n                     [value]=\"pageSize\"\r\n                     [size]=\"inputNumericSize.Small\"\r\n                     [labelLast]=\"true\"\r\n                     [notEditable]=\"true\"></p-input-numeric>\r\n    <!-- -->\r\n  </p-menu-single-select>\r\n</div>\r\n"
         },
         {
             "name": "RadioButtonComponent",
@@ -7934,7 +7961,7 @@
                 "name": "ErrorMessage",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input-text/input-text.stories.ts",
+                "file": "src/stories/input/input-text.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -7942,7 +7969,7 @@
                 "name": "ErrorState",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input-text/input-text.stories.ts",
+                "file": "src/stories/input/input-text.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -7966,9 +7993,17 @@
                 "name": "inputObj",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input-text/input-text-table-layout.stories.ts",
+                "file": "src/stories/input/input-text-table-layout.ts",
                 "type": "object",
                 "defaultValue": "{\r\n  ...InputTextStories.NoLabel.args, ariaLabel: 'Cell long long Label', errorMessage: 'Validation text', validators: Validators.required, matcher: new CustomErrorStateMatcher()\r\n}"
+            },
+            {
+                "name": "inputObj",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/input/inputObj.ts",
+                "type": "object",
+                "defaultValue": "{\r\n  ariaLabel: 'Cell long long Label',\r\n  value: 'Input text',\r\n  errorMessage: 'Validation text',\r\n  validators: Validators.required,\r\n  matcher: new CustomErrorStateMatcher()\r\n}"
             },
             {
                 "name": "loremIpsum",
@@ -7998,7 +8033,7 @@
                 "name": "NoLabel",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input-text/input-text.stories.ts",
+                "file": "src/stories/input/input-text.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -8011,28 +8046,12 @@
                 "defaultValue": "SlideToggleTemplate.bind({})"
             },
             {
-                "name": "Page",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
-                "type": "",
-                "defaultValue": "PageTemplate.bind({})"
-            },
-            {
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input-text/input-text-table-layout.stories.ts",
+                "file": "src/stories/input/input-text-table-layout.ts",
                 "type": "Story<InputTextTableLayoutComponent>",
                 "defaultValue": "(args: InputTextTableLayoutComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "PageTemplate",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
-                "type": "Story<CheckboxGroupComponent>",
-                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -8046,17 +8065,17 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
-                "type": "Story<CheckboxPageComponent>",
-                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
+                "type": "Story<CheckboxGroupComponent>",
+                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
-                "type": "Story<InputTextPageComponent>",
-                "defaultValue": "(args: InputTextPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "Story<CheckboxPageComponent>",
+                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -8124,7 +8143,7 @@
                 "name": "TableLayout",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input-text/input-text-table-layout.stories.ts",
+                "file": "src/stories/input/input-text-table-layout.ts",
                 "type": "",
                 "defaultValue": "PageTemplate.bind({})"
             },
@@ -8140,17 +8159,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/icons/icon.stories.ts",
-                "type": "Story<IconComponent>",
-                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/input/input-text.stories.ts",
+                "type": "Story<InputTextComponent>",
+                "defaultValue": "(args: InputTextComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input-text/input-text.stories.ts",
-                "type": "Story<InputTextComponent>",
-                "defaultValue": "(args: InputTextComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/icons/icon.stories.ts",
+                "type": "Story<IconComponent>",
+                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -8196,7 +8215,7 @@
                 "name": "WithLabel",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/input-text/input-text.stories.ts",
+                "file": "src/stories/input/input-text.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -8526,12 +8545,12 @@
                     "defaultValue": "{\r\n  production: false\r\n}"
                 }
             ],
-            "src/stories/input-text/input-text.stories.ts": [
+            "src/stories/input/input-text.stories.ts": [
                 {
                     "name": "ErrorMessage",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/input-text/input-text.stories.ts",
+                    "file": "src/stories/input/input-text.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -8539,7 +8558,7 @@
                     "name": "ErrorState",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/input-text/input-text.stories.ts",
+                    "file": "src/stories/input/input-text.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -8547,7 +8566,7 @@
                     "name": "NoLabel",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/input-text/input-text.stories.ts",
+                    "file": "src/stories/input/input-text.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -8555,7 +8574,7 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/input-text/input-text.stories.ts",
+                    "file": "src/stories/input/input-text.stories.ts",
                     "type": "Story<InputTextComponent>",
                     "defaultValue": "(args: InputTextComponent) => ({\r\n  props: args,\r\n})"
                 },
@@ -8563,7 +8582,7 @@
                     "name": "WithLabel",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/input-text/input-text.stories.ts",
+                    "file": "src/stories/input/input-text.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 }
@@ -8604,12 +8623,12 @@
                     "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
                 }
             ],
-            "src/stories/input-text/input-text-table-layout.stories.ts": [
+            "src/stories/input/input-text-table-layout.ts": [
                 {
                     "name": "inputObj",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/input-text/input-text-table-layout.stories.ts",
+                    "file": "src/stories/input/input-text-table-layout.ts",
                     "type": "object",
                     "defaultValue": "{\r\n  ...InputTextStories.NoLabel.args, ariaLabel: 'Cell long long Label', errorMessage: 'Validation text', validators: Validators.required, matcher: new CustomErrorStateMatcher()\r\n}"
                 },
@@ -8617,7 +8636,7 @@
                     "name": "PageTemplate",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/input-text/input-text-table-layout.stories.ts",
+                    "file": "src/stories/input/input-text-table-layout.ts",
                     "type": "Story<InputTextTableLayoutComponent>",
                     "defaultValue": "(args: InputTextTableLayoutComponent) => ({\r\n  props: args,\r\n})"
                 },
@@ -8625,9 +8644,19 @@
                     "name": "TableLayout",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/input-text/input-text-table-layout.stories.ts",
+                    "file": "src/stories/input/input-text-table-layout.ts",
                     "type": "",
                     "defaultValue": "PageTemplate.bind({})"
+                }
+            ],
+            "src/stories/input/inputObj.ts": [
+                {
+                    "name": "inputObj",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/input/inputObj.ts",
+                    "type": "object",
+                    "defaultValue": "{\r\n  ariaLabel: 'Cell long long Label',\r\n  value: 'Input text',\r\n  errorMessage: 'Validation text',\r\n  validators: Validators.required,\r\n  matcher: new CustomErrorStateMatcher()\r\n}"
                 }
             ],
             "src/stories/expansion-panel/loremIpsum.ts": [
@@ -8690,24 +8719,6 @@
                     "file": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts",
                     "type": "",
                     "defaultValue": "SlideToggleTemplate.bind({})"
-                }
-            ],
-            "src/stories/input-text/input-text-page/input-text-page.stories.ts": [
-                {
-                    "name": "Page",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
-                    "type": "",
-                    "defaultValue": "PageTemplate.bind({})"
-                },
-                {
-                    "name": "PageTemplate",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
-                    "type": "Story<InputTextPageComponent>",
-                    "defaultValue": "(args: InputTextPageComponent) => ({\r\n  props: args,\r\n})"
                 }
             ],
             "src/stories/colors/color-palette.component.ts": [
@@ -9190,7 +9201,7 @@
                 "linktype": "component",
                 "name": "InputNumericComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/15",
+                "coverageCount": "0/16",
                 "status": "low"
             },
             {
@@ -9379,7 +9390,7 @@
                 "linktype": "component",
                 "name": "PaginatorComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/17",
+                "coverageCount": "0/22",
                 "status": "low"
             },
             {
@@ -9753,36 +9764,16 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/input-text/input-text-page/input-text-page.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "InputTextPageComponent",
+                "filePath": "src/stories/input/custom-error-state-matcher.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "CustomErrorStateMatcher",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {
-                "filePath": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Page",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/input-text/input-text-page/input-text-page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "PageTemplate",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/input-text/input-text-table-layout.stories.ts",
+                "filePath": "src/stories/input/input-text-table-layout.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -9792,7 +9783,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/input-text/input-text-table-layout.stories.ts",
+                "filePath": "src/stories/input/input-text-table-layout.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -9802,7 +9793,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/input-text/input-text-table-layout.stories.ts",
+                "filePath": "src/stories/input/input-text-table-layout.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -9812,7 +9803,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/input-text/input-text.stories.ts",
+                "filePath": "src/stories/input/input-text.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -9822,7 +9813,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/input-text/input-text.stories.ts",
+                "filePath": "src/stories/input/input-text.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -9832,7 +9823,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/input-text/input-text.stories.ts",
+                "filePath": "src/stories/input/input-text.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -9842,7 +9833,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/input-text/input-text.stories.ts",
+                "filePath": "src/stories/input/input-text.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -9852,7 +9843,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/input-text/input-text.stories.ts",
+                "filePath": "src/stories/input/input-text.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -9862,12 +9853,13 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/input/custom-error-state-matcher.ts",
-                "type": "class",
-                "linktype": "classe",
-                "name": "CustomErrorStateMatcher",
+                "filePath": "src/stories/input/inputObj.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "inputObj",
                 "coveragePercent": 0,
-                "coverageCount": "0/2",
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {

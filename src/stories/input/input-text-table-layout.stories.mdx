@@ -1,0 +1,88 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+
+import {InputTextTableLayoutComponent} from 'projects/design-system-lib/src/public-api';
+import {InputModule} from 'projects/design-system-lib/src/public-api';
+import {Validators} from '@angular/forms';
+import {CustomErrorStateMatcher} from './custom-error-state-matcher';
+import {inputObj} from './inputObj.ts';
+
+<Meta title='Components/Input/Table Layout'
+  component={InputTextTableLayoutComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [InputModule]
+    })
+  ]}
+  args={{
+    title: 'Resolution',
+    table: [
+      {
+        tableHeader: 'Cell Label',
+        tableData: {...inputObj }
+      },
+      {
+        tableHeader: 'Cell Label',
+        tableData: {...inputObj}
+      },
+      {
+        tableHeader: 'Cell long long Label',
+        tableData: {...inputObj}
+      },
+      {
+        tableHeader: 'Cell Label',
+        tableData: {...inputObj}
+      },
+      {
+        tableHeader: 'Cell Label',
+        tableData: {...inputObj, value: ''}
+      },
+      {
+        tableHeader: 'Cell Label',
+        tableData: {...inputObj}
+      }
+    ]
+  }}
+/>
+
+export const Template = (args) => <InputTextTableLayoutComponent {...args} />
+
+# Input Text Table Layout
+
+###### Selector
+
+```html
+  <p-input-text-table-layout></p-input-text-table-layout>
+```
+
+###### One Table
+<Canvas>
+  <Story name="One Table"
+     args={{
+     }}>
+     {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Component
+```ts
+
+```
+
+```ts
+export interface IInputText {
+  type?: string;
+  label?: string;
+  ariaLabel?: string;
+  placeholder?: string;
+  errorMessage?: string;
+  disabled?: boolean;
+  readonly?: boolean;
+  value: string;
+  validators: ValidatorFn[];
+  matcher?: ErrorStateMatcher;
+  iconName?: string;
+}
+```
+
+

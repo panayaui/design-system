@@ -1,10 +1,10 @@
 import {moduleMetadata} from '@storybook/angular';
 import {Story, Meta} from '@storybook/angular/types-6-0';
-import {InputTextTableLayoutComponent} from 'projects/design-system-lib/src/lib/input/table-layout/input-text-table-layout.component';
+
+import {InputModule, InputTextTableLayoutComponent} from 'projects/design-system-lib/src/public-api';
 import * as InputTextStories from './input-text.stories';
 import {Validators} from '@angular/forms';
-import {InputModule} from 'projects/design-system-lib/src/public-api';
-import {CustomErrorStateMatcher} from '../input/custom-error-state-matcher';
+import {CustomErrorStateMatcher} from './custom-error-state-matcher';
 
 
 export default {
