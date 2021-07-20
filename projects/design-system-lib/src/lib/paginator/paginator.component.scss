@@ -1,11 +1,51 @@
 @import "../assets/styles/custom";
 
+%paginator-btn {
+  width: 24px;
+  height: 32px;
+  &:not(.disabled):hover{
+    background-color: $primary-c-50;
+  }
+}
+
 .p-paginator {
   display: flex;
   align-items: center;
+
+  &-arrow {
+    ::ng-deep .p-btn {
+      @extend %paginator-btn;
+    }
+    & ~ & {
+      margin-left: $gap-base;
+    }
+  }
+
   &-list {
     display: flex;
     align-items: center;
     @include resetUl;
+  }
+
+  &-item {
+    margin-left: $gap-base;
+  }
+
+  &-page {
+    ::ng-deep .p-btn {
+      min-width: unset;
+      padding-right: 0;
+      padding-left: 0;
+      background-color: transparent;
+      @extend %paginator-btn;
+      &:not(:disabled) {
+        color: $primary-a-900;
+      }
+    }
+  }
+
+  &-select {
+    margin-left: $gap-double;
+    align-self: flex-end;
   }
 }

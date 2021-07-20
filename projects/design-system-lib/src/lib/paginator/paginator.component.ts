@@ -39,8 +39,12 @@ export class PaginatorComponent implements OnInit {
 */
   public buttonType = ButtonTypeEnum;
   public inputNumericSize = InputNumericSizeEnum;
+  public pageList: number[];
   public step: number = 5;
-  public pagesList: number[] = [];
+  private firstInList: number;
+  private lastInList: number;
+  public lessBtnDisabled: boolean = true;
+  public moreBtnDisabled: boolean = false;
 
   ngOnInit(): void {
     if (!this.pageSizeOptions) this.pageSizeOptions = [
@@ -48,8 +52,9 @@ export class PaginatorComponent implements OnInit {
       {name: 50},
       {name: 100}
     ];
-    console.log(this.pageSizeOptions);
-    this.definePagesList();
+    this.firstInList = 1;
+    this.lastInList = this.firstInList + this.step - 1;
+    this.buildPagesList();
   }
 
   get canMoveToPrevious(): boolean {
@@ -60,14 +65,32 @@ export class PaginatorComponent implements OnInit {
     return this.currentPage < this.totalPages;
   }
 
-  definePagesList(): void {
-    let lastShown = 1;
-    if (this.pagesList.length) {
-      lastShown = this.pagesList.length;
+  definePagesList($event: any, increasePageNumber: boolean): void {
+    this.moreBtnDisabled = false;
+    this.lessBtnDisabled = false;
+    if (increasePageNumber) {
+      this.firstInList += this.step;
+      this.lastInList += this.step;
+      if (this.lastInList >= this.totalPages) {
+        this.moreBtnDisabled = true;
+      }
     }
-    for ( let i = lastShown; i <= this.step; i++) {
-      this.pagesList.push(i);
+    else {
+      this.firstInList -= this.step;
+      this.lastInList -= this.step;
+      if (this.firstInList <= 1) {
+        this.firstInList = 1;
+        this.lastInList = this.firstInList + this.step - 1;
+        this.lessBtnDisabled = true;
+      }
     }
-    console.log(this.pagesList);
+    this.buildPagesList();
+  }
+
+  buildPagesList(): void {
+    this.pageList = [];
+    for ( let i = this.firstInList; i <= this.lastInList; i++) {
+      this.pageList.push(i);
+    }
   }
 }

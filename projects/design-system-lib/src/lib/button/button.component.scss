@@ -112,6 +112,9 @@
     line-height: unset;
     min-width: unset;
     padding: $gap-small;
+    &:disabled {
+      color: $gray-scale-700;
+    }
   }
 }
 
