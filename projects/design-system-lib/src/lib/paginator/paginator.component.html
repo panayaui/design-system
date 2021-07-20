@@ -1,0 +1,85 @@
+<div class="p-paginator">
+  <p-button class="p-paginator-arrow first"
+            [class.disabled]="!canMoveToPrevious"
+            ariaLabel="Move to the first page"
+            [disabled]="!canMoveToPrevious"
+            iconBefore="first"
+            iconBeforeWidth="10"
+            iconBeforeHeight="10"
+            [buttonType]="buttonType.IsIcon"
+            (click)="firstPageClicked.emit()"></p-button>
+  <p-button class="p-paginator-arrow prev"
+            [class.disabled]="!canMoveToPrevious"
+            ariaLabel="Move to the previous page"
+            [disabled]="!canMoveToPrevious"
+            iconBefore="chevron-left"
+            iconBeforeWidth="17"
+            iconBeforeStrokeWidth="2"
+            [iconBeforeStrokeColor]="!canMoveToPrevious ? '#B3B3B3' : 'currentColor'"
+            [buttonType]="buttonType.IsIcon"
+            (click)="prevPageClicked.emit()"></p-button>
+  <ul class="p-paginator-list">
+    <li class="p-paginator-item">
+      <p-button class="p-paginator-page less"
+                ariaLabel="Show other {{ step }} pages"
+                iconBefore="more-horizontal"
+                iconBeforeWidth="17"
+                iconBeforeStrokeWidth="2"
+                [disabled]="lessBtnDisabled"
+                [iconBeforeStrokeColor]="!canMoveToNext ? '#B3B3B3' : 'currentColor'"
+                [buttonType]="buttonType.IsIcon"
+                (onClickTask)="definePagesList($event, false)"></p-button>
+    </li>
+    <li class="p-paginator-item" *ngFor="let pageNumber of pageList">
+      <p-button class="p-paginator-page"
+                [class.selected]="pageNumber === currentPage"
+                [label]="pageNumber"
+                [ariaLabel]="'Move to page ' + pageNumber"
+                [buttonType]="buttonType.Tertiary"
+                (click)="pageNumberClicked.emit()"></p-button>
+    </li>
+    <li class="p-paginator-item">
+      <p-button class="p-paginator-page more"
+                ariaLabel="Show other {{ step }} pages"
+                iconBefore="more-horizontal"
+                iconBeforeWidth="17"
+                iconBeforeStrokeWidth="2"
+                [disabled]="moreBtnDisabled"
+                [buttonType]="buttonType.IsIcon"
+                (onClickTask)="definePagesList($event, true)"></p-button>
+    </li>
+  </ul>
+
+  <p-button class="p-paginator-arrow next"
+            [class.disabled]="!canMoveToNext"
+            ariaLabel="Move to the next page"
+            [disabled]="!canMoveToNext"
+            iconBefore="chevron-right"
+            iconBeforeWidth="17"
+            iconBeforeStrokeWidth="2"
+            [iconBeforeStrokeColor]="!canMoveToNext ? '#B3B3B3' : 'currentColor'"
+            [buttonType]="buttonType.IsIcon"
+            (click)="nextPageClicked.emit()"></p-button>
+  <p-button class="p-paginator-arrow last"
+            [class.disabled]="!canMoveToNext"
+            ariaLabel="Move to the last page"
+            [disabled]="!canMoveToNext"
+            iconBefore="last"
+            iconBeforeWidth="10"
+            iconBeforeHeight="10"
+            [buttonType]="buttonType.IsIcon"
+            (click)="lastPageClicked.emit()"></p-button>
+
+  <p-menu-single-select class="p-paginator-select"
+                        [menuList]="pageSizeOptions"
+                        (onClickTask)="pageSizeChanged.emit($event)">
+    <!--ng-content-->
+    <p-input-numeric class="p-paginator-input"
+                     label="Items per page"
+                     [value]="pageSize"
+                     [size]="inputNumericSize.Small"
+                     [labelLast]="true"
+                     [notEditable]="true"></p-input-numeric>
+    <!-- -->
+  </p-menu-single-select>
+</div>

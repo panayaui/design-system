@@ -1,0 +1,47 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+import {PaginatorComponent} from 'projects/design-system-lib/src/public-api';
+import {PaginatorModule} from 'projects/design-system-lib/src/public-api';
+
+<Meta title='Components/Paginator'
+  component={PaginatorComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [PaginatorModule]
+    })
+  ]}
+  args={{
+    totalPages: 20
+  }}
+/>
+
+export const Template = (args) => <PaginatorComponent {...args} />
+
+# Paginator
+
+###### Selector
+```html
+  <p-paginator></p-paginator>
+```
+<Canvas>
+  <Story name="Paginator"
+    args={{
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Component
+```ts
+export class ActionButtonComponent {
+  @Input() label: string;
+  @Input() disabled: boolean = false;
+  @Input() iconBeforeName: string;
+  @Input() iconBeforeWidth: string = 'auto';
+  @Input() iconBeforeHeight: string = 'auto';
+  @Input() iconBeforeStrokeWidth: number;
+  @Input() iconBeforeStrokeColor: string;
+  @Input() isMenuTrigger: boolean = false;
+  public isActive: boolean = false;
+}
+```

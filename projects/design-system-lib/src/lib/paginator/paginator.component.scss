@@ -1,0 +1,71 @@
+@import "../assets/styles/custom";
+
+$button-width: 24px;
+$button-height: 32px;
+
+%paginator-btn {
+  width: $button-width;
+  height: $button-height;
+  &:not(.disabled):hover{
+    background-color: $primary-c-50;
+  }
+}
+
+.p-paginator {
+  display: flex;
+  align-items: center;
+
+  &-arrow {
+    ::ng-deep .p-btn {
+      @extend %paginator-btn;
+    }
+    & ~ & {
+      margin-left: $gap-base;
+    }
+  }
+
+  &-list {
+    display: flex;
+    align-items: center;
+    @include resetUl;
+  }
+
+  &-item {
+    margin-left: $gap-base;
+  }
+
+  &-page {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+
+    ::ng-deep .p-btn {
+      min-width: unset;
+      padding-right: 0;
+      padding-left: 0;
+      background-color: transparent;
+
+      @extend %paginator-btn;
+      &:not(:disabled) {
+        color: $primary-a-900;
+      }
+    }
+
+    &.selected:after {
+      content: 'Selected';
+      display: block;
+      font-size: 0;
+      width: $button-width;
+      height: 4px;
+      background-color: $primary-a-900;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+
+  &-select {
+    margin-left: $gap-double;
+    align-self: flex-end;
+  }
+}

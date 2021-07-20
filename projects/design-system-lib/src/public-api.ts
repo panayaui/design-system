@@ -86,3 +86,6 @@ export * from './lib/chips/button/chip-button.component';
 export * from './lib/expansion-panel/expansion-panel.module';
 export * from './lib/expansion-panel/expansion-panel.component';
 export * from './lib/expansion-panel/expansion-panel.interface';
+
+export * from './lib/paginator/paginator.module';
+export * from './lib/paginator/paginator.component';
