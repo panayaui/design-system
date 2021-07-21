@@ -2,20 +2,13 @@ import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
 import {moduleMetadata} from '@storybook/angular';
 import {InputNumericComponent} from 'projects/design-system-lib/src/public-api';
 import {InputNumericSizeEnum} from 'projects/design-system-lib/src/public-api';
-import {CommonModule} from '@angular/common';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {ReactiveFormsModule, Validators} from '@angular/forms';
+import {InputModule} from 'projects/design-system-lib/src/public-api';
+import {Validators} from '@angular/forms';
 
 <Meta title='Components/Input/Numeric/Overview' component={InputNumericComponent}
 decorators={[
   moduleMetadata({
-    imports: [CommonModule,
-            MatInputModule,
-            BrowserAnimationsModule,
-            MatFormFieldModule,
-            ReactiveFormsModule]
+    imports: [InputModule]
         })
 ]} />
 
@@ -127,6 +120,21 @@ export const Template = (args) => <InputNumericComponent {...args} />
         size: InputNumericSizeEnum.Large
     }}>
     {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### With Icon On Hover (Menu Trigger)
+<Canvas>
+  <Story name="With Icon"
+     args={{
+          label: 'Items',
+          value: 50,
+          validators: Validators.required,
+          size: InputNumericSizeEnum.Small,
+          labelLast: true,
+          iconName: 'chevron-down'
+     }}>
+     {Template.bind({})}
   </Story>
 </Canvas>
 

@@ -20,12 +20,12 @@
             (click)="prevPageClicked.emit()"></p-button>
   <ul class="p-paginator-list">
     <li class="p-paginator-item">
-      <p-button class="p-paginator-page less"
+      <p-button *ngIf="!lessBtnDisabled"
+                class="p-paginator-page less"
                 ariaLabel="Show other {{ step }} pages"
                 iconBefore="more-horizontal"
                 iconBeforeWidth="17"
                 iconBeforeStrokeWidth="2"
-                [disabled]="lessBtnDisabled"
                 [iconBeforeStrokeColor]="!canMoveToNext ? '#B3B3B3' : 'currentColor'"
                 [buttonType]="buttonType.IsIcon"
                 (onClickTask)="definePagesList($event, false)"></p-button>
@@ -39,12 +39,12 @@
                 (click)="pageNumberClicked.emit()"></p-button>
     </li>
     <li class="p-paginator-item">
-      <p-button class="p-paginator-page more"
+      <p-button *ngIf="!moreBtnDisabled"
+                class="p-paginator-page more"
                 ariaLabel="Show other {{ step }} pages"
                 iconBefore="more-horizontal"
                 iconBeforeWidth="17"
                 iconBeforeStrokeWidth="2"
-                [disabled]="moreBtnDisabled"
                 [buttonType]="buttonType.IsIcon"
                 (onClickTask)="definePagesList($event, true)"></p-button>
     </li>
@@ -79,7 +79,8 @@
                      [value]="pageSize"
                      [size]="inputNumericSize.Small"
                      [labelLast]="true"
-                     [notEditable]="true"></p-input-numeric>
+                     [notEditable]="true"
+                     iconName="chevron-down"></p-input-numeric>
     <!-- -->
   </p-menu-single-select>
 </div>

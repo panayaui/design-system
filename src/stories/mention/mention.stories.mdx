@@ -1,0 +1,43 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+import {HashtagComponent} from 'projects/design-system-lib/src/public-api';
+import {HashtagModule} from 'projects/design-system-lib/src/public-api';
+
+<Meta title='Components/Mention'
+  component={HashtagComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [
+        HashtagModule
+      ]
+    })
+  ]}
+  args={{ 
+    label: 'Lee Cooper',
+    iconRemove: false
+  }}
+/>
+
+export const Template = (args) => <HashtagComponent {...args} />
+
+# Mention
+
+###### Selector
+```ts
+  <p-hashtag></p-hashtag>
+```
+<Canvas>
+  <Story name="Mention"
+    args={{
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### IHashtag
+```ts
+export interface IHashtag {
+  label: string;
+  iconRemove?: boolean;
+}
+```

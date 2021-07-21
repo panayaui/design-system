@@ -18,7 +18,7 @@ export class PaginatorComponent implements OnInit {
   pageSizeOptions?: { name: any }[];
 
   @Input()
-  pageSize = 50;
+  pageSize = 100;
 
   @Output()
   pageSizeChanged = new EventEmitter<number>();

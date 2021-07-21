@@ -25,6 +25,13 @@
              autocomplete="off"
              onfocus="this.select()"
              class="p-input-numeric-input">
+      <p-icon *ngIf="iconName"
+              class="p-input-numeric-icon"
+              matSuffix
+              [iconName]="iconName"
+              width="16"
+              height="16">
+      </p-icon>
       <mat-error *ngIf="formFieldControl.invalid"
                  class="p-input-numeric-error">
         {{errorMessage}}

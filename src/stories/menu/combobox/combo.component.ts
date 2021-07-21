@@ -1,5 +1,6 @@
 import {Component, Input, ViewChild} from '@angular/core';
-import {ButtonTypeEnum,
+import {
+  ButtonTypeEnum,
   IActionButton,
   IMenuButton,
   ICheckbox,
@@ -9,7 +10,7 @@ import {ButtonTypeEnum,
   MenuTabsComponent,
   MenuRangeComponent,
   MenuFreeTextComponent,
-  IInputNumeric
+  IInputNumeric, IHashtag
 } from 'projects/design-system-lib/src/public-api';
 
 
@@ -38,6 +39,9 @@ export class ComboComponent {
   @Input() footerBtnFirst: IMenuButton;
   @Input() footerBtnLast: IMenuButton;
 
+  // multi select + hashtag-bar
+  @Input() hashtagList: IHashtag[];
+
   // radio group + chip
   @Input() radioMenuTrigger: IChip;
   @Input() radioMenuList: any;
@@ -65,6 +69,14 @@ export class ComboComponent {
   @ViewChild(MenuFreeTextComponent) freeTextMenu: MenuFreeTextComponent;
 
   constructor() {}
+
+  selectCompleted(selectedList): void {
+    console.log(selectedList);
+    const newHashtagList = this.hashtagList;
+    selectedList.map( item => newHashtagList.push({ label: item.name }));
+    console.log(newHashtagList);
+    this.hashtagList = newHashtagList;
+  }
 
   openRadioMenu(): void {
     this.radioMenu.openMenu();
