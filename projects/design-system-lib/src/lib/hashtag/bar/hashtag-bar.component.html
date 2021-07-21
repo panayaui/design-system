@@ -3,7 +3,7 @@
     <li class="p-hashtag-item" *ngFor="let hashtag of hashtagList; let i = index">
       <p-hashtag [label]="hashtag.label"
                  [iconRemove]="true"
-                 (onRemoveHashtag)="removeHashtag(hashtag)">
+                 (onRemoveHashtag)="removeHashtag($event, hashtag)">
       </p-hashtag>
     </li>
   </ul>

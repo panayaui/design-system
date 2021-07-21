@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CommonModule} from '@angular/common';
-import {ActionButtonModule, ChipsModule, InputModule, MenuModule} from 'projects/design-system-lib/src/public-api';
+import {ActionButtonModule, ChipsModule, HashtagModule, InputModule, MenuModule} from 'projects/design-system-lib/src/public-api';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {ComboComponent} from './combo.component';
 
@@ -13,7 +13,8 @@ import {ComboComponent} from './combo.component';
     BrowserAnimationsModule,
     InputModule,
     ActionButtonModule,
-    ChipsModule
+    ChipsModule,
+    HashtagModule
   ],
   declarations: [
     ComboComponent

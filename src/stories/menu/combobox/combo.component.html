@@ -64,7 +64,7 @@
   </p-menu-multi-select>
 </ng-container>
 
-<ng-container *ngIf="multiMenuTrigger && filterPlaceholder && !headerBtnFirst">
+<ng-container *ngIf="multiMenuTrigger && filterPlaceholder && !headerBtnFirst && !hashtagList">
   <p-menu-multi-select [menuList]="multiMenuList"
                        [filterPlaceholder]="filterPlaceholder"
                        [filterAriaLabel]="filterAriaLabel"
@@ -79,6 +79,19 @@
                      [iconBeforeStrokeColor]="multiMenuTrigger.iconBeforeStrokeColor"
                      [isMenuTrigger]="true"
                      [isStandalone]="multiMenuTrigger.isStandalone"></p-action-button>
+    <!-- -->
+  </p-menu-multi-select>
+</ng-container>
+
+<ng-container *ngIf="multiMenuTrigger && filterPlaceholder && !headerBtnFirst && hashtagList">
+  <p-menu-multi-select [menuList]="multiMenuList"
+                       [filterPlaceholder]="filterPlaceholder"
+                       [filterAriaLabel]="filterAriaLabel"
+                       [footerBtnFirst]="footerBtnFirst"
+                       [footerBtnLast]="footerBtnLast"
+                       (onSelectCompleted)="selectCompleted($event)">
+    <!--ng-content-->
+    <p-hashtag-bar [hashtagList]="hashtagList"></p-hashtag-bar>
     <!-- -->
   </p-menu-multi-select>
 </ng-container>

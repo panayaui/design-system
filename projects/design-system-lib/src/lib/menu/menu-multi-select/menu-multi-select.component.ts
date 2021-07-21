@@ -1,8 +1,8 @@
 import {
-  Component,
+  Component, EventEmitter,
   Input,
   OnDestroy,
-  OnInit,
+  OnInit, Output,
   ViewChild
 } from '@angular/core';
 import {FormControl} from '@angular/forms';
@@ -24,10 +24,12 @@ export class MenuMultiSelectComponent implements OnInit, OnDestroy {
   @Input() headerBtnLast: ICheckbox;
   @Input() footerBtnFirst: IMenuButton;
   @Input() footerBtnLast: IMenuButton;
+  @Output() onSelectCompleted: EventEmitter<any> = new EventEmitter();
   @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;
   public filteredList: any[];
   public formFieldControl: FormControl;
   private sub: SubscriptionLike;
+  private selectedList: any[] = [];
 
   ngOnInit(): void {
     this.filteredList = this.menuList;
@@ -54,10 +56,12 @@ export class MenuMultiSelectComponent implements OnInit, OnDestroy {
   }
 
   onOptionSelected(item): void {
-    console.log(item);
+    this.selectedList.push(item);
+    console.log(this.selectedList);
   }
 
   selectCompleted(): void {
+    this.onSelectCompleted.emit(this.selectedList);
     this.menuTrigger.closeMenu();
   }
 

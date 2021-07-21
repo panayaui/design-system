@@ -45,7 +45,8 @@ export class HashtagBarComponent {
     label: 'Not equal to'
   };
 
-  removeHashtag(hashtag): void {
+  removeHashtag(event, hashtag): void {
+    event.stopPropagation();
     this.hashtagList = this.hashtagList.filter ( item => item.label !== hashtag.label );
   }
 }

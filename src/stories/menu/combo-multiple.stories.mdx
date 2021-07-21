@@ -95,12 +95,29 @@ export const Template = (args) => <ComboComponent {...args} />
   </Story>
 </Canvas>
 
-###### Filter
+###### Filter 
 <Canvas>
   <Story name="Multi Select with Filter"
     args={{
       filterAriaLabel: 'Find Label',
       filterPlaceholder: 'Find Label'
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Filter & Hashtags
+<Canvas>
+  <Story name="Multi Select with Filter & Hashtags"
+    args={{
+      filterAriaLabel: 'Find Label',
+      filterPlaceholder: 'Find Label',
+      hashtagList: [
+        { label: 'Very long long long long Hashtag' },
+        { label: 'Very long Hashtag' },
+        { label: 'Hashtag' },
+        { label: 'Another Hashtag' }
+      ]
     }}>
     {Template.bind({})}
   </Story>
