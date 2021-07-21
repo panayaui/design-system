@@ -32,6 +32,7 @@
     </li>
     <li class="p-paginator-item" *ngFor="let pageNumber of pageList">
       <p-button class="p-paginator-page"
+                [class.selected]="pageNumber === currentPage"
                 [label]="pageNumber"
                 [ariaLabel]="'Move to page ' + pageNumber"
                 [buttonType]="buttonType.Tertiary"
