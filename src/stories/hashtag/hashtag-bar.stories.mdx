@@ -1,0 +1,47 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+import {HashtagBarComponent} from 'projects/design-system-lib/src/public-api';
+import {HashtagModule} from 'projects/design-system-lib/src/public-api';
+
+<Meta title='Components/Hashtag/Bar'
+  component={HashtagBarComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [
+        HashtagModule
+      ]
+    })
+  ]}
+  args={{ 
+    hashtagList: [
+      { label: 'Very long long long long Hashtag' },
+      { label: 'Very long Hashtag' },
+      { label: 'Hashtag' },
+      { label: 'Another Hashtag' }
+    ]
+  }}
+/>
+
+export const Template = (args) => <HashtagBarComponent {...args} />
+
+# Hashtag Bar
+
+###### Selector
+```ts
+  <p-hashtag-bar></p-hashtag-bar>
+```
+<Canvas>
+  <Story name="Bar"
+    args={{
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### IHashtag
+```ts
+export interface IHashtag {
+  label: string;
+  iconRemove?: boolean;
+}
+```

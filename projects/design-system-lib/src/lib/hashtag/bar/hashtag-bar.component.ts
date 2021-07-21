@@ -8,14 +8,44 @@ import {ButtonTypeEnum} from '../../button/button-type.enum';
   styleUrls: ['./hashtag-bar.component.scss'],
 })
 export class HashtagBarComponent {
-  @Input() chips: IHashtag[];
-  @Input() ariaLabel: string;
-  @Output() onClickTask: EventEmitter<any> = new EventEmitter();
-  public buttonType = ButtonTypeEnum;
+  @Input() hashtagList: IHashtag[];
+  @Input() menuList = [
+    { name: 'Alabama',
+      disabled: false
+    },
+    { name: 'Alaska disabled',
+      disabled: true
+    },
+    { name: 'California',
+      disabled: false
+    }
+  ];
 
-  valuesInTooltip(values: string[]): string {
-    let tooltipText = '';
-    values.forEach( value => tooltipText = `${tooltipText} \n ${value}`);
-    return tooltipText;
+  @Input() footerBtnFirst = {
+    label: 'Done',
+    buttonType: ButtonTypeEnum.Primary
+  };
+  @Input() footerBtnLast = {
+    label: 'Cancel',
+    buttonType: ButtonTypeEnum.Secondary
+  };
+  @Input() filterAriaLabel = 'Find Label';
+  @Input() filterPlaceholder = 'Find Label';
+
+  @Input() headerBtnFirst = {
+    label: 'Clear selected',
+    buttonType: ButtonTypeEnum.Tertiary,
+    icon: {
+      iconName: 'eraser',
+      width: '15',
+      height: '15'
+    }
+  };
+  @Input() headerBtnLast = {
+    label: 'Not equal to'
+  };
+
+  removeHashtag(hashtag): void {
+    this.hashtagList = this.hashtagList.filter ( item => item.label !== hashtag.label );
   }
 }
