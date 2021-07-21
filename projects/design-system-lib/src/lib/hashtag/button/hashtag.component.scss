@@ -10,7 +10,7 @@
   padding-right: $gap-base;
   padding-left: $gap-base;
   transition: background-color 280ms;
-  &:hover {
+  &.live:hover {
     background-color: $secondary-a-200;
   }
 
