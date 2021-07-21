@@ -1,0 +1,12 @@
+<div class="p-hashtag paragraph-2-default">
+  {{label}}
+  <p-button *ngIf="iconRemove"
+            class="p-hashtag-remove"
+            ariaLabel="Remove hashtag"
+            [buttonType]="buttonType.IsIcon"
+            iconBefore="x"
+            iconBeforeWidth="12"
+            iconBeforeStrokeWidth="2"
+            (click)="onRemoveHashtag.emit($event)"></p-button>
+</div>
+

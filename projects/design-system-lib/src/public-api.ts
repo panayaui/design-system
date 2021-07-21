@@ -90,3 +90,9 @@ export * from './lib/expansion-panel/expansion-panel.interface';
 
 export * from './lib/paginator/paginator.module';
 export * from './lib/paginator/paginator.component';
+
+export * from './lib/hashtag/hashtag.module';
+export * from './lib/hashtag/button/hashtag.component';
+export * from './lib/hashtag/bar/hashtag-bar.component';
+export * from './lib/hashtag/hashtag.interface';
+

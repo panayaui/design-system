@@ -1,0 +1,30 @@
+<mat-chip-list class="p-chips-list" attr.aria-label="{{ariaLabel}}">
+  <mat-basic-chip *ngFor="let chip of chips"
+                  class="p-chip"
+                  [disableRipple]="true"
+                  [ngClass]="{'full' : chip.full, 'active' : chip.active }"
+                  [matTooltip]="valuesInTooltip(chip.values)"
+                  matTooltipPosition="above"
+                  matTooltipClass="p-tooltip above"
+                  (click)="onClickTask.emit($event)">
+    <p-button *ngIf="chip.iconRemove"
+              class="p-chip-remove"
+              matChipRemove
+              ariaLabel="Remove Chip"
+              [buttonType]="buttonType.IsIcon"
+              iconBefore="x"
+              iconBeforeWidth="12"
+              iconBeforeStrokeWidth="2"
+              (onClickTask)="removeChip()"></p-button>
+    <span class="p-chip-label paragraph-2-default">{{chip.label}}</span>
+    <ul class="p-chip-values paragraph-2-default" *ngIf="chip.values?.length">
+      <li class="p-chip-value-item" *ngFor="let value of chip.values">
+        {{value}}
+      </li>
+    </ul>
+    <p-icon class="p-chip-menuTrigger"
+            iconName="chevron-down"
+            width="14"
+            [strokeWidth]="2"></p-icon>
+  </mat-basic-chip>
+</mat-chip-list>

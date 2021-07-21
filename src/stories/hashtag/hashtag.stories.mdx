@@ -1,0 +1,54 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+import {HashtagComponent} from 'projects/design-system-lib/src/public-api';
+import {HashtagModule} from 'projects/design-system-lib/src/public-api';
+
+<Meta title='Components/Hashtag/Button'
+  component={HashtagComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [
+        HashtagModule
+      ]
+    })
+  ]}
+  args={{ 
+    label: 'Hashtag'
+  }}
+/>
+
+export const Template = (args) => <HashtagComponent {...args} />
+
+# Hashtag
+
+###### Selector
+```ts
+  <p-hashtag></p-hashtag>
+```
+###### With Remove Icon
+<Canvas>
+  <Story name="With Remove Icon"
+    args={{
+      iconRemove: true
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### No Remove Icon
+<Canvas>
+  <Story name="No Remove Icon"
+    args={{
+      iconRemove: false
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### IHashtag
+```ts
+export interface IHashtag {
+  label: string;
+  iconRemove?: boolean;
+}
+```

@@ -1,0 +1,10 @@
+@import "../../assets/styles/custom";
+
+.p-hashtag {
+  display: flex;
+  align-items: center;
+  background-color: $secondary-a-100;
+  border-radius: 16px;
+  padding-right: $gap-base;
+  padding-left: $gap-base;
+}

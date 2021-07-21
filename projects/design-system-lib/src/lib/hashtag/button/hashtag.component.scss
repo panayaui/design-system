@@ -1,0 +1,17 @@
+@import "../../assets/styles/custom";
+
+.p-hashtag {
+  display: inline-flex;
+  align-items: center;
+  height: 24px;
+  background-color: $secondary-a-100;
+  border-radius: 16px;
+  padding-right: $gap-base;
+  padding-left: $gap-base;
+
+  &-remove {
+    height: 100%;
+    display: flex;
+    margin-right: -$gap-base;
+  }
+}
