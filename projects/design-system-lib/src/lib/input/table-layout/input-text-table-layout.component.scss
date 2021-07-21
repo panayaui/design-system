@@ -1,7 +1,7 @@
 @import "../../assets/styles/custom";
 
 $table-header-max-width: 240px;
-$table-header-padding-right: 40px;
+$table-header-padding-right: $gap-double;
 $row-height: 52px;
 
 .input-table {
@@ -26,8 +26,21 @@ $row-height: 52px;
     max-width: $table-header-max-width;
     padding-right: $table-header-padding-right;
     padding-bottom: $gap-base;
+    &-container {
+      display: flex;
+      align-items: center;
+    }
     &-text {
       @include clamp;
+    }
+    &-attention {
+      display: inline-block;
+      margin-left: $gap-small;
+    }
+    &-required {
+      font-size: $big-font-size;
+      color: $supportive-alert-500;
+      margin-left: $gap-small;
     }
   }
 
