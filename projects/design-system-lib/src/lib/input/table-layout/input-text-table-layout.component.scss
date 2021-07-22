@@ -1,11 +1,14 @@
 @import "../../assets/styles/custom";
 
 $table-header-max-width: 240px;
-$table-header-padding-right: $gap-double;
 $row-height: 52px;
 
 .input-table {
   border-collapse: collapse;
+
+  &-static-title {
+    margin-bottom: 15px;
+  }
 
   &-row {
     height: $row-height;
@@ -24,7 +27,7 @@ $row-height: 52px;
     text-align: left;
     text-transform: capitalize;
     max-width: $table-header-max-width;
-    padding-right: $table-header-padding-right;
+    padding-right: $gap-double - $gap-small;
     padding-bottom: $gap-base;
     &-container {
       display: flex;
@@ -32,15 +35,18 @@ $row-height: 52px;
     }
     &-text {
       @include clamp;
+      margin-right: $gap-small;
     }
     &-attention {
       display: inline-block;
-      margin-left: $gap-small;
+      align-self: flex-end;
+      margin-right: $gap-small;
     }
     &-required {
       font-size: $big-font-size;
       color: $supportive-alert-500;
-      margin-left: $gap-small;
+      align-self: flex-end;
+      margin-right: $gap-small;
     }
   }
 
@@ -58,6 +64,20 @@ $row-height: 52px;
     &-icon {
       display: flex;
       margin-right: 12.5px;
+      transform: rotate(0);
+      transition: transform 280ms ease-in-out;
+      &.closed {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+
+  &-container {
+    height: calc( var(--row-amount) * #{$row-height});
+    overflow: hidden;
+    transition: height 280ms ease-in-out;
+    &.collapsed {
+      height: 0;
     }
   }
 }

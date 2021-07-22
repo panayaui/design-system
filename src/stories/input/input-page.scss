@@ -78,3 +78,10 @@
     }
   }
 }
+
+#input-text-table-layout {
+  &~ .sbdocs .innerZoomElementWrapper > div {
+    height: 370px;
+  }
+}
+

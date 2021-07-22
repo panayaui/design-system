@@ -7,5 +7,4 @@ export interface IInputTextTableLine {
     required?: boolean;
   };
   tableData: IInputText;
-  transitionDelay?: number;
 }
