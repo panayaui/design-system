@@ -26,12 +26,24 @@ export const Template = (args) => <InputTextTableLayoutComponent {...args} />
   <p-input-text-table-layout></p-input-text-table-layout>
 ```
 
-###### Table Layout
+###### Expandable
 <Canvas>
-  <Story name="Table Layout"
+  <Story name="Expandable"
      args={{
       title: 'Resolution',
       table: inputTable
+     }}>
+     {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Static
+<Canvas>
+  <Story name="Static"
+     args={{
+      title: 'Resolution',
+      table: inputTable,
+      isExpandable: false
      }}>
      {Template.bind({})}
   </Story>

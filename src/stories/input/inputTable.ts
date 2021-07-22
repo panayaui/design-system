@@ -22,7 +22,7 @@ export const inputTable = [
     tableData: {...inputObj, value: ''}
   },
   {
-    tableHeader: { name: 'Cell long long  Label' },
+    tableHeader: { name: 'Cell long long long long long long long long long long long long Label', required: true },
     tableData: {...inputObj}
   }
 ];
