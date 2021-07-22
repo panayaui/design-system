@@ -5,7 +5,7 @@ import {InputTextTableLayoutComponent} from 'projects/design-system-lib/src/publ
 import {InputModule} from 'projects/design-system-lib/src/public-api';
 import {Validators} from '@angular/forms';
 import {CustomErrorStateMatcher} from './custom-error-state-matcher';
-import {singleTable} from './inputTable.ts';
+import {inputTable} from './inputTable.ts';
 
 <Meta title='Components/Input/Table Layout'
   component={InputTextTableLayoutComponent}
@@ -26,30 +26,17 @@ export const Template = (args) => <InputTextTableLayoutComponent {...args} />
   <p-input-text-table-layout></p-input-text-table-layout>
 ```
 
-###### One Table
+###### Table Layout
 <Canvas>
-  <Story name="One Table"
+  <Story name="Table Layout"
      args={{
-       table: [
-        singleTable
-       ]
+      title: 'Resolution',
+      table: inputTable
      }}>
      {Template.bind({})}
   </Story>
 </Canvas>
 
-###### Two Tables
-<Canvas>
-  <Story name="Two Tables"
-     args={{
-       table: [
-        singleTable,
-        singleTable
-       ]
-     }}>
-     {Template.bind({})}
-  </Story>
-</Canvas>
 
 ###### Component
 ```ts

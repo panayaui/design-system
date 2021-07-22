@@ -1,61 +1,37 @@
-<table class="input-table">
-  <tbody class="input-table-body">
-  <ng-container *ngFor="let singleTable of tableToRender; let tableInd = index">
-    <!--title-->
-    <tr class="input-table-row">
-      <th class="input-table-header title">
-        <button class="input-table-trigger headline-2-bold"
-                (click)="toggleTable(tableInd)">
-          <p-icon class="input-table-trigger-icon"
-                  iconName="chevron-down"
-                  width="16"
-                  height="auto"
-                  strokeWidth="3"></p-icon>
-          {{singleTable.title}}
-        </button>
-      </th>
-    </tr>
-
-    <!--input rows-->
-    <ng-container *ngFor="let input of singleTable.singleTableData">
-      <tr class="input-table-row"
-          [class.hidden]="singleTable.isHidden"
-          [style.transition-delay]="input.transitionDelay + 'ms'">
-        <th class="input-table-header">
-          <span class="input-table-header-container">
-            <span class="input-table-header-text paragraph-2-default">
-              {{input.tableHeader.name}}
-            </span>
-            <p-icon *ngIf="input.tableHeader.attention"
-                    class="input-table-header-attention"
-                    iconName="alert-circle"
-                    width="16"
-                    height="16"
-                    stroke="#2D3047"></p-icon>
-            <span *ngIf="input.tableHeader.required"
-                  class="input-table-header-required">
-              &#42;
-            </span>
-          </span>
-        </th>
-        <td class="input-table-data">
-          <p-input-text [type]="input.tableData.type"
-                        [label]="input.tableData.label"
-                        [ariaLabel]="input.tableData.ariaLabel"
-                        [placeholder]="input.tableData.placeholder"
-                        [errorMessage]="input.tableData.errorMessage"
-                        [disabled]="input.tableData.disabled"
-                        [readonly]="input.tableData.readonly"
-                        [value]="input.tableData.value"
-                        [validators]="input.tableData.validators"
-                        [matcher]="input.tableData.matcher"
-                        [iconName]="input.tableData.iconName">
-          </p-input-text>
-        </td>
-      </tr>
-    </ng-container>
-  </ng-container>
-
-  </tbody>
-</table>
-
+<div class="input-table-wrapper">
+  <button class="input-table-trigger" (click)="isHidden = !isHidden">
+    <p-icon class="input-table-trigger-icon"
+            iconName="chevron-down"
+            width="16"
+            height="auto"
+            strokeWidth="3"></p-icon>
+    {{title}}
+  </button>
+  <div tabindex="-1"
+       attr.aria-label="{{title}}"
+       class="input-table-container">
+    <table class="input-table">
+      <tbody class="input-table-body">
+      <ng-container *ngFor="let input of table">
+        <tr class="input-table-row">
+          <th class="input-table-header">
+            <span class="input-table-header-text">{{input.tableHeader.name}}</span>
+          </th>
+          <td class="input-table-data">
+            <p-input-text [type]="input.tableData.type"
+                          [label]="input.tableData.label"
+                          [ariaLabel]="input.tableData.ariaLabel"
+                          [placeholder]="input.tableData.placeholder"
+                          [errorMessage]="input.tableData.errorMessage"
+                          [disabled]="input.tableData.disabled"
+                          [readonly]="input.tableData.readonly"
+                          [value]="input.tableData.value"
+                          [validators]="input.tableData.validators">
+            </p-input-text>
+          </td>
+        </tr>
+      </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>
