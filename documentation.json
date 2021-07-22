@@ -781,44 +781,11 @@
             "methods": []
         },
         {
-            "name": "IInputTextTable",
-            "id": "interface-IInputTextTable-7a1ec82784b5d061a7b3ee7b9485d3cf",
-            "file": "projects/design-system-lib/src/lib/input/table-layout/input-text-table.interface.ts",
-            "type": "interface",
-            "sourceCode": "import {IInputTextTableLine} from './input-text-table-line.interface';\r\n\r\nexport interface IInputTextTable {\r\n  title: string;\r\n  singleTableData: IInputTextTableLine[];\r\n  isHidden?: boolean;\r\n}\r\n",
-            "properties": [
-                {
-                    "name": "isHidden",
-                    "type": "boolean",
-                    "optional": true,
-                    "description": "",
-                    "line": 6
-                },
-                {
-                    "name": "singleTableData",
-                    "type": "IInputTextTableLine[]",
-                    "optional": false,
-                    "description": "",
-                    "line": 5
-                },
-                {
-                    "name": "title",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 4
-                }
-            ],
-            "indexSignatures": [],
-            "kind": 150,
-            "methods": []
-        },
-        {
             "name": "IInputTextTableLine",
-            "id": "interface-IInputTextTableLine-9d8c4a26aa3c5c3dc8c80c869085f71b",
+            "id": "interface-IInputTextTableLine-0ba20145223af59a664867c47bba2f90",
             "file": "projects/design-system-lib/src/lib/input/table-layout/input-text-table-line.interface.ts",
             "type": "interface",
-            "sourceCode": "import {IInputText} from '../text/input-text.interface';\r\n\r\nexport interface IInputTextTableLine {\r\n  tableHeader: {\r\n    name: string;\r\n    attention?: boolean;\r\n    required?: boolean;\r\n  };\r\n  tableData: IInputText;\r\n  transitionDelay?: number;\r\n}\r\n",
+            "sourceCode": "import {IInputText} from '../text/input-text.interface';\r\n\r\nexport interface IInputTextTableLine {\r\n  tableHeader: {\r\n    name: string;\r\n    attention?: boolean;\r\n    required?: boolean;\r\n  };\r\n  tableData: IInputText;\r\n}\r\n",
             "properties": [
                 {
                     "name": "tableData",
@@ -833,13 +800,6 @@
                     "optional": false,
                     "description": "",
                     "line": 4
-                },
-                {
-                    "name": "transitionDelay",
-                    "type": "number",
-                    "optional": true,
-                    "description": "",
-                    "line": 10
                 }
             ],
             "indexSignatures": [],
@@ -1425,7 +1385,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$alert-height: 43px;\r\n$alert-padding: 12px;\r\n$alert-elements-gap: 5px;\r\n\r\n::ng-deep .p-alert {\r\n  display: flex;\r\n  align-items: center;\r\n  min-width: -moz-fit-content;\r\n  min-width: fit-content;\r\n  color: $primary-a-900;\r\n  height: $alert-height;\r\n  padding: 0;\r\n  background: transparent;\r\n  border-radius: 0;\r\n  box-shadow: none;\r\n  &-primary {\r\n    color: $gray-scale-1;\r\n    background-color: $primary-a-900;\r\n  }\r\n  &-secondary {\r\n    background-color: $secondary-a-100;\r\n  }\r\n  &-warning {\r\n    background-color: $supportive-alert-50;\r\n  }\r\n  &-medium {\r\n    background-color: $supportive-medium-50;\r\n  }\r\n  &-success {\r\n    background-color: $supportive-success-50;\r\n  }\r\n\r\n  &-container {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    width: 100%;\r\n    height: 100%;\r\n    padding-right: $alert-padding;\r\n    padding-left: $alert-padding;\r\n    white-space: nowrap;\r\n  }\r\n\r\n  &-icon,\r\n  &-message-main,\r\n  &-message-sub,\r\n  &-action {\r\n    & + & {\r\n      margin-left: $alert-elements-gap;\r\n    }\r\n  }\r\n\r\n  &-message-main,\r\n  &-message-sub {\r\n    font-family: $font-family-basic;\r\n    font-size: $small-font-size;\r\n  }\r\n\r\n  &-action {\r\n    @include resetLink;\r\n    font-family: $font-family-basic;\r\n    font-size: $small-font-size;\r\n    color: $secondary-a-700;\r\n    &:hover {\r\n      text-decoration: underline;\r\n    }\r\n    ::ng-deep .p-alert-primary & {\r\n      color: $secondary-a-500;\r\n    }\r\n  }\r\n\r\n  &-close {\r\n    @include resetButton;\r\n    display: inline-block;\r\n    font-size: 0;\r\n    width: 20px;\r\n    height: 20px;\r\n    margin-right: -5px;\r\n    margin-bottom: 10px;\r\n    margin-left: 6px;\r\n  }\r\n}\r\n\r\n\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$alert-height: 43px;\r\n$alert-padding: 12px;\r\n$alert-elements-gap: 5px;\r\n\r\n::ng-deep .p-alert {\r\n  display: flex;\r\n  align-items: center;\r\n  min-width: -moz-fit-content;\r\n  min-width: fit-content;\r\n  color: $primary-a-900;\r\n  height: $alert-height;\r\n  padding: 0;\r\n  background: transparent;\r\n  border-radius: 0;\r\n  box-shadow: none;\r\n  &-primary {\r\n    color: $gray-scale-1;\r\n    background-color: $primary-a-900;\r\n  }\r\n  &-secondary {\r\n    background-color: $secondary-a-50;\r\n  }\r\n  &-warning {\r\n    background-color: $supportive-alert-50;\r\n  }\r\n  &-medium {\r\n    background-color: $supportive-medium-50;\r\n  }\r\n  &-success {\r\n    background-color: $supportive-success-50;\r\n  }\r\n\r\n  &-container {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    width: 100%;\r\n    height: 100%;\r\n    padding-right: $alert-padding;\r\n    padding-left: $alert-padding;\r\n    white-space: nowrap;\r\n  }\r\n\r\n  &-icon,\r\n  &-message-main,\r\n  &-message-sub,\r\n  &-action {\r\n    & + & {\r\n      margin-left: $alert-elements-gap;\r\n    }\r\n  }\r\n\r\n  &-message-main,\r\n  &-message-sub {\r\n    font-family: $font-family-basic;\r\n    font-size: $small-font-size;\r\n  }\r\n\r\n  &-action {\r\n    @include resetLink;\r\n    font-family: $font-family-basic;\r\n    font-size: $small-font-size;\r\n    color: $secondary-a-700;\r\n    &:hover {\r\n      text-decoration: underline;\r\n    }\r\n    ::ng-deep .p-alert-primary & {\r\n      color: $secondary-a-500;\r\n    }\r\n  }\r\n\r\n  &-close {\r\n    @include resetButton;\r\n    display: inline-block;\r\n    font-size: 0;\r\n    width: 20px;\r\n    height: 20px;\r\n    margin-right: -5px;\r\n    margin-bottom: 10px;\r\n    margin-left: 6px;\r\n  }\r\n}\r\n\r\n\r\n",
                     "styleUrl": "./alert.component.scss"
                 }
             ],
@@ -1571,7 +1531,7 @@
         },
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-a330a11f6abe1f96dd492415228e0172",
+            "id": "component-AppComponent-b73be872e5a1dcc1348b5ee76dbf362e",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1591,7 +1551,7 @@
                 {
                     "name": "data",
                     "defaultValue": "{\r\n    icon: { iconName: 'bell'},\r\n    messageMain: 'Notification message.',\r\n    actionName: 'Action',\r\n    messageSub: 'Notification message.',\r\n    closeBtnName: 'Close'\r\n  }",
-                    "line": 13
+                    "line": 14
                 }
             ],
             "outputsClass": [],
@@ -1601,63 +1561,71 @@
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 28
+                    "line": 29
                 },
                 {
                     "name": "filterAriaLabel",
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 24
+                    "line": 25
                 },
                 {
                     "name": "filterPlaceholder",
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 25
+                    "line": 26
                 },
                 {
                     "name": "footerBtnFirst",
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 22
+                    "line": 23
                 },
                 {
                     "name": "footerBtnLast",
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 23
+                    "line": 24
                 },
                 {
                     "name": "headerBtnFirst",
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 26
+                    "line": 27
                 },
                 {
                     "name": "headerBtnLast",
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 27
+                    "line": 28
                 },
                 {
                     "name": "inputMax",
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 34
+                    "line": 35
                 },
                 {
                     "name": "inputMin",
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 33
+                    "line": 34
+                },
+                {
+                    "name": "inputTable",
+                    "defaultValue": "inputTable",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 44
                 },
                 {
                     "name": "labelType",
@@ -1665,35 +1633,35 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 30
+                    "line": 31
                 },
                 {
                     "name": "menuList",
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 21
+                    "line": 22
                 },
                 {
                     "name": "menuListFreeText",
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 32
+                    "line": 33
                 },
                 {
                     "name": "menuListRadio",
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 31
+                    "line": 32
                 },
                 {
                     "name": "menuTriggerName",
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 20
+                    "line": 21
                 },
                 {
                     "name": "optionsList",
@@ -1701,7 +1669,7 @@
                     "type": "[]",
                     "optional": false,
                     "description": "",
-                    "line": 36
+                    "line": 37
                 },
                 {
                     "name": "optionsListName",
@@ -1709,7 +1677,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 35
+                    "line": 36
                 },
                 {
                     "name": "validator",
@@ -1717,7 +1685,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 29
+                    "line": 30
                 }
             ],
             "methodsClass": [
@@ -1727,7 +1695,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 46
+                    "line": 48
                 }
             ],
             "hostBindings": [],
@@ -1735,7 +1703,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';\r\nimport {InputNumericSizeEnum} from 'projects/design-system-lib/src/public-api';\r\nimport {ReactiveFormsModule, Validators} from '@angular/forms';\r\nimport {LabelTypesEnum} from 'projects/design-system-lib/src/lib/labels/label-types.enum';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.scss']\r\n})\r\nexport class AppComponent implements OnInit {\r\n  @Input() data = {\r\n    icon: { iconName: 'bell'},\r\n    messageMain: 'Notification message.',\r\n    actionName: 'Action',\r\n    messageSub: 'Notification message.',\r\n    closeBtnName: 'Close'\r\n  };\r\n  menuTriggerName: string;\r\n  menuList: any;\r\n  footerBtnFirst: any;\r\n  footerBtnLast: any;\r\n  filterAriaLabel: string;\r\n  filterPlaceholder: string;\r\n  headerBtnFirst: any;\r\n  headerBtnLast: any;\r\n  checkboxList: any;\r\n  validator = Validators.required;\r\n  labelType = LabelTypesEnum;\r\n  menuListRadio: any;\r\n  menuListFreeText: any;\r\n  inputMin: any;\r\n  inputMax: any;\r\n  optionsListName = 'twoLabelsToggle';\r\n  optionsList = [{\r\n    optionName: 'First',\r\n    checked: true\r\n  },\r\n  {\r\n    optionName: 'Second'\r\n  }];\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {\r\n    this.menuTriggerName = 'Menu';\r\n    this.menuList = [\r\n      { name: 'Alabama',\r\n        disabled: false\r\n      },\r\n      { name: 'Alaska disabled',\r\n        disabled: true\r\n      },\r\n      { name: 'California',\r\n        disabled: false\r\n      },\r\n      { name: 'Colorado',\r\n        disabled: false\r\n      },\r\n      { name: 'Delaware',\r\n        disabled: false\r\n      },\r\n      { name: 'Florida selected disabled',\r\n        disabled: true,\r\n        selected: true\r\n      },\r\n      { name: 'Georgia',\r\n        disabled: false\r\n      },\r\n      { name: 'Hawaii',\r\n        disabled: false\r\n      },\r\n      { name: 'Idaho',\r\n        disabled: true\r\n      },\r\n      { name: 'Illinois',\r\n        disabled: false\r\n      },\r\n      { name: 'Indiana',\r\n        disabled: false\r\n      },\r\n      { name: 'Iowa',\r\n        disabled: false\r\n      },\r\n      { name: 'Kansas',\r\n        disabled: true,\r\n        selected: true\r\n      },\r\n      { name: 'Kentucky',\r\n        disabled: false\r\n      }\r\n    ];\r\n\r\n    this.footerBtnFirst = {\r\n      label: 'Done',\r\n      buttonType: ButtonTypeEnum.Primary\r\n    };\r\n    this.footerBtnLast = {\r\n      label: 'Cancel',\r\n      buttonType: ButtonTypeEnum.Secondary\r\n    };\r\n    this.filterAriaLabel = 'Find Label';\r\n    this.filterPlaceholder = 'Find Label';\r\n\r\n    this.headerBtnFirst = {\r\n      label: 'Clear selected',\r\n      buttonType: ButtonTypeEnum.Tertiary,\r\n      icon: {\r\n        iconName: 'eraser',\r\n        width: '15',\r\n        height: '15'\r\n      }\r\n    };\r\n    this.headerBtnLast = {\r\n      label: 'Not equal to'\r\n    };\r\n    this.checkboxList = [\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Next'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      }\r\n    ];\r\n    this.menuListRadio =  [\r\n      { label: 'All' },\r\n      { label: 'Today' },\r\n      { label: 'Yesterday' },\r\n      { label: 'Tomorrow' },\r\n      { label: 'This',\r\n        menuList: [\r\n          { name: 'week (Starts Sunday)', selected: true},\r\n          { name: 'week (Starts Monday)'},\r\n          { name: 'month'},\r\n          { name: 'year'}\r\n        ]\r\n      },\r\n      { label: 'Last',\r\n        numericInputValue: 1,\r\n        menuList: [\r\n          { name: 'Day(s)', selected: true},\r\n          { name: 'Week(s)'},\r\n          { name: 'Month(s)'},\r\n          { name: 'Year(s)'}\r\n        ]\r\n      },\r\n      { label: 'Next',\r\n        numericInputValue: 1,\r\n        menuList: [\r\n          { name: 'Day(s)', selected: true},\r\n          { name: 'Week(s)'},\r\n          { name: 'Month(s)'},\r\n          { name: 'Year(s)'}\r\n        ]\r\n      },\r\n      { label: 'Blanks' },\r\n      { label: 'Between',\r\n        dateStart: {\r\n          ariaLabel: 'date start'\r\n        },\r\n        dateEnd: {\r\n          ariaLabel: 'date start'\r\n        }\r\n      }\r\n    ];\r\n    this.menuListFreeText = [\r\n      { name: 'Contains', inputValue: '', selected: true },\r\n      { name: 'Not contains', inputValue: 'smth', selected: false },\r\n      { name: 'Empty', selected: false },\r\n      { name: 'Not empty', selected: false }\r\n    ];\r\n    this.inputMin = { label: 'Min', value: null };\r\n    this.inputMax = { label: 'Max', value: 1 };\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';\r\nimport {InputNumericSizeEnum} from 'projects/design-system-lib/src/public-api';\r\nimport {ReactiveFormsModule, Validators} from '@angular/forms';\r\nimport {LabelTypesEnum} from 'projects/design-system-lib/src/lib/labels/label-types.enum';\r\nimport {inputTable} from '../stories/input/inputTable';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.scss']\r\n})\r\nexport class AppComponent implements OnInit {\r\n  @Input() data = {\r\n    icon: { iconName: 'bell'},\r\n    messageMain: 'Notification message.',\r\n    actionName: 'Action',\r\n    messageSub: 'Notification message.',\r\n    closeBtnName: 'Close'\r\n  };\r\n  menuTriggerName: string;\r\n  menuList: any;\r\n  footerBtnFirst: any;\r\n  footerBtnLast: any;\r\n  filterAriaLabel: string;\r\n  filterPlaceholder: string;\r\n  headerBtnFirst: any;\r\n  headerBtnLast: any;\r\n  checkboxList: any;\r\n  validator = Validators.required;\r\n  labelType = LabelTypesEnum;\r\n  menuListRadio: any;\r\n  menuListFreeText: any;\r\n  inputMin: any;\r\n  inputMax: any;\r\n  optionsListName = 'twoLabelsToggle';\r\n  optionsList = [{\r\n    optionName: 'First',\r\n    checked: true\r\n  },\r\n  {\r\n    optionName: 'Second'\r\n  }];\r\n  inputTable = inputTable;\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {\r\n    this.menuTriggerName = 'Menu';\r\n    this.menuList = [\r\n      { name: 'Alabama',\r\n        disabled: false\r\n      },\r\n      { name: 'Alaska disabled',\r\n        disabled: true\r\n      },\r\n      { name: 'California',\r\n        disabled: false\r\n      },\r\n      { name: 'Colorado',\r\n        disabled: false\r\n      },\r\n      { name: 'Delaware',\r\n        disabled: false\r\n      },\r\n      { name: 'Florida selected disabled',\r\n        disabled: true,\r\n        selected: true\r\n      },\r\n      { name: 'Georgia',\r\n        disabled: false\r\n      },\r\n      { name: 'Hawaii',\r\n        disabled: false\r\n      },\r\n      { name: 'Idaho',\r\n        disabled: true\r\n      },\r\n      { name: 'Illinois',\r\n        disabled: false\r\n      },\r\n      { name: 'Indiana',\r\n        disabled: false\r\n      },\r\n      { name: 'Iowa',\r\n        disabled: false\r\n      },\r\n      { name: 'Kansas',\r\n        disabled: true,\r\n        selected: true\r\n      },\r\n      { name: 'Kentucky',\r\n        disabled: false\r\n      }\r\n    ];\r\n\r\n    this.footerBtnFirst = {\r\n      label: 'Done',\r\n      buttonType: ButtonTypeEnum.Primary\r\n    };\r\n    this.footerBtnLast = {\r\n      label: 'Cancel',\r\n      buttonType: ButtonTypeEnum.Secondary\r\n    };\r\n    this.filterAriaLabel = 'Find Label';\r\n    this.filterPlaceholder = 'Find Label';\r\n\r\n    this.headerBtnFirst = {\r\n      label: 'Clear selected',\r\n      buttonType: ButtonTypeEnum.Tertiary,\r\n      icon: {\r\n        iconName: 'eraser',\r\n        width: '15',\r\n        height: '15'\r\n      }\r\n    };\r\n    this.headerBtnLast = {\r\n      label: 'Not equal to'\r\n    };\r\n    this.checkboxList = [\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Last'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      },\r\n      {\r\n        checkbox: { label: 'Next'},\r\n        inputNum: { label: 'Release(s)', value: 1}\r\n      }\r\n    ];\r\n    this.menuListRadio =  [\r\n      { label: 'All' },\r\n      { label: 'Today' },\r\n      { label: 'Yesterday' },\r\n      { label: 'Tomorrow' },\r\n      { label: 'This',\r\n        menuList: [\r\n          { name: 'week (Starts Sunday)', selected: true},\r\n          { name: 'week (Starts Monday)'},\r\n          { name: 'month'},\r\n          { name: 'year'}\r\n        ]\r\n      },\r\n      { label: 'Last',\r\n        numericInputValue: 1,\r\n        menuList: [\r\n          { name: 'Day(s)', selected: true},\r\n          { name: 'Week(s)'},\r\n          { name: 'Month(s)'},\r\n          { name: 'Year(s)'}\r\n        ]\r\n      },\r\n      { label: 'Next',\r\n        numericInputValue: 1,\r\n        menuList: [\r\n          { name: 'Day(s)', selected: true},\r\n          { name: 'Week(s)'},\r\n          { name: 'Month(s)'},\r\n          { name: 'Year(s)'}\r\n        ]\r\n      },\r\n      { label: 'Blanks' },\r\n      { label: 'Between',\r\n        dateStart: {\r\n          ariaLabel: 'date start'\r\n        },\r\n        dateEnd: {\r\n          ariaLabel: 'date start'\r\n        }\r\n      }\r\n    ];\r\n    this.menuListFreeText = [\r\n      { name: 'Contains', inputValue: '', selected: true },\r\n      { name: 'Not contains', inputValue: 'smth', selected: false },\r\n      { name: 'Empty', selected: false },\r\n      { name: 'Not empty', selected: false }\r\n    ];\r\n    this.inputMin = { label: 'Min', value: null };\r\n    this.inputMax = { label: 'Max', value: 1 };\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1748,12 +1716,12 @@
                 "name": "constructor",
                 "description": "",
                 "args": [],
-                "line": 42
+                "line": 44
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p-toggle [optionsList]=\"optionsList\"\r\n[optionsListName]=\"optionsListName\"></p-toggle>\r\n"
+            "templateData": "<p-input-text-table-layout title='Resolution'\r\n                           [table]=\"inputTable\"></p-input-text-table-layout>\r\n"
         },
         {
             "name": "ButtonComponent",
@@ -4213,7 +4181,7 @@
         },
         {
             "name": "InputTextTableLayoutComponent",
-            "id": "component-InputTextTableLayoutComponent-85f6e426a5b873628dd08618f0d2263e",
+            "id": "component-InputTextTableLayoutComponent-839b38722f2b9828cea34316529ac889",
             "file": "projects/design-system-lib/src/lib/input/table-layout/input-text-table-layout.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -4231,21 +4199,44 @@
             "viewProviders": [],
             "inputsClass": [
                 {
+                    "name": "isExpandable",
+                    "defaultValue": "true",
+                    "line": 13,
+                    "type": "boolean"
+                },
+                {
                     "name": "table",
-                    "line": 10,
-                    "type": "IInputTextTable[]"
+                    "line": 12,
+                    "type": "IInputTextTableLine[]"
+                },
+                {
+                    "name": "title",
+                    "line": 11,
+                    "type": "string"
                 }
             ],
             "outputsClass": [],
             "propertiesClass": [
                 {
-                    "name": "tableToRender",
-                    "type": "IInputTextTable[]",
+                    "name": "isHidden",
+                    "defaultValue": "false",
+                    "type": "boolean",
                     "optional": false,
                     "description": "",
-                    "line": 11,
+                    "line": 14,
                     "modifierKind": [
                         114
+                    ]
+                },
+                {
+                    "name": "value",
+                    "defaultValue": "6",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "modifierKind": [
+                        112
                     ]
                 }
             ],
@@ -4256,49 +4247,53 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 13
-                },
-                {
-                    "name": "toggleTable",
-                    "args": [
-                        {
-                            "name": "tableInd",
-                            "type": "number"
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 19,
-                    "jsdoctags": [
-                        {
-                            "name": "tableInd",
-                            "type": "number",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
+                    "line": 24
                 }
             ],
-            "hostBindings": [],
+            "hostBindings": [
+                {
+                    "name": "attr.style",
+                    "line": 18,
+                    "type": "any"
+                }
+            ],
             "hostListeners": [],
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport {IInputTextTable} from './input-text-table.interface';\r\n\r\n@Component({\r\n  selector: 'p-input-text-table-layout',\r\n  templateUrl: './input-text-table-layout.component.html',\r\n  styleUrls: ['./input-text-table-layout.component.scss'],\r\n})\r\nexport class InputTextTableLayoutComponent implements OnInit {\r\n  @Input() table: IInputTextTable[];\r\n  public tableToRender: IInputTextTable[];\r\n\r\n  ngOnInit(): void {\r\n    this.tableToRender = this.table.map( singleTable => {\r\n      return {...singleTable, isHidden: false};\r\n    });\r\n  }\r\n\r\n  toggleTable(tableInd: number): void {\r\n    const timer = 100;\r\n    let delay: number;\r\n    let delayStep: number;\r\n    this.tableToRender[tableInd].isHidden = !this.tableToRender[tableInd].isHidden;\r\n    if (this.tableToRender[tableInd].isHidden) {\r\n      delay = (this.tableToRender[tableInd].singleTableData.length + 1) * timer;\r\n      delayStep = timer * -1;\r\n    }\r\n    else {\r\n      delay = 0;\r\n      delayStep = timer;\r\n    }\r\n    this.tableToRender[tableInd].singleTableData.forEach( line => {\r\n      delay += delayStep;\r\n      line.transitionDelay = delay;\r\n    });\r\n  }\r\n}\r\n\r\n\r\n",
+            "sourceCode": "import {Component, HostBinding, Input, OnInit} from '@angular/core';\r\nimport {IInputTextTableLine} from './input-text-table-line.interface';\r\nimport {DomSanitizer} from '@angular/platform-browser';\r\n\r\n@Component({\r\n  selector: 'p-input-text-table-layout',\r\n  templateUrl: './input-text-table-layout.component.html',\r\n  styleUrls: ['./input-text-table-layout.component.scss'],\r\n})\r\nexport class InputTextTableLayoutComponent implements OnInit {\r\n  @Input()  title: string;\r\n  @Input() table: IInputTextTableLine[];\r\n  @Input() isExpandable: boolean = true;\r\n  public isHidden: boolean = false;\r\n  private value: number = 6;\r\n\r\n  @HostBinding('attr.style')\r\n  public get valueAsStyle(): any {\r\n    return this.sanitizer.bypassSecurityTrustStyle(`--row-amount: ${this.value}`);\r\n  }\r\n\r\n  constructor(private sanitizer: DomSanitizer) {}\r\n\r\n  ngOnInit(): void {\r\n    this.value = this.table.length;\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$table-header-max-width: 240px;\r\n$table-header-padding-right: $gap-double;\r\n$row-height: 52px;\r\n\r\n.input-table {\r\n  border-collapse: collapse;\r\n\r\n  &-row {\r\n    height: $row-height;\r\n    opacity: 1;\r\n    transition: opacity 300ms;\r\n    &.hidden {\r\n      opacity: 0;\r\n    }\r\n  }\r\n\r\n  &-header {\r\n    font-family: $font-family-basic;\r\n    font-size: $base-font-size;\r\n    font-weight: 400;\r\n    color: $gray-scale-700;\r\n    text-align: left;\r\n    text-transform: capitalize;\r\n    max-width: $table-header-max-width;\r\n    padding-right: $table-header-padding-right;\r\n    padding-bottom: $gap-base;\r\n    &-container {\r\n      display: flex;\r\n      align-items: center;\r\n    }\r\n    &-text {\r\n      @include clamp;\r\n    }\r\n    &-attention {\r\n      display: inline-block;\r\n      margin-left: $gap-small;\r\n    }\r\n    &-required {\r\n      font-size: $big-font-size;\r\n      color: $supportive-alert-500;\r\n      margin-left: $gap-small;\r\n    }\r\n  }\r\n\r\n  &-data {\r\n    ::ng-deep .mat-form-field-infix {\r\n      padding-top: 0;\r\n      border-top-width: 5px;\r\n    }\r\n  }\r\n\r\n  &-trigger {\r\n    @include resetButton;\r\n    color: $primary-a-900;\r\n    margin-bottom: 15px;\r\n    &-icon {\r\n      display: flex;\r\n      margin-right: 12.5px;\r\n    }\r\n  }\r\n}\r\n",
+                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$table-header-max-width: 240px;\r\n$row-height: 52px;\r\n\r\n.input-table {\r\n  border-collapse: collapse;\r\n\r\n  &-static-title {\r\n    margin-bottom: 15px;\r\n  }\r\n\r\n  &-row {\r\n    height: $row-height;\r\n    opacity: 1;\r\n    transition: opacity 300ms;\r\n    &.hidden {\r\n      opacity: 0;\r\n    }\r\n  }\r\n\r\n  &-header {\r\n    font-family: $font-family-basic;\r\n    font-size: $base-font-size;\r\n    font-weight: 400;\r\n    color: $gray-scale-700;\r\n    text-align: left;\r\n    text-transform: capitalize;\r\n    max-width: $table-header-max-width;\r\n    padding-right: $gap-double - $gap-small;\r\n    padding-bottom: $gap-base;\r\n    &-container {\r\n      display: flex;\r\n      align-items: center;\r\n    }\r\n    &-text {\r\n      @include clamp;\r\n      margin-right: $gap-small;\r\n    }\r\n    &-attention {\r\n      display: inline-block;\r\n      align-self: flex-end;\r\n      margin-right: $gap-small;\r\n    }\r\n    &-required {\r\n      font-size: $big-font-size;\r\n      color: $supportive-alert-500;\r\n      align-self: flex-end;\r\n      margin-right: $gap-small;\r\n    }\r\n  }\r\n\r\n  &-data {\r\n    ::ng-deep .mat-form-field-infix {\r\n      padding-top: 0;\r\n      border-top-width: 5px;\r\n    }\r\n  }\r\n\r\n  &-trigger {\r\n    @include resetButton;\r\n    color: $primary-a-900;\r\n    margin-bottom: 15px;\r\n    &-icon {\r\n      display: flex;\r\n      margin-right: 12.5px;\r\n      transform: rotate(0);\r\n      transition: transform 280ms ease-in-out;\r\n      &.closed {\r\n        transform: rotate(-90deg);\r\n      }\r\n    }\r\n  }\r\n\r\n  &-container {\r\n    height: calc( var(--row-amount) * #{$row-height});\r\n    overflow: hidden;\r\n    transition: height 280ms ease-in-out;\r\n    &.collapsed {\r\n      height: 0;\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "./input-text-table-layout.component.scss"
                 }
             ],
             "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "sanitizer",
+                        "type": "DomSanitizer"
+                    }
+                ],
+                "line": 20,
+                "jsdoctags": [
+                    {
+                        "name": "sanitizer",
+                        "type": "DomSanitizer",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<table class=\"input-table\">\r\n  <tbody class=\"input-table-body\">\r\n  <ng-container *ngFor=\"let singleTable of tableToRender; let tableInd = index\">\r\n    <!--title-->\r\n    <tr class=\"input-table-row\">\r\n      <th class=\"input-table-header title\">\r\n        <button class=\"input-table-trigger headline-2-bold\"\r\n                (click)=\"toggleTable(tableInd)\">\r\n          <p-icon class=\"input-table-trigger-icon\"\r\n                  iconName=\"chevron-down\"\r\n                  width=\"16\"\r\n                  height=\"auto\"\r\n                  strokeWidth=\"3\"></p-icon>\r\n          {{singleTable.title}}\r\n        </button>\r\n      </th>\r\n    </tr>\r\n\r\n    <!--input rows-->\r\n    <ng-container *ngFor=\"let input of singleTable.singleTableData\">\r\n      <tr class=\"input-table-row\"\r\n          [class.hidden]=\"singleTable.isHidden\"\r\n          [style.transition-delay]=\"input.transitionDelay + 'ms'\">\r\n        <th class=\"input-table-header\">\r\n          <span class=\"input-table-header-container\">\r\n            <span class=\"input-table-header-text paragraph-2-default\">\r\n              {{input.tableHeader.name}}\r\n            </span>\r\n            <p-icon *ngIf=\"input.tableHeader.attention\"\r\n                    class=\"input-table-header-attention\"\r\n                    iconName=\"alert-circle\"\r\n                    width=\"16\"\r\n                    height=\"16\"\r\n                    stroke=\"#2D3047\"></p-icon>\r\n            <span *ngIf=\"input.tableHeader.required\"\r\n                  class=\"input-table-header-required\">\r\n              &#42;\r\n            </span>\r\n          </span>\r\n        </th>\r\n        <td class=\"input-table-data\">\r\n          <p-input-text [type]=\"input.tableData.type\"\r\n                        [label]=\"input.tableData.label\"\r\n                        [ariaLabel]=\"input.tableData.ariaLabel\"\r\n                        [placeholder]=\"input.tableData.placeholder\"\r\n                        [errorMessage]=\"input.tableData.errorMessage\"\r\n                        [disabled]=\"input.tableData.disabled\"\r\n                        [readonly]=\"input.tableData.readonly\"\r\n                        [value]=\"input.tableData.value\"\r\n                        [validators]=\"input.tableData.validators\"\r\n                        [matcher]=\"input.tableData.matcher\"\r\n                        [iconName]=\"input.tableData.iconName\">\r\n          </p-input-text>\r\n        </td>\r\n      </tr>\r\n    </ng-container>\r\n  </ng-container>\r\n\r\n  </tbody>\r\n</table>\r\n\r\n"
+            "templateData": "<div class=\"input-table-wrapper\">\r\n\r\n  <ng-template [ngIf]=\"isExpandable\" [ngIfElse]=\"static\">\r\n    <button class=\"input-table-trigger\"\r\n            (click)=\"isHidden = !isHidden\">\r\n      <p-icon class=\"input-table-trigger-icon\"\r\n              [class.closed]=\"isHidden\"\r\n              iconName=\"chevron-down\"\r\n              width=\"16\"\r\n              height=\"auto\"\r\n              strokeWidth=\"3\"></p-icon>\r\n      <span class=\"headline-2-bold\">{{title}}</span>\r\n    </button>\r\n  </ng-template>\r\n\r\n  <ng-template #static>\r\n    <h3 class=\"input-table-static-title headline-2-bold\">{{title}}</h3>\r\n  </ng-template>\r\n\r\n\r\n  <div tabindex=\"-1\"\r\n       attr.aria-label=\"{{title}}\"\r\n       class=\"input-table-container\"\r\n       [class.collapsed]=\"isHidden\">\r\n    <table class=\"input-table\">\r\n      <tbody class=\"input-table-body\">\r\n      <ng-container *ngFor=\"let input of table\">\r\n        <tr class=\"input-table-row\">\r\n          <th class=\"input-table-header\">\r\n             <span class=\"input-table-header-container\">\r\n              <span class=\"input-table-header-text paragraph-2-default\">\r\n                {{input.tableHeader.name}}\r\n              </span>\r\n              <p-icon *ngIf=\"input.tableHeader.attention\"\r\n                      class=\"input-table-header-attention\"\r\n                      iconName=\"alert-circle\"\r\n                      width=\"16\"\r\n                      height=\"16\"\r\n                      stroke=\"#2D3047\"></p-icon>\r\n              <span *ngIf=\"input.tableHeader.required\"\r\n                    class=\"input-table-header-required\">\r\n                &#42;\r\n              </span>\r\n            </span>\r\n          </th>\r\n          <td class=\"input-table-data\">\r\n            <p-input-text [type]=\"input.tableData.type\"\r\n                          [label]=\"input.tableData.label\"\r\n                          [ariaLabel]=\"input.tableData.ariaLabel\"\r\n                          [placeholder]=\"input.tableData.placeholder\"\r\n                          [errorMessage]=\"input.tableData.errorMessage\"\r\n                          [disabled]=\"input.tableData.disabled\"\r\n                          [readonly]=\"input.tableData.readonly\"\r\n                          [value]=\"input.tableData.value\"\r\n                          [validators]=\"input.tableData.validators\">\r\n            </p-input-text>\r\n          </td>\r\n        </tr>\r\n      </ng-container>\r\n      </tbody>\r\n    </table>\r\n  </div>\r\n</div>\r\n"
         },
         {
             "name": "LabelMainComponent",
@@ -6178,7 +6173,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$button-width: 24px;\r\n$button-height: 32px;\r\n\r\n%paginator-btn {\r\n  width: $button-width;\r\n  height: $button-height;\r\n  &:not(.disabled):hover{\r\n    background-color: $primary-c-50;\r\n  }\r\n}\r\n\r\n.p-paginator {\r\n  display: flex;\r\n  align-items: center;\r\n\r\n  &-arrow {\r\n    ::ng-deep .p-btn {\r\n      @extend %paginator-btn;\r\n    }\r\n    & ~ & {\r\n      margin-left: $gap-base;\r\n    }\r\n  }\r\n\r\n  &-list {\r\n    display: flex;\r\n    align-items: center;\r\n    @include resetUl;\r\n  }\r\n\r\n  &-item {\r\n    margin-left: $gap-base;\r\n  }\r\n\r\n  &-page {\r\n    width: 100%;\r\n    height: 100%;\r\n    display: block;\r\n    position: relative;\r\n\r\n    ::ng-deep .p-btn {\r\n      min-width: unset;\r\n      padding-right: 0;\r\n      padding-left: 0;\r\n      background-color: transparent;\r\n\r\n      @extend %paginator-btn;\r\n      &:not(:disabled) {\r\n        color: $primary-a-900;\r\n      }\r\n    }\r\n\r\n    &.selected:after {\r\n      content: 'Selected';\r\n      display: block;\r\n      font-size: 0;\r\n      width: $button-width;\r\n      height: 4px;\r\n      background-color: $primary-a-900;\r\n      position: absolute;\r\n      bottom: 0;\r\n    }\r\n  }\r\n\r\n  &-select {\r\n    margin-left: $gap-double;\r\n    align-self: flex-end;\r\n  }\r\n}\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$button-width: 24px;\r\n$button-height: 32px;\r\n\r\n%paginator-btn {\r\n  width: $button-width;\r\n  height: $button-height;\r\n  &:not(.disabled):hover{\r\n    background-color: $primary-c-50;\r\n  }\r\n}\r\n\r\n.p-paginator {\r\n  display: flex;\r\n  align-items: center;\r\n\r\n  &-arrow {\r\n    ::ng-deep .p-btn {\r\n      @extend %paginator-btn;\r\n    }\r\n    & ~ & {\r\n      margin-left: $gap-base;\r\n    }\r\n  }\r\n\r\n  &-list {\r\n    display: flex;\r\n    align-items: center;\r\n    @include resetUl;\r\n  }\r\n\r\n  &-item {\r\n    margin-left: $gap-base;\r\n  }\r\n\r\n  &-page {\r\n    width: 100%;\r\n    height: 100%;\r\n    display: block;\r\n    position: relative;\r\n\r\n    ::ng-deep .p-btn {\r\n      min-width: unset;\r\n      padding-right: 0;\r\n      padding-left: 0;\r\n      background-color: transparent;\r\n\r\n      @extend %paginator-btn;\r\n      &:not(:disabled) {\r\n        color: $primary-a-900;\r\n      }\r\n    }\r\n\r\n    &.selected:after {\r\n      content: 'Selected';\r\n      display: block;\r\n      font-size: 0;\r\n      width: $button-width;\r\n      height: 4px;\r\n      background-color: $primary-a-900;\r\n      position: absolute;\r\n      bottom: 0;\r\n    }\r\n  }\r\n\r\n  &-select {\r\n    margin-left: $gap-double;\r\n    align-self: flex-end;\r\n  }\r\n\r\n  ::ng-deep .p-input-numeric .mat-form-field-infix {\r\n    padding-left: $gap-small;\r\n  }\r\n}\r\n",
                     "styleUrl": "./paginator.component.scss"
                 }
             ],
@@ -8393,6 +8388,14 @@
                 "defaultValue": "{\r\n  ariaLabel: 'Cell long long Label',\r\n  value: 'Input text',\r\n  validators: Validators.required,\r\n  matcher: new CustomErrorStateMatcher()\r\n}"
             },
             {
+                "name": "inputTable",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/input/inputTable.ts",
+                "type": "[]",
+                "defaultValue": "[\r\n  {\r\n    tableHeader: { name: 'Cell Label' },\r\n    tableData: {...inputObj }\r\n  },\r\n  {\r\n    tableHeader: { name: 'Cell long long long long long long long long long long long long Label', attention: true },\r\n    tableData: {...inputObj}\r\n  },\r\n  {\r\n    tableHeader: { name: 'Cell long long Label' },\r\n    tableData: {...inputObj}\r\n  },\r\n  {\r\n    tableHeader: { name: 'Cell Label', attention: true },\r\n    tableData: {...inputObj}\r\n  },\r\n  {\r\n    tableHeader: { name: 'Cell Label', required: true },\r\n    tableData: {...inputObj, value: ''}\r\n  },\r\n  {\r\n    tableHeader: { name: 'Cell long long long long long long long long long long long long Label', required: true },\r\n    tableData: {...inputObj}\r\n  }\r\n]"
+            },
+            {
                 "name": "loremIpsum",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -8428,17 +8431,17 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
-                "type": "Story<CheckboxGroupComponent>",
-                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "Story<CheckboxGroupPageComponent>",
+                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
-                "type": "Story<CheckboxGroupPageComponent>",
-                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
+                "type": "Story<CheckboxGroupComponent>",
+                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -8487,14 +8490,6 @@
                 "type": "literal type"
             },
             {
-                "name": "singleTable",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/input/inputTable.ts",
-                "type": "object",
-                "defaultValue": "{\r\n  title: 'Resolution',\r\n  singleTableData: [\r\n    {\r\n      tableHeader: { name: 'Cell Label' },\r\n      tableData: {...inputObj }\r\n    },\r\n    {\r\n      tableHeader: { name: 'Cell long long long long long long long long long long Label', attention: true },\r\n      tableData: {...inputObj}\r\n    },\r\n    {\r\n      tableHeader: { name: 'Cell long long Label' },\r\n      tableData: {...inputObj}\r\n    },\r\n    {\r\n      tableHeader: { name: 'Cell Label', attention: true },\r\n      tableData: {...inputObj}\r\n    },\r\n    {\r\n      tableHeader: { name: 'Cell Label', required: true },\r\n      tableData: {...inputObj, value: ''}\r\n    },\r\n    {\r\n      tableHeader: { name: 'Cell long long  Label' },\r\n      tableData: {...inputObj}\r\n    }\r\n  ]\r\n}"
-            },
-            {
                 "name": "SlideToggleTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -8538,17 +8533,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/styles/typography-styles.stories.ts",
-                "type": "Story<TypographyStylesComponent>",
-                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
+                "type": "Story<TypographyFontFamilyComponent>",
+                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
-                "type": "Story<TypographyFontFamilyComponent>",
-                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/styles/typography-styles.stories.ts",
+                "type": "Story<TypographyStylesComponent>",
+                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Toggles",
@@ -8946,6 +8941,16 @@
                     "defaultValue": "{\r\n  ariaLabel: 'Cell long long Label',\r\n  value: 'Input text',\r\n  validators: Validators.required,\r\n  matcher: new CustomErrorStateMatcher()\r\n}"
                 }
             ],
+            "src/stories/input/inputTable.ts": [
+                {
+                    "name": "inputTable",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/input/inputTable.ts",
+                    "type": "[]",
+                    "defaultValue": "[\r\n  {\r\n    tableHeader: { name: 'Cell Label' },\r\n    tableData: {...inputObj }\r\n  },\r\n  {\r\n    tableHeader: { name: 'Cell long long long long long long long long long long long long Label', attention: true },\r\n    tableData: {...inputObj}\r\n  },\r\n  {\r\n    tableHeader: { name: 'Cell long long Label' },\r\n    tableData: {...inputObj}\r\n  },\r\n  {\r\n    tableHeader: { name: 'Cell Label', attention: true },\r\n    tableData: {...inputObj}\r\n  },\r\n  {\r\n    tableHeader: { name: 'Cell Label', required: true },\r\n    tableData: {...inputObj, value: ''}\r\n  },\r\n  {\r\n    tableHeader: { name: 'Cell long long long long long long long long long long long long Label', required: true },\r\n    tableData: {...inputObj}\r\n  }\r\n]"
+                }
+            ],
             "src/stories/expansion-panel/loremIpsum.ts": [
                 {
                     "name": "loremIpsum",
@@ -9034,16 +9039,6 @@
                     "file": "src/stories/icons/icon.stories.ts",
                     "type": "Story<IconComponent>",
                     "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
-                }
-            ],
-            "src/stories/input/inputTable.ts": [
-                {
-                    "name": "singleTable",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/input/inputTable.ts",
-                    "type": "object",
-                    "defaultValue": "{\r\n  title: 'Resolution',\r\n  singleTableData: [\r\n    {\r\n      tableHeader: { name: 'Cell Label' },\r\n      tableData: {...inputObj }\r\n    },\r\n    {\r\n      tableHeader: { name: 'Cell long long long long long long long long long long Label', attention: true },\r\n      tableData: {...inputObj}\r\n    },\r\n    {\r\n      tableHeader: { name: 'Cell long long Label' },\r\n      tableData: {...inputObj}\r\n    },\r\n    {\r\n      tableHeader: { name: 'Cell Label', attention: true },\r\n      tableData: {...inputObj}\r\n    },\r\n    {\r\n      tableHeader: { name: 'Cell Label', required: true },\r\n      tableData: {...inputObj, value: ''}\r\n    },\r\n    {\r\n      tableHeader: { name: 'Cell long long  Label' },\r\n      tableData: {...inputObj}\r\n    }\r\n  ]\r\n}"
                 }
             ],
             "src/stories/menu/stateGroups.ts": [
@@ -9552,7 +9547,7 @@
                 "linktype": "component",
                 "name": "InputTextTableLayoutComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/9",
                 "status": "low"
             },
             {
@@ -9561,16 +9556,7 @@
                 "linktype": "interface",
                 "name": "IInputTextTableLine",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/design-system-lib/src/lib/input/table-layout/input-text-table.interface.ts",
-                "type": "interface",
-                "linktype": "interface",
-                "name": "IInputTextTable",
-                "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -9869,7 +9855,7 @@
                 "linktype": "component",
                 "name": "AppComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/21",
+                "coverageCount": "0/22",
                 "status": "low"
             },
             {
@@ -10129,7 +10115,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "singleTable",
+                "name": "inputTable",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
