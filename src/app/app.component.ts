@@ -3,6 +3,7 @@ import {ButtonTypeEnum} from 'projects/design-system-lib/src/public-api';
 import {InputNumericSizeEnum} from 'projects/design-system-lib/src/public-api';
 import {ReactiveFormsModule, Validators} from '@angular/forms';
 import {LabelTypesEnum} from 'projects/design-system-lib/src/lib/labels/label-types.enum';
+import {inputTable} from '../stories/input/inputTable';
 
 @Component({
   selector: 'app-root',
@@ -40,6 +41,7 @@ export class AppComponent implements OnInit {
   {
     optionName: 'Second'
   }];
+  inputTable = inputTable;
 
   constructor() {}
 

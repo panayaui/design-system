@@ -12,7 +12,7 @@ export class InputTextTableLayoutComponent implements OnInit {
   @Input() table: IInputTextTableLine[];
   @Input() isExpandable: boolean = true;
   public isHidden: boolean = false;
-  private value: number = 0;
+  private value: number = 6;
 
   @HostBinding('attr.style')
   public get valueAsStyle(): any {
