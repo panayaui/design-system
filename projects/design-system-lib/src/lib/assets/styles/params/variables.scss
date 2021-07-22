@@ -1,23 +1,5 @@
-/*** LTR websites ***/
-$direction            :ltr;
-$opposite-direction   :rtl;
-
-$start-direction      :left;
-$end-direction        :right;
-
-$transform-direction  :1;
-
-/*** RTL websites ***/
-//$direction            :rtl;
-//$opposite-direction   :ltr;
-//
-//$start-direction      :right;
-//$end-direction        :left;
-//
-//$transform-direction  :-1;
-
-$font-family-accent: 'Source Sans Pro', 'Arial', sans-serif;
-$font-family-basic: 'Inter', 'Arial', sans-serif;
+$font-family-accent: 'Source Sans Pro', 'Open Sans', sans-serif;
+$font-family-basic: 'Inter', 'Open Sans', sans-serif;
 
 // max screen width: 1920px;
 // min screen width: 1366px;

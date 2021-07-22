@@ -815,21 +815,21 @@
         },
         {
             "name": "IInputTextTableLine",
-            "id": "interface-IInputTextTableLine-e521eb228df218e8ec55313830f40bc6",
+            "id": "interface-IInputTextTableLine-9d8c4a26aa3c5c3dc8c80c869085f71b",
             "file": "projects/design-system-lib/src/lib/input/table-layout/input-text-table-line.interface.ts",
             "type": "interface",
-            "sourceCode": "import {IInputText} from '../text/input-text.interface';\r\n\r\nexport interface IInputTextTableLine {\r\n  tableHeader: string;\r\n  tableData: IInputText;\r\n  transitionDelay?: number;\r\n}\r\n",
+            "sourceCode": "import {IInputText} from '../text/input-text.interface';\r\n\r\nexport interface IInputTextTableLine {\r\n  tableHeader: {\r\n    name: string;\r\n    attention?: boolean;\r\n    required?: boolean;\r\n  };\r\n  tableData: IInputText;\r\n  transitionDelay?: number;\r\n}\r\n",
             "properties": [
                 {
                     "name": "tableData",
                     "type": "IInputText",
                     "optional": false,
                     "description": "",
-                    "line": 5
+                    "line": 9
                 },
                 {
                     "name": "tableHeader",
-                    "type": "string",
+                    "type": "literal type",
                     "optional": false,
                     "description": "",
                     "line": 4
@@ -839,7 +839,7 @@
                     "type": "number",
                     "optional": true,
                     "description": "",
-                    "line": 6
+                    "line": 10
                 }
             ],
             "indexSignatures": [],
@@ -4290,7 +4290,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$table-header-max-width: 240px;\r\n$table-header-padding-right: 40px;\r\n$row-height: 52px;\r\n\r\n.input-table {\r\n  border-collapse: collapse;\r\n\r\n  &-row {\r\n    height: $row-height;\r\n    opacity: 1;\r\n    transition: opacity 300ms;\r\n    &.hidden {\r\n      opacity: 0;\r\n    }\r\n  }\r\n\r\n  &-header {\r\n    font-family: $font-family-basic;\r\n    font-size: $base-font-size;\r\n    font-weight: 400;\r\n    color: $gray-scale-700;\r\n    text-align: left;\r\n    text-transform: capitalize;\r\n    max-width: $table-header-max-width;\r\n    padding-right: $table-header-padding-right;\r\n    padding-bottom: $gap-base;\r\n    &-text {\r\n      @include clamp;\r\n    }\r\n  }\r\n\r\n  &-data {\r\n    ::ng-deep .mat-form-field-infix {\r\n      padding-top: 0;\r\n      border-top-width: 5px;\r\n    }\r\n  }\r\n\r\n  &-trigger {\r\n    @include resetButton;\r\n    color: $primary-a-900;\r\n    margin-bottom: 15px;\r\n    &-icon {\r\n      display: flex;\r\n      margin-right: 12.5px;\r\n    }\r\n  }\r\n}\r\n",
+                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$table-header-max-width: 240px;\r\n$table-header-padding-right: $gap-double;\r\n$row-height: 52px;\r\n\r\n.input-table {\r\n  border-collapse: collapse;\r\n\r\n  &-row {\r\n    height: $row-height;\r\n    opacity: 1;\r\n    transition: opacity 300ms;\r\n    &.hidden {\r\n      opacity: 0;\r\n    }\r\n  }\r\n\r\n  &-header {\r\n    font-family: $font-family-basic;\r\n    font-size: $base-font-size;\r\n    font-weight: 400;\r\n    color: $gray-scale-700;\r\n    text-align: left;\r\n    text-transform: capitalize;\r\n    max-width: $table-header-max-width;\r\n    padding-right: $table-header-padding-right;\r\n    padding-bottom: $gap-base;\r\n    &-container {\r\n      display: flex;\r\n      align-items: center;\r\n    }\r\n    &-text {\r\n      @include clamp;\r\n    }\r\n    &-attention {\r\n      display: inline-block;\r\n      margin-left: $gap-small;\r\n    }\r\n    &-required {\r\n      font-size: $big-font-size;\r\n      color: $supportive-alert-500;\r\n      margin-left: $gap-small;\r\n    }\r\n  }\r\n\r\n  &-data {\r\n    ::ng-deep .mat-form-field-infix {\r\n      padding-top: 0;\r\n      border-top-width: 5px;\r\n    }\r\n  }\r\n\r\n  &-trigger {\r\n    @include resetButton;\r\n    color: $primary-a-900;\r\n    margin-bottom: 15px;\r\n    &-icon {\r\n      display: flex;\r\n      margin-right: 12.5px;\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "./input-text-table-layout.component.scss"
                 }
             ],
@@ -4298,7 +4298,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<table class=\"input-table\">\r\n  <tbody class=\"input-table-body\">\r\n  <ng-container *ngFor=\"let singleTable of tableToRender; let tableInd = index\">\r\n    <!--title-->\r\n    <tr class=\"input-table-row\">\r\n      <th class=\"input-table-header title\">\r\n        <button class=\"input-table-trigger headline-2-bold\"\r\n                (click)=\"toggleTable(tableInd)\">\r\n          <p-icon class=\"input-table-trigger-icon\"\r\n                  iconName=\"chevron-down\"\r\n                  width=\"16\"\r\n                  height=\"auto\"\r\n                  strokeWidth=\"3\"></p-icon>\r\n          {{singleTable.title}}\r\n        </button>\r\n      </th>\r\n    </tr>\r\n\r\n    <!--input rows-->\r\n    <ng-container *ngFor=\"let input of singleTable.singleTableData\">\r\n      <tr class=\"input-table-row\"\r\n          [class.hidden]=\"singleTable.isHidden\"\r\n          [style.transition-delay]=\"input.transitionDelay + 'ms'\">\r\n        <th class=\"input-table-header\">\r\n          <span class=\"input-table-header-text paragraph-2-default\">\r\n            {{input.tableHeader}}\r\n          </span>\r\n        </th>\r\n        <td class=\"input-table-data\">\r\n          <p-input-text [type]=\"input.tableData.type\"\r\n                        [label]=\"input.tableData.label\"\r\n                        [ariaLabel]=\"input.tableData.ariaLabel\"\r\n                        [placeholder]=\"input.tableData.placeholder\"\r\n                        [errorMessage]=\"input.tableData.errorMessage\"\r\n                        [disabled]=\"input.tableData.disabled\"\r\n                        [readonly]=\"input.tableData.readonly\"\r\n                        [value]=\"input.tableData.value\"\r\n                        [validators]=\"input.tableData.validators\"\r\n                        [matcher]=\"input.tableData.matcher\"\r\n                        [iconName]=\"input.tableData.iconName\">\r\n          </p-input-text>\r\n        </td>\r\n      </tr>\r\n    </ng-container>\r\n  </ng-container>\r\n\r\n  </tbody>\r\n</table>\r\n\r\n"
+            "templateData": "<table class=\"input-table\">\r\n  <tbody class=\"input-table-body\">\r\n  <ng-container *ngFor=\"let singleTable of tableToRender; let tableInd = index\">\r\n    <!--title-->\r\n    <tr class=\"input-table-row\">\r\n      <th class=\"input-table-header title\">\r\n        <button class=\"input-table-trigger headline-2-bold\"\r\n                (click)=\"toggleTable(tableInd)\">\r\n          <p-icon class=\"input-table-trigger-icon\"\r\n                  iconName=\"chevron-down\"\r\n                  width=\"16\"\r\n                  height=\"auto\"\r\n                  strokeWidth=\"3\"></p-icon>\r\n          {{singleTable.title}}\r\n        </button>\r\n      </th>\r\n    </tr>\r\n\r\n    <!--input rows-->\r\n    <ng-container *ngFor=\"let input of singleTable.singleTableData\">\r\n      <tr class=\"input-table-row\"\r\n          [class.hidden]=\"singleTable.isHidden\"\r\n          [style.transition-delay]=\"input.transitionDelay + 'ms'\">\r\n        <th class=\"input-table-header\">\r\n          <span class=\"input-table-header-container\">\r\n            <span class=\"input-table-header-text paragraph-2-default\">\r\n              {{input.tableHeader.name}}\r\n            </span>\r\n            <p-icon *ngIf=\"input.tableHeader.attention\"\r\n                    class=\"input-table-header-attention\"\r\n                    iconName=\"alert-circle\"\r\n                    width=\"16\"\r\n                    height=\"16\"\r\n                    stroke=\"#2D3047\"></p-icon>\r\n            <span *ngIf=\"input.tableHeader.required\"\r\n                  class=\"input-table-header-required\">\r\n              &#42;\r\n            </span>\r\n          </span>\r\n        </th>\r\n        <td class=\"input-table-data\">\r\n          <p-input-text [type]=\"input.tableData.type\"\r\n                        [label]=\"input.tableData.label\"\r\n                        [ariaLabel]=\"input.tableData.ariaLabel\"\r\n                        [placeholder]=\"input.tableData.placeholder\"\r\n                        [errorMessage]=\"input.tableData.errorMessage\"\r\n                        [disabled]=\"input.tableData.disabled\"\r\n                        [readonly]=\"input.tableData.readonly\"\r\n                        [value]=\"input.tableData.value\"\r\n                        [validators]=\"input.tableData.validators\"\r\n                        [matcher]=\"input.tableData.matcher\"\r\n                        [iconName]=\"input.tableData.iconName\">\r\n          </p-input-text>\r\n        </td>\r\n      </tr>\r\n    </ng-container>\r\n  </ng-container>\r\n\r\n  </tbody>\r\n</table>\r\n\r\n"
         },
         {
             "name": "LabelMainComponent",
@@ -6206,7 +6206,7 @@
                     }
                 }
             },
-            "templateData": "<div class=\"p-paginator\">\r\n  <p-button class=\"p-paginator-arrow first\"\r\n            [class.disabled]=\"!canMoveToPrevious\"\r\n            ariaLabel=\"Move to the first page\"\r\n            [disabled]=\"!canMoveToPrevious\"\r\n            iconBefore=\"first\"\r\n            iconBeforeWidth=\"10\"\r\n            iconBeforeHeight=\"10\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"firstPageClicked.emit()\"></p-button>\r\n  <p-button class=\"p-paginator-arrow prev\"\r\n            [class.disabled]=\"!canMoveToPrevious\"\r\n            ariaLabel=\"Move to the previous page\"\r\n            [disabled]=\"!canMoveToPrevious\"\r\n            iconBefore=\"chevron-left\"\r\n            iconBeforeWidth=\"17\"\r\n            iconBeforeStrokeWidth=\"2\"\r\n            [iconBeforeStrokeColor]=\"!canMoveToPrevious ? '#B3B3B3' : 'currentColor'\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"prevPageClicked.emit()\"></p-button>\r\n  <ul class=\"p-paginator-list\">\r\n    <li class=\"p-paginator-item\">\r\n      <p-button class=\"p-paginator-page less\"\r\n                ariaLabel=\"Show other {{ step }} pages\"\r\n                iconBefore=\"more-horizontal\"\r\n                iconBeforeWidth=\"17\"\r\n                iconBeforeStrokeWidth=\"2\"\r\n                [disabled]=\"lessBtnDisabled\"\r\n                [iconBeforeStrokeColor]=\"!canMoveToNext ? '#B3B3B3' : 'currentColor'\"\r\n                [buttonType]=\"buttonType.IsIcon\"\r\n                (onClickTask)=\"definePagesList($event, false)\"></p-button>\r\n    </li>\r\n    <li class=\"p-paginator-item\" *ngFor=\"let pageNumber of pageList\">\r\n      <p-button class=\"p-paginator-page\"\r\n                [class.selected]=\"pageNumber === currentPage\"\r\n                [label]=\"pageNumber\"\r\n                [ariaLabel]=\"'Move to page ' + pageNumber\"\r\n                [buttonType]=\"buttonType.Tertiary\"\r\n                (click)=\"pageNumberClicked.emit()\"></p-button>\r\n    </li>\r\n    <li class=\"p-paginator-item\">\r\n      <p-button class=\"p-paginator-page more\"\r\n                ariaLabel=\"Show other {{ step }} pages\"\r\n                iconBefore=\"more-horizontal\"\r\n                iconBeforeWidth=\"17\"\r\n                iconBeforeStrokeWidth=\"2\"\r\n                [disabled]=\"moreBtnDisabled\"\r\n                [buttonType]=\"buttonType.IsIcon\"\r\n                (onClickTask)=\"definePagesList($event, true)\"></p-button>\r\n    </li>\r\n  </ul>\r\n\r\n  <p-button class=\"p-paginator-arrow next\"\r\n            [class.disabled]=\"!canMoveToNext\"\r\n            ariaLabel=\"Move to the next page\"\r\n            [disabled]=\"!canMoveToNext\"\r\n            iconBefore=\"chevron-right\"\r\n            iconBeforeWidth=\"17\"\r\n            iconBeforeStrokeWidth=\"2\"\r\n            [iconBeforeStrokeColor]=\"!canMoveToNext ? '#B3B3B3' : 'currentColor'\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"nextPageClicked.emit()\"></p-button>\r\n  <p-button class=\"p-paginator-arrow last\"\r\n            [class.disabled]=\"!canMoveToNext\"\r\n            ariaLabel=\"Move to the last page\"\r\n            [disabled]=\"!canMoveToNext\"\r\n            iconBefore=\"last\"\r\n            iconBeforeWidth=\"10\"\r\n            iconBeforeHeight=\"10\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"lastPageClicked.emit()\"></p-button>\r\n\r\n  <p-menu-single-select class=\"p-paginator-select\"\r\n                        [menuList]=\"pageSizeOptions\"\r\n                        (onClickTask)=\"pageSizeChanged.emit($event)\">\r\n    <!--ng-content-->\r\n    <p-input-numeric class=\"p-paginator-input\"\r\n                     label=\"Items per page\"\r\n                     [value]=\"pageSize\"\r\n                     [size]=\"inputNumericSize.Small\"\r\n                     [labelLast]=\"true\"\r\n                     [notEditable]=\"true\"\r\n                     iconName=\"chevron-down\"></p-input-numeric>\r\n    <!-- -->\r\n  </p-menu-single-select>\r\n</div>\r\n"
+            "templateData": "<div class=\"p-paginator\">\r\n  <p-button class=\"p-paginator-arrow first\"\r\n            [class.disabled]=\"!canMoveToPrevious\"\r\n            ariaLabel=\"Move to the first page\"\r\n            [disabled]=\"!canMoveToPrevious\"\r\n            iconBefore=\"first\"\r\n            iconBeforeWidth=\"10\"\r\n            iconBeforeHeight=\"10\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"firstPageClicked.emit()\"></p-button>\r\n  <p-button class=\"p-paginator-arrow prev\"\r\n            [class.disabled]=\"!canMoveToPrevious\"\r\n            ariaLabel=\"Move to the previous page\"\r\n            [disabled]=\"!canMoveToPrevious\"\r\n            iconBefore=\"chevron-left\"\r\n            iconBeforeWidth=\"17\"\r\n            iconBeforeStrokeWidth=\"2\"\r\n            [iconBeforeStrokeColor]=\"!canMoveToPrevious ? '#B3B3B3' : 'currentColor'\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"prevPageClicked.emit()\"></p-button>\r\n  <ul class=\"p-paginator-list\">\r\n    <li class=\"p-paginator-item\">\r\n      <p-button *ngIf=\"!lessBtnDisabled\"\r\n                class=\"p-paginator-page less\"\r\n                ariaLabel=\"Show other {{ step }} pages\"\r\n                iconBefore=\"more-horizontal\"\r\n                iconBeforeWidth=\"17\"\r\n                iconBeforeStrokeWidth=\"2\"\r\n                [iconBeforeStrokeColor]=\"!canMoveToNext ? '#B3B3B3' : 'currentColor'\"\r\n                [buttonType]=\"buttonType.IsIcon\"\r\n                (onClickTask)=\"definePagesList($event, false)\"></p-button>\r\n    </li>\r\n    <li class=\"p-paginator-item\" *ngFor=\"let pageNumber of pageList\">\r\n      <p-button class=\"p-paginator-page\"\r\n                [class.selected]=\"pageNumber === currentPage\"\r\n                [label]=\"pageNumber\"\r\n                [ariaLabel]=\"'Move to page ' + pageNumber\"\r\n                [buttonType]=\"buttonType.Tertiary\"\r\n                (click)=\"pageNumberClicked.emit()\"></p-button>\r\n    </li>\r\n    <li class=\"p-paginator-item\">\r\n      <p-button *ngIf=\"!moreBtnDisabled\"\r\n                class=\"p-paginator-page more\"\r\n                ariaLabel=\"Show other {{ step }} pages\"\r\n                iconBefore=\"more-horizontal\"\r\n                iconBeforeWidth=\"17\"\r\n                iconBeforeStrokeWidth=\"2\"\r\n                [buttonType]=\"buttonType.IsIcon\"\r\n                (onClickTask)=\"definePagesList($event, true)\"></p-button>\r\n    </li>\r\n  </ul>\r\n\r\n  <p-button class=\"p-paginator-arrow next\"\r\n            [class.disabled]=\"!canMoveToNext\"\r\n            ariaLabel=\"Move to the next page\"\r\n            [disabled]=\"!canMoveToNext\"\r\n            iconBefore=\"chevron-right\"\r\n            iconBeforeWidth=\"17\"\r\n            iconBeforeStrokeWidth=\"2\"\r\n            [iconBeforeStrokeColor]=\"!canMoveToNext ? '#B3B3B3' : 'currentColor'\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"nextPageClicked.emit()\"></p-button>\r\n  <p-button class=\"p-paginator-arrow last\"\r\n            [class.disabled]=\"!canMoveToNext\"\r\n            ariaLabel=\"Move to the last page\"\r\n            [disabled]=\"!canMoveToNext\"\r\n            iconBefore=\"last\"\r\n            iconBeforeWidth=\"10\"\r\n            iconBeforeHeight=\"10\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"lastPageClicked.emit()\"></p-button>\r\n\r\n  <p-menu-single-select class=\"p-paginator-select\"\r\n                        [menuList]=\"pageSizeOptions\"\r\n                        (onClickTask)=\"pageSizeChanged.emit($event)\">\r\n    <!--ng-content-->\r\n    <p-input-numeric class=\"p-paginator-input\"\r\n                     label=\"Items per page\"\r\n                     [value]=\"pageSize\"\r\n                     [size]=\"inputNumericSize.Small\"\r\n                     [labelLast]=\"true\"\r\n                     [notEditable]=\"true\"\r\n                     iconName=\"chevron-down\"></p-input-numeric>\r\n    <!-- -->\r\n  </p-menu-single-select>\r\n</div>\r\n"
         },
         {
             "name": "RadioButtonComponent",
@@ -8390,7 +8390,7 @@
                 "subtype": "variable",
                 "file": "src/stories/input/inputObj.ts",
                 "type": "object",
-                "defaultValue": "{\r\n  ariaLabel: 'Cell long long Label',\r\n  value: 'Input text',\r\n  errorMessage: 'Validation text',\r\n  validators: Validators.required,\r\n  matcher: new CustomErrorStateMatcher()\r\n}"
+                "defaultValue": "{\r\n  ariaLabel: 'Cell long long Label',\r\n  value: 'Input text',\r\n  validators: Validators.required,\r\n  matcher: new CustomErrorStateMatcher()\r\n}"
             },
             {
                 "name": "loremIpsum",
@@ -8492,7 +8492,7 @@
                 "subtype": "variable",
                 "file": "src/stories/input/inputTable.ts",
                 "type": "object",
-                "defaultValue": "{\r\n  title: 'Resolution',\r\n  singleTableData: [\r\n    {\r\n      tableHeader: 'Cell Label',\r\n      tableData: {...inputObj }\r\n    },\r\n    {\r\n      tableHeader: 'Cell Label',\r\n      tableData: {...inputObj}\r\n    },\r\n    {\r\n      tableHeader: 'Cell long long Label',\r\n      tableData: {...inputObj}\r\n    },\r\n    {\r\n      tableHeader: 'Cell Label',\r\n      tableData: {...inputObj}\r\n    },\r\n    {\r\n      tableHeader: 'Cell Label',\r\n      tableData: {...inputObj, value: ''}\r\n    },\r\n    {\r\n      tableHeader: 'Cell Label',\r\n      tableData: {...inputObj}\r\n    }\r\n  ]\r\n}"
+                "defaultValue": "{\r\n  title: 'Resolution',\r\n  singleTableData: [\r\n    {\r\n      tableHeader: { name: 'Cell Label' },\r\n      tableData: {...inputObj }\r\n    },\r\n    {\r\n      tableHeader: { name: 'Cell long long long long long long long long long long Label', attention: true },\r\n      tableData: {...inputObj}\r\n    },\r\n    {\r\n      tableHeader: { name: 'Cell long long Label' },\r\n      tableData: {...inputObj}\r\n    },\r\n    {\r\n      tableHeader: { name: 'Cell Label', attention: true },\r\n      tableData: {...inputObj}\r\n    },\r\n    {\r\n      tableHeader: { name: 'Cell Label', required: true },\r\n      tableData: {...inputObj, value: ''}\r\n    },\r\n    {\r\n      tableHeader: { name: 'Cell long long  Label' },\r\n      tableData: {...inputObj}\r\n    }\r\n  ]\r\n}"
             },
             {
                 "name": "SlideToggleTemplate",
@@ -8538,17 +8538,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
-                "type": "Story<TypographyFontFamilyComponent>",
-                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/styles/typography-styles.stories.ts",
+                "type": "Story<TypographyStylesComponent>",
+                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/styles/typography-styles.stories.ts",
-                "type": "Story<TypographyStylesComponent>",
-                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
+                "type": "Story<TypographyFontFamilyComponent>",
+                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Toggles",
@@ -8943,7 +8943,7 @@
                     "subtype": "variable",
                     "file": "src/stories/input/inputObj.ts",
                     "type": "object",
-                    "defaultValue": "{\r\n  ariaLabel: 'Cell long long Label',\r\n  value: 'Input text',\r\n  errorMessage: 'Validation text',\r\n  validators: Validators.required,\r\n  matcher: new CustomErrorStateMatcher()\r\n}"
+                    "defaultValue": "{\r\n  ariaLabel: 'Cell long long Label',\r\n  value: 'Input text',\r\n  validators: Validators.required,\r\n  matcher: new CustomErrorStateMatcher()\r\n}"
                 }
             ],
             "src/stories/expansion-panel/loremIpsum.ts": [
@@ -9043,7 +9043,7 @@
                     "subtype": "variable",
                     "file": "src/stories/input/inputTable.ts",
                     "type": "object",
-                    "defaultValue": "{\r\n  title: 'Resolution',\r\n  singleTableData: [\r\n    {\r\n      tableHeader: 'Cell Label',\r\n      tableData: {...inputObj }\r\n    },\r\n    {\r\n      tableHeader: 'Cell Label',\r\n      tableData: {...inputObj}\r\n    },\r\n    {\r\n      tableHeader: 'Cell long long Label',\r\n      tableData: {...inputObj}\r\n    },\r\n    {\r\n      tableHeader: 'Cell Label',\r\n      tableData: {...inputObj}\r\n    },\r\n    {\r\n      tableHeader: 'Cell Label',\r\n      tableData: {...inputObj, value: ''}\r\n    },\r\n    {\r\n      tableHeader: 'Cell Label',\r\n      tableData: {...inputObj}\r\n    }\r\n  ]\r\n}"
+                    "defaultValue": "{\r\n  title: 'Resolution',\r\n  singleTableData: [\r\n    {\r\n      tableHeader: { name: 'Cell Label' },\r\n      tableData: {...inputObj }\r\n    },\r\n    {\r\n      tableHeader: { name: 'Cell long long long long long long long long long long Label', attention: true },\r\n      tableData: {...inputObj}\r\n    },\r\n    {\r\n      tableHeader: { name: 'Cell long long Label' },\r\n      tableData: {...inputObj}\r\n    },\r\n    {\r\n      tableHeader: { name: 'Cell Label', attention: true },\r\n      tableData: {...inputObj}\r\n    },\r\n    {\r\n      tableHeader: { name: 'Cell Label', required: true },\r\n      tableData: {...inputObj, value: ''}\r\n    },\r\n    {\r\n      tableHeader: { name: 'Cell long long  Label' },\r\n      tableData: {...inputObj}\r\n    }\r\n  ]\r\n}"
                 }
             ],
             "src/stories/menu/stateGroups.ts": [
