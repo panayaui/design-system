@@ -1,0 +1,47 @@
+@import "../labels/label-sub/label-sub.component";
+
+$node-height: 30px;
+$node-padding: 24px;
+
+.p-tree {
+  &-nested-node {
+    display: flex;
+    align-items: center;
+    height: $node-height;
+  }
+
+  &-node-invisible {
+    display: none;
+  }
+
+  &-button {
+    @include resetButton;
+    padding: 3px;
+  }
+
+  &-button-icon {
+    transform: rotate(-90deg);
+    transition: transform 180ms ease-in-out;
+    &.expanded {
+      transform: rotate(0);
+    }
+  }
+
+  &-node-icon {
+    margin-right: $gap-small;
+    &.not-expandable {
+      padding-left: $node-padding;
+    }
+  }
+
+  &-node-label {
+    font-size: 0;
+    margin-right: $gap-small;
+  }
+
+  &-expandable {
+    padding-left: $node-padding;
+  }
+
+}
+

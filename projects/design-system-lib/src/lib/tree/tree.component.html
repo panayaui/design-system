@@ -1,0 +1,61 @@
+<mat-tree [dataSource]="dataSource"
+          [treeControl]="treeControl"
+          class="p-tree">
+  <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle>
+    <ng-container [ngTemplateOutlet]="nodeContent"
+                  [ngTemplateOutletContext]="{node: node}"></ng-container>
+    <!--<span class="p-tree-node-name paragraph-3-default">{{node.name}}</span>-->
+  </mat-tree-node>
+
+  <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild">
+    <div class="p-tree-nested-node">
+      <button class="p-tree-button"
+              mat-icon-button
+              matTreeNodeToggle
+              [attr.aria-label]="'Toggle ' + node.name">
+        <p-icon class="p-tree-button-icon"
+                [class.expanded]="treeControl.isExpanded(node)"
+                iconName="chevron-down"
+                width="16"></p-icon>
+      </button>
+
+      <ng-container [ngTemplateOutlet]="nodeContent"
+                    [ngTemplateOutletContext]="{node: node}"></ng-container>
+    </div>
+
+    <div class="p-tree-expandable"
+         [class.p-tree-node-invisible]="!treeControl.isExpanded(node)"
+         role="group">
+      <ng-container matTreeNodeOutlet></ng-container>
+    </div>
+
+  </mat-nested-tree-node>
+</mat-tree>
+
+<ng-template #nodeContent let-node="node">
+  <ng-template [ngIf]="!node.isCycle && treeControl.isExpanded(node)" [ngIfElse]="closedNode">
+    <p-icon class="p-tree-node-icon"
+            iconName="folder-open"
+            width="16"
+            height="16">
+    </p-icon>
+  </ng-template>
+
+  <ng-template #closedNode>
+    <p-icon class="p-tree-node-icon"
+            [class.not-expandable]="!node.children?.length"
+            [iconName]="node.isCycle ? 'circle' : node.children?.length ? 'folder' : 'file-text'"
+            width="16">
+    </p-icon>
+  </ng-template>
+
+  <span *ngIf="node.label"
+        class="p-tree-node-label p-label-small-indicator"
+        [ngClass]="'p-label-small-indicator-' + node.label">
+    {{node.label}}
+  </span>
+
+  <span class="p-tree-node-name paragraph-3-default">
+    {{node.name}}
+  </span>
+</ng-template>

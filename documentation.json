@@ -1124,6 +1124,32 @@
             "indexSignatures": [],
             "kind": 150,
             "methods": []
+        },
+        {
+            "name": "ITreeNode",
+            "id": "interface-ITreeNode-2d45472ddf3d43095565bad8be3e4d0c",
+            "file": "projects/design-system-lib/src/lib/tree/tree.interface.ts",
+            "type": "interface",
+            "sourceCode": "export interface ITreeNode {\r\n  name: string;\r\n  children?: ITreeNode[];\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "children",
+                    "type": "ITreeNode[]",
+                    "optional": true,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "name",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
         }
     ],
     "injectables": [],
@@ -7180,6 +7206,81 @@
             "templateData": "<p-button class=\"p-tooltip-container\"\r\n          label=\"Hover\"\r\n          buttonType=\"secondary\"\r\n          #tooltip=\"matTooltip\"\r\n          [matTooltip]=\"message\"\r\n          [matTooltipDisabled]=\"disabled\"\r\n          [matTooltipShowDelay]=\"showDelay\"\r\n          [matTooltipHideDelay]=\"hideDelay\"\r\n          [matTooltipPosition]=\"position\"\r\n          [matTooltipClass]=\"classes\">\r\n</p-button>\r\n\r\n"
         },
         {
+            "name": "TreeComponent",
+            "id": "component-TreeComponent-5a2caf24d5c0a9f78a84f6db2a3d5556",
+            "file": "projects/design-system-lib/src/lib/tree/tree.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-tree",
+            "styleUrls": [
+                "./tree.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./tree.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "treeNodes",
+                    "line": 12,
+                    "type": "ITreeNode[]"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "dataSource",
+                    "defaultValue": "new MatTreeNestedDataSource<ITreeNode>()",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                },
+                {
+                    "name": "hasChild",
+                    "defaultValue": "() => {...}",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 20
+                },
+                {
+                    "name": "treeControl",
+                    "defaultValue": "new NestedTreeControl<ITreeNode>(node => node.children)",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                }
+            ],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {ITreeNode} from './tree.interface';\r\nimport {NestedTreeControl} from '@angular/cdk/tree';\r\nimport {MatTreeNestedDataSource} from '@angular/material/tree';\r\n\r\n@Component({\r\n  selector: 'p-tree',\r\n  templateUrl: './tree.component.html',\r\n  styleUrls: ['./tree.component.scss'],\r\n})\r\nexport class TreeComponent {\r\n  @Input() treeNodes: ITreeNode[];\r\n  treeControl = new NestedTreeControl<ITreeNode>(node => node.children);\r\n  dataSource = new MatTreeNestedDataSource<ITreeNode>();\r\n\r\n  constructor() {\r\n    this.dataSource.data = this.treeNodes;\r\n  }\r\n\r\n  hasChild = (_: number, node: ITreeNode) => !!node.children && node.children.length > 0;\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$tab-height: 52px;\r\n$tab-padding: $gap-double;\r\n\r\n::ng-deep .p-tabs {\r\n  .mat-tab-header {\r\n    border-bottom-color: $gray-scale-400;\r\n  }\r\n  .mat-tab-label {\r\n    min-width: unset;\r\n    height: $tab-height;\r\n    padding: 0 $tab-padding;\r\n    opacity: 1;\r\n    &:not(.mat-tab-disabled):not(.mat-tab-label-active):hover {\r\n      background-color: $primary-c-50;\r\n      .p-tabs-counter {\r\n        font-weight: 700;\r\n        background-color: $gray-scale-400;\r\n      }\r\n    }\r\n  }\r\n  .mat-tab-label-content {\r\n    color: $primary-a-900;\r\n  }\r\n  .mat-tab-label-active {\r\n    .p-tabs-label {\r\n      font-weight: 700;\r\n    }\r\n    .p-tabs-counter {\r\n      font-weight: 600;\r\n      color: $gray-scale-1;\r\n      background-color: $primary-a-900;\r\n    }\r\n  }\r\n  &.mat-tab-group .mat-ink-bar {\r\n    height: 4px;\r\n    background-color: $primary-a-900;\r\n  }\r\n\r\n  // icon\r\n  &-icon {\r\n    margin-right: 4px;\r\n  }\r\n\r\n  // notification\r\n  &-notification {\r\n    width: 6px;\r\n    height: 6px;\r\n    border-radius: 50%;\r\n    background-color: $supportive-alert-500;\r\n    transform: translate(3px, -6px);\r\n  }\r\n\r\n  // counter\r\n  &-counter {\r\n    display: inline-flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    width: 18px;\r\n    height: 16px;\r\n    margin-left: 4px;\r\n    background-color: $gray-scale-50;\r\n    border-radius: 50%;\r\n    .p-tabs-notification + & {\r\n      margin-left: 7px;\r\n    }\r\n  }\r\n\r\n  .mat-tab-disabled {\r\n    .mat-tab-label-content,\r\n    .p-tabs-counter {\r\n      color: $gray-scale-600;\r\n    }\r\n  }\r\n\r\n  // tabpanel\r\n  .mat-tab-body-wrapper {\r\n    padding: $gap-double $gap-double * 2;\r\n    border-right: 1px solid $gray-scale-400;\r\n    border-bottom: 1px solid $gray-scale-400;\r\n    border-left: 1px solid $gray-scale-400;\r\n  }\r\n}\r\n\r\n\r\n",
+                    "styleUrl": "./tree.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 14
+            },
+            "templateData": "<mat-tree [dataSource]=\"dataSource\" [treeControl]=\"treeControl\" class=\"example-tree\">\r\n  <mat-tree-node *matTreeNodeDef=\"let node\" matTreeNodeToggle>\r\n    {{node.name}}\r\n  </mat-tree-node>\r\n\r\n  <mat-nested-tree-node *matTreeNodeDef=\"let node; when: hasChild\">\r\n    <div class=\"mat-tree-node\">\r\n      <button mat-icon-button matTreeNodeToggle\r\n              [attr.aria-label]=\"'Toggle ' + node.name\">\r\n        <mat-icon class=\"mat-icon-rtl-mirror\">\r\n          {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}\r\n        </mat-icon>\r\n      </button>\r\n      {{node.name}}\r\n    </div>\r\n\r\n    <div [class.example-tree-invisible]=\"!treeControl.isExpanded(node)\"\r\n         role=\"group\">\r\n      <ng-container matTreeNodeOutlet></ng-container>\r\n    </div>\r\n  </mat-nested-tree-node>\r\n</mat-tree>\r\n"
+        },
+        {
             "name": "TypographyFontFamilyComponent",
             "id": "component-TypographyFontFamilyComponent-7e114aa45068f95ee12d7ba8ac8ae279",
             "file": "src/stories/typography/font-family/typography-font-family.component.ts",
@@ -8295,6 +8396,47 @@
                     "elements": []
                 }
             ]
+        },
+        {
+            "name": "TreeModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "TreeComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "IconModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "TreeComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
         }
     ],
     "miscellaneous": {
@@ -8431,17 +8573,17 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
-                "type": "Story<CheckboxGroupPageComponent>",
-                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
+                "type": "Story<CheckboxGroupComponent>",
+                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
-                "type": "Story<CheckboxGroupComponent>",
-                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "Story<CheckboxGroupPageComponent>",
+                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -9827,6 +9969,24 @@
                 "name": "ToolbarComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/tree/tree.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TreeComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/tree/tree.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "ITreeNode",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {

@@ -96,3 +96,6 @@ export * from './lib/hashtag/button/hashtag.component';
 export * from './lib/hashtag/bar/hashtag-bar.component';
 export * from './lib/hashtag/hashtag.interface';
 
+export * from './lib/tree/tree.module';
+export * from './lib/tree/tree.component';
+export * from './lib/tree/tree.interface';
