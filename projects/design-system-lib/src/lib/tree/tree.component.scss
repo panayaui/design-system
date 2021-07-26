@@ -43,5 +43,25 @@ $node-padding: 24px;
     padding-left: $node-padding;
   }
 
+  .child-selected {
+    font-weight: 700;
+    background-color: $primary-c-50;
+    position: relative;
+    &:before {
+      content: 'Selected';
+      display: block;
+      font-size: 0;
+      width: 5px;
+      height: 100%;
+      background-color: $primary-a-900;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .parent-selected .p-tree-nested-node .p-tree-node-name{
+    font-weight: 700;
+  }
 }
 

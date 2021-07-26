@@ -7221,7 +7221,7 @@
         },
         {
             "name": "TreeComponent",
-            "id": "component-TreeComponent-82250993f80b70bac734e646fe0329a3",
+            "id": "component-TreeComponent-8b81e335a7c1c5b33bd8e4f5f697e649",
             "file": "projects/design-system-lib/src/lib/tree/tree.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -7292,7 +7292,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport {ITreeNode} from './tree.interface';\r\nimport {NestedTreeControl} from '@angular/cdk/tree';\r\nimport {MatTreeNestedDataSource} from '@angular/material/tree';\r\n\r\n@Component({\r\n  selector: 'p-tree',\r\n  templateUrl: './tree.component.html',\r\n  styleUrls: ['./tree.component.scss'],\r\n})\r\nexport class TreeComponent implements OnInit {\r\n  @Input() treeNodes: ITreeNode[];\r\n  public treeControl = new NestedTreeControl<ITreeNode>(node => node.children);\r\n  public dataSource = new MatTreeNestedDataSource<ITreeNode>();\r\n\r\n\r\n  ngOnInit(): void {\r\n    this.dataSource.data = this.treeNodes;\r\n  }\r\n\r\n  hasChild = (_: number, node: ITreeNode) => !!node.children && node.children.length > 0;\r\n}\r\n",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport {ITreeNode} from './tree.interface';\r\nimport {NestedTreeControl} from '@angular/cdk/tree';\r\nimport {MatTreeNestedDataSource} from '@angular/material/tree';\r\n\r\n@Component({\r\n  selector: 'p-tree',\r\n  templateUrl: './tree.component.html',\r\n  styleUrls: ['./tree.component.scss'],\r\n})\r\nexport class TreeComponent implements OnInit {\r\n  @Input() treeNodes: ITreeNode[];\r\n  public treeControl = new NestedTreeControl<ITreeNode>(node => node.children);\r\n  public dataSource = new MatTreeNestedDataSource<ITreeNode>();\r\n\r\n\r\n  ngOnInit(): void {\r\n    this.dataSource.data = this.treeNodes;\r\n  }\r\n\r\n  hasChild = (_: number, node: ITreeNode) => !!node.children && node.children.length > 0;\r\n\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -7304,7 +7304,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<mat-tree [dataSource]=\"dataSource\"\r\n          [treeControl]=\"treeControl\"\r\n          class=\"p-tree\">\r\n  <mat-tree-node *matTreeNodeDef=\"let node\" matTreeNodeToggle>\r\n    <ng-container [ngTemplateOutlet]=\"nodeContent\"\r\n                  [ngTemplateOutletContext]=\"{node: node}\"></ng-container>\r\n    <!--<span class=\"p-tree-node-name paragraph-3-default\">{{node.name}}</span>-->\r\n  </mat-tree-node>\r\n\r\n  <mat-nested-tree-node *matTreeNodeDef=\"let node; when: hasChild\">\r\n    <div class=\"p-tree-nested-node\">\r\n      <button class=\"p-tree-button\"\r\n              mat-icon-button\r\n              matTreeNodeToggle\r\n              [attr.aria-label]=\"'Toggle ' + node.name\">\r\n        <p-icon class=\"p-tree-button-icon\"\r\n                [class.expanded]=\"treeControl.isExpanded(node)\"\r\n                iconName=\"chevron-down\"\r\n                width=\"16\"></p-icon>\r\n      </button>\r\n\r\n      <ng-container [ngTemplateOutlet]=\"nodeContent\"\r\n                    [ngTemplateOutletContext]=\"{node: node}\"></ng-container>\r\n    </div>\r\n\r\n    <div class=\"p-tree-expandable\"\r\n         [class.p-tree-node-invisible]=\"!treeControl.isExpanded(node)\"\r\n         role=\"group\">\r\n      <ng-container matTreeNodeOutlet></ng-container>\r\n    </div>\r\n\r\n  </mat-nested-tree-node>\r\n</mat-tree>\r\n\r\n<ng-template #nodeContent let-node=\"node\">\r\n  <ng-template [ngIf]=\"!node.isCycle && treeControl.isExpanded(node)\" [ngIfElse]=\"closedNode\">\r\n    <p-icon class=\"p-tree-node-icon\"\r\n            iconName=\"folder-open\"\r\n            width=\"16\"\r\n            height=\"16\">\r\n    </p-icon>\r\n  </ng-template>\r\n\r\n  <ng-template #closedNode>\r\n    <p-icon class=\"p-tree-node-icon\"\r\n            [class.not-expandable]=\"!node.children?.length\"\r\n            [iconName]=\"node.isCycle ? 'circle' : node.children?.length ? 'folder' : 'file-text'\"\r\n            width=\"16\">\r\n    </p-icon>\r\n  </ng-template>\r\n\r\n  <span *ngIf=\"node.label\"\r\n        class=\"p-tree-node-label p-label-small-indicator\"\r\n        [ngClass]=\"'p-label-small-indicator-' + node.label\">\r\n    {{node.label}}\r\n  </span>\r\n\r\n  <span class=\"p-tree-node-name paragraph-3-default\">\r\n    {{node.name}}\r\n  </span>\r\n</ng-template>\r\n"
+            "templateData": "<mat-tree [dataSource]=\"dataSource\"\r\n          [treeControl]=\"treeControl\"\r\n          class=\"p-tree\">\r\n  <mat-tree-node *matTreeNodeDef=\"let node\" matTreeNodeToggle (cllick)=\"$event.stopPropagation()\">\r\n    <ng-container [ngTemplateOutlet]=\"nodeContent\"\r\n                  [ngTemplateOutletContext]=\"{node: node}\"></ng-container>\r\n  </mat-tree-node>\r\n\r\n  <mat-nested-tree-node *matTreeNodeDef=\"let node; when: hasChild\">\r\n    <div class=\"p-tree-nested-node\">\r\n      <button class=\"p-tree-button\"\r\n              mat-icon-button\r\n              matTreeNodeToggle\r\n              [attr.aria-label]=\"'Toggle ' + node.name\">\r\n        <p-icon class=\"p-tree-button-icon\"\r\n                [class.expanded]=\"treeControl.isExpanded(node)\"\r\n                iconName=\"chevron-down\"\r\n                width=\"16\"></p-icon>\r\n      </button>\r\n\r\n      <ng-container [ngTemplateOutlet]=\"nodeContent\"\r\n                    [ngTemplateOutletContext]=\"{node: node}\"></ng-container>\r\n    </div>\r\n\r\n    <div class=\"p-tree-expandable\"\r\n         [class.p-tree-node-invisible]=\"!treeControl.isExpanded(node)\"\r\n         role=\"group\">\r\n      <ng-container matTreeNodeOutlet></ng-container>\r\n    </div>\r\n\r\n  </mat-nested-tree-node>\r\n</mat-tree>\r\n\r\n<ng-template #nodeContent let-node=\"node\">\r\n  <ng-template [ngIf]=\"!node.isCycle && treeControl.isExpanded(node)\" [ngIfElse]=\"closedNode\">\r\n    <p-icon class=\"p-tree-node-icon\"\r\n            iconName=\"folder-open\"\r\n            width=\"16\"\r\n            height=\"16\">\r\n    </p-icon>\r\n  </ng-template>\r\n\r\n  <ng-template #closedNode>\r\n    <p-icon class=\"p-tree-node-icon\"\r\n            [class.not-expandable]=\"!node.children?.length\"\r\n            [iconName]=\"node.isCycle ? 'circle' : node.children?.length ? 'folder' : 'file-text'\"\r\n            width=\"16\">\r\n    </p-icon>\r\n  </ng-template>\r\n\r\n  <span *ngIf=\"node.label\"\r\n        class=\"p-tree-node-label p-label-small-indicator\"\r\n        [ngClass]=\"'p-label-small-indicator-' + node.label\">\r\n    {{node.label}}\r\n  </span>\r\n\r\n  <span class=\"p-tree-node-name paragraph-3-default\">\r\n    {{node.name}}\r\n  </span>\r\n</ng-template>\r\n"
         },
         {
             "name": "TypographyFontFamilyComponent",
@@ -8519,17 +8519,17 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
+                "file": "src/environments/environment.ts",
                 "type": "object",
-                "defaultValue": "{\r\n  production: true\r\n}"
+                "defaultValue": "{\r\n  production: false\r\n}"
             },
             {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
+                "file": "src/environments/environment.prod.ts",
                 "type": "object",
-                "defaultValue": "{\r\n  production: false\r\n}"
+                "defaultValue": "{\r\n  production: true\r\n}"
             },
             {
                 "name": "Examples",
@@ -8599,6 +8599,14 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "Story<CheckboxPageComponent>",
+                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "PageTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
                 "type": "Story<CheckboxGroupComponent>",
                 "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
@@ -8610,14 +8618,6 @@
                 "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
                 "type": "Story<CheckboxGroupPageComponent>",
                 "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "PageTemplate",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
-                "type": "Story<CheckboxPageComponent>",
-                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -8701,17 +8701,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
-                "type": "Story<TypographyFontFamilyComponent>",
-                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/styles/typography-styles.stories.ts",
+                "type": "Story<TypographyStylesComponent>",
+                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/styles/typography-styles.stories.ts",
-                "type": "Story<TypographyStylesComponent>",
-                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
+                "type": "Story<TypographyFontFamilyComponent>",
+                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Toggles",
@@ -9043,16 +9043,6 @@
                     "type": "literal type"
                 }
             ],
-            "src/environments/environment.prod.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.prod.ts",
-                    "type": "object",
-                    "defaultValue": "{\r\n  production: true\r\n}"
-                }
-            ],
             "src/environments/environment.ts": [
                 {
                     "name": "environment",
@@ -9061,6 +9051,16 @@
                     "file": "src/environments/environment.ts",
                     "type": "object",
                     "defaultValue": "{\r\n  production: false\r\n}"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: true\r\n}"
                 }
             ],
             "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts": [

@@ -80,9 +80,11 @@ import {LabelTypesEnum} from 'projects/design-system-lib/src/public-api';
                 children: [
                   {
                     name: 'Label',
+                    selected: true,
                     children: [
                       {
                         name: 'Label',
+                        selected: true,
                         label: LabelTypesEnum.MEDIUM
                       },
                       {
@@ -192,21 +194,30 @@ export const Template = (args) => <TreeComponent {...args} />
   </Story>
 </Canvas>
 
-###### Component
-```ts
-export class TabGroupComponent {
-  @Input() tabGroup: {
-    tabButton: ITab,
-    tabPanel: any,
-    disabled: boolean
-  }[];
-}
-```
 
 ###### ITreeNode
 ```ts
 export interface ITreeNode {
   name: string;
+  selected?: boolean;
+  isCycle?: boolean;
+  label?: LabelTypesEnum;
   children?: ITreeNode[];
+}
+```
+
+###### LabelTypesEnum
+```ts
+export enum LabelTypesEnum {
+  CRITICAL = 'critical',
+  DANGER = 'danger',
+  SUCCESS = 'success',
+  MEDIUM = 'medium',
+  LOW = 'low',
+  LIGHTGRAY = 'lightGray',
+  DARKGRAY = 'darkGray',
+  DEV1 = 'dev1',
+  DEV2= 'dev2',
+  DEV3 = 'dev3'
 }
 ```
