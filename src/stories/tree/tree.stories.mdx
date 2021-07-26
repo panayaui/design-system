@@ -1,0 +1,212 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+import {TreeComponent} from 'projects/design-system-lib/src/public-api';
+import {TreeModule} from 'projects/design-system-lib/src/public-api';
+import {LabelTypesEnum} from 'projects/design-system-lib/src/public-api';
+
+<Meta title='Components/Tree'
+  component={TreeComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [
+        TreeModule
+      ]
+    })
+  ]}
+  args={{ 
+    treeNodes: [
+      {
+        name: 'Fruit',
+        isCycle: true,
+        children: [
+          { name: 'Apple',
+            children: [
+              {
+                name: 'Label',
+                label: LabelTypesEnum.CRITICAL
+              },
+              {
+                name: 'Label',
+                label: LabelTypesEnum.DANGER
+              },
+              {
+                name: 'Label',
+                label: LabelTypesEnum.SUCCESS
+              }
+            ]
+          },
+          { name: 'Banana',
+            children: [
+              {
+                name: 'Label',
+                label: LabelTypesEnum.DANGER
+              },
+              {
+                name: 'Label',
+                label: LabelTypesEnum.SUCCESS
+              },
+              {
+                name: 'Label',
+                label: LabelTypesEnum.DARKGRAY
+              }
+            ]
+          },
+          { name: 'Peach',
+            children: [
+              {
+                name: 'Label',
+                label: LabelTypesEnum.CRITICAL
+              },
+              {
+                name: 'Label',
+                label: LabelTypesEnum.CRITICAL
+              },
+              {
+                name: 'Label',
+                label: LabelTypesEnum.CRITICAL
+              }
+            ]
+          }
+        ]
+      },
+      {
+        name: 'Vegetables',
+        isCycle: true,
+        children: [
+          { name: 'Cucumber',
+            children: [
+              {
+                name: 'Label',
+                children: [
+                  {
+                    name: 'Label',
+                    children: [
+                      {
+                        name: 'Label',
+                        label: LabelTypesEnum.MEDIUM
+                      },
+                      {
+                        name: 'Label',
+                        label: LabelTypesEnum.LOW
+                      }
+                    ]
+                  },
+                  {
+                    name: 'Label',
+                    label: LabelTypesEnum.DANGER
+                  },
+                  {
+                    name: 'Label',
+                    label: LabelTypesEnum.SUCCESS
+                  }
+                ]
+              },
+              {
+                name: 'Label',
+                children: [
+                  {
+                    name: 'Label',
+                    label: LabelTypesEnum.MEDIUM
+                  },
+                  {
+                    name: 'Label',
+                    label: LabelTypesEnum.LOW
+                  },
+                  {
+                    name: 'Label',
+                    label: LabelTypesEnum.CRITICAL
+                  }
+                ]
+              },
+              {
+                name: 'Label',
+                children: [
+                  {
+                    name: 'Label',
+                    label: LabelTypesEnum.CRITICAL
+                  },
+                  {
+                    name: 'Label',
+                    label: LabelTypesEnum.CRITICAL
+                  },
+                  {
+                    name: 'Label',
+                    label: LabelTypesEnum.CRITICAL
+                  }
+                ]
+              }
+            ]
+          },
+          { name: 'Cabbage',
+            children: [
+              {
+                name: 'Label',
+                label: LabelTypesEnum.CRITICAL
+              },
+              {
+                name: 'Label',
+                label: LabelTypesEnum.CRITICAL
+              },
+              {
+                name: 'Label',
+                label: LabelTypesEnum.CRITICAL
+              }
+            ]
+          },
+          { name: 'Tomato',
+            children: [
+              {
+                name: 'Label',
+                label: LabelTypesEnum.CRITICAL
+              },
+              {
+                name: 'Label',
+                label: LabelTypesEnum.CRITICAL
+              },
+              {
+                name: 'Label',
+                label: LabelTypesEnum.CRITICAL
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }}
+/>
+
+export const Template = (args) => <TreeComponent {...args} />
+
+# Tree
+
+###### Selector
+```ts
+  <p-tree></p-tree>
+```
+
+<Canvas>
+  <Story name="Tree"
+    args={{
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Component
+```ts
+export class TabGroupComponent {
+  @Input() tabGroup: {
+    tabButton: ITab,
+    tabPanel: any,
+    disabled: boolean
+  }[];
+}
+```
+
+###### ITreeNode
+```ts
+export interface ITreeNode {
+  name: string;
+  children?: ITreeNode[];
+}
+```
