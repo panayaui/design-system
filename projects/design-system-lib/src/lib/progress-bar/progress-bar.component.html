@@ -1,0 +1,17 @@
+<div class="p-progress-bar">
+  <span *ngIf="label && size === progressBarSize.Small"
+        class="p-progress-bar-label paragraph-2-default">
+    {{label}}
+  </span>
+  <mat-progress-bar class="p-progress-bar-line"
+                    [ngClass]="size"
+                    attr.aria-label="{{label ? label : ariaLabel}}"
+                    mode="determinate"
+                    [value]="value">
+  </mat-progress-bar>
+  <p *ngIf="label && size === progressBarSize.FullSize"
+        class="p-progress-bar-description paragraph-1-default">
+    {{label}}
+  </p>
+</div>
+

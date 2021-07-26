@@ -3097,12 +3097,12 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n.p-file-upload {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  padding: 22px 18px;\r\n  border: 1px dashed $gray-scale-500;\r\n\r\n  &-paragraph {\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n\r\n  &-icon {\r\n    margin-right: 5px;\r\n  }\r\n\r\n  &-input {\r\n    width: 0.1px;\r\n    height: 0.1px;\r\n    opacity: 0;\r\n    overflow: hidden;\r\n    position: absolute;\r\n    z-index: -1;\r\n  }\r\n\r\n  &-label {\r\n    font-weight: 600;\r\n    margin-right: 4px;\r\n    margin-left: 4px;\r\n    cursor: pointer;\r\n  }\r\n}\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n.p-file-upload {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n\r\n  &-input {\r\n    width: 0.1px;\r\n    height: 0.1px;\r\n    opacity: 0;\r\n    overflow: hidden;\r\n    position: absolute;\r\n    z-index: -1;\r\n  }\r\n\r\n  &-label {\r\n    display: flex;\r\n    align-items: center;\r\n    width: 100%;\r\n    height: 100%;\r\n    padding: 22px 18px;\r\n    border: 1px dashed $gray-scale-500;\r\n    cursor: pointer;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n  }\r\n\r\n  &-icon {\r\n    margin-right: 5px;\r\n  }\r\n\r\n  &-link {\r\n    font-weight: 600;\r\n    margin-right: 4px;\r\n    margin-left: 4px;\r\n    position: relative;\r\n    &:hover:after {\r\n      content: '';\r\n      display: block;\r\n      width: 100%;\r\n      height: 1px;\r\n      background-color: currentColor;\r\n      position: absolute;\r\n      bottom: 2px;\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "./file-upload.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"p-file-upload\">\r\n  <p class=\"p-file-upload-paragraph\">\r\n    <p-icon class=\"p-file-upload-icon\"\r\n            iconName=\"view\"\r\n            width=\"18\"\r\n            height=\"18\"></p-icon>\r\n    <span class=\"p-file-upload-text paragraph-2-default\">Drop / paste or</span>\r\n    <input type=\"file\"\r\n           name=\"fileUpload\"\r\n           id=\"fileUpload\"\r\n           class=\"p-file-upload-input\"\r\n           accept=\"image/png, image/jpeg\"/>\r\n    <label for=\"fileUpload\" class=\"p-file-upload-label paragraph-2-link\">click here</label>\r\n    <span class=\"p-file-upload-text paragraph-2-default\">to add screenshot</span>\r\n  </p>\r\n</div>\r\n"
+            "templateData": "<div class=\"p-file-upload\">\r\n  <input type=\"file\"\r\n         name=\"fileUpload\"\r\n         id=\"fileUpload\"\r\n         class=\"p-file-upload-input\"\r\n         accept=\"image/png, image/jpeg\"/>\r\n  <label for=\"fileUpload\" class=\"p-file-upload-label\">\r\n    <p-icon class=\"p-file-upload-icon\"\r\n            iconName=\"view\"\r\n            width=\"18\"\r\n            height=\"18\">\r\n    </p-icon>\r\n    <span class=\"p-file-upload-text paragraph-2-default\">\r\n      Drop / paste or\r\n    </span>\r\n    <span class=\"p-file-upload-link paragraph-2-link\">click here</span>\r\n    <span class=\"p-file-upload-text paragraph-2-default\">to add screenshot</span>\r\n  </label>\r\n</div>\r\n\r\n"
         },
         {
             "name": "HashtagBarComponent",
@@ -6289,6 +6289,77 @@
             "templateData": "<div class=\"p-paginator\">\r\n  <p-button class=\"p-paginator-arrow first\"\r\n            [class.disabled]=\"!canMoveToPrevious\"\r\n            ariaLabel=\"Move to the first page\"\r\n            [disabled]=\"!canMoveToPrevious\"\r\n            iconBefore=\"first\"\r\n            iconBeforeWidth=\"10\"\r\n            iconBeforeHeight=\"10\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"firstPageClicked.emit()\"></p-button>\r\n  <p-button class=\"p-paginator-arrow prev\"\r\n            [class.disabled]=\"!canMoveToPrevious\"\r\n            ariaLabel=\"Move to the previous page\"\r\n            [disabled]=\"!canMoveToPrevious\"\r\n            iconBefore=\"chevron-left\"\r\n            iconBeforeWidth=\"17\"\r\n            iconBeforeStrokeWidth=\"2\"\r\n            [iconBeforeStrokeColor]=\"!canMoveToPrevious ? '#B3B3B3' : 'currentColor'\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"prevPageClicked.emit()\"></p-button>\r\n  <ul class=\"p-paginator-list\">\r\n    <li class=\"p-paginator-item\">\r\n      <p-button *ngIf=\"!lessBtnDisabled\"\r\n                class=\"p-paginator-page less\"\r\n                ariaLabel=\"Show other {{ step }} pages\"\r\n                iconBefore=\"more-horizontal\"\r\n                iconBeforeWidth=\"17\"\r\n                iconBeforeStrokeWidth=\"2\"\r\n                [iconBeforeStrokeColor]=\"!canMoveToNext ? '#B3B3B3' : 'currentColor'\"\r\n                [buttonType]=\"buttonType.IsIcon\"\r\n                (onClickTask)=\"definePagesList($event, false)\"></p-button>\r\n    </li>\r\n    <li class=\"p-paginator-item\" *ngFor=\"let pageNumber of pageList\">\r\n      <p-button class=\"p-paginator-page\"\r\n                [class.selected]=\"pageNumber === currentPage\"\r\n                [label]=\"pageNumber\"\r\n                [ariaLabel]=\"'Move to page ' + pageNumber\"\r\n                [buttonType]=\"buttonType.Tertiary\"\r\n                (click)=\"pageNumberClicked.emit()\"></p-button>\r\n    </li>\r\n    <li class=\"p-paginator-item\">\r\n      <p-button *ngIf=\"!moreBtnDisabled\"\r\n                class=\"p-paginator-page more\"\r\n                ariaLabel=\"Show other {{ step }} pages\"\r\n                iconBefore=\"more-horizontal\"\r\n                iconBeforeWidth=\"17\"\r\n                iconBeforeStrokeWidth=\"2\"\r\n                [buttonType]=\"buttonType.IsIcon\"\r\n                (onClickTask)=\"definePagesList($event, true)\"></p-button>\r\n    </li>\r\n  </ul>\r\n\r\n  <p-button class=\"p-paginator-arrow next\"\r\n            [class.disabled]=\"!canMoveToNext\"\r\n            ariaLabel=\"Move to the next page\"\r\n            [disabled]=\"!canMoveToNext\"\r\n            iconBefore=\"chevron-right\"\r\n            iconBeforeWidth=\"17\"\r\n            iconBeforeStrokeWidth=\"2\"\r\n            [iconBeforeStrokeColor]=\"!canMoveToNext ? '#B3B3B3' : 'currentColor'\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"nextPageClicked.emit()\"></p-button>\r\n  <p-button class=\"p-paginator-arrow last\"\r\n            [class.disabled]=\"!canMoveToNext\"\r\n            ariaLabel=\"Move to the last page\"\r\n            [disabled]=\"!canMoveToNext\"\r\n            iconBefore=\"last\"\r\n            iconBeforeWidth=\"10\"\r\n            iconBeforeHeight=\"10\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"lastPageClicked.emit()\"></p-button>\r\n\r\n  <p-menu-single-select class=\"p-paginator-select\"\r\n                        [menuList]=\"pageSizeOptions\"\r\n                        (onClickTask)=\"pageSizeChanged.emit($event)\">\r\n    <!--ng-content-->\r\n    <p-input-numeric class=\"p-paginator-input\"\r\n                     label=\"Items per page\"\r\n                     [value]=\"pageSize\"\r\n                     [size]=\"inputNumericSize.Small\"\r\n                     [labelLast]=\"true\"\r\n                     [notEditable]=\"true\"\r\n                     iconName=\"chevron-down\"></p-input-numeric>\r\n    <!-- -->\r\n  </p-menu-single-select>\r\n</div>\r\n"
         },
         {
+            "name": "ProgressBarComponent",
+            "id": "component-ProgressBarComponent-cc5a9e3738e48d09fe00323ed75290ac",
+            "file": "projects/design-system-lib/src/lib/progress-bar/progress-bar.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-progress-bar",
+            "styleUrls": [
+                "./progress-bar.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./progress-bar.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "ariaLabel",
+                    "line": 13,
+                    "type": "string"
+                },
+                {
+                    "name": "label",
+                    "line": 12,
+                    "type": "string"
+                },
+                {
+                    "name": "size",
+                    "line": 11,
+                    "type": "ProgressBarEnum"
+                },
+                {
+                    "name": "value",
+                    "line": 10,
+                    "type": "number"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "progressBarSize",
+                    "defaultValue": "ProgressBarEnum",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {ProgressBarEnum} from './progress-bar.enum';\r\n\r\n@Component({\r\n  selector: 'p-progress-bar',\r\n  templateUrl: './progress-bar.component.html',\r\n  styleUrls: ['./progress-bar.component.scss'],\r\n})\r\nexport class ProgressBarComponent {\r\n  @Input() value: number;\r\n  @Input() size: ProgressBarEnum;\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string;\r\n  public progressBarSize = ProgressBarEnum;\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../assets/styles/custom\";\r\n",
+                    "styleUrl": "./progress-bar.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"p-progress-bar\">\r\n  <span *ngIf=\"label && size === progressBarSize.Small\"\r\n        class=\"p-progress-bar-label\">\r\n    {{label}}\r\n  </span>\r\n  <mat-progress-bar class=\"p-progress-bar-line\"\r\n                    attr.aria-label=\"{{label ? label : ariaLabel}}\"\r\n                    mode=\"determinate\"\r\n                    [value]=\"value\">\r\n  </mat-progress-bar>\r\n  <span *ngIf=\"label && size === progressBarSize.FullSize\"\r\n        class=\"p-progress-bar-description\">\r\n    {{label}}\r\n  </span>\r\n</div>\r\n\r\n"
+        },
+        {
             "name": "RadioButtonComponent",
             "id": "component-RadioButtonComponent-4867504d7fc1334b23be9b71c8fb58d5",
             "file": "projects/design-system-lib/src/lib/radio-button/radio-button/radio-button.component.ts",
@@ -8652,17 +8723,17 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
-                "type": "Story<CheckboxPageComponent>",
-                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "Story<CheckboxGroupPageComponent>",
+                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
-                "type": "Story<CheckboxGroupPageComponent>",
-                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "Story<CheckboxPageComponent>",
+                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -8946,6 +9017,23 @@
                 "subtype": "enum",
                 "description": "",
                 "file": "projects/design-system-lib/src/lib/modal/modal.enum.ts"
+            },
+            {
+                "name": "ProgressBarEnum",
+                "childs": [
+                    {
+                        "name": "Small",
+                        "value": "small"
+                    },
+                    {
+                        "name": "FullSize",
+                        "value": "fullSize"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "description": "",
+                "file": "projects/design-system-lib/src/lib/progress-bar/progress-bar.enum.ts"
             },
             {
                 "name": "TextareaEnum",
@@ -9458,6 +9546,25 @@
                     "file": "projects/design-system-lib/src/lib/modal/modal.enum.ts"
                 }
             ],
+            "projects/design-system-lib/src/lib/progress-bar/progress-bar.enum.ts": [
+                {
+                    "name": "ProgressBarEnum",
+                    "childs": [
+                        {
+                            "name": "Small",
+                            "value": "small"
+                        },
+                        {
+                            "name": "FullSize",
+                            "value": "fullSize"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "description": "",
+                    "file": "projects/design-system-lib/src/lib/progress-bar/progress-bar.enum.ts"
+                }
+            ],
             "projects/design-system-lib/src/lib/input/textarea/textarea.enum.ts": [
                 {
                     "name": "TextareaEnum",
@@ -9941,6 +10048,15 @@
                 "name": "PaginatorComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/22",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/progress-bar/progress-bar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ProgressBarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
