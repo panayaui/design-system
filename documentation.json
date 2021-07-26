@@ -1127,24 +1127,38 @@
         },
         {
             "name": "ITreeNode",
-            "id": "interface-ITreeNode-2d45472ddf3d43095565bad8be3e4d0c",
+            "id": "interface-ITreeNode-3457d64126b6ae36fd21fdaf6d74307d",
             "file": "projects/design-system-lib/src/lib/tree/tree.interface.ts",
             "type": "interface",
-            "sourceCode": "export interface ITreeNode {\r\n  name: string;\r\n  children?: ITreeNode[];\r\n}\r\n",
+            "sourceCode": "import {LabelTypesEnum} from '../labels/label-types.enum';\r\n\r\nexport interface ITreeNode {\r\n  name: string;\r\n  isCycle?: boolean;\r\n  label?: LabelTypesEnum;\r\n  children?: ITreeNode[];\r\n}\r\n",
             "properties": [
                 {
                     "name": "children",
                     "type": "ITreeNode[]",
                     "optional": true,
                     "description": "",
-                    "line": 3
+                    "line": 7
+                },
+                {
+                    "name": "isCycle",
+                    "type": "boolean",
+                    "optional": true,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "label",
+                    "type": "LabelTypesEnum",
+                    "optional": true,
+                    "description": "",
+                    "line": 6
                 },
                 {
                     "name": "name",
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 2
+                    "line": 4
                 }
             ],
             "indexSignatures": [],
@@ -3339,7 +3353,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n:host {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n.p-icon {\r\n  display: inline-flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n// custom icons\r\n.p-icon-custom {\r\n  background-repeat: no-repeat;\r\n  background-size: contain;\r\n  &-eraser {\r\n    background-image: url('../assets/images/icons/eraser.svg');\r\n  }\r\n  &-eraser-disabled {\r\n    background-image: url('../assets/images/icons/eraser-disabled.svg');\r\n  }\r\n  &-unlink {\r\n    background-image: url('../assets/images/icons/unlink.svg');\r\n  }\r\n  &-first {\r\n    background-image: url('../assets/images/icons/first.svg');\r\n  }\r\n  &-first-disabled {\r\n    background-image: url('../assets/images/icons/first-disabled.svg');\r\n  }\r\n  &-last {\r\n    background-image: url('../assets/images/icons/last.svg');\r\n  }\r\n  &-last-disabled {\r\n    background-image: url('../assets/images/icons/last-disabled.svg');\r\n  }\r\n}\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n:host {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n.p-icon {\r\n  display: inline-flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n// custom icons\r\n.p-icon-custom {\r\n  background-repeat: no-repeat;\r\n  background-size: contain;\r\n  &-eraser {\r\n    background-image: url('../assets/images/icons/eraser.svg');\r\n  }\r\n  &-eraser-disabled {\r\n    background-image: url('../assets/images/icons/eraser-disabled.svg');\r\n  }\r\n  &-unlink {\r\n    background-image: url('../assets/images/icons/unlink.svg');\r\n  }\r\n  &-first {\r\n    background-image: url('../assets/images/icons/first.svg');\r\n  }\r\n  &-first-disabled {\r\n    background-image: url('../assets/images/icons/first-disabled.svg');\r\n  }\r\n  &-last {\r\n    background-image: url('../assets/images/icons/last.svg');\r\n  }\r\n  &-last-disabled {\r\n    background-image: url('../assets/images/icons/last-disabled.svg');\r\n  }\r\n  &-folder-open {\r\n    background-image: url('../assets/images/icons/folder-open.svg');\r\n  }\r\n}\r\n",
                     "styleUrl": "./icon.component.scss"
                 }
             ],
@@ -7207,7 +7221,7 @@
         },
         {
             "name": "TreeComponent",
-            "id": "component-TreeComponent-5a2caf24d5c0a9f78a84f6db2a3d5556",
+            "id": "component-TreeComponent-82250993f80b70bac734e646fe0329a3",
             "file": "projects/design-system-lib/src/lib/tree/tree.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -7238,7 +7252,10 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 14
+                    "line": 14,
+                    "modifierKind": [
+                        114
+                    ]
                 },
                 {
                     "name": "hasChild",
@@ -7246,7 +7263,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 20
+                    "line": 21
                 },
                 {
                     "name": "treeControl",
@@ -7254,31 +7271,40 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 13
+                    "line": 13,
+                    "modifierKind": [
+                        114
+                    ]
                 }
             ],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17
+                }
+            ],
             "hostBindings": [],
             "hostListeners": [],
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {ITreeNode} from './tree.interface';\r\nimport {NestedTreeControl} from '@angular/cdk/tree';\r\nimport {MatTreeNestedDataSource} from '@angular/material/tree';\r\n\r\n@Component({\r\n  selector: 'p-tree',\r\n  templateUrl: './tree.component.html',\r\n  styleUrls: ['./tree.component.scss'],\r\n})\r\nexport class TreeComponent {\r\n  @Input() treeNodes: ITreeNode[];\r\n  treeControl = new NestedTreeControl<ITreeNode>(node => node.children);\r\n  dataSource = new MatTreeNestedDataSource<ITreeNode>();\r\n\r\n  constructor() {\r\n    this.dataSource.data = this.treeNodes;\r\n  }\r\n\r\n  hasChild = (_: number, node: ITreeNode) => !!node.children && node.children.length > 0;\r\n}\r\n",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport {ITreeNode} from './tree.interface';\r\nimport {NestedTreeControl} from '@angular/cdk/tree';\r\nimport {MatTreeNestedDataSource} from '@angular/material/tree';\r\n\r\n@Component({\r\n  selector: 'p-tree',\r\n  templateUrl: './tree.component.html',\r\n  styleUrls: ['./tree.component.scss'],\r\n})\r\nexport class TreeComponent implements OnInit {\r\n  @Input() treeNodes: ITreeNode[];\r\n  public treeControl = new NestedTreeControl<ITreeNode>(node => node.children);\r\n  public dataSource = new MatTreeNestedDataSource<ITreeNode>();\r\n\r\n\r\n  ngOnInit(): void {\r\n    this.dataSource.data = this.treeNodes;\r\n  }\r\n\r\n  hasChild = (_: number, node: ITreeNode) => !!node.children && node.children.length > 0;\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$tab-height: 52px;\r\n$tab-padding: $gap-double;\r\n\r\n::ng-deep .p-tabs {\r\n  .mat-tab-header {\r\n    border-bottom-color: $gray-scale-400;\r\n  }\r\n  .mat-tab-label {\r\n    min-width: unset;\r\n    height: $tab-height;\r\n    padding: 0 $tab-padding;\r\n    opacity: 1;\r\n    &:not(.mat-tab-disabled):not(.mat-tab-label-active):hover {\r\n      background-color: $primary-c-50;\r\n      .p-tabs-counter {\r\n        font-weight: 700;\r\n        background-color: $gray-scale-400;\r\n      }\r\n    }\r\n  }\r\n  .mat-tab-label-content {\r\n    color: $primary-a-900;\r\n  }\r\n  .mat-tab-label-active {\r\n    .p-tabs-label {\r\n      font-weight: 700;\r\n    }\r\n    .p-tabs-counter {\r\n      font-weight: 600;\r\n      color: $gray-scale-1;\r\n      background-color: $primary-a-900;\r\n    }\r\n  }\r\n  &.mat-tab-group .mat-ink-bar {\r\n    height: 4px;\r\n    background-color: $primary-a-900;\r\n  }\r\n\r\n  // icon\r\n  &-icon {\r\n    margin-right: 4px;\r\n  }\r\n\r\n  // notification\r\n  &-notification {\r\n    width: 6px;\r\n    height: 6px;\r\n    border-radius: 50%;\r\n    background-color: $supportive-alert-500;\r\n    transform: translate(3px, -6px);\r\n  }\r\n\r\n  // counter\r\n  &-counter {\r\n    display: inline-flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    width: 18px;\r\n    height: 16px;\r\n    margin-left: 4px;\r\n    background-color: $gray-scale-50;\r\n    border-radius: 50%;\r\n    .p-tabs-notification + & {\r\n      margin-left: 7px;\r\n    }\r\n  }\r\n\r\n  .mat-tab-disabled {\r\n    .mat-tab-label-content,\r\n    .p-tabs-counter {\r\n      color: $gray-scale-600;\r\n    }\r\n  }\r\n\r\n  // tabpanel\r\n  .mat-tab-body-wrapper {\r\n    padding: $gap-double $gap-double * 2;\r\n    border-right: 1px solid $gray-scale-400;\r\n    border-bottom: 1px solid $gray-scale-400;\r\n    border-left: 1px solid $gray-scale-400;\r\n  }\r\n}\r\n\r\n\r\n",
+                    "data": "@import \"../labels/label-sub/label-sub.component\";\r\n\r\n$node-height: 30px;\r\n$node-padding: 24px;\r\n\r\n.p-tree {\r\n  &-nested-node {\r\n    display: flex;\r\n    align-items: center;\r\n    height: $node-height;\r\n  }\r\n\r\n  &-node-invisible {\r\n    display: none;\r\n  }\r\n\r\n  &-button {\r\n    @include resetButton;\r\n    padding: 3px;\r\n  }\r\n\r\n  &-button-icon {\r\n    transform: rotate(-90deg);\r\n    transition: transform 180ms ease-in-out;\r\n    &.expanded {\r\n      transform: rotate(0);\r\n    }\r\n  }\r\n\r\n  &-node-icon {\r\n    margin-right: $gap-small;\r\n    &.not-expandable {\r\n      padding-left: $node-padding;\r\n    }\r\n  }\r\n\r\n  &-node-label {\r\n    font-size: 0;\r\n    margin-right: $gap-small;\r\n  }\r\n\r\n  &-expandable {\r\n    padding-left: $node-padding;\r\n  }\r\n\r\n}\r\n\r\n",
                     "styleUrl": "./tree.component.scss"
                 }
             ],
             "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "args": [],
-                "line": 14
-            },
-            "templateData": "<mat-tree [dataSource]=\"dataSource\" [treeControl]=\"treeControl\" class=\"example-tree\">\r\n  <mat-tree-node *matTreeNodeDef=\"let node\" matTreeNodeToggle>\r\n    {{node.name}}\r\n  </mat-tree-node>\r\n\r\n  <mat-nested-tree-node *matTreeNodeDef=\"let node; when: hasChild\">\r\n    <div class=\"mat-tree-node\">\r\n      <button mat-icon-button matTreeNodeToggle\r\n              [attr.aria-label]=\"'Toggle ' + node.name\">\r\n        <mat-icon class=\"mat-icon-rtl-mirror\">\r\n          {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}\r\n        </mat-icon>\r\n      </button>\r\n      {{node.name}}\r\n    </div>\r\n\r\n    <div [class.example-tree-invisible]=\"!treeControl.isExpanded(node)\"\r\n         role=\"group\">\r\n      <ng-container matTreeNodeOutlet></ng-container>\r\n    </div>\r\n  </mat-nested-tree-node>\r\n</mat-tree>\r\n"
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<mat-tree [dataSource]=\"dataSource\"\r\n          [treeControl]=\"treeControl\"\r\n          class=\"p-tree\">\r\n  <mat-tree-node *matTreeNodeDef=\"let node\" matTreeNodeToggle>\r\n    <ng-container [ngTemplateOutlet]=\"nodeContent\"\r\n                  [ngTemplateOutletContext]=\"{node: node}\"></ng-container>\r\n    <!--<span class=\"p-tree-node-name paragraph-3-default\">{{node.name}}</span>-->\r\n  </mat-tree-node>\r\n\r\n  <mat-nested-tree-node *matTreeNodeDef=\"let node; when: hasChild\">\r\n    <div class=\"p-tree-nested-node\">\r\n      <button class=\"p-tree-button\"\r\n              mat-icon-button\r\n              matTreeNodeToggle\r\n              [attr.aria-label]=\"'Toggle ' + node.name\">\r\n        <p-icon class=\"p-tree-button-icon\"\r\n                [class.expanded]=\"treeControl.isExpanded(node)\"\r\n                iconName=\"chevron-down\"\r\n                width=\"16\"></p-icon>\r\n      </button>\r\n\r\n      <ng-container [ngTemplateOutlet]=\"nodeContent\"\r\n                    [ngTemplateOutletContext]=\"{node: node}\"></ng-container>\r\n    </div>\r\n\r\n    <div class=\"p-tree-expandable\"\r\n         [class.p-tree-node-invisible]=\"!treeControl.isExpanded(node)\"\r\n         role=\"group\">\r\n      <ng-container matTreeNodeOutlet></ng-container>\r\n    </div>\r\n\r\n  </mat-nested-tree-node>\r\n</mat-tree>\r\n\r\n<ng-template #nodeContent let-node=\"node\">\r\n  <ng-template [ngIf]=\"!node.isCycle && treeControl.isExpanded(node)\" [ngIfElse]=\"closedNode\">\r\n    <p-icon class=\"p-tree-node-icon\"\r\n            iconName=\"folder-open\"\r\n            width=\"16\"\r\n            height=\"16\">\r\n    </p-icon>\r\n  </ng-template>\r\n\r\n  <ng-template #closedNode>\r\n    <p-icon class=\"p-tree-node-icon\"\r\n            [class.not-expandable]=\"!node.children?.length\"\r\n            [iconName]=\"node.isCycle ? 'circle' : node.children?.length ? 'folder' : 'file-text'\"\r\n            width=\"16\">\r\n    </p-icon>\r\n  </ng-template>\r\n\r\n  <span *ngIf=\"node.label\"\r\n        class=\"p-tree-node-label p-label-small-indicator\"\r\n        [ngClass]=\"'p-label-small-indicator-' + node.label\">\r\n    {{node.label}}\r\n  </span>\r\n\r\n  <span class=\"p-tree-node-name paragraph-3-default\">\r\n    {{node.name}}\r\n  </span>\r\n</ng-template>\r\n"
         },
         {
             "name": "TypographyFontFamilyComponent",
@@ -8659,17 +8685,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/colors/Color-palette.stories.ts",
-                "type": "Story<ColorPaletteComponent>",
-                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/icons/icon.stories.ts",
+                "type": "Story<IconComponent>",
+                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/icons/icon.stories.ts",
-                "type": "Story<IconComponent>",
-                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/colors/Color-palette.stories.ts",
+                "type": "Story<ColorPaletteComponent>",
+                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -9986,7 +10012,7 @@
                 "linktype": "interface",
                 "name": "ITreeNode",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
