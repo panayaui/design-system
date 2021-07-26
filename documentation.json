@@ -6352,12 +6352,83 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n.p-progress-bar {\r\n  display: flex;\r\n  align-items: center;\r\n  flex-wrap: wrap;\r\n\r\n  &-label {\r\n    margin-right: $gap-base;\r\n  }\r\n\r\n  &-line {\r\n    height: 8px;\r\n    border-radius: 11px;\r\n    &.small {\r\n      width: 136px;\r\n    }\r\n    &.fullSize {\r\n      flex-basis: 100%;\r\n    }\r\n  }\r\n\r\n  &-description {\r\n    text-align: center;\r\n    font-weight: 500;\r\n    flex-basis: 100%;\r\n    margin-top: $gap-double;\r\n  }\r\n\r\n  ::ng-deep .mat-progress-bar-buffer {\r\n    background-color: $secondary-a-100;\r\n  }\r\n\r\n  ::ng-deep .mat-progress-bar-fill::after {\r\n    background-color: $secondary-a-700;\r\n  }\r\n}\r\n",
                     "styleUrl": "./progress-bar.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"p-progress-bar\">\r\n  <span *ngIf=\"label && size === progressBarSize.Small\"\r\n        class=\"p-progress-bar-label\">\r\n    {{label}}\r\n  </span>\r\n  <mat-progress-bar class=\"p-progress-bar-line\"\r\n                    attr.aria-label=\"{{label ? label : ariaLabel}}\"\r\n                    mode=\"determinate\"\r\n                    [value]=\"value\">\r\n  </mat-progress-bar>\r\n  <span *ngIf=\"label && size === progressBarSize.FullSize\"\r\n        class=\"p-progress-bar-description\">\r\n    {{label}}\r\n  </span>\r\n</div>\r\n\r\n"
+            "templateData": "<div class=\"p-progress-bar\">\r\n  <span *ngIf=\"label && size === progressBarSize.Small\"\r\n        class=\"p-progress-bar-label paragraph-2-default\">\r\n    {{label}}\r\n  </span>\r\n  <mat-progress-bar class=\"p-progress-bar-line\"\r\n                    [ngClass]=\"size\"\r\n                    attr.aria-label=\"{{label ? label : ariaLabel}}\"\r\n                    mode=\"determinate\"\r\n                    [value]=\"value\">\r\n  </mat-progress-bar>\r\n  <p *ngIf=\"label && size === progressBarSize.FullSize\"\r\n        class=\"p-progress-bar-description paragraph-1-default\">\r\n    {{label}}\r\n  </p>\r\n</div>\r\n\r\n"
+        },
+        {
+            "name": "ProgressChartComponent",
+            "id": "component-ProgressChartComponent-340422ef00f0a6f6d8f1ad1447625ba6",
+            "file": "projects/design-system-lib/src/lib/progress-chart/progress-chart.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-progress-chart",
+            "styleUrls": [
+                "./progress-chart.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./progress-chart.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "ariaLabel",
+                    "line": 15,
+                    "type": "string"
+                },
+                {
+                    "name": "isGeneralProgress",
+                    "line": 16,
+                    "type": "boolean"
+                },
+                {
+                    "name": "label",
+                    "line": 14,
+                    "type": "string"
+                },
+                {
+                    "name": "values",
+                    "line": 10,
+                    "type": "literal type[]"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "progressChartEnum",
+                    "defaultValue": "ProgressChartEnum",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 17,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {ProgressChartEnum} from './progress-chart.enum';\r\n\r\n@Component({\r\n  selector: 'p-progress-chart',\r\n  templateUrl: './progress-chart.component.html',\r\n  styleUrls: ['./progress-chart.component.scss'],\r\n})\r\nexport class ProgressChartComponent {\r\n  @Input() values: {\r\n    riskType: ProgressChartEnum,\r\n    value: number\r\n  }[];\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string;\r\n  @Input() isGeneralProgress: boolean;\r\n  public progressChartEnum = ProgressChartEnum;\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n.p-progress-chart {\r\n  display: flex;\r\n  align-items: center;\r\n\r\n  &-label {\r\n    margin-right: $gap-base;\r\n  }\r\n\r\n  &-line {\r\n    display: flex;\r\n    justify-content: stretch;\r\n    align-items: center;\r\n    width: 136px;\r\n    height: 8px;\r\n    border-radius: 11px;\r\n    overflow: hidden;\r\n    &.fullPalette {\r\n      background-color: $gray-scale-800;\r\n    }\r\n    &.booleanColors {\r\n      background-color: $secondary-a-100;\r\n    }\r\n  }\r\n\r\n  &-segment {\r\n    display: block;\r\n    height: 100%;\r\n    .fullPalette & {\r\n      &.success {\r\n        background-color: $supportive-success-400;\r\n      }\r\n      &.low {\r\n        background-color: $supportive-low-300;\r\n      }\r\n      &.orange {\r\n        background-color: $supportive-medium-400;\r\n      }\r\n      &.high {\r\n        background-color: $supportive-alert-500;\r\n      }\r\n      &.veryHigh {\r\n        background-color: $supportive-alert-700;\r\n      }\r\n    }\r\n    .booleanColors & {\r\n      &.complete {\r\n        background-color: $secondary-a-700;\r\n      }\r\n    }\r\n  }\r\n\r\n  &-description {\r\n    text-align: center;\r\n    font-weight: 500;\r\n    flex-basis: 100%;\r\n    margin-top: $gap-double;\r\n  }\r\n\r\n  ::ng-deep .mat-progress-bar-buffer {\r\n    background-color: $secondary-a-100;\r\n  }\r\n\r\n  ::ng-deep .mat-progress-bar-fill::after {\r\n    background-color: $secondary-a-700;\r\n  }\r\n}\r\n",
+                    "styleUrl": "./progress-chart.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"p-progress-chart\">\r\n  <span *ngIf=\"label\"\r\n        class=\"p-progress-chart-label paragraph-2-default\">\r\n    {{label}}\r\n  </span>\r\n  <div class=\"p-progress-chart-line\"\r\n       [ngClass]=\"isGeneralProgress ? 'booleanColors' : 'fullPalette'\"\r\n       attr.aria-label=\"{{label ? label : ariaLabel}}\">\r\n    <span *ngFor=\"let segment of values\"\r\n          class=\"p-progress-chart-segment\"\r\n          [ngClass]=\"segment.riskType\"\r\n          [style.width]=\"segment.value + '%'\"></span>\r\n  </div>\r\n</div>\r\n\r\n"
         },
         {
             "name": "RadioButtonComponent",
@@ -9036,6 +9107,43 @@
                 "file": "projects/design-system-lib/src/lib/progress-bar/progress-bar.enum.ts"
             },
             {
+                "name": "ProgressChartEnum",
+                "childs": [
+                    {
+                        "name": "SUCCESS",
+                        "value": "success"
+                    },
+                    {
+                        "name": "LOW",
+                        "value": "low"
+                    },
+                    {
+                        "name": "MEDIUM",
+                        "value": "medium"
+                    },
+                    {
+                        "name": "HIGH",
+                        "value": "high"
+                    },
+                    {
+                        "name": "VERYHIGH",
+                        "value": "veryHigh"
+                    },
+                    {
+                        "name": "INCOMPLETE",
+                        "value": "incomplete"
+                    },
+                    {
+                        "name": "COMPLETE",
+                        "value": "complete"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "description": "",
+                "file": "projects/design-system-lib/src/lib/progress-chart/progress-chart.enum.ts"
+            },
+            {
                 "name": "TextareaEnum",
                 "childs": [
                     {
@@ -9565,6 +9673,45 @@
                     "file": "projects/design-system-lib/src/lib/progress-bar/progress-bar.enum.ts"
                 }
             ],
+            "projects/design-system-lib/src/lib/progress-chart/progress-chart.enum.ts": [
+                {
+                    "name": "ProgressChartEnum",
+                    "childs": [
+                        {
+                            "name": "SUCCESS",
+                            "value": "success"
+                        },
+                        {
+                            "name": "LOW",
+                            "value": "low"
+                        },
+                        {
+                            "name": "MEDIUM",
+                            "value": "medium"
+                        },
+                        {
+                            "name": "HIGH",
+                            "value": "high"
+                        },
+                        {
+                            "name": "VERYHIGH",
+                            "value": "veryHigh"
+                        },
+                        {
+                            "name": "INCOMPLETE",
+                            "value": "incomplete"
+                        },
+                        {
+                            "name": "COMPLETE",
+                            "value": "complete"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "description": "",
+                    "file": "projects/design-system-lib/src/lib/progress-chart/progress-chart.enum.ts"
+                }
+            ],
             "projects/design-system-lib/src/lib/input/textarea/textarea.enum.ts": [
                 {
                     "name": "TextareaEnum",
@@ -10055,6 +10202,15 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "ProgressBarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/progress-chart/progress-chart.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ProgressChartComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/6",
                 "status": "low"

@@ -1,0 +1,68 @@
+@import "../assets/styles/custom";
+
+.p-progress-chart {
+  display: flex;
+  align-items: center;
+
+  &-label {
+    margin-right: $gap-base;
+  }
+
+  &-line {
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    width: 136px;
+    height: 8px;
+    border-radius: 11px;
+    overflow: hidden;
+    &.fullPalette {
+      background-color: $gray-scale-800;
+    }
+    &.booleanColors {
+      background-color: $secondary-a-100;
+    }
+  }
+
+  &-segment {
+    display: block;
+    height: 100%;
+    .fullPalette & {
+      &.success {
+        background-color: $supportive-success-400;
+      }
+      &.low {
+        background-color: $supportive-low-300;
+      }
+      &.orange {
+        background-color: $supportive-medium-400;
+      }
+      &.high {
+        background-color: $supportive-alert-500;
+      }
+      &.veryHigh {
+        background-color: $supportive-alert-700;
+      }
+    }
+    .booleanColors & {
+      &.complete {
+        background-color: $secondary-a-700;
+      }
+    }
+  }
+
+  &-description {
+    text-align: center;
+    font-weight: 500;
+    flex-basis: 100%;
+    margin-top: $gap-double;
+  }
+
+  ::ng-deep .mat-progress-bar-buffer {
+    background-color: $secondary-a-100;
+  }
+
+  ::ng-deep .mat-progress-bar-fill::after {
+    background-color: $secondary-a-700;
+  }
+}
