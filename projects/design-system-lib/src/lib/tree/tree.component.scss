@@ -10,6 +10,11 @@ $node-padding: 24px;
     height: $node-height;
   }
 
+  ::ng-deep .mat-tree-node {
+    min-height: unset;
+    height: $node-height;
+  }
+
   &-node-invisible {
     display: none;
   }
@@ -51,7 +56,7 @@ $node-padding: 24px;
       content: 'Selected';
       display: block;
       font-size: 0;
-      width: 5px;
+      width: 4px;
       height: 100%;
       background-color: $primary-a-900;
       position: absolute;

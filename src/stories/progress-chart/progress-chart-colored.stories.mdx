@@ -1,0 +1,124 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+import {ProgressChartComponent} from 'projects/design-system-lib/src/public-api';
+import {ProgressChartEnum} from 'projects/design-system-lib/src/public-api';
+
+<Meta title='Components/Progress Chart/Full Palette'
+  component={ProgressChartComponent}
+/>
+
+export const Template = (args) => <ProgressChartComponent {...args} />
+
+# Progress Chart
+
+###### Selector
+```html
+  <p-progress-chart></p-progress-chart>
+```
+
+###### Full Palette
+<Canvas>
+  <p className="story-title">Full</p>
+  <Story name="Full"
+    args={{
+      ariaLabel: 'Label',
+      values: [
+        {
+          riskType: ProgressChartEnum.SUCCESS,
+          value: 100
+        }
+      ]
+    }}>
+    {Template.bind({})}
+  </Story>
+  <p className="story-title">2 segments</p>
+  <Story name="Two segments"
+    args={{
+      ariaLabel: 'Label',
+      values: [
+        {
+          riskType: ProgressChartEnum.HIGH,
+          value: 50
+        },
+        {
+          riskType: ProgressChartEnum.SUCCESS,
+          value: 50
+        }
+      ]
+    }}>
+    {Template.bind({})}
+  </Story>
+  <p className="story-title">3 segments</p>
+  <Story name="Three segments"
+    args={{
+      ariaLabel: 'Label',
+      values: [
+        {
+          riskType: ProgressChartEnum.HIGH,
+          value: 50
+        },
+        {
+          riskType: ProgressChartEnum.LOW,
+          value: 30
+        },
+        {
+          riskType: ProgressChartEnum.SUCCESS,
+          value: 20
+        }
+      ]
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### With Label
+<Canvas>
+<p className="story-title hidden-text">With Label</p>
+  <Story name="With Label"
+    args={{
+      label: 'Label',
+      values: [
+        {
+          riskType: ProgressChartEnum.HIGH,
+          value: 50
+        },
+        {
+          riskType: ProgressChartEnum.LOW,
+          value: 30
+        },
+        {
+          riskType: ProgressChartEnum.SUCCESS,
+          value: 20
+        }
+      ]
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Component
+```ts
+export class ProgressChartComponent {
+  @Input() values: {
+    riskType: ProgressChartEnum,
+    value: number
+  }[];
+  @Input() label: string;
+  @Input() ariaLabel: string;
+  @Input() isGeneralProgress: boolean;
+  public progressChartEnum = ProgressChartEnum;
+}
+```
+
+###### ProgressChartEnum
+```ts
+export enum ProgressChartEnum {
+  SUCCESS = 'success',
+  LOW = 'low',
+  MEDIUM = 'medium',
+  HIGH = 'high',
+  VERYHIGH = 'veryHigh',
+  INCOMPLETE = 'incomplete',
+  COMPLETE = 'complete',
+}
+```

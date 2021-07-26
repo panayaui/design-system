@@ -101,3 +101,9 @@ export * from './lib/tree/tree.component';
 export * from './lib/tree/tree.interface';
 
 export * from './lib/file-upload/file-upload.component';
+
+export * from './lib/progress-bar/progress-bar.component';
+export * from './lib/progress-bar/progress-bar.enum';
+
+export * from './lib/progress-chart/progress-chart.component';
+export * from './lib/progress-chart/progress-chart.enum';

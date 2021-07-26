@@ -1,0 +1,15 @@
+<div class="p-progress-chart">
+  <span *ngIf="label"
+        class="p-progress-chart-label paragraph-2-default">
+    {{label}}
+  </span>
+  <div class="p-progress-chart-line"
+       [ngClass]="isGeneralProgress ? 'booleanColors' : 'fullPalette'"
+       attr.aria-label="{{label ? label : ariaLabel}}">
+    <span *ngFor="let segment of values"
+          class="p-progress-chart-segment"
+          [ngClass]="segment.riskType"
+          [style.width]="segment.value + '%'"></span>
+  </div>
+</div>
+

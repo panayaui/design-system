@@ -1,0 +1,75 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+import {ProgressBarComponent} from 'projects/design-system-lib/src/public-api';
+import {ProgressBarEnum} from 'projects/design-system-lib/src/public-api';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
+<Meta title='Components/Progress Bar'
+  component={ProgressBarComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [MatProgressBarModule]
+    })
+  ]}
+  args={{
+    value: 40
+  }}
+/>
+
+export const Template = (args) => <ProgressBarComponent {...args} />
+
+# Progress Bar
+
+###### Selector
+```html
+  <p-progress-bar></p-progress-bar>
+```
+
+###### Small No Label
+<Canvas>
+  <Story name="Small No Label"
+    args={{
+      size: ProgressBarEnum.Small,
+      ariaLabel: 'Label'
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Small With Label
+<Canvas>
+  <Story name="Small With Label"
+    args={{
+      size: ProgressBarEnum.Small,
+      label: 'Label'
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Full Size No Label
+<Canvas>
+  <Story name="Full Size No Label"
+    args={{
+      size: ProgressBarEnum.FullSize,
+      ariaLabel: 'Label'
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Full Size With Label
+<Canvas>
+  <Story name="Full Size With Label"
+    args={{
+      size: ProgressBarEnum.FullSize,
+      label: 'Loading text...'
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Usage
+```ts
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+```
