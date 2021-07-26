@@ -1,0 +1,37 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+
+import {FileUploadComponent} from 'projects/design-system-lib/src/public-api';
+import {IconModule} from 'projects/design-system-lib/src/lib/icon/icon.module';
+
+<Meta title='Components/File Upload'
+  component={FileUploadComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [IconModule]
+    })
+  ]}
+/>
+
+export const Template = (args) => <FileUploadComponent {...args} />
+
+# File Upload
+
+###### Selector
+```ts
+  <p-file-upload></p-file-upload>
+```
+
+<Canvas>
+  <Story name="File Upload"
+    args={{
+      label: 'Label'
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+The file upload component's width = 100%. 
+
+In this example width = 355px is set on its parent contaner.
+

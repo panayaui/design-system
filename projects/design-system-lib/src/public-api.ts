@@ -99,3 +99,5 @@ export * from './lib/hashtag/hashtag.interface';
 export * from './lib/tree/tree.module';
 export * from './lib/tree/tree.component';
 export * from './lib/tree/tree.interface';
+
+export * from './lib/file-upload/file-upload.component';
