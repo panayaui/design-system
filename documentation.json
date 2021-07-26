@@ -1127,31 +1127,31 @@
         },
         {
             "name": "ITreeNode",
-            "id": "interface-ITreeNode-3457d64126b6ae36fd21fdaf6d74307d",
+            "id": "interface-ITreeNode-7108b7a346416d5a258c4efa08e03fa3",
             "file": "projects/design-system-lib/src/lib/tree/tree.interface.ts",
             "type": "interface",
-            "sourceCode": "import {LabelTypesEnum} from '../labels/label-types.enum';\r\n\r\nexport interface ITreeNode {\r\n  name: string;\r\n  isCycle?: boolean;\r\n  label?: LabelTypesEnum;\r\n  children?: ITreeNode[];\r\n}\r\n",
+            "sourceCode": "import {LabelTypesEnum} from '../labels/label-types.enum';\r\n\r\nexport interface ITreeNode {\r\n  name: string;\r\n  selected?: boolean;\r\n  isCycle?: boolean;\r\n  label?: LabelTypesEnum;\r\n  children?: ITreeNode[];\r\n}\r\n",
             "properties": [
                 {
                     "name": "children",
                     "type": "ITreeNode[]",
                     "optional": true,
                     "description": "",
-                    "line": 7
+                    "line": 8
                 },
                 {
                     "name": "isCycle",
                     "type": "boolean",
                     "optional": true,
                     "description": "",
-                    "line": 5
+                    "line": 6
                 },
                 {
                     "name": "label",
                     "type": "LabelTypesEnum",
                     "optional": true,
                     "description": "",
-                    "line": 6
+                    "line": 7
                 },
                 {
                     "name": "name",
@@ -1159,6 +1159,13 @@
                     "optional": false,
                     "description": "",
                     "line": 4
+                },
+                {
+                    "name": "selected",
+                    "type": "boolean",
+                    "optional": true,
+                    "description": "",
+                    "line": 5
                 }
             ],
             "indexSignatures": [],
@@ -1761,7 +1768,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p-input-text-table-layout title='Resolution'\r\n                           [table]=\"inputTable\"></p-input-text-table-layout>\r\n"
+            "templateData": "<p-input-text-table-layout title='Resolution'\r\n                           [table]=\"inputTable\"></p-input-text-table-layout>\r\n\r\n"
         },
         {
             "name": "ButtonComponent",
@@ -7296,7 +7303,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../labels/label-sub/label-sub.component\";\r\n\r\n$node-height: 30px;\r\n$node-padding: 24px;\r\n\r\n.p-tree {\r\n  &-nested-node {\r\n    display: flex;\r\n    align-items: center;\r\n    height: $node-height;\r\n  }\r\n\r\n  &-node-invisible {\r\n    display: none;\r\n  }\r\n\r\n  &-button {\r\n    @include resetButton;\r\n    padding: 3px;\r\n  }\r\n\r\n  &-button-icon {\r\n    transform: rotate(-90deg);\r\n    transition: transform 180ms ease-in-out;\r\n    &.expanded {\r\n      transform: rotate(0);\r\n    }\r\n  }\r\n\r\n  &-node-icon {\r\n    margin-right: $gap-small;\r\n    &.not-expandable {\r\n      padding-left: $node-padding;\r\n    }\r\n  }\r\n\r\n  &-node-label {\r\n    font-size: 0;\r\n    margin-right: $gap-small;\r\n  }\r\n\r\n  &-expandable {\r\n    padding-left: $node-padding;\r\n  }\r\n\r\n}\r\n\r\n",
+                    "data": "@import \"../labels/label-sub/label-sub.component\";\r\n\r\n$node-height: 30px;\r\n$node-padding: 24px;\r\n\r\n.p-tree {\r\n  &-nested-node {\r\n    display: flex;\r\n    align-items: center;\r\n    height: $node-height;\r\n  }\r\n\r\n  &-node-invisible {\r\n    display: none;\r\n  }\r\n\r\n  &-button {\r\n    @include resetButton;\r\n    padding: 3px;\r\n  }\r\n\r\n  &-button-icon {\r\n    transform: rotate(-90deg);\r\n    transition: transform 180ms ease-in-out;\r\n    &.expanded {\r\n      transform: rotate(0);\r\n    }\r\n  }\r\n\r\n  &-node-icon {\r\n    margin-right: $gap-small;\r\n    &.not-expandable {\r\n      padding-left: $node-padding;\r\n    }\r\n  }\r\n\r\n  &-node-label {\r\n    font-size: 0;\r\n    margin-right: $gap-small;\r\n  }\r\n\r\n  &-expandable {\r\n    padding-left: $node-padding;\r\n  }\r\n\r\n  .child-selected {\r\n    font-weight: 700;\r\n    background-color: $primary-c-50;\r\n    position: relative;\r\n    &:before {\r\n      content: 'Selected';\r\n      display: block;\r\n      font-size: 0;\r\n      width: 5px;\r\n      height: 100%;\r\n      background-color: $primary-a-900;\r\n      position: absolute;\r\n      top: 0;\r\n      left: 0;\r\n    }\r\n  }\r\n\r\n  .parent-selected .p-tree-nested-node .p-tree-node-name{\r\n    font-weight: 700;\r\n  }\r\n}\r\n\r\n",
                     "styleUrl": "./tree.component.scss"
                 }
             ],
@@ -7304,7 +7311,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<mat-tree [dataSource]=\"dataSource\"\r\n          [treeControl]=\"treeControl\"\r\n          class=\"p-tree\">\r\n  <mat-tree-node *matTreeNodeDef=\"let node\" matTreeNodeToggle>\r\n    <ng-container [ngTemplateOutlet]=\"nodeContent\"\r\n                  [ngTemplateOutletContext]=\"{node: node}\"></ng-container>\r\n    <!--<span class=\"p-tree-node-name paragraph-3-default\">{{node.name}}</span>-->\r\n  </mat-tree-node>\r\n\r\n  <mat-nested-tree-node *matTreeNodeDef=\"let node; when: hasChild\">\r\n    <div class=\"p-tree-nested-node\">\r\n      <button class=\"p-tree-button\"\r\n              mat-icon-button\r\n              matTreeNodeToggle\r\n              [attr.aria-label]=\"'Toggle ' + node.name\">\r\n        <p-icon class=\"p-tree-button-icon\"\r\n                [class.expanded]=\"treeControl.isExpanded(node)\"\r\n                iconName=\"chevron-down\"\r\n                width=\"16\"></p-icon>\r\n      </button>\r\n\r\n      <ng-container [ngTemplateOutlet]=\"nodeContent\"\r\n                    [ngTemplateOutletContext]=\"{node: node}\"></ng-container>\r\n    </div>\r\n\r\n    <div class=\"p-tree-expandable\"\r\n         [class.p-tree-node-invisible]=\"!treeControl.isExpanded(node)\"\r\n         role=\"group\">\r\n      <ng-container matTreeNodeOutlet></ng-container>\r\n    </div>\r\n\r\n  </mat-nested-tree-node>\r\n</mat-tree>\r\n\r\n<ng-template #nodeContent let-node=\"node\">\r\n  <ng-template [ngIf]=\"!node.isCycle && treeControl.isExpanded(node)\" [ngIfElse]=\"closedNode\">\r\n    <p-icon class=\"p-tree-node-icon\"\r\n            iconName=\"folder-open\"\r\n            width=\"16\"\r\n            height=\"16\">\r\n    </p-icon>\r\n  </ng-template>\r\n\r\n  <ng-template #closedNode>\r\n    <p-icon class=\"p-tree-node-icon\"\r\n            [class.not-expandable]=\"!node.children?.length\"\r\n            [iconName]=\"node.isCycle ? 'circle' : node.children?.length ? 'folder' : 'file-text'\"\r\n            width=\"16\">\r\n    </p-icon>\r\n  </ng-template>\r\n\r\n  <span *ngIf=\"node.label\"\r\n        class=\"p-tree-node-label p-label-small-indicator\"\r\n        [ngClass]=\"'p-label-small-indicator-' + node.label\">\r\n    {{node.label}}\r\n  </span>\r\n\r\n  <span class=\"p-tree-node-name paragraph-3-default\">\r\n    {{node.name}}\r\n  </span>\r\n</ng-template>\r\n"
+            "templateData": "<mat-tree [dataSource]=\"dataSource\"\r\n          [treeControl]=\"treeControl\"\r\n          class=\"p-tree\">\r\n  <mat-tree-node *matTreeNodeDef=\"let node\" matTreeNodeToggle\r\n                 [class.child-selected]=\"node.selected\">\r\n    <ng-container [ngTemplateOutlet]=\"nodeContent\"\r\n                  [ngTemplateOutletContext]=\"{node: node}\"></ng-container>\r\n  </mat-tree-node>\r\n\r\n  <mat-nested-tree-node *matTreeNodeDef=\"let node; when: hasChild\"\r\n                        [class.parent-selected]=\"node.selected\">\r\n    <div class=\"p-tree-nested-node\">\r\n      <button class=\"p-tree-button\"\r\n              mat-icon-button\r\n              matTreeNodeToggle\r\n              [attr.aria-label]=\"'Toggle ' + node.name\">\r\n        <p-icon class=\"p-tree-button-icon\"\r\n                [class.expanded]=\"treeControl.isExpanded(node)\"\r\n                iconName=\"chevron-down\"\r\n                width=\"16\"></p-icon>\r\n      </button>\r\n\r\n      <ng-container [ngTemplateOutlet]=\"nodeContent\"\r\n                    [ngTemplateOutletContext]=\"{node: node}\"></ng-container>\r\n    </div>\r\n\r\n    <div class=\"p-tree-expandable\"\r\n         [class.p-tree-node-invisible]=\"!treeControl.isExpanded(node)\"\r\n         role=\"group\">\r\n      <ng-container matTreeNodeOutlet></ng-container>\r\n    </div>\r\n\r\n  </mat-nested-tree-node>\r\n</mat-tree>\r\n\r\n<ng-template #nodeContent let-node=\"node\">\r\n  <ng-template [ngIf]=\"!node.isCycle && node.children?.length && treeControl.isExpanded(node)\" [ngIfElse]=\"closedNode\">\r\n    <p-icon class=\"p-tree-node-icon\"\r\n            iconName=\"folder-open\"\r\n            width=\"16\"\r\n            height=\"16\">\r\n    </p-icon>\r\n  </ng-template>\r\n\r\n  <ng-template #closedNode>\r\n    <p-icon class=\"p-tree-node-icon\"\r\n            [class.not-expandable]=\"!node.children?.length\"\r\n            [iconName]=\"node.isCycle ? 'circle' : node.children?.length ? 'folder' : 'file-text'\"\r\n            width=\"16\">\r\n    </p-icon>\r\n  </ng-template>\r\n\r\n  <span *ngIf=\"node.label\"\r\n        class=\"p-tree-node-label p-label-small-indicator\"\r\n        [ngClass]=\"'p-label-small-indicator-' + node.label\">\r\n    {{node.label}}\r\n  </span>\r\n\r\n  <span class=\"p-tree-node-name paragraph-3-default\">\r\n    {{node.name}}\r\n  </span>\r\n</ng-template>\r\n"
         },
         {
             "name": "TypographyFontFamilyComponent",
@@ -8599,9 +8606,9 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
-                "type": "Story<CheckboxGroupPageComponent>",
-                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "Story<CheckboxPageComponent>",
+                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -8615,9 +8622,9 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
-                "type": "Story<CheckboxPageComponent>",
-                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "Story<CheckboxGroupPageComponent>",
+                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -8685,17 +8692,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/icons/icon.stories.ts",
-                "type": "Story<IconComponent>",
-                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/colors/Color-palette.stories.ts",
+                "type": "Story<ColorPaletteComponent>",
+                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/colors/Color-palette.stories.ts",
-                "type": "Story<ColorPaletteComponent>",
-                "defaultValue": "(args: ColorPaletteComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/icons/icon.stories.ts",
+                "type": "Story<IconComponent>",
+                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -10012,7 +10019,7 @@
                 "linktype": "interface",
                 "name": "ITreeNode",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
