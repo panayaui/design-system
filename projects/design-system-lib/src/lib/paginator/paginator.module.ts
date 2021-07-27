@@ -5,6 +5,7 @@ import {IconModule} from '../icon/icon.module';
 import {ButtonModule} from '../button/button.module';
 import {InputModule} from '../input/input.module';
 import {MenuModule} from '../menu/menu.module';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import {MenuModule} from '../menu/menu.module';
     IconModule,
     ButtonModule,
     InputModule,
-    MenuModule
+    MenuModule,
+    MatTooltipModule
   ],
   declarations: [
     PaginatorComponent

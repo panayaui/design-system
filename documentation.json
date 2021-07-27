@@ -6035,7 +6035,7 @@
         },
         {
             "name": "PaginatorComponent",
-            "id": "component-PaginatorComponent-4d51bf9649b661ed9d127efdebc0e3cf",
+            "id": "component-PaginatorComponent-02543c0c90c2c642e0bce1ec65d0225c",
             "file": "projects/design-system-lib/src/lib/paginator/paginator.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -6055,21 +6055,36 @@
                 {
                     "name": "currentPage",
                     "defaultValue": "1",
-                    "line": 12
+                    "line": 11
+                },
+                {
+                    "name": "firstItemShown",
+                    "line": 16,
+                    "type": "number"
                 },
                 {
                     "name": "pageSize",
                     "defaultValue": "100",
-                    "line": 21
+                    "line": 14
                 },
                 {
                     "name": "pageSizeOptions",
-                    "line": 18,
+                    "line": 13,
                     "type": "literal type[]"
                 },
                 {
-                    "name": "totalPages",
+                    "name": "totalItems",
                     "line": 15,
+                    "type": "number"
+                },
+                {
+                    "name": "totalPages",
+                    "line": 12,
+                    "type": "number"
+                },
+                {
+                    "name": "totalSelected",
+                    "line": 17,
                     "type": "number"
                 }
             ],
@@ -6077,37 +6092,37 @@
                 {
                     "name": "firstPageClicked",
                     "defaultValue": "new EventEmitter()",
-                    "line": 31,
+                    "line": 26,
                     "type": "EventEmitter"
                 },
                 {
                     "name": "lastPageClicked",
                     "defaultValue": "new EventEmitter()",
-                    "line": 33,
+                    "line": 28,
                     "type": "EventEmitter"
                 },
                 {
                     "name": "nextPageClicked",
                     "defaultValue": "new EventEmitter()",
-                    "line": 29,
+                    "line": 24,
                     "type": "EventEmitter"
                 },
                 {
                     "name": "pageNumberClicked",
                     "defaultValue": "new EventEmitter()",
-                    "line": 35,
+                    "line": 30,
                     "type": "EventEmitter"
                 },
                 {
                     "name": "pageSizeChanged",
                     "defaultValue": "new EventEmitter<number>()",
-                    "line": 24,
+                    "line": 20,
                     "type": "EventEmitter"
                 },
                 {
                     "name": "prevPageClicked",
                     "defaultValue": "new EventEmitter()",
-                    "line": 27,
+                    "line": 22,
                     "type": "EventEmitter"
                 }
             ],
@@ -6118,7 +6133,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 40,
+                    "line": 35,
                     "modifierKind": [
                         114
                     ]
@@ -6128,7 +6143,7 @@
                     "type": "number",
                     "optional": false,
                     "description": "",
-                    "line": 44,
+                    "line": 39,
                     "modifierKind": [
                         112
                     ]
@@ -6139,7 +6154,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 41,
+                    "line": 36,
                     "modifierKind": [
                         114
                     ]
@@ -6149,7 +6164,7 @@
                     "type": "number",
                     "optional": false,
                     "description": "",
-                    "line": 45,
+                    "line": 40,
                     "modifierKind": [
                         112
                     ]
@@ -6160,7 +6175,7 @@
                     "type": "boolean",
                     "optional": false,
                     "description": "",
-                    "line": 46,
+                    "line": 41,
                     "modifierKind": [
                         114
                     ]
@@ -6171,7 +6186,7 @@
                     "type": "boolean",
                     "optional": false,
                     "description": "",
-                    "line": 47,
+                    "line": 42,
                     "modifierKind": [
                         114
                     ]
@@ -6181,7 +6196,7 @@
                     "type": "number[]",
                     "optional": false,
                     "description": "",
-                    "line": 42,
+                    "line": 37,
                     "modifierKind": [
                         114
                     ]
@@ -6192,7 +6207,7 @@
                     "type": "number",
                     "optional": false,
                     "description": "",
-                    "line": 43,
+                    "line": 38,
                     "modifierKind": [
                         114
                     ]
@@ -6205,7 +6220,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 90
+                    "line": 85
                 },
                 {
                     "name": "definePagesList",
@@ -6222,7 +6237,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 68,
+                    "line": 63,
                     "jsdoctags": [
                         {
                             "name": "$event",
@@ -6246,7 +6261,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 49
+                    "line": 44
                 }
             ],
             "hostBindings": [],
@@ -6254,11 +6269,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';\r\nimport {ButtonTypeEnum} from '../button/button-type.enum';\r\nimport {InputNumericSizeEnum} from '../input/numeric/input-numeric-size.enum';\r\n\r\n@Component({\r\n  selector: 'p-paginator',\r\n  templateUrl: './paginator.component.html',\r\n  styleUrls: ['./paginator.component.scss'],\r\n})\r\nexport class PaginatorComponent implements OnInit {\r\n  @Input()\r\n  currentPage = 1; // based 1\r\n\r\n  @Input()\r\n  totalPages: number;\r\n\r\n  @Input()\r\n  pageSizeOptions?: { name: any }[];\r\n\r\n  @Input()\r\n  pageSize = 100;\r\n\r\n  @Output()\r\n  pageSizeChanged = new EventEmitter<number>();\r\n\r\n  @Output()\r\n  prevPageClicked = new EventEmitter();\r\n  @Output()\r\n  nextPageClicked = new EventEmitter();\r\n  @Output()\r\n  firstPageClicked = new EventEmitter();\r\n  @Output()\r\n  lastPageClicked = new EventEmitter();\r\n  @Output()\r\n  pageNumberClicked = new EventEmitter();\r\n  /*\r\n  @Output()\r\n  onPageNumberInput = new EventEmitter<number>();\r\n*/\r\n  public buttonType = ButtonTypeEnum;\r\n  public inputNumericSize = InputNumericSizeEnum;\r\n  public pageList: number[];\r\n  public step: number = 5;\r\n  private firstInList: number;\r\n  private lastInList: number;\r\n  public lessBtnDisabled: boolean = true;\r\n  public moreBtnDisabled: boolean = false;\r\n\r\n  ngOnInit(): void {\r\n    if (!this.pageSizeOptions) this.pageSizeOptions = [\r\n      {name: 25},\r\n      {name: 50},\r\n      {name: 100}\r\n    ];\r\n    this.firstInList = 1;\r\n    this.lastInList = this.firstInList + this.step - 1;\r\n    this.buildPagesList();\r\n  }\r\n\r\n  get canMoveToPrevious(): boolean {\r\n    return this.currentPage > 1;\r\n  }\r\n\r\n  get canMoveToNext(): boolean {\r\n    return this.currentPage < this.totalPages;\r\n  }\r\n\r\n  definePagesList($event: any, increasePageNumber: boolean): void {\r\n    this.moreBtnDisabled = false;\r\n    this.lessBtnDisabled = false;\r\n    if (increasePageNumber) {\r\n      this.firstInList += this.step;\r\n      this.lastInList += this.step;\r\n      if (this.lastInList >= this.totalPages) {\r\n        this.moreBtnDisabled = true;\r\n      }\r\n    }\r\n    else {\r\n      this.firstInList -= this.step;\r\n      this.lastInList -= this.step;\r\n      if (this.firstInList <= 1) {\r\n        this.firstInList = 1;\r\n        this.lastInList = this.firstInList + this.step - 1;\r\n        this.lessBtnDisabled = true;\r\n      }\r\n    }\r\n    this.buildPagesList();\r\n  }\r\n\r\n  buildPagesList(): void {\r\n    this.pageList = [];\r\n    for ( let i = this.firstInList; i <= this.lastInList; i++) {\r\n      this.pageList.push(i);\r\n    }\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';\r\nimport {ButtonTypeEnum} from '../button/button-type.enum';\r\nimport {InputNumericSizeEnum} from '../input/numeric/input-numeric-size.enum';\r\n\r\n@Component({\r\n  selector: 'p-paginator',\r\n  templateUrl: './paginator.component.html',\r\n  styleUrls: ['./paginator.component.scss'],\r\n})\r\nexport class PaginatorComponent implements OnInit {\r\n  @Input() currentPage = 1; // based 1\r\n  @Input() totalPages: number;\r\n  @Input() pageSizeOptions?: { name: any }[];\r\n  @Input() pageSize = 100;\r\n  @Input() totalItems: number;\r\n  @Input() firstItemShown: number;\r\n  @Input() totalSelected: number;\r\n\r\n  @Output()\r\n  pageSizeChanged = new EventEmitter<number>();\r\n  @Output()\r\n  prevPageClicked = new EventEmitter();\r\n  @Output()\r\n  nextPageClicked = new EventEmitter();\r\n  @Output()\r\n  firstPageClicked = new EventEmitter();\r\n  @Output()\r\n  lastPageClicked = new EventEmitter();\r\n  @Output()\r\n  pageNumberClicked = new EventEmitter();\r\n  /*\r\n  @Output()\r\n  onPageNumberInput = new EventEmitter<number>();\r\n*/\r\n  public buttonType = ButtonTypeEnum;\r\n  public inputNumericSize = InputNumericSizeEnum;\r\n  public pageList: number[];\r\n  public step: number = 5;\r\n  private firstInList: number;\r\n  private lastInList: number;\r\n  public lessBtnDisabled: boolean = true;\r\n  public moreBtnDisabled: boolean = false;\r\n\r\n  ngOnInit(): void {\r\n    if (!this.pageSizeOptions) this.pageSizeOptions = [\r\n      {name: 25},\r\n      {name: 50},\r\n      {name: 100}\r\n    ];\r\n    this.firstInList = 1;\r\n    this.lastInList = this.firstInList + this.step - 1;\r\n    this.buildPagesList();\r\n  }\r\n\r\n  get canMoveToPrevious(): boolean {\r\n    return this.currentPage > 1;\r\n  }\r\n\r\n  get canMoveToNext(): boolean {\r\n    return this.currentPage < this.totalPages;\r\n  }\r\n\r\n  definePagesList($event: any, increasePageNumber: boolean): void {\r\n    this.moreBtnDisabled = false;\r\n    this.lessBtnDisabled = false;\r\n    if (increasePageNumber) {\r\n      this.firstInList += this.step;\r\n      this.lastInList += this.step;\r\n      if (this.lastInList >= this.totalPages) {\r\n        this.moreBtnDisabled = true;\r\n      }\r\n    }\r\n    else {\r\n      this.firstInList -= this.step;\r\n      this.lastInList -= this.step;\r\n      if (this.firstInList <= 1) {\r\n        this.firstInList = 1;\r\n        this.lastInList = this.firstInList + this.step - 1;\r\n        this.lessBtnDisabled = true;\r\n      }\r\n    }\r\n    this.buildPagesList();\r\n  }\r\n\r\n  buildPagesList(): void {\r\n    this.pageList = [];\r\n    for ( let i = this.firstInList; i <= this.lastInList; i++) {\r\n      this.pageList.push(i);\r\n    }\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$button-width: 24px;\r\n$button-height: 32px;\r\n\r\n%paginator-btn {\r\n  width: $button-width;\r\n  height: $button-height;\r\n  &:not(.disabled):hover{\r\n    background-color: $primary-c-50;\r\n  }\r\n}\r\n\r\n.p-paginator {\r\n  display: flex;\r\n  align-items: center;\r\n\r\n  &-arrow {\r\n    ::ng-deep .p-btn {\r\n      @extend %paginator-btn;\r\n    }\r\n    & ~ & {\r\n      margin-left: $gap-base;\r\n    }\r\n  }\r\n\r\n  &-list {\r\n    display: flex;\r\n    align-items: center;\r\n    @include resetUl;\r\n  }\r\n\r\n  &-item {\r\n    margin-left: $gap-base;\r\n  }\r\n\r\n  &-page {\r\n    width: 100%;\r\n    height: 100%;\r\n    display: block;\r\n    position: relative;\r\n\r\n    ::ng-deep .p-btn {\r\n      min-width: unset;\r\n      padding-right: 0;\r\n      padding-left: 0;\r\n      background-color: transparent;\r\n\r\n      @extend %paginator-btn;\r\n      &:not(:disabled) {\r\n        color: $primary-a-900;\r\n      }\r\n    }\r\n\r\n    &.selected:after {\r\n      content: 'Selected';\r\n      display: block;\r\n      font-size: 0;\r\n      width: $button-width;\r\n      height: 4px;\r\n      background-color: $primary-a-900;\r\n      position: absolute;\r\n      bottom: 0;\r\n    }\r\n  }\r\n\r\n  &-select {\r\n    margin-left: $gap-double;\r\n    align-self: flex-end;\r\n  }\r\n\r\n  ::ng-deep .p-input-numeric .mat-form-field-infix {\r\n    padding-left: $gap-small;\r\n  }\r\n}\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$button-width: 24px;\r\n$button-height: 32px;\r\n\r\n%paginator-btn {\r\n  width: $button-width;\r\n  height: $button-height;\r\n  &:not(.disabled):hover{\r\n    background-color: $primary-c-50;\r\n  }\r\n}\r\n\r\n.p-paginator {\r\n  display: flex;\r\n  align-items: center;\r\n\r\n  &-arrow {\r\n    ::ng-deep .p-btn {\r\n      @extend %paginator-btn;\r\n    }\r\n    & ~ & {\r\n      margin-left: $gap-base;\r\n    }\r\n  }\r\n\r\n  &-list {\r\n    display: flex;\r\n    align-items: center;\r\n    @include resetUl;\r\n  }\r\n\r\n  &-item {\r\n    margin-left: $gap-base;\r\n  }\r\n\r\n  &-page {\r\n    width: 100%;\r\n    height: 100%;\r\n    display: block;\r\n    position: relative;\r\n\r\n    ::ng-deep .p-btn {\r\n      min-width: unset;\r\n      padding-right: 0;\r\n      padding-left: 0;\r\n      background-color: transparent;\r\n\r\n      @extend %paginator-btn;\r\n      &:not(:disabled) {\r\n        color: $primary-a-900;\r\n      }\r\n    }\r\n\r\n    &.selected:after {\r\n      content: 'Selected';\r\n      display: block;\r\n      font-size: 0;\r\n      width: $button-width;\r\n      height: 4px;\r\n      background-color: $primary-a-900;\r\n      position: absolute;\r\n      bottom: 0;\r\n    }\r\n  }\r\n\r\n  &-select {\r\n    margin-left: $gap-double;\r\n    margin-right: auto;\r\n    align-self: flex-end;\r\n  }\r\n\r\n  ::ng-deep .p-input-numeric .mat-form-field-infix {\r\n    padding-left: $gap-small;\r\n  }\r\n\r\n  &-items {\r\n    margin-left: $gap-double;\r\n  }\r\n\r\n  &-refresh {\r\n    margin-left: $gap-double-plus;\r\n  }\r\n}\r\n",
                     "styleUrl": "./paginator.component.scss"
                 }
             ],
@@ -6273,7 +6288,7 @@
                         "name": "canMoveToPrevious",
                         "type": "boolean",
                         "returnType": "boolean",
-                        "line": 60
+                        "line": 55
                     }
                 },
                 "canMoveToNext": {
@@ -6282,11 +6297,11 @@
                         "name": "canMoveToNext",
                         "type": "boolean",
                         "returnType": "boolean",
-                        "line": 64
+                        "line": 59
                     }
                 }
             },
-            "templateData": "<div class=\"p-paginator\">\r\n  <p-button class=\"p-paginator-arrow first\"\r\n            [class.disabled]=\"!canMoveToPrevious\"\r\n            ariaLabel=\"Move to the first page\"\r\n            [disabled]=\"!canMoveToPrevious\"\r\n            iconBefore=\"first\"\r\n            iconBeforeWidth=\"10\"\r\n            iconBeforeHeight=\"10\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"firstPageClicked.emit()\"></p-button>\r\n  <p-button class=\"p-paginator-arrow prev\"\r\n            [class.disabled]=\"!canMoveToPrevious\"\r\n            ariaLabel=\"Move to the previous page\"\r\n            [disabled]=\"!canMoveToPrevious\"\r\n            iconBefore=\"chevron-left\"\r\n            iconBeforeWidth=\"17\"\r\n            iconBeforeStrokeWidth=\"2\"\r\n            [iconBeforeStrokeColor]=\"!canMoveToPrevious ? '#B3B3B3' : 'currentColor'\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"prevPageClicked.emit()\"></p-button>\r\n  <ul class=\"p-paginator-list\">\r\n    <li class=\"p-paginator-item\">\r\n      <p-button *ngIf=\"!lessBtnDisabled\"\r\n                class=\"p-paginator-page less\"\r\n                ariaLabel=\"Show other {{ step }} pages\"\r\n                iconBefore=\"more-horizontal\"\r\n                iconBeforeWidth=\"17\"\r\n                iconBeforeStrokeWidth=\"2\"\r\n                [iconBeforeStrokeColor]=\"!canMoveToNext ? '#B3B3B3' : 'currentColor'\"\r\n                [buttonType]=\"buttonType.IsIcon\"\r\n                (onClickTask)=\"definePagesList($event, false)\"></p-button>\r\n    </li>\r\n    <li class=\"p-paginator-item\" *ngFor=\"let pageNumber of pageList\">\r\n      <p-button class=\"p-paginator-page\"\r\n                [class.selected]=\"pageNumber === currentPage\"\r\n                [label]=\"pageNumber\"\r\n                [ariaLabel]=\"'Move to page ' + pageNumber\"\r\n                [buttonType]=\"buttonType.Tertiary\"\r\n                (click)=\"pageNumberClicked.emit()\"></p-button>\r\n    </li>\r\n    <li class=\"p-paginator-item\">\r\n      <p-button *ngIf=\"!moreBtnDisabled\"\r\n                class=\"p-paginator-page more\"\r\n                ariaLabel=\"Show other {{ step }} pages\"\r\n                iconBefore=\"more-horizontal\"\r\n                iconBeforeWidth=\"17\"\r\n                iconBeforeStrokeWidth=\"2\"\r\n                [buttonType]=\"buttonType.IsIcon\"\r\n                (onClickTask)=\"definePagesList($event, true)\"></p-button>\r\n    </li>\r\n  </ul>\r\n\r\n  <p-button class=\"p-paginator-arrow next\"\r\n            [class.disabled]=\"!canMoveToNext\"\r\n            ariaLabel=\"Move to the next page\"\r\n            [disabled]=\"!canMoveToNext\"\r\n            iconBefore=\"chevron-right\"\r\n            iconBeforeWidth=\"17\"\r\n            iconBeforeStrokeWidth=\"2\"\r\n            [iconBeforeStrokeColor]=\"!canMoveToNext ? '#B3B3B3' : 'currentColor'\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"nextPageClicked.emit()\"></p-button>\r\n  <p-button class=\"p-paginator-arrow last\"\r\n            [class.disabled]=\"!canMoveToNext\"\r\n            ariaLabel=\"Move to the last page\"\r\n            [disabled]=\"!canMoveToNext\"\r\n            iconBefore=\"last\"\r\n            iconBeforeWidth=\"10\"\r\n            iconBeforeHeight=\"10\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"lastPageClicked.emit()\"></p-button>\r\n\r\n  <p-menu-single-select class=\"p-paginator-select\"\r\n                        [menuList]=\"pageSizeOptions\"\r\n                        (onClickTask)=\"pageSizeChanged.emit($event)\">\r\n    <!--ng-content-->\r\n    <p-input-numeric class=\"p-paginator-input\"\r\n                     label=\"Items per page\"\r\n                     [value]=\"pageSize\"\r\n                     [size]=\"inputNumericSize.Small\"\r\n                     [labelLast]=\"true\"\r\n                     [notEditable]=\"true\"\r\n                     iconName=\"chevron-down\"></p-input-numeric>\r\n    <!-- -->\r\n  </p-menu-single-select>\r\n</div>\r\n"
+            "templateData": "<div class=\"p-paginator\">\r\n  <p-button class=\"p-paginator-arrow first\"\r\n            [class.disabled]=\"!canMoveToPrevious\"\r\n            ariaLabel=\"Move to the first page\"\r\n            [disabled]=\"!canMoveToPrevious\"\r\n            iconBefore=\"first\"\r\n            iconBeforeWidth=\"10\"\r\n            iconBeforeHeight=\"10\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"firstPageClicked.emit()\"></p-button>\r\n  <p-button class=\"p-paginator-arrow prev\"\r\n            [class.disabled]=\"!canMoveToPrevious\"\r\n            ariaLabel=\"Move to the previous page\"\r\n            [disabled]=\"!canMoveToPrevious\"\r\n            iconBefore=\"chevron-left\"\r\n            iconBeforeWidth=\"17\"\r\n            iconBeforeStrokeWidth=\"2\"\r\n            [iconBeforeStrokeColor]=\"!canMoveToPrevious ? '#B3B3B3' : 'currentColor'\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"prevPageClicked.emit()\"></p-button>\r\n  <ul class=\"p-paginator-list\">\r\n    <li class=\"p-paginator-item\">\r\n      <p-button *ngIf=\"!lessBtnDisabled\"\r\n                class=\"p-paginator-page less\"\r\n                ariaLabel=\"Show other {{ step }} pages\"\r\n                iconBefore=\"more-horizontal\"\r\n                iconBeforeWidth=\"17\"\r\n                iconBeforeStrokeWidth=\"2\"\r\n                [iconBeforeStrokeColor]=\"!canMoveToNext ? '#B3B3B3' : 'currentColor'\"\r\n                [buttonType]=\"buttonType.IsIcon\"\r\n                (onClickTask)=\"definePagesList($event, false)\"></p-button>\r\n    </li>\r\n    <li class=\"p-paginator-item\" *ngFor=\"let pageNumber of pageList\">\r\n      <p-button class=\"p-paginator-page\"\r\n                [class.selected]=\"pageNumber === currentPage\"\r\n                [label]=\"pageNumber\"\r\n                [ariaLabel]=\"'Move to page ' + pageNumber\"\r\n                [buttonType]=\"buttonType.Tertiary\"\r\n                (click)=\"pageNumberClicked.emit()\"></p-button>\r\n    </li>\r\n    <li class=\"p-paginator-item\">\r\n      <p-button *ngIf=\"!moreBtnDisabled\"\r\n                class=\"p-paginator-page more\"\r\n                ariaLabel=\"Show other {{ step }} pages\"\r\n                iconBefore=\"more-horizontal\"\r\n                iconBeforeWidth=\"17\"\r\n                iconBeforeStrokeWidth=\"2\"\r\n                [buttonType]=\"buttonType.IsIcon\"\r\n                (onClickTask)=\"definePagesList($event, true)\"></p-button>\r\n    </li>\r\n  </ul>\r\n\r\n  <p-button class=\"p-paginator-arrow next\"\r\n            [class.disabled]=\"!canMoveToNext\"\r\n            ariaLabel=\"Move to the next page\"\r\n            [disabled]=\"!canMoveToNext\"\r\n            iconBefore=\"chevron-right\"\r\n            iconBeforeWidth=\"17\"\r\n            iconBeforeStrokeWidth=\"2\"\r\n            [iconBeforeStrokeColor]=\"!canMoveToNext ? '#B3B3B3' : 'currentColor'\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"nextPageClicked.emit()\"></p-button>\r\n  <p-button class=\"p-paginator-arrow last\"\r\n            [class.disabled]=\"!canMoveToNext\"\r\n            ariaLabel=\"Move to the last page\"\r\n            [disabled]=\"!canMoveToNext\"\r\n            iconBefore=\"last\"\r\n            iconBeforeWidth=\"10\"\r\n            iconBeforeHeight=\"10\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"lastPageClicked.emit()\"></p-button>\r\n\r\n  <p-menu-single-select class=\"p-paginator-select\"\r\n                        [menuList]=\"pageSizeOptions\"\r\n                        (onClickTask)=\"pageSizeChanged.emit($event)\">\r\n    <!--ng-content-->\r\n    <p-input-numeric class=\"p-paginator-input\"\r\n                     label=\"Items per page\"\r\n                     [value]=\"pageSize\"\r\n                     [size]=\"inputNumericSize.Small\"\r\n                     [labelLast]=\"true\"\r\n                     [notEditable]=\"true\"\r\n                     iconName=\"chevron-down\"></p-input-numeric>\r\n    <!-- -->\r\n  </p-menu-single-select>\r\n\r\n  <span class=\"p-paginator-counter paragraph-2-default\">\r\n    {{totalSelected}} selected\r\n  </span>\r\n\r\n  <span class=\"p-paginator-items paragraph-2-default\">\r\n    {{firstItemShown}}-{{firstItemShown + pageSize - 1}} of {{totalItems}} items\r\n  </span>\r\n\r\n  <p-button class=\"p-paginator-refresh\"\r\n            ariaLabel=\"Refresh\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            iconBefore=\"refresh-cw\"\r\n            iconBeforeStrokeColor=\"#4132C8\"\r\n            iconBeforeWidth=\"16\"\r\n            [matTooltip]=\"Refresh\"\r\n            matTooltipPosition=\"above\"\r\n            matTooltipClass=\"p-tooltip above></p-button>\r\n</div>\r\n"
         },
         {
             "name": "ProgressBarComponent",
@@ -8786,9 +8801,9 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
-                "type": "Story<CheckboxGroupComponent>",
-                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "Story<CheckboxPageComponent>",
+                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -8802,9 +8817,9 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
-                "type": "Story<CheckboxPageComponent>",
-                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
+                "type": "Story<CheckboxGroupComponent>",
+                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -8888,17 +8903,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
-                "type": "Story<TypographyFontFamilyComponent>",
-                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/styles/typography-styles.stories.ts",
+                "type": "Story<TypographyStylesComponent>",
+                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/styles/typography-styles.stories.ts",
-                "type": "Story<TypographyStylesComponent>",
-                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
+                "type": "Story<TypographyFontFamilyComponent>",
+                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Toggles",
@@ -10194,7 +10209,7 @@
                 "linktype": "component",
                 "name": "PaginatorComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/22",
+                "coverageCount": "0/25",
                 "status": "low"
             },
             {
