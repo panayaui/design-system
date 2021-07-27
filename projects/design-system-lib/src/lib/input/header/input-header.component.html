@@ -1,6 +1,6 @@
 <mat-form-field class="p-input-outline p-input-header"
                 appearance="outline"
-                [class.p-input-readonly]="readonlyState"
+                [ngClass]="{'p-input-readonly' : readonlyState, 'no-error-message': !errorMessage}"
                 floatLabel="always">
 
   <input matInput

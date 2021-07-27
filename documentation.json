@@ -1215,7 +1215,7 @@
         {
             "name": "CustomErrorStateMatcher",
             "id": "class-CustomErrorStateMatcher-4dcb8b0672b9a3ec836d91e83906f144",
-            "file": "src/stories/input/custom-error-state-matcher.ts",
+            "file": "src/stories/entity-header/custom-error-state-matcher.ts",
             "type": "class",
             "sourceCode": "import {ErrorStateMatcher} from '@angular/material/core';\r\nimport {FormControl, FormGroupDirective, NgForm} from '@angular/forms';\r\n\r\nexport class CustomErrorStateMatcher implements ErrorStateMatcher {\r\n  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {\r\n    return true;\r\n  }\r\n}\r\n",
             "properties": [],
@@ -1262,6 +1262,60 @@
             "implements": [
                 "ErrorStateMatcher"
             ]
+        },
+        {
+            "name": "CustomErrorStateMatcher",
+            "id": "class-CustomErrorStateMatcher-4dcb8b0672b9a3ec836d91e83906f144-1",
+            "file": "src/stories/input/custom-error-state-matcher.ts",
+            "type": "class",
+            "sourceCode": "import {ErrorStateMatcher} from '@angular/material/core';\r\nimport {FormControl, FormGroupDirective, NgForm} from '@angular/forms';\r\n\r\nexport class CustomErrorStateMatcher implements ErrorStateMatcher {\r\n  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {\r\n    return true;\r\n  }\r\n}\r\n",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "isErrorState",
+                    "args": [
+                        {
+                            "name": "control",
+                            "type": "FormControl | null"
+                        },
+                        {
+                            "name": "form",
+                            "type": "FormGroupDirective | NgForm | null"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 5,
+                    "jsdoctags": [
+                        {
+                            "name": "control",
+                            "type": "FormControl | null",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "form",
+                            "type": "FormGroupDirective | NgForm | null",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "indexSignatures": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "implements": [
+                "ErrorStateMatcher"
+            ],
+            "isDuplicate": true,
+            "duplicateId": 1,
+            "duplicateName": "CustomErrorStateMatcher-1"
         }
     ],
     "directives": [],
@@ -3021,6 +3075,82 @@
             ],
             "stylesData": "",
             "templateData": "<mat-form-field class=\"p-daterange p-datepicker p-input-text\"\r\n                appearance=\"standard\">\r\n  <mat-date-range-input [rangePicker]=\"picker\"\r\n                        class=\"p-input-text-input\"\r\n                        [class.filled]=\"isFilled\">\r\n    <input matStartDate\r\n           attr.aria-label=\"Start date\"\r\n           autocomplete=\"off\"\r\n           readonly\r\n           class=\"p-input-text-input-start\"\r\n           (click)=\"openDatepicker()\"\r\n           (focus)=\"openDatepicker()\">\r\n    <input matEndDate\r\n           #inputEndDate\r\n           attr.aria-label=\"End date\"\r\n           autocomplete=\"off\"\r\n           readonly\r\n           class=\"p-input-text-input-end\"\r\n           (click)=\"openDatepicker()\"\r\n           (focus)=\"openDatepicker()\">\r\n  </mat-date-range-input>\r\n  <p-icon class=\"p-datepicker-icon\"\r\n          [class.shown]=\"isOpened\"\r\n          iconName=\"calendar\"\r\n          width=\"16\"\r\n          height=\"auto\"\r\n          (click)=\"openDatepicker()\">\r\n  </p-icon>\r\n  <mat-date-range-picker #picker\r\n                         (closed)=\"streamClosed()\"\r\n                         panelClass=\"p-datepicker-panel\">\r\n  </mat-date-range-picker>\r\n</mat-form-field>\r\n\r\n<!--<p class=\"p-datepicker-preview paragraph-2-link\">-->\r\n  <!--Tuesday, March 16, 2021-->\r\n<!--</p>-->\r\n"
+        },
+        {
+            "name": "EntityHeaderComponent",
+            "id": "component-EntityHeaderComponent-6d2359a57277c8455dbce618a69c5fc0",
+            "file": "projects/design-system-lib/src/lib/entity-header/entity-header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-entity-header",
+            "styleUrls": [
+                "./entity-header.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./entity-header.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "readonlyState",
+                    "defaultValue": "true",
+                    "line": 9,
+                    "type": "boolean"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "inputField",
+                    "type": "ElementRef",
+                    "optional": false,
+                    "description": "",
+                    "line": 10,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'inputField'"
+                        }
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "onInputBlur",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17
+                },
+                {
+                    "name": "onInputFocused",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, ElementRef, Input, ViewChild} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'p-entity-header',\r\n  templateUrl: './entity-header.component.html',\r\n  styleUrls: ['./entity-header.component.scss'],\r\n})\r\nexport class EntityHeaderComponent {\r\n  @Input() readonlyState: boolean = true;\r\n  @ViewChild('inputField') inputField: ElementRef;\r\n\r\n  onInputFocused(): void {\r\n    this.readonlyState = false;\r\n    this.inputField.nativeElement.select();\r\n  }\r\n\r\n  onInputBlur(): void {\r\n    this.readonlyState = true;\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n",
+                    "styleUrl": "./entity-header.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<!--<mat-form-field class=\"p-input-outline p-input-header\"-->\r\n                <!--appearance=\"outline\"-->\r\n                <!--[class.p-input-readonly]=\"readonlyState\"-->\r\n                <!--floatLabel=\"always\">-->\r\n\r\n  <!--<input matInput-->\r\n         <!--#inputField-->\r\n         <!--[type]=\"type\"-->\r\n         <!--[placeholder]=\"placeholder\"-->\r\n         <!--[readonly]=\"readonlyState\"-->\r\n         <!--attr.aria-label=\"{{ariaLabel}}\"-->\r\n         <!--[formControl]=\"formFieldControl\"-->\r\n         <!--[errorStateMatcher]=\"matcher\"-->\r\n         <!--autocomplete=\"off\"-->\r\n         <!--(focus)=\"onInputFocused()\"-->\r\n         <!--(blur)=\"onInputBlur()\"-->\r\n         <!--class=\"p-input-text-input\"-->\r\n         <!--[class.readonly]=\"readonlyState\">-->\r\n\r\n  <!--<p-icon class=\"p-input-outline-icon\"-->\r\n          <!--matSuffix-->\r\n          <!--iconName=\"edit-3\"-->\r\n          <!--width=\"18\"-->\r\n          <!--height=\"auto\">-->\r\n  <!--</p-icon>-->\r\n\r\n<!--</mat-form-field>-->\r\nentity\r\n"
         },
         {
             "name": "ExpansionPanelComponent",
@@ -6301,7 +6431,7 @@
                     }
                 }
             },
-            "templateData": "<div class=\"p-paginator\">\r\n  <p-button class=\"p-paginator-arrow first\"\r\n            [class.disabled]=\"!canMoveToPrevious\"\r\n            ariaLabel=\"Move to the first page\"\r\n            [disabled]=\"!canMoveToPrevious\"\r\n            iconBefore=\"first\"\r\n            iconBeforeWidth=\"10\"\r\n            iconBeforeHeight=\"10\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"firstPageClicked.emit()\"></p-button>\r\n  <p-button class=\"p-paginator-arrow prev\"\r\n            [class.disabled]=\"!canMoveToPrevious\"\r\n            ariaLabel=\"Move to the previous page\"\r\n            [disabled]=\"!canMoveToPrevious\"\r\n            iconBefore=\"chevron-left\"\r\n            iconBeforeWidth=\"17\"\r\n            iconBeforeStrokeWidth=\"2\"\r\n            [iconBeforeStrokeColor]=\"!canMoveToPrevious ? '#B3B3B3' : 'currentColor'\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"prevPageClicked.emit()\"></p-button>\r\n  <ul class=\"p-paginator-list\">\r\n    <li class=\"p-paginator-item\">\r\n      <p-button *ngIf=\"!lessBtnDisabled\"\r\n                class=\"p-paginator-page less\"\r\n                ariaLabel=\"Show other {{ step }} pages\"\r\n                iconBefore=\"more-horizontal\"\r\n                iconBeforeWidth=\"17\"\r\n                iconBeforeStrokeWidth=\"2\"\r\n                [iconBeforeStrokeColor]=\"!canMoveToNext ? '#B3B3B3' : 'currentColor'\"\r\n                [buttonType]=\"buttonType.IsIcon\"\r\n                (onClickTask)=\"definePagesList($event, false)\"></p-button>\r\n    </li>\r\n    <li class=\"p-paginator-item\" *ngFor=\"let pageNumber of pageList\">\r\n      <p-button class=\"p-paginator-page\"\r\n                [class.selected]=\"pageNumber === currentPage\"\r\n                [label]=\"pageNumber\"\r\n                [ariaLabel]=\"'Move to page ' + pageNumber\"\r\n                [buttonType]=\"buttonType.Tertiary\"\r\n                (click)=\"pageNumberClicked.emit()\"></p-button>\r\n    </li>\r\n    <li class=\"p-paginator-item\">\r\n      <p-button *ngIf=\"!moreBtnDisabled\"\r\n                class=\"p-paginator-page more\"\r\n                ariaLabel=\"Show other {{ step }} pages\"\r\n                iconBefore=\"more-horizontal\"\r\n                iconBeforeWidth=\"17\"\r\n                iconBeforeStrokeWidth=\"2\"\r\n                [buttonType]=\"buttonType.IsIcon\"\r\n                (onClickTask)=\"definePagesList($event, true)\"></p-button>\r\n    </li>\r\n  </ul>\r\n\r\n  <p-button class=\"p-paginator-arrow next\"\r\n            [class.disabled]=\"!canMoveToNext\"\r\n            ariaLabel=\"Move to the next page\"\r\n            [disabled]=\"!canMoveToNext\"\r\n            iconBefore=\"chevron-right\"\r\n            iconBeforeWidth=\"17\"\r\n            iconBeforeStrokeWidth=\"2\"\r\n            [iconBeforeStrokeColor]=\"!canMoveToNext ? '#B3B3B3' : 'currentColor'\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"nextPageClicked.emit()\"></p-button>\r\n  <p-button class=\"p-paginator-arrow last\"\r\n            [class.disabled]=\"!canMoveToNext\"\r\n            ariaLabel=\"Move to the last page\"\r\n            [disabled]=\"!canMoveToNext\"\r\n            iconBefore=\"last\"\r\n            iconBeforeWidth=\"10\"\r\n            iconBeforeHeight=\"10\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"lastPageClicked.emit()\"></p-button>\r\n\r\n  <p-menu-single-select class=\"p-paginator-select\"\r\n                        [menuList]=\"pageSizeOptions\"\r\n                        (onClickTask)=\"pageSizeChanged.emit($event)\">\r\n    <!--ng-content-->\r\n    <p-input-numeric class=\"p-paginator-input\"\r\n                     label=\"Items per page\"\r\n                     [value]=\"pageSize\"\r\n                     [size]=\"inputNumericSize.Small\"\r\n                     [labelLast]=\"true\"\r\n                     [notEditable]=\"true\"\r\n                     iconName=\"chevron-down\"></p-input-numeric>\r\n    <!-- -->\r\n  </p-menu-single-select>\r\n\r\n  <span class=\"p-paginator-counter paragraph-2-default\">\r\n    {{totalSelected}} selected\r\n  </span>\r\n\r\n  <span class=\"p-paginator-items paragraph-2-default\">\r\n    {{firstItemShown}}-{{firstItemShown + pageSize - 1}} of {{totalItems}} items\r\n  </span>\r\n\r\n  <p-button class=\"p-paginator-refresh\"\r\n            ariaLabel=\"Refresh\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            iconBefore=\"refresh-cw\"\r\n            iconBeforeStrokeColor=\"#4132C8\"\r\n            iconBeforeWidth=\"16\"\r\n            [matTooltip]=\"Refresh\"\r\n            matTooltipPosition=\"above\"\r\n            matTooltipClass=\"p-tooltip above></p-button>\r\n</div>\r\n"
+            "templateData": "<div class=\"p-paginator\">\r\n  <p-button class=\"p-paginator-arrow first\"\r\n            [class.disabled]=\"!canMoveToPrevious\"\r\n            ariaLabel=\"Move to the first page\"\r\n            [disabled]=\"!canMoveToPrevious\"\r\n            iconBefore=\"first\"\r\n            iconBeforeWidth=\"10\"\r\n            iconBeforeHeight=\"10\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"firstPageClicked.emit()\"></p-button>\r\n  <p-button class=\"p-paginator-arrow prev\"\r\n            [class.disabled]=\"!canMoveToPrevious\"\r\n            ariaLabel=\"Move to the previous page\"\r\n            [disabled]=\"!canMoveToPrevious\"\r\n            iconBefore=\"chevron-left\"\r\n            iconBeforeWidth=\"17\"\r\n            iconBeforeStrokeWidth=\"2\"\r\n            [iconBeforeStrokeColor]=\"!canMoveToPrevious ? '#B3B3B3' : 'currentColor'\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"prevPageClicked.emit()\"></p-button>\r\n  <ul class=\"p-paginator-list\">\r\n    <li class=\"p-paginator-item\">\r\n      <p-button *ngIf=\"!lessBtnDisabled\"\r\n                class=\"p-paginator-page less\"\r\n                ariaLabel=\"Show other {{ step }} pages\"\r\n                iconBefore=\"more-horizontal\"\r\n                iconBeforeWidth=\"17\"\r\n                iconBeforeStrokeWidth=\"2\"\r\n                [iconBeforeStrokeColor]=\"!canMoveToNext ? '#B3B3B3' : 'currentColor'\"\r\n                [buttonType]=\"buttonType.IsIcon\"\r\n                (onClickTask)=\"definePagesList($event, false)\"></p-button>\r\n    </li>\r\n    <li class=\"p-paginator-item\" *ngFor=\"let pageNumber of pageList\">\r\n      <p-button class=\"p-paginator-page\"\r\n                [class.selected]=\"pageNumber === currentPage\"\r\n                [label]=\"pageNumber\"\r\n                [ariaLabel]=\"'Move to page ' + pageNumber\"\r\n                [buttonType]=\"buttonType.Tertiary\"\r\n                (click)=\"pageNumberClicked.emit()\"></p-button>\r\n    </li>\r\n    <li class=\"p-paginator-item\">\r\n      <p-button *ngIf=\"!moreBtnDisabled\"\r\n                class=\"p-paginator-page more\"\r\n                ariaLabel=\"Show other {{ step }} pages\"\r\n                iconBefore=\"more-horizontal\"\r\n                iconBeforeWidth=\"17\"\r\n                iconBeforeStrokeWidth=\"2\"\r\n                [buttonType]=\"buttonType.IsIcon\"\r\n                (onClickTask)=\"definePagesList($event, true)\"></p-button>\r\n    </li>\r\n  </ul>\r\n\r\n  <p-button class=\"p-paginator-arrow next\"\r\n            [class.disabled]=\"!canMoveToNext\"\r\n            ariaLabel=\"Move to the next page\"\r\n            [disabled]=\"!canMoveToNext\"\r\n            iconBefore=\"chevron-right\"\r\n            iconBeforeWidth=\"17\"\r\n            iconBeforeStrokeWidth=\"2\"\r\n            [iconBeforeStrokeColor]=\"!canMoveToNext ? '#B3B3B3' : 'currentColor'\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"nextPageClicked.emit()\"></p-button>\r\n  <p-button class=\"p-paginator-arrow last\"\r\n            [class.disabled]=\"!canMoveToNext\"\r\n            ariaLabel=\"Move to the last page\"\r\n            [disabled]=\"!canMoveToNext\"\r\n            iconBefore=\"last\"\r\n            iconBeforeWidth=\"10\"\r\n            iconBeforeHeight=\"10\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"lastPageClicked.emit()\"></p-button>\r\n\r\n  <p-menu-single-select class=\"p-paginator-select\"\r\n                        [menuList]=\"pageSizeOptions\"\r\n                        (onClickTask)=\"pageSizeChanged.emit($event)\">\r\n    <!--ng-content-->\r\n    <p-input-numeric class=\"p-paginator-input\"\r\n                     label=\"Items per page\"\r\n                     [value]=\"pageSize\"\r\n                     [size]=\"inputNumericSize.Small\"\r\n                     [labelLast]=\"true\"\r\n                     [notEditable]=\"true\"\r\n                     iconName=\"chevron-down\"></p-input-numeric>\r\n    <!-- -->\r\n  </p-menu-single-select>\r\n\r\n  <span class=\"p-paginator-counter paragraph-2-default\">\r\n    {{totalSelected}} selected\r\n  </span>\r\n\r\n  <span class=\"p-paginator-items paragraph-2-default\">\r\n    {{firstItemShown}}-{{firstItemShown + pageSize - 1}} of {{totalItems}} items\r\n  </span>\r\n\r\n  <p-button class=\"p-paginator-refresh\"\r\n            ariaLabel=\"Refresh\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            iconBefore=\"refresh-cw\"\r\n            iconBeforeStrokeColor=\"#4132C8\"\r\n            iconBeforeWidth=\"16\"\r\n            matTooltip=\"Refresh\"\r\n            matTooltipPosition=\"above\"\r\n            matTooltipClass=\"p-tooltip above\"></p-button>\r\n</div>\r\n"
         },
         {
             "name": "ProgressBarComponent",
@@ -7966,6 +8096,50 @@
             ]
         },
         {
+            "name": "EntityHeaderModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "EntityHeaderComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "ButtonModule"
+                        },
+                        {
+                            "name": "InputModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "EntityHeaderComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "ExpansionPanelModule",
             "children": [
                 {
@@ -8801,9 +8975,9 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
-                "type": "Story<CheckboxPageComponent>",
-                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
+                "type": "Story<CheckboxGroupComponent>",
+                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -8817,9 +8991,9 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
-                "type": "Story<CheckboxGroupComponent>",
-                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "Story<CheckboxPageComponent>",
+                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -8903,17 +9077,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/styles/typography-styles.stories.ts",
-                "type": "Story<TypographyStylesComponent>",
-                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
+                "type": "Story<TypographyFontFamilyComponent>",
+                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/typography/font-family/typography-font-family.stories.ts",
-                "type": "Story<TypographyFontFamilyComponent>",
-                "defaultValue": "(args: TypographyFontFamilyComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/typography/styles/typography-styles.stories.ts",
+                "type": "Story<TypographyStylesComponent>",
+                "defaultValue": "(args: TypographyStylesComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Toggles",
@@ -9880,6 +10054,15 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/design-system-lib/src/lib/entity-header/entity-header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "EntityHeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/design-system-lib/src/lib/expansion-panel/expansion-panel.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -10586,6 +10769,15 @@
                 "name": "palette",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/entity-header/custom-error-state-matcher.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "CustomErrorStateMatcher",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {

@@ -1,0 +1,73 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+import {EntityHeaderComponent} from 'projects/design-system-lib/src/public-api';
+import {EntityHeaderModule} from 'projects/design-system-lib/src/public-api';
+import {Validators} from '@angular/forms';
+import {CustomErrorStateMatcher} from './custom-error-state-matcher'
+
+<Meta title='Components/Entity Header'
+  component={EntityHeaderComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [EntityHeaderModule]
+    })
+  ]}
+  args={{
+    entity: {
+      type: 'Entity',
+      id: 12345,
+      name: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam',
+      validators: Validators.required
+    }
+  }}
+/>
+
+export const Template = (args) => <EntityHeaderComponent {...args} />
+
+# Entity Header
+
+###### Selector
+
+```html
+  <p-entity-header></p-entity-header>
+```
+
+###### Default
+<Canvas>
+  <Story name="Default"
+    args={{
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Not Editable
+<Canvas>
+  <Story name="Not Editable"
+    args={{
+      notEditable: true
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+###### Component
+```ts
+export class EntityHeaderComponent {
+  @Input() entity: IEntity;
+  @Input() notEditable: boolean = false;
+  public buttonType = ButtonTypeEnum;
+}
+```
+###### IEntity
+```ts
+export interface IEntity {
+  name?: string;
+  validators?: ValidatorFn[];
+  matcher?: ErrorStateMatcher;
+  readonlyState?: boolean;
+}
+```
+
+
