@@ -5,19 +5,32 @@
     width: 100%;
     transform: translateY(-30px);
   }
+
+  &.mat-form-field-appearance-outline .mat-form-field-suffix {
+    top: 0;
+  }
+
   .mat-form-field-label-wrapper {
     top: -16px;
     padding-top: 16px;
   }
+
   &.mat-form-field.mat-focused .mat-form-field-label,
   &.mat-form-field.mat-form-field-invalid .mat-form-field-label {
     color: $gray-scale-700;
   }
+
   &-button {
     @include resetButton;
-    width: 20px;
-    height: 20px;
-    margin-right: 3px;
+    width: $input-text-height - 2px;
+    height: $input-text-height - 2px;
+    margin-right: 1px;
+
+    &:hover {
+      color: $secondary-a-700;
+      background-color: $primary-c-50;
+    }
+
     .mat-form-field-disabled &,
     .p-input-readonly & {
       display: none;

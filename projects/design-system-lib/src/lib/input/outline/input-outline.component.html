@@ -24,19 +24,21 @@
     <p-icon class="p-input-outline-icon-clear"
             iconName="x"
             width="16"
-            height="auto"
-            stroke="#B3B3B3">
+            height="auto">
     </p-icon>
   </button>
 
-  <p-icon *ngIf="isSearch && !formFieldControl.value"
-          class="p-input-outline-icon"
+  <button *ngIf="isSearch && !formFieldControl.value"
           matSuffix
-          iconName="search"
-          width="16"
-          height="auto"
-          stroke="#B3B3B3">
-  </p-icon>
+          aria-label="Search"
+          class="p-input-outline-button"
+          (click)="searchValue()">
+    <p-icon class="p-input-outline-icon-search"
+            iconName="search"
+            width="16"
+            height="auto">
+    </p-icon>
+  </button>
 
   <p-icon *ngIf="iconName && !isSearch"
           class="p-input-outline-icon"
