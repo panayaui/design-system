@@ -469,6 +469,53 @@
             "methods": []
         },
         {
+            "name": "IEntity",
+            "id": "interface-IEntity-2682c6a5d2913343651d95882fdf1217",
+            "file": "projects/design-system-lib/src/lib/entity-header/entity.interface.ts",
+            "type": "interface",
+            "sourceCode": "import {ValidatorFn} from '@angular/forms';\r\nimport {ErrorStateMatcher} from '@angular/material/core';\r\nimport {EntityTypeEnum} from './entity-type.enum';\r\n\r\nexport interface IEntity {\r\n  type: EntityTypeEnum;\r\n  id: number;\r\n  entityName?: string;\r\n  validators?: ValidatorFn[];\r\n  matcher?: ErrorStateMatcher;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "entityName",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 8
+                },
+                {
+                    "name": "id",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                },
+                {
+                    "name": "matcher",
+                    "type": "ErrorStateMatcher",
+                    "optional": true,
+                    "description": "",
+                    "line": 10
+                },
+                {
+                    "name": "type",
+                    "type": "EntityTypeEnum",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "validators",
+                    "type": "ValidatorFn[]",
+                    "optional": true,
+                    "description": "",
+                    "line": 9
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
             "name": "IExpansionPanel",
             "id": "interface-IExpansionPanel-efc27f797265662ce742c5bee2d5f881",
             "file": "projects/design-system-lib/src/lib/expansion-panel/expansion-panel.interface.ts",
@@ -1316,6 +1363,255 @@
             "isDuplicate": true,
             "duplicateId": 1,
             "duplicateName": "CustomErrorStateMatcher-1"
+        },
+        {
+            "name": "EntityTypeEnum",
+            "id": "class-EntityTypeEnum-e17d0583c3c878d48a82eea9e534d795",
+            "file": "projects/design-system-lib/src/lib/entity-header/entity-type.enum.ts",
+            "type": "class",
+            "sourceCode": "export class EntityTypeEnum {\r\n  static readonly DEFECT = new EntityTypeEnum('DEFECT', { name: 'defect', iconName: 'chrome', editable: true } );\r\n  static readonly FEATURE = new EntityTypeEnum('FEATURE', { name: 'feature', iconName: 'compass', editable: true } );\r\n  static readonly REQUIREMENT = new EntityTypeEnum('REQUIREMENT', { name: 'requirement', iconName: 'clipboard', editable: true } );\r\n  static readonly WORKSTREAM = new EntityTypeEnum('WORKSTREAM', { name: 'workstream', iconName: 'clock', editable: true } );\r\n  static readonly ANALYSIS = new EntityTypeEnum('ANALYSIS', { name: 'analysis', iconName: 'cloud-drizzle', editable: true } );\r\n  static readonly USERSTORY = new EntityTypeEnum('USERSTORY', { name: 'user story', iconName: 'cloud-off', editable: true } );\r\n  static readonly TASK = new EntityTypeEnum('TASK', { name: 'task', iconName: 'cloud-lightning', editable: true } );\r\n  static readonly CORRECTION = new EntityTypeEnum('CORRECTION', { name: 'correction', iconName: 'cloud-rain', editable: true } );\r\n  static readonly TEST = new EntityTypeEnum('TEST', { name: 'test', iconName: 'cloud-snow', editable: true } );\r\n  static readonly QUICKTEST = new EntityTypeEnum('QUICKTEST', { name: 'quick test', iconName: 'coffee', editable: true } );\r\n  static readonly AUTOMATEDTEST = new EntityTypeEnum('AUTOMATEDTEST', { name: 'automated test', iconName: 'command', editable: true } );\r\n  static readonly PROJECT = new EntityTypeEnum('PROJECT', { name: 'project', iconName: 'copy', editable: false } );\r\n  static readonly CYCLE = new EntityTypeEnum('CYCLE', { name: 'cycle', iconName: 'cpu', editable: false } );\r\n  static readonly FOLDER = new EntityTypeEnum('FOLDER', { name: 'folder', iconName: 'credit-card', editable: false } );\r\n  static readonly BUSINESSPROCESS = new EntityTypeEnum('BUSINESSPROCESS', { name: 'business process', iconName: 'crosshair', editable: false } );\r\n\r\n  private constructor( private readonly key: string,\r\n                       public readonly value: { name: string, iconName: string, editable: boolean } ) {}\r\n\r\n  toString(): string {\r\n    return this.key;\r\n  }\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "key",
+                        "type": "string"
+                    },
+                    {
+                        "name": "value",
+                        "type": "literal type"
+                    }
+                ],
+                "line": 16,
+                "modifierKind": [
+                    112
+                ],
+                "jsdoctags": [
+                    {
+                        "name": "key",
+                        "type": "string",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "value",
+                        "type": "literal type",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "properties": [
+                {
+                    "name": "ANALYSIS",
+                    "defaultValue": "new EntityTypeEnum('ANALYSIS', { name: 'analysis', iconName: 'cloud-drizzle', editable: true } )",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 6,
+                    "modifierKind": [
+                        115,
+                        132
+                    ]
+                },
+                {
+                    "name": "AUTOMATEDTEST",
+                    "defaultValue": "new EntityTypeEnum('AUTOMATEDTEST', { name: 'automated test', iconName: 'command', editable: true } )",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        115,
+                        132
+                    ]
+                },
+                {
+                    "name": "BUSINESSPROCESS",
+                    "defaultValue": "new EntityTypeEnum('BUSINESSPROCESS', { name: 'business process', iconName: 'crosshair', editable: false } )",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "modifierKind": [
+                        115,
+                        132
+                    ]
+                },
+                {
+                    "name": "CORRECTION",
+                    "defaultValue": "new EntityTypeEnum('CORRECTION', { name: 'correction', iconName: 'cloud-rain', editable: true } )",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 9,
+                    "modifierKind": [
+                        115,
+                        132
+                    ]
+                },
+                {
+                    "name": "CYCLE",
+                    "defaultValue": "new EntityTypeEnum('CYCLE', { name: 'cycle', iconName: 'cpu', editable: false } )",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "modifierKind": [
+                        115,
+                        132
+                    ]
+                },
+                {
+                    "name": "DEFECT",
+                    "defaultValue": "new EntityTypeEnum('DEFECT', { name: 'defect', iconName: 'chrome', editable: true } )",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 2,
+                    "modifierKind": [
+                        115,
+                        132
+                    ]
+                },
+                {
+                    "name": "FEATURE",
+                    "defaultValue": "new EntityTypeEnum('FEATURE', { name: 'feature', iconName: 'compass', editable: true } )",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 3,
+                    "modifierKind": [
+                        115,
+                        132
+                    ]
+                },
+                {
+                    "name": "FOLDER",
+                    "defaultValue": "new EntityTypeEnum('FOLDER', { name: 'folder', iconName: 'credit-card', editable: false } )",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "modifierKind": [
+                        115,
+                        132
+                    ]
+                },
+                {
+                    "name": "PROJECT",
+                    "defaultValue": "new EntityTypeEnum('PROJECT', { name: 'project', iconName: 'copy', editable: false } )",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "modifierKind": [
+                        115,
+                        132
+                    ]
+                },
+                {
+                    "name": "QUICKTEST",
+                    "defaultValue": "new EntityTypeEnum('QUICKTEST', { name: 'quick test', iconName: 'coffee', editable: true } )",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11,
+                    "modifierKind": [
+                        115,
+                        132
+                    ]
+                },
+                {
+                    "name": "REQUIREMENT",
+                    "defaultValue": "new EntityTypeEnum('REQUIREMENT', { name: 'requirement', iconName: 'clipboard', editable: true } )",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 4,
+                    "modifierKind": [
+                        115,
+                        132
+                    ]
+                },
+                {
+                    "name": "TASK",
+                    "defaultValue": "new EntityTypeEnum('TASK', { name: 'task', iconName: 'cloud-lightning', editable: true } )",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 8,
+                    "modifierKind": [
+                        115,
+                        132
+                    ]
+                },
+                {
+                    "name": "TEST",
+                    "defaultValue": "new EntityTypeEnum('TEST', { name: 'test', iconName: 'cloud-snow', editable: true } )",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 10,
+                    "modifierKind": [
+                        115,
+                        132
+                    ]
+                },
+                {
+                    "name": "USERSTORY",
+                    "defaultValue": "new EntityTypeEnum('USERSTORY', { name: 'user story', iconName: 'cloud-off', editable: true } )",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 7,
+                    "modifierKind": [
+                        115,
+                        132
+                    ]
+                },
+                {
+                    "name": "value",
+                    "type": "literal type",
+                    "optional": false,
+                    "description": "",
+                    "line": 19,
+                    "modifierKind": [
+                        114,
+                        132
+                    ]
+                },
+                {
+                    "name": "WORKSTREAM",
+                    "defaultValue": "new EntityTypeEnum('WORKSTREAM', { name: 'workstream', iconName: 'clock', editable: true } )",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 5,
+                    "modifierKind": [
+                        115,
+                        132
+                    ]
+                }
+            ],
+            "methods": [
+                {
+                    "name": "toString",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 21
+                }
+            ],
+            "indexSignatures": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
         }
     ],
     "directives": [],
@@ -3078,7 +3374,7 @@
         },
         {
             "name": "EntityHeaderComponent",
-            "id": "component-EntityHeaderComponent-6d2359a57277c8455dbce618a69c5fc0",
+            "id": "component-EntityHeaderComponent-6b3aac39f2e73907ba58c81aa97d1ecb",
             "file": "projects/design-system-lib/src/lib/entity-header/entity-header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3096,61 +3392,41 @@
             "viewProviders": [],
             "inputsClass": [
                 {
-                    "name": "readonlyState",
-                    "defaultValue": "true",
-                    "line": 9,
-                    "type": "boolean"
+                    "name": "entity",
+                    "line": 11,
+                    "type": "IEntity"
                 }
             ],
             "outputsClass": [],
             "propertiesClass": [
                 {
-                    "name": "inputField",
-                    "type": "ElementRef",
+                    "name": "buttonType",
+                    "defaultValue": "ButtonTypeEnum",
+                    "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 10,
-                    "decorators": [
-                        {
-                            "name": "ViewChild",
-                            "stringifiedArguments": "'inputField'"
-                        }
+                    "line": 12,
+                    "modifierKind": [
+                        114
                     ]
                 }
             ],
-            "methodsClass": [
-                {
-                    "name": "onInputBlur",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 17
-                },
-                {
-                    "name": "onInputFocused",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 12
-                }
-            ],
+            "methodsClass": [],
             "hostBindings": [],
             "hostListeners": [],
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, ElementRef, Input, ViewChild} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'p-entity-header',\r\n  templateUrl: './entity-header.component.html',\r\n  styleUrls: ['./entity-header.component.scss'],\r\n})\r\nexport class EntityHeaderComponent {\r\n  @Input() readonlyState: boolean = true;\r\n  @ViewChild('inputField') inputField: ElementRef;\r\n\r\n  onInputFocused(): void {\r\n    this.readonlyState = false;\r\n    this.inputField.nativeElement.select();\r\n  }\r\n\r\n  onInputBlur(): void {\r\n    this.readonlyState = true;\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {IEntity} from './entity.interface';\r\nimport {ButtonTypeEnum} from '../button/button-type.enum';\r\n\r\n@Component({\r\n  selector: 'p-entity-header',\r\n  templateUrl: './entity-header.component.html',\r\n  styleUrls: ['./entity-header.component.scss'],\r\n})\r\nexport class EntityHeaderComponent {\r\n  @Input() entity: IEntity;\r\n  public buttonType = ButtonTypeEnum;\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n.p-entity-header {\r\n  display: flex;\r\n  align-items: center;\r\n\r\n  &-back:hover {\r\n    background-color: $primary-c-50;\r\n  }\r\n\r\n  &-icon {\r\n\r\n  }\r\n\r\n  &-title {\r\n    display: flex;\r\n    align-items: center;\r\n    flex: 1 1;\r\n    margin-left: $gap-small;\r\n  }\r\n\r\n  &-input {\r\n    display: flex;\r\n    align-items: center;\r\n    flex: 1 1;\r\n    &:before {\r\n      content: '';\r\n      display: block;\r\n      width: 1.5px;\r\n      height: 13px;\r\n      margin-left: $gap-double;\r\n      margin-right: $gap-base;\r\n      background-color: currentColor;\r\n    }\r\n  }\r\n\r\n  &-text {\r\n    letter-spacing: 0;\r\n    text-transform: none;\r\n    margin-left: 12px;\r\n  }\r\n\r\n\r\n}\r\n",
                     "styleUrl": "./entity-header.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<!--<mat-form-field class=\"p-input-outline p-input-header\"-->\r\n                <!--appearance=\"outline\"-->\r\n                <!--[class.p-input-readonly]=\"readonlyState\"-->\r\n                <!--floatLabel=\"always\">-->\r\n\r\n  <!--<input matInput-->\r\n         <!--#inputField-->\r\n         <!--[type]=\"type\"-->\r\n         <!--[placeholder]=\"placeholder\"-->\r\n         <!--[readonly]=\"readonlyState\"-->\r\n         <!--attr.aria-label=\"{{ariaLabel}}\"-->\r\n         <!--[formControl]=\"formFieldControl\"-->\r\n         <!--[errorStateMatcher]=\"matcher\"-->\r\n         <!--autocomplete=\"off\"-->\r\n         <!--(focus)=\"onInputFocused()\"-->\r\n         <!--(blur)=\"onInputBlur()\"-->\r\n         <!--class=\"p-input-text-input\"-->\r\n         <!--[class.readonly]=\"readonlyState\">-->\r\n\r\n  <!--<p-icon class=\"p-input-outline-icon\"-->\r\n          <!--matSuffix-->\r\n          <!--iconName=\"edit-3\"-->\r\n          <!--width=\"18\"-->\r\n          <!--height=\"auto\">-->\r\n  <!--</p-icon>-->\r\n\r\n<!--</mat-form-field>-->\r\nentity\r\n"
+            "templateData": "<div class=\"p-entity-header\">\r\n  <p-button *ngIf=\"entity.type.value.editable\"\r\n            class=\"p-entity-header-back\"\r\n            ariaLabel=\"Back to listBack to list\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            iconBefore=\"chevron-left\"\r\n            iconBeforeWidth=\"16\"\r\n            matTooltip=\"Back to list\"\r\n            matTooltipPosition=\"above\"\r\n            matTooltipClass=\"p-tooltip above\"></p-button>\r\n\r\n  <p-icon class=\"p-entity-header-icon\"\r\n          [iconName]=\"entity.type.value.iconName\"\r\n          width=\"18\"\r\n          height=\"18\"></p-icon>\r\n\r\n  <h1 class=\"p-entity-header-title headline-1-bold\">\r\n    {{ entity.type.value.name }}\r\n    {{ entity.id }}\r\n\r\n    <ng-template [ngIf]=\"entity.type.value.editable\" [ngIfElse]=\"notEditableTitle\">\r\n      <p-input-header class=\"p-entity-header-input\"\r\n                      ariaLabel=\"Entity name\"\r\n                      placeholder=\"Add entity name\"\r\n                      [value]=\"entity.entityName\"\r\n                      [validators]=\"entity.validators\"\r\n                      [matcher]=\"entity.matcher\"></p-input-header>\r\n    </ng-template>\r\n\r\n    <ng-template #notEditableTitle>\r\n      <span class=\"p-entity-header-text headline-1-sub-semibold\">{{entity.entityName}}</span>\r\n    </ng-template>\r\n  </h1>\r\n</div>\r\n"
         },
         {
             "name": "ExpansionPanelComponent",
@@ -3808,7 +4084,7 @@
                 "line": 12
             },
             "extends": "InputOutlineComponent",
-            "templateData": "<mat-form-field class=\"p-input-outline p-input-header\"\r\n                appearance=\"outline\"\r\n                [class.p-input-readonly]=\"readonlyState\"\r\n                floatLabel=\"always\">\r\n\r\n  <input matInput\r\n         #inputField\r\n         [type]=\"type\"\r\n         [placeholder]=\"placeholder\"\r\n         [readonly]=\"readonlyState\"\r\n         attr.aria-label=\"{{ariaLabel}}\"\r\n         [formControl]=\"formFieldControl\"\r\n         [errorStateMatcher]=\"matcher\"\r\n         autocomplete=\"off\"\r\n         (focus)=\"onInputFocused()\"\r\n         (blur)=\"onInputBlur()\"\r\n         class=\"p-input-text-input\"\r\n         [class.readonly]=\"readonlyState\">\r\n\r\n  <p-icon class=\"p-input-outline-icon\"\r\n          matSuffix\r\n          iconName=\"edit-3\"\r\n          width=\"18\"\r\n          height=\"auto\">\r\n  </p-icon>\r\n\r\n</mat-form-field>\r\n"
+            "templateData": "<mat-form-field class=\"p-input-outline p-input-header\"\r\n                appearance=\"outline\"\r\n                [ngClass]=\"{'p-input-readonly' : readonlyState, 'no-error-message': !errorMessage}\"\r\n                floatLabel=\"always\">\r\n\r\n  <input matInput\r\n         #inputField\r\n         [type]=\"type\"\r\n         [placeholder]=\"placeholder\"\r\n         [readonly]=\"readonlyState\"\r\n         attr.aria-label=\"{{ariaLabel}}\"\r\n         [formControl]=\"formFieldControl\"\r\n         [errorStateMatcher]=\"matcher\"\r\n         autocomplete=\"off\"\r\n         (focus)=\"onInputFocused()\"\r\n         (blur)=\"onInputBlur()\"\r\n         class=\"p-input-text-input\"\r\n         [class.readonly]=\"readonlyState\">\r\n\r\n  <p-icon class=\"p-input-outline-icon\"\r\n          matSuffix\r\n          iconName=\"edit-3\"\r\n          width=\"18\"\r\n          height=\"auto\">\r\n  </p-icon>\r\n\r\n</mat-form-field>\r\n"
         },
         {
             "name": "InputLinkComponent",
@@ -8117,6 +8393,9 @@
                             "name": "ButtonModule"
                         },
                         {
+                            "name": "IconModule"
+                        },
+                        {
                             "name": "InputModule"
                         }
                     ]
@@ -8983,17 +9262,17 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
-                "type": "Story<CheckboxGroupPageComponent>",
-                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "Story<CheckboxPageComponent>",
+                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
-                "type": "Story<CheckboxPageComponent>",
-                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "Story<CheckboxGroupPageComponent>",
+                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -10059,7 +10338,25 @@
                 "linktype": "component",
                 "name": "EntityHeaderComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/entity-header/entity-type.enum.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "EntityTypeEnum",
+                "coveragePercent": 0,
+                "coverageCount": "0/19",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/entity-header/entity.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "IEntity",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
