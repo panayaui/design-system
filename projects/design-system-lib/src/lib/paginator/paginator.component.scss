@@ -66,10 +66,19 @@ $button-height: 32px;
 
   &-select {
     margin-left: $gap-double;
+    margin-right: auto;
     align-self: flex-end;
   }
 
   ::ng-deep .p-input-numeric .mat-form-field-infix {
     padding-left: $gap-small;
+  }
+
+  &-items {
+    margin-left: $gap-double;
+  }
+
+  &-refresh {
+    margin-left: $gap-double-plus;
   }
 }
