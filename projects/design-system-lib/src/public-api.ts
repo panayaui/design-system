@@ -111,3 +111,4 @@ export * from './lib/progress-chart/progress-chart.enum';
 export * from './lib/entity-header/entity-header.module';
 export * from './lib/entity-header/entity-header.component';
 export * from './lib/entity-header/entity.interface';
+export * from './lib/entity-header/entity-type.enum';

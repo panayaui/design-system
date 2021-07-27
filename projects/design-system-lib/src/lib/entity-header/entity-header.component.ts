@@ -9,6 +9,5 @@ import {ButtonTypeEnum} from '../button/button-type.enum';
 })
 export class EntityHeaderComponent {
   @Input() entity: IEntity;
-  @Input() notEditable: boolean = false;
   public buttonType = ButtonTypeEnum;
 }

@@ -1,5 +1,5 @@
 <div class="p-entity-header">
-  <p-button *ngIf="!notEditable"
+  <p-button *ngIf="entity.type.value.editable"
             class="p-entity-header-back"
             ariaLabel="Back to listBack to list"
             [buttonType]="buttonType.IsIcon"
@@ -10,28 +10,25 @@
             matTooltipClass="p-tooltip above"></p-button>
 
   <p-icon class="p-entity-header-icon"
-          [iconName]="'chrome'"
+          [iconName]="entity.type.value.iconName"
           width="18"
           height="18"></p-icon>
 
   <h1 class="p-entity-header-title headline-1-bold">
-    {{ entity.type }}
+    {{ entity.type.value.name }}
     {{ entity.id }}
 
-    <ng-template [ngIf]="!notEditable" [ngIfElse]="notEditableTitle">
+    <ng-template [ngIf]="entity.type.value.editable" [ngIfElse]="notEditableTitle">
       <p-input-header class="p-entity-header-input"
                       ariaLabel="Entity name"
                       placeholder="Add entity name"
-                      [value]="entity.name"
+                      [value]="entity.entityName"
                       [validators]="entity.validators"
-                      [matcher]="entity.matcher"
-                      [readonlyState]="entity.readonlyState"></p-input-header>
+                      [matcher]="entity.matcher"></p-input-header>
     </ng-template>
 
     <ng-template #notEditableTitle>
-      <span class="p-entity-header-text headline-1-sub-semibold">{{entity.name}}</span>
+      <span class="p-entity-header-text headline-1-sub-semibold">{{entity.entityName}}</span>
     </ng-template>
-
-
   </h1>
 </div>
