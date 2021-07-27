@@ -8,21 +8,16 @@ import {InputNumericSizeEnum} from '../input/numeric/input-numeric-size.enum';
   styleUrls: ['./paginator.component.scss'],
 })
 export class PaginatorComponent implements OnInit {
-  @Input()
-  currentPage = 1; // based 1
-
-  @Input()
-  totalPages: number;
-
-  @Input()
-  pageSizeOptions?: { name: any }[];
-
-  @Input()
-  pageSize = 100;
+  @Input() currentPage = 1; // based 1
+  @Input() totalPages: number;
+  @Input() pageSizeOptions?: { name: any }[];
+  @Input() pageSize = 100;
+  @Input() totalItems: number;
+  @Input() firstItemShown: number;
+  @Input() totalSelected: number;
 
   @Output()
   pageSizeChanged = new EventEmitter<number>();
-
   @Output()
   prevPageClicked = new EventEmitter();
   @Output()

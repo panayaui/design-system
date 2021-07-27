@@ -41,8 +41,11 @@ export class InputOutlineComponent implements OnInit, OnDestroy {
     }
   }
 
-
   clearValue(): void {
     this.formFieldControl.setValue('');
+  }
+
+  searchValue(): void {
+    console.log('search');
   }
 }

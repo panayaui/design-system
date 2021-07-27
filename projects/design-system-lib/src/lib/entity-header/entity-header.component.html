@@ -1,0 +1,34 @@
+<div class="p-entity-header">
+  <p-button *ngIf="entity.type.value.editable"
+            class="p-entity-header-back"
+            ariaLabel="Back to listBack to list"
+            [buttonType]="buttonType.IsIcon"
+            iconBefore="chevron-left"
+            iconBeforeWidth="16"
+            matTooltip="Back to list"
+            matTooltipPosition="above"
+            matTooltipClass="p-tooltip above"></p-button>
+
+  <p-icon class="p-entity-header-icon"
+          [iconName]="entity.type.value.iconName"
+          width="18"
+          height="18"></p-icon>
+
+  <h1 class="p-entity-header-title headline-1-bold">
+    {{ entity.type.value.name }}
+    {{ entity.id }}
+
+    <ng-template [ngIf]="entity.type.value.editable" [ngIfElse]="notEditableTitle">
+      <p-input-header class="p-entity-header-input"
+                      ariaLabel="Entity name"
+                      placeholder="Add entity name"
+                      [value]="entity.entityName"
+                      [validators]="entity.validators"
+                      [matcher]="entity.matcher"></p-input-header>
+    </ng-template>
+
+    <ng-template #notEditableTitle>
+      <span class="p-entity-header-text headline-1-sub-semibold">{{entity.entityName}}</span>
+    </ng-template>
+  </h1>
+</div>

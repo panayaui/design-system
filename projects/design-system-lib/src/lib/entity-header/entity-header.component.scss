@@ -1,0 +1,44 @@
+@import "../assets/styles/custom";
+
+.p-entity-header {
+  display: flex;
+  align-items: center;
+
+  &-back:hover {
+    background-color: $primary-c-50;
+  }
+
+  &-icon {
+
+  }
+
+  &-title {
+    display: flex;
+    align-items: center;
+    flex: 1 1;
+    margin-left: $gap-small;
+  }
+
+  &-input {
+    display: flex;
+    align-items: center;
+    flex: 1 1;
+    &:before {
+      content: '';
+      display: block;
+      width: 1.5px;
+      height: 13px;
+      margin-left: $gap-double;
+      margin-right: $gap-base;
+      background-color: currentColor;
+    }
+  }
+
+  &-text {
+    letter-spacing: 0;
+    text-transform: none;
+    margin-left: 12px;
+  }
+
+
+}

@@ -1,0 +1,172 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+import {EntityHeaderComponent} from 'projects/design-system-lib/src/public-api';
+import {EntityHeaderModule} from 'projects/design-system-lib/src/public-api';
+import {EntityTypeEnum} from 'projects/design-system-lib/src/public-api';
+import {Validators} from '@angular/forms';
+import {CustomErrorStateMatcher} from './custom-error-state-matcher';
+
+<Meta title='Components/Entity Header'
+  component={EntityHeaderComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [EntityHeaderModule]
+    })
+  ]}
+  args={{
+    entity: {
+      type: EntityTypeEnum.DEFECT,
+      id: 12345,
+      entityName: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam',
+      validators: Validators.required
+    }
+  }}
+/>
+
+export const Template = (args) => <EntityHeaderComponent {...args} />
+
+# Entity Header
+
+###### Selector
+
+```html
+  <p-entity-header></p-entity-header>
+```
+
+###### Default
+<Canvas>
+  <Story name="Defect"
+    args={{
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Feature"
+    args={{
+      entity: {
+        type: EntityTypeEnum.FEATURE,
+        id: 12345,
+        entityName: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam',
+        validators: Validators.required
+      }
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Userstory"
+    args={{
+      entity: {
+        type: EntityTypeEnum.USERSTORY,
+        id: 12345,
+        entityName: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam',
+        validators: Validators.required
+      }
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Task"
+    args={{
+      entity: {
+        type: EntityTypeEnum.TASK,
+        id: 12345,
+        entityName: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam',
+        validators: Validators.required
+      }
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Not Editable
+<Canvas>
+  <Story name="Project"
+    args={{
+      entity: {
+        type: EntityTypeEnum.PROJECT,
+        id: 12345,
+        entityName: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam',
+        validators: Validators.required
+      }
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Cycle"
+    args={{
+      entity: {
+        type: EntityTypeEnum.CYCLE,
+        id: 12345,
+        entityName: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam',
+        validators: Validators.required
+      }
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Folder"
+    args={{
+      entity: {
+        type: EntityTypeEnum.FOLDER,
+        id: 12345,
+        entityName: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam',
+        validators: Validators.required
+      }
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Business Process"
+    args={{
+      entity: {
+        type: EntityTypeEnum.BUSINESSPROCESS,
+        id: 12345,
+        entityName: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam',
+        validators: Validators.required
+      }
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+###### Component
+```ts
+export class EntityHeaderComponent {
+  @Input() entity: IEntity;
+  public buttonType = ButtonTypeEnum;
+}
+```
+###### IEntity
+```ts
+export interface IEntity {
+  type: EntityTypeEnum;
+  id: number;
+  entityName?: string;
+  validators?: ValidatorFn[];
+  matcher?: ErrorStateMatcher;
+}
+```
+###### EntityTypeEnum
+```ts
+export class EntityTypeEnum {
+  static readonly DEFECT = new EntityTypeEnum('DEFECT', { name: 'defect', iconName: 'chrome', editable: true } );
+  static readonly FEATURE = new EntityTypeEnum('FEATURE', { name: 'feature', iconName: 'compass', editable: true } );
+  static readonly REQUIREMENT = new EntityTypeEnum('REQUIREMENT', { name: 'requirement', iconName: 'clipboard', editable: true } );
+  static readonly WORKSTREAM = new EntityTypeEnum('WORKSTREAM', { name: 'workstream', iconName: 'clock', editable: true } );
+  static readonly ANALYSIS = new EntityTypeEnum('ANALYSIS', { name: 'analysis', iconName: 'cloud-drizzle', editable: true } );
+  static readonly USERSTORY = new EntityTypeEnum('USERSTORY', { name: 'user story', iconName: 'cloud-off', editable: true } );
+  static readonly TASK = new EntityTypeEnum('TASK', { name: 'task', iconName: 'cloud-lightning', editable: true } );
+  static readonly CORRECTION = new EntityTypeEnum('CORRECTION', { name: 'correction', iconName: 'cloud-rain', editable: true } );
+  static readonly TEST = new EntityTypeEnum('TEST', { name: 'test', iconName: 'cloud-snow', editable: true } );
+  static readonly QUICKTEST = new EntityTypeEnum('QUICKTEST', { name: 'quick test', iconName: 'coffee', editable: true } );
+  static readonly AUTOMATEDTEST = new EntityTypeEnum('AUTOMATEDTEST', { name: 'automated test', iconName: 'command', editable: true } );
+  static readonly PROJECT = new EntityTypeEnum('PROJECT', { name: 'project', iconName: 'copy', editable: false } );
+  static readonly CYCLE = new EntityTypeEnum('CYCLE', { name: 'cycle', iconName: 'cpu', editable: false } );
+  static readonly FOLDER = new EntityTypeEnum('FOLDER', { name: 'folder', iconName: 'credit-card', editable: false } );
+  static readonly BUSINESSPROCESS = new EntityTypeEnum('BUSINESSPROCESS', { name: 'business process', iconName: 'crosshair', editable: false } );
+
+  private constructor( private readonly key: string,
+                       public readonly value: { name: string, iconName: string, editable: boolean } ) {}
+
+  toString(): string {
+    return this.key;
+  }
+}
+```
+
+

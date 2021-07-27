@@ -469,6 +469,53 @@
             "methods": []
         },
         {
+            "name": "IEntity",
+            "id": "interface-IEntity-2682c6a5d2913343651d95882fdf1217",
+            "file": "projects/design-system-lib/src/lib/entity-header/entity.interface.ts",
+            "type": "interface",
+            "sourceCode": "import {ValidatorFn} from '@angular/forms';\r\nimport {ErrorStateMatcher} from '@angular/material/core';\r\nimport {EntityTypeEnum} from './entity-type.enum';\r\n\r\nexport interface IEntity {\r\n  type: EntityTypeEnum;\r\n  id: number;\r\n  entityName?: string;\r\n  validators?: ValidatorFn[];\r\n  matcher?: ErrorStateMatcher;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "entityName",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 8
+                },
+                {
+                    "name": "id",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                },
+                {
+                    "name": "matcher",
+                    "type": "ErrorStateMatcher",
+                    "optional": true,
+                    "description": "",
+                    "line": 10
+                },
+                {
+                    "name": "type",
+                    "type": "EntityTypeEnum",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "validators",
+                    "type": "ValidatorFn[]",
+                    "optional": true,
+                    "description": "",
+                    "line": 9
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
             "name": "IExpansionPanel",
             "id": "interface-IExpansionPanel-efc27f797265662ce742c5bee2d5f881",
             "file": "projects/design-system-lib/src/lib/expansion-panel/expansion-panel.interface.ts",
@@ -1215,7 +1262,7 @@
         {
             "name": "CustomErrorStateMatcher",
             "id": "class-CustomErrorStateMatcher-4dcb8b0672b9a3ec836d91e83906f144",
-            "file": "src/stories/input/custom-error-state-matcher.ts",
+            "file": "src/stories/entity-header/custom-error-state-matcher.ts",
             "type": "class",
             "sourceCode": "import {ErrorStateMatcher} from '@angular/material/core';\r\nimport {FormControl, FormGroupDirective, NgForm} from '@angular/forms';\r\n\r\nexport class CustomErrorStateMatcher implements ErrorStateMatcher {\r\n  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {\r\n    return true;\r\n  }\r\n}\r\n",
             "properties": [],
@@ -1262,6 +1309,309 @@
             "implements": [
                 "ErrorStateMatcher"
             ]
+        },
+        {
+            "name": "CustomErrorStateMatcher",
+            "id": "class-CustomErrorStateMatcher-4dcb8b0672b9a3ec836d91e83906f144-1",
+            "file": "src/stories/input/custom-error-state-matcher.ts",
+            "type": "class",
+            "sourceCode": "import {ErrorStateMatcher} from '@angular/material/core';\r\nimport {FormControl, FormGroupDirective, NgForm} from '@angular/forms';\r\n\r\nexport class CustomErrorStateMatcher implements ErrorStateMatcher {\r\n  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {\r\n    return true;\r\n  }\r\n}\r\n",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "isErrorState",
+                    "args": [
+                        {
+                            "name": "control",
+                            "type": "FormControl | null"
+                        },
+                        {
+                            "name": "form",
+                            "type": "FormGroupDirective | NgForm | null"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 5,
+                    "jsdoctags": [
+                        {
+                            "name": "control",
+                            "type": "FormControl | null",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "form",
+                            "type": "FormGroupDirective | NgForm | null",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "indexSignatures": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "implements": [
+                "ErrorStateMatcher"
+            ],
+            "isDuplicate": true,
+            "duplicateId": 1,
+            "duplicateName": "CustomErrorStateMatcher-1"
+        },
+        {
+            "name": "EntityTypeEnum",
+            "id": "class-EntityTypeEnum-e17d0583c3c878d48a82eea9e534d795",
+            "file": "projects/design-system-lib/src/lib/entity-header/entity-type.enum.ts",
+            "type": "class",
+            "sourceCode": "export class EntityTypeEnum {\r\n  static readonly DEFECT = new EntityTypeEnum('DEFECT', { name: 'defect', iconName: 'chrome', editable: true } );\r\n  static readonly FEATURE = new EntityTypeEnum('FEATURE', { name: 'feature', iconName: 'compass', editable: true } );\r\n  static readonly REQUIREMENT = new EntityTypeEnum('REQUIREMENT', { name: 'requirement', iconName: 'clipboard', editable: true } );\r\n  static readonly WORKSTREAM = new EntityTypeEnum('WORKSTREAM', { name: 'workstream', iconName: 'clock', editable: true } );\r\n  static readonly ANALYSIS = new EntityTypeEnum('ANALYSIS', { name: 'analysis', iconName: 'cloud-drizzle', editable: true } );\r\n  static readonly USERSTORY = new EntityTypeEnum('USERSTORY', { name: 'user story', iconName: 'cloud-off', editable: true } );\r\n  static readonly TASK = new EntityTypeEnum('TASK', { name: 'task', iconName: 'cloud-lightning', editable: true } );\r\n  static readonly CORRECTION = new EntityTypeEnum('CORRECTION', { name: 'correction', iconName: 'cloud-rain', editable: true } );\r\n  static readonly TEST = new EntityTypeEnum('TEST', { name: 'test', iconName: 'cloud-snow', editable: true } );\r\n  static readonly QUICKTEST = new EntityTypeEnum('QUICKTEST', { name: 'quick test', iconName: 'coffee', editable: true } );\r\n  static readonly AUTOMATEDTEST = new EntityTypeEnum('AUTOMATEDTEST', { name: 'automated test', iconName: 'command', editable: true } );\r\n  static readonly PROJECT = new EntityTypeEnum('PROJECT', { name: 'project', iconName: 'copy', editable: false } );\r\n  static readonly CYCLE = new EntityTypeEnum('CYCLE', { name: 'cycle', iconName: 'cpu', editable: false } );\r\n  static readonly FOLDER = new EntityTypeEnum('FOLDER', { name: 'folder', iconName: 'credit-card', editable: false } );\r\n  static readonly BUSINESSPROCESS = new EntityTypeEnum('BUSINESSPROCESS', { name: 'business process', iconName: 'crosshair', editable: false } );\r\n\r\n  private constructor( private readonly key: string,\r\n                       public readonly value: { name: string, iconName: string, editable: boolean } ) {}\r\n\r\n  toString(): string {\r\n    return this.key;\r\n  }\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "key",
+                        "type": "string"
+                    },
+                    {
+                        "name": "value",
+                        "type": "literal type"
+                    }
+                ],
+                "line": 16,
+                "modifierKind": [
+                    112
+                ],
+                "jsdoctags": [
+                    {
+                        "name": "key",
+                        "type": "string",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "value",
+                        "type": "literal type",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "properties": [
+                {
+                    "name": "ANALYSIS",
+                    "defaultValue": "new EntityTypeEnum('ANALYSIS', { name: 'analysis', iconName: 'cloud-drizzle', editable: true } )",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 6,
+                    "modifierKind": [
+                        115,
+                        132
+                    ]
+                },
+                {
+                    "name": "AUTOMATEDTEST",
+                    "defaultValue": "new EntityTypeEnum('AUTOMATEDTEST', { name: 'automated test', iconName: 'command', editable: true } )",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        115,
+                        132
+                    ]
+                },
+                {
+                    "name": "BUSINESSPROCESS",
+                    "defaultValue": "new EntityTypeEnum('BUSINESSPROCESS', { name: 'business process', iconName: 'crosshair', editable: false } )",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "modifierKind": [
+                        115,
+                        132
+                    ]
+                },
+                {
+                    "name": "CORRECTION",
+                    "defaultValue": "new EntityTypeEnum('CORRECTION', { name: 'correction', iconName: 'cloud-rain', editable: true } )",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 9,
+                    "modifierKind": [
+                        115,
+                        132
+                    ]
+                },
+                {
+                    "name": "CYCLE",
+                    "defaultValue": "new EntityTypeEnum('CYCLE', { name: 'cycle', iconName: 'cpu', editable: false } )",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "modifierKind": [
+                        115,
+                        132
+                    ]
+                },
+                {
+                    "name": "DEFECT",
+                    "defaultValue": "new EntityTypeEnum('DEFECT', { name: 'defect', iconName: 'chrome', editable: true } )",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 2,
+                    "modifierKind": [
+                        115,
+                        132
+                    ]
+                },
+                {
+                    "name": "FEATURE",
+                    "defaultValue": "new EntityTypeEnum('FEATURE', { name: 'feature', iconName: 'compass', editable: true } )",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 3,
+                    "modifierKind": [
+                        115,
+                        132
+                    ]
+                },
+                {
+                    "name": "FOLDER",
+                    "defaultValue": "new EntityTypeEnum('FOLDER', { name: 'folder', iconName: 'credit-card', editable: false } )",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "modifierKind": [
+                        115,
+                        132
+                    ]
+                },
+                {
+                    "name": "PROJECT",
+                    "defaultValue": "new EntityTypeEnum('PROJECT', { name: 'project', iconName: 'copy', editable: false } )",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "modifierKind": [
+                        115,
+                        132
+                    ]
+                },
+                {
+                    "name": "QUICKTEST",
+                    "defaultValue": "new EntityTypeEnum('QUICKTEST', { name: 'quick test', iconName: 'coffee', editable: true } )",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11,
+                    "modifierKind": [
+                        115,
+                        132
+                    ]
+                },
+                {
+                    "name": "REQUIREMENT",
+                    "defaultValue": "new EntityTypeEnum('REQUIREMENT', { name: 'requirement', iconName: 'clipboard', editable: true } )",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 4,
+                    "modifierKind": [
+                        115,
+                        132
+                    ]
+                },
+                {
+                    "name": "TASK",
+                    "defaultValue": "new EntityTypeEnum('TASK', { name: 'task', iconName: 'cloud-lightning', editable: true } )",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 8,
+                    "modifierKind": [
+                        115,
+                        132
+                    ]
+                },
+                {
+                    "name": "TEST",
+                    "defaultValue": "new EntityTypeEnum('TEST', { name: 'test', iconName: 'cloud-snow', editable: true } )",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 10,
+                    "modifierKind": [
+                        115,
+                        132
+                    ]
+                },
+                {
+                    "name": "USERSTORY",
+                    "defaultValue": "new EntityTypeEnum('USERSTORY', { name: 'user story', iconName: 'cloud-off', editable: true } )",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 7,
+                    "modifierKind": [
+                        115,
+                        132
+                    ]
+                },
+                {
+                    "name": "value",
+                    "type": "literal type",
+                    "optional": false,
+                    "description": "",
+                    "line": 19,
+                    "modifierKind": [
+                        114,
+                        132
+                    ]
+                },
+                {
+                    "name": "WORKSTREAM",
+                    "defaultValue": "new EntityTypeEnum('WORKSTREAM', { name: 'workstream', iconName: 'clock', editable: true } )",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 5,
+                    "modifierKind": [
+                        115,
+                        132
+                    ]
+                }
+            ],
+            "methods": [
+                {
+                    "name": "toString",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 21
+                }
+            ],
+            "indexSignatures": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
         }
     ],
     "directives": [],
@@ -3023,6 +3373,62 @@
             "templateData": "<mat-form-field class=\"p-daterange p-datepicker p-input-text\"\r\n                appearance=\"standard\">\r\n  <mat-date-range-input [rangePicker]=\"picker\"\r\n                        class=\"p-input-text-input\"\r\n                        [class.filled]=\"isFilled\">\r\n    <input matStartDate\r\n           attr.aria-label=\"Start date\"\r\n           autocomplete=\"off\"\r\n           readonly\r\n           class=\"p-input-text-input-start\"\r\n           (click)=\"openDatepicker()\"\r\n           (focus)=\"openDatepicker()\">\r\n    <input matEndDate\r\n           #inputEndDate\r\n           attr.aria-label=\"End date\"\r\n           autocomplete=\"off\"\r\n           readonly\r\n           class=\"p-input-text-input-end\"\r\n           (click)=\"openDatepicker()\"\r\n           (focus)=\"openDatepicker()\">\r\n  </mat-date-range-input>\r\n  <p-icon class=\"p-datepicker-icon\"\r\n          [class.shown]=\"isOpened\"\r\n          iconName=\"calendar\"\r\n          width=\"16\"\r\n          height=\"auto\"\r\n          (click)=\"openDatepicker()\">\r\n  </p-icon>\r\n  <mat-date-range-picker #picker\r\n                         (closed)=\"streamClosed()\"\r\n                         panelClass=\"p-datepicker-panel\">\r\n  </mat-date-range-picker>\r\n</mat-form-field>\r\n\r\n<!--<p class=\"p-datepicker-preview paragraph-2-link\">-->\r\n  <!--Tuesday, March 16, 2021-->\r\n<!--</p>-->\r\n"
         },
         {
+            "name": "EntityHeaderComponent",
+            "id": "component-EntityHeaderComponent-6b3aac39f2e73907ba58c81aa97d1ecb",
+            "file": "projects/design-system-lib/src/lib/entity-header/entity-header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-entity-header",
+            "styleUrls": [
+                "./entity-header.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./entity-header.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "entity",
+                    "line": 11,
+                    "type": "IEntity"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "buttonType",
+                    "defaultValue": "ButtonTypeEnum",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {IEntity} from './entity.interface';\r\nimport {ButtonTypeEnum} from '../button/button-type.enum';\r\n\r\n@Component({\r\n  selector: 'p-entity-header',\r\n  templateUrl: './entity-header.component.html',\r\n  styleUrls: ['./entity-header.component.scss'],\r\n})\r\nexport class EntityHeaderComponent {\r\n  @Input() entity: IEntity;\r\n  public buttonType = ButtonTypeEnum;\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n.p-entity-header {\r\n  display: flex;\r\n  align-items: center;\r\n\r\n  &-back:hover {\r\n    background-color: $primary-c-50;\r\n  }\r\n\r\n  &-icon {\r\n\r\n  }\r\n\r\n  &-title {\r\n    display: flex;\r\n    align-items: center;\r\n    flex: 1 1;\r\n    margin-left: $gap-small;\r\n  }\r\n\r\n  &-input {\r\n    display: flex;\r\n    align-items: center;\r\n    flex: 1 1;\r\n    &:before {\r\n      content: '';\r\n      display: block;\r\n      width: 1.5px;\r\n      height: 13px;\r\n      margin-left: $gap-double;\r\n      margin-right: $gap-base;\r\n      background-color: currentColor;\r\n    }\r\n  }\r\n\r\n  &-text {\r\n    letter-spacing: 0;\r\n    text-transform: none;\r\n    margin-left: 12px;\r\n  }\r\n\r\n\r\n}\r\n",
+                    "styleUrl": "./entity-header.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"p-entity-header\">\r\n  <p-button *ngIf=\"entity.type.value.editable\"\r\n            class=\"p-entity-header-back\"\r\n            ariaLabel=\"Back to listBack to list\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            iconBefore=\"chevron-left\"\r\n            iconBeforeWidth=\"16\"\r\n            matTooltip=\"Back to list\"\r\n            matTooltipPosition=\"above\"\r\n            matTooltipClass=\"p-tooltip above\"></p-button>\r\n\r\n  <p-icon class=\"p-entity-header-icon\"\r\n          [iconName]=\"entity.type.value.iconName\"\r\n          width=\"18\"\r\n          height=\"18\"></p-icon>\r\n\r\n  <h1 class=\"p-entity-header-title headline-1-bold\">\r\n    {{ entity.type.value.name }}\r\n    {{ entity.id }}\r\n\r\n    <ng-template [ngIf]=\"entity.type.value.editable\" [ngIfElse]=\"notEditableTitle\">\r\n      <p-input-header class=\"p-entity-header-input\"\r\n                      ariaLabel=\"Entity name\"\r\n                      placeholder=\"Add entity name\"\r\n                      [value]=\"entity.entityName\"\r\n                      [validators]=\"entity.validators\"\r\n                      [matcher]=\"entity.matcher\"></p-input-header>\r\n    </ng-template>\r\n\r\n    <ng-template #notEditableTitle>\r\n      <span class=\"p-entity-header-text headline-1-sub-semibold\">{{entity.entityName}}</span>\r\n    </ng-template>\r\n  </h1>\r\n</div>\r\n"
+        },
+        {
             "name": "ExpansionPanelComponent",
             "id": "component-ExpansionPanelComponent-7d63752fb32394183074b7d4f1ecf5ef",
             "file": "projects/design-system-lib/src/lib/expansion-panel/expansion-panel.component.ts",
@@ -3629,7 +4035,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 45,
+                    "line": 44,
                     "inheritance": {
                         "file": "InputOutlineComponent"
                     }
@@ -3652,6 +4058,17 @@
                     "returnType": "void",
                     "typeParameters": [],
                     "line": 28,
+                    "inheritance": {
+                        "file": "InputOutlineComponent"
+                    }
+                },
+                {
+                    "name": "searchValue",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 48,
                     "inheritance": {
                         "file": "InputOutlineComponent"
                     }
@@ -3678,7 +4095,7 @@
                 "line": 12
             },
             "extends": "InputOutlineComponent",
-            "templateData": "<mat-form-field class=\"p-input-outline p-input-header\"\r\n                appearance=\"outline\"\r\n                [class.p-input-readonly]=\"readonlyState\"\r\n                floatLabel=\"always\">\r\n\r\n  <input matInput\r\n         #inputField\r\n         [type]=\"type\"\r\n         [placeholder]=\"placeholder\"\r\n         [readonly]=\"readonlyState\"\r\n         attr.aria-label=\"{{ariaLabel}}\"\r\n         [formControl]=\"formFieldControl\"\r\n         [errorStateMatcher]=\"matcher\"\r\n         autocomplete=\"off\"\r\n         (focus)=\"onInputFocused()\"\r\n         (blur)=\"onInputBlur()\"\r\n         class=\"p-input-text-input\"\r\n         [class.readonly]=\"readonlyState\">\r\n\r\n  <p-icon class=\"p-input-outline-icon\"\r\n          matSuffix\r\n          iconName=\"edit-3\"\r\n          width=\"18\"\r\n          height=\"auto\">\r\n  </p-icon>\r\n\r\n</mat-form-field>\r\n"
+            "templateData": "<mat-form-field class=\"p-input-outline p-input-header\"\r\n                appearance=\"outline\"\r\n                [ngClass]=\"{'p-input-readonly' : readonlyState, 'no-error-message': !errorMessage}\"\r\n                floatLabel=\"always\">\r\n\r\n  <input matInput\r\n         #inputField\r\n         [type]=\"type\"\r\n         [placeholder]=\"placeholder\"\r\n         [readonly]=\"readonlyState\"\r\n         attr.aria-label=\"{{ariaLabel}}\"\r\n         [formControl]=\"formFieldControl\"\r\n         [errorStateMatcher]=\"matcher\"\r\n         autocomplete=\"off\"\r\n         (focus)=\"onInputFocused()\"\r\n         (blur)=\"onInputBlur()\"\r\n         class=\"p-input-text-input\"\r\n         [class.readonly]=\"readonlyState\">\r\n\r\n  <p-icon class=\"p-input-outline-icon\"\r\n          matSuffix\r\n          iconName=\"edit-3\"\r\n          width=\"18\"\r\n          height=\"auto\">\r\n  </p-icon>\r\n\r\n</mat-form-field>\r\n"
         },
         {
             "name": "InputLinkComponent",
@@ -3986,7 +4403,7 @@
         },
         {
             "name": "InputOutlineComponent",
-            "id": "component-InputOutlineComponent-8cebdda2d91f1d7d552892402829881f",
+            "id": "component-InputOutlineComponent-10b18ee663f3db6782c50d0ebfeda2d7",
             "file": "projects/design-system-lib/src/lib/input/outline/input-outline.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -4105,7 +4522,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 45
+                    "line": 44
                 },
                 {
                     "name": "ngOnDestroy",
@@ -4122,6 +4539,14 @@
                     "returnType": "void",
                     "typeParameters": [],
                     "line": 28
+                },
+                {
+                    "name": "searchValue",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 48
                 }
             ],
             "hostBindings": [],
@@ -4129,11 +4554,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';\r\nimport {FormControl, ValidatorFn} from '@angular/forms';\r\nimport {ErrorStateMatcher} from '@angular/material/core';\r\nimport {SubscriptionLike} from 'rxjs';\r\n\r\n@Component({\r\n  selector: 'p-input-outline',\r\n  templateUrl: './input-outline.component.html',\r\n  styleUrls: ['./input-outline.component.scss'],\r\n})\r\nexport class InputOutlineComponent implements OnInit, OnDestroy {\r\n  @Input() type: string = 'text';\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string;\r\n  @Input() placeholder: string;\r\n  @Input() errorMessage: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() readonly: boolean = false;\r\n  @Input() value: string;\r\n  @Input() validators: ValidatorFn[];\r\n  @Input() matcher: ErrorStateMatcher;\r\n  @Input() isSearch: boolean = false;\r\n  @Input() iconName: string;\r\n  @Output() onSearch: EventEmitter<any> = new EventEmitter();\r\n  public formFieldControl: FormControl;\r\n  private sub: SubscriptionLike;\r\n\r\n  ngOnInit(): void {\r\n    this.formFieldControl = new FormControl(\r\n      {value: this.value, disabled: this.disabled},\r\n      this.validators);\r\n    this.sub = this.formFieldControl.valueChanges.subscribe((value: string) => {\r\n      this.onSearch.emit(value);\r\n    });\r\n  }\r\n\r\n  ngOnDestroy(): void {\r\n    if (this.sub) {\r\n      this.sub.unsubscribe();\r\n      this.sub = null;\r\n    }\r\n  }\r\n\r\n\r\n  clearValue(): void {\r\n    this.formFieldControl.setValue('');\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';\r\nimport {FormControl, ValidatorFn} from '@angular/forms';\r\nimport {ErrorStateMatcher} from '@angular/material/core';\r\nimport {SubscriptionLike} from 'rxjs';\r\n\r\n@Component({\r\n  selector: 'p-input-outline',\r\n  templateUrl: './input-outline.component.html',\r\n  styleUrls: ['./input-outline.component.scss'],\r\n})\r\nexport class InputOutlineComponent implements OnInit, OnDestroy {\r\n  @Input() type: string = 'text';\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string;\r\n  @Input() placeholder: string;\r\n  @Input() errorMessage: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() readonly: boolean = false;\r\n  @Input() value: string;\r\n  @Input() validators: ValidatorFn[];\r\n  @Input() matcher: ErrorStateMatcher;\r\n  @Input() isSearch: boolean = false;\r\n  @Input() iconName: string;\r\n  @Output() onSearch: EventEmitter<any> = new EventEmitter();\r\n  public formFieldControl: FormControl;\r\n  private sub: SubscriptionLike;\r\n\r\n  ngOnInit(): void {\r\n    this.formFieldControl = new FormControl(\r\n      {value: this.value, disabled: this.disabled},\r\n      this.validators);\r\n    this.sub = this.formFieldControl.valueChanges.subscribe((value: string) => {\r\n      this.onSearch.emit(value);\r\n    });\r\n  }\r\n\r\n  ngOnDestroy(): void {\r\n    if (this.sub) {\r\n      this.sub.unsubscribe();\r\n      this.sub = null;\r\n    }\r\n  }\r\n\r\n  clearValue(): void {\r\n    this.formFieldControl.setValue('');\r\n  }\r\n\r\n  searchValue(): void {\r\n    console.log('search');\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"input-outline-base\";\r\n\r\n::ng-deep .p-input-outline {\r\n  &.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {\r\n    width: 100%;\r\n    transform: translateY(-30px);\r\n  }\r\n  .mat-form-field-label-wrapper {\r\n    top: -16px;\r\n    padding-top: 16px;\r\n  }\r\n  &.mat-form-field.mat-focused .mat-form-field-label,\r\n  &.mat-form-field.mat-form-field-invalid .mat-form-field-label {\r\n    color: $gray-scale-700;\r\n  }\r\n  &-button {\r\n    @include resetButton;\r\n    width: 20px;\r\n    height: 20px;\r\n    margin-right: 3px;\r\n    .mat-form-field-disabled &,\r\n    .p-input-readonly & {\r\n      display: none;\r\n    }\r\n  }\r\n\r\n  &-icon {\r\n    margin-right: 7px;\r\n    .mat-form-field-disabled &,\r\n    .p-input-readonly & {\r\n      display: none;\r\n    }\r\n  }\r\n}\r\n",
+                    "data": "@import \"input-outline-base\";\r\n\r\n::ng-deep .p-input-outline {\r\n  &.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {\r\n    width: 100%;\r\n    transform: translateY(-30px);\r\n  }\r\n\r\n  &.mat-form-field-appearance-outline .mat-form-field-suffix {\r\n    top: 0;\r\n  }\r\n\r\n  .mat-form-field-label-wrapper {\r\n    top: -16px;\r\n    padding-top: 16px;\r\n  }\r\n\r\n  &.mat-form-field.mat-focused .mat-form-field-label,\r\n  &.mat-form-field.mat-form-field-invalid .mat-form-field-label {\r\n    color: $gray-scale-700;\r\n  }\r\n\r\n  &-button {\r\n    @include resetButton;\r\n    width: $input-text-height - 2px;\r\n    height: $input-text-height - 2px;\r\n    margin-right: 1px;\r\n\r\n    &:hover {\r\n      color: $secondary-a-700;\r\n      background-color: $primary-c-50;\r\n    }\r\n\r\n    .mat-form-field-disabled &,\r\n    .p-input-readonly & {\r\n      display: none;\r\n    }\r\n  }\r\n\r\n  &-icon {\r\n    margin-right: 7px;\r\n    .mat-form-field-disabled &,\r\n    .p-input-readonly & {\r\n      display: none;\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "./input-outline.component.scss"
                 }
             ],
@@ -4142,7 +4567,7 @@
                 "OnInit",
                 "OnDestroy"
             ],
-            "templateData": "<mat-form-field class=\"p-input-outline\"\r\n                appearance=\"outline\"\r\n                [ngClass]=\"{'p-input-readonly' : readonly, 'no-error-message': !errorMessage}\"\r\n                floatLabel=\"always\">\r\n\r\n  <mat-label class=\"p-input-text-label paragraph-3-default\">{{label}}</mat-label>\r\n\r\n  <input matInput\r\n         [type]=\"type\"\r\n         [placeholder]=\"placeholder\"\r\n         [readonly]=\"readonly\"\r\n         attr.aria-label=\"{{ariaLabel}}\"\r\n         [formControl]=\"formFieldControl\"\r\n         [errorStateMatcher]=\"matcher\"\r\n         autocomplete=\"off\"\r\n         onfocus=\"this.select()\"\r\n         class=\"p-input-text-input\">\r\n\r\n  <button *ngIf=\"isSearch && formFieldControl.value\"\r\n          matSuffix\r\n          aria-label=\"Clear\"\r\n          class=\"p-input-outline-button\"\r\n          (click)=\"clearValue()\">\r\n    <p-icon class=\"p-input-outline-icon-clear\"\r\n            iconName=\"x\"\r\n            width=\"16\"\r\n            height=\"auto\"\r\n            stroke=\"#B3B3B3\">\r\n    </p-icon>\r\n  </button>\r\n\r\n  <p-icon *ngIf=\"isSearch && !formFieldControl.value\"\r\n          class=\"p-input-outline-icon\"\r\n          matSuffix\r\n          iconName=\"search\"\r\n          width=\"16\"\r\n          height=\"auto\"\r\n          stroke=\"#B3B3B3\">\r\n  </p-icon>\r\n\r\n  <p-icon *ngIf=\"iconName && !isSearch\"\r\n          class=\"p-input-outline-icon\"\r\n          matSuffix\r\n          [iconName]=\"iconName\"\r\n          width=\"16\"\r\n          height=\"auto\"\r\n          stroke=\"#B3B3B3\">\r\n  </p-icon>\r\n\r\n  <mat-error *ngIf=\"formFieldControl.invalid\"\r\n             class=\"p-input-text-error\">\r\n    {{errorMessage}}\r\n  </mat-error>\r\n</mat-form-field>\r\n"
+            "templateData": "<mat-form-field class=\"p-input-outline\"\r\n                appearance=\"outline\"\r\n                [ngClass]=\"{'p-input-readonly' : readonly, 'no-error-message': !errorMessage}\"\r\n                floatLabel=\"always\">\r\n\r\n  <mat-label class=\"p-input-text-label paragraph-3-default\">{{label}}</mat-label>\r\n\r\n  <input matInput\r\n         [type]=\"type\"\r\n         [placeholder]=\"placeholder\"\r\n         [readonly]=\"readonly\"\r\n         attr.aria-label=\"{{ariaLabel}}\"\r\n         [formControl]=\"formFieldControl\"\r\n         [errorStateMatcher]=\"matcher\"\r\n         autocomplete=\"off\"\r\n         onfocus=\"this.select()\"\r\n         class=\"p-input-text-input\">\r\n\r\n  <button *ngIf=\"isSearch && formFieldControl.value\"\r\n          matSuffix\r\n          aria-label=\"Clear\"\r\n          class=\"p-input-outline-button\"\r\n          (click)=\"clearValue()\">\r\n    <p-icon class=\"p-input-outline-icon-clear\"\r\n            iconName=\"x\"\r\n            width=\"16\"\r\n            height=\"auto\">\r\n    </p-icon>\r\n  </button>\r\n\r\n  <button *ngIf=\"isSearch && !formFieldControl.value\"\r\n          matSuffix\r\n          aria-label=\"Search\"\r\n          class=\"p-input-outline-button\"\r\n          (click)=\"searchValue()\">\r\n    <p-icon class=\"p-input-outline-icon-search\"\r\n            iconName=\"search\"\r\n            width=\"16\"\r\n            height=\"auto\">\r\n    </p-icon>\r\n  </button>\r\n\r\n  <p-icon *ngIf=\"iconName && !isSearch\"\r\n          class=\"p-input-outline-icon\"\r\n          matSuffix\r\n          [iconName]=\"iconName\"\r\n          width=\"16\"\r\n          height=\"auto\"\r\n          stroke=\"#B3B3B3\">\r\n  </p-icon>\r\n\r\n  <mat-error *ngIf=\"formFieldControl.invalid\"\r\n             class=\"p-input-text-error\">\r\n    {{errorMessage}}\r\n  </mat-error>\r\n</mat-form-field>\r\n"
         },
         {
             "name": "InputTextComponent",
@@ -6035,7 +6460,7 @@
         },
         {
             "name": "PaginatorComponent",
-            "id": "component-PaginatorComponent-4d51bf9649b661ed9d127efdebc0e3cf",
+            "id": "component-PaginatorComponent-02543c0c90c2c642e0bce1ec65d0225c",
             "file": "projects/design-system-lib/src/lib/paginator/paginator.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -6055,21 +6480,36 @@
                 {
                     "name": "currentPage",
                     "defaultValue": "1",
-                    "line": 12
+                    "line": 11
+                },
+                {
+                    "name": "firstItemShown",
+                    "line": 16,
+                    "type": "number"
                 },
                 {
                     "name": "pageSize",
                     "defaultValue": "100",
-                    "line": 21
+                    "line": 14
                 },
                 {
                     "name": "pageSizeOptions",
-                    "line": 18,
+                    "line": 13,
                     "type": "literal type[]"
                 },
                 {
-                    "name": "totalPages",
+                    "name": "totalItems",
                     "line": 15,
+                    "type": "number"
+                },
+                {
+                    "name": "totalPages",
+                    "line": 12,
+                    "type": "number"
+                },
+                {
+                    "name": "totalSelected",
+                    "line": 17,
                     "type": "number"
                 }
             ],
@@ -6077,37 +6517,37 @@
                 {
                     "name": "firstPageClicked",
                     "defaultValue": "new EventEmitter()",
-                    "line": 31,
+                    "line": 26,
                     "type": "EventEmitter"
                 },
                 {
                     "name": "lastPageClicked",
                     "defaultValue": "new EventEmitter()",
-                    "line": 33,
+                    "line": 28,
                     "type": "EventEmitter"
                 },
                 {
                     "name": "nextPageClicked",
                     "defaultValue": "new EventEmitter()",
-                    "line": 29,
+                    "line": 24,
                     "type": "EventEmitter"
                 },
                 {
                     "name": "pageNumberClicked",
                     "defaultValue": "new EventEmitter()",
-                    "line": 35,
+                    "line": 30,
                     "type": "EventEmitter"
                 },
                 {
                     "name": "pageSizeChanged",
                     "defaultValue": "new EventEmitter<number>()",
-                    "line": 24,
+                    "line": 20,
                     "type": "EventEmitter"
                 },
                 {
                     "name": "prevPageClicked",
                     "defaultValue": "new EventEmitter()",
-                    "line": 27,
+                    "line": 22,
                     "type": "EventEmitter"
                 }
             ],
@@ -6118,7 +6558,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 40,
+                    "line": 35,
                     "modifierKind": [
                         114
                     ]
@@ -6128,7 +6568,7 @@
                     "type": "number",
                     "optional": false,
                     "description": "",
-                    "line": 44,
+                    "line": 39,
                     "modifierKind": [
                         112
                     ]
@@ -6139,7 +6579,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 41,
+                    "line": 36,
                     "modifierKind": [
                         114
                     ]
@@ -6149,7 +6589,7 @@
                     "type": "number",
                     "optional": false,
                     "description": "",
-                    "line": 45,
+                    "line": 40,
                     "modifierKind": [
                         112
                     ]
@@ -6160,7 +6600,7 @@
                     "type": "boolean",
                     "optional": false,
                     "description": "",
-                    "line": 46,
+                    "line": 41,
                     "modifierKind": [
                         114
                     ]
@@ -6171,7 +6611,7 @@
                     "type": "boolean",
                     "optional": false,
                     "description": "",
-                    "line": 47,
+                    "line": 42,
                     "modifierKind": [
                         114
                     ]
@@ -6181,7 +6621,7 @@
                     "type": "number[]",
                     "optional": false,
                     "description": "",
-                    "line": 42,
+                    "line": 37,
                     "modifierKind": [
                         114
                     ]
@@ -6192,7 +6632,7 @@
                     "type": "number",
                     "optional": false,
                     "description": "",
-                    "line": 43,
+                    "line": 38,
                     "modifierKind": [
                         114
                     ]
@@ -6205,7 +6645,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 90
+                    "line": 85
                 },
                 {
                     "name": "definePagesList",
@@ -6222,7 +6662,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 68,
+                    "line": 63,
                     "jsdoctags": [
                         {
                             "name": "$event",
@@ -6246,7 +6686,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 49
+                    "line": 44
                 }
             ],
             "hostBindings": [],
@@ -6254,11 +6694,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';\r\nimport {ButtonTypeEnum} from '../button/button-type.enum';\r\nimport {InputNumericSizeEnum} from '../input/numeric/input-numeric-size.enum';\r\n\r\n@Component({\r\n  selector: 'p-paginator',\r\n  templateUrl: './paginator.component.html',\r\n  styleUrls: ['./paginator.component.scss'],\r\n})\r\nexport class PaginatorComponent implements OnInit {\r\n  @Input()\r\n  currentPage = 1; // based 1\r\n\r\n  @Input()\r\n  totalPages: number;\r\n\r\n  @Input()\r\n  pageSizeOptions?: { name: any }[];\r\n\r\n  @Input()\r\n  pageSize = 100;\r\n\r\n  @Output()\r\n  pageSizeChanged = new EventEmitter<number>();\r\n\r\n  @Output()\r\n  prevPageClicked = new EventEmitter();\r\n  @Output()\r\n  nextPageClicked = new EventEmitter();\r\n  @Output()\r\n  firstPageClicked = new EventEmitter();\r\n  @Output()\r\n  lastPageClicked = new EventEmitter();\r\n  @Output()\r\n  pageNumberClicked = new EventEmitter();\r\n  /*\r\n  @Output()\r\n  onPageNumberInput = new EventEmitter<number>();\r\n*/\r\n  public buttonType = ButtonTypeEnum;\r\n  public inputNumericSize = InputNumericSizeEnum;\r\n  public pageList: number[];\r\n  public step: number = 5;\r\n  private firstInList: number;\r\n  private lastInList: number;\r\n  public lessBtnDisabled: boolean = true;\r\n  public moreBtnDisabled: boolean = false;\r\n\r\n  ngOnInit(): void {\r\n    if (!this.pageSizeOptions) this.pageSizeOptions = [\r\n      {name: 25},\r\n      {name: 50},\r\n      {name: 100}\r\n    ];\r\n    this.firstInList = 1;\r\n    this.lastInList = this.firstInList + this.step - 1;\r\n    this.buildPagesList();\r\n  }\r\n\r\n  get canMoveToPrevious(): boolean {\r\n    return this.currentPage > 1;\r\n  }\r\n\r\n  get canMoveToNext(): boolean {\r\n    return this.currentPage < this.totalPages;\r\n  }\r\n\r\n  definePagesList($event: any, increasePageNumber: boolean): void {\r\n    this.moreBtnDisabled = false;\r\n    this.lessBtnDisabled = false;\r\n    if (increasePageNumber) {\r\n      this.firstInList += this.step;\r\n      this.lastInList += this.step;\r\n      if (this.lastInList >= this.totalPages) {\r\n        this.moreBtnDisabled = true;\r\n      }\r\n    }\r\n    else {\r\n      this.firstInList -= this.step;\r\n      this.lastInList -= this.step;\r\n      if (this.firstInList <= 1) {\r\n        this.firstInList = 1;\r\n        this.lastInList = this.firstInList + this.step - 1;\r\n        this.lessBtnDisabled = true;\r\n      }\r\n    }\r\n    this.buildPagesList();\r\n  }\r\n\r\n  buildPagesList(): void {\r\n    this.pageList = [];\r\n    for ( let i = this.firstInList; i <= this.lastInList; i++) {\r\n      this.pageList.push(i);\r\n    }\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';\r\nimport {ButtonTypeEnum} from '../button/button-type.enum';\r\nimport {InputNumericSizeEnum} from '../input/numeric/input-numeric-size.enum';\r\n\r\n@Component({\r\n  selector: 'p-paginator',\r\n  templateUrl: './paginator.component.html',\r\n  styleUrls: ['./paginator.component.scss'],\r\n})\r\nexport class PaginatorComponent implements OnInit {\r\n  @Input() currentPage = 1; // based 1\r\n  @Input() totalPages: number;\r\n  @Input() pageSizeOptions?: { name: any }[];\r\n  @Input() pageSize = 100;\r\n  @Input() totalItems: number;\r\n  @Input() firstItemShown: number;\r\n  @Input() totalSelected: number;\r\n\r\n  @Output()\r\n  pageSizeChanged = new EventEmitter<number>();\r\n  @Output()\r\n  prevPageClicked = new EventEmitter();\r\n  @Output()\r\n  nextPageClicked = new EventEmitter();\r\n  @Output()\r\n  firstPageClicked = new EventEmitter();\r\n  @Output()\r\n  lastPageClicked = new EventEmitter();\r\n  @Output()\r\n  pageNumberClicked = new EventEmitter();\r\n  /*\r\n  @Output()\r\n  onPageNumberInput = new EventEmitter<number>();\r\n*/\r\n  public buttonType = ButtonTypeEnum;\r\n  public inputNumericSize = InputNumericSizeEnum;\r\n  public pageList: number[];\r\n  public step: number = 5;\r\n  private firstInList: number;\r\n  private lastInList: number;\r\n  public lessBtnDisabled: boolean = true;\r\n  public moreBtnDisabled: boolean = false;\r\n\r\n  ngOnInit(): void {\r\n    if (!this.pageSizeOptions) this.pageSizeOptions = [\r\n      {name: 25},\r\n      {name: 50},\r\n      {name: 100}\r\n    ];\r\n    this.firstInList = 1;\r\n    this.lastInList = this.firstInList + this.step - 1;\r\n    this.buildPagesList();\r\n  }\r\n\r\n  get canMoveToPrevious(): boolean {\r\n    return this.currentPage > 1;\r\n  }\r\n\r\n  get canMoveToNext(): boolean {\r\n    return this.currentPage < this.totalPages;\r\n  }\r\n\r\n  definePagesList($event: any, increasePageNumber: boolean): void {\r\n    this.moreBtnDisabled = false;\r\n    this.lessBtnDisabled = false;\r\n    if (increasePageNumber) {\r\n      this.firstInList += this.step;\r\n      this.lastInList += this.step;\r\n      if (this.lastInList >= this.totalPages) {\r\n        this.moreBtnDisabled = true;\r\n      }\r\n    }\r\n    else {\r\n      this.firstInList -= this.step;\r\n      this.lastInList -= this.step;\r\n      if (this.firstInList <= 1) {\r\n        this.firstInList = 1;\r\n        this.lastInList = this.firstInList + this.step - 1;\r\n        this.lessBtnDisabled = true;\r\n      }\r\n    }\r\n    this.buildPagesList();\r\n  }\r\n\r\n  buildPagesList(): void {\r\n    this.pageList = [];\r\n    for ( let i = this.firstInList; i <= this.lastInList; i++) {\r\n      this.pageList.push(i);\r\n    }\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$button-width: 24px;\r\n$button-height: 32px;\r\n\r\n%paginator-btn {\r\n  width: $button-width;\r\n  height: $button-height;\r\n  &:not(.disabled):hover{\r\n    background-color: $primary-c-50;\r\n  }\r\n}\r\n\r\n.p-paginator {\r\n  display: flex;\r\n  align-items: center;\r\n\r\n  &-arrow {\r\n    ::ng-deep .p-btn {\r\n      @extend %paginator-btn;\r\n    }\r\n    & ~ & {\r\n      margin-left: $gap-base;\r\n    }\r\n  }\r\n\r\n  &-list {\r\n    display: flex;\r\n    align-items: center;\r\n    @include resetUl;\r\n  }\r\n\r\n  &-item {\r\n    margin-left: $gap-base;\r\n  }\r\n\r\n  &-page {\r\n    width: 100%;\r\n    height: 100%;\r\n    display: block;\r\n    position: relative;\r\n\r\n    ::ng-deep .p-btn {\r\n      min-width: unset;\r\n      padding-right: 0;\r\n      padding-left: 0;\r\n      background-color: transparent;\r\n\r\n      @extend %paginator-btn;\r\n      &:not(:disabled) {\r\n        color: $primary-a-900;\r\n      }\r\n    }\r\n\r\n    &.selected:after {\r\n      content: 'Selected';\r\n      display: block;\r\n      font-size: 0;\r\n      width: $button-width;\r\n      height: 4px;\r\n      background-color: $primary-a-900;\r\n      position: absolute;\r\n      bottom: 0;\r\n    }\r\n  }\r\n\r\n  &-select {\r\n    margin-left: $gap-double;\r\n    align-self: flex-end;\r\n  }\r\n\r\n  ::ng-deep .p-input-numeric .mat-form-field-infix {\r\n    padding-left: $gap-small;\r\n  }\r\n}\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$button-width: 24px;\r\n$button-height: 32px;\r\n\r\n%paginator-btn {\r\n  width: $button-width;\r\n  height: $button-height;\r\n  &:not(.disabled):hover{\r\n    background-color: $primary-c-50;\r\n  }\r\n}\r\n\r\n.p-paginator {\r\n  display: flex;\r\n  align-items: center;\r\n\r\n  &-arrow {\r\n    ::ng-deep .p-btn {\r\n      @extend %paginator-btn;\r\n    }\r\n    & ~ & {\r\n      margin-left: $gap-base;\r\n    }\r\n  }\r\n\r\n  &-list {\r\n    display: flex;\r\n    align-items: center;\r\n    @include resetUl;\r\n  }\r\n\r\n  &-item {\r\n    margin-left: $gap-base;\r\n  }\r\n\r\n  &-page {\r\n    width: 100%;\r\n    height: 100%;\r\n    display: block;\r\n    position: relative;\r\n\r\n    ::ng-deep .p-btn {\r\n      min-width: unset;\r\n      padding-right: 0;\r\n      padding-left: 0;\r\n      background-color: transparent;\r\n\r\n      @extend %paginator-btn;\r\n      &:not(:disabled) {\r\n        color: $primary-a-900;\r\n      }\r\n    }\r\n\r\n    &.selected:after {\r\n      content: 'Selected';\r\n      display: block;\r\n      font-size: 0;\r\n      width: $button-width;\r\n      height: 4px;\r\n      background-color: $primary-a-900;\r\n      position: absolute;\r\n      bottom: 0;\r\n    }\r\n  }\r\n\r\n  &-select {\r\n    margin-left: $gap-double;\r\n    margin-right: auto;\r\n    align-self: flex-end;\r\n  }\r\n\r\n  ::ng-deep .p-input-numeric .mat-form-field-infix {\r\n    padding-left: $gap-small;\r\n  }\r\n\r\n  &-items {\r\n    margin-left: $gap-double;\r\n  }\r\n\r\n  &-refresh {\r\n    margin-left: $gap-double-plus;\r\n  }\r\n}\r\n",
                     "styleUrl": "./paginator.component.scss"
                 }
             ],
@@ -6273,7 +6713,7 @@
                         "name": "canMoveToPrevious",
                         "type": "boolean",
                         "returnType": "boolean",
-                        "line": 60
+                        "line": 55
                     }
                 },
                 "canMoveToNext": {
@@ -6282,11 +6722,11 @@
                         "name": "canMoveToNext",
                         "type": "boolean",
                         "returnType": "boolean",
-                        "line": 64
+                        "line": 59
                     }
                 }
             },
-            "templateData": "<div class=\"p-paginator\">\r\n  <p-button class=\"p-paginator-arrow first\"\r\n            [class.disabled]=\"!canMoveToPrevious\"\r\n            ariaLabel=\"Move to the first page\"\r\n            [disabled]=\"!canMoveToPrevious\"\r\n            iconBefore=\"first\"\r\n            iconBeforeWidth=\"10\"\r\n            iconBeforeHeight=\"10\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"firstPageClicked.emit()\"></p-button>\r\n  <p-button class=\"p-paginator-arrow prev\"\r\n            [class.disabled]=\"!canMoveToPrevious\"\r\n            ariaLabel=\"Move to the previous page\"\r\n            [disabled]=\"!canMoveToPrevious\"\r\n            iconBefore=\"chevron-left\"\r\n            iconBeforeWidth=\"17\"\r\n            iconBeforeStrokeWidth=\"2\"\r\n            [iconBeforeStrokeColor]=\"!canMoveToPrevious ? '#B3B3B3' : 'currentColor'\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"prevPageClicked.emit()\"></p-button>\r\n  <ul class=\"p-paginator-list\">\r\n    <li class=\"p-paginator-item\">\r\n      <p-button *ngIf=\"!lessBtnDisabled\"\r\n                class=\"p-paginator-page less\"\r\n                ariaLabel=\"Show other {{ step }} pages\"\r\n                iconBefore=\"more-horizontal\"\r\n                iconBeforeWidth=\"17\"\r\n                iconBeforeStrokeWidth=\"2\"\r\n                [iconBeforeStrokeColor]=\"!canMoveToNext ? '#B3B3B3' : 'currentColor'\"\r\n                [buttonType]=\"buttonType.IsIcon\"\r\n                (onClickTask)=\"definePagesList($event, false)\"></p-button>\r\n    </li>\r\n    <li class=\"p-paginator-item\" *ngFor=\"let pageNumber of pageList\">\r\n      <p-button class=\"p-paginator-page\"\r\n                [class.selected]=\"pageNumber === currentPage\"\r\n                [label]=\"pageNumber\"\r\n                [ariaLabel]=\"'Move to page ' + pageNumber\"\r\n                [buttonType]=\"buttonType.Tertiary\"\r\n                (click)=\"pageNumberClicked.emit()\"></p-button>\r\n    </li>\r\n    <li class=\"p-paginator-item\">\r\n      <p-button *ngIf=\"!moreBtnDisabled\"\r\n                class=\"p-paginator-page more\"\r\n                ariaLabel=\"Show other {{ step }} pages\"\r\n                iconBefore=\"more-horizontal\"\r\n                iconBeforeWidth=\"17\"\r\n                iconBeforeStrokeWidth=\"2\"\r\n                [buttonType]=\"buttonType.IsIcon\"\r\n                (onClickTask)=\"definePagesList($event, true)\"></p-button>\r\n    </li>\r\n  </ul>\r\n\r\n  <p-button class=\"p-paginator-arrow next\"\r\n            [class.disabled]=\"!canMoveToNext\"\r\n            ariaLabel=\"Move to the next page\"\r\n            [disabled]=\"!canMoveToNext\"\r\n            iconBefore=\"chevron-right\"\r\n            iconBeforeWidth=\"17\"\r\n            iconBeforeStrokeWidth=\"2\"\r\n            [iconBeforeStrokeColor]=\"!canMoveToNext ? '#B3B3B3' : 'currentColor'\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"nextPageClicked.emit()\"></p-button>\r\n  <p-button class=\"p-paginator-arrow last\"\r\n            [class.disabled]=\"!canMoveToNext\"\r\n            ariaLabel=\"Move to the last page\"\r\n            [disabled]=\"!canMoveToNext\"\r\n            iconBefore=\"last\"\r\n            iconBeforeWidth=\"10\"\r\n            iconBeforeHeight=\"10\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"lastPageClicked.emit()\"></p-button>\r\n\r\n  <p-menu-single-select class=\"p-paginator-select\"\r\n                        [menuList]=\"pageSizeOptions\"\r\n                        (onClickTask)=\"pageSizeChanged.emit($event)\">\r\n    <!--ng-content-->\r\n    <p-input-numeric class=\"p-paginator-input\"\r\n                     label=\"Items per page\"\r\n                     [value]=\"pageSize\"\r\n                     [size]=\"inputNumericSize.Small\"\r\n                     [labelLast]=\"true\"\r\n                     [notEditable]=\"true\"\r\n                     iconName=\"chevron-down\"></p-input-numeric>\r\n    <!-- -->\r\n  </p-menu-single-select>\r\n</div>\r\n"
+            "templateData": "<div class=\"p-paginator\">\r\n  <p-button class=\"p-paginator-arrow first\"\r\n            [class.disabled]=\"!canMoveToPrevious\"\r\n            ariaLabel=\"Move to the first page\"\r\n            [disabled]=\"!canMoveToPrevious\"\r\n            iconBefore=\"first\"\r\n            iconBeforeWidth=\"10\"\r\n            iconBeforeHeight=\"10\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"firstPageClicked.emit()\"></p-button>\r\n  <p-button class=\"p-paginator-arrow prev\"\r\n            [class.disabled]=\"!canMoveToPrevious\"\r\n            ariaLabel=\"Move to the previous page\"\r\n            [disabled]=\"!canMoveToPrevious\"\r\n            iconBefore=\"chevron-left\"\r\n            iconBeforeWidth=\"17\"\r\n            iconBeforeStrokeWidth=\"2\"\r\n            [iconBeforeStrokeColor]=\"!canMoveToPrevious ? '#B3B3B3' : 'currentColor'\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"prevPageClicked.emit()\"></p-button>\r\n  <ul class=\"p-paginator-list\">\r\n    <li class=\"p-paginator-item\">\r\n      <p-button *ngIf=\"!lessBtnDisabled\"\r\n                class=\"p-paginator-page less\"\r\n                ariaLabel=\"Show other {{ step }} pages\"\r\n                iconBefore=\"more-horizontal\"\r\n                iconBeforeWidth=\"17\"\r\n                iconBeforeStrokeWidth=\"2\"\r\n                [iconBeforeStrokeColor]=\"!canMoveToNext ? '#B3B3B3' : 'currentColor'\"\r\n                [buttonType]=\"buttonType.IsIcon\"\r\n                (onClickTask)=\"definePagesList($event, false)\"></p-button>\r\n    </li>\r\n    <li class=\"p-paginator-item\" *ngFor=\"let pageNumber of pageList\">\r\n      <p-button class=\"p-paginator-page\"\r\n                [class.selected]=\"pageNumber === currentPage\"\r\n                [label]=\"pageNumber\"\r\n                [ariaLabel]=\"'Move to page ' + pageNumber\"\r\n                [buttonType]=\"buttonType.Tertiary\"\r\n                (click)=\"pageNumberClicked.emit()\"></p-button>\r\n    </li>\r\n    <li class=\"p-paginator-item\">\r\n      <p-button *ngIf=\"!moreBtnDisabled\"\r\n                class=\"p-paginator-page more\"\r\n                ariaLabel=\"Show other {{ step }} pages\"\r\n                iconBefore=\"more-horizontal\"\r\n                iconBeforeWidth=\"17\"\r\n                iconBeforeStrokeWidth=\"2\"\r\n                [buttonType]=\"buttonType.IsIcon\"\r\n                (onClickTask)=\"definePagesList($event, true)\"></p-button>\r\n    </li>\r\n  </ul>\r\n\r\n  <p-button class=\"p-paginator-arrow next\"\r\n            [class.disabled]=\"!canMoveToNext\"\r\n            ariaLabel=\"Move to the next page\"\r\n            [disabled]=\"!canMoveToNext\"\r\n            iconBefore=\"chevron-right\"\r\n            iconBeforeWidth=\"17\"\r\n            iconBeforeStrokeWidth=\"2\"\r\n            [iconBeforeStrokeColor]=\"!canMoveToNext ? '#B3B3B3' : 'currentColor'\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"nextPageClicked.emit()\"></p-button>\r\n  <p-button class=\"p-paginator-arrow last\"\r\n            [class.disabled]=\"!canMoveToNext\"\r\n            ariaLabel=\"Move to the last page\"\r\n            [disabled]=\"!canMoveToNext\"\r\n            iconBefore=\"last\"\r\n            iconBeforeWidth=\"10\"\r\n            iconBeforeHeight=\"10\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            (click)=\"lastPageClicked.emit()\"></p-button>\r\n\r\n  <p-menu-single-select class=\"p-paginator-select\"\r\n                        [menuList]=\"pageSizeOptions\"\r\n                        (onClickTask)=\"pageSizeChanged.emit($event)\">\r\n    <!--ng-content-->\r\n    <p-input-numeric class=\"p-paginator-input\"\r\n                     label=\"Items per page\"\r\n                     [value]=\"pageSize\"\r\n                     [size]=\"inputNumericSize.Small\"\r\n                     [labelLast]=\"true\"\r\n                     [notEditable]=\"true\"\r\n                     iconName=\"chevron-down\"></p-input-numeric>\r\n    <!-- -->\r\n  </p-menu-single-select>\r\n\r\n  <span class=\"p-paginator-counter paragraph-2-default\">\r\n    {{totalSelected}} selected\r\n  </span>\r\n\r\n  <span class=\"p-paginator-items paragraph-2-default\">\r\n    {{firstItemShown}}-{{firstItemShown + pageSize - 1}} of {{totalItems}} items\r\n  </span>\r\n\r\n  <p-button class=\"p-paginator-refresh\"\r\n            ariaLabel=\"Refresh\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            iconBefore=\"refresh-cw\"\r\n            iconBeforeStrokeColor=\"#4132C8\"\r\n            iconBeforeWidth=\"16\"\r\n            matTooltip=\"Refresh\"\r\n            matTooltipPosition=\"above\"\r\n            matTooltipClass=\"p-tooltip above\"></p-button>\r\n</div>\r\n"
         },
         {
             "name": "ProgressBarComponent",
@@ -6747,8 +7187,8 @@
         },
         {
             "name": "SlideToggleComponent",
-            "id": "component-SlideToggleComponent-26248c0809d38e231de75e570be8b19a",
-            "file": "src/stories/slide-toggle/slide-toggle.component.ts",
+            "id": "component-SlideToggleComponent-fa93a8f39a3625ee567121e068a13228",
+            "file": "projects/design-system-lib/src/lib/slide-toggle/slide-toggle.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -6766,24 +7206,29 @@
             "inputsClass": [
                 {
                     "name": "ariaLabel",
-                    "line": 10,
+                    "line": 11,
                     "type": "string"
                 },
                 {
                     "name": "checked",
                     "defaultValue": "false",
-                    "line": 11,
+                    "line": 12,
                     "type": "boolean"
                 },
                 {
                     "name": "disabled",
                     "defaultValue": "false",
-                    "line": 12,
+                    "line": 13,
                     "type": "boolean"
                 },
                 {
-                    "name": "label",
+                    "name": "labelActive",
                     "line": 9,
+                    "type": "string"
+                },
+                {
+                    "name": "labelInactive",
+                    "line": 10,
                     "type": "string"
                 }
             ],
@@ -6795,16 +7240,27 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'p-slide-toggle',\r\n  templateUrl: './slide-toggle.component.html',\r\n  styleUrls: ['./slide-toggle.component.scss'],\r\n})\r\nexport default class SlideToggleComponent {\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string;\r\n  @Input() checked: boolean = false;\r\n  @Input() disabled: boolean = false;\r\n}\r\n",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'p-slide-toggle',\r\n  templateUrl: './slide-toggle.component.html',\r\n  styleUrls: ['./slide-toggle.component.scss'],\r\n})\r\nexport class SlideToggleComponent {\r\n  @Input() labelActive: string;\r\n  @Input() labelInactive: string;\r\n  @Input() ariaLabel: string; // required even if there is a label\r\n  @Input() checked: boolean = false;\r\n  @Input() disabled: boolean = false;\r\n\r\n  public get tooltipText(): string {\r\n    return this.checked ? 'Switch to ' + this.labelInactive : 'Switch to ' + this.labelActive;\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n.p-slide-toggle {\r\n  // material styles override\r\n  ::ng-deep &.mat-slide-toggle {\r\n    .mat-slide-toggle-bar {\r\n      width: 48px;\r\n      height: 24px;\r\n      background-color: $gray-scale-500;\r\n      border-radius: 24px;\r\n      box-sizing: content-box;\r\n    }\r\n    .mat-slide-toggle-thumb-container {\r\n      top: 2px;\r\n      left: 2px;\r\n    }\r\n    .mat-slide-toggle-thumb {\r\n      background-color: $gray-scale-1;\r\n      box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);\r\n    }\r\n    .mat-slide-toggle-content {\r\n      font-family: $font-family-basic;\r\n      font-size: $small-font-size;\r\n      font-weight: 500;\r\n    }\r\n    .mat-slide-toggle-ripple {\r\n      display: none;\r\n    }\r\n\r\n    // hover\r\n    &:hover {\r\n      .mat-slide-toggle-bar {\r\n        background-color: $gray-scale-700;\r\n      }\r\n    }\r\n\r\n    // focus\r\n    &.cdk-focused {\r\n      .mat-slide-toggle-bar {\r\n        background-color: $gray-scale-700;\r\n        //border: 2px solid $gray-scale-100;\r\n      }\r\n    }\r\n\r\n    // disabled\r\n    &.mat-disabled {\r\n      opacity: 1;\r\n      .mat-slide-toggle-bar {\r\n        background-color: $gray-scale-50;\r\n      }\r\n      .mat-slide-toggle-thumb {\r\n        box-shadow: none;\r\n      }\r\n      .mat-slide-toggle-content {\r\n        color: $gray-scale-700;\r\n      }\r\n    }\r\n\r\n    // checked\r\n    &.mat-checked {\r\n      .mat-slide-toggle-bar {\r\n        background-color: $secondary-a-700;\r\n      }\r\n      .mat-slide-toggle-thumb-container {\r\n        transform: translate3d(24px, 0, 0);\r\n      }\r\n      .mat-slide-toggle-thumb {\r\n        box-shadow: 0 0 3px $secondary-a-800;\r\n      }\r\n      // checked + hover\r\n      &:hover {\r\n        .mat-slide-toggle-bar {\r\n          background-color: $secondary-a-800;\r\n        }\r\n      }\r\n      // checked + focus\r\n      &.cdk-focused {\r\n        .mat-slide-toggle-bar {\r\n          //border: 2px solid $secondary-a-200;\r\n        }\r\n      }\r\n      // checked + disabled\r\n      &.mat-disabled {\r\n        .mat-slide-toggle-bar {\r\n           background-color: $secondary-a-200;\r\n        }\r\n        .mat-slide-toggle-thumb {\r\n          width: 19px;\r\n          height: 19px;\r\n          box-shadow: none;\r\n        }\r\n      }\r\n    }\r\n  }\r\n\r\n  // icons added\r\n  ::ng-deep &.mat-slide-toggle {\r\n    .mat-slide-toggle-bar {\r\n      &:before {\r\n        content: '';\r\n        display: block;\r\n        width: 15px;\r\n        height: 12px;\r\n        background-image: url('../assets/images/check.svg');\r\n        background-position: center center;\r\n        background-repeat: no-repeat;\r\n        background-size: cover;\r\n        position: absolute;\r\n        top: 6px;\r\n        left: 7px;\r\n      }\r\n      &:after {\r\n        content: '';\r\n        display: block;\r\n        width: 15px;\r\n        height: 15px;\r\n        background-image: url('../assets/images/x.svg');\r\n        background-position: center center;\r\n        background-repeat: no-repeat;\r\n        background-size: cover;\r\n        position: absolute;\r\n        top: 4px;\r\n        right: 5px;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n.p-slide-toggle {\r\n  // material styles override\r\n  ::ng-deep &.mat-slide-toggle {\r\n    .mat-slide-toggle-bar {\r\n      width: 48px;\r\n      height: 24px;\r\n      background-color: $gray-scale-500;\r\n      border-radius: 24px;\r\n      box-sizing: content-box;\r\n    }\r\n    .mat-slide-toggle-thumb-container {\r\n      top: 2px;\r\n      left: 2px;\r\n    }\r\n    .mat-slide-toggle-thumb {\r\n      background-color: $gray-scale-1;\r\n      box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);\r\n    }\r\n    .mat-slide-toggle-content {\r\n      font-family: $font-family-basic;\r\n      font-size: $small-font-size;\r\n      font-weight: 500;\r\n    }\r\n    .mat-slide-toggle-ripple {\r\n      display: none;\r\n    }\r\n\r\n    // hover\r\n    &:hover {\r\n      .mat-slide-toggle-bar {\r\n        background-color: $gray-scale-700;\r\n      }\r\n    }\r\n\r\n    // focus\r\n    &.cdk-focused {\r\n      .mat-slide-toggle-bar {\r\n        background-color: $gray-scale-700;\r\n        //border: 2px solid $gray-scale-100;\r\n      }\r\n    }\r\n\r\n    // disabled\r\n    &.mat-disabled {\r\n      opacity: 1;\r\n      pointer-events: none;\r\n      .mat-slide-toggle-bar {\r\n        background-color: $gray-scale-50;\r\n      }\r\n      .mat-slide-toggle-thumb {\r\n        box-shadow: none;\r\n      }\r\n      .mat-slide-toggle-content {\r\n        color: $gray-scale-700;\r\n      }\r\n    }\r\n\r\n    // checked\r\n    &.mat-checked {\r\n      .mat-slide-toggle-bar {\r\n        background-color: $secondary-a-700;\r\n      }\r\n      .mat-slide-toggle-thumb-container {\r\n        transform: translate3d(24px, 0, 0);\r\n      }\r\n      .mat-slide-toggle-thumb {\r\n        box-shadow: 0 0 3px $secondary-a-800;\r\n      }\r\n      // checked + hover\r\n      &:hover {\r\n        .mat-slide-toggle-bar {\r\n          background-color: $secondary-a-800;\r\n        }\r\n      }\r\n      // checked + focus\r\n      &.cdk-focused {\r\n        .mat-slide-toggle-bar {\r\n          //border: 2px solid $secondary-a-200;\r\n        }\r\n      }\r\n      // checked + disabled\r\n      &.mat-disabled {\r\n        .mat-slide-toggle-bar {\r\n           background-color: $secondary-a-200;\r\n        }\r\n        .mat-slide-toggle-thumb {\r\n          width: 19px;\r\n          height: 19px;\r\n          box-shadow: none;\r\n        }\r\n      }\r\n    }\r\n  }\r\n\r\n  // icons added\r\n  ::ng-deep &.mat-slide-toggle {\r\n    .mat-slide-toggle-bar {\r\n      &:before {\r\n        content: '';\r\n        display: block;\r\n        width: 15px;\r\n        height: 12px;\r\n        background-image: url('../assets/images/icons/check.svg');\r\n        background-position: center center;\r\n        background-repeat: no-repeat;\r\n        background-size: cover;\r\n        position: absolute;\r\n        top: 6px;\r\n        left: 7px;\r\n      }\r\n      &:after {\r\n        content: '';\r\n        display: block;\r\n        width: 15px;\r\n        height: 15px;\r\n        background-image: url('../assets/images/icons/x.svg');\r\n        background-position: center center;\r\n        background-repeat: no-repeat;\r\n        background-size: cover;\r\n        position: absolute;\r\n        top: 4px;\r\n        right: 5px;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n::ng-deep .mat-tooltip-panel {\r\n  transform: translateX(-25px);\r\n}\r\n",
                     "styleUrl": "./slide-toggle.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<mat-slide-toggle\r\n  class=\"p-slide-toggle\"\r\n  [aria-label]=\"ariaLabel\"\r\n  [checked]=\"checked\"\r\n  [disabled]=\"disabled\">\r\n  <ng-container *ngIf=\"label\">\r\n    {{label}}\r\n  </ng-container>\r\n</mat-slide-toggle>\r\n"
+            "accessors": {
+                "tooltipText": {
+                    "name": "tooltipText",
+                    "getSignature": {
+                        "name": "tooltipText",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 15
+                    }
+                }
+            },
+            "templateData": "<mat-slide-toggle\r\n  class=\"p-slide-toggle\"\r\n  [(ngModel)]=\"checked\"\r\n  [aria-label]=\"ariaLabel\"\r\n  [checked]=\"checked\"\r\n  [disabled]=\"disabled\"\r\n  [matTooltip]=\"labelActive ? tooltipText : null\"\r\n  matTooltipPosition=\"above\"\r\n  matTooltipClass=\"p-tooltip above\">\r\n  <ng-container *ngIf=\"labelInactive\">\r\n    <ng-template [ngIf]=\"checked\" [ngIfElse]=\"notChecked\">\r\n      {{labelActive}}\r\n    </ng-template>\r\n    <ng-template #notChecked>\r\n      {{labelInactive}}\r\n    </ng-template>\r\n  </ng-container>\r\n</mat-slide-toggle>\r\n"
         },
         {
             "name": "SlideTogglePageComponent",
@@ -6857,7 +7313,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"page slide-toggles\">\r\n    <header class=\"page-header\">\r\n      <h1 class=\"page-title\">Toggle / <span class=\"page-header-highlighted\">Items</span></h1>\r\n    </header>\r\n\r\n    <main class=\"page-main\">\r\n      <ul class=\"page-list header-list\">\r\n        <li class=\"list-header\"></li>\r\n        <li class=\"list-header\">[checked]=true</li>\r\n        <li class=\"list-header\">\r\n          [checked]=true\r\n          <br/>\r\n          [disabled]=true\r\n        </li>\r\n        <li class=\"list-header\">\r\n          [checked]=false\r\n        </li>\r\n        <li class=\"list-header\">\r\n          [checked]=false\r\n          <br/>\r\n          [disabled]=true\r\n        </li>\r\n      </ul>\r\n\r\n      <ul *ngFor=\"let toggleType of slideTogglePage | keyvalue: originalOrder\"\r\n          class=\"page-list content-list {{toggleType.key}}\">\r\n        <li class=\"list-header\">\r\n          [{{toggleType.key}}]=\"Label\"\r\n        </li>\r\n        <li *ngFor=\"let toggle of toggleType.value\" class=\"list-item\">\r\n          <p-slide-toggle [label]=\"toggle.label\"\r\n                          [ariaLabel]=\"toggle.ariaLabel\"\r\n                          [checked]=\"toggle.checked\"\r\n                          [disabled]=\"toggle.disabled\">\r\n          </p-slide-toggle>\r\n        </li>\r\n      </ul>\r\n\r\n    </main>\r\n</div>\r\n"
+            "templateData": "<div class=\"page slide-toggles\">\r\n    <header class=\"page-header\">\r\n      <h1 class=\"page-title\">Toggle / <span class=\"page-header-highlighted\">Items</span></h1>\r\n    </header>\r\n\r\n    <main class=\"page-main\">\r\n      <ul class=\"page-list header-list\">\r\n        <li class=\"list-header\"></li>\r\n        <li class=\"list-header\">[checked]=true</li>\r\n        <li class=\"list-header\">\r\n          [checked]=true\r\n          <br/>\r\n          [disabled]=true\r\n        </li>\r\n        <li class=\"list-header\">\r\n          [checked]=false\r\n        </li>\r\n        <li class=\"list-header\">\r\n          [checked]=false\r\n          <br/>\r\n          [disabled]=true\r\n        </li>\r\n      </ul>\r\n\r\n      <ul *ngFor=\"let toggleType of slideTogglePage | keyvalue: originalOrder\"\r\n          class=\"page-list content-list {{toggleType.key}}\">\r\n        <li class=\"list-header\">\r\n          [{{toggleType.key}}]=\"Label\"\r\n        </li>\r\n        <li *ngFor=\"let toggle of toggleType.value\" class=\"list-item\">\r\n          <p-slide-toggle [labelActive]=\"toggle.labelActive\"\r\n                          [labelInactive]=\"toggle.labelInactive\"\r\n                          [ariaLabel]=\"toggle.ariaLabel\"\r\n                          [checked]=\"toggle.checked\"\r\n                          [disabled]=\"toggle.disabled\">\r\n          </p-slide-toggle>\r\n        </li>\r\n      </ul>\r\n\r\n    </main>\r\n</div>\r\n"
         },
         {
             "name": "SplitButtonComponent",
@@ -7951,6 +8407,53 @@
             ]
         },
         {
+            "name": "EntityHeaderModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "EntityHeaderComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "ButtonModule"
+                        },
+                        {
+                            "name": "IconModule"
+                        },
+                        {
+                            "name": "InputModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "EntityHeaderComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "ExpansionPanelModule",
             "children": [
                 {
@@ -8488,6 +8991,43 @@
             ]
         },
         {
+            "name": "SlideToggleModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "SlideToggleComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "SlideToggleComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "TabGroupModule",
             "children": [
                 {
@@ -8786,6 +9326,14 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
+                "type": "Story<CheckboxGroupComponent>",
+                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "PageTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
                 "type": "Story<CheckboxGroupPageComponent>",
                 "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
@@ -8797,14 +9345,6 @@
                 "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
                 "type": "Story<CheckboxPageComponent>",
                 "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "PageTemplate",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
-                "type": "Story<CheckboxGroupComponent>",
-                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -9865,6 +10405,33 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/design-system-lib/src/lib/entity-header/entity-header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "EntityHeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/entity-header/entity-type.enum.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "EntityTypeEnum",
+                "coveragePercent": 0,
+                "coverageCount": "0/19",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/entity-header/entity.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "IEntity",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/design-system-lib/src/lib/expansion-panel/expansion-panel.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -9978,7 +10545,7 @@
                 "linktype": "component",
                 "name": "InputHeaderComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/24",
+                "coverageCount": "0/25",
                 "status": "low"
             },
             {
@@ -10014,7 +10581,7 @@
                 "linktype": "component",
                 "name": "InputOutlineComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/19",
+                "coverageCount": "0/20",
                 "status": "low"
             },
             {
@@ -10194,7 +10761,7 @@
                 "linktype": "component",
                 "name": "PaginatorComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/22",
+                "coverageCount": "0/25",
                 "status": "low"
             },
             {
@@ -10276,6 +10843,15 @@
                 "name": "ISidenavMain",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/slide-toggle/slide-toggle.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SlideToggleComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
@@ -10574,6 +11150,15 @@
                 "status": "low"
             },
             {
+                "filePath": "src/stories/entity-header/custom-error-state-matcher.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "CustomErrorStateMatcher",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
                 "filePath": "src/stories/expansion-panel/loremIpsum.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -10727,15 +11312,6 @@
                 "name": "WithLabel",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/slide-toggle/slide-toggle.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "SlideToggleComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/5",
                 "status": "low"
             },
             {

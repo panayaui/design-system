@@ -2,16 +2,14 @@ import { moduleMetadata } from '@storybook/angular';
 import { CommonModule } from '@angular/common';
 import { Story, Meta } from '@storybook/angular/types-6-0';
 import SlideTogglePageComponent from './slide-toggle-page.component';
-import SlideToggleComponent from '../slide-toggle.component';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {SlideToggleComponent, SlideToggleModule} from 'projects/design-system-lib/src/public-api';
 
 export default {
   title: 'Components/Slide Toggle',
   component: SlideTogglePageComponent,
   decorators: [
     moduleMetadata({
-      declarations: [SlideTogglePageComponent, SlideToggleComponent],
-      imports: [CommonModule, MatSlideToggleModule],
+      imports: [CommonModule, SlideToggleModule],
     }),
   ],
 } as Meta;
@@ -22,7 +20,9 @@ const SlideToggleTemplate: Story<SlideToggleComponent> = (args: SlideToggleCompo
 
 const WithLabel = SlideToggleTemplate.bind({});
 WithLabel.args = {
-  label: 'Label'
+  labelActive: 'Active',
+  labelInactive: 'Inactive',
+  ariaLabel: 'What is this control is about'
 };
 
 const NoLabel = SlideToggleTemplate.bind({});

@@ -83,4 +83,22 @@
                      iconName="chevron-down"></p-input-numeric>
     <!-- -->
   </p-menu-single-select>
+
+  <span class="p-paginator-counter paragraph-2-default">
+    {{totalSelected}} selected
+  </span>
+
+  <span class="p-paginator-items paragraph-2-default">
+    {{firstItemShown}}-{{firstItemShown + pageSize - 1}} of {{totalItems}} items
+  </span>
+
+  <p-button class="p-paginator-refresh"
+            ariaLabel="Refresh"
+            [buttonType]="buttonType.IsIcon"
+            iconBefore="refresh-cw"
+            iconBeforeStrokeColor="#4132C8"
+            iconBeforeWidth="16"
+            matTooltip="Refresh"
+            matTooltipPosition="above"
+            matTooltipClass="p-tooltip above"></p-button>
 </div>

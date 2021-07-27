@@ -1,0 +1,18 @@
+<mat-slide-toggle
+  class="p-slide-toggle"
+  [(ngModel)]="checked"
+  [aria-label]="ariaLabel"
+  [checked]="checked"
+  [disabled]="disabled"
+  [matTooltip]="labelActive ? tooltipText : null"
+  matTooltipPosition="above"
+  matTooltipClass="p-tooltip above">
+  <ng-container *ngIf="labelInactive">
+    <ng-template [ngIf]="checked" [ngIfElse]="notChecked">
+      {{labelActive}}
+    </ng-template>
+    <ng-template #notChecked>
+      {{labelInactive}}
+    </ng-template>
+  </ng-container>
+</mat-slide-toggle>

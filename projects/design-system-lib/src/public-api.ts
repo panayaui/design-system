@@ -107,3 +107,11 @@ export * from './lib/progress-bar/progress-bar.enum';
 
 export * from './lib/progress-chart/progress-chart.component';
 export * from './lib/progress-chart/progress-chart.enum';
+
+export * from './lib/entity-header/entity-header.module';
+export * from './lib/entity-header/entity-header.component';
+export * from './lib/entity-header/entity.interface';
+export * from './lib/entity-header/entity-type.enum';
+
+export * from './lib/slide-toggle/slide-toggle.module';
+export * from './lib/slide-toggle/slide-toggle.component';
