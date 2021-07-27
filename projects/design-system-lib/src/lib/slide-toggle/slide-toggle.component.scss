@@ -45,6 +45,7 @@
     // disabled
     &.mat-disabled {
       opacity: 1;
+      pointer-events: none;
       .mat-slide-toggle-bar {
         background-color: $gray-scale-50;
       }
@@ -101,7 +102,7 @@
         display: block;
         width: 15px;
         height: 12px;
-        background-image: url('../assets/images/check.svg');
+        background-image: url('../assets/images/icons/check.svg');
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -114,7 +115,7 @@
         display: block;
         width: 15px;
         height: 15px;
-        background-image: url('../assets/images/x.svg');
+        background-image: url('../assets/images/icons/x.svg');
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -124,4 +125,8 @@
       }
     }
   }
+}
+
+::ng-deep .mat-tooltip-panel {
+  transform: translateX(-25px);
 }

@@ -28,7 +28,8 @@
           [{{toggleType.key}}]="Label"
         </li>
         <li *ngFor="let toggle of toggleType.value" class="list-item">
-          <p-slide-toggle [label]="toggle.label"
+          <p-slide-toggle [labelActive]="toggle.labelActive"
+                          [labelInactive]="toggle.labelInactive"
                           [ariaLabel]="toggle.ariaLabel"
                           [checked]="toggle.checked"
                           [disabled]="toggle.disabled">
