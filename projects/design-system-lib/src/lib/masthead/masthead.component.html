@@ -1,0 +1,24 @@
+<div class="p-masthead">
+  <a href="" class="p-masthead-homepage-link">
+    Home page
+    <img src="../assets/images/logo.svg" alt="Panaya Logo"
+         class="p-masthead-logo"/>
+  </a>
+  <nav aria-label="Main Navigation" class="p-masthead-nav">
+    <ul class="p-masthead-nav-list">
+      <li *ngFor="let item of navList" class="p-masthead-nav-item">
+        <a href="" class="p-masthead-nav-link">
+          {{item.name}}
+        </a>
+        <ul *ngIf="item.subMenu">
+          <li *ngFor="let subItem of item.subMenu" class="p-masthead-submenu-item">
+            <a href="" class="p-masthead-submenu-link">
+              {{subItem.name}}
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</div>
+
