@@ -4035,7 +4035,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 45,
+                    "line": 44,
                     "inheritance": {
                         "file": "InputOutlineComponent"
                     }
@@ -4058,6 +4058,17 @@
                     "returnType": "void",
                     "typeParameters": [],
                     "line": 28,
+                    "inheritance": {
+                        "file": "InputOutlineComponent"
+                    }
+                },
+                {
+                    "name": "searchValue",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 48,
                     "inheritance": {
                         "file": "InputOutlineComponent"
                     }
@@ -4392,7 +4403,7 @@
         },
         {
             "name": "InputOutlineComponent",
-            "id": "component-InputOutlineComponent-8cebdda2d91f1d7d552892402829881f",
+            "id": "component-InputOutlineComponent-10b18ee663f3db6782c50d0ebfeda2d7",
             "file": "projects/design-system-lib/src/lib/input/outline/input-outline.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -4511,7 +4522,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 45
+                    "line": 44
                 },
                 {
                     "name": "ngOnDestroy",
@@ -4528,6 +4539,14 @@
                     "returnType": "void",
                     "typeParameters": [],
                     "line": 28
+                },
+                {
+                    "name": "searchValue",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 48
                 }
             ],
             "hostBindings": [],
@@ -4535,11 +4554,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';\r\nimport {FormControl, ValidatorFn} from '@angular/forms';\r\nimport {ErrorStateMatcher} from '@angular/material/core';\r\nimport {SubscriptionLike} from 'rxjs';\r\n\r\n@Component({\r\n  selector: 'p-input-outline',\r\n  templateUrl: './input-outline.component.html',\r\n  styleUrls: ['./input-outline.component.scss'],\r\n})\r\nexport class InputOutlineComponent implements OnInit, OnDestroy {\r\n  @Input() type: string = 'text';\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string;\r\n  @Input() placeholder: string;\r\n  @Input() errorMessage: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() readonly: boolean = false;\r\n  @Input() value: string;\r\n  @Input() validators: ValidatorFn[];\r\n  @Input() matcher: ErrorStateMatcher;\r\n  @Input() isSearch: boolean = false;\r\n  @Input() iconName: string;\r\n  @Output() onSearch: EventEmitter<any> = new EventEmitter();\r\n  public formFieldControl: FormControl;\r\n  private sub: SubscriptionLike;\r\n\r\n  ngOnInit(): void {\r\n    this.formFieldControl = new FormControl(\r\n      {value: this.value, disabled: this.disabled},\r\n      this.validators);\r\n    this.sub = this.formFieldControl.valueChanges.subscribe((value: string) => {\r\n      this.onSearch.emit(value);\r\n    });\r\n  }\r\n\r\n  ngOnDestroy(): void {\r\n    if (this.sub) {\r\n      this.sub.unsubscribe();\r\n      this.sub = null;\r\n    }\r\n  }\r\n\r\n\r\n  clearValue(): void {\r\n    this.formFieldControl.setValue('');\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';\r\nimport {FormControl, ValidatorFn} from '@angular/forms';\r\nimport {ErrorStateMatcher} from '@angular/material/core';\r\nimport {SubscriptionLike} from 'rxjs';\r\n\r\n@Component({\r\n  selector: 'p-input-outline',\r\n  templateUrl: './input-outline.component.html',\r\n  styleUrls: ['./input-outline.component.scss'],\r\n})\r\nexport class InputOutlineComponent implements OnInit, OnDestroy {\r\n  @Input() type: string = 'text';\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string;\r\n  @Input() placeholder: string;\r\n  @Input() errorMessage: string;\r\n  @Input() disabled: boolean = false;\r\n  @Input() readonly: boolean = false;\r\n  @Input() value: string;\r\n  @Input() validators: ValidatorFn[];\r\n  @Input() matcher: ErrorStateMatcher;\r\n  @Input() isSearch: boolean = false;\r\n  @Input() iconName: string;\r\n  @Output() onSearch: EventEmitter<any> = new EventEmitter();\r\n  public formFieldControl: FormControl;\r\n  private sub: SubscriptionLike;\r\n\r\n  ngOnInit(): void {\r\n    this.formFieldControl = new FormControl(\r\n      {value: this.value, disabled: this.disabled},\r\n      this.validators);\r\n    this.sub = this.formFieldControl.valueChanges.subscribe((value: string) => {\r\n      this.onSearch.emit(value);\r\n    });\r\n  }\r\n\r\n  ngOnDestroy(): void {\r\n    if (this.sub) {\r\n      this.sub.unsubscribe();\r\n      this.sub = null;\r\n    }\r\n  }\r\n\r\n  clearValue(): void {\r\n    this.formFieldControl.setValue('');\r\n  }\r\n\r\n  searchValue(): void {\r\n    console.log('search');\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"input-outline-base\";\r\n\r\n::ng-deep .p-input-outline {\r\n  &.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {\r\n    width: 100%;\r\n    transform: translateY(-30px);\r\n  }\r\n  .mat-form-field-label-wrapper {\r\n    top: -16px;\r\n    padding-top: 16px;\r\n  }\r\n  &.mat-form-field.mat-focused .mat-form-field-label,\r\n  &.mat-form-field.mat-form-field-invalid .mat-form-field-label {\r\n    color: $gray-scale-700;\r\n  }\r\n  &-button {\r\n    @include resetButton;\r\n    width: 20px;\r\n    height: 20px;\r\n    margin-right: 3px;\r\n    .mat-form-field-disabled &,\r\n    .p-input-readonly & {\r\n      display: none;\r\n    }\r\n  }\r\n\r\n  &-icon {\r\n    margin-right: 7px;\r\n    .mat-form-field-disabled &,\r\n    .p-input-readonly & {\r\n      display: none;\r\n    }\r\n  }\r\n}\r\n",
+                    "data": "@import \"input-outline-base\";\r\n\r\n::ng-deep .p-input-outline {\r\n  &.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {\r\n    width: 100%;\r\n    transform: translateY(-30px);\r\n  }\r\n\r\n  &.mat-form-field-appearance-outline .mat-form-field-suffix {\r\n    top: 0;\r\n  }\r\n\r\n  .mat-form-field-label-wrapper {\r\n    top: -16px;\r\n    padding-top: 16px;\r\n  }\r\n\r\n  &.mat-form-field.mat-focused .mat-form-field-label,\r\n  &.mat-form-field.mat-form-field-invalid .mat-form-field-label {\r\n    color: $gray-scale-700;\r\n  }\r\n\r\n  &-button {\r\n    @include resetButton;\r\n    width: $input-text-height - 2px;\r\n    height: $input-text-height - 2px;\r\n    margin-right: 1px;\r\n\r\n    &:hover {\r\n      color: $secondary-a-700;\r\n      background-color: $primary-c-50;\r\n    }\r\n\r\n    .mat-form-field-disabled &,\r\n    .p-input-readonly & {\r\n      display: none;\r\n    }\r\n  }\r\n\r\n  &-icon {\r\n    margin-right: 7px;\r\n    .mat-form-field-disabled &,\r\n    .p-input-readonly & {\r\n      display: none;\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "./input-outline.component.scss"
                 }
             ],
@@ -4548,7 +4567,7 @@
                 "OnInit",
                 "OnDestroy"
             ],
-            "templateData": "<mat-form-field class=\"p-input-outline\"\r\n                appearance=\"outline\"\r\n                [ngClass]=\"{'p-input-readonly' : readonly, 'no-error-message': !errorMessage}\"\r\n                floatLabel=\"always\">\r\n\r\n  <mat-label class=\"p-input-text-label paragraph-3-default\">{{label}}</mat-label>\r\n\r\n  <input matInput\r\n         [type]=\"type\"\r\n         [placeholder]=\"placeholder\"\r\n         [readonly]=\"readonly\"\r\n         attr.aria-label=\"{{ariaLabel}}\"\r\n         [formControl]=\"formFieldControl\"\r\n         [errorStateMatcher]=\"matcher\"\r\n         autocomplete=\"off\"\r\n         onfocus=\"this.select()\"\r\n         class=\"p-input-text-input\">\r\n\r\n  <button *ngIf=\"isSearch && formFieldControl.value\"\r\n          matSuffix\r\n          aria-label=\"Clear\"\r\n          class=\"p-input-outline-button\"\r\n          (click)=\"clearValue()\">\r\n    <p-icon class=\"p-input-outline-icon-clear\"\r\n            iconName=\"x\"\r\n            width=\"16\"\r\n            height=\"auto\"\r\n            stroke=\"#B3B3B3\">\r\n    </p-icon>\r\n  </button>\r\n\r\n  <p-icon *ngIf=\"isSearch && !formFieldControl.value\"\r\n          class=\"p-input-outline-icon\"\r\n          matSuffix\r\n          iconName=\"search\"\r\n          width=\"16\"\r\n          height=\"auto\"\r\n          stroke=\"#B3B3B3\">\r\n  </p-icon>\r\n\r\n  <p-icon *ngIf=\"iconName && !isSearch\"\r\n          class=\"p-input-outline-icon\"\r\n          matSuffix\r\n          [iconName]=\"iconName\"\r\n          width=\"16\"\r\n          height=\"auto\"\r\n          stroke=\"#B3B3B3\">\r\n  </p-icon>\r\n\r\n  <mat-error *ngIf=\"formFieldControl.invalid\"\r\n             class=\"p-input-text-error\">\r\n    {{errorMessage}}\r\n  </mat-error>\r\n</mat-form-field>\r\n"
+            "templateData": "<mat-form-field class=\"p-input-outline\"\r\n                appearance=\"outline\"\r\n                [ngClass]=\"{'p-input-readonly' : readonly, 'no-error-message': !errorMessage}\"\r\n                floatLabel=\"always\">\r\n\r\n  <mat-label class=\"p-input-text-label paragraph-3-default\">{{label}}</mat-label>\r\n\r\n  <input matInput\r\n         [type]=\"type\"\r\n         [placeholder]=\"placeholder\"\r\n         [readonly]=\"readonly\"\r\n         attr.aria-label=\"{{ariaLabel}}\"\r\n         [formControl]=\"formFieldControl\"\r\n         [errorStateMatcher]=\"matcher\"\r\n         autocomplete=\"off\"\r\n         onfocus=\"this.select()\"\r\n         class=\"p-input-text-input\">\r\n\r\n  <button *ngIf=\"isSearch && formFieldControl.value\"\r\n          matSuffix\r\n          aria-label=\"Clear\"\r\n          class=\"p-input-outline-button\"\r\n          (click)=\"clearValue()\">\r\n    <p-icon class=\"p-input-outline-icon-clear\"\r\n            iconName=\"x\"\r\n            width=\"16\"\r\n            height=\"auto\">\r\n    </p-icon>\r\n  </button>\r\n\r\n  <button *ngIf=\"isSearch && !formFieldControl.value\"\r\n          matSuffix\r\n          aria-label=\"Search\"\r\n          class=\"p-input-outline-button\"\r\n          (click)=\"searchValue()\">\r\n    <p-icon class=\"p-input-outline-icon-search\"\r\n            iconName=\"search\"\r\n            width=\"16\"\r\n            height=\"auto\">\r\n    </p-icon>\r\n  </button>\r\n\r\n  <p-icon *ngIf=\"iconName && !isSearch\"\r\n          class=\"p-input-outline-icon\"\r\n          matSuffix\r\n          [iconName]=\"iconName\"\r\n          width=\"16\"\r\n          height=\"auto\"\r\n          stroke=\"#B3B3B3\">\r\n  </p-icon>\r\n\r\n  <mat-error *ngIf=\"formFieldControl.invalid\"\r\n             class=\"p-input-text-error\">\r\n    {{errorMessage}}\r\n  </mat-error>\r\n</mat-form-field>\r\n"
         },
         {
             "name": "InputTextComponent",
@@ -7168,8 +7187,8 @@
         },
         {
             "name": "SlideToggleComponent",
-            "id": "component-SlideToggleComponent-26248c0809d38e231de75e570be8b19a",
-            "file": "src/stories/slide-toggle/slide-toggle.component.ts",
+            "id": "component-SlideToggleComponent-fa93a8f39a3625ee567121e068a13228",
+            "file": "projects/design-system-lib/src/lib/slide-toggle/slide-toggle.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -7187,24 +7206,29 @@
             "inputsClass": [
                 {
                     "name": "ariaLabel",
-                    "line": 10,
+                    "line": 11,
                     "type": "string"
                 },
                 {
                     "name": "checked",
                     "defaultValue": "false",
-                    "line": 11,
+                    "line": 12,
                     "type": "boolean"
                 },
                 {
                     "name": "disabled",
                     "defaultValue": "false",
-                    "line": 12,
+                    "line": 13,
                     "type": "boolean"
                 },
                 {
-                    "name": "label",
+                    "name": "labelActive",
                     "line": 9,
+                    "type": "string"
+                },
+                {
+                    "name": "labelInactive",
+                    "line": 10,
                     "type": "string"
                 }
             ],
@@ -7216,16 +7240,27 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'p-slide-toggle',\r\n  templateUrl: './slide-toggle.component.html',\r\n  styleUrls: ['./slide-toggle.component.scss'],\r\n})\r\nexport default class SlideToggleComponent {\r\n  @Input() label: string;\r\n  @Input() ariaLabel: string;\r\n  @Input() checked: boolean = false;\r\n  @Input() disabled: boolean = false;\r\n}\r\n",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'p-slide-toggle',\r\n  templateUrl: './slide-toggle.component.html',\r\n  styleUrls: ['./slide-toggle.component.scss'],\r\n})\r\nexport class SlideToggleComponent {\r\n  @Input() labelActive: string;\r\n  @Input() labelInactive: string;\r\n  @Input() ariaLabel: string; // required even if there is a label\r\n  @Input() checked: boolean = false;\r\n  @Input() disabled: boolean = false;\r\n\r\n  public get tooltipText(): string {\r\n    return this.checked ? 'Switch to ' + this.labelInactive : 'Switch to ' + this.labelActive;\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n.p-slide-toggle {\r\n  // material styles override\r\n  ::ng-deep &.mat-slide-toggle {\r\n    .mat-slide-toggle-bar {\r\n      width: 48px;\r\n      height: 24px;\r\n      background-color: $gray-scale-500;\r\n      border-radius: 24px;\r\n      box-sizing: content-box;\r\n    }\r\n    .mat-slide-toggle-thumb-container {\r\n      top: 2px;\r\n      left: 2px;\r\n    }\r\n    .mat-slide-toggle-thumb {\r\n      background-color: $gray-scale-1;\r\n      box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);\r\n    }\r\n    .mat-slide-toggle-content {\r\n      font-family: $font-family-basic;\r\n      font-size: $small-font-size;\r\n      font-weight: 500;\r\n    }\r\n    .mat-slide-toggle-ripple {\r\n      display: none;\r\n    }\r\n\r\n    // hover\r\n    &:hover {\r\n      .mat-slide-toggle-bar {\r\n        background-color: $gray-scale-700;\r\n      }\r\n    }\r\n\r\n    // focus\r\n    &.cdk-focused {\r\n      .mat-slide-toggle-bar {\r\n        background-color: $gray-scale-700;\r\n        //border: 2px solid $gray-scale-100;\r\n      }\r\n    }\r\n\r\n    // disabled\r\n    &.mat-disabled {\r\n      opacity: 1;\r\n      .mat-slide-toggle-bar {\r\n        background-color: $gray-scale-50;\r\n      }\r\n      .mat-slide-toggle-thumb {\r\n        box-shadow: none;\r\n      }\r\n      .mat-slide-toggle-content {\r\n        color: $gray-scale-700;\r\n      }\r\n    }\r\n\r\n    // checked\r\n    &.mat-checked {\r\n      .mat-slide-toggle-bar {\r\n        background-color: $secondary-a-700;\r\n      }\r\n      .mat-slide-toggle-thumb-container {\r\n        transform: translate3d(24px, 0, 0);\r\n      }\r\n      .mat-slide-toggle-thumb {\r\n        box-shadow: 0 0 3px $secondary-a-800;\r\n      }\r\n      // checked + hover\r\n      &:hover {\r\n        .mat-slide-toggle-bar {\r\n          background-color: $secondary-a-800;\r\n        }\r\n      }\r\n      // checked + focus\r\n      &.cdk-focused {\r\n        .mat-slide-toggle-bar {\r\n          //border: 2px solid $secondary-a-200;\r\n        }\r\n      }\r\n      // checked + disabled\r\n      &.mat-disabled {\r\n        .mat-slide-toggle-bar {\r\n           background-color: $secondary-a-200;\r\n        }\r\n        .mat-slide-toggle-thumb {\r\n          width: 19px;\r\n          height: 19px;\r\n          box-shadow: none;\r\n        }\r\n      }\r\n    }\r\n  }\r\n\r\n  // icons added\r\n  ::ng-deep &.mat-slide-toggle {\r\n    .mat-slide-toggle-bar {\r\n      &:before {\r\n        content: '';\r\n        display: block;\r\n        width: 15px;\r\n        height: 12px;\r\n        background-image: url('../assets/images/check.svg');\r\n        background-position: center center;\r\n        background-repeat: no-repeat;\r\n        background-size: cover;\r\n        position: absolute;\r\n        top: 6px;\r\n        left: 7px;\r\n      }\r\n      &:after {\r\n        content: '';\r\n        display: block;\r\n        width: 15px;\r\n        height: 15px;\r\n        background-image: url('../assets/images/x.svg');\r\n        background-position: center center;\r\n        background-repeat: no-repeat;\r\n        background-size: cover;\r\n        position: absolute;\r\n        top: 4px;\r\n        right: 5px;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n.p-slide-toggle {\r\n  // material styles override\r\n  ::ng-deep &.mat-slide-toggle {\r\n    .mat-slide-toggle-bar {\r\n      width: 48px;\r\n      height: 24px;\r\n      background-color: $gray-scale-500;\r\n      border-radius: 24px;\r\n      box-sizing: content-box;\r\n    }\r\n    .mat-slide-toggle-thumb-container {\r\n      top: 2px;\r\n      left: 2px;\r\n    }\r\n    .mat-slide-toggle-thumb {\r\n      background-color: $gray-scale-1;\r\n      box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);\r\n    }\r\n    .mat-slide-toggle-content {\r\n      font-family: $font-family-basic;\r\n      font-size: $small-font-size;\r\n      font-weight: 500;\r\n    }\r\n    .mat-slide-toggle-ripple {\r\n      display: none;\r\n    }\r\n\r\n    // hover\r\n    &:hover {\r\n      .mat-slide-toggle-bar {\r\n        background-color: $gray-scale-700;\r\n      }\r\n    }\r\n\r\n    // focus\r\n    &.cdk-focused {\r\n      .mat-slide-toggle-bar {\r\n        background-color: $gray-scale-700;\r\n        //border: 2px solid $gray-scale-100;\r\n      }\r\n    }\r\n\r\n    // disabled\r\n    &.mat-disabled {\r\n      opacity: 1;\r\n      pointer-events: none;\r\n      .mat-slide-toggle-bar {\r\n        background-color: $gray-scale-50;\r\n      }\r\n      .mat-slide-toggle-thumb {\r\n        box-shadow: none;\r\n      }\r\n      .mat-slide-toggle-content {\r\n        color: $gray-scale-700;\r\n      }\r\n    }\r\n\r\n    // checked\r\n    &.mat-checked {\r\n      .mat-slide-toggle-bar {\r\n        background-color: $secondary-a-700;\r\n      }\r\n      .mat-slide-toggle-thumb-container {\r\n        transform: translate3d(24px, 0, 0);\r\n      }\r\n      .mat-slide-toggle-thumb {\r\n        box-shadow: 0 0 3px $secondary-a-800;\r\n      }\r\n      // checked + hover\r\n      &:hover {\r\n        .mat-slide-toggle-bar {\r\n          background-color: $secondary-a-800;\r\n        }\r\n      }\r\n      // checked + focus\r\n      &.cdk-focused {\r\n        .mat-slide-toggle-bar {\r\n          //border: 2px solid $secondary-a-200;\r\n        }\r\n      }\r\n      // checked + disabled\r\n      &.mat-disabled {\r\n        .mat-slide-toggle-bar {\r\n           background-color: $secondary-a-200;\r\n        }\r\n        .mat-slide-toggle-thumb {\r\n          width: 19px;\r\n          height: 19px;\r\n          box-shadow: none;\r\n        }\r\n      }\r\n    }\r\n  }\r\n\r\n  // icons added\r\n  ::ng-deep &.mat-slide-toggle {\r\n    .mat-slide-toggle-bar {\r\n      &:before {\r\n        content: '';\r\n        display: block;\r\n        width: 15px;\r\n        height: 12px;\r\n        background-image: url('../assets/images/icons/check.svg');\r\n        background-position: center center;\r\n        background-repeat: no-repeat;\r\n        background-size: cover;\r\n        position: absolute;\r\n        top: 6px;\r\n        left: 7px;\r\n      }\r\n      &:after {\r\n        content: '';\r\n        display: block;\r\n        width: 15px;\r\n        height: 15px;\r\n        background-image: url('../assets/images/icons/x.svg');\r\n        background-position: center center;\r\n        background-repeat: no-repeat;\r\n        background-size: cover;\r\n        position: absolute;\r\n        top: 4px;\r\n        right: 5px;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n::ng-deep .mat-tooltip-panel {\r\n  transform: translateX(-25px);\r\n}\r\n",
                     "styleUrl": "./slide-toggle.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<mat-slide-toggle\r\n  class=\"p-slide-toggle\"\r\n  [aria-label]=\"ariaLabel\"\r\n  [checked]=\"checked\"\r\n  [disabled]=\"disabled\">\r\n  <ng-container *ngIf=\"label\">\r\n    {{label}}\r\n  </ng-container>\r\n</mat-slide-toggle>\r\n"
+            "accessors": {
+                "tooltipText": {
+                    "name": "tooltipText",
+                    "getSignature": {
+                        "name": "tooltipText",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 15
+                    }
+                }
+            },
+            "templateData": "<mat-slide-toggle\r\n  class=\"p-slide-toggle\"\r\n  [(ngModel)]=\"checked\"\r\n  [aria-label]=\"ariaLabel\"\r\n  [checked]=\"checked\"\r\n  [disabled]=\"disabled\"\r\n  [matTooltip]=\"labelActive ? tooltipText : null\"\r\n  matTooltipPosition=\"above\"\r\n  matTooltipClass=\"p-tooltip above\">\r\n  <ng-container *ngIf=\"labelInactive\">\r\n    <ng-template [ngIf]=\"checked\" [ngIfElse]=\"notChecked\">\r\n      {{labelActive}}\r\n    </ng-template>\r\n    <ng-template #notChecked>\r\n      {{labelInactive}}\r\n    </ng-template>\r\n  </ng-container>\r\n</mat-slide-toggle>\r\n"
         },
         {
             "name": "SlideTogglePageComponent",
@@ -7278,7 +7313,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"page slide-toggles\">\r\n    <header class=\"page-header\">\r\n      <h1 class=\"page-title\">Toggle / <span class=\"page-header-highlighted\">Items</span></h1>\r\n    </header>\r\n\r\n    <main class=\"page-main\">\r\n      <ul class=\"page-list header-list\">\r\n        <li class=\"list-header\"></li>\r\n        <li class=\"list-header\">[checked]=true</li>\r\n        <li class=\"list-header\">\r\n          [checked]=true\r\n          <br/>\r\n          [disabled]=true\r\n        </li>\r\n        <li class=\"list-header\">\r\n          [checked]=false\r\n        </li>\r\n        <li class=\"list-header\">\r\n          [checked]=false\r\n          <br/>\r\n          [disabled]=true\r\n        </li>\r\n      </ul>\r\n\r\n      <ul *ngFor=\"let toggleType of slideTogglePage | keyvalue: originalOrder\"\r\n          class=\"page-list content-list {{toggleType.key}}\">\r\n        <li class=\"list-header\">\r\n          [{{toggleType.key}}]=\"Label\"\r\n        </li>\r\n        <li *ngFor=\"let toggle of toggleType.value\" class=\"list-item\">\r\n          <p-slide-toggle [label]=\"toggle.label\"\r\n                          [ariaLabel]=\"toggle.ariaLabel\"\r\n                          [checked]=\"toggle.checked\"\r\n                          [disabled]=\"toggle.disabled\">\r\n          </p-slide-toggle>\r\n        </li>\r\n      </ul>\r\n\r\n    </main>\r\n</div>\r\n"
+            "templateData": "<div class=\"page slide-toggles\">\r\n    <header class=\"page-header\">\r\n      <h1 class=\"page-title\">Toggle / <span class=\"page-header-highlighted\">Items</span></h1>\r\n    </header>\r\n\r\n    <main class=\"page-main\">\r\n      <ul class=\"page-list header-list\">\r\n        <li class=\"list-header\"></li>\r\n        <li class=\"list-header\">[checked]=true</li>\r\n        <li class=\"list-header\">\r\n          [checked]=true\r\n          <br/>\r\n          [disabled]=true\r\n        </li>\r\n        <li class=\"list-header\">\r\n          [checked]=false\r\n        </li>\r\n        <li class=\"list-header\">\r\n          [checked]=false\r\n          <br/>\r\n          [disabled]=true\r\n        </li>\r\n      </ul>\r\n\r\n      <ul *ngFor=\"let toggleType of slideTogglePage | keyvalue: originalOrder\"\r\n          class=\"page-list content-list {{toggleType.key}}\">\r\n        <li class=\"list-header\">\r\n          [{{toggleType.key}}]=\"Label\"\r\n        </li>\r\n        <li *ngFor=\"let toggle of toggleType.value\" class=\"list-item\">\r\n          <p-slide-toggle [labelActive]=\"toggle.labelActive\"\r\n                          [labelInactive]=\"toggle.labelInactive\"\r\n                          [ariaLabel]=\"toggle.ariaLabel\"\r\n                          [checked]=\"toggle.checked\"\r\n                          [disabled]=\"toggle.disabled\">\r\n          </p-slide-toggle>\r\n        </li>\r\n      </ul>\r\n\r\n    </main>\r\n</div>\r\n"
         },
         {
             "name": "SplitButtonComponent",
@@ -8956,6 +8991,43 @@
             ]
         },
         {
+            "name": "SlideToggleModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "SlideToggleComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "SlideToggleComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "TabGroupModule",
             "children": [
                 {
@@ -9262,17 +9334,17 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
-                "type": "Story<CheckboxPageComponent>",
-                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "Story<CheckboxGroupPageComponent>",
+                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
-                "type": "Story<CheckboxGroupPageComponent>",
-                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "Story<CheckboxPageComponent>",
+                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -10473,7 +10545,7 @@
                 "linktype": "component",
                 "name": "InputHeaderComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/24",
+                "coverageCount": "0/25",
                 "status": "low"
             },
             {
@@ -10509,7 +10581,7 @@
                 "linktype": "component",
                 "name": "InputOutlineComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/19",
+                "coverageCount": "0/20",
                 "status": "low"
             },
             {
@@ -10771,6 +10843,15 @@
                 "name": "ISidenavMain",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/slide-toggle/slide-toggle.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SlideToggleComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
@@ -11231,15 +11312,6 @@
                 "name": "WithLabel",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/slide-toggle/slide-toggle.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "SlideToggleComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/5",
                 "status": "low"
             },
             {
