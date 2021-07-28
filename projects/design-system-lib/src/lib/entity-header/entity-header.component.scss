@@ -4,8 +4,14 @@
   display: flex;
   align-items: center;
 
-  &-back:hover {
-    background-color: $primary-c-50;
+  &-back {
+    margin-right: 2px;
+    ::ng-deep .p-btn-isIcon {
+      padding: 4px 2px;
+    }
+    &:hover {
+      background-color: $primary-c-50;
+    }
   }
 
   &-icon {
@@ -26,11 +32,11 @@
     &:before {
       content: '';
       display: block;
-      width: 1.5px;
-      height: 13px;
+      width: 2px;
+      height: 14px;
       margin-left: $gap-double;
       margin-right: $gap-base;
-      background-color: currentColor;
+      border-right: 2px solid currentColor;
     }
   }
 

@@ -51,6 +51,39 @@ export const Template = (args) => <EntityHeaderComponent {...args} />
     }}>
     {Template.bind({})}
   </Story>
+  <Story name="Requirement"
+    args={{
+      entity: {
+        type: EntityTypeEnum.REQUIREMENT,
+        id: 12345,
+        entityName: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam',
+        validators: Validators.required
+      }
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Workstream"
+    args={{
+      entity: {
+        type: EntityTypeEnum.WORKSTREAM,
+        id: 12345,
+        entityName: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam',
+        validators: Validators.required
+      }
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Analysis"
+    args={{
+      entity: {
+        type: EntityTypeEnum.ANALYSIS,
+        id: 12345,
+        entityName: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam',
+        validators: Validators.required
+      }
+    }}>
+    {Template.bind({})}
+  </Story>
   <Story name="Userstory"
     args={{
       entity: {
@@ -66,6 +99,50 @@ export const Template = (args) => <EntityHeaderComponent {...args} />
     args={{
       entity: {
         type: EntityTypeEnum.TASK,
+        id: 12345,
+        entityName: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam',
+        validators: Validators.required
+      }
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Correction"
+    args={{
+      entity: {
+        type: EntityTypeEnum.CORRECTION,
+        id: 12345,
+        entityName: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam',
+        validators: Validators.required
+      }
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Test"
+    args={{
+      entity: {
+        type: EntityTypeEnum.TEST,
+        id: 12345,
+        entityName: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam',
+        validators: Validators.required
+      }
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Quick Test"
+    args={{
+      entity: {
+        type: EntityTypeEnum.QUICKTEST,
+        id: 12345,
+        entityName: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam',
+        validators: Validators.required
+      }
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Automated Test"
+    args={{
+      entity: {
+        type: EntityTypeEnum.AUTOMATEDTEST,
         id: 12345,
         entityName: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam',
         validators: Validators.required
