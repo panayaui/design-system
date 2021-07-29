@@ -1,0 +1,100 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+import {MastheadComponent} from 'projects/design-system-lib/src/public-api';
+import {MastheadModule} from 'projects/design-system-lib/src/public-api';
+
+<Meta title='Components/Masthead'
+  component={MastheadComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [MastheadModule]
+    })
+  ]}
+  args={{
+    navList: [
+      {
+        name: 'UK Ongoing Changes'
+      },
+      {
+        name: 'Overview',
+        subMenu: [
+          {
+            name: 'Dashboards'
+          },
+          {
+            name: 'Cycles Progress'
+          },
+          {
+            name: 'Project Details'
+          }
+        ]
+      },
+      {
+        name: 'Development',
+        badge: '0',
+        subMenu: [
+          {
+            name: 'All Development'
+          },
+          {
+            name: 'Planning board'
+          }
+        ]
+      },
+      {
+        name: 'Tests',
+        badge: '1',
+        subMenu: [
+          {
+            name: 'Test Tree'
+          },
+          {
+            name: 'Test List'
+          },
+          {
+            name: 'Playlist Execution'
+          }
+        ]
+      },
+      {
+        name: 'Defects',
+        badge: '2',
+        subMenu: [
+          {
+            name: 'Defects'
+          },
+          {
+            name: 'System-Wide Defects'
+          }
+        ]
+      },
+      {
+        name: 'Reports'
+      }
+    ]
+  }}
+/>
+
+export const Template = (args) => <MastheadComponent {...args} />
+
+# Masthead
+
+###### Selector
+
+```html
+  <p-masthead></p-masthead>
+```
+
+<Canvas>
+  <Story name="Masthead"
+    args={{
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+###### Component
+```ts
+
+```

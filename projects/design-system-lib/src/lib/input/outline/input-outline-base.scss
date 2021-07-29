@@ -63,6 +63,9 @@ $input-text-height: 32px;
     .mat-form-field-outline-gap {
       display: none;
     }
+    .mat-form-field-suffix {
+      top: 0;
+    }
     // hover
     &:not(.mat-form-field-disabled):not(.mat-form-field-invalid):not(.ng-invalid):not(.p-input-readonly):hover {
       .mat-form-field-outline,

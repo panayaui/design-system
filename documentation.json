@@ -3421,12 +3421,12 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n.p-entity-header {\r\n  display: flex;\r\n  align-items: center;\r\n\r\n  &-back:hover {\r\n    background-color: $primary-c-50;\r\n  }\r\n\r\n  &-icon {\r\n\r\n  }\r\n\r\n  &-title {\r\n    display: flex;\r\n    align-items: center;\r\n    flex: 1 1;\r\n    margin-left: $gap-small;\r\n  }\r\n\r\n  &-input {\r\n    display: flex;\r\n    align-items: center;\r\n    flex: 1 1;\r\n    &:before {\r\n      content: '';\r\n      display: block;\r\n      width: 1.5px;\r\n      height: 13px;\r\n      margin-left: $gap-double;\r\n      margin-right: $gap-base;\r\n      background-color: currentColor;\r\n    }\r\n  }\r\n\r\n  &-text {\r\n    letter-spacing: 0;\r\n    text-transform: none;\r\n    margin-left: 12px;\r\n  }\r\n\r\n\r\n}\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n.p-entity-header {\r\n  display: flex;\r\n  align-items: center;\r\n\r\n  &-back {\r\n    margin-right: 2px;\r\n    ::ng-deep .p-btn-isIcon {\r\n      padding: 4px 2px;\r\n    }\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n  }\r\n\r\n  &-icon {\r\n\r\n  }\r\n\r\n  &-title {\r\n    display: flex;\r\n    align-items: center;\r\n    flex: 1 1;\r\n    margin-left: $gap-small;\r\n  }\r\n\r\n  &-input {\r\n    display: flex;\r\n    align-items: center;\r\n    flex: 1 1;\r\n    &:before {\r\n      content: '';\r\n      display: block;\r\n      width: 2px;\r\n      height: 14px;\r\n      margin-left: $gap-double;\r\n      margin-right: $gap-base;\r\n      border-right: 2px solid currentColor;\r\n    }\r\n  }\r\n\r\n  &-text {\r\n    letter-spacing: 0;\r\n    text-transform: none;\r\n    margin-left: 12px;\r\n  }\r\n\r\n\r\n}\r\n",
                     "styleUrl": "./entity-header.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"p-entity-header\">\r\n  <p-button *ngIf=\"entity.type.value.editable\"\r\n            class=\"p-entity-header-back\"\r\n            ariaLabel=\"Back to listBack to list\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            iconBefore=\"chevron-left\"\r\n            iconBeforeWidth=\"16\"\r\n            matTooltip=\"Back to list\"\r\n            matTooltipPosition=\"above\"\r\n            matTooltipClass=\"p-tooltip above\"></p-button>\r\n\r\n  <p-icon class=\"p-entity-header-icon\"\r\n          [iconName]=\"entity.type.value.iconName\"\r\n          width=\"18\"\r\n          height=\"18\"></p-icon>\r\n\r\n  <h1 class=\"p-entity-header-title headline-1-bold\">\r\n    {{ entity.type.value.name }}\r\n    {{ entity.id }}\r\n\r\n    <ng-template [ngIf]=\"entity.type.value.editable\" [ngIfElse]=\"notEditableTitle\">\r\n      <p-input-header class=\"p-entity-header-input\"\r\n                      ariaLabel=\"Entity name\"\r\n                      placeholder=\"Add entity name\"\r\n                      [value]=\"entity.entityName\"\r\n                      [validators]=\"entity.validators\"\r\n                      [matcher]=\"entity.matcher\"></p-input-header>\r\n    </ng-template>\r\n\r\n    <ng-template #notEditableTitle>\r\n      <span class=\"p-entity-header-text headline-1-sub-semibold\">{{entity.entityName}}</span>\r\n    </ng-template>\r\n  </h1>\r\n</div>\r\n"
+            "templateData": "<div class=\"p-entity-header\">\r\n  <p-button *ngIf=\"entity.type.value.editable\"\r\n            class=\"p-entity-header-back\"\r\n            ariaLabel=\"Back to listBack to list\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            iconBefore=\"chevron-left\"\r\n            iconBeforeWidth=\"16\"\r\n            iconBeforeStrokeWidth=\"3\"\r\n            iconBeforeStrokeColor=\"#4132C8\"\r\n            matTooltip=\"Back to list\"\r\n            matTooltipPosition=\"above\"\r\n            matTooltipClass=\"p-tooltip above\"></p-button>\r\n\r\n  <p-icon class=\"p-entity-header-icon\"\r\n          [iconName]=\"entity.type.value.iconName\"\r\n          width=\"18\"\r\n          height=\"18\"></p-icon>\r\n\r\n  <h1 class=\"p-entity-header-title headline-1-bold\">\r\n    {{ entity.type.value.name }}\r\n    {{ entity.id }}\r\n\r\n    <ng-template [ngIf]=\"entity.type.value.editable\" [ngIfElse]=\"notEditableTitle\">\r\n      <p-input-header class=\"p-entity-header-input\"\r\n                      ariaLabel=\"Entity name\"\r\n                      placeholder=\"Add entity name\"\r\n                      [value]=\"entity.entityName\"\r\n                      [validators]=\"entity.validators\"\r\n                      [matcher]=\"entity.matcher\"></p-input-header>\r\n    </ng-template>\r\n\r\n    <ng-template #notEditableTitle>\r\n      <span class=\"p-entity-header-text headline-1-sub-semibold\">{{entity.entityName}}</span>\r\n    </ng-template>\r\n  </h1>\r\n</div>\r\n"
         },
         {
             "name": "ExpansionPanelComponent",
@@ -4095,7 +4095,7 @@
                 "line": 12
             },
             "extends": "InputOutlineComponent",
-            "templateData": "<mat-form-field class=\"p-input-outline p-input-header\"\r\n                appearance=\"outline\"\r\n                [ngClass]=\"{'p-input-readonly' : readonlyState, 'no-error-message': !errorMessage}\"\r\n                floatLabel=\"always\">\r\n\r\n  <input matInput\r\n         #inputField\r\n         [type]=\"type\"\r\n         [placeholder]=\"placeholder\"\r\n         [readonly]=\"readonlyState\"\r\n         attr.aria-label=\"{{ariaLabel}}\"\r\n         [formControl]=\"formFieldControl\"\r\n         [errorStateMatcher]=\"matcher\"\r\n         autocomplete=\"off\"\r\n         (focus)=\"onInputFocused()\"\r\n         (blur)=\"onInputBlur()\"\r\n         class=\"p-input-text-input\"\r\n         [class.readonly]=\"readonlyState\">\r\n\r\n  <p-icon class=\"p-input-outline-icon\"\r\n          matSuffix\r\n          iconName=\"edit-3\"\r\n          width=\"18\"\r\n          height=\"auto\">\r\n  </p-icon>\r\n\r\n</mat-form-field>\r\n"
+            "templateData": "<mat-form-field class=\"p-input-outline p-input-header\"\r\n                appearance=\"outline\"\r\n                [ngClass]=\"{'p-input-readonly' : readonlyState, 'no-error-message': !errorMessage}\"\r\n                floatLabel=\"always\">\r\n\r\n  <input matInput\r\n         #inputField\r\n         [type]=\"type\"\r\n         [placeholder]=\"placeholder\"\r\n         [readonly]=\"readonlyState\"\r\n         attr.aria-label=\"{{ariaLabel}}\"\r\n         [formControl]=\"formFieldControl\"\r\n         [errorStateMatcher]=\"matcher\"\r\n         autocomplete=\"off\"\r\n         (focus)=\"onInputFocused()\"\r\n         (blur)=\"onInputBlur()\"\r\n         class=\"p-input-text-input\"\r\n         [class.readonly]=\"readonlyState\">\r\n\r\n  <p-icon class=\"p-input-outline-icon\"\r\n          matSuffix\r\n          iconName=\"edit-2\"\r\n          width=\"18\"\r\n          height=\"auto\">\r\n  </p-icon>\r\n\r\n</mat-form-field>\r\n"
         },
         {
             "name": "InputLinkComponent",
@@ -4558,7 +4558,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"input-outline-base\";\r\n\r\n::ng-deep .p-input-outline {\r\n  &.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {\r\n    width: 100%;\r\n    transform: translateY(-30px);\r\n  }\r\n\r\n  &.mat-form-field-appearance-outline .mat-form-field-suffix {\r\n    top: 0;\r\n  }\r\n\r\n  .mat-form-field-label-wrapper {\r\n    top: -16px;\r\n    padding-top: 16px;\r\n  }\r\n\r\n  &.mat-form-field.mat-focused .mat-form-field-label,\r\n  &.mat-form-field.mat-form-field-invalid .mat-form-field-label {\r\n    color: $gray-scale-700;\r\n  }\r\n\r\n  &-button {\r\n    @include resetButton;\r\n    width: $input-text-height - 2px;\r\n    height: $input-text-height - 2px;\r\n    margin-right: 1px;\r\n\r\n    &:hover {\r\n      color: $secondary-a-700;\r\n      background-color: $primary-c-50;\r\n    }\r\n\r\n    .mat-form-field-disabled &,\r\n    .p-input-readonly & {\r\n      display: none;\r\n    }\r\n  }\r\n\r\n  &-icon {\r\n    margin-right: 7px;\r\n    .mat-form-field-disabled &,\r\n    .p-input-readonly & {\r\n      display: none;\r\n    }\r\n  }\r\n}\r\n",
+                    "data": "@import \"input-outline-base\";\r\n\r\n::ng-deep .p-input-outline {\r\n  &.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {\r\n    width: 100%;\r\n    transform: translateY(-30px);\r\n  }\r\n\r\n  .mat-form-field-label-wrapper {\r\n    top: -16px;\r\n    padding-top: 16px;\r\n  }\r\n\r\n  &.mat-form-field.mat-focused .mat-form-field-label,\r\n  &.mat-form-field.mat-form-field-invalid .mat-form-field-label {\r\n    color: $gray-scale-700;\r\n  }\r\n\r\n  &-button {\r\n    @include resetButton;\r\n    width: $input-text-height - 2px;\r\n    height: $input-text-height - 2px;\r\n    margin-right: 1px;\r\n\r\n    &:hover {\r\n      color: $secondary-a-700;\r\n      background-color: $primary-c-50;\r\n    }\r\n\r\n    .mat-form-field-disabled &,\r\n    .p-input-readonly & {\r\n      display: none;\r\n    }\r\n  }\r\n\r\n  &-icon {\r\n    margin-right: 7px;\r\n    .mat-form-field-disabled &,\r\n    .p-input-readonly & {\r\n      display: none;\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "./input-outline.component.scss"
                 }
             ],
@@ -4912,6 +4912,62 @@
             ],
             "stylesData": "",
             "templateData": "<div class=\"p-label-small\">\r\n  <span class=\"p-label-small-indicator\"\r\n        [ngClass]=\"'p-label-small-indicator-' + type\"\r\n        attr.aria-label=\"{{ariaLabel}}\"></span>\r\n  <span class=\"p-label-small-text\">{{label}}</span>\r\n</div>\r\n\r\n\r\n"
+        },
+        {
+            "name": "MastheadComponent",
+            "id": "component-MastheadComponent-cb22dd8d83f423ef175b3f6998c94117",
+            "file": "projects/design-system-lib/src/lib/masthead/masthead.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-masthead",
+            "styleUrls": [
+                "./masthead.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./masthead.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "navList",
+                    "line": 10,
+                    "type": "any"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "buttonType",
+                    "defaultValue": "ButtonTypeEnum",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {ButtonTypeEnum} from '../button/button-type.enum';\r\n\r\n@Component({\r\n  selector: 'p-masthead',\r\n  templateUrl: './masthead.component.html',\r\n  styleUrls: ['./masthead.component.scss'],\r\n})\r\nexport class MastheadComponent {\r\n  @Input() navList: any;\r\n  public buttonType = ButtonTypeEnum;\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$link-padding: $gap-double;\r\n\r\n.p-masthead {\r\n  display: flex;\r\n  align-items: center;\r\n  height: $masthead-height;\r\n  background-color: $primary-c-50;\r\n  padding-right: 50px;\r\n  padding-left: 40px - $link-padding;\r\n\r\n  &-homepage-link {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    font-size: 0;\r\n    height: 100%;\r\n    padding-right: $link-padding;\r\n    padding-left: $link-padding;\r\n    margin-right: 40px - $link-padding;\r\n  }\r\n\r\n  &-logo {\r\n    width: 95px;\r\n    height: 20px;\r\n  }\r\n\r\n  &-nav {\r\n    height: 100%;\r\n  }\r\n\r\n  &-nav-list {\r\n    @include resetUl;\r\n    display: flex;\r\n    align-items: center;\r\n    height: 100%;\r\n  }\r\n\r\n  &-nav-item {\r\n    height: 100%;\r\n    position: relative;\r\n  }\r\n\r\n  &-nav-link {\r\n    @include resetLink;\r\n    display: flex;\r\n    align-items: center;\r\n    height: 100%;\r\n    padding-right: $link-padding;\r\n    padding-left: $link-padding;\r\n    white-space: nowrap;\r\n    transition: color 280ms ease-in-out;\r\n\r\n    .p-masthead-nav-item:hover & {\r\n      color: $supportive-success-400;\r\n    }\r\n  }\r\n  // dropdown menu hidden by default\r\n  &-submenu-list {\r\n    width: 100%;\r\n    background: $primary-c-50;\r\n    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1),\r\n                0 2px 6px rgba(0, 0, 0, 0.04),\r\n                0 -3px 6px rgba(0, 0, 0, 0.04);\r\n    opacity: 0;\r\n    overflow: hidden;\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 0;\r\n\r\n    .p-masthead-nav-item:hover & {\r\n      //opacity: 1; // dropdown menu shown on hover\r\n    }\r\n  }\r\n}\r\n\r\n.logo {\r\n  background-image: url('../assets/images/logo.svg');\r\n}\r\n",
+                    "styleUrl": "./masthead.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"p-masthead\">\r\n  <a href=\"\" class=\"p-masthead-homepage-link\">\r\n    Home page\r\n    <img src=\"./logo.svg\" alt=\"Panaya Logo\"\r\n         class=\"p-masthead-logo\"/>\r\n  </a>\r\n  <nav aria-label=\"Main Navigation\" class=\"p-masthead-nav\">\r\n    <ul class=\"p-masthead-nav-list\">\r\n      <li *ngFor=\"let item of navList\" class=\"p-masthead-nav-item headline-2-bold\">\r\n        <a href=\"\" class=\"p-masthead-nav-link headline-2-bold\">\r\n          {{item.name}}\r\n        </a>\r\n        <ul *ngIf=\"item.subMenu\" class=\"p-masthead-submenu-list\">\r\n          <li *ngFor=\"let subItem of item.subMenu\" class=\"p-masthead-submenu-item\">\r\n            <a href=\"\" class=\"p-masthead-submenu-link\">\r\n              {{subItem.name}}\r\n            </a>\r\n          </li>\r\n        </ul>\r\n      </li>\r\n    </ul>\r\n  </nav>\r\n</div>\r\n\r\n<span class=\"logo\"></span>\r\n"
         },
         {
             "name": "MenuComponent",
@@ -6698,7 +6754,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$button-width: 24px;\r\n$button-height: 32px;\r\n\r\n%paginator-btn {\r\n  width: $button-width;\r\n  height: $button-height;\r\n  &:not(.disabled):hover{\r\n    background-color: $primary-c-50;\r\n  }\r\n}\r\n\r\n.p-paginator {\r\n  display: flex;\r\n  align-items: center;\r\n\r\n  &-arrow {\r\n    ::ng-deep .p-btn {\r\n      @extend %paginator-btn;\r\n    }\r\n    & ~ & {\r\n      margin-left: $gap-base;\r\n    }\r\n  }\r\n\r\n  &-list {\r\n    display: flex;\r\n    align-items: center;\r\n    @include resetUl;\r\n  }\r\n\r\n  &-item {\r\n    margin-left: $gap-base;\r\n  }\r\n\r\n  &-page {\r\n    width: 100%;\r\n    height: 100%;\r\n    display: block;\r\n    position: relative;\r\n\r\n    ::ng-deep .p-btn {\r\n      min-width: unset;\r\n      padding-right: 0;\r\n      padding-left: 0;\r\n      background-color: transparent;\r\n\r\n      @extend %paginator-btn;\r\n      &:not(:disabled) {\r\n        color: $primary-a-900;\r\n      }\r\n    }\r\n\r\n    &.selected:after {\r\n      content: 'Selected';\r\n      display: block;\r\n      font-size: 0;\r\n      width: $button-width;\r\n      height: 4px;\r\n      background-color: $primary-a-900;\r\n      position: absolute;\r\n      bottom: 0;\r\n    }\r\n  }\r\n\r\n  &-select {\r\n    margin-left: $gap-double;\r\n    margin-right: auto;\r\n    align-self: flex-end;\r\n  }\r\n\r\n  ::ng-deep .p-input-numeric .mat-form-field-infix {\r\n    padding-left: $gap-small;\r\n  }\r\n\r\n  &-items {\r\n    margin-left: $gap-double;\r\n  }\r\n\r\n  &-refresh {\r\n    margin-left: $gap-double-plus;\r\n  }\r\n}\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$button-width: 24px;\r\n$button-height: 32px;\r\n\r\n%paginator-btn {\r\n  width: $button-width;\r\n  height: $button-height;\r\n  &:not(.disabled):hover{\r\n    background-color: $primary-c-50;\r\n  }\r\n}\r\n\r\n.p-paginator {\r\n  display: flex;\r\n  align-items: center;\r\n\r\n  &-arrow {\r\n    ::ng-deep .p-btn {\r\n      @extend %paginator-btn;\r\n    }\r\n    & ~ & {\r\n      margin-left: $gap-base;\r\n    }\r\n  }\r\n\r\n  &-list {\r\n    display: flex;\r\n    align-items: center;\r\n    @include resetUl;\r\n  }\r\n\r\n  &-item {\r\n    margin-left: $gap-base;\r\n  }\r\n\r\n  &-page {\r\n    width: 100%;\r\n    height: 100%;\r\n    display: block;\r\n    position: relative;\r\n\r\n    ::ng-deep .p-btn {\r\n      min-width: unset;\r\n      padding-right: 0;\r\n      padding-left: 0;\r\n      background-color: transparent;\r\n\r\n      @extend %paginator-btn;\r\n      &:not(:disabled) {\r\n        color: $primary-a-900;\r\n      }\r\n    }\r\n\r\n    &.selected:after {\r\n      content: 'Selected';\r\n      display: block;\r\n      font-size: 0;\r\n      width: $button-width;\r\n      height: 4px;\r\n      background-color: $primary-a-900;\r\n      position: absolute;\r\n      bottom: 0;\r\n    }\r\n  }\r\n\r\n  &-select {\r\n    margin-left: $gap-double;\r\n    margin-right: auto;\r\n    align-self: flex-end;\r\n  }\r\n\r\n  ::ng-deep .p-input-numeric .mat-form-field-infix {\r\n    padding-left: $gap-small;\r\n  }\r\n\r\n  &-items {\r\n    margin-left: $gap-double;\r\n  }\r\n\r\n  &-refresh {\r\n    margin-left: $gap-base;\r\n  }\r\n}\r\n",
                     "styleUrl": "./paginator.component.scss"
                 }
             ],
@@ -8724,6 +8780,47 @@
             ]
         },
         {
+            "name": "MastheadModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "MastheadComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "ButtonModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "MastheadComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "MenuModule",
             "children": [
                 {
@@ -9342,17 +9439,17 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
-                "type": "Story<CheckboxPageComponent>",
-                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts",
+                "type": "Story<SlideTogglePageComponent>",
+                "defaultValue": "(args: SlideTogglePageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/slide-toggle/slide-toggle-page/slide-toggle-page.stories.ts",
-                "type": "Story<SlideTogglePageComponent>",
-                "defaultValue": "(args: SlideTogglePageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "Story<CheckboxPageComponent>",
+                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "palette",
@@ -10645,6 +10742,15 @@
                 "name": "LabelSubComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/masthead/masthead.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MastheadComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
