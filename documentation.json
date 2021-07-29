@@ -4962,12 +4962,12 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n.p-masthead {\r\n  display: flex;\r\n  align-items: center;\r\n  height: $masthead-height;\r\n  background-color: $primary-c-50;\r\n  padding-right: 50px;\r\n  padding-left: 40px - $gap-double;\r\n\r\n  &-homepage-link {\r\n    font-size: 0;\r\n    height: 100%;\r\n    padding-right: $gap-double;\r\n    padding-left: $gap-double;\r\n    margin-right: 40px - $gap-double;\r\n  }\r\n\r\n  &-logo {\r\n    width: 95px;\r\n    height: 20px;\r\n  }\r\n\r\n  &-nav-list {\r\n    @include resetUl;\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n}\r\nnav > ul li       ul { display: none; }\r\nnav > ul li:hover ul { display: block;}\r\n\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$link-padding: $gap-double;\r\n\r\n.p-masthead {\r\n  display: flex;\r\n  align-items: center;\r\n  height: $masthead-height;\r\n  background-color: $primary-c-50;\r\n  padding-right: 50px;\r\n  padding-left: 40px - $link-padding;\r\n\r\n  &-homepage-link {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    font-size: 0;\r\n    height: 100%;\r\n    padding-right: $link-padding;\r\n    padding-left: $link-padding;\r\n    margin-right: 40px - $link-padding;\r\n  }\r\n\r\n  &-logo {\r\n    width: 95px;\r\n    height: 20px;\r\n  }\r\n\r\n  &-nav {\r\n    height: 100%;\r\n  }\r\n\r\n  &-nav-list {\r\n    @include resetUl;\r\n    display: flex;\r\n    align-items: center;\r\n    height: 100%;\r\n  }\r\n\r\n  &-nav-item {\r\n    height: 100%;\r\n    position: relative;\r\n  }\r\n\r\n  &-nav-link {\r\n    @include resetLink;\r\n    display: flex;\r\n    align-items: center;\r\n    height: 100%;\r\n    padding-right: $link-padding;\r\n    padding-left: $link-padding;\r\n    white-space: nowrap;\r\n    transition: color 280ms ease-in-out;\r\n\r\n    .p-masthead-nav-item:hover & {\r\n      color: $supportive-success-400;\r\n    }\r\n  }\r\n  // dropdown menu hidden by default\r\n  &-submenu-list {\r\n    width: 100%;\r\n    background: $primary-c-50;\r\n    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1),\r\n                0 2px 6px rgba(0, 0, 0, 0.04),\r\n                0 -3px 6px rgba(0, 0, 0, 0.04);\r\n    opacity: 0;\r\n    overflow: hidden;\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 0;\r\n\r\n    .p-masthead-nav-item:hover & {\r\n      //opacity: 1; // dropdown menu shown on hover\r\n    }\r\n  }\r\n}\r\n\r\n.logo {\r\n  background-image: url('../assets/images/logo.svg');\r\n}\r\n",
                     "styleUrl": "./masthead.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"p-masthead\">\r\n  <a href=\"\" class=\"p-masthead-homepage-link\">\r\n    Home page\r\n    <img src=\"../assets/images/logo.svg\" alt=\"Panaya Logo\"\r\n         class=\"p-masthead-logo\"/>\r\n  </a>\r\n  <nav aria-label=\"Main Navigation\" class=\"p-masthead-nav\">\r\n    <ul class=\"p-masthead-nav-list\">\r\n      <li *ngFor=\"let item of navList\" class=\"p-masthead-nav-item\">\r\n        <a href=\"\" class=\"p-masthead-nav-link\">\r\n          {{item.name}}\r\n        </a>\r\n        <ul *ngIf=\"item.subMenu\">\r\n          <li *ngFor=\"let subItem of item.subMenu\" class=\"p-masthead-submenu-item\">\r\n            <a href=\"\" class=\"p-masthead-submenu-link\">\r\n              {{subItem.name}}\r\n            </a>\r\n          </li>\r\n        </ul>\r\n      </li>\r\n    </ul>\r\n  </nav>\r\n</div>\r\n\r\n"
+            "templateData": "<div class=\"p-masthead\">\r\n  <a href=\"\" class=\"p-masthead-homepage-link\">\r\n    Home page\r\n    <img src=\"./logo.svg\" alt=\"Panaya Logo\"\r\n         class=\"p-masthead-logo\"/>\r\n  </a>\r\n  <nav aria-label=\"Main Navigation\" class=\"p-masthead-nav\">\r\n    <ul class=\"p-masthead-nav-list\">\r\n      <li *ngFor=\"let item of navList\" class=\"p-masthead-nav-item headline-2-bold\">\r\n        <a href=\"\" class=\"p-masthead-nav-link headline-2-bold\">\r\n          {{item.name}}\r\n        </a>\r\n        <ul *ngIf=\"item.subMenu\" class=\"p-masthead-submenu-list\">\r\n          <li *ngFor=\"let subItem of item.subMenu\" class=\"p-masthead-submenu-item\">\r\n            <a href=\"\" class=\"p-masthead-submenu-link\">\r\n              {{subItem.name}}\r\n            </a>\r\n          </li>\r\n        </ul>\r\n      </li>\r\n    </ul>\r\n  </nav>\r\n</div>\r\n\r\n<span class=\"logo\"></span>\r\n"
         },
         {
             "name": "MenuComponent",
@@ -9431,17 +9431,17 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
-                "type": "Story<CheckboxGroupPageComponent>",
-                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "Story<CheckboxPageComponent>",
+                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
-                "type": "Story<CheckboxPageComponent>",
-                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "Story<CheckboxGroupPageComponent>",
+                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
