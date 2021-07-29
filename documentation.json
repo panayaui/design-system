@@ -4915,7 +4915,7 @@
         },
         {
             "name": "MastheadComponent",
-            "id": "component-MastheadComponent-fb99f176c97dc4b683a1c94640e8dbf4",
+            "id": "component-MastheadComponent-cb22dd8d83f423ef175b3f6998c94117",
             "file": "projects/design-system-lib/src/lib/masthead/masthead.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -4933,7 +4933,7 @@
             "viewProviders": [],
             "inputsClass": [
                 {
-                    "name": "entity",
+                    "name": "navList",
                     "line": 10,
                     "type": "any"
                 }
@@ -4958,16 +4958,16 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {ButtonTypeEnum} from '../button/button-type.enum';\r\n\r\n@Component({\r\n  selector: 'p-masthead',\r\n  templateUrl: './masthead.component.html',\r\n  styleUrls: ['./masthead.component.scss'],\r\n})\r\nexport class MastheadComponent {\r\n  @Input() entity: any;\r\n  public buttonType = ButtonTypeEnum;\r\n}\r\n",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {ButtonTypeEnum} from '../button/button-type.enum';\r\n\r\n@Component({\r\n  selector: 'p-masthead',\r\n  templateUrl: './masthead.component.html',\r\n  styleUrls: ['./masthead.component.scss'],\r\n})\r\nexport class MastheadComponent {\r\n  @Input() navList: any;\r\n  public buttonType = ButtonTypeEnum;\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n.p-entity-header {\r\n  display: flex;\r\n  align-items: center;\r\n\r\n  &-back {\r\n    margin-right: 2px;\r\n    ::ng-deep .p-btn-isIcon {\r\n      padding: 4px 2px;\r\n    }\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n  }\r\n\r\n  &-icon {\r\n\r\n  }\r\n\r\n  &-title {\r\n    display: flex;\r\n    align-items: center;\r\n    flex: 1 1;\r\n    margin-left: $gap-small;\r\n  }\r\n\r\n  &-input {\r\n    display: flex;\r\n    align-items: center;\r\n    flex: 1 1;\r\n    &:before {\r\n      content: '';\r\n      display: block;\r\n      width: 2px;\r\n      height: 14px;\r\n      margin-left: $gap-double;\r\n      margin-right: $gap-base;\r\n      border-right: 2px solid currentColor;\r\n    }\r\n  }\r\n\r\n  &-text {\r\n    letter-spacing: 0;\r\n    text-transform: none;\r\n    margin-left: 12px;\r\n  }\r\n\r\n\r\n}\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n.p-masthead {\r\n  display: flex;\r\n  align-items: center;\r\n  height: $masthead-height;\r\n  background-color: $primary-c-50;\r\n  padding-right: 50px;\r\n  padding-left: 40px - $gap-double;\r\n\r\n  &-homepage-link {\r\n    font-size: 0;\r\n    height: 100%;\r\n    padding-right: $gap-double;\r\n    padding-left: $gap-double;\r\n    margin-right: 40px - $gap-double;\r\n  }\r\n\r\n  &-logo {\r\n    width: 95px;\r\n    height: 20px;\r\n  }\r\n\r\n  &-nav-list {\r\n    @include resetUl;\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n}\r\nnav > ul li       ul { display: none; }\r\nnav > ul li:hover ul { display: block;}\r\n\r\n",
                     "styleUrl": "./masthead.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "masthead\r\n"
+            "templateData": "<div class=\"p-masthead\">\r\n  <a href=\"\" class=\"p-masthead-homepage-link\">\r\n    Home page\r\n    <img src=\"../assets/images/logo.svg\" alt=\"Panaya Logo\"\r\n         class=\"p-masthead-logo\"/>\r\n  </a>\r\n  <nav aria-label=\"Main Navigation\" class=\"p-masthead-nav\">\r\n    <ul class=\"p-masthead-nav-list\">\r\n      <li *ngFor=\"let item of navList\" class=\"p-masthead-nav-item\">\r\n        <a href=\"\" class=\"p-masthead-nav-link\">\r\n          {{item.name}}\r\n        </a>\r\n        <ul *ngIf=\"item.subMenu\">\r\n          <li *ngFor=\"let subItem of item.subMenu\" class=\"p-masthead-submenu-item\">\r\n            <a href=\"\" class=\"p-masthead-submenu-link\">\r\n              {{subItem.name}}\r\n            </a>\r\n          </li>\r\n        </ul>\r\n      </li>\r\n    </ul>\r\n  </nav>\r\n</div>\r\n\r\n"
         },
         {
             "name": "MenuComponent",

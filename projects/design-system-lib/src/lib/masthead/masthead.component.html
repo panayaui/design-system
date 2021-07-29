@@ -1,16 +1,16 @@
 <div class="p-masthead">
   <a href="" class="p-masthead-homepage-link">
     Home page
-    <img src="../assets/images/logo.svg" alt="Panaya Logo"
+    <img src="./logo.svg" alt="Panaya Logo"
          class="p-masthead-logo"/>
   </a>
   <nav aria-label="Main Navigation" class="p-masthead-nav">
     <ul class="p-masthead-nav-list">
-      <li *ngFor="let item of navList" class="p-masthead-nav-item">
-        <a href="" class="p-masthead-nav-link">
+      <li *ngFor="let item of navList" class="p-masthead-nav-item headline-2-bold">
+        <a href="" class="p-masthead-nav-link headline-2-bold">
           {{item.name}}
         </a>
-        <ul *ngIf="item.subMenu">
+        <ul *ngIf="item.subMenu" class="p-masthead-submenu-list">
           <li *ngFor="let subItem of item.subMenu" class="p-masthead-submenu-item">
             <a href="" class="p-masthead-submenu-link">
               {{subItem.name}}
@@ -22,3 +22,4 @@
   </nav>
 </div>
 
+<span class="logo"></span>
