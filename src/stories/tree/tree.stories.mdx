@@ -15,83 +15,19 @@ import {LabelTypesEnum} from 'projects/design-system-lib/src/public-api';
   ]}
   args={{ 
     treeNodes: [
-      {
-        name: 'Fruit',
-        isCycle: true,
+      { 
+        name: 'Panaya On Going',
+        isProject: true,
         children: [
-          { name: 'Apple',
+          {
+            name: 'Fruit',
+            isCycle: true,
             children: [
-              {
-                name: 'Label',
-                label: LabelTypesEnum.CRITICAL
-              },
-              {
-                name: 'Label',
-                label: LabelTypesEnum.DANGER
-              },
-              {
-                name: 'Label',
-                label: LabelTypesEnum.SUCCESS
-              }
-            ]
-          },
-          { name: 'Banana',
-            children: [
-              {
-                name: 'Label',
-                label: LabelTypesEnum.DANGER
-              },
-              {
-                name: 'Label',
-                label: LabelTypesEnum.SUCCESS
-              },
-              {
-                name: 'Label',
-                label: LabelTypesEnum.DARKGRAY
-              }
-            ]
-          },
-          { name: 'Peach',
-            children: [
-              {
-                name: 'Label',
-                label: LabelTypesEnum.CRITICAL
-              },
-              {
-                name: 'Label',
-                label: LabelTypesEnum.CRITICAL
-              },
-              {
-                name: 'Label',
-                label: LabelTypesEnum.CRITICAL
-              }
-            ]
-          }
-        ]
-      },
-      {
-        name: 'Vegetables',
-        isCycle: true,
-        children: [
-          { name: 'Cucumber',
-            children: [
-              {
-                name: 'Label',
+              { name: 'Apple',
                 children: [
                   {
                     name: 'Label',
-                    selected: true,
-                    children: [
-                      {
-                        name: 'Label',
-                        selected: true,
-                        label: LabelTypesEnum.MEDIUM
-                      },
-                      {
-                        name: 'Label',
-                        label: LabelTypesEnum.LOW
-                      }
-                    ]
+                    label: LabelTypesEnum.CRITICAL
                   },
                   {
                     name: 'Label',
@@ -103,25 +39,23 @@ import {LabelTypesEnum} from 'projects/design-system-lib/src/public-api';
                   }
                 ]
               },
-              {
-                name: 'Label',
+              { name: 'Banana',
                 children: [
                   {
                     name: 'Label',
-                    label: LabelTypesEnum.MEDIUM
+                    label: LabelTypesEnum.DANGER
                   },
                   {
                     name: 'Label',
-                    label: LabelTypesEnum.LOW
+                    label: LabelTypesEnum.SUCCESS
                   },
                   {
                     name: 'Label',
-                    label: LabelTypesEnum.CRITICAL
+                    label: LabelTypesEnum.DARKGRAY
                   }
                 ]
               },
-              {
-                name: 'Label',
+              { name: 'Peach',
                 children: [
                   {
                     name: 'Label',
@@ -139,40 +73,113 @@ import {LabelTypesEnum} from 'projects/design-system-lib/src/public-api';
               }
             ]
           },
-          { name: 'Cabbage',
+          {
+            name: 'Vegetables',
+            isCycle: true,
             children: [
-              {
-                name: 'Label',
-                label: LabelTypesEnum.CRITICAL
+              { name: 'Cucumber',
+                children: [
+                  {
+                    name: 'Label',
+                    children: [
+                      {
+                        name: 'Label',
+                        selected: true,
+                        children: [
+                          {
+                            name: 'Label',
+                            selected: true,
+                            label: LabelTypesEnum.MEDIUM
+                          },
+                          {
+                            name: 'Label',
+                            label: LabelTypesEnum.LOW
+                          }
+                        ]
+                      },
+                      {
+                        name: 'Label',
+                        label: LabelTypesEnum.DANGER
+                      },
+                      {
+                        name: 'Label',
+                        label: LabelTypesEnum.SUCCESS
+                      }
+                    ]
+                  },
+                  {
+                    name: 'Label',
+                    children: [
+                      {
+                        name: 'Label',
+                        label: LabelTypesEnum.MEDIUM
+                      },
+                      {
+                        name: 'Label',
+                        label: LabelTypesEnum.LOW
+                      },
+                      {
+                        name: 'Label',
+                        label: LabelTypesEnum.CRITICAL
+                      }
+                    ]
+                  },
+                  {
+                    name: 'Label',
+                    children: [
+                      {
+                        name: 'Label',
+                        label: LabelTypesEnum.CRITICAL
+                      },
+                      {
+                        name: 'Label',
+                        label: LabelTypesEnum.CRITICAL
+                      },
+                      {
+                        name: 'Label',
+                        label: LabelTypesEnum.CRITICAL
+                      }
+                    ]
+                  }
+                ]
               },
-              {
-                name: 'Label',
-                label: LabelTypesEnum.CRITICAL
+              { name: 'Cabbage',
+                children: [
+                  {
+                    name: 'Label',
+                    label: LabelTypesEnum.CRITICAL
+                  },
+                  {
+                    name: 'Label',
+                    label: LabelTypesEnum.CRITICAL
+                  },
+                  {
+                    name: 'Label',
+                    label: LabelTypesEnum.CRITICAL
+                  }
+                ]
               },
-              {
-                name: 'Label',
-                label: LabelTypesEnum.CRITICAL
-              }
-            ]
-          },
-          { name: 'Tomato',
-            children: [
-              {
-                name: 'Label',
-                label: LabelTypesEnum.CRITICAL
-              },
-              {
-                name: 'Label',
-                label: LabelTypesEnum.CRITICAL
-              },
-              {
-                name: 'Label',
-                label: LabelTypesEnum.CRITICAL
+              { name: 'Tomato',
+                children: [
+                  {
+                    name: 'Label',
+                    label: LabelTypesEnum.CRITICAL
+                  },
+                  {
+                    name: 'Label',
+                    label: LabelTypesEnum.CRITICAL
+                  },
+                  {
+                    name: 'Label',
+                    label: LabelTypesEnum.CRITICAL
+                  }
+                ]
               }
             ]
           }
         ]
       }
+      
     ]
   }}
 />
