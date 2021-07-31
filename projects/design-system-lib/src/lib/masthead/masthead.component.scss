@@ -41,8 +41,17 @@ $background-color: $primary-c-50;
   }
 
   &-nav-item {
+    display: flex;
+    align-items: center;
     height: 100%;
     position: relative;
+
+    &.divider:before {
+      content: '';
+      width: 1px;
+      height: 18px;
+      border-right: 1px solid $gray-scale-600;
+    }
   }
 
   &-nav-link {
@@ -64,6 +73,10 @@ $background-color: $primary-c-50;
       color: $primary-a-900;
       background-color: $accent-color;
     }
+  }
+
+  &-nav-link-icon {
+    margin-right: $gap-base;
   }
 
   &-nav-badge {
