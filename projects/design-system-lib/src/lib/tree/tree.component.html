@@ -34,21 +34,23 @@
 </mat-tree>
 
 <ng-template #nodeContent let-node="node">
-  <ng-template [ngIf]="!node.isCycle && node.children?.length && treeControl.isExpanded(node)" [ngIfElse]="closedNode">
-    <p-icon class="p-tree-node-icon"
-            iconName="folder-open"
-            width="16"
-            height="16">
-    </p-icon>
-  </ng-template>
+  <ng-container *ngIf="!node.isProject">
+    <ng-template [ngIf]="!node.isCycle && node.children?.length && treeControl.isExpanded(node)" [ngIfElse]="closedNode">
+      <p-icon class="p-tree-node-icon"
+              iconName="folder-open"
+              width="16"
+              height="16">
+      </p-icon>
+    </ng-template>
 
-  <ng-template #closedNode>
-    <p-icon class="p-tree-node-icon"
-            [class.not-expandable]="!node.children?.length"
-            [iconName]="node.isCycle ? 'circle' : node.children?.length ? 'folder' : 'file-text'"
-            width="16">
-    </p-icon>
-  </ng-template>
+    <ng-template #closedNode>
+      <p-icon class="p-tree-node-icon"
+              [class.not-expandable]="!node.children?.length"
+              [iconName]="node.isCycle ? 'circle' : node.children?.length ? 'folder' : 'file-text'"
+              width="16">
+      </p-icon>
+    </ng-template>
+  </ng-container>
 
   <span *ngIf="node.label"
         class="p-tree-node-label p-label-small-indicator"
