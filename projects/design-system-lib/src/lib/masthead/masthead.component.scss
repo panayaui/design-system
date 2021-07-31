@@ -2,12 +2,13 @@
 
 $link-padding: $gap-double;
 $accent-color: $primary-b-300;
+$background-color: $primary-c-50;
 
 .p-masthead {
   display: flex;
   align-items: center;
   height: $masthead-height;
-  background-color: $primary-c-50;
+  background-color: $background-color;
   padding-right: 50px;
   padding-left: 40px - $link-padding;
 
@@ -29,6 +30,7 @@ $accent-color: $primary-b-300;
 
   &-nav {
     height: 100%;
+    margin-right: auto;
   }
 
   &-nav-list {
@@ -68,17 +70,19 @@ $accent-color: $primary-b-300;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: $small-font-size;
+    font-size: $middle-font-size;
     font-weight: 600;
     width: 23px;
     height: 22px;
+    line-height: 1.5;
     margin-left: $gap-base;
     border: 1px solid currentColor;
     border-radius: 50%;
     transition: background-color 200ms ease-in-out;
     .p-masthead-nav-item:hover & ,
     .p-masthead-nav-item:focus-within & {
-        border-width: 2px;
+      font-weight: 700;
+      border-width: 2px;
     }
 
     .p-masthead-nav-link.selected & {
@@ -124,6 +128,33 @@ $accent-color: $primary-b-300;
     &:hover,
     &:focus {
       color: $accent-color;
+    }
+  }
+
+  &-icon {
+    & ~ & {
+      margin-left: $gap-double;
+    }
+    &.notification {
+      position: relative;
+      &:after {
+        content: 'notification';
+        display: block;
+        font-size: 0;
+        width: 8px;
+        height: 8px;
+        border: 2px solid $background-color;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
+    &.regular:after {
+      background-color: $secondary-a-700;
+    }
+    &.alert:after {
+      background-color: $supportive-alert-500;
     }
   }
 }
