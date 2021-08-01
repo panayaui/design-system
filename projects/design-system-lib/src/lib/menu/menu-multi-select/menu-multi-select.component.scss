@@ -30,10 +30,12 @@ $menu-header-half-extended-height: $input-text-height + ($menu-padding * 4) + $m
     flex-direction: row;
     padding: 0;
     .mat-list-text {
-      display: inline;
+      display: inline-flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
       padding-left: $menu-padding;
       padding-right: 0;
-      @include ellipsis;
     }
   }
 

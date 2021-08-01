@@ -55,6 +55,12 @@ $menu-body-min-height: 103px;
     font-weight: 700;
     text-transform: uppercase;
   }
+  &-item-text {
+    @include ellipsis;
+  }
+  &-item-icon {
+    margin-left: $gap-base;
+  }
   &-footer {
     display: flex;
     align-items: center;

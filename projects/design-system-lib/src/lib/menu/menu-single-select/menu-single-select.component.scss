@@ -6,6 +6,9 @@ $menu-header-height: $input-text-height + $menu-padding + $menu-padding;
 $menu-footer-height: $menu-padding * 2 + $menu-item-height * 2 + 1px;
 
 %menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   font-family: $font-family-basic;
   color: $primary-a-900;
   height: $menu-item-height;

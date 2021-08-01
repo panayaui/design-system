@@ -44,7 +44,15 @@
                                [disabled]="item.disabled"
                                [selected]="item.selected"
                                (click)="onOptionSelected(item)">
-                {{item.name}}
+                <span class="p-menu-item-text">{{item.name}}</span>
+                <p-icon *ngIf="item.iconName"
+                        class="p-menu-item-icon"
+                        [iconName]="item.iconName"
+                        width="18"
+                        height="18"
+                        [matTooltip]="item.tooltipText"
+                        matTooltipPosition="above"
+                        matTooltipClass="p-tooltip above"></p-icon>
               </mat-list-option>
             </ng-container>
           </ng-template>
@@ -57,7 +65,12 @@
                              [disabled]="item.disabled"
                              [selected]="item.selected"
                              (click)="onOptionSelected(item)">
-              {{item.name}}
+              <span class="p-menu-item-text">{{item.name}}</span>
+              <p-icon *ngIf="item.iconName"
+                      class="p-menu-icon"
+                      [iconName]="item.iconName"
+                      width="18"
+                      height="18"></p-icon>
             </mat-list-option>
           </ng-template>
         </mat-selection-list>

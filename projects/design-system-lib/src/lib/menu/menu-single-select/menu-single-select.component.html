@@ -72,6 +72,14 @@
           [class.p-menu-item-selected]="item.selected"
           [disabled]="item.disabled"
           (click)="onSelectedItem($event, item)">
-    {{item.name}}
+    <span class="p-menu-item-text">{{item.name}}</span>
+    <p-icon *ngIf="item.iconName"
+            class="p-menu-item-icon"
+            [iconName]="item.iconName"
+            width="18"
+            height="18"
+            [matTooltip]="item.tooltipText"
+            matTooltipPosition="above"
+            matTooltipClass="p-tooltip above"></p-icon>
   </button>
 </ng-template>
