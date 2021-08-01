@@ -6,7 +6,7 @@ export const stateGroups = [{
   names: [{name: 'California', selected: true}, {name: 'Colorado'}, {name: 'Connecticut'}]
 }, {
   letter: 'States D',
-  names: [{name: 'Delaware', iconName: 'share-2', tooltipText: 'Delaware info'}]
+  names: [{name: 'Delaware', iconName: 'share-2'}]
 }, {
   letter: 'States F',
   names: [{name: 'Florida'}]
