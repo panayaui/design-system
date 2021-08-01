@@ -1,12 +1,12 @@
 export const stateGroups = [{
   letter: 'States A',
-  names: [ {name: 'Alabama'}, {name: 'Alaska', disabled: true}, {name: 'Arizona'}, {name: 'Arkansas'}]
+  names: [ {name: 'Alabama'}, {name: 'Alaska', disabled: true}, {name: 'Arizona', iconName: 'info', tooltipText: 'Arizona info'}, {name: 'Arkansas'}]
 }, {
   letter: 'States C',
   names: [{name: 'California', selected: true}, {name: 'Colorado'}, {name: 'Connecticut'}]
 }, {
   letter: 'States D',
-  names: [{name: 'Delaware'}]
+  names: [{name: 'Delaware', iconName: 'share-2'}]
 }, {
   letter: 'States F',
   names: [{name: 'Florida'}]
@@ -18,7 +18,7 @@ export const stateGroups = [{
   names: [{name: 'Hawaii'}]
 }, {
   letter: 'States I',
-  names: [{name: 'Idaho'}, {name: 'Illinois'}, {name: 'Indiana'}, {name: 'Iowa'}]
+  names: [{name: 'Idaho', iconName: 'info', tooltipText: 'Idaho info'}, {name: 'Illinois', iconName: 'info', tooltipText: 'Illinois info'}, {name: 'Indiana'}, {name: 'Iowa'}]
 }, {
   letter: 'States K',
   names: [{name: 'Kansas'}, {name: 'Kentucky'}]

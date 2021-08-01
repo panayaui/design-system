@@ -29,10 +29,14 @@ import {stateGroups} from './stateGroups';
           disabled: true
         },
         { name: 'California',
-          disabled: false
+          disabled: false,
+          iconName: 'info',
+          tooltipText: 'California info'
         },
         { name: 'Colorado',
-          disabled: false
+          disabled: false,
+          iconName: 'info',
+          tooltipText: 'Colorado info'
         },
         { name: 'Delaware',
           disabled: false
@@ -93,12 +97,40 @@ export const Template = (args) => <ComboComponent {...args} />
     }}>
     {Template.bind({})}
   </Story>
+  <Story name="Multi Select with Grouping"
+    args={{
+       multiMenuTrigger: {
+        label: 'Grouping',
+        iconBeforeName: 'columns',
+        iconBeforeWidth: '17',
+        isStandalone: true
+      },
+      groupTitle: true,
+      multiMenuList: stateGroups
+    }}>
+    {Template.bind({})}
+  </Story>
 </Canvas>
 
 ###### Filter 
 <Canvas>
   <Story name="Multi Select with Filter"
     args={{
+      filterAriaLabel: 'Find Label',
+      filterPlaceholder: 'Find Label'
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Multi Select with Filter and Grouping"
+    args={{
+       multiMenuTrigger: {
+        label: 'Grouping',
+        iconBeforeName: 'columns',
+        iconBeforeWidth: '17',
+        isStandalone: true
+      },
+      groupTitle: true,
+      multiMenuList: stateGroups,
       filterAriaLabel: 'Find Label',
       filterPlaceholder: 'Find Label'
     }}>

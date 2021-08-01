@@ -1,13 +1,14 @@
 @import "../menu/menu-base.component";
 
-$menu-item-height: 32px;
-$menu-item-margin-top: $gap-small;
 $input-text-height: 32px;
 $input-text-padding: $menu-padding;
 $menu-header-height: $input-text-height + $menu-padding + $menu-padding;
 $menu-footer-height: $menu-padding * 2 + $menu-item-height * 2 + 1px;
 
 %menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   font-family: $font-family-basic;
   color: $primary-a-900;
   height: $menu-item-height;

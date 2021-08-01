@@ -36,7 +36,10 @@
                       iconName="alert-circle"
                       width="16"
                       height="16"
-                      stroke="#2D3047"></p-icon>
+                      stroke="#2D3047"
+                      [matTooltip]="input.tableHeader.tooltipText"
+                      matTooltipPosition="above"
+                      matTooltipClass="p-tooltip above"></p-icon>
               <span *ngIf="input.tableHeader.required"
                     class="input-table-header-required">
                 &#42;

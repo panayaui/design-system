@@ -47,6 +47,7 @@
 <!--Multi select-->
 <ng-container *ngIf="multiMenuTrigger && !filterPlaceholder && !headerBtnFirst">
   <p-menu-multi-select [menuList]="multiMenuList"
+                       [groupTitle]="groupTitle"
                         [headerBtnFirst]="headerBtnFirst"
                         [headerBtnLast]="headerBtnLast"
                         [footerBtnFirst]="footerBtnFirst"
@@ -66,6 +67,7 @@
 
 <ng-container *ngIf="multiMenuTrigger && filterPlaceholder && !headerBtnFirst && !hashtagList">
   <p-menu-multi-select [menuList]="multiMenuList"
+                       [groupTitle]="groupTitle"
                        [filterPlaceholder]="filterPlaceholder"
                        [filterAriaLabel]="filterAriaLabel"
                        [footerBtnFirst]="footerBtnFirst"
@@ -85,6 +87,7 @@
 
 <ng-container *ngIf="multiMenuTrigger && filterPlaceholder && !headerBtnFirst && hashtagList">
   <p-menu-multi-select [menuList]="multiMenuList"
+                       [groupTitle]="groupTitle"
                        [filterPlaceholder]="filterPlaceholder"
                        [filterAriaLabel]="filterAriaLabel"
                        [footerBtnFirst]="footerBtnFirst"
@@ -98,6 +101,7 @@
 
 <ng-container *ngIf="multiMenuTrigger && filterPlaceholder && headerBtnFirst">
   <p-menu-multi-select [menuList]="multiMenuList"
+                       [groupTitle]="groupTitle"
                        [filterPlaceholder]="filterPlaceholder"
                        [filterAriaLabel]="filterAriaLabel"
                        [headerBtnFirst]="headerBtnFirst"

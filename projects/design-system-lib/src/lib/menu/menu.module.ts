@@ -19,6 +19,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {RadioButtonModule} from '../radio-button/radio-button.module';
 import {MenuFreeTextComponent} from './menu-free-text/menu-free-text.component';
 import {MenuRangeComponent} from './menu-range/menu-range.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   imports: [
@@ -35,7 +36,8 @@ import {MenuRangeComponent} from './menu-range/menu-range.component';
     IconModule,
     CheckboxModule,
     InputModule,
-    RadioButtonModule
+    RadioButtonModule,
+    MatTooltipModule
   ],
   declarations: [
     MenuSingleSelectComponent,

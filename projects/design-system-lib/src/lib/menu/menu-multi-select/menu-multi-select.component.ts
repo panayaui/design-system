@@ -18,6 +18,7 @@ import {ICheckbox} from '../../checkbox/checkbox.interface';
 })
 export class MenuMultiSelectComponent implements OnInit, OnDestroy {
   @Input() menuList: any[];
+  @Input() groupTitle: boolean = false; // true if there is a group title
   @Input() filterPlaceholder: string; // if there is a search and buttons
   @Input() filterAriaLabel: string;
   @Input() headerBtnFirst: IMenuButton;
@@ -52,7 +53,18 @@ export class MenuMultiSelectComponent implements OnInit, OnDestroy {
   }
 
   alterList(value: string): void {
-    this.filteredList = this.menuList.filter( item => item.name.toLowerCase().indexOf(value.toLowerCase()) > -1);
+    if (this.groupTitle) {
+      this.filteredList = [];
+      this.menuList.forEach(group => {
+        const filteredGroup = group.names.filter( name => name.name.toLowerCase().indexOf(value.toLowerCase()) > -1);
+        if (filteredGroup.length > 0) {
+          this.filteredList.push(Object.assign({}, group, group.names = filteredGroup));
+        }
+      });
+    }
+    else {
+      this.filteredList = this.menuList.filter( item => item.name.toLowerCase().indexOf(value.toLowerCase()) > -1);
+    }
   }
 
   onOptionSelected(item): void {

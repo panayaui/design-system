@@ -1,7 +1,5 @@
 @import "../menu/menu-base.component";
 
-$menu-item-height: 32px;
-$menu-item-margin-top: $gap-small;
 $input-text-height: 32px;
 $input-text-padding: $menu-padding;
 $menu-header-height: $input-text-height + $menu-padding * 3 + 1px;
@@ -32,10 +30,12 @@ $menu-header-half-extended-height: $input-text-height + ($menu-padding * 4) + $m
     flex-direction: row;
     padding: 0;
     .mat-list-text {
-      display: inline;
+      display: inline-flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
       padding-left: $menu-padding;
       padding-right: 0;
-      @include ellipsis;
     }
   }
 
