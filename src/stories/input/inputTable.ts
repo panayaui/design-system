@@ -6,7 +6,7 @@ export const inputTable = [
     tableData: {...inputObj }
   },
   {
-    tableHeader: { name: 'Cell long long long long long long long long long long long long Label', attention: true },
+    tableHeader: { name: 'Cell long long long long long long long long long long long long Label', attention: true, tooltipText: 'Some info' },
     tableData: {...inputObj}
   },
   {
@@ -14,7 +14,7 @@ export const inputTable = [
     tableData: {...inputObj}
   },
   {
-    tableHeader: { name: 'Cell Label', attention: true },
+    tableHeader: { name: 'Cell Label', attention: true, tooltipText: 'Some info' },
     tableData: {...inputObj}
   },
   {
