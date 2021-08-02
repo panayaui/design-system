@@ -46,7 +46,13 @@
   &-track-status {
     background-image: url('../assets/images/icons/track-status.svg');
   }
+  &-track-status:hover {
+    background-image: url('../assets/images/icons/track-status-hover.svg');
+  }
   &-user-circle {
     background-image: url('../assets/images/icons/user-circle.svg');
+  }
+  &-user-circle:hover {
+    background-image: url('../assets/images/icons/user-circle-hover.svg');
   }
 }
