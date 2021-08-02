@@ -69,3 +69,25 @@
     bottom: $bottom;
   }
 }
+
+@mixin notification($bg-color: transparent) {
+  position: relative;
+  &:after {
+    content: 'notification';
+    display: block;
+    font-size: 0;
+    width: 10px;
+    height: 10px;
+    border: 2px solid $bg-color;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: -2px;
+  }
+  &.regular:after {
+    background-color: $secondary-a-700;
+  }
+  &.alert:after {
+    background-color: $supportive-alert-500;
+  }
+}
