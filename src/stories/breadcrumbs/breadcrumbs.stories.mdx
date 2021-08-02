@@ -1,0 +1,86 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+
+import {BreadcrumbsComponent} from 'projects/design-system-lib/src/public-api';
+import {IconModule} from 'projects/design-system-lib/src/lib/icon/icon.module';
+
+<Meta title='Components/Breadcrumbs'
+  component={BreadcrumbsComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [IconModule]
+    })
+  ]}
+  args={{
+    breadcrumbs: [
+      { 
+        name: 'First Level',
+        link: 'https://feathericons.com/'
+      },
+      { 
+        name: 'Second level',
+        link: 'https://feathericons.com/'
+      },
+      { 
+        name: 'Third level'
+      }
+    ]
+  }}
+/>
+
+export const Template = (args) => <BreadcrumbsComponent {...args} />
+
+# Breadcrumbs
+
+###### Selector
+```ts
+  <p-breadcrumbs></p-breadcrumbs>
+```
+###### Page Header
+<Canvas>
+  <Story name="Breadcrumbs Page Header 3"
+    args={{
+      pageHeader: true
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Breadcrumbs Page Header 2"
+    args={{
+      pageHeader: true,
+      breadcrumbs: [
+        { 
+          name: 'First Level',
+          link: 'https://feathericons.com/'
+        },
+        { 
+          name: 'Second level'
+        }
+      ]
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Inner
+<Canvas>
+  <Story name="Breadcrumbs Inner 3"
+    args={{
+    }}>
+    {Template.bind({})}
+  </Story>
+   <Story name="Breadcrumbs Inner 2"
+    args={{
+      breadcrumbs: [
+        { 
+          name: 'First Level',
+          link: 'https://feathericons.com/'
+        },
+        { 
+          name: 'Second level'
+        }
+      ]
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+

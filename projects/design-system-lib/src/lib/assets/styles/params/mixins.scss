@@ -57,3 +57,15 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+@mixin linkHoverUnderline($bottom: 2px, $lineHeight: 1px) {
+  &:hover:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: $lineHeight;
+    background-color: currentColor;
+    position: absolute;
+    bottom: $bottom;
+  }
+}

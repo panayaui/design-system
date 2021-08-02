@@ -123,6 +123,7 @@ $gap-small: 4px;
 $input-text-width: 220px;
 $input-text-padding: $gap-base;
 
+$masthead-height: 64px;
 
 $white: #ffffff;
 $black: #000000;
@@ -298,6 +299,18 @@ $dev-c-300: #4132C8;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+@mixin linkHoverUnderline($bottom: 2px, $lineHeight: 1px) {
+  &:hover:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: $lineHeight;
+    background-color: currentColor;
+    position: absolute;
+    bottom: $bottom;
+  }
 }
 
 

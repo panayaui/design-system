@@ -1,0 +1,40 @@
+@import "../assets/styles/custom";
+
+%breadcrumbsItem {
+  font-family: $font-family-basic;
+  font-size: $big-font-size;
+  font-weight: 600;
+}
+
+.p-breadcrumbs {
+  @include resetUl;
+  display: flex;
+  align-items: center;
+
+  &-item {
+    display: flex;
+    align-items: center;
+  }
+
+  &-link {
+    @include resetLink;
+    @extend %breadcrumbsItem;
+    color: $secondary-a-700;
+    position: relative;
+    @include linkHoverUnderline(0, 1.5px);
+    .header .p-breadcrumbs-item:first-child & {
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+  }
+
+  &-icon {
+    margin-right: $gap-small;
+    margin-left: $gap-small;
+  }
+
+  &-noLink {
+    @extend %breadcrumbsItem;
+  }
+}

@@ -118,3 +118,5 @@ export * from './lib/slide-toggle/slide-toggle.component';
 
 export * from './lib/masthead/masthead.module';
 export * from './lib/masthead/masthead.component';
+
+export * from './lib/breadcrumbs/breadcrumbs.component';

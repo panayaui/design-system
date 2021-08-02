@@ -1,0 +1,18 @@
+<ul class="p-breadcrumbs" [class.header]="pageHeader">
+  <li *ngFor="let crumb of breadcrumbs" class="p-breadcrumbs-item">
+    <ng-template [ngIf]="crumb.link" [ngIfElse]="noLink">
+      <a [attr.href]="crumb.link" class="p-breadcrumbs-link">
+        {{ crumb.name }}
+      </a>
+      <p-icon class="p-breadcrumbs-icon"
+              iconName="chevron-right"
+              width="18">
+      </p-icon>
+    </ng-template>
+
+    <ng-template #noLink>
+      <span class="p-breadcrumbs-noLink">{{ crumb.name }}</span>
+    </ng-template>
+  </li>
+</ul>
+
