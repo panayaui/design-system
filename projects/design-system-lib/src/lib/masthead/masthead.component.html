@@ -12,10 +12,10 @@
         <a href=""
            class="p-masthead-nav-link headline-2-bold"
            [class.selected]="item.selected">
-          <p-icon *ngIf="item.subMenu"
+          <p-icon *ngIf="item.megaMenu"
                   class="p-masthead-nav-link-icon"
                   iconName="menu"
-                  width="20"></p-icon>
+                  width="22"></p-icon>
           {{item.name}}
           <span *ngIf="item.badge" class="p-masthead-nav-badge">
             {{item.badge}}
@@ -34,14 +34,14 @@
 
   <p-icon class="p-masthead-icon search"
           iconName="search"
-          width="20"
+          width="22"
           matTooltip="Search"
           matTooltipPosition="above"
           matTooltipClass="p-tooltip below"></p-icon>
 
   <p-icon class="p-masthead-icon settings"
           iconName="settings"
-          width="20"
+          width="22"
           matTooltip="Settings"
           matTooltipPosition="above"
           matTooltipClass="p-tooltip below"></p-icon>
@@ -56,22 +56,22 @@
 
   <p-icon class="p-masthead-icon help notification regular"
           iconName="help-circle"
-          width="20"
+          width="22"
           matTooltip="Help"
           matTooltipPosition="above"
           matTooltipClass="p-tooltip below"></p-icon>
 
   <p-icon class="p-masthead-icon bell notification alert"
           iconName="bell"
-          width="20"
+          width="22"
           matTooltip="Notifications"
           matTooltipPosition="above"
           matTooltipClass="p-tooltip below"></p-icon>
 
   <p-icon class="p-masthead-icon user"
           iconName="user-circle"
-          width="20"
-          height="20"
+          width="22"
+          height="22"
           matTooltip="Account"
           matTooltipPosition="above"
           matTooltipClass="p-tooltip below"></p-icon>

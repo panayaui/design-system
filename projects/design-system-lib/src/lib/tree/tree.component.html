@@ -58,7 +58,8 @@
     {{node.label}}
   </span>
 
-  <span class="p-tree-node-name paragraph-3-default">
+  <span class="p-tree-node-name paragraph-3-default"
+        [class.project]="node.isProject">
     {{node.name}}
   </span>
 </ng-template>

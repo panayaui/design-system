@@ -48,6 +48,10 @@ $node-padding: 24px;
     padding-left: $node-padding;
   }
 
+  .project {
+    font-weight: 700;
+  }
+
   .child-selected {
     font-weight: 700;
     background-color: $primary-c-50;

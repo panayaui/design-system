@@ -1366,10 +1366,10 @@
         },
         {
             "name": "EntityTypeEnum",
-            "id": "class-EntityTypeEnum-e17d0583c3c878d48a82eea9e534d795",
+            "id": "class-EntityTypeEnum-8401f711b7ae7e321e6a7abc31755b50",
             "file": "projects/design-system-lib/src/lib/entity-header/entity-type.enum.ts",
             "type": "class",
-            "sourceCode": "export class EntityTypeEnum {\r\n  static readonly DEFECT = new EntityTypeEnum('DEFECT', { name: 'defect', iconName: 'chrome', editable: true } );\r\n  static readonly FEATURE = new EntityTypeEnum('FEATURE', { name: 'feature', iconName: 'compass', editable: true } );\r\n  static readonly REQUIREMENT = new EntityTypeEnum('REQUIREMENT', { name: 'requirement', iconName: 'clipboard', editable: true } );\r\n  static readonly WORKSTREAM = new EntityTypeEnum('WORKSTREAM', { name: 'workstream', iconName: 'clock', editable: true } );\r\n  static readonly ANALYSIS = new EntityTypeEnum('ANALYSIS', { name: 'analysis', iconName: 'cloud-drizzle', editable: true } );\r\n  static readonly USERSTORY = new EntityTypeEnum('USERSTORY', { name: 'user story', iconName: 'cloud-off', editable: true } );\r\n  static readonly TASK = new EntityTypeEnum('TASK', { name: 'task', iconName: 'cloud-lightning', editable: true } );\r\n  static readonly CORRECTION = new EntityTypeEnum('CORRECTION', { name: 'correction', iconName: 'cloud-rain', editable: true } );\r\n  static readonly TEST = new EntityTypeEnum('TEST', { name: 'test', iconName: 'cloud-snow', editable: true } );\r\n  static readonly QUICKTEST = new EntityTypeEnum('QUICKTEST', { name: 'quick test', iconName: 'coffee', editable: true } );\r\n  static readonly AUTOMATEDTEST = new EntityTypeEnum('AUTOMATEDTEST', { name: 'automated test', iconName: 'command', editable: true } );\r\n  static readonly PROJECT = new EntityTypeEnum('PROJECT', { name: 'project', iconName: 'copy', editable: false } );\r\n  static readonly CYCLE = new EntityTypeEnum('CYCLE', { name: 'cycle', iconName: 'cpu', editable: false } );\r\n  static readonly FOLDER = new EntityTypeEnum('FOLDER', { name: 'folder', iconName: 'credit-card', editable: false } );\r\n  static readonly BUSINESSPROCESS = new EntityTypeEnum('BUSINESSPROCESS', { name: 'business process', iconName: 'crosshair', editable: false } );\r\n\r\n  private constructor( private readonly key: string,\r\n                       public readonly value: { name: string, iconName: string, editable: boolean } ) {}\r\n\r\n  toString(): string {\r\n    return this.key;\r\n  }\r\n}\r\n",
+            "sourceCode": "export class EntityTypeEnum {\r\n  static readonly DEFECT = new EntityTypeEnum('DEFECT', { name: 'defect', iconName: 'bug', editable: true } );\r\n  static readonly FEATURE = new EntityTypeEnum('FEATURE', { name: 'feature', iconName: 'box', editable: true } );\r\n  static readonly REQUIREMENT = new EntityTypeEnum('REQUIREMENT', { name: 'requirement', iconName: 'box', editable: true } );\r\n  static readonly WORKSTREAM = new EntityTypeEnum('WORKSTREAM', { name: 'workstream', iconName: 'honeycomb', editable: true } );\r\n  static readonly ANALYSIS = new EntityTypeEnum('ANALYSIS', { name: 'analysis', iconName: 'honeycomb', editable: true } );\r\n  static readonly USERSTORY = new EntityTypeEnum('USERSTORY', { name: 'user story', iconName: 'layers', editable: true } );\r\n  // static readonly TASK = new EntityTypeEnum('TASK', { name: 'task', iconName: 'cloud-lightning', editable: true } );\r\n  static readonly CORRECTION = new EntityTypeEnum('CORRECTION', { name: 'correction', iconName: 'tool', editable: true } );\r\n  static readonly TEST = new EntityTypeEnum('TEST', { name: 'test', iconName: 'file-text', editable: true } );\r\n  static readonly QUICKTEST = new EntityTypeEnum('QUICKTEST', { name: 'quick test', iconName: 'quick-test', editable: true } );\r\n  static readonly AUTOMATEDTEST = new EntityTypeEnum('AUTOMATEDTEST', { name: 'automated test', iconName: 'film', editable: true } );\r\n  static readonly PROJECT = new EntityTypeEnum('PROJECT', { name: 'project', iconName: 'home', editable: false } );\r\n  static readonly CYCLE = new EntityTypeEnum('CYCLE', { name: 'cycle', iconName: 'circle', editable: false } );\r\n  static readonly FOLDER = new EntityTypeEnum('FOLDER', { name: 'folder', iconName: 'folder-open', editable: false } );\r\n  static readonly BUSINESSPROCESS = new EntityTypeEnum('BUSINESSPROCESS', { name: 'business process', iconName: 'switch', editable: false } );\r\n\r\n  private constructor( private readonly key: string,\r\n                       public readonly value: { name: string, iconName: string, editable: boolean } ) {}\r\n\r\n  toString(): string {\r\n    return this.key;\r\n  }\r\n}\r\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -1407,7 +1407,7 @@
             "properties": [
                 {
                     "name": "ANALYSIS",
-                    "defaultValue": "new EntityTypeEnum('ANALYSIS', { name: 'analysis', iconName: 'cloud-drizzle', editable: true } )",
+                    "defaultValue": "new EntityTypeEnum('ANALYSIS', { name: 'analysis', iconName: 'honeycomb', editable: true } )",
                     "type": "",
                     "optional": false,
                     "description": "",
@@ -1419,7 +1419,7 @@
                 },
                 {
                     "name": "AUTOMATEDTEST",
-                    "defaultValue": "new EntityTypeEnum('AUTOMATEDTEST', { name: 'automated test', iconName: 'command', editable: true } )",
+                    "defaultValue": "new EntityTypeEnum('AUTOMATEDTEST', { name: 'automated test', iconName: 'film', editable: true } )",
                     "type": "",
                     "optional": false,
                     "description": "",
@@ -1431,7 +1431,7 @@
                 },
                 {
                     "name": "BUSINESSPROCESS",
-                    "defaultValue": "new EntityTypeEnum('BUSINESSPROCESS', { name: 'business process', iconName: 'crosshair', editable: false } )",
+                    "defaultValue": "new EntityTypeEnum('BUSINESSPROCESS', { name: 'business process', iconName: 'switch', editable: false } )",
                     "type": "",
                     "optional": false,
                     "description": "",
@@ -1443,7 +1443,7 @@
                 },
                 {
                     "name": "CORRECTION",
-                    "defaultValue": "new EntityTypeEnum('CORRECTION', { name: 'correction', iconName: 'cloud-rain', editable: true } )",
+                    "defaultValue": "new EntityTypeEnum('CORRECTION', { name: 'correction', iconName: 'tool', editable: true } )",
                     "type": "",
                     "optional": false,
                     "description": "",
@@ -1455,7 +1455,7 @@
                 },
                 {
                     "name": "CYCLE",
-                    "defaultValue": "new EntityTypeEnum('CYCLE', { name: 'cycle', iconName: 'cpu', editable: false } )",
+                    "defaultValue": "new EntityTypeEnum('CYCLE', { name: 'cycle', iconName: 'circle', editable: false } )",
                     "type": "",
                     "optional": false,
                     "description": "",
@@ -1467,7 +1467,7 @@
                 },
                 {
                     "name": "DEFECT",
-                    "defaultValue": "new EntityTypeEnum('DEFECT', { name: 'defect', iconName: 'chrome', editable: true } )",
+                    "defaultValue": "new EntityTypeEnum('DEFECT', { name: 'defect', iconName: 'bug', editable: true } )",
                     "type": "",
                     "optional": false,
                     "description": "",
@@ -1479,7 +1479,7 @@
                 },
                 {
                     "name": "FEATURE",
-                    "defaultValue": "new EntityTypeEnum('FEATURE', { name: 'feature', iconName: 'compass', editable: true } )",
+                    "defaultValue": "new EntityTypeEnum('FEATURE', { name: 'feature', iconName: 'box', editable: true } )",
                     "type": "",
                     "optional": false,
                     "description": "",
@@ -1491,7 +1491,7 @@
                 },
                 {
                     "name": "FOLDER",
-                    "defaultValue": "new EntityTypeEnum('FOLDER', { name: 'folder', iconName: 'credit-card', editable: false } )",
+                    "defaultValue": "new EntityTypeEnum('FOLDER', { name: 'folder', iconName: 'folder-open', editable: false } )",
                     "type": "",
                     "optional": false,
                     "description": "",
@@ -1503,7 +1503,7 @@
                 },
                 {
                     "name": "PROJECT",
-                    "defaultValue": "new EntityTypeEnum('PROJECT', { name: 'project', iconName: 'copy', editable: false } )",
+                    "defaultValue": "new EntityTypeEnum('PROJECT', { name: 'project', iconName: 'home', editable: false } )",
                     "type": "",
                     "optional": false,
                     "description": "",
@@ -1515,7 +1515,7 @@
                 },
                 {
                     "name": "QUICKTEST",
-                    "defaultValue": "new EntityTypeEnum('QUICKTEST', { name: 'quick test', iconName: 'coffee', editable: true } )",
+                    "defaultValue": "new EntityTypeEnum('QUICKTEST', { name: 'quick test', iconName: 'quick-test', editable: true } )",
                     "type": "",
                     "optional": false,
                     "description": "",
@@ -1527,7 +1527,7 @@
                 },
                 {
                     "name": "REQUIREMENT",
-                    "defaultValue": "new EntityTypeEnum('REQUIREMENT', { name: 'requirement', iconName: 'clipboard', editable: true } )",
+                    "defaultValue": "new EntityTypeEnum('REQUIREMENT', { name: 'requirement', iconName: 'box', editable: true } )",
                     "type": "",
                     "optional": false,
                     "description": "",
@@ -1538,20 +1538,8 @@
                     ]
                 },
                 {
-                    "name": "TASK",
-                    "defaultValue": "new EntityTypeEnum('TASK', { name: 'task', iconName: 'cloud-lightning', editable: true } )",
-                    "type": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 8,
-                    "modifierKind": [
-                        115,
-                        132
-                    ]
-                },
-                {
                     "name": "TEST",
-                    "defaultValue": "new EntityTypeEnum('TEST', { name: 'test', iconName: 'cloud-snow', editable: true } )",
+                    "defaultValue": "new EntityTypeEnum('TEST', { name: 'test', iconName: 'file-text', editable: true } )",
                     "type": "",
                     "optional": false,
                     "description": "",
@@ -1563,7 +1551,7 @@
                 },
                 {
                     "name": "USERSTORY",
-                    "defaultValue": "new EntityTypeEnum('USERSTORY', { name: 'user story', iconName: 'cloud-off', editable: true } )",
+                    "defaultValue": "new EntityTypeEnum('USERSTORY', { name: 'user story', iconName: 'layers', editable: true } )",
                     "type": "",
                     "optional": false,
                     "description": "",
@@ -1586,7 +1574,7 @@
                 },
                 {
                     "name": "WORKSTREAM",
-                    "defaultValue": "new EntityTypeEnum('WORKSTREAM', { name: 'workstream', iconName: 'clock', editable: true } )",
+                    "defaultValue": "new EntityTypeEnum('WORKSTREAM', { name: 'workstream', iconName: 'honeycomb', editable: true } )",
                     "type": "",
                     "optional": false,
                     "description": "",
@@ -2119,6 +2107,55 @@
                 "OnInit"
             ],
             "templateData": "<p-input-text-table-layout title='Resolution'\r\n                           [table]=\"inputTable\"></p-input-text-table-layout>\r\n\r\n"
+        },
+        {
+            "name": "BreadcrumbsComponent",
+            "id": "component-BreadcrumbsComponent-20a8944fa6bb60c0f1df1a9386410a7c",
+            "file": "projects/design-system-lib/src/lib/breadcrumbs/breadcrumbs.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-breadcrumbs",
+            "styleUrls": [
+                "./breadcrumbs.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./breadcrumbs.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "breadcrumbs",
+                    "line": 9,
+                    "type": "literal type[]"
+                },
+                {
+                    "name": "pageHeader",
+                    "line": 13,
+                    "type": "boolean"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'p-breadcrumbs',\r\n  templateUrl: './breadcrumbs.component.html',\r\n  styleUrls: ['./breadcrumbs.component.scss'],\r\n})\r\nexport class BreadcrumbsComponent {\r\n  @Input() breadcrumbs: {\r\n    name: string,\r\n    link?: string\r\n  }[];\r\n  @Input() pageHeader: boolean;\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n%breadcrumbsItem {\r\n  font-family: $font-family-basic;\r\n  font-size: $big-font-size;\r\n  font-weight: 600;\r\n}\r\n\r\n.p-breadcrumbs {\r\n  @include resetUl;\r\n  display: flex;\r\n  align-items: center;\r\n\r\n  &-item {\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n\r\n  &-link {\r\n    @include resetLink;\r\n    @extend %breadcrumbsItem;\r\n    color: $secondary-a-700;\r\n    position: relative;\r\n    @include linkHoverUnderline(0, 1.5px);\r\n    .header .p-breadcrumbs-item:first-child & {\r\n      font-weight: 700;\r\n      text-transform: uppercase;\r\n      letter-spacing: 0.05em;\r\n    }\r\n  }\r\n\r\n  &-icon {\r\n    margin-right: $gap-small;\r\n    margin-left: $gap-small;\r\n  }\r\n\r\n  &-noLink {\r\n    @extend %breadcrumbsItem;\r\n  }\r\n}\r\n",
+                    "styleUrl": "./breadcrumbs.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<ul class=\"p-breadcrumbs\" [class.header]=\"pageHeader\">\r\n  <li *ngFor=\"let crumb of breadcrumbs\" class=\"p-breadcrumbs-item\">\r\n    <ng-template [ngIf]=\"crumb.link\" [ngIfElse]=\"noLink\">\r\n      <a [attr.href]=\"crumb.link\" class=\"p-breadcrumbs-link\">\r\n        {{ crumb.name }}\r\n      </a>\r\n      <p-icon class=\"p-breadcrumbs-icon\"\r\n              iconName=\"chevron-right\"\r\n              width=\"18\">\r\n      </p-icon>\r\n    </ng-template>\r\n\r\n    <ng-template #noLink>\r\n      <span class=\"p-breadcrumbs-noLink\">{{ crumb.name }}</span>\r\n    </ng-template>\r\n  </li>\r\n</ul>\r\n\r\n"
         },
         {
             "name": "ButtonComponent",
@@ -3503,7 +3540,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n.p-file-upload {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n\r\n  &-input {\r\n    width: 0.1px;\r\n    height: 0.1px;\r\n    opacity: 0;\r\n    overflow: hidden;\r\n    position: absolute;\r\n    z-index: -1;\r\n  }\r\n\r\n  &-label {\r\n    display: flex;\r\n    align-items: center;\r\n    width: 100%;\r\n    height: 100%;\r\n    padding: 22px 18px;\r\n    border: 1px dashed $gray-scale-500;\r\n    cursor: pointer;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n  }\r\n\r\n  &-icon {\r\n    margin-right: 5px;\r\n  }\r\n\r\n  &-link {\r\n    font-weight: 600;\r\n    margin-right: 4px;\r\n    margin-left: 4px;\r\n    position: relative;\r\n    &:hover:after {\r\n      content: '';\r\n      display: block;\r\n      width: 100%;\r\n      height: 1px;\r\n      background-color: currentColor;\r\n      position: absolute;\r\n      bottom: 2px;\r\n    }\r\n  }\r\n}\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n.p-file-upload {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n\r\n  &-input {\r\n    width: 0.1px;\r\n    height: 0.1px;\r\n    opacity: 0;\r\n    overflow: hidden;\r\n    position: absolute;\r\n    z-index: -1;\r\n  }\r\n\r\n  &-label {\r\n    display: flex;\r\n    align-items: center;\r\n    width: 100%;\r\n    height: 100%;\r\n    padding: 22px 18px;\r\n    border: 1px dashed $gray-scale-500;\r\n    cursor: pointer;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n  }\r\n\r\n  &-icon {\r\n    margin-right: 5px;\r\n  }\r\n\r\n  &-link {\r\n    font-weight: 600;\r\n    margin-right: 4px;\r\n    margin-left: 4px;\r\n    position: relative;\r\n    @include linkHoverUnderline;\r\n  }\r\n}\r\n",
                     "styleUrl": "./file-upload.component.scss"
                 }
             ],
@@ -3804,7 +3841,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n:host {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n.p-icon {\r\n  display: inline-flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n// custom icons\r\n.p-icon-custom {\r\n  background-repeat: no-repeat;\r\n  background-size: contain;\r\n  &-eraser {\r\n    background-image: url('../assets/images/icons/eraser.svg');\r\n  }\r\n  &-eraser-disabled {\r\n    background-image: url('../assets/images/icons/eraser-disabled.svg');\r\n  }\r\n  &-unlink {\r\n    background-image: url('../assets/images/icons/unlink.svg');\r\n  }\r\n  &-first {\r\n    background-image: url('../assets/images/icons/first.svg');\r\n  }\r\n  &-first-disabled {\r\n    background-image: url('../assets/images/icons/first-disabled.svg');\r\n  }\r\n  &-last {\r\n    background-image: url('../assets/images/icons/last.svg');\r\n  }\r\n  &-last-disabled {\r\n    background-image: url('../assets/images/icons/last-disabled.svg');\r\n  }\r\n  &-folder-open {\r\n    background-image: url('../assets/images/icons/folder-open.svg');\r\n  }\r\n  &-view {\r\n    background-image: url('../assets/images/icons/view.svg');\r\n  }\r\n  &-track-status {\r\n    background-image: url('../assets/images/icons/track-status.svg');\r\n  }\r\n  &-user-circle {\r\n    background-image: url('../assets/images/icons/user-circle.svg');\r\n  }\r\n}\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n:host {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n.p-icon {\r\n  display: inline-flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n// custom icons\r\n.p-icon-custom {\r\n  background-repeat: no-repeat;\r\n  background-size: contain;\r\n  &-eraser {\r\n    background-image: url('../assets/images/icons/eraser.svg');\r\n  }\r\n  &-eraser-disabled {\r\n    background-image: url('../assets/images/icons/eraser-disabled.svg');\r\n  }\r\n  &-unlink {\r\n    background-image: url('../assets/images/icons/unlink.svg');\r\n  }\r\n  &-first {\r\n    background-image: url('../assets/images/icons/first.svg');\r\n  }\r\n  &-first-disabled {\r\n    background-image: url('../assets/images/icons/first-disabled.svg');\r\n  }\r\n  &-last {\r\n    background-image: url('../assets/images/icons/last.svg');\r\n  }\r\n  &-last-disabled {\r\n    background-image: url('../assets/images/icons/last-disabled.svg');\r\n  }\r\n  &-folder-open {\r\n    background-image: url('../assets/images/icons/folder-open.svg');\r\n  }\r\n  &-view {\r\n    background-image: url('../assets/images/icons/view.svg');\r\n  }\r\n  &-track-status {\r\n    background-image: url('../assets/images/icons/track-status.svg');\r\n  }\r\n  &-track-status:hover {\r\n    background-image: url('../assets/images/icons/track-status-hover.svg');\r\n  }\r\n  &-user-circle {\r\n    background-image: url('../assets/images/icons/user-circle.svg');\r\n  }\r\n  &-user-circle:hover {\r\n    background-image: url('../assets/images/icons/user-circle-hover.svg');\r\n  }\r\n  &-bug {\r\n    background-image: url('../assets/images/icons/bug.svg');\r\n  }\r\n  &-honeycomb {\r\n    background-image: url('../assets/images/icons/honeycomb.svg');\r\n  }\r\n  &-quick-test {\r\n    background-image: url('../assets/images/icons/quick-test.svg');\r\n  }\r\n  &-switch {\r\n    background-image: url('../assets/images/icons/switch.svg');\r\n  }\r\n}\r\n",
                     "styleUrl": "./icon.component.scss"
                 }
             ],
@@ -4962,12 +4999,12 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$link-padding: $gap-double;\r\n$accent-color: $primary-b-300;\r\n$background-color: $primary-c-50;\r\n\r\n.p-masthead {\r\n  display: flex;\r\n  align-items: center;\r\n  height: $masthead-height;\r\n  background-color: $background-color;\r\n  padding-right: 50px;\r\n  padding-left: 40px - $link-padding;\r\n\r\n  &-homepage-link {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    font-size: 0;\r\n    height: 100%;\r\n    padding-right: $link-padding;\r\n    padding-left: $link-padding;\r\n    margin-right: 40px - $link-padding;\r\n  }\r\n\r\n  &-logo {\r\n    width: 95px;\r\n    height: 20px;\r\n  }\r\n\r\n  &-nav {\r\n    height: 100%;\r\n    margin-right: auto;\r\n  }\r\n\r\n  &-nav-list {\r\n    @include resetUl;\r\n    display: flex;\r\n    align-items: center;\r\n    height: 100%;\r\n  }\r\n\r\n  &-nav-item {\r\n    display: flex;\r\n    align-items: center;\r\n    height: 100%;\r\n    position: relative;\r\n\r\n    &.divider:before {\r\n      content: '';\r\n      width: 1px;\r\n      height: 18px;\r\n      border-right: 1px solid $gray-scale-600;\r\n    }\r\n  }\r\n\r\n  &-nav-link {\r\n    @include resetLink;\r\n    display: flex;\r\n    align-items: center;\r\n    height: 100%;\r\n    padding-right: $link-padding;\r\n    padding-left: $link-padding;\r\n    white-space: nowrap;\r\n    transition: all 200ms ease-in-out;\r\n\r\n    .p-masthead-nav-item:hover &:not(.selected),\r\n    .p-masthead-nav-item:focus-within &:not(.selected) {\r\n      color: $accent-color;\r\n    }\r\n\r\n    &.selected {\r\n      color: $primary-a-900;\r\n      background-color: $accent-color;\r\n    }\r\n  }\r\n\r\n  &-nav-link-icon {\r\n    margin-right: $gap-base;\r\n  }\r\n\r\n  &-nav-badge {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    font-size: $middle-font-size;\r\n    font-weight: 600;\r\n    width: 23px;\r\n    height: 22px;\r\n    line-height: 1.5;\r\n    margin-left: $gap-base;\r\n    border: 1px solid currentColor;\r\n    border-radius: 50%;\r\n    transition: background-color 200ms ease-in-out;\r\n    .p-masthead-nav-item:hover & ,\r\n    .p-masthead-nav-item:focus-within & {\r\n      font-weight: 700;\r\n      border-width: 2px;\r\n    }\r\n\r\n    .p-masthead-nav-link.selected & {\r\n      color: $gray-scale-1;\r\n      background-color: $primary-a-900;\r\n      border-color: $primary-a-900;\r\n    }\r\n  }\r\n\r\n\r\n\r\n  // dropdown menu hidden by default\r\n  &-submenu-list {\r\n    @include resetUl;\r\n    display: none;\r\n    min-width: 100%;\r\n    padding: 1.5px;\r\n    background: $primary-c-50;\r\n    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1),\r\n                0 2px 6px rgba(0, 0, 0, 0.04),\r\n                0 -3px 6px rgba(0, 0, 0, 0.04);\r\n    overflow: hidden;\r\n    position: absolute;\r\n    top: 100%;\r\n    left: 0;\r\n\r\n    .p-masthead-nav-item:hover &,\r\n    .p-masthead-nav-item:focus-within & {\r\n      display: block; // dropdown menu shown on hover\r\n    }\r\n  }\r\n\r\n  &-submenu-link {\r\n    @include resetLink;\r\n    display: flex;\r\n    align-items: center;\r\n    text-transform: capitalize;\r\n    height: 38px;\r\n    padding-right: $gap-double;\r\n    padding-left: $gap-double * 2;\r\n    white-space: nowrap;\r\n    transition: color 200ms ease-in-out;\r\n    &:hover,\r\n    &:focus {\r\n      color: $accent-color;\r\n    }\r\n  }\r\n\r\n  &-icon {\r\n    & ~ & {\r\n      margin-left: $gap-double;\r\n    }\r\n    &.notification {\r\n      position: relative;\r\n      &:after {\r\n        content: 'notification';\r\n        display: block;\r\n        font-size: 0;\r\n        width: 8px;\r\n        height: 8px;\r\n        border: 2px solid $background-color;\r\n        border-radius: 50%;\r\n        position: absolute;\r\n        top: 0;\r\n        right: 0;\r\n      }\r\n    }\r\n    &.regular:after {\r\n      background-color: $secondary-a-700;\r\n    }\r\n    &.alert:after {\r\n      background-color: $supportive-alert-500;\r\n    }\r\n  }\r\n}\r\n\r\n.logo {\r\n  background-image: url('../assets/images/logo.svg');\r\n}\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$link-padding: $gap-double;\r\n$accent-color: $primary-b-300;\r\n$background-color: $primary-c-50;\r\n\r\n.p-masthead {\r\n  display: flex;\r\n  align-items: center;\r\n  height: $masthead-height;\r\n  background-color: $background-color;\r\n  padding-right: 50px;\r\n  padding-left: 40px - $link-padding;\r\n\r\n  &-homepage-link {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    font-size: 0;\r\n    height: 100%;\r\n    padding-right: $link-padding;\r\n    padding-left: $link-padding;\r\n    margin-right: 40px - $link-padding;\r\n  }\r\n\r\n  &-logo {\r\n    width: 95px;\r\n    height: 20px;\r\n  }\r\n\r\n  &-nav {\r\n    height: 100%;\r\n    margin-right: auto;\r\n  }\r\n\r\n  &-nav-list {\r\n    @include resetUl;\r\n    display: flex;\r\n    align-items: center;\r\n    height: 100%;\r\n  }\r\n\r\n  &-nav-item {\r\n    display: flex;\r\n    align-items: center;\r\n    height: 100%;\r\n    position: relative;\r\n\r\n    &.divider:before {\r\n      content: '';\r\n      width: 1px;\r\n      height: 18px;\r\n      border-right: 1px solid $gray-scale-600;\r\n    }\r\n  }\r\n\r\n  &-nav-link {\r\n    @include resetLink;\r\n    display: flex;\r\n    align-items: center;\r\n    height: 100%;\r\n    padding-right: $link-padding;\r\n    padding-left: $link-padding;\r\n    white-space: nowrap;\r\n    transition: all 200ms ease-in-out;\r\n\r\n    .p-masthead-nav-item:hover &:not(.selected),\r\n    .p-masthead-nav-item:focus-within &:not(.selected) {\r\n      color: $accent-color;\r\n    }\r\n\r\n    &.selected {\r\n      color: $primary-a-900;\r\n      background-color: $accent-color;\r\n    }\r\n  }\r\n\r\n  &-nav-link-icon {\r\n    margin-right: $gap-base;\r\n  }\r\n\r\n  &-nav-badge {\r\n    display: flex;\r\n    justify-content: space-around;\r\n    align-items: center;\r\n    flex: 0 0 22px;\r\n    font-size: $middle-font-size;\r\n    font-weight: 600;\r\n    width: 22px;\r\n    height: 22px;\r\n    line-height: 1.5;\r\n    margin-left: $gap-base;\r\n    border: 1px solid currentColor;\r\n    border-radius: 50%;\r\n    transition: background-color 200ms ease-in-out;\r\n    .p-masthead-nav-item:hover & ,\r\n    .p-masthead-nav-item:focus-within & {\r\n      font-weight: 700;\r\n      border-width: 2px;\r\n    }\r\n\r\n    .p-masthead-nav-link.selected & {\r\n      color: $gray-scale-1;\r\n      background-color: $primary-a-900;\r\n      border-color: $primary-a-900;\r\n    }\r\n  }\r\n\r\n\r\n\r\n  // dropdown menu hidden by default\r\n  &-submenu-list {\r\n    @include resetUl;\r\n    display: none;\r\n    min-width: 100%;\r\n    padding: 1.5px;\r\n    background: $primary-c-50;\r\n    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1),\r\n                0 2px 6px rgba(0, 0, 0, 0.04),\r\n                0 -3px 6px rgba(0, 0, 0, 0.04);\r\n    overflow: hidden;\r\n    position: absolute;\r\n    top: 100%;\r\n    left: 0;\r\n\r\n    .p-masthead-nav-item:hover &,\r\n    .p-masthead-nav-item:focus-within & {\r\n      display: block; // dropdown menu shown on hover\r\n    }\r\n  }\r\n\r\n  &-submenu-link {\r\n    @include resetLink;\r\n    display: flex;\r\n    align-items: center;\r\n    text-transform: capitalize;\r\n    height: 38px;\r\n    padding-right: $gap-double;\r\n    padding-left: $gap-double;\r\n    white-space: nowrap;\r\n    transition: color 200ms ease-in-out;\r\n    &:hover,\r\n    &:focus {\r\n      color: $accent-color;\r\n      font-weight: 700;\r\n    }\r\n  }\r\n\r\n  &-icon {\r\n    &:hover {\r\n      color: $secondary-a-700;\r\n      cursor: pointer;\r\n    }\r\n    & ~ & {\r\n      margin-left: $gap-double;\r\n    }\r\n    &.notification {\r\n      @include notification($background-color);\r\n    }\r\n  }\r\n}\r\n\r\n",
                     "styleUrl": "./masthead.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"p-masthead\">\r\n  <a href=\"\" class=\"p-masthead-homepage-link\">\r\n    Home page\r\n    <img src=\"./logo.svg\" alt=\"Panaya Logo\"\r\n         class=\"p-masthead-logo\"/>\r\n  </a>\r\n  <nav aria-label=\"Main Navigation\" class=\"p-masthead-nav\">\r\n    <ul class=\"p-masthead-nav-list\">\r\n      <li *ngFor=\"let item of navList\"\r\n          class=\"p-masthead-nav-item headline-2-bold\"\r\n          [class.divider]=\"item.divider\">\r\n        <a href=\"\"\r\n           class=\"p-masthead-nav-link headline-2-bold\"\r\n           [class.selected]=\"item.selected\">\r\n          <p-icon *ngIf=\"item.subMenu\"\r\n                  class=\"p-masthead-nav-link-icon\"\r\n                  iconName=\"menu\"\r\n                  width=\"20\"></p-icon>\r\n          {{item.name}}\r\n          <span *ngIf=\"item.badge\" class=\"p-masthead-nav-badge\">\r\n            {{item.badge}}\r\n          </span>\r\n        </a>\r\n        <ul *ngIf=\"item.subMenu\" class=\"p-masthead-submenu-list\">\r\n          <li *ngFor=\"let subItem of item.subMenu\" class=\"p-masthead-submenu-item\">\r\n            <a href=\"\" class=\"p-masthead-submenu-link headline-3-regular\">\r\n              {{subItem.name}}\r\n            </a>\r\n          </li>\r\n        </ul>\r\n      </li>\r\n    </ul>\r\n  </nav>\r\n\r\n  <p-icon class=\"p-masthead-icon search\"\r\n          iconName=\"search\"\r\n          width=\"20\"\r\n          matTooltip=\"Search\"\r\n          matTooltipPosition=\"above\"\r\n          matTooltipClass=\"p-tooltip below\"></p-icon>\r\n\r\n  <p-icon class=\"p-masthead-icon settings\"\r\n          iconName=\"settings\"\r\n          width=\"20\"\r\n          matTooltip=\"Settings\"\r\n          matTooltipPosition=\"above\"\r\n          matTooltipClass=\"p-tooltip below\"></p-icon>\r\n\r\n  <p-icon class=\"p-masthead-icon track-status\"\r\n          iconName=\"track-status\"\r\n          width=\"18\"\r\n          height=\"18\"\r\n          matTooltip=\"Track the status of your requests\"\r\n          matTooltipPosition=\"above\"\r\n          matTooltipClass=\"p-tooltip below\"></p-icon>\r\n\r\n  <p-icon class=\"p-masthead-icon help notification regular\"\r\n          iconName=\"help-circle\"\r\n          width=\"20\"\r\n          matTooltip=\"Help\"\r\n          matTooltipPosition=\"above\"\r\n          matTooltipClass=\"p-tooltip below\"></p-icon>\r\n\r\n  <p-icon class=\"p-masthead-icon bell notification alert\"\r\n          iconName=\"bell\"\r\n          width=\"20\"\r\n          matTooltip=\"Notifications\"\r\n          matTooltipPosition=\"above\"\r\n          matTooltipClass=\"p-tooltip below\"></p-icon>\r\n\r\n  <p-icon class=\"p-masthead-icon user\"\r\n          iconName=\"user-circle\"\r\n          width=\"20\"\r\n          height=\"20\"\r\n          matTooltip=\"Account\"\r\n          matTooltipPosition=\"above\"\r\n          matTooltipClass=\"p-tooltip below\"></p-icon>\r\n</div>\r\n\r\n<span class=\"logo\"></span>\r\n"
+            "templateData": "<div class=\"p-masthead\">\r\n  <a href=\"\" class=\"p-masthead-homepage-link\">\r\n    Home page\r\n    <img src=\"./logo.svg\" alt=\"Panaya Logo\"\r\n         class=\"p-masthead-logo\"/>\r\n  </a>\r\n  <nav aria-label=\"Main Navigation\" class=\"p-masthead-nav\">\r\n    <ul class=\"p-masthead-nav-list\">\r\n      <li *ngFor=\"let item of navList\"\r\n          class=\"p-masthead-nav-item headline-2-bold\"\r\n          [class.divider]=\"item.divider\">\r\n        <a href=\"\"\r\n           class=\"p-masthead-nav-link headline-2-bold\"\r\n           [class.selected]=\"item.selected\">\r\n          <p-icon *ngIf=\"item.megaMenu\"\r\n                  class=\"p-masthead-nav-link-icon\"\r\n                  iconName=\"menu\"\r\n                  width=\"22\"></p-icon>\r\n          {{item.name}}\r\n          <span *ngIf=\"item.badge\" class=\"p-masthead-nav-badge\">\r\n            {{item.badge}}\r\n          </span>\r\n        </a>\r\n        <ul *ngIf=\"item.subMenu\" class=\"p-masthead-submenu-list\">\r\n          <li *ngFor=\"let subItem of item.subMenu\" class=\"p-masthead-submenu-item\">\r\n            <a href=\"\" class=\"p-masthead-submenu-link headline-3-regular\">\r\n              {{subItem.name}}\r\n            </a>\r\n          </li>\r\n        </ul>\r\n      </li>\r\n    </ul>\r\n  </nav>\r\n\r\n  <p-icon class=\"p-masthead-icon search\"\r\n          iconName=\"search\"\r\n          width=\"22\"\r\n          matTooltip=\"Search\"\r\n          matTooltipPosition=\"above\"\r\n          matTooltipClass=\"p-tooltip below\"></p-icon>\r\n\r\n  <p-icon class=\"p-masthead-icon settings\"\r\n          iconName=\"settings\"\r\n          width=\"22\"\r\n          matTooltip=\"Settings\"\r\n          matTooltipPosition=\"above\"\r\n          matTooltipClass=\"p-tooltip below\"></p-icon>\r\n\r\n  <p-icon class=\"p-masthead-icon track-status\"\r\n          iconName=\"track-status\"\r\n          width=\"18\"\r\n          height=\"18\"\r\n          matTooltip=\"Track the status of your requests\"\r\n          matTooltipPosition=\"above\"\r\n          matTooltipClass=\"p-tooltip below\"></p-icon>\r\n\r\n  <p-icon class=\"p-masthead-icon help notification regular\"\r\n          iconName=\"help-circle\"\r\n          width=\"22\"\r\n          matTooltip=\"Help\"\r\n          matTooltipPosition=\"above\"\r\n          matTooltipClass=\"p-tooltip below\"></p-icon>\r\n\r\n  <p-icon class=\"p-masthead-icon bell notification alert\"\r\n          iconName=\"bell\"\r\n          width=\"22\"\r\n          matTooltip=\"Notifications\"\r\n          matTooltipPosition=\"above\"\r\n          matTooltipClass=\"p-tooltip below\"></p-icon>\r\n\r\n  <p-icon class=\"p-masthead-icon user\"\r\n          iconName=\"user-circle\"\r\n          width=\"22\"\r\n          height=\"22\"\r\n          matTooltip=\"Account\"\r\n          matTooltipPosition=\"above\"\r\n          matTooltipClass=\"p-tooltip below\"></p-icon>\r\n</div>\r\n\r\n<span class=\"logo\"></span>\r\n"
         },
         {
             "name": "MenuComponent",
@@ -10439,6 +10476,15 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/design-system-lib/src/lib/breadcrumbs/breadcrumbs.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "BreadcrumbsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/design-system-lib/src/lib/button/button.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -10525,7 +10571,7 @@
                 "linktype": "classe",
                 "name": "EntityTypeEnum",
                 "coveragePercent": 0,
-                "coverageCount": "0/19",
+                "coverageCount": "0/18",
                 "status": "low"
             },
             {

@@ -46,7 +46,25 @@
   &-track-status {
     background-image: url('../assets/images/icons/track-status.svg');
   }
+  &-track-status:hover {
+    background-image: url('../assets/images/icons/track-status-hover.svg');
+  }
   &-user-circle {
     background-image: url('../assets/images/icons/user-circle.svg');
+  }
+  &-user-circle:hover {
+    background-image: url('../assets/images/icons/user-circle-hover.svg');
+  }
+  &-bug {
+    background-image: url('../assets/images/icons/bug.svg');
+  }
+  &-honeycomb {
+    background-image: url('../assets/images/icons/honeycomb.svg');
+  }
+  &-quick-test {
+    background-image: url('../assets/images/icons/quick-test.svg');
+  }
+  &-switch {
+    background-image: url('../assets/images/icons/switch.svg');
   }
 }
