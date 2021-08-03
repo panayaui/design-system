@@ -2,15 +2,21 @@
 
 $link-padding: $gap-double;
 $logo-gap: 40px;
+$logo-width: 95px;
+$logo-and-gap-width: $logo-width + $link-padding * 2 + $logo-gap - $link-padding * 2;
 $accent-color: $primary-b-300;
 $background-color: $primary-c-50;
+$megaMenuTrigger-max-width: 200px;
+$icons-and-gap-width: 20px * 5 + 18px + $gap-double * 5 + $logo-gap;
+$icon-width-on-medium-screen: 20px;
 
 .p-masthead {
   display: flex;
   align-items: center;
+  width: 100%;
   height: $masthead-height;
   background-color: $background-color;
-  padding-right: 50px;
+  padding-right: $logo-gap;
   padding-left: $logo-gap - $link-padding;
 
   &-homepage-link {
@@ -25,11 +31,12 @@ $background-color: $primary-c-50;
   }
 
   &-logo {
-    width: 95px;
+    width: $logo-width;
     height: 20px;
   }
 
   &-nav {
+    max-width: calc(100% - #{$logo-and-gap-width} - #{$icons-and-gap-width});
     height: 100%;
     margin-right: auto;
   }
@@ -55,7 +62,11 @@ $background-color: $primary-c-50;
     }
 
     &.megaMenu-trigger {
-      max-width: 200px;
+      max-width: $megaMenuTrigger-max-width;
+    }
+
+    @media screen and (max-width: $width-middle-screen) {
+      max-width: calc(78.23% / 6); // 78.23% - nav-list width without first item at 1366 screen
     }
   }
 
@@ -102,13 +113,13 @@ $background-color: $primary-c-50;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-shrink: 0;
     font-family: $font-family-accent;
     font-size: $middle-font-size;
     font-weight: 600;
     letter-spacing: 0;
     width: 22px;
     height: 22px;
-    line-height: 1.5;
     margin-left: $gap-base;
     border: 1px solid currentColor;
     border-radius: 50%;
@@ -130,6 +141,7 @@ $background-color: $primary-c-50;
       font-size: $small-font-size;
       width: 20px;
       height: 20px;
+      margin-left: $gap-base - 2px;
     }
   }
 
@@ -185,6 +197,22 @@ $background-color: $primary-c-50;
     }
     &.notification {
       @include notification($background-color);
+    }
+    @media screen and (max-width: $width-middle-screen) {
+      ::ng-deep &:not(.track-status) .p-icon {
+        width: $icon-width-on-medium-screen !important;
+      }
+      ::ng-deep &.track-status .p-icon {
+        width: $icon-width-on-medium-screen - 4px !important;
+      }
+    }
+  }
+
+  &-nav-link-icon {
+    @media screen and (max-width: $width-middle-screen) {
+      ::ng-deep .p-icon {
+        width: $icon-width-on-medium-screen !important;
+      }
     }
   }
 }
