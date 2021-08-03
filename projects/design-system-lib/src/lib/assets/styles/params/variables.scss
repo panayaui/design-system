@@ -3,8 +3,8 @@ $font-family-basic: 'Inter', 'Open Sans', sans-serif;
 
 // max screen width: 1920px;
 // min screen width: 1366px;
-$width-wide-screen: 1200px;
-$width-middle-screen: 755px;
+$width-wide-screen: 1920px;
+$width-middle-screen: 1440px; //breakpoint
 
 $dominant-font-size: 22px;
 $large-font-size: 18px;
@@ -30,3 +30,5 @@ $input-text-width: 220px;
 $input-text-padding: $gap-base;
 
 $masthead-height: 64px;
+
+

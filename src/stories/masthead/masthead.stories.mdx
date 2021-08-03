@@ -75,7 +75,7 @@ import {MastheadModule} from 'projects/design-system-lib/src/public-api';
         name: 'Reports'
       },
       {
-        name: 'Cycles'
+        name: 'Corrections'
       }
     ]
   }}
@@ -86,11 +86,10 @@ export const Template = (args) => <MastheadComponent {...args} />
 # Masthead
 
 ###### Selector
-
 ```html
   <p-masthead></p-masthead>
 ```
-
+###### Regular
 <Canvas>
   <Story name="Masthead"
     args={{
@@ -99,8 +98,96 @@ export const Template = (args) => <MastheadComponent {...args} />
   </Story>
 </Canvas>
 
+###### Deutsche
+<Canvas>
+  <Story name="Deutsche"
+    args={{
+      navList: [
+        {
+          name: 'Deutschland Laufende Veränderungen',
+          megaMenu: true
+        },
+        {
+          name: 'Überblick',
+          divider: true,
+          subMenu: [
+            {
+              name: 'Dashboards'
+            },
+            {
+              name: 'Cycles Progress'
+            },
+            {
+              name: 'Project Details'
+            }
+          ]
+        },
+        {
+          name: 'Entwicklung',
+          badge: '0',
+          subMenu: [
+            {
+              name: 'All Development'
+            },
+            {
+              name: 'Planning board'
+            }
+          ]
+        },
+        {
+          name: 'Tests',
+          badge: '1',
+          selected: true,
+          subMenu: [
+            {
+              name: 'Test Tree'
+            },
+            {
+              name: 'Test List'
+            },
+            {
+              name: 'Playlist Execution'
+            }
+          ]
+        },
+        {
+          name: 'Mängel',
+          badge: '2',
+          subMenu: [
+            {
+              name: 'Defects'
+            },
+            {
+              name: 'System-Wide Defects'
+            }
+          ]
+        },
+        {
+          name: 'Arbeitsunfähigkeitsbescheinigung'
+        },
+        {
+          name: 'Donaudampfschif'
+        }
+      ]
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
 
 ###### Component
 ```ts
-
+export class MastheadComponent {
+  @Input() navList: any;
+  public buttonType = ButtonTypeEnum;
+}
+```
+###### IMastheadMenuItem {
+```ts
+export interface IMastheadMenuItem {
+  name: string;
+  megaMenu?: boolean;
+  badge?: string;
+  selected?: boolean;
+  subMenu?: { name: string }[];
+}
 ```

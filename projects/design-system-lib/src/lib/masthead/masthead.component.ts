@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {ButtonTypeEnum} from '../button/button-type.enum';
+import {IMastheadMenuItem} from './masthead.interface';
 
 @Component({
   selector: 'p-masthead',
@@ -7,6 +8,6 @@ import {ButtonTypeEnum} from '../button/button-type.enum';
   styleUrls: ['./masthead.component.scss'],
 })
 export class MastheadComponent {
-  @Input() navList: any;
+  @Input() navList: IMastheadMenuItem[];
   public buttonType = ButtonTypeEnum;
 }
