@@ -7,16 +7,18 @@
   <nav aria-label="Main Navigation" class="p-masthead-nav">
     <ul class="p-masthead-nav-list">
       <li *ngFor="let item of navList"
-          class="p-masthead-nav-item headline-2-bold"
-          [class.divider]="item.divider">
+          class="p-masthead-nav-item"
+          [ngClass]="{'divider' : item.divider, 'megaMenu-trigger' : item.megaMenu}">
         <a href=""
-           class="p-masthead-nav-link headline-2-bold"
+           class="p-masthead-nav-link"
            [class.selected]="item.selected">
           <p-icon *ngIf="item.megaMenu"
                   class="p-masthead-nav-link-icon"
                   iconName="menu"
                   width="22"></p-icon>
-          {{item.name}}
+          <span class="p-masthead-nav-link-name headline-2-bold">
+            {{item.name}}
+          </span>
           <span *ngIf="item.badge" class="p-masthead-nav-badge">
             {{item.badge}}
           </span>
