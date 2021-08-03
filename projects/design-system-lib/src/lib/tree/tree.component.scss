@@ -3,16 +3,24 @@
 $node-height: 30px;
 $node-padding: 24px;
 
+%hover {
+  &:hover {
+    background-color: $primary-c-50;
+  }
+}
+
 .p-tree {
   &-nested-node {
     display: flex;
     align-items: center;
     height: $node-height;
+    @extend %hover;
   }
 
   ::ng-deep .mat-tree-node {
     min-height: unset;
     height: $node-height;
+    @extend %hover;
   }
 
   &-node-invisible {
