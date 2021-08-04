@@ -12,6 +12,8 @@ $chip-height: 27px;
   border: 1px solid currentColor;
   border-radius: 16px;
   cursor: pointer;
+  position: relative;
+  z-index: 1;
   &:hover,
   &:active,
   &.active {
@@ -46,6 +48,18 @@ $chip-height: 27px;
     align-items: center;
     ::ng-deep .p-btn-isIcon {
       padding: 0;
+    }
+  }
+
+  &-remove {
+    border-radius: 50%;
+    &:hover {
+      color: $secondary-a-700;
+      background-color: $x-hover-dark-text;
+    }
+    ::ng-deep .p-btn-isIcon {
+      padding: 3px;
+      transition: all 280ms;
     }
   }
 
