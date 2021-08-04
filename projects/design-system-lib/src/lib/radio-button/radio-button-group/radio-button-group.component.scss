@@ -1,4 +1,4 @@
-@import "../../../../../../src/stories/assets/styles/custom";
+@import "../../assets/styles/custom";
 
 .p-radio-group {
   display: flex;
@@ -8,15 +8,25 @@
     font-size: $tiny-font-size;
     font-weight: 700;
     line-height: 18px;
+    margin-bottom: $gap-base;
+  }
+  &-line {
+    display: flex;
+    align-items: center;
   }
   &-option {
-    margin-top: 10px;
+    &:not(:first-of-type) {
+      margin-top: $gap-base;
+    }
+    .p-radio-button-line & ~ & {
+      margin-left: $gap-double;
+    }
   }
   &-error {
     font-family: $font-family-basic;
     font-size: $tiny-font-size;
     line-height: 18px;
     color: $supportive-alert-500;
-    margin-top: 10px;
+    margin-top: $gap-base;
   }
 }

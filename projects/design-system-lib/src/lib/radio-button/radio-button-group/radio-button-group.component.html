@@ -1,6 +1,21 @@
 <mat-radio-group class="p-radio-group"
                  [formControl]="fieldFormControl">
-  <label class="p-radio-group-label">{{label}}</label>
+  <label *ngIf="label"
+         class="p-radio-group-label">{{label}}</label>
+
+  <ng-template [ngIf]="inLine" [ngIfElse]="radioButton">
+    <div class="p-radio-button-line">
+      <ng-container [ngTemplateOutlet]="radioButton"></ng-container>
+    </div>
+  </ng-template>
+
+  <mat-error *ngIf="fieldFormControl.errors"
+              class="p-radio-group-error">
+    {{errorMessage}}
+  </mat-error>
+</mat-radio-group>
+
+<ng-template #radioButton>
   <p-radio-button class="p-radio-group-option"
                   *ngFor="let option of optionsList"
                   [value]="option"
@@ -9,8 +24,4 @@
                   [checked]="option.checked"
                   [disabled]="option.disabled">
   </p-radio-button>
-  <mat-error *ngIf="fieldFormControl.errors"
-              class="p-radio-group-error">
-    {{errorMessage}}
-  </mat-error>
-</mat-radio-group>
+</ng-template>
