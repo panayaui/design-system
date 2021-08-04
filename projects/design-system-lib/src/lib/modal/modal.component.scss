@@ -58,7 +58,7 @@ $fullScreen-height: calc(100% - #{$fullScreen-top} - #{$fullScreen-margin});
     top: -33px;
     right: -4px;
     &:hover {
-      background-color: rgba(179, 179, 179, 0.6);
+      background-color: $x-hover-white-text;
     }
   }
 

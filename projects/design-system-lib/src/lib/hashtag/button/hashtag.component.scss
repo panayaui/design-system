@@ -26,7 +26,7 @@
     transition: background-color 280ms;
     .p-hashtag:hover & {
       color: $secondary-a-700;
-      background-color: $gray-scale-50;
+      background-color: $x-hover-purple-text;
     }
     ::ng-deep .p-btn-isIcon {
       padding: 3px;
