@@ -53,32 +53,13 @@ $chip-height: 27px;
 
   &-remove {
     border-radius: 50%;
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      left: 0;
-      z-index: -1;
-      border: 1px solid black;
-      //transition:background-color 1s;
-    }
     &:hover {
       color: $secondary-a-700;
-      background-color: $gray-scale-50;
-      &:before {
-      //  top: 0;
-      //  bottom: 0;
-      //  left: 0;
-      //  right: 0;
-      //  //background: #3D6AA2;
-        border-color: red;
-      }
+      background-color: $x-hover-dark-text;
     }
     ::ng-deep .p-btn-isIcon {
-      padding: 6px;
-      //transition: all 280ms;
+      padding: 3px;
+      transition: all 280ms;
     }
   }
 
