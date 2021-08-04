@@ -9,6 +9,7 @@ $background-color: $primary-c-50;
 $megaMenuTrigger-max-width: 200px;
 $icons-and-gap-width: 20px * 5 + 18px + $gap-double * 5 + $logo-gap;
 $icon-width-on-medium-screen: 20px;
+$resolution-breakpoint: $width-middle-screen;
 
 .p-masthead {
   display: flex;
@@ -64,10 +65,6 @@ $icon-width-on-medium-screen: 20px;
     &.megaMenu-trigger {
       max-width: $megaMenuTrigger-max-width;
     }
-
-    @media screen and (max-width: $width-middle-screen) {
-      max-width: calc(78.23% / 6); // 78.23% - nav-list width without first item at 1366 screen
-    }
   }
 
   &-nav-link {
@@ -90,7 +87,7 @@ $icon-width-on-medium-screen: 20px;
       background-color: $accent-color;
     }
 
-    @media screen and (max-width: $width-middle-screen) {
+    @media screen and (max-width: $resolution-breakpoint) {
       padding-right: $link-padding - 2px;
       padding-left: $link-padding - 2px;
     }
@@ -99,7 +96,7 @@ $icon-width-on-medium-screen: 20px;
   &-nav-link-name {
     @include ellipsis;
 
-    @media screen and (max-width: $width-middle-screen) {
+    @media screen and (max-width: $resolution-breakpoint) {
       font-size: $small-font-size;
       letter-spacing: 0.04em;
     }
@@ -137,7 +134,7 @@ $icon-width-on-medium-screen: 20px;
       border-color: $primary-a-900;
     }
 
-    @media screen and (max-width: $width-middle-screen) {
+    @media screen and (max-width: $resolution-breakpoint) {
       font-size: $small-font-size;
       width: 20px;
       height: 20px;
@@ -198,7 +195,7 @@ $icon-width-on-medium-screen: 20px;
     &.notification {
       @include notification($background-color);
     }
-    @media screen and (max-width: $width-middle-screen) {
+    @media screen and (max-width: $resolution-breakpoint) {
       ::ng-deep &:not(.track-status) .p-icon {
         width: $icon-width-on-medium-screen !important;
       }
@@ -209,7 +206,7 @@ $icon-width-on-medium-screen: 20px;
   }
 
   &-nav-link-icon {
-    @media screen and (max-width: $width-middle-screen) {
+    @media screen and (max-width: $resolution-breakpoint) {
       ::ng-deep .p-icon {
         width: $icon-width-on-medium-screen !important;
       }
