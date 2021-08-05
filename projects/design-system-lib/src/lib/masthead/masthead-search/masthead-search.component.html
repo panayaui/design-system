@@ -1,21 +1,27 @@
-<div class="p-menu-container" (click)="$event.stopPropagation()"
-     (keydown)="$event.stopPropagation()">
-  <p-input-outline class="p-menu-input"
-                   [ariaLabel]="filterAriaLabel"
-                   [placeholder]="filterPlaceholder"
-                   [isSearch]="true"
-                   (onSearch)="alterList($event)">
-  </p-input-outline>
+<div class="p-search">
+  <div class="p-search-header">
+    <p-input-outline class="p-search-input"
+                     [ariaLabel]="filterAriaLabel"
+                     [placeholder]="filterPlaceholder"
+                     [isSearch]="true"
+                     (onSearch)="alterList($event)">
+    </p-input-outline>
+  </div>
 
 
-  <div class="p-menu-body">
+  <div class="p-search-body">
+    <h6 class="p-search-body-title headline-6-bold">Recently viewed</h6>
     <ng-template [ngIf]="filteredList.length" [ngIfElse]="emptyState">
-      <!--<div class="p-menu-body-container">-->
-      <button *ngFor="let item of filteredList"
-              (click)="onSelectedItem($event, item)">
-        <span class="p-menu-item-text">{{item.entity}}</span>
-      </button>
-      <!--</div>-->
+      <ul class="p-search-body-list">
+        <li *ngFor="let item of filteredList"
+                class="p-search-body-item"
+                (click)="onSelectedItem($event, item)">
+          <p class="p-search-item-entity">{{item.entity}}</p>
+          <a [attr.href]="item.link" class="p-search-link">
+            {{item.linkName}}
+          </a>
+        </li>
+      </ul>
     </ng-template>
 
     <ng-template #emptyState>

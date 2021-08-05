@@ -14,8 +14,6 @@ export class MastheadSearchComponent implements OnInit, OnDestroy {
   @Input() groupTitle: boolean = false; // true if there is a group title
   @Input() filterPlaceholder: string; // if there is a search and buttons
   @Input() filterAriaLabel: string;
-  @Input() buttonFirst: IMenuButton;
-  @Input() buttonLast: IMenuButton;
   @Output() onClickTask: EventEmitter<any> = new EventEmitter();
   @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;
   public filteredList: any[];

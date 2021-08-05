@@ -87,7 +87,7 @@ const typographyStyles = {
     family: 'Inter Bold / Semi Bold',
     sets: {
       size: '12px',
-      letterSpacing: '8%',
+      letterSpacing: '5%',
       lineHeight: 'Auto',
       capitals: 'Yes',
       useCase: 'Default tab - Bold, Selected tab - SemiBold'
