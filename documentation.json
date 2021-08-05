@@ -5058,7 +5058,212 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"p-masthead\">\r\n  <a href=\"\" class=\"p-masthead-homepage-link\">\r\n    Home page\r\n    <img src=\"./logo.svg\" alt=\"Panaya Logo\"\r\n         class=\"p-masthead-logo\"/>\r\n  </a>\r\n  <nav aria-label=\"Main Navigation\" class=\"p-masthead-nav\">\r\n    <ul class=\"p-masthead-nav-list\">\r\n      <li *ngFor=\"let item of navList\"\r\n          class=\"p-masthead-nav-item\"\r\n          [ngClass]=\"{'divider' : item.divider, 'megaMenu-trigger' : item.megaMenu}\">\r\n        <a href=\"\"\r\n           class=\"p-masthead-nav-link\"\r\n           [class.selected]=\"item.selected\">\r\n          <p-icon *ngIf=\"item.megaMenu\"\r\n                  class=\"p-masthead-nav-link-icon\"\r\n                  iconName=\"menu\"\r\n                  width=\"22\"></p-icon>\r\n          <span class=\"p-masthead-nav-link-name headline-2-bold\">\r\n            {{item.name}}\r\n          </span>\r\n          <span *ngIf=\"item.badge\" class=\"p-masthead-nav-badge\">\r\n            {{item.badge}}\r\n          </span>\r\n        </a>\r\n        <ul *ngIf=\"item.subMenu\" class=\"p-masthead-submenu-list\">\r\n          <li *ngFor=\"let subItem of item.subMenu\" class=\"p-masthead-submenu-item\">\r\n            <a href=\"\" class=\"p-masthead-submenu-link headline-3-regular\">\r\n              {{subItem.name}}\r\n            </a>\r\n          </li>\r\n        </ul>\r\n      </li>\r\n    </ul>\r\n  </nav>\r\n\r\n  <p-icon class=\"p-masthead-icon search\"\r\n          iconName=\"search\"\r\n          width=\"22\"\r\n          matTooltip=\"Search\"\r\n          matTooltipPosition=\"above\"\r\n          matTooltipClass=\"p-tooltip below\"></p-icon>\r\n\r\n  <p-icon class=\"p-masthead-icon settings\"\r\n          iconName=\"settings\"\r\n          width=\"22\"\r\n          matTooltip=\"Settings\"\r\n          matTooltipPosition=\"above\"\r\n          matTooltipClass=\"p-tooltip below\"></p-icon>\r\n\r\n  <p-icon class=\"p-masthead-icon track-status\"\r\n          iconName=\"track-status\"\r\n          width=\"18\"\r\n          height=\"18\"\r\n          matTooltip=\"Track the status of your requests\"\r\n          matTooltipPosition=\"above\"\r\n          matTooltipClass=\"p-tooltip below\"></p-icon>\r\n\r\n  <p-icon class=\"p-masthead-icon help notification regular\"\r\n          iconName=\"help-circle\"\r\n          width=\"22\"\r\n          matTooltip=\"Help\"\r\n          matTooltipPosition=\"above\"\r\n          matTooltipClass=\"p-tooltip below\"></p-icon>\r\n\r\n  <p-icon class=\"p-masthead-icon bell notification alert\"\r\n          iconName=\"bell\"\r\n          width=\"22\"\r\n          matTooltip=\"Notifications\"\r\n          matTooltipPosition=\"above\"\r\n          matTooltipClass=\"p-tooltip below\"></p-icon>\r\n\r\n  <p-icon class=\"p-masthead-icon user\"\r\n          iconName=\"user-circle\"\r\n          width=\"22\"\r\n          height=\"22\"\r\n          matTooltip=\"Account\"\r\n          matTooltipPosition=\"above\"\r\n          matTooltipClass=\"p-tooltip below\"></p-icon>\r\n</div>\r\n\r\n"
+            "templateData": "<!--<div class=\"p-masthead\">-->\r\n  <!--<a href=\"\" class=\"p-masthead-homepage-link\">-->\r\n    <!--Home page-->\r\n    <!--<img src=\"./logo.svg\" alt=\"Panaya Logo\"-->\r\n         <!--class=\"p-masthead-logo\"/>-->\r\n  <!--</a>-->\r\n  <!--<nav aria-label=\"Main Navigation\" class=\"p-masthead-nav\">-->\r\n    <!--<ul class=\"p-masthead-nav-list\">-->\r\n      <!--<li *ngFor=\"let item of navList\"-->\r\n          <!--class=\"p-masthead-nav-item\"-->\r\n          <!--[ngClass]=\"{'divider' : item.divider, 'megaMenu-trigger' : item.megaMenu}\">-->\r\n        <!--<a href=\"\"-->\r\n           <!--class=\"p-masthead-nav-link\"-->\r\n           <!--[class.selected]=\"item.selected\">-->\r\n          <!--<p-icon *ngIf=\"item.megaMenu\"-->\r\n                  <!--class=\"p-masthead-nav-link-icon\"-->\r\n                  <!--iconName=\"menu\"-->\r\n                  <!--width=\"22\"></p-icon>-->\r\n          <!--<span class=\"p-masthead-nav-link-name headline-2-bold\">-->\r\n            <!--{{item.name}}-->\r\n          <!--</span>-->\r\n          <!--<span *ngIf=\"item.badge\" class=\"p-masthead-nav-badge\">-->\r\n            <!--{{item.badge}}-->\r\n          <!--</span>-->\r\n        <!--</a>-->\r\n        <!--<ul *ngIf=\"item.subMenu\" class=\"p-masthead-submenu-list\">-->\r\n          <!--<li *ngFor=\"let subItem of item.subMenu\" class=\"p-masthead-submenu-item\">-->\r\n            <!--<a href=\"\" class=\"p-masthead-submenu-link headline-3-regular\">-->\r\n              <!--{{subItem.name}}-->\r\n            <!--</a>-->\r\n          <!--</li>-->\r\n        <!--</ul>-->\r\n      <!--</li>-->\r\n    <!--</ul>-->\r\n  <!--</nav>-->\r\n\r\n  <!--<p-icon class=\"p-masthead-icon search\"-->\r\n          <!--iconName=\"search\"-->\r\n          <!--width=\"22\"-->\r\n          <!--matTooltip=\"Search\"-->\r\n          <!--matTooltipPosition=\"above\"-->\r\n          <!--matTooltipClass=\"p-tooltip below\"></p-icon>-->\r\n\r\n  <!--<p-icon class=\"p-masthead-icon settings\"-->\r\n          <!--iconName=\"settings\"-->\r\n          <!--width=\"22\"-->\r\n          <!--matTooltip=\"Settings\"-->\r\n          <!--matTooltipPosition=\"above\"-->\r\n          <!--matTooltipClass=\"p-tooltip below\"></p-icon>-->\r\n\r\n  <!--<p-icon class=\"p-masthead-icon track-status\"-->\r\n          <!--iconName=\"track-status\"-->\r\n          <!--width=\"18\"-->\r\n          <!--height=\"18\"-->\r\n          <!--matTooltip=\"Track the status of your requests\"-->\r\n          <!--matTooltipPosition=\"above\"-->\r\n          <!--matTooltipClass=\"p-tooltip below\"></p-icon>-->\r\n\r\n  <!--<p-icon class=\"p-masthead-icon help notification regular\"-->\r\n          <!--iconName=\"help-circle\"-->\r\n          <!--width=\"22\"-->\r\n          <!--matTooltip=\"Help\"-->\r\n          <!--matTooltipPosition=\"above\"-->\r\n          <!--matTooltipClass=\"p-tooltip below\"></p-icon>-->\r\n\r\n  <!--<p-icon class=\"p-masthead-icon bell notification alert\"-->\r\n          <!--iconName=\"bell\"-->\r\n          <!--width=\"22\"-->\r\n          <!--matTooltip=\"Notifications\"-->\r\n          <!--matTooltipPosition=\"above\"-->\r\n          <!--matTooltipClass=\"p-tooltip below\"></p-icon>-->\r\n\r\n  <!--<p-icon class=\"p-masthead-icon user\"-->\r\n          <!--iconName=\"user-circle\"-->\r\n          <!--width=\"22\"-->\r\n          <!--height=\"22\"-->\r\n          <!--matTooltip=\"Account\"-->\r\n          <!--matTooltipPosition=\"above\"-->\r\n          <!--matTooltipClass=\"p-tooltip below\"></p-icon>-->\r\n<!--</div>-->\r\n\r\n<p-masthead-search></p-masthead-search>\r\n"
+        },
+        {
+            "name": "MastheadSearchComponent",
+            "id": "component-MastheadSearchComponent-f683e6390d4191aa9afae6ce78872770",
+            "file": "projects/design-system-lib/src/lib/masthead/masthead-search/masthead-search.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-masthead-search",
+            "styleUrls": [
+                "./masthead-search.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./masthead-search.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "buttonFirst",
+                    "line": 17,
+                    "type": "IMenuButton"
+                },
+                {
+                    "name": "buttonLast",
+                    "line": 18,
+                    "type": "IMenuButton"
+                },
+                {
+                    "name": "filterAriaLabel",
+                    "line": 16,
+                    "type": "string"
+                },
+                {
+                    "name": "filterPlaceholder",
+                    "line": 15,
+                    "type": "string"
+                },
+                {
+                    "name": "groupTitle",
+                    "defaultValue": "false",
+                    "line": 14,
+                    "type": "boolean"
+                },
+                {
+                    "name": "menuList",
+                    "line": 13,
+                    "type": "any[]"
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClickTask",
+                    "defaultValue": "new EventEmitter()",
+                    "line": 19,
+                    "type": "EventEmitter<any>"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "filteredList",
+                    "type": "any[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 21,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "formFieldControl",
+                    "type": "FormControl",
+                    "optional": false,
+                    "description": "",
+                    "line": 22,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "menuTrigger",
+                    "type": "MatMenuTrigger",
+                    "optional": false,
+                    "description": "",
+                    "line": 20,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'menuTrigger'"
+                        }
+                    ]
+                },
+                {
+                    "name": "sub",
+                    "type": "SubscriptionLike",
+                    "optional": false,
+                    "description": "",
+                    "line": 23,
+                    "modifierKind": [
+                        112
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "alterList",
+                    "args": [
+                        {
+                            "name": "value",
+                            "type": "string"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 45,
+                    "jsdoctags": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnDestroy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 38
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 25
+                },
+                {
+                    "name": "onSelectedItem",
+                    "args": [
+                        {
+                            "name": "$event",
+                            "type": ""
+                        },
+                        {
+                            "name": "item",
+                            "type": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 59,
+                    "jsdoctags": [
+                        {
+                            "name": "$event",
+                            "type": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "item",
+                            "type": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "selectCompleted",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 55
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild} from '@angular/core';\r\nimport {IMenuButton} from '../../menu/menu-button.interface';\r\nimport {FormControl} from '@angular/forms';\r\nimport {MatMenuTrigger} from '@angular/material/menu';\r\nimport {SubscriptionLike} from 'rxjs';\r\n\r\n@Component({\r\n  selector: 'p-masthead-search',\r\n  templateUrl: './masthead-search.component.html',\r\n  styleUrls: ['./masthead-search.component.scss'],\r\n})\r\nexport class MastheadSearchComponent implements OnInit, OnDestroy {\r\n  @Input() menuList: any[];\r\n  @Input() groupTitle: boolean = false; // true if there is a group title\r\n  @Input() filterPlaceholder: string; // if there is a search and buttons\r\n  @Input() filterAriaLabel: string;\r\n  @Input() buttonFirst: IMenuButton;\r\n  @Input() buttonLast: IMenuButton;\r\n  @Output() onClickTask: EventEmitter<any> = new EventEmitter();\r\n  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;\r\n  public filteredList: any[];\r\n  public formFieldControl: FormControl;\r\n  private sub: SubscriptionLike;\r\n\r\n  ngOnInit(): void {\r\n    this.filteredList = this.menuList;\r\n    if (this.filterPlaceholder) {\r\n      this.formFieldControl = new FormControl('');\r\n      this.sub = this.formFieldControl.valueChanges.subscribe((value: string) => {\r\n        this.alterList(value);\r\n      });\r\n    }\r\n    if (!this.filterAriaLabel && this.filterPlaceholder) {\r\n      this.filterAriaLabel = this.filterPlaceholder;\r\n    }\r\n  }\r\n\r\n  ngOnDestroy(): void {\r\n    if (this.filterPlaceholder && this.sub) {\r\n      this.sub.unsubscribe();\r\n      this.sub = null;\r\n    }\r\n  }\r\n\r\n  alterList(value: string): void {\r\n    this.filteredList = [];\r\n    this.menuList.forEach(group => {\r\n      const filteredGroup = group.names.filter( name => name.name.toLowerCase().indexOf(value.toLowerCase()) > -1);\r\n      if (filteredGroup.length > 0) {\r\n        this.filteredList.push(Object.assign({}, group, group.names = filteredGroup));\r\n      }\r\n    });\r\n  }\r\n\r\n  selectCompleted(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  onSelectedItem($event, item): void {\r\n    console.log(item);\r\n    this.onClickTask.emit(item);\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n}\r\n\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$link-padding: $gap-double;\r\n$logo-gap: 40px;\r\n$logo-width: 95px;\r\n$logo-and-gap-width: $logo-width + $link-padding * 2 + $logo-gap - $link-padding * 2;\r\n$accent-color: $primary-b-300;\r\n$background-color: $primary-c-50;\r\n$megaMenuTrigger-max-width: 200px;\r\n$icons-and-gap-width: 20px * 5 + 18px + $gap-double * 5 + $logo-gap;\r\n$icon-width-on-medium-screen: 20px;\r\n$resolution-breakpoint: $width-middle-screen;\r\n\r\n.p-masthead {\r\n  display: flex;\r\n  align-items: center;\r\n  width: 100%;\r\n  height: $masthead-height;\r\n  background-color: $background-color;\r\n  padding-right: $logo-gap;\r\n  padding-left: $logo-gap - $link-padding;\r\n\r\n  &-homepage-link {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    font-size: 0;\r\n    height: 100%;\r\n    padding-right: $link-padding;\r\n    padding-left: $link-padding;\r\n    margin-right: $logo-gap - $link-padding * 2;\r\n  }\r\n\r\n  &-logo {\r\n    width: $logo-width;\r\n    height: 20px;\r\n  }\r\n\r\n  &-nav {\r\n    max-width: calc(100% - #{$logo-and-gap-width} - #{$icons-and-gap-width});\r\n    height: 100%;\r\n    margin-right: auto;\r\n  }\r\n\r\n  &-nav-list {\r\n    @include resetUl;\r\n    display: flex;\r\n    align-items: center;\r\n    height: 100%;\r\n  }\r\n\r\n  &-nav-item {\r\n    display: flex;\r\n    align-items: center;\r\n    height: 100%;\r\n    position: relative;\r\n\r\n    &.divider:before {\r\n      content: '';\r\n      width: 1px;\r\n      height: 18px;\r\n      border-right: 1px solid $gray-scale-600;\r\n    }\r\n\r\n    &.megaMenu-trigger {\r\n      max-width: $megaMenuTrigger-max-width;\r\n    }\r\n  }\r\n\r\n  &-nav-link {\r\n    @include resetLink;\r\n    display: flex;\r\n    align-items: center;\r\n    width: 100%;\r\n    height: 100%;\r\n    padding-right: $link-padding;\r\n    padding-left: $link-padding;\r\n    transition: all 200ms ease-in-out;\r\n\r\n    .p-masthead-nav-item:hover &:not(.selected),\r\n    .p-masthead-nav-item:focus-within &:not(.selected) {\r\n      color: $accent-color;\r\n    }\r\n\r\n    &.selected {\r\n      color: $primary-a-900;\r\n      background-color: $accent-color;\r\n    }\r\n\r\n    @media screen and (max-width: $resolution-breakpoint) {\r\n      padding-right: $link-padding - 2px;\r\n      padding-left: $link-padding - 2px;\r\n    }\r\n  }\r\n\r\n  &-nav-link-name {\r\n    @include ellipsis;\r\n\r\n    @media screen and (max-width: $resolution-breakpoint) {\r\n      font-size: $small-font-size;\r\n      letter-spacing: 0.04em;\r\n    }\r\n  }\r\n\r\n  &-nav-link-icon {\r\n    margin-right: $gap-base;\r\n  }\r\n\r\n  &-nav-badge {\r\n    display: flex;\r\n    justify-content: space-around;\r\n    align-items: center;\r\n    flex-shrink: 0;\r\n    font-family: $font-family-accent;\r\n    font-size: $middle-font-size;\r\n    font-weight: 600;\r\n    letter-spacing: 0;\r\n    width: 22px;\r\n    height: 22px;\r\n    margin-left: $gap-base;\r\n    border: 1px solid currentColor;\r\n    border-radius: 50%;\r\n    transition: background-color 200ms ease-in-out;\r\n    .p-masthead-nav-item:hover & ,\r\n    .p-masthead-nav-item:focus-within & {\r\n      font-weight: 700;\r\n      border-width: 2px;\r\n    }\r\n\r\n    .p-masthead-nav-link.selected & {\r\n      font-weight: 600;\r\n      color: $gray-scale-1;\r\n      background-color: $primary-a-900;\r\n      border-color: $primary-a-900;\r\n    }\r\n\r\n    @media screen and (max-width: $resolution-breakpoint) {\r\n      font-size: $small-font-size;\r\n      width: 20px;\r\n      height: 20px;\r\n      margin-left: $gap-base - 2px;\r\n    }\r\n  }\r\n\r\n\r\n\r\n  // dropdown menu hidden by default\r\n  &-submenu-list {\r\n    @include resetUl;\r\n    display: none;\r\n    min-width: 100%;\r\n    padding: 1.5px;\r\n    background: $primary-c-50;\r\n    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1),\r\n                0 2px 6px rgba(0, 0, 0, 0.04),\r\n                0 -3px 6px rgba(0, 0, 0, 0.04);\r\n    overflow: hidden;\r\n    position: absolute;\r\n    top: 100%;\r\n    left: 0;\r\n\r\n    .p-masthead-nav-item:hover &,\r\n    .p-masthead-nav-item:focus-within & {\r\n      display: block; // dropdown menu shown on hover\r\n    }\r\n  }\r\n\r\n  &-submenu-link {\r\n    @include resetLink;\r\n    display: flex;\r\n    align-items: center;\r\n    text-transform: capitalize;\r\n    height: 38px;\r\n    padding-right: $gap-double;\r\n    padding-left: $gap-double;\r\n    white-space: nowrap;\r\n    transition: color 200ms ease-in-out;\r\n    &:hover,\r\n    &:focus {\r\n      color: $accent-color;\r\n    }\r\n  }\r\n\r\n  &-icon {\r\n    &:hover {\r\n      color: $secondary-a-700;\r\n      cursor: pointer;\r\n    }\r\n    & ~ & {\r\n      margin-left: $gap-double;\r\n    }\r\n    &:first-of-type {\r\n      margin-left: $logo-gap;\r\n    }\r\n    &.notification {\r\n      @include notification($background-color);\r\n    }\r\n    @media screen and (max-width: $resolution-breakpoint) {\r\n      ::ng-deep &:not(.track-status) .p-icon {\r\n        width: $icon-width-on-medium-screen !important;\r\n      }\r\n      ::ng-deep &.track-status .p-icon {\r\n        width: $icon-width-on-medium-screen - 4px !important;\r\n      }\r\n    }\r\n  }\r\n\r\n  &-nav-link-icon {\r\n    @media screen and (max-width: $resolution-breakpoint) {\r\n      ::ng-deep .p-icon {\r\n        width: $icon-width-on-medium-screen !important;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+                    "styleUrl": "./masthead-search.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "implements": [
+                "OnInit",
+                "OnDestroy"
+            ],
+            "templateData": "search\r\n<div class=\"p-menu-container\" (click)=\"$event.stopPropagation()\"\r\n     (keydown)=\"$event.stopPropagation()\">\r\n  <div class=\"p-menu-header\" *ngIf=\"filterPlaceholder\">\r\n    <p-input-outline class=\"p-menu-input\"\r\n                     [ariaLabel]=\"filterAriaLabel\"\r\n                     [placeholder]=\"filterPlaceholder\"\r\n                     [isSearch]=\"true\"\r\n                     (onSearch)=\"alterList($event)\">\r\n    </p-input-outline>\r\n  </div>\r\n\r\n  <div class=\"p-menu-body\">\r\n    <ng-template [ngIf]=\"filteredList.length\" [ngIfElse]=\"emptyState\">\r\n      <div class=\"p-menu-body-container\">\r\n        <!--groupTitle === true-->\r\n        <ng-template [ngIf]=\"groupTitle\" [ngIfElse]=\"noGroupTitle\">\r\n          <ng-container *ngFor=\"let group of filteredList\">\r\n            <h6 class=\"p-menu-group-title\">{{group.letter}}</h6>\r\n            <ng-container [ngTemplateOutlet]=\"menuLine\"\r\n                          [ngTemplateOutletContext] =\"{itemsList: group.names}\"></ng-container>\r\n          </ng-container>\r\n        </ng-template>\r\n\r\n        <!--groupTitle === false-->\r\n        <ng-template #noGroupTitle>\r\n          <ng-container [ngTemplateOutlet]=\"menuLine\"\r\n                        [ngTemplateOutletContext] =\"{itemsList: menuList}\"></ng-container>\r\n        </ng-template>\r\n      </div>\r\n    </ng-template>\r\n\r\n    <ng-template #emptyState>\r\n      <div class=\"p-menu-empty\">\r\n        <p class=\"p-menu-empty-state paragraph-1-default\">\r\n          No data found\r\n        </p>\r\n      </div>\r\n    </ng-template>\r\n  </div>\r\n\r\n  <div class=\"p-menu-footer\" *ngIf=\"filterPlaceholder\">\r\n    <p-button class=\"p-menu-btn-line\"\r\n              [label]=\"buttonFirst.label\"\r\n              [iconBefore]=\"buttonFirst.icon.iconName\"\r\n              [iconBeforeWidth]=\"buttonFirst.icon.width\"\r\n              [iconBeforeHeight]=\"buttonFirst.icon.height\"\r\n              [buttonType]=\"buttonFirst.buttonType\"></p-button>\r\n    <p-button class=\"p-menu-btn-line\"\r\n              [label]=\"buttonLast.label\"\r\n              [iconBefore]=\"buttonLast.icon.iconName\"\r\n              [iconBeforeWidth]=\"buttonLast.icon.width\"\r\n              [iconBeforeHeight]=\"buttonLast.icon.height\"\r\n              [buttonType]=\"buttonLast.buttonType\"></p-button>\r\n  </div>\r\n</div>\r\n"
         },
         {
             "name": "MenuComponent",
@@ -7091,7 +7296,7 @@
         },
         {
             "name": "RadioButtonGroupComponent",
-            "id": "component-RadioButtonGroupComponent-04728ee36f26cfb2ed70fcc764ec50eb",
+            "id": "component-RadioButtonGroupComponent-a8ab451a1dbcd6be61b04bd136a77f1f",
             "file": "projects/design-system-lib/src/lib/radio-button/radio-button-group/radio-button-group.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -7123,6 +7328,12 @@
                     "name": "groupValue",
                     "line": 14,
                     "type": "any"
+                },
+                {
+                    "name": "inLine",
+                    "defaultValue": "false",
+                    "line": 19,
+                    "type": "boolean"
                 },
                 {
                     "name": "label",
@@ -7158,7 +7369,7 @@
                     "type": "FormControl",
                     "optional": false,
                     "description": "",
-                    "line": 19,
+                    "line": 20,
                     "modifierKind": [
                         114
                     ]
@@ -7171,7 +7382,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 21
+                    "line": 22
                 }
             ],
             "hostBindings": [],
@@ -7179,11 +7390,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport {IRadioButton} from 'projects/design-system-lib/src/lib/radio-button/radio-button.interface';\r\nimport {FormControl, ValidatorFn} from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'p-radio-group',\r\n  templateUrl: './radio-button-group.component.html',\r\n  styleUrls: ['./radio-button-group.component.scss'],\r\n})\r\nexport class RadioButtonGroupComponent implements OnInit {\r\n  @Input() label: string;\r\n  @Input() optionsList: IRadioButton[];\r\n  @Input() errorMessage: string;\r\n  @Input() groupValue: any;\r\n  @Input() selected: any;\r\n  @Input() disabled: boolean = false;\r\n  @Input() required: boolean = false;\r\n  @Input() validators: ValidatorFn[];\r\n  public fieldFormControl: FormControl;\r\n\r\n  ngOnInit(): void {\r\n    this.fieldFormControl = new FormControl(\r\n      {value: this.groupValue, disabled: this.disabled},\r\n      this.validators);\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport {IRadioButton} from 'projects/design-system-lib/src/lib/radio-button/radio-button.interface';\r\nimport {FormControl, ValidatorFn} from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'p-radio-group',\r\n  templateUrl: './radio-button-group.component.html',\r\n  styleUrls: ['./radio-button-group.component.scss'],\r\n})\r\nexport class RadioButtonGroupComponent implements OnInit {\r\n  @Input() label: string;\r\n  @Input() optionsList: IRadioButton[];\r\n  @Input() errorMessage: string;\r\n  @Input() groupValue: any;\r\n  @Input() selected: any;\r\n  @Input() disabled: boolean = false;\r\n  @Input() required: boolean = false;\r\n  @Input() validators: ValidatorFn[];\r\n  @Input() inLine: boolean = false;\r\n  public fieldFormControl: FormControl;\r\n\r\n  ngOnInit(): void {\r\n    this.fieldFormControl = new FormControl(\r\n      {value: this.groupValue, disabled: this.disabled},\r\n      this.validators);\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../../../../src/stories/assets/styles/custom\";\r\n\r\n.p-radio-group {\r\n  display: flex;\r\n  flex-direction: column;\r\n  &-label {\r\n    font-family: $font-family-basic;\r\n    font-size: $tiny-font-size;\r\n    font-weight: 700;\r\n    line-height: 18px;\r\n  }\r\n  &-option {\r\n    margin-top: 10px;\r\n  }\r\n  &-error {\r\n    font-family: $font-family-basic;\r\n    font-size: $tiny-font-size;\r\n    line-height: 18px;\r\n    color: $supportive-alert-500;\r\n    margin-top: 10px;\r\n  }\r\n}\r\n",
+                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n.p-radio-group {\r\n  display: flex;\r\n  flex-direction: column;\r\n  &-label {\r\n    font-family: $font-family-basic;\r\n    font-size: $tiny-font-size;\r\n    font-weight: 700;\r\n    line-height: 18px;\r\n    margin-bottom: $gap-base;\r\n  }\r\n  &-line {\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n  &-option {\r\n    &:not(:first-of-type) {\r\n      margin-top: $gap-base;\r\n    }\r\n    .p-radio-button-line & ~ & {\r\n      margin-left: $gap-double;\r\n    }\r\n  }\r\n  &-error {\r\n    font-family: $font-family-basic;\r\n    font-size: $tiny-font-size;\r\n    line-height: 18px;\r\n    color: $supportive-alert-500;\r\n    margin-top: $gap-base;\r\n  }\r\n}\r\n",
                     "styleUrl": "./radio-button-group.component.scss"
                 }
             ],
@@ -7191,7 +7402,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<mat-radio-group class=\"p-radio-group\"\r\n                 [formControl]=\"fieldFormControl\">\r\n  <label class=\"p-radio-group-label\">{{label}}</label>\r\n  <p-radio-button class=\"p-radio-group-option\"\r\n                  *ngFor=\"let option of optionsList\"\r\n                  [value]=\"option\"\r\n                  [label]=\"option.label\"\r\n                  [ariaLabel]=\"option.ariaLabel\"\r\n                  [checked]=\"option.checked\"\r\n                  [disabled]=\"option.disabled\">\r\n  </p-radio-button>\r\n  <mat-error *ngIf=\"fieldFormControl.errors\"\r\n              class=\"p-radio-group-error\">\r\n    {{errorMessage}}\r\n  </mat-error>\r\n</mat-radio-group>\r\n"
+            "templateData": "<mat-radio-group class=\"p-radio-group\"\r\n                 [formControl]=\"fieldFormControl\">\r\n  <label *ngIf=\"label\"\r\n         class=\"p-radio-group-label\">{{label}}</label>\r\n\r\n  <ng-template [ngIf]=\"inLine\" [ngIfElse]=\"radioButton\">\r\n    <div class=\"p-radio-button-line\">\r\n      <ng-container [ngTemplateOutlet]=\"radioButton\"></ng-container>\r\n    </div>\r\n  </ng-template>\r\n\r\n  <mat-error *ngIf=\"fieldFormControl.errors\"\r\n              class=\"p-radio-group-error\">\r\n    {{errorMessage}}\r\n  </mat-error>\r\n</mat-radio-group>\r\n\r\n<ng-template #radioButton>\r\n  <p-radio-button class=\"p-radio-group-option\"\r\n                  *ngFor=\"let option of optionsList\"\r\n                  [value]=\"option\"\r\n                  [label]=\"option.label\"\r\n                  [ariaLabel]=\"option.ariaLabel\"\r\n                  [checked]=\"option.checked\"\r\n                  [disabled]=\"disabled\">\r\n  </p-radio-button>\r\n</ng-template>\r\n"
         },
         {
             "name": "SidenavInnerComponent",
@@ -8888,6 +9099,9 @@
                     "elements": [
                         {
                             "name": "MastheadComponent"
+                        },
+                        {
+                            "name": "MastheadSearchComponent"
                         }
                     ]
                 },
@@ -8899,6 +9113,9 @@
                         },
                         {
                             "name": "IconModule"
+                        },
+                        {
+                            "name": "InputModule"
                         }
                     ]
                 },
@@ -9531,17 +9748,17 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
-                "type": "Story<CheckboxPageComponent>",
-                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "Story<CheckboxGroupPageComponent>",
+                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
-                "type": "Story<CheckboxGroupPageComponent>",
-                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "Story<CheckboxPageComponent>",
+                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -10854,6 +11071,15 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/design-system-lib/src/lib/masthead/masthead-search/masthead-search.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MastheadSearchComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/17",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/design-system-lib/src/lib/masthead/masthead.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -11012,7 +11238,7 @@
                 "linktype": "component",
                 "name": "RadioButtonGroupComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/11",
+                "coverageCount": "0/12",
                 "status": "low"
             },
             {

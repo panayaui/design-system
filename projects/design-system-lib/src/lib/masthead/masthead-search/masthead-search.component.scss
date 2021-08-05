@@ -1,4 +1,4 @@
-@import "../assets/styles/custom";
+@import "../../assets/styles/custom";
 
 $link-padding: $gap-double;
 $logo-gap: 40px;
@@ -212,8 +212,4 @@ $resolution-breakpoint: $width-middle-screen;
       }
     }
   }
-}
-
-.logo {
-  background-image: url('../assets/images/logo.svg');
 }
