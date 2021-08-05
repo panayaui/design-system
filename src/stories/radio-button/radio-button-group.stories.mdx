@@ -14,7 +14,6 @@ import {RadioButtonModule} from 'projects/design-system-lib/src/public-api';
               })
       ]}
       args={{
-        label: 'Group Label',
         optionsList: [
           {label: 'Label'},
           {label: 'Label'},
@@ -35,11 +34,13 @@ export const Template = (args) => <RadioButtonGroupComponent {...args} />
 <Canvas>
   <Story name="Default"
     args={{
+      label: 'Group Label',
     }}>
     {Template.bind({})}
   </Story>
   <Story name="Option Checked"
     args={{
+      label: 'Group Label',
       optionsList: [
         {label: 'Label'},
         {label: 'Label'},
@@ -50,6 +51,7 @@ export const Template = (args) => <RadioButtonGroupComponent {...args} />
   </Story>
   <Story name="Group Disabled"
     args={{
+      label: 'Group Disabled',
       disabled: true,
       optionsList: [
         {label: 'Label'},
@@ -61,6 +63,7 @@ export const Template = (args) => <RadioButtonGroupComponent {...args} />
   </Story>
   <Story name="Validation Error"
     args={{
+      label: 'Group Label',
       validators: Validators.required,
       errorMessage: 'Validation text'
     }}>
@@ -73,7 +76,6 @@ export const Template = (args) => <RadioButtonGroupComponent {...args} />
   <Story name="In Line"
     args={{
       inLine: true,
-      groupLabel: '',
       optionsList: [
           {label: 'File'},
           {label: 'Link'},
