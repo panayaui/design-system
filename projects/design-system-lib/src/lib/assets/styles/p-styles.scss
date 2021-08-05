@@ -125,6 +125,8 @@ $input-text-padding: $gap-base;
 
 $masthead-height: 64px;
 
+$scrollbar-width: 6px;
+
 
 
 $white: #ffffff;
@@ -573,14 +575,14 @@ $arrow-border: 7px;
 
 //scrollbar in webkit based browsers
 ::-webkit-scrollbar {
-  width: 14px;
+  width: $gap-base + $scrollbar-width;
 }
 ::-webkit-scrollbar-track {
   background-color: transparent;
 }
 ::-webkit-scrollbar-thumb {
   background-color: $gray-scale-50;
-  border-right: 8px solid $gray-scale-1;
+  border-right: $gap-base solid $gray-scale-1;
   border-top: none;
   border-bottom: none;
   border-left: none;
