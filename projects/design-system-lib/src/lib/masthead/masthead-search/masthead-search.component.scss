@@ -6,6 +6,7 @@ $search-body-max-height: 624px;
 $search-body-title-height: 40px;
 $search-body-padding-left: $gap-double;
 $search-item-min-height: 78px;
+$search-empty-height: 103px;
 
 .p-search {
   width: $search-width;
@@ -14,8 +15,13 @@ $search-item-min-height: 78px;
     display: flex;
     align-items: center;
     height: $search-header-height;
+    padding-right: $gap-base + $scrollbar-width;
     padding-left: $gap-base;
     background-color: $gray-scale-50;
+  }
+
+  &-input {
+    flex-grow: 1;
   }
 
   &-body {
@@ -38,12 +44,15 @@ $search-item-min-height: 78px;
 
   &-body-item {
     min-height: $search-item-min-height;
+    margin-right: $gap-base;
     padding-top: $gap-double;
     padding-bottom: $gap-double;
     padding-left: $search-body-padding-left;
-    border-bottom: 1px solid $gray-scale-400;
     &:hover {
       background-color: $primary-c-50;
+    }
+    &:not(:last-child) {
+      border-bottom: 1px solid $gray-scale-400;
     }
   }
 
@@ -64,5 +73,16 @@ $search-item-min-height: 78px;
     color: $secondary-a-700;
     margin-top: $gap-base;
     @include clamp(3);
+  }
+
+  &-close {
+    margin-left: $gap-base;
+    border-radius: 50%;
+    ::ng-deep .p-btn-isIcon {
+      padding: 3px;
+    }
+    &:hover {
+      background-color: $x-hover-dark-text;
+    }
   }
 }

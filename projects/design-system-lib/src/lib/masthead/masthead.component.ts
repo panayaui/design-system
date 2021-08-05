@@ -15,4 +15,10 @@ export class MastheadComponent {
     recentlyViewed: any[];
   };
   public buttonType = ButtonTypeEnum;
+  public searchVisible: boolean = false;
+
+  toggleSearch(event: any, isSearchVisible: boolean): void {
+    console.log(isSearchVisible);
+    this.searchVisible = isSearchVisible;
+  }
 }

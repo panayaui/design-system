@@ -81,5 +81,6 @@
 
 <p-masthead-search [recentlyViewed]="mastheadSearch.recentlyViewed"
                    [filterPlaceholder]="mastheadSearch.filterPlaceholder"
-                   [filterAriaLabel]="mastheadSearch.filterPlaceholder">
+                   [filterAriaLabel]="mastheadSearch.filterPlaceholder"
+                   (onCloseSearch)="toggleSearch($event, false)">
 </p-masthead-search>

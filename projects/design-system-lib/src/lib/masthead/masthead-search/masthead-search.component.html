@@ -4,32 +4,28 @@
                      [ariaLabel]="filterAriaLabel"
                      [placeholder]="filterPlaceholder"
                      [isSearch]="true"
-                     (onSearch)="alterList($event)">
+                     (onSearch)="alterList($event)"
+                     (onClear)="alterList($event)">
     </p-input-outline>
+    <p-button class="p-search-close"
+              ariaLabel="Close search"
+              [buttonType]="buttonType.IsIcon"
+              iconBefore="x"
+              iconBeforeWidth="12"
+              iconBeforeStrokeWidth="2"
+              (onClickTask)="closeSearch()"></p-button>
   </div>
 
 
   <div class="p-search-body">
     <h6 class="p-search-body-title headline-6-bold">Recently viewed</h6>
-    <ng-template [ngIf]="filteredList.length" [ngIfElse]="emptyState">
-      <ul class="p-search-body-list">
-        <li *ngFor="let item of filteredList"
-                class="p-search-body-item"
-                (click)="onSelectedItem($event, item)">
-          <p class="p-search-item-entity">{{item.entity}}</p>
-          <a [attr.href]="item.link" class="p-search-link">
-            {{item.linkName}}
-          </a>
-        </li>
-      </ul>
-    </ng-template>
-
-    <ng-template #emptyState>
-      <div class="p-menu-empty">
-        <p class="p-menu-empty-state paragraph-1-default">
-          No data found
-        </p>
-      </div>
-    </ng-template>
+    <ul class="p-search-body-list">
+      <li *ngFor="let item of recentlyViewed" class="p-search-body-item">
+        <p class="p-search-item-entity">{{item.entity}}</p>
+        <a [attr.href]="item.link" class="p-search-link">
+          {{item.linkName}}
+        </a>
+      </li>
+    </ul>
   </div>
 </div>
