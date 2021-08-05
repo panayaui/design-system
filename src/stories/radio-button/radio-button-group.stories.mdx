@@ -68,6 +68,22 @@ export const Template = (args) => <RadioButtonGroupComponent {...args} />
   </Story>
 </Canvas>
 
+###### In Line
+<Canvas>
+  <Story name="In Line"
+    args={{
+      inLine: true,
+      groupLabel: '',
+      optionsList: [
+          {label: 'File'},
+          {label: 'Link'},
+          {label: 'Label'}
+        ]
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
 ###### Component
 ```ts
 export class RadioButtonGroupComponent implements OnInit {

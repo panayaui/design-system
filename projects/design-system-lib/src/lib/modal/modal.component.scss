@@ -52,9 +52,14 @@ $fullScreen-height: calc(100% - #{$fullScreen-top} - #{$fullScreen-margin});
   }
 
   &-close {
+    border-radius: 50%;
+    transition: background-color 200ms;
     position: absolute;
-    top: -30px;
+    top: -33px;
     right: -4px;
+    &:hover {
+      background-color: $x-hover-white-text;
+    }
   }
 
   &-wrapper {

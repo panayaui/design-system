@@ -16,6 +16,7 @@ export class RadioButtonGroupComponent implements OnInit {
   @Input() disabled: boolean = false;
   @Input() required: boolean = false;
   @Input() validators: ValidatorFn[];
+  @Input() inLine: boolean = false;
   public fieldFormControl: FormControl;
 
   ngOnInit(): void {

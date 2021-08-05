@@ -19,8 +19,18 @@
   }
 
   &-remove {
-    height: 100%;
     display: flex;
-    margin-right: -$gap-base;
+    margin-right: -$gap-small;
+    margin-left: $gap-small;
+    border-radius: 50%;
+    transition: background-color 280ms;
+    .p-hashtag:hover & {
+      color: $secondary-a-700;
+      background-color: $x-hover-purple-text;
+    }
+    ::ng-deep .p-btn-isIcon {
+      padding: 3px;
+      transition: all 280ms;
+    }
   }
 }

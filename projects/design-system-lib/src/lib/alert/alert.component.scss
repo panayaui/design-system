@@ -75,11 +75,19 @@ $alert-elements-gap: 5px;
     @include resetButton;
     display: inline-block;
     font-size: 0;
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     margin-right: -5px;
     margin-bottom: 10px;
     margin-left: 6px;
+    border-radius: 50%;
+    transition: background-color 280ms;
+    ::ng-deep .p-alert:not(.p-alert-primary) &:hover {
+      background-color: $x-hover-dark-text;
+    }
+    ::ng-deep .p-alert-primary &:hover {
+      background-color: $x-hover-white-text;
+    }
   }
 }
 
