@@ -1,16 +1,33 @@
-import {Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild} from '@angular/core';
-import {IMenuButton} from '../../menu/menu-button.interface';
+import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {FormControl} from '@angular/forms';
-import {MatMenuTrigger} from '@angular/material/menu';
 import {SubscriptionLike} from 'rxjs';
 import {ButtonTypeEnum} from '../../button/button-type.enum';
+import { trigger, transition, state, animate, style } from '@angular/animations';
 
 @Component({
   selector: 'p-masthead-search',
   templateUrl: './masthead-search.component.html',
   styleUrls: ['./masthead-search.component.scss'],
+  animations: [
+    trigger('childAnimation', [
+      state('open', style({
+        width: '550px',
+        opacity: 1,
+        backgroundColor: 'yellow'
+      })),
+      state('closed', style({
+        width: '300px',
+        opacity: 0.5,
+        backgroundColor: 'green'
+      })),
+      transition('* => *', [
+        animate('1s')
+      ]),
+    ]),
+  ]
 })
 export class MastheadSearchComponent implements OnInit, OnDestroy {
+  @Input() isSearchVisible: boolean = false;
   @Input() recentlyViewed: any[];
   @Input() filterPlaceholder: string;
   @Input() filterAriaLabel: string;
@@ -18,6 +35,7 @@ export class MastheadSearchComponent implements OnInit, OnDestroy {
   public formFieldControl: FormControl;
   private sub: SubscriptionLike;
   public buttonType = ButtonTypeEnum;
+  isOpen = false;
 
   ngOnInit(): void {
     if (this.filterPlaceholder) {
@@ -29,6 +47,9 @@ export class MastheadSearchComponent implements OnInit, OnDestroy {
     if (!this.filterAriaLabel && this.filterPlaceholder) {
       this.filterAriaLabel = this.filterPlaceholder;
     }
+    // if (!this.isSearchVisible) {
+    //   this.isSearchVisible = false;
+    // }
   }
 
   ngOnDestroy(): void {
@@ -42,8 +63,12 @@ export class MastheadSearchComponent implements OnInit, OnDestroy {
     console.log(value);
   }
 
+  toggle(): void {
+    this.isSearchVisible = !this.isSearchVisible;
+  }
+
   closeSearch(): void {
-    this.onCloseSearch.emit();
+    // this.onCloseSearch.emit();
   }
 }
 

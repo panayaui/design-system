@@ -288,7 +288,7 @@ $x-hover-purple-text: rgba(254, 254, 255, 0.6);
   }
 }
 
-@mixin notification($bg-color: transparent) {
+@mixin notification($top: 2px, $right: 2px, $bg-color: transparent) {
   position: relative;
   &:after {
     content: 'notification';
@@ -299,8 +299,8 @@ $x-hover-purple-text: rgba(254, 254, 255, 0.6);
     border: 2px solid $bg-color;
     border-radius: 50%;
     position: absolute;
-    top: 0;
-    right: -2px;
+    top: $top;
+    right: $right;
   }
   &.regular:after {
     background-color: $secondary-a-700;

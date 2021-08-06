@@ -42,6 +42,8 @@ export class AppComponent implements OnInit {
     optionName: 'Second'
   }];
   inputTable = inputTable;
+  navList: any[];
+  mastheadSearch: any;
 
   constructor() {}
 
@@ -188,5 +190,123 @@ export class AppComponent implements OnInit {
     ];
     this.inputMin = { label: 'Min', value: null };
     this.inputMax = { label: 'Max', value: 1 };
+
+    this.navList = [
+      {
+        name: 'UK Ongoing Changes',
+        megaMenu: true
+      },
+      {
+        name: 'Overview',
+        divider: true,
+        subMenu: [
+          {
+            name: 'Dashboards'
+          },
+          {
+            name: 'Cycles Progress'
+          },
+          {
+            name: 'Project Details'
+          }
+        ]
+      },
+      {
+        name: 'Development',
+        badge: '0',
+        subMenu: [
+          {
+            name: 'All Development'
+          },
+          {
+            name: 'Planning board'
+          }
+        ]
+      },
+      {
+        name: 'Tests',
+        badge: '1',
+        selected: true,
+        subMenu: [
+          {
+            name: 'Test Tree'
+          },
+          {
+            name: 'Test List'
+          },
+          {
+            name: 'Playlist Execution'
+          }
+        ]
+      },
+      {
+        name: 'Defects',
+        badge: '2',
+        subMenu: [
+          {
+            name: 'Defects'
+          },
+          {
+            name: 'System-Wide Defects'
+          }
+        ]
+      },
+      {
+        name: 'Reports'
+      },
+      {
+        name: 'Corrections'
+      }
+    ];
+    this.mastheadSearch = {
+      filterAriaLabel: 'Search link',
+        filterPlaceholder: 'Search',
+        recentlyViewed: [
+        { entity: 'User Story 17915',
+          linkName: 'Paginating to deleted defect needs empty state',
+          link: 'https://emea.panaya.com/site/rdx/tm/10605/development/requirementDetails/1642'
+        },
+        { entity: 'User Story 17915',
+          linkName: 'Paginating to deleted defect needs empty state',
+          link: 'https://emea.panaya.com/site/rdx/tm/10605/development/requirementDetails/1642'
+        },
+        { entity: 'User Story 17915',
+          linkName: 'Paginating to deleted defect needs empty state',
+          link: 'https://emea.panaya.com/site/rdx/tm/10605/development/requirementDetails/1642'
+        },
+        { entity: 'User Story 17915',
+          linkName: 'Paginating to deleted defect needs empty state or to deleted defect needs empty state paginating to deleted defect needs empty state paginating to deleted defect needs empty state',
+          link: 'https://emea.panaya.com/site/rdx/tm/10605/development/requirementDetails/1642'
+        },
+        { entity: 'User Story 17915',
+          linkName: 'Paginating to deleted defect needs empty state',
+          link: 'https://emea.panaya.com/site/rdx/tm/10605/development/requirementDetails/1642'
+        },
+        { entity: 'User Story 17915',
+          linkName: 'Paginating to deleted defect needs empty state or to deleted defect needs empty state',
+          link: 'https://emea.panaya.com/site/rdx/tm/10605/development/requirementDetails/1642'
+        },
+        { entity: 'User Story 17915',
+          linkName: 'Paginating to deleted defect needs empty state',
+          link: 'https://emea.panaya.com/site/rdx/tm/10605/development/requirementDetails/1642'
+        },
+        { entity: 'User Story 17915',
+          linkName: 'Paginating to deleted defect needs empty state',
+          link: 'https://emea.panaya.com/site/rdx/tm/10605/development/requirementDetails/1642'
+        },
+        { entity: 'User Story 17915',
+          linkName: 'Paginating to deleted defect needs empty state',
+          link: 'https://emea.panaya.com/site/rdx/tm/10605/development/requirementDetails/1642'
+        },
+        { entity: 'User Story 17915',
+          linkName: 'Paginating to deleted defect needs empty state',
+          link: 'https://emea.panaya.com/site/rdx/tm/10605/development/requirementDetails/1642'
+        },
+        { entity: 'User Story 17915',
+          linkName: 'Paginating to deleted defect needs empty state',
+          link: 'https://emea.panaya.com/site/rdx/tm/10605/development/requirementDetails/1642'
+        }
+      ]
+    };
   }
 }

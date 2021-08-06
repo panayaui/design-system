@@ -17,8 +17,12 @@ export class MastheadComponent {
   public buttonType = ButtonTypeEnum;
   public searchVisible: boolean = false;
 
-  toggleSearch(event: any, isSearchVisible: boolean): void {
-    console.log(isSearchVisible);
+  toggleSearch(isSearchVisible: boolean): void {
     this.searchVisible = isSearchVisible;
+    console.log(this.searchVisible);
+  }
+
+  buttonPlaceholder(): void {
+    console.log('icon button clicked');
   }
 }
