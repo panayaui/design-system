@@ -18,14 +18,16 @@
 
 
   <div class="p-search-body">
-    <h6 class="p-search-body-title headline-6-bold">Recently viewed</h6>
-    <ul class="p-search-body-list">
-      <li *ngFor="let item of recentlyViewed" class="p-search-body-item">
-        <p class="p-search-item-entity">{{item.entity}}</p>
-        <a [attr.href]="item.link" class="p-search-link">
-          {{item.linkName}}
-        </a>
-      </li>
-    </ul>
+    <div class="p-search-body-container">
+      <h6 class="p-search-body-title headline-6-bold">Recently viewed</h6>
+      <ul class="p-search-body-list">
+        <li *ngFor="let item of recentlyViewed" class="p-search-body-item">
+          <p class="p-search-item-entity">{{item.entity}}</p>
+          <a [attr.href]="item.link" class="p-search-link">
+            {{item.linkName}}
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>

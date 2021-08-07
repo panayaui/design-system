@@ -12,16 +12,18 @@ import {trigger, transition, state, animate, style, sequence} from '@angular/ani
     trigger('searchAnimation', [
       state('open', style({
         width: '384px',
-        height: '684px'
+        height: '684px',
+        overflow: 'visible'
       })),
       state('closed', style({
         width: '0',
-        height: '64px'
+        height: '64px',
+        overflow: 'hidden'
       })),
       transition('open => closed',
       sequence(
         [
-          animate('400ms ease-in-out', style ({ height: '64px' })),
+          animate('400ms ease-in-out', style ({ height: '64px', overflow: 'hidden' })),
           animate('400ms ease-in-out', style ({ width: '0' }))
         ]
       )
@@ -30,7 +32,7 @@ import {trigger, transition, state, animate, style, sequence} from '@angular/ani
         sequence(
           [
             animate('400ms ease-in-out', style ({ width: '384px' })),
-            animate('400ms ease-in-out', style ({ height: '684px' }))
+            animate('400ms ease-in-out', style ({ height: '684px', overflow: 'visible' }))
           ]
         )
       )
