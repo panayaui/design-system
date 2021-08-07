@@ -1,5 +1,4 @@
-<div class="p-search" [@childAnimation]="isSearchVisible ? 'open' : 'closed'">
-  {{ isSearchVisible }}
+<div class="p-search" [@searchAnimation]="isSearchVisible ? 'open' : 'closed'">
   <div class="p-search-header">
     <p-input-outline class="p-search-input"
                      [ariaLabel]="filterAriaLabel"
@@ -14,7 +13,7 @@
               iconBefore="x"
               iconBeforeWidth="12"
               iconBeforeStrokeWidth="2"
-              (onClickTask)="toggle()"></p-button>
+              (onClickTask)="closeSearch()"></p-button>
   </div>
 
 

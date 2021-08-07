@@ -2,28 +2,39 @@ import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angula
 import {FormControl} from '@angular/forms';
 import {SubscriptionLike} from 'rxjs';
 import {ButtonTypeEnum} from '../../button/button-type.enum';
-import { trigger, transition, state, animate, style } from '@angular/animations';
+import {trigger, transition, state, animate, style, sequence} from '@angular/animations';
 
 @Component({
   selector: 'p-masthead-search',
   templateUrl: './masthead-search.component.html',
   styleUrls: ['./masthead-search.component.scss'],
   animations: [
-    trigger('childAnimation', [
+    trigger('searchAnimation', [
       state('open', style({
-        width: '550px',
-        opacity: 1,
-        backgroundColor: 'yellow'
+        width: '384px',
+        height: '684px'
       })),
       state('closed', style({
-        width: '300px',
-        opacity: 0.5,
-        backgroundColor: 'green'
+        width: '0',
+        height: '64px'
       })),
-      transition('* => *', [
-        animate('1s')
-      ]),
-    ]),
+      transition('open => closed',
+      sequence(
+        [
+          animate('400ms ease-in-out', style ({ height: '64px' })),
+          animate('400ms ease-in-out', style ({ width: '0' }))
+        ]
+      )
+      ),
+      transition('closed => open',
+        sequence(
+          [
+            animate('400ms ease-in-out', style ({ width: '384px' })),
+            animate('400ms ease-in-out', style ({ height: '684px' }))
+          ]
+        )
+      )
+    ])
   ]
 })
 export class MastheadSearchComponent implements OnInit, OnDestroy {
@@ -47,9 +58,6 @@ export class MastheadSearchComponent implements OnInit, OnDestroy {
     if (!this.filterAriaLabel && this.filterPlaceholder) {
       this.filterAriaLabel = this.filterPlaceholder;
     }
-    // if (!this.isSearchVisible) {
-    //   this.isSearchVisible = false;
-    // }
   }
 
   ngOnDestroy(): void {
@@ -63,12 +71,8 @@ export class MastheadSearchComponent implements OnInit, OnDestroy {
     console.log(value);
   }
 
-  toggle(): void {
-    this.isSearchVisible = !this.isSearchVisible;
-  }
-
   closeSearch(): void {
-    // this.onCloseSearch.emit();
+    this.onCloseSearch.emit();
   }
 }
 

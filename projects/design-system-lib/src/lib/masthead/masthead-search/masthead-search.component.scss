@@ -19,24 +19,10 @@ $search-empty-height: 103px;
 
 .p-search {
   width: $search-width;
-  //transform: scaleX(0);
-  //animation-name: stretch;
-  //animation-duration: 4s;
-  //animation-timing-function: ease-out;
-  //animation-fill-mode: forwards;
-  //animation-direction: reverse;
   overflow: hidden;
   position: absolute;
   top: 0;
   right: 0;
-
-  &.visible {
-    //transform: scaleX(1);
-    //animation-name: stretch;
-    //animation-duration: 4s;
-    //animation-timing-function: ease-out;
-    //animation-fill-mode: forwards;
-  }
 
   &-header {
     display: flex;
@@ -52,7 +38,6 @@ $search-empty-height: 103px;
   }
 
   &-body {
-    display: none;
     background-color: $gray-scale-1;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1),
                 0 2px 6px rgba(0, 0, 0, 0.04);
