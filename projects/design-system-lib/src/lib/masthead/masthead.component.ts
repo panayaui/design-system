@@ -19,7 +19,6 @@ export class MastheadComponent {
 
   toggleSearch(isSearchVisible: boolean): void {
     this.searchVisible = isSearchVisible;
-    console.log(this.searchVisible);
   }
 
   buttonPlaceholder(): void {
