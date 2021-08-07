@@ -34,48 +34,73 @@
     </ul>
   </nav>
 
-  <p-icon class="p-masthead-icon search"
-          iconName="search"
-          width="22"
-          matTooltip="Search"
-          matTooltipPosition="above"
-          matTooltipClass="p-tooltip below"></p-icon>
+  <p-button class="p-masthead-icon-button search"
+            ariaLabel="Open search"
+            [buttonType]="'isIcon'"
+            iconBefore="search"
+            iconBeforeWidth="22"
+            matTooltip="Search"
+            matTooltipPosition="above"
+            matTooltipClass="p-tooltip below"
+            (onClickTask)="toggleSearch(true)"></p-button>
 
-  <p-icon class="p-masthead-icon settings"
-          iconName="settings"
-          width="22"
-          matTooltip="Settings"
-          matTooltipPosition="above"
-          matTooltipClass="p-tooltip below"></p-icon>
+  <p-button class="p-masthead-icon-button settings"
+            ariaLabel="Open settings"
+            [buttonType]="'isIcon'"
+            iconBefore="settings"
+            iconBeforeWidth="22"
+            matTooltip="Settings"
+            matTooltipPosition="above"
+            matTooltipClass="p-tooltip below"
+            (onClickTask)="buttonPlaceholder()"></p-button>
 
-  <p-icon class="p-masthead-icon track-status"
-          iconName="track-status"
-          width="18"
-          height="18"
-          matTooltip="Track the status of your requests"
-          matTooltipPosition="above"
-          matTooltipClass="p-tooltip below"></p-icon>
+  <p-button class="p-masthead-icon-button track-status"
+            ariaLabel="Track the status of your requests"
+            [buttonType]="'isIcon'"
+            iconBefore="track-status"
+            iconBeforeWidth="18"
+            iconBeforeHeight="18"
+            matTooltip="Track the status of your requests"
+            matTooltipPosition="above"
+            matTooltipClass="p-tooltip below"
+            (onClickTask)="buttonPlaceholder()"></p-button>
 
-  <p-icon class="p-masthead-icon help notification regular"
-          iconName="help-circle"
-          width="22"
-          matTooltip="Help"
-          matTooltipPosition="above"
-          matTooltipClass="p-tooltip below"></p-icon>
+  <p-button class="p-masthead-icon-button help notification regular"
+            ariaLabel="Open help"
+            [buttonType]="'isIcon'"
+            iconBefore="help-circle"
+            iconBeforeWidth="22"
+            matTooltip="Help"
+            matTooltipPosition="above"
+            matTooltipClass="p-tooltip below"
+            (onClickTask)="buttonPlaceholder()"></p-button>
 
-  <p-icon class="p-masthead-icon bell notification alert"
-          iconName="bell"
-          width="22"
-          matTooltip="Notifications"
-          matTooltipPosition="above"
-          matTooltipClass="p-tooltip below"></p-icon>
+  <p-button class="p-masthead-icon-button bell notification alert"
+            ariaLabel="Open notifications"
+            [buttonType]="'isIcon'"
+            iconBefore="bell"
+            iconBeforeWidth="22"
+            matTooltip="Notifications"
+            matTooltipPosition="above"
+            matTooltipClass="p-tooltip below"
+            (onClickTask)="buttonPlaceholder()"></p-button>
 
-  <p-icon class="p-masthead-icon user"
-          iconName="user-circle"
-          width="22"
-          height="22"
-          matTooltip="Account"
-          matTooltipPosition="above"
-          matTooltipClass="p-tooltip below"></p-icon>
+  <p-button class="p-masthead-icon-button user"
+            ariaLabel="Open your account"
+            [buttonType]="'isIcon'"
+            iconBefore="user-circle"
+            iconBeforeWidth="22"
+            matTooltip="Account"
+            matTooltipPosition="above"
+            matTooltipClass="p-tooltip below"
+            (onClickTask)="buttonPlaceholder()"></p-button>
+
+  <p-masthead-search [isSearchVisible]="searchVisible"
+                     [recentlyViewed]="mastheadSearch.recentlyViewed"
+                     [filterPlaceholder]="mastheadSearch.filterPlaceholder"
+                     [filterAriaLabel]="mastheadSearch.filterPlaceholder"
+                     (onCloseSearch)="toggleSearch(false)">
+  </p-masthead-search>
 </div>
+
 

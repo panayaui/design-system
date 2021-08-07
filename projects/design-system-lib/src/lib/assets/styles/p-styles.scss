@@ -125,6 +125,8 @@ $input-text-padding: $gap-base;
 
 $masthead-height: 64px;
 
+$scrollbar-width: 6px;
+
 
 
 $white: #ffffff;
@@ -185,6 +187,11 @@ $dev-b-200: #9A4CB6;
 
 $dev-c-400: #362B97;
 $dev-c-300: #4132C8;
+
+// x-close hover colors
+$x-hover-white-text: rgba(254, 254, 255, 0.2);
+$x-hover-dark-text: rgba(45, 48, 71, 0.15);
+$x-hover-purple-text: rgba(254, 254, 255, 0.6);
 
 @mixin resetH {
   font-size: inherit;
@@ -281,7 +288,7 @@ $dev-c-300: #4132C8;
   }
 }
 
-@mixin notification($bg-color: transparent) {
+@mixin notification($top: 2px, $right: 2px, $bg-color: transparent) {
   position: relative;
   &:after {
     content: 'notification';
@@ -292,8 +299,8 @@ $dev-c-300: #4132C8;
     border: 2px solid $bg-color;
     border-radius: 50%;
     position: absolute;
-    top: 0;
-    right: -2px;
+    top: $top;
+    right: $right;
   }
   &.regular:after {
     background-color: $secondary-a-700;
@@ -411,7 +418,7 @@ p {
   font-family: $font-family-basic;
   font-size: $tiny-font-size;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 .headline-6-semibold {
@@ -568,14 +575,14 @@ $arrow-border: 7px;
 
 //scrollbar in webkit based browsers
 ::-webkit-scrollbar {
-  width: 14px;
+  width: $gap-base + $scrollbar-width;
 }
 ::-webkit-scrollbar-track {
   background-color: transparent;
 }
 ::-webkit-scrollbar-thumb {
   background-color: $gray-scale-50;
-  border-right: 8px solid $gray-scale-1;
+  border-right: $gap-base solid $gray-scale-1;
   border-top: none;
   border-bottom: none;
   border-left: none;

@@ -5,6 +5,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MastheadComponent} from './masthead.component';
 import {IconModule} from '../icon/icon.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MastheadSearchComponent} from './masthead-search/masthead-search.component';
+import {InputModule} from '../input/input.module';
 
 @NgModule({
   imports: [
@@ -12,10 +14,12 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     ButtonModule,
     MatTooltipModule,
-    IconModule
+    IconModule,
+    InputModule
   ],
   declarations: [
-    MastheadComponent
+    MastheadComponent,
+    MastheadSearchComponent
   ],
   exports: [
     MastheadComponent

@@ -9,5 +9,19 @@ import {IMastheadMenuItem} from './masthead.interface';
 })
 export class MastheadComponent {
   @Input() navList: IMastheadMenuItem[];
+  @Input() mastheadSearch: {
+    filterAriaLabel: string;
+    filterPlaceholder: string;
+    recentlyViewed: any[];
+  };
   public buttonType = ButtonTypeEnum;
+  public searchVisible: boolean = false;
+
+  toggleSearch(isSearchVisible: boolean): void {
+    this.searchVisible = isSearchVisible;
+  }
+
+  buttonPlaceholder(): void {
+    console.log('icon button clicked');
+  }
 }

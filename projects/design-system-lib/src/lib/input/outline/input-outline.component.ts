@@ -22,6 +22,7 @@ export class InputOutlineComponent implements OnInit, OnDestroy {
   @Input() isSearch: boolean = false;
   @Input() iconName: string;
   @Output() onSearch: EventEmitter<any> = new EventEmitter();
+  @Output() onClear: EventEmitter<any> = new EventEmitter();
   public formFieldControl: FormControl;
   private sub: SubscriptionLike;
 
@@ -43,6 +44,7 @@ export class InputOutlineComponent implements OnInit, OnDestroy {
 
   clearValue(): void {
     this.formFieldControl.setValue('');
+    this.onClear.emit('');
   }
 
   searchValue(): void {

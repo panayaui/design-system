@@ -19,6 +19,7 @@ $resolution-breakpoint: $width-middle-screen;
   background-color: $background-color;
   padding-right: $logo-gap;
   padding-left: $logo-gap - $link-padding;
+  position: relative; // to place masthead-search
 
   &-homepage-link {
     display: flex;
@@ -181,19 +182,19 @@ $resolution-breakpoint: $width-middle-screen;
     }
   }
 
-  &-icon {
+  &-icon-button {
     &:hover {
       color: $secondary-a-700;
       cursor: pointer;
     }
     & ~ & {
-      margin-left: $gap-double;
+      margin-left: $gap-double - 4px;
     }
     &:first-of-type {
-      margin-left: $logo-gap;
+      margin-left: $logo-gap - 2px;
     }
     &.notification {
-      @include notification($background-color);
+      @include notification($bg-color: $background-color);
     }
     @media screen and (max-width: $resolution-breakpoint) {
       ::ng-deep &:not(.track-status) .p-icon {
