@@ -2346,7 +2346,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n::ng-deep .p-btn {\r\n  @include resetButton;\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  font-weight: 500;\r\n  line-height: 20px;\r\n  min-width: 80px;\r\n  padding-right: $gap-double-plus;\r\n  padding-left: $gap-double-plus;\r\n  border-radius: $btn-border-radius;\r\n  white-space: nowrap;\r\n  transition: all 400ms;\r\n\r\n  &-large {\r\n    height: $btn-large-height;\r\n  }\r\n\r\n  &-small {\r\n    height: $btn-small-height;\r\n  }\r\n\r\n  &:disabled {\r\n    pointer-events: none;\r\n  }\r\n\r\n  &-primary {\r\n    color: $gray-scale-1;\r\n    background-color: $secondary-a-700;\r\n    &:hover {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:focus {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-700;\r\n      background-color: $secondary-a-50;\r\n    }\r\n  }\r\n\r\n  &-secondary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    border: 1px solid $secondary-a-700;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-700;\r\n      border-color: $secondary-a-500;\r\n    }\r\n  }\r\n\r\n  &-tertiary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-700;\r\n    }\r\n  }\r\n\r\n  &-distructive {\r\n    color: $gray-scale-1;\r\n    background-color: $supportive-alert-500;\r\n    &:hover {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:focus {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-700;\r\n      background-color: $supportive-alert-50;\r\n    }\r\n  }\r\n\r\n  // class of the action-button\r\n  &-icon-before {\r\n    padding-left: $gap-double;\r\n    .p-btn-label {\r\n      margin-left: $gap-base;\r\n    }\r\n  }\r\n  // class of the action-button\r\n  &-icon-after {\r\n    padding-right: $gap-double;\r\n    .p-btn-label {\r\n      margin-right: $gap-base;\r\n    }\r\n  }\r\n\r\n  // class of the icon\r\n  &-icon-pre,\r\n  &-icon-post {\r\n    display: inline-flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n  }\r\n\r\n  &-isIcon {\r\n    line-height: unset;\r\n    min-width: unset;\r\n    padding: $gap-small;\r\n    &:disabled {\r\n      color: $gray-scale-700;\r\n    }\r\n  }\r\n}\r\n\r\n\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n::ng-deep .p-btn {\r\n  @include resetButton;\r\n  font-family: $font-family-basic;\r\n  font-size: $small-font-size;\r\n  font-weight: 500;\r\n  line-height: 20px;\r\n  min-width: 80px;\r\n  padding-right: $gap-double-plus;\r\n  padding-left: $gap-double-plus;\r\n  border-radius: $btn-border-radius;\r\n  white-space: nowrap;\r\n  transition: all 400ms;\r\n\r\n  &-large {\r\n    height: $btn-large-height;\r\n  }\r\n\r\n  &-small {\r\n    height: $btn-small-height;\r\n  }\r\n\r\n  &:disabled {\r\n    pointer-events: none;\r\n  }\r\n\r\n  &-primary {\r\n    color: $gray-scale-1;\r\n    background-color: $secondary-a-700;\r\n    &:hover {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:focus {\r\n      background-color: $secondary-a-800;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-700;\r\n      background-color: $secondary-a-50;\r\n    }\r\n  }\r\n\r\n  &-secondary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    border: 1px solid $secondary-a-700;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-700;\r\n      border-color: $secondary-a-500;\r\n    }\r\n  }\r\n\r\n  &-tertiary {\r\n    color: $secondary-a-700;\r\n    background-color: $gray-scale-1;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:focus {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-700;\r\n    }\r\n  }\r\n\r\n  &-distructive {\r\n    color: $gray-scale-1;\r\n    background-color: $supportive-alert-600;\r\n    &:hover {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:focus {\r\n      background-color: $supportive-alert-700;\r\n    }\r\n    &:disabled {\r\n      color: $gray-scale-700;\r\n      background-color: $supportive-alert-50;\r\n    }\r\n  }\r\n\r\n  // class of the action-button\r\n  &-icon-before {\r\n    padding-left: $gap-double;\r\n    .p-btn-label {\r\n      margin-left: $gap-base;\r\n    }\r\n  }\r\n  // class of the action-button\r\n  &-icon-after {\r\n    padding-right: $gap-double;\r\n    .p-btn-label {\r\n      margin-right: $gap-base;\r\n    }\r\n  }\r\n\r\n  // class of the icon\r\n  &-icon-pre,\r\n  &-icon-post {\r\n    display: inline-flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n  }\r\n\r\n  &-isIcon {\r\n    line-height: unset;\r\n    min-width: unset;\r\n    padding: $gap-small;\r\n    &:disabled {\r\n      color: $gray-scale-700;\r\n    }\r\n  }\r\n}\r\n\r\n\r\n",
                     "styleUrl": "./button.component.scss"
                 }
             ],
@@ -3617,7 +3617,7 @@
         },
         {
             "name": "HashtagBarComponent",
-            "id": "component-HashtagBarComponent-e558450b5c155a9389758b5ddc11b80f",
+            "id": "component-HashtagBarComponent-b291b17c041eaffe6018405ac597aa73",
             "file": "projects/design-system-lib/src/lib/hashtag/bar/hashtag-bar.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3635,44 +3635,9 @@
             "viewProviders": [],
             "inputsClass": [
                 {
-                    "name": "filterAriaLabel",
-                    "defaultValue": "'Find Label'",
-                    "line": 32
-                },
-                {
-                    "name": "filterPlaceholder",
-                    "defaultValue": "'Find Label'",
-                    "line": 33
-                },
-                {
-                    "name": "footerBtnFirst",
-                    "defaultValue": "{\r\n    label: 'Done',\r\n    buttonType: ButtonTypeEnum.Primary\r\n  }",
-                    "line": 24
-                },
-                {
-                    "name": "footerBtnLast",
-                    "defaultValue": "{\r\n    label: 'Cancel',\r\n    buttonType: ButtonTypeEnum.Secondary\r\n  }",
-                    "line": 28
-                },
-                {
                     "name": "hashtagList",
-                    "line": 11,
+                    "line": 10,
                     "type": "IHashtag[]"
-                },
-                {
-                    "name": "headerBtnFirst",
-                    "defaultValue": "{\r\n    label: 'Clear selected',\r\n    buttonType: ButtonTypeEnum.Tertiary,\r\n    icon: {\r\n      iconName: 'eraser',\r\n      width: '15',\r\n      height: '15'\r\n    }\r\n  }",
-                    "line": 35
-                },
-                {
-                    "name": "headerBtnLast",
-                    "defaultValue": "{\r\n    label: 'Not equal to'\r\n  }",
-                    "line": 44
-                },
-                {
-                    "name": "menuList",
-                    "defaultValue": "[\r\n    { name: 'Alabama',\r\n      disabled: false\r\n    },\r\n    { name: 'Alaska disabled',\r\n      disabled: true\r\n    },\r\n    { name: 'California',\r\n      disabled: false\r\n    }\r\n  ]",
-                    "line": 12
                 }
             ],
             "outputsClass": [],
@@ -3693,7 +3658,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 48,
+                    "line": 12,
                     "jsdoctags": [
                         {
                             "name": "event",
@@ -3717,7 +3682,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, EventEmitter, Input, Output} from '@angular/core';\r\nimport {IHashtag} from '../hashtag.interface';\r\nimport {ButtonTypeEnum} from '../../button/button-type.enum';\r\n\r\n@Component({\r\n  selector: 'p-hashtag-bar',\r\n  templateUrl: './hashtag-bar.component.html',\r\n  styleUrls: ['./hashtag-bar.component.scss'],\r\n})\r\nexport class HashtagBarComponent {\r\n  @Input() hashtagList: IHashtag[];\r\n  @Input() menuList = [\r\n    { name: 'Alabama',\r\n      disabled: false\r\n    },\r\n    { name: 'Alaska disabled',\r\n      disabled: true\r\n    },\r\n    { name: 'California',\r\n      disabled: false\r\n    }\r\n  ];\r\n\r\n  @Input() footerBtnFirst = {\r\n    label: 'Done',\r\n    buttonType: ButtonTypeEnum.Primary\r\n  };\r\n  @Input() footerBtnLast = {\r\n    label: 'Cancel',\r\n    buttonType: ButtonTypeEnum.Secondary\r\n  };\r\n  @Input() filterAriaLabel = 'Find Label';\r\n  @Input() filterPlaceholder = 'Find Label';\r\n\r\n  @Input() headerBtnFirst = {\r\n    label: 'Clear selected',\r\n    buttonType: ButtonTypeEnum.Tertiary,\r\n    icon: {\r\n      iconName: 'eraser',\r\n      width: '15',\r\n      height: '15'\r\n    }\r\n  };\r\n  @Input() headerBtnLast = {\r\n    label: 'Not equal to'\r\n  };\r\n\r\n  removeHashtag(event, hashtag): void {\r\n    event.stopPropagation();\r\n    this.hashtagList = this.hashtagList.filter ( item => item.label !== hashtag.label );\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {IHashtag} from '../hashtag.interface';\r\n\r\n@Component({\r\n  selector: 'p-hashtag-bar',\r\n  templateUrl: './hashtag-bar.component.html',\r\n  styleUrls: ['./hashtag-bar.component.scss'],\r\n})\r\nexport class HashtagBarComponent {\r\n  @Input() hashtagList: IHashtag[];\r\n\r\n  removeHashtag(event, hashtag): void {\r\n    event.stopPropagation();\r\n    this.hashtagList = this.hashtagList.filter ( item => item.label !== hashtag.label );\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -5035,7 +5000,7 @@
         },
         {
             "name": "MastheadComponent",
-            "id": "component-MastheadComponent-f4f3df460641d57ae8e1a626f89f06d1",
+            "id": "component-MastheadComponent-1f6e928ac577dd5108238c8194175ae3",
             "file": "projects/design-system-lib/src/lib/masthead/masthead.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -5061,6 +5026,11 @@
                     "name": "navList",
                     "line": 11,
                     "type": "IMastheadMenuItem[]"
+                },
+                {
+                    "name": "settingsList",
+                    "line": 17,
+                    "type": "IMastheadMenuItem[]"
                 }
             ],
             "outputsClass": [],
@@ -5071,7 +5041,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 17,
+                    "line": 18,
                     "modifierKind": [
                         114
                     ]
@@ -5082,7 +5052,18 @@
                     "type": "boolean",
                     "optional": false,
                     "description": "",
-                    "line": 18,
+                    "line": 19,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "settingsVisible",
+                    "defaultValue": "false",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 20,
                     "modifierKind": [
                         114
                     ]
@@ -5095,7 +5076,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 24
+                    "line": 26
                 },
                 {
                     "name": "toggleSearch",
@@ -5108,10 +5089,32 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 20,
+                    "line": 22,
                     "jsdoctags": [
                         {
                             "name": "isSearchVisible",
+                            "type": "boolean",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "toggleSettings",
+                    "args": [
+                        {
+                            "name": "settingsVisible",
+                            "type": "boolean"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 30,
+                    "jsdoctags": [
+                        {
+                            "name": "settingsVisible",
                             "type": "boolean",
                             "tagName": {
                                 "text": "param"
@@ -5125,20 +5128,20 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {ButtonTypeEnum} from '../button/button-type.enum';\r\nimport {IMastheadMenuItem} from './masthead.interface';\r\n\r\n@Component({\r\n  selector: 'p-masthead',\r\n  templateUrl: './masthead.component.html',\r\n  styleUrls: ['./masthead.component.scss'],\r\n})\r\nexport class MastheadComponent {\r\n  @Input() navList: IMastheadMenuItem[];\r\n  @Input() mastheadSearch: {\r\n    filterAriaLabel: string;\r\n    filterPlaceholder: string;\r\n    recentlyViewed: any[];\r\n  };\r\n  public buttonType = ButtonTypeEnum;\r\n  public searchVisible: boolean = false;\r\n\r\n  toggleSearch(isSearchVisible: boolean): void {\r\n    this.searchVisible = isSearchVisible;\r\n  }\r\n\r\n  buttonPlaceholder(): void {\r\n    console.log('icon button clicked');\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {ButtonTypeEnum} from '../button/button-type.enum';\r\nimport {IMastheadMenuItem} from './masthead.interface';\r\n\r\n@Component({\r\n  selector: 'p-masthead',\r\n  templateUrl: './masthead.component.html',\r\n  styleUrls: ['./masthead.component.scss'],\r\n})\r\nexport class MastheadComponent {\r\n  @Input() navList: IMastheadMenuItem[];\r\n  @Input() mastheadSearch: {\r\n    filterAriaLabel: string;\r\n    filterPlaceholder: string;\r\n    recentlyViewed: any[];\r\n  };\r\n  @Input() settingsList: IMastheadMenuItem[];\r\n  public buttonType = ButtonTypeEnum;\r\n  public searchVisible: boolean = false;\r\n  public settingsVisible: boolean = false;\r\n\r\n  toggleSearch(isSearchVisible: boolean): void {\r\n    this.searchVisible = isSearchVisible;\r\n  }\r\n\r\n  buttonPlaceholder(): void {\r\n    console.log('icon button clicked');\r\n  }\r\n\r\n  toggleSettings(settingsVisible: boolean): void {\r\n    this.settingsVisible = settingsVisible;\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$link-padding: $gap-double;\r\n$logo-gap: 40px;\r\n$logo-width: 95px;\r\n$logo-and-gap-width: $logo-width + $link-padding * 2 + $logo-gap - $link-padding * 2;\r\n$accent-color: $primary-b-300;\r\n$background-color: $primary-c-50;\r\n$megaMenuTrigger-max-width: 200px;\r\n$icons-and-gap-width: 20px * 5 + 18px + $gap-double * 5 + $logo-gap;\r\n$icon-width-on-medium-screen: 20px;\r\n$resolution-breakpoint: $width-middle-screen;\r\n\r\n.p-masthead {\r\n  display: flex;\r\n  align-items: center;\r\n  width: 100%;\r\n  height: $masthead-height;\r\n  background-color: $background-color;\r\n  padding-right: $logo-gap;\r\n  padding-left: $logo-gap - $link-padding;\r\n  position: relative; // to place masthead-search\r\n\r\n  &-homepage-link {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    font-size: 0;\r\n    height: 100%;\r\n    padding-right: $link-padding;\r\n    padding-left: $link-padding;\r\n    margin-right: $logo-gap - $link-padding * 2;\r\n  }\r\n\r\n  &-logo {\r\n    width: $logo-width;\r\n    height: 20px;\r\n  }\r\n\r\n  &-nav {\r\n    max-width: calc(100% - #{$logo-and-gap-width} - #{$icons-and-gap-width});\r\n    height: 100%;\r\n    margin-right: auto;\r\n  }\r\n\r\n  &-nav-list {\r\n    @include resetUl;\r\n    display: flex;\r\n    align-items: center;\r\n    height: 100%;\r\n  }\r\n\r\n  &-nav-item {\r\n    display: flex;\r\n    align-items: center;\r\n    height: 100%;\r\n    position: relative;\r\n\r\n    &.divider:before {\r\n      content: '';\r\n      width: 1px;\r\n      height: 18px;\r\n      border-right: 1px solid $gray-scale-600;\r\n    }\r\n\r\n    &.megaMenu-trigger {\r\n      max-width: $megaMenuTrigger-max-width;\r\n    }\r\n  }\r\n\r\n  &-nav-link {\r\n    @include resetLink;\r\n    display: flex;\r\n    align-items: center;\r\n    width: 100%;\r\n    height: 100%;\r\n    padding-right: $link-padding;\r\n    padding-left: $link-padding;\r\n    transition: all 200ms ease-in-out;\r\n\r\n    .p-masthead-nav-item:hover &:not(.selected),\r\n    .p-masthead-nav-item:focus-within &:not(.selected) {\r\n      color: $accent-color;\r\n    }\r\n\r\n    &.selected {\r\n      color: $primary-a-900;\r\n      background-color: $accent-color;\r\n    }\r\n\r\n    @media screen and (max-width: $resolution-breakpoint) {\r\n      padding-right: $link-padding - 2px;\r\n      padding-left: $link-padding - 2px;\r\n    }\r\n  }\r\n\r\n  &-nav-link-name {\r\n    @include ellipsis;\r\n\r\n    @media screen and (max-width: $resolution-breakpoint) {\r\n      font-size: $small-font-size;\r\n      letter-spacing: 0.04em;\r\n    }\r\n  }\r\n\r\n  &-nav-link-icon {\r\n    margin-right: $gap-base;\r\n  }\r\n\r\n  &-nav-badge {\r\n    display: flex;\r\n    justify-content: space-around;\r\n    align-items: center;\r\n    flex-shrink: 0;\r\n    font-family: $font-family-accent;\r\n    font-size: $middle-font-size;\r\n    font-weight: 600;\r\n    letter-spacing: 0;\r\n    width: 22px;\r\n    height: 22px;\r\n    margin-left: $gap-base;\r\n    border: 1px solid currentColor;\r\n    border-radius: 50%;\r\n    transition: background-color 200ms ease-in-out;\r\n    .p-masthead-nav-item:hover & ,\r\n    .p-masthead-nav-item:focus-within & {\r\n      font-weight: 700;\r\n      border-width: 2px;\r\n    }\r\n\r\n    .p-masthead-nav-link.selected & {\r\n      font-weight: 600;\r\n      color: $gray-scale-1;\r\n      background-color: $primary-a-900;\r\n      border-color: $primary-a-900;\r\n    }\r\n\r\n    @media screen and (max-width: $resolution-breakpoint) {\r\n      font-size: $small-font-size;\r\n      width: 20px;\r\n      height: 20px;\r\n      margin-left: $gap-base - 2px;\r\n    }\r\n  }\r\n\r\n\r\n\r\n  // dropdown menu hidden by default\r\n  &-submenu-list {\r\n    @include resetUl;\r\n    display: none;\r\n    min-width: 100%;\r\n    padding: 1.5px;\r\n    background: $primary-c-50;\r\n    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1),\r\n                0 2px 6px rgba(0, 0, 0, 0.04),\r\n                0 -3px 6px rgba(0, 0, 0, 0.04);\r\n    overflow: hidden;\r\n    position: absolute;\r\n    top: 100%;\r\n    left: 0;\r\n\r\n    .p-masthead-nav-item:hover &,\r\n    .p-masthead-nav-item:focus-within & {\r\n      display: block; // dropdown menu shown on hover\r\n    }\r\n  }\r\n\r\n  &-submenu-link {\r\n    @include resetLink;\r\n    display: flex;\r\n    align-items: center;\r\n    text-transform: capitalize;\r\n    height: 38px;\r\n    padding-right: $gap-double;\r\n    padding-left: $gap-double;\r\n    white-space: nowrap;\r\n    transition: color 200ms ease-in-out;\r\n    &:hover,\r\n    &:focus {\r\n      color: $accent-color;\r\n    }\r\n  }\r\n\r\n  &-icon-button {\r\n    &:hover {\r\n      color: $secondary-a-700;\r\n      cursor: pointer;\r\n    }\r\n    & ~ & {\r\n      margin-left: $gap-double - 4px;\r\n    }\r\n    &:first-of-type {\r\n      margin-left: $logo-gap - 2px;\r\n    }\r\n    &.notification {\r\n      @include notification($bg-color: $background-color);\r\n    }\r\n    @media screen and (max-width: $resolution-breakpoint) {\r\n      ::ng-deep &:not(.track-status) .p-icon {\r\n        width: $icon-width-on-medium-screen !important;\r\n      }\r\n      ::ng-deep &.track-status .p-icon {\r\n        width: $icon-width-on-medium-screen - 4px !important;\r\n      }\r\n    }\r\n  }\r\n\r\n  &-nav-link-icon {\r\n    @media screen and (max-width: $resolution-breakpoint) {\r\n      ::ng-deep .p-icon {\r\n        width: $icon-width-on-medium-screen !important;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n.logo {\r\n  background-image: url('../assets/images/logo.svg');\r\n}\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$link-padding: $gap-double;\r\n$logo-gap: 40px;\r\n$logo-width: 95px;\r\n$logo-and-gap-width: $logo-gap + $logo-width + $logo-gap - $link-padding * 2;\r\n$accent-color: $primary-b-300;\r\n$background-color: $primary-c-50;\r\n$megaMenuTrigger-max-width: 200px;\r\n$icons-and-gap-width: 30px * 5 + 26px + ($gap-double - 4px) * 5 + $logo-gap - 2px;\r\n$icons-and-gap-width-mobile: 28px * 5 + 24px + ($gap-double - 4px) * 5 + $logo-gap - 2px;\r\n$icon-width-on-medium-screen: 20px;\r\n$resolution-breakpoint: $width-middle-screen;\r\n\r\n.p-masthead {\r\n  display: flex;\r\n  align-items: center;\r\n  width: 100%;\r\n  height: $masthead-height;\r\n  background-color: $background-color;\r\n  padding-right: $logo-gap;\r\n  padding-left: $logo-gap - $link-padding;\r\n  position: relative; // to place masthead-search\r\n\r\n  &-homepage-link {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    font-size: 0;\r\n    height: 100%;\r\n    padding-right: $link-padding;\r\n    padding-left: $link-padding;\r\n    margin-right: $logo-gap - $link-padding * 2;\r\n  }\r\n\r\n  &-logo {\r\n    width: $logo-width;\r\n    height: 20px;\r\n  }\r\n\r\n  &-nav {\r\n    max-width: calc(100% - #{$logo-and-gap-width} - #{$icons-and-gap-width});\r\n    height: 100%;\r\n    margin-right: auto;\r\n    @media screen and (max-width: $resolution-breakpoint) {\r\n      max-width: calc(100% - #{$logo-and-gap-width} - #{$icons-and-gap-width-mobile});\r\n    }\r\n  }\r\n\r\n  &-nav-list {\r\n    @include resetUl;\r\n    display: flex;\r\n    align-items: center;\r\n    height: 100%;\r\n  }\r\n\r\n  &-nav-item {\r\n    display: flex;\r\n    align-items: center;\r\n    height: 100%;\r\n    position: relative;\r\n\r\n    &.divider:before {\r\n      content: '';\r\n      width: 1px;\r\n      height: 18px;\r\n      border-right: 1px solid $gray-scale-600;\r\n    }\r\n\r\n    &.megaMenu-trigger {\r\n      max-width: $megaMenuTrigger-max-width;\r\n    }\r\n  }\r\n\r\n  &-nav-link {\r\n    @include resetLink;\r\n    display: flex;\r\n    align-items: center;\r\n    width: 100%;\r\n    height: 100%;\r\n    padding-right: $link-padding;\r\n    padding-left: $link-padding;\r\n    transition: all 200ms ease-in-out;\r\n\r\n    .p-masthead-nav-item:hover &:not(.selected),\r\n    .p-masthead-nav-item:focus-within &:not(.selected) {\r\n      color: $accent-color;\r\n    }\r\n\r\n    &.selected {\r\n      color: $primary-a-900;\r\n      background-color: $accent-color;\r\n      transition: background-color 300ms linear 100ms;\r\n      .settings-opened & {\r\n        background-color: transparent;\r\n      }\r\n    }\r\n\r\n    @media screen and (max-width: $resolution-breakpoint) {\r\n      padding-right: $link-padding - 2px;\r\n      padding-left: $link-padding - 2px;\r\n    }\r\n  }\r\n\r\n  &-nav-link-name {\r\n    @include ellipsis;\r\n\r\n    @media screen and (max-width: $resolution-breakpoint) {\r\n      font-size: $small-font-size;\r\n      letter-spacing: 0.04em;\r\n    }\r\n  }\r\n\r\n  &-nav-link-icon {\r\n    margin-right: $gap-base;\r\n  }\r\n\r\n  &-nav-badge {\r\n    display: flex;\r\n    justify-content: space-around;\r\n    align-items: center;\r\n    flex-shrink: 0;\r\n    font-family: $font-family-accent;\r\n    font-size: $middle-font-size;\r\n    font-weight: 600;\r\n    letter-spacing: 0;\r\n    width: 22px;\r\n    height: 22px;\r\n    margin-left: $gap-base;\r\n    border: 1px solid currentColor;\r\n    border-radius: 50%;\r\n    transition: background-color 200ms ease-in-out;\r\n    .p-masthead-nav-item:hover & ,\r\n    .p-masthead-nav-item:focus-within & {\r\n      font-weight: 700;\r\n      border-width: 2px;\r\n    }\r\n\r\n    .p-masthead-nav-link.selected & {\r\n      font-weight: 600;\r\n      color: $gray-scale-1;\r\n      background-color: $primary-a-900;\r\n      border-color: $primary-a-900;\r\n    }\r\n\r\n    @media screen and (max-width: $resolution-breakpoint) {\r\n      font-size: $small-font-size;\r\n      width: 20px;\r\n      height: 20px;\r\n      margin-left: $gap-base - 2px;\r\n    }\r\n  }\r\n\r\n\r\n\r\n  // dropdown menu hidden by default\r\n  &-submenu-list {\r\n    @include resetUl;\r\n    display: none;\r\n    min-width: 100%;\r\n    padding: 1.5px;\r\n    background: $primary-c-50;\r\n    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1),\r\n                0 2px 6px rgba(0, 0, 0, 0.04),\r\n                0 -3px 6px rgba(0, 0, 0, 0.04);\r\n    overflow: hidden;\r\n    position: absolute;\r\n    top: 100%;\r\n    left: 0;\r\n\r\n    .p-masthead-nav-item:hover &,\r\n    .p-masthead-nav-item:focus-within & {\r\n      display: block; // dropdown menu shown on hover\r\n    }\r\n  }\r\n\r\n  &-submenu-link {\r\n    @include resetLink;\r\n    display: flex;\r\n    align-items: center;\r\n    text-transform: capitalize;\r\n    height: 38px;\r\n    padding-right: $gap-double;\r\n    padding-left: $gap-double;\r\n    white-space: nowrap;\r\n    transition: color 200ms ease-in-out;\r\n    &:hover,\r\n    &:focus {\r\n      color: $accent-color;\r\n    }\r\n  }\r\n\r\n  &-icon-button {\r\n    &:hover {\r\n      color: $secondary-a-700;\r\n      cursor: pointer;\r\n    }\r\n    & ~ & {\r\n      margin-left: $gap-double - 4px;\r\n    }\r\n    &:first-of-type {\r\n      margin-left: $logo-gap - 2px;\r\n    }\r\n    &.notification {\r\n      @include notification($bg-color: $background-color);\r\n    }\r\n    @media screen and (max-width: $resolution-breakpoint) {\r\n      ::ng-deep &:not(.track-status) .p-icon {\r\n        width: $icon-width-on-medium-screen !important;\r\n      }\r\n      ::ng-deep &.track-status .p-icon {\r\n        width: $icon-width-on-medium-screen - 4px !important;\r\n      }\r\n    }\r\n  }\r\n\r\n  &-nav-link-icon {\r\n    @media screen and (max-width: $resolution-breakpoint) {\r\n      ::ng-deep .p-icon {\r\n        width: $icon-width-on-medium-screen !important;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n.logo {\r\n  background-image: url('../assets/images/logo.svg');\r\n}\r\n",
                     "styleUrl": "./masthead.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"p-masthead\">\r\n  <a href=\"\" class=\"p-masthead-homepage-link\">\r\n    Home page\r\n    <img src=\"./logo.svg\" alt=\"Panaya Logo\"\r\n         class=\"p-masthead-logo\"/>\r\n  </a>\r\n  <nav aria-label=\"Main Navigation\" class=\"p-masthead-nav\">\r\n    <ul class=\"p-masthead-nav-list\">\r\n      <li *ngFor=\"let item of navList\"\r\n          class=\"p-masthead-nav-item\"\r\n          [ngClass]=\"{'divider' : item.divider, 'megaMenu-trigger' : item.megaMenu}\">\r\n        <a href=\"\"\r\n           class=\"p-masthead-nav-link\"\r\n           [class.selected]=\"item.selected\">\r\n          <p-icon *ngIf=\"item.megaMenu\"\r\n                  class=\"p-masthead-nav-link-icon\"\r\n                  iconName=\"menu\"\r\n                  width=\"22\"></p-icon>\r\n          <span class=\"p-masthead-nav-link-name headline-2-bold\">\r\n            {{item.name}}\r\n          </span>\r\n          <span *ngIf=\"item.badge\" class=\"p-masthead-nav-badge\">\r\n            {{item.badge}}\r\n          </span>\r\n        </a>\r\n        <ul *ngIf=\"item.subMenu\" class=\"p-masthead-submenu-list\">\r\n          <li *ngFor=\"let subItem of item.subMenu\" class=\"p-masthead-submenu-item\">\r\n            <a href=\"\" class=\"p-masthead-submenu-link headline-3-regular\">\r\n              {{subItem.name}}\r\n            </a>\r\n          </li>\r\n        </ul>\r\n      </li>\r\n    </ul>\r\n  </nav>\r\n\r\n  <p-button class=\"p-masthead-icon-button search\"\r\n            ariaLabel=\"Open search\"\r\n            [buttonType]=\"'isIcon'\"\r\n            iconBefore=\"search\"\r\n            iconBeforeWidth=\"22\"\r\n            matTooltip=\"Search\"\r\n            matTooltipPosition=\"above\"\r\n            matTooltipClass=\"p-tooltip below\"\r\n            (onClickTask)=\"toggleSearch(true)\"></p-button>\r\n\r\n  <p-button class=\"p-masthead-icon-button settings\"\r\n            ariaLabel=\"Open settings\"\r\n            [buttonType]=\"'isIcon'\"\r\n            iconBefore=\"settings\"\r\n            iconBeforeWidth=\"22\"\r\n            matTooltip=\"Settings\"\r\n            matTooltipPosition=\"above\"\r\n            matTooltipClass=\"p-tooltip below\"\r\n            (onClickTask)=\"buttonPlaceholder()\"></p-button>\r\n\r\n  <p-button class=\"p-masthead-icon-button track-status\"\r\n            ariaLabel=\"Track the status of your requests\"\r\n            [buttonType]=\"'isIcon'\"\r\n            iconBefore=\"track-status\"\r\n            iconBeforeWidth=\"18\"\r\n            iconBeforeHeight=\"18\"\r\n            matTooltip=\"Track the status of your requests\"\r\n            matTooltipPosition=\"above\"\r\n            matTooltipClass=\"p-tooltip below\"\r\n            (onClickTask)=\"buttonPlaceholder()\"></p-button>\r\n\r\n  <p-button class=\"p-masthead-icon-button help notification regular\"\r\n            ariaLabel=\"Open help\"\r\n            [buttonType]=\"'isIcon'\"\r\n            iconBefore=\"help-circle\"\r\n            iconBeforeWidth=\"22\"\r\n            matTooltip=\"Help\"\r\n            matTooltipPosition=\"above\"\r\n            matTooltipClass=\"p-tooltip below\"\r\n            (onClickTask)=\"buttonPlaceholder()\"></p-button>\r\n\r\n  <p-button class=\"p-masthead-icon-button bell notification alert\"\r\n            ariaLabel=\"Open notifications\"\r\n            [buttonType]=\"'isIcon'\"\r\n            iconBefore=\"bell\"\r\n            iconBeforeWidth=\"22\"\r\n            matTooltip=\"Notifications\"\r\n            matTooltipPosition=\"above\"\r\n            matTooltipClass=\"p-tooltip below\"\r\n            (onClickTask)=\"buttonPlaceholder()\"></p-button>\r\n\r\n  <p-button class=\"p-masthead-icon-button user\"\r\n            ariaLabel=\"Open your account\"\r\n            [buttonType]=\"'isIcon'\"\r\n            iconBefore=\"user-circle\"\r\n            iconBeforeWidth=\"22\"\r\n            matTooltip=\"Account\"\r\n            matTooltipPosition=\"above\"\r\n            matTooltipClass=\"p-tooltip below\"\r\n            (onClickTask)=\"buttonPlaceholder()\"></p-button>\r\n\r\n  <p-masthead-search [isSearchVisible]=\"searchVisible\"\r\n                     [recentlyViewed]=\"mastheadSearch.recentlyViewed\"\r\n                     [filterPlaceholder]=\"mastheadSearch.filterPlaceholder\"\r\n                     [filterAriaLabel]=\"mastheadSearch.filterPlaceholder\"\r\n                     (onCloseSearch)=\"toggleSearch(false)\">\r\n  </p-masthead-search>\r\n</div>\r\n\r\n\r\n"
+            "templateData": "<div class=\"p-masthead\">\r\n  <a href=\"\" class=\"p-masthead-homepage-link\">\r\n    Home page\r\n    <img src=\"./logo.svg\" alt=\"Panaya Logo\"\r\n         class=\"p-masthead-logo\"/>\r\n  </a>\r\n  <nav aria-label=\"Main Navigation\" class=\"p-masthead-nav\">\r\n    <ul class=\"p-masthead-nav-list\" [class.settings-opened]=\"settingsVisible\">\r\n      <li *ngFor=\"let item of navList\"\r\n          class=\"p-masthead-nav-item\"\r\n          [ngClass]=\"{'divider' : item.divider, 'megaMenu-trigger' : item.megaMenu}\">\r\n        <a href=\"\"\r\n           class=\"p-masthead-nav-link\"\r\n           [class.selected]=\"item.selected\">\r\n          <p-icon *ngIf=\"item.megaMenu\"\r\n                  class=\"p-masthead-nav-link-icon\"\r\n                  iconName=\"menu\"\r\n                  width=\"22\"></p-icon>\r\n          <span class=\"p-masthead-nav-link-name headline-2-bold\">\r\n              {{item.name}}\r\n            </span>\r\n          <span *ngIf=\"item.badge\" class=\"p-masthead-nav-badge\">\r\n              {{item.badge}}\r\n          </span>\r\n        </a>\r\n        <ul *ngIf=\"item.subMenu\" class=\"p-masthead-submenu-list\">\r\n          <li *ngFor=\"let subItem of item.subMenu\" class=\"p-masthead-submenu-item\">\r\n            <a href=\"\" class=\"p-masthead-submenu-link headline-3-regular\">\r\n              {{subItem.name}}\r\n            </a>\r\n          </li>\r\n        </ul>\r\n      </li>\r\n    </ul>\r\n  </nav>\r\n\r\n  <p-button class=\"p-masthead-icon-button search\"\r\n            ariaLabel=\"Open search\"\r\n            [buttonType]=\"'isIcon'\"\r\n            iconBefore=\"search\"\r\n            iconBeforeWidth=\"22\"\r\n            matTooltip=\"Search\"\r\n            matTooltipPosition=\"above\"\r\n            matTooltipClass=\"p-tooltip below\"\r\n            (onClickTask)=\"toggleSearch(true)\"></p-button>\r\n\r\n  <p-button class=\"p-masthead-icon-button settings\"\r\n            ariaLabel=\"Open settings\"\r\n            [buttonType]=\"'isIcon'\"\r\n            iconBefore=\"settings\"\r\n            iconBeforeWidth=\"22\"\r\n            matTooltip=\"Settings\"\r\n            matTooltipPosition=\"above\"\r\n            matTooltipClass=\"p-tooltip below\"\r\n            (onClickTask)=\"toggleSettings(true)\"></p-button>\r\n  <p-masthead-settings [settingsList]=\"settingsList\"\r\n                       [isSettingsVisible]=\"settingsVisible\"\r\n                       (onCloseSettings)=\"toggleSettings(false)\">\r\n  </p-masthead-settings>\r\n\r\n  <p-button class=\"p-masthead-icon-button track-status\"\r\n            ariaLabel=\"Track the status of your requests\"\r\n            [buttonType]=\"'isIcon'\"\r\n            iconBefore=\"track-status\"\r\n            iconBeforeWidth=\"18\"\r\n            iconBeforeHeight=\"18\"\r\n            matTooltip=\"Track the status of your requests\"\r\n            matTooltipPosition=\"above\"\r\n            matTooltipClass=\"p-tooltip below\"\r\n            (onClickTask)=\"buttonPlaceholder()\"></p-button>\r\n\r\n  <p-button class=\"p-masthead-icon-button help notification regular\"\r\n            ariaLabel=\"Open help\"\r\n            [buttonType]=\"'isIcon'\"\r\n            iconBefore=\"help-circle\"\r\n            iconBeforeWidth=\"22\"\r\n            matTooltip=\"Help\"\r\n            matTooltipPosition=\"above\"\r\n            matTooltipClass=\"p-tooltip below\"\r\n            (onClickTask)=\"buttonPlaceholder()\"></p-button>\r\n\r\n  <p-button class=\"p-masthead-icon-button bell notification alert\"\r\n            ariaLabel=\"Open notifications\"\r\n            [buttonType]=\"'isIcon'\"\r\n            iconBefore=\"bell\"\r\n            iconBeforeWidth=\"22\"\r\n            matTooltip=\"Notifications\"\r\n            matTooltipPosition=\"above\"\r\n            matTooltipClass=\"p-tooltip below\"\r\n            (onClickTask)=\"buttonPlaceholder()\"></p-button>\r\n\r\n  <p-button class=\"p-masthead-icon-button user\"\r\n            ariaLabel=\"Open your account\"\r\n            [buttonType]=\"'isIcon'\"\r\n            iconBefore=\"user-circle\"\r\n            iconBeforeWidth=\"22\"\r\n            iconBeforeHeight=\"22\"\r\n            matTooltip=\"Account\"\r\n            matTooltipPosition=\"above\"\r\n            matTooltipClass=\"p-tooltip below\"\r\n            (onClickTask)=\"buttonPlaceholder()\"></p-button>\r\n\r\n  <p-masthead-search [isSearchVisible]=\"searchVisible\"\r\n                     [recentlyViewed]=\"mastheadSearch.recentlyViewed\"\r\n                     [filterPlaceholder]=\"mastheadSearch.filterPlaceholder\"\r\n                     [filterAriaLabel]=\"mastheadSearch.filterPlaceholder\"\r\n                     (onCloseSearch)=\"toggleSearch(false)\">\r\n  </p-masthead-search>\r\n</div>\r\n\r\n\r\n"
         },
         {
             "name": "MastheadSearchComponent",
-            "id": "component-MastheadSearchComponent-20eb2b3353fd43f802d55f64c1c836dd",
+            "id": "component-MastheadSearchComponent-33f8f6b2b020a7d111fdb504b192a3fd",
             "file": "projects/design-system-lib/src/lib/masthead/masthead-search/masthead-search.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -5279,7 +5282,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';\r\nimport {FormControl} from '@angular/forms';\r\nimport {SubscriptionLike} from 'rxjs';\r\nimport {ButtonTypeEnum} from '../../button/button-type.enum';\r\nimport {trigger, transition, state, animate, style, sequence} from '@angular/animations';\r\n\r\n@Component({\r\n  selector: 'p-masthead-search',\r\n  templateUrl: './masthead-search.component.html',\r\n  styleUrls: ['./masthead-search.component.scss'],\r\n  animations: [\r\n    trigger('searchAnimation', [\r\n      state('open', style({\r\n        width: '384px',\r\n        height: '684px',\r\n        overflow: 'visible'\r\n      })),\r\n      state('closed', style({\r\n        width: '0',\r\n        height: '64px',\r\n        overflow: 'hidden'\r\n      })),\r\n      transition('open => closed',\r\n      sequence(\r\n        [\r\n          animate('400ms ease-in-out', style ({ height: '64px', overflow: 'hidden' })),\r\n          animate('400ms ease-in-out', style ({ width: '0' }))\r\n        ]\r\n      )\r\n      ),\r\n      transition('closed => open',\r\n        sequence(\r\n          [\r\n            animate('400ms ease-in-out', style ({ width: '384px' })),\r\n            animate('400ms ease-in-out', style ({ height: '684px', overflow: 'visible' }))\r\n          ]\r\n        )\r\n      )\r\n    ])\r\n  ]\r\n})\r\nexport class MastheadSearchComponent implements OnInit, OnDestroy {\r\n  @Input() isSearchVisible: boolean = false;\r\n  @Input() recentlyViewed: any[];\r\n  @Input() filterPlaceholder: string;\r\n  @Input() filterAriaLabel: string;\r\n  @Output() onCloseSearch: EventEmitter<any> = new EventEmitter();\r\n  public formFieldControl: FormControl;\r\n  private sub: SubscriptionLike;\r\n  public buttonType = ButtonTypeEnum;\r\n  isOpen = false;\r\n\r\n  ngOnInit(): void {\r\n    if (this.filterPlaceholder) {\r\n      this.formFieldControl = new FormControl('');\r\n      this.sub = this.formFieldControl.valueChanges.subscribe((value: string) => {\r\n        this.alterList(value);\r\n      });\r\n    }\r\n    if (!this.filterAriaLabel && this.filterPlaceholder) {\r\n      this.filterAriaLabel = this.filterPlaceholder;\r\n    }\r\n  }\r\n\r\n  ngOnDestroy(): void {\r\n    if (this.filterPlaceholder && this.sub) {\r\n      this.sub.unsubscribe();\r\n      this.sub = null;\r\n    }\r\n  }\r\n\r\n  alterList(value: string): void {\r\n    console.log(value);\r\n  }\r\n\r\n  closeSearch(): void {\r\n    this.onCloseSearch.emit();\r\n  }\r\n}\r\n\r\n",
+            "sourceCode": "import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';\r\nimport {FormControl} from '@angular/forms';\r\nimport {SubscriptionLike} from 'rxjs';\r\nimport {ButtonTypeEnum} from '../../button/button-type.enum';\r\nimport {trigger, transition, state, animate, style, sequence} from '@angular/animations';\r\n\r\n@Component({\r\n  selector: 'p-masthead-search',\r\n  templateUrl: './masthead-search.component.html',\r\n  styleUrls: ['./masthead-search.component.scss'],\r\n  animations: [\r\n    trigger('searchAnimation', [\r\n      state('open', style({\r\n        width: '384px',\r\n        height: '684px',\r\n        overflow: 'visible'\r\n      })),\r\n      state('closed', style({\r\n        width: '0',\r\n        height: '64px',\r\n        overflow: 'hidden'\r\n      })),\r\n      transition('open => closed',\r\n      sequence(\r\n        [\r\n          animate('400ms', style ({ height: '64px', overflow: 'hidden' })),\r\n          animate('400ms ease-in-out', style ({ width: '0' }))\r\n        ]\r\n      )\r\n      ),\r\n      transition('closed => open',\r\n        sequence(\r\n          [\r\n            animate('400ms ease-in-out', style ({ width: '384px' })),\r\n            animate('400ms', style ({ height: '684px', overflow: 'visible' }))\r\n          ]\r\n        )\r\n      )\r\n    ])\r\n  ]\r\n})\r\nexport class MastheadSearchComponent implements OnInit, OnDestroy {\r\n  @Input() isSearchVisible: boolean = false;\r\n  @Input() recentlyViewed: any[];\r\n  @Input() filterPlaceholder: string;\r\n  @Input() filterAriaLabel: string;\r\n  @Output() onCloseSearch: EventEmitter<any> = new EventEmitter();\r\n  public formFieldControl: FormControl;\r\n  private sub: SubscriptionLike;\r\n  public buttonType = ButtonTypeEnum;\r\n  isOpen = false;\r\n\r\n  ngOnInit(): void {\r\n    if (this.filterPlaceholder) {\r\n      this.formFieldControl = new FormControl('');\r\n      this.sub = this.formFieldControl.valueChanges.subscribe((value: string) => {\r\n        this.alterList(value);\r\n      });\r\n    }\r\n    if (!this.filterAriaLabel && this.filterPlaceholder) {\r\n      this.filterAriaLabel = this.filterPlaceholder;\r\n    }\r\n  }\r\n\r\n  ngOnDestroy(): void {\r\n    if (this.filterPlaceholder && this.sub) {\r\n      this.sub.unsubscribe();\r\n      this.sub = null;\r\n    }\r\n  }\r\n\r\n  alterList(value: string): void {\r\n    console.log(value);\r\n  }\r\n\r\n  closeSearch(): void {\r\n    this.onCloseSearch.emit();\r\n  }\r\n}\r\n\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -5293,6 +5296,74 @@
                 "OnDestroy"
             ],
             "templateData": "<div class=\"p-search\" [@searchAnimation]=\"isSearchVisible ? 'open' : 'closed'\">\r\n  <div class=\"p-search-header\">\r\n    <p-input-outline class=\"p-search-input\"\r\n                     [ariaLabel]=\"filterAriaLabel\"\r\n                     [placeholder]=\"filterPlaceholder\"\r\n                     [isSearch]=\"true\"\r\n                     (onSearch)=\"alterList($event)\"\r\n                     (onClear)=\"alterList($event)\">\r\n    </p-input-outline>\r\n    <p-button class=\"p-search-close\"\r\n              ariaLabel=\"Close search\"\r\n              [buttonType]=\"'isIcon'\"\r\n              iconBefore=\"x\"\r\n              iconBeforeWidth=\"12\"\r\n              iconBeforeStrokeWidth=\"2\"\r\n              (onClickTask)=\"closeSearch()\"></p-button>\r\n  </div>\r\n\r\n\r\n  <div class=\"p-search-body\">\r\n    <div class=\"p-search-body-container\">\r\n      <h6 class=\"p-search-body-title headline-6-bold\">Recently viewed</h6>\r\n      <ul class=\"p-search-body-list\">\r\n        <li *ngFor=\"let item of recentlyViewed\" class=\"p-search-body-item\">\r\n          <p class=\"p-search-item-entity\">{{item.entity}}</p>\r\n          <a [attr.href]=\"item.link\" class=\"p-search-link\">\r\n            {{item.linkName}}\r\n          </a>\r\n        </li>\r\n      </ul>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+        },
+        {
+            "name": "MastheadSettingsComponent",
+            "id": "component-MastheadSettingsComponent-ecfce1fc0fc4ed4d50d440070eedbde7",
+            "file": "projects/design-system-lib/src/lib/masthead/masthead-settings/masthead-settings.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-masthead-settings",
+            "styleUrls": [
+                "./masthead-settings.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./masthead-settings.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "isSettingsVisible",
+                    "line": 46,
+                    "type": "boolean"
+                },
+                {
+                    "name": "settingsList",
+                    "line": 45,
+                    "type": "IMastheadMenuItem[]"
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onCloseSettings",
+                    "defaultValue": "new EventEmitter()",
+                    "line": 47,
+                    "type": "EventEmitter<any>"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "buttonType",
+                    "defaultValue": "ButtonTypeEnum",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 48,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, EventEmitter, Input, Output} from '@angular/core';\r\nimport {ButtonTypeEnum} from '../../button/button-type.enum';\r\nimport {IMastheadMenuItem} from '../masthead.interface';\r\nimport {animate, sequence, state, style, transition, trigger} from '@angular/animations';\r\n\r\n@Component({\r\n  selector: 'p-masthead-settings',\r\n  templateUrl: './masthead-settings.component.html',\r\n  styleUrls: ['./masthead-settings.component.scss'],\r\n  animations: [\r\n    trigger('settingsAnimation', [\r\n      state('open', style({\r\n        width: 'var(--settings-bar-width)',\r\n        opacity: '1',\r\n        display: 'flex',\r\n        paddingLeft: '40px'\r\n      })),\r\n      state('closed', style({\r\n        width: '0',\r\n        opacity: '0',\r\n        display: 'none'\r\n      })),\r\n      transition('closed => open', // <----\r\n        sequence(\r\n          [\r\n            style ({ display: 'flex' }),\r\n            animate('50ms', style ({ width: '46px', opacity: '1' })),\r\n            animate('400ms', style ({ width: 'var(--settings-bar-width)', paddingLeft: '40px' }))\r\n          ]\r\n        )\r\n      ),\r\n      transition('open => closed', // ---->\r\n        sequence(\r\n          [\r\n            animate('400ms', style ({ width: '46px', paddingLeft: '3px' })),\r\n            animate( '50ms', style ({ width: '0', opacity: '0' })),\r\n            style ({ display: 'none' })\r\n          ]\r\n        )\r\n      )\r\n    ])\r\n  ]\r\n})\r\nexport class MastheadSettingsComponent {\r\n  @Input() settingsList: IMastheadMenuItem[];\r\n  @Input() isSettingsVisible: boolean;\r\n  @Output() onCloseSettings: EventEmitter<any> = new EventEmitter();\r\n  public buttonType = ButtonTypeEnum;\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$link-padding: $gap-double;\r\n$logo-gap: 40px;\r\n$logo-width: 95px;\r\n$settings-left: $logo-width + $logo-gap * 2;\r\n$settings-left-mobile: $logo-width + $logo-gap * 2 - 4px;\r\n$settings-right: 30px * 3 + 26px + ($gap-double - 4px) * 4 + $logo-gap;\r\n$settings-right-mobile: 28px * 3 + 24px + ($gap-double - 4px) * 4 + $logo-gap;\r\n$accent-color: $primary-b-300;\r\n$background-color: $gray-scale-50;\r\n$icon-width-on-medium-screen: 20px;\r\n$resolution-breakpoint: $width-middle-screen;\r\n\r\n.p-masthead-settings {\r\n  --settings-bar-width: calc(100% - #{$settings-left} - #{$settings-right});\r\n  display: flex;\r\n  align-items: center;\r\n  width: calc(100% - #{$settings-left} - #{$settings-right});\r\n  height: $masthead-height - $gap-base * 2;\r\n  background-color: $background-color;\r\n  border: 1px solid $gray-scale-500;\r\n  border-radius: 54px;\r\n  padding-right: $gap-base;\r\n  padding-left: $logo-gap;\r\n  overflow: hidden;\r\n  position: absolute;\r\n  top: $gap-base;\r\n  right: $settings-right;\r\n  z-index: 1;\r\n  @media screen and (max-width: $resolution-breakpoint) {\r\n    --settings-bar-width: calc(100% - #{$settings-left-mobile} - #{$settings-right-mobile});\r\n    width: calc(100% - #{$settings-left-mobile} - #{$settings-right-mobile});\r\n    right: $settings-right-mobile;\r\n  }\r\n\r\n  &-container {\r\n    display: flex;\r\n    align-items: center;\r\n    height: 100%;\r\n    flex-shrink: 1;\r\n    margin-right: auto;\r\n    overflow: hidden;\r\n  }\r\n\r\n  &-title {\r\n    display: flex;\r\n    align-items: center;\r\n    flex-grow: 0;\r\n    &-icon {\r\n      margin-right: $gap-base;\r\n      @media screen and (max-width: $resolution-breakpoint) {\r\n        ::ng-deep .p-icon {\r\n          width: $icon-width-on-medium-screen !important;\r\n        }\r\n      }\r\n    }\r\n    &-name {\r\n      display: inline-block;\r\n      margin-right: $logo-gap;\r\n      @media screen and (max-width: $resolution-breakpoint) {\r\n        font-size: $small-font-size;\r\n        letter-spacing: 0.04em;\r\n      }\r\n    }\r\n    &:after {\r\n      content: '';\r\n      width: 1px;\r\n      height: 18px;\r\n      margin-right: $logo-gap - $gap-base;\r\n      border-right: 1px solid $gray-scale-600;\r\n    }\r\n  }\r\n\r\n  &-list {\r\n    @include resetUl;\r\n    display: flex;\r\n    align-items: center;\r\n    height: 100%;\r\n  }\r\n\r\n  &-item {\r\n    display: flex;\r\n    align-items: center;\r\n    height: 100%;\r\n    position: relative;\r\n  }\r\n\r\n  &-link {\r\n    @include resetLink;\r\n    display: flex;\r\n    align-items: center;\r\n    width: 100%;\r\n    height: 100%;\r\n    padding-right: $link-padding;\r\n    padding-left: $link-padding;\r\n    transition: all 200ms ease-in-out;\r\n\r\n    .p-masthead-settings-item:hover &:not(.selected),\r\n    .p-masthead-settings-item:focus &:not(.selected) {\r\n      color: $accent-color;\r\n    }\r\n\r\n    &.selected {\r\n      color: $primary-a-900;\r\n      background-color: $accent-color;\r\n    }\r\n\r\n    @media screen and (max-width: $resolution-breakpoint) {\r\n      padding-right: $link-padding - 2px;\r\n      padding-left: $link-padding - 2px;\r\n    }\r\n  }\r\n\r\n  &-link-name {\r\n    @include ellipsis;\r\n\r\n    @media screen and (max-width: $resolution-breakpoint) {\r\n      font-size: $small-font-size;\r\n      letter-spacing: 0.04em;\r\n    }\r\n  }\r\n\r\n  &-close {\r\n    flex-grow: 0;\r\n    margin-left: $gap-base;\r\n    border-radius: 50%;\r\n    &:hover {\r\n      background-color: $x-hover-dark-text;\r\n    }\r\n  }\r\n}\r\n",
+                    "styleUrl": "./masthead-settings.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<nav [@settingsAnimation]=\"isSettingsVisible ? 'open' : 'closed'\"\r\n     aria-label=\"Settings navigation bar\" class=\"p-masthead-settings\">\r\n  <div class=\"p-masthead-settings-container\">\r\n    <h4 class=\"p-masthead-settings-title\">\r\n      <p-icon class=\"p-masthead-settings-title-icon\"\r\n              iconName=\"settings\"\r\n              width=\"24\"></p-icon>\r\n      <span class=\"p-masthead-settings-title-name headline-2-semibold\">\r\n      Settings\r\n    </span>\r\n    </h4>\r\n\r\n    <ul class=\"p-masthead-settings-list\">\r\n      <li *ngFor=\"let item of settingsList\"\r\n          class=\"p-masthead-settings-item\">\r\n        <a href=\"\"\r\n           class=\"p-masthead-settings-link\"\r\n           [class.selected]=\"item.selected\">\r\n        <span class=\"p-masthead-settings-link-name headline-2-bold\">\r\n            {{item.name}}\r\n        </span>\r\n        </a>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n\r\n  <p-button class=\"p-masthead-settings-close\"\r\n            ariaLabel=\"Close settings navigation bar\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            iconBefore=\"x\"\r\n            iconBeforeWidth=\"18\"\r\n            iconBeforeStrokeWidth=\"2\"\r\n            (onClickTask)=\"onCloseSettings.emit()\"></p-button>\r\n</nav>\r\n"
         },
         {
             "name": "MenuComponent",
@@ -9146,6 +9217,9 @@
                         },
                         {
                             "name": "MastheadSearchComponent"
+                        },
+                        {
+                            "name": "MastheadSettingsComponent"
                         }
                     ]
                 },
@@ -9704,17 +9778,17 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
+                "file": "src/environments/environment.ts",
                 "type": "object",
-                "defaultValue": "{\r\n  production: true\r\n}"
+                "defaultValue": "{\r\n  production: false\r\n}"
             },
             {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
+                "file": "src/environments/environment.prod.ts",
                 "type": "object",
-                "defaultValue": "{\r\n  production: false\r\n}"
+                "defaultValue": "{\r\n  production: true\r\n}"
             },
             {
                 "name": "Examples",
@@ -9792,17 +9866,17 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
-                "type": "Story<CheckboxGroupPageComponent>",
-                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "Story<CheckboxPageComponent>",
+                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
-                "type": "Story<CheckboxPageComponent>",
-                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "Story<CheckboxGroupPageComponent>",
+                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -10282,16 +10356,6 @@
                     "type": "literal type"
                 }
             ],
-            "src/environments/environment.prod.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.prod.ts",
-                    "type": "object",
-                    "defaultValue": "{\r\n  production: true\r\n}"
-                }
-            ],
             "src/environments/environment.ts": [
                 {
                     "name": "environment",
@@ -10300,6 +10364,16 @@
                     "file": "src/environments/environment.ts",
                     "type": "object",
                     "defaultValue": "{\r\n  production: false\r\n}"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: true\r\n}"
                 }
             ],
             "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts": [
@@ -10931,7 +11005,7 @@
                 "linktype": "component",
                 "name": "HashtagBarComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/10",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -11124,12 +11198,21 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/design-system-lib/src/lib/masthead/masthead-settings/masthead-settings.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MastheadSettingsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/design-system-lib/src/lib/masthead/masthead.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "MastheadComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/10",
                 "status": "low"
             },
             {

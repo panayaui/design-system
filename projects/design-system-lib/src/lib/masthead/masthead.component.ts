@@ -14,8 +14,10 @@ export class MastheadComponent {
     filterPlaceholder: string;
     recentlyViewed: any[];
   };
+  @Input() settingsList: IMastheadMenuItem[];
   public buttonType = ButtonTypeEnum;
   public searchVisible: boolean = false;
+  public settingsVisible: boolean = false;
 
   toggleSearch(isSearchVisible: boolean): void {
     this.searchVisible = isSearchVisible;
@@ -23,5 +25,9 @@ export class MastheadComponent {
 
   buttonPlaceholder(): void {
     console.log('icon button clicked');
+  }
+
+  toggleSettings(settingsVisible: boolean): void {
+    this.settingsVisible = settingsVisible;
   }
 }

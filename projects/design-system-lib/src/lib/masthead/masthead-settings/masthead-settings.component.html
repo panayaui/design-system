@@ -1,0 +1,34 @@
+<nav [@settingsAnimation]="isSettingsVisible ? 'open' : 'closed'"
+     aria-label="Settings navigation bar" class="p-masthead-settings">
+  <div class="p-masthead-settings-container">
+    <h4 class="p-masthead-settings-title">
+      <p-icon class="p-masthead-settings-title-icon"
+              iconName="settings"
+              width="24"></p-icon>
+      <span class="p-masthead-settings-title-name headline-2-semibold">
+      Settings
+    </span>
+    </h4>
+
+    <ul class="p-masthead-settings-list">
+      <li *ngFor="let item of settingsList"
+          class="p-masthead-settings-item">
+        <a href=""
+           class="p-masthead-settings-link"
+           [class.selected]="item.selected">
+        <span class="p-masthead-settings-link-name headline-2-bold">
+            {{item.name}}
+        </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <p-button class="p-masthead-settings-close"
+            ariaLabel="Close settings navigation bar"
+            [buttonType]="buttonType.IsIcon"
+            iconBefore="x"
+            iconBeforeWidth="18"
+            iconBeforeStrokeWidth="2"
+            (onClickTask)="onCloseSettings.emit()"></p-button>
+</nav>

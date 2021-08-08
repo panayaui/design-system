@@ -3,11 +3,12 @@
 $link-padding: $gap-double;
 $logo-gap: 40px;
 $logo-width: 95px;
-$logo-and-gap-width: $logo-width + $link-padding * 2 + $logo-gap - $link-padding * 2;
+$logo-and-gap-width: $logo-gap + $logo-width + $logo-gap - $link-padding * 2;
 $accent-color: $primary-b-300;
 $background-color: $primary-c-50;
 $megaMenuTrigger-max-width: 200px;
-$icons-and-gap-width: 20px * 5 + 18px + $gap-double * 5 + $logo-gap;
+$icons-and-gap-width: 30px * 5 + 26px + ($gap-double - 4px) * 5 + $logo-gap - 2px;
+$icons-and-gap-width-mobile: 28px * 5 + 24px + ($gap-double - 4px) * 5 + $logo-gap - 2px;
 $icon-width-on-medium-screen: 20px;
 $resolution-breakpoint: $width-middle-screen;
 
@@ -41,6 +42,9 @@ $resolution-breakpoint: $width-middle-screen;
     max-width: calc(100% - #{$logo-and-gap-width} - #{$icons-and-gap-width});
     height: 100%;
     margin-right: auto;
+    @media screen and (max-width: $resolution-breakpoint) {
+      max-width: calc(100% - #{$logo-and-gap-width} - #{$icons-and-gap-width-mobile});
+    }
   }
 
   &-nav-list {
@@ -86,6 +90,10 @@ $resolution-breakpoint: $width-middle-screen;
     &.selected {
       color: $primary-a-900;
       background-color: $accent-color;
+      transition: background-color 300ms linear 100ms;
+      .settings-opened & {
+        background-color: transparent;
+      }
     }
 
     @media screen and (max-width: $resolution-breakpoint) {

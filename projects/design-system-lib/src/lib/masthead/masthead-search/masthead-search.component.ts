@@ -23,7 +23,7 @@ import {trigger, transition, state, animate, style, sequence} from '@angular/ani
       transition('open => closed',
       sequence(
         [
-          animate('400ms ease-in-out', style ({ height: '64px', overflow: 'hidden' })),
+          animate('400ms', style ({ height: '64px', overflow: 'hidden' })),
           animate('400ms ease-in-out', style ({ width: '0' }))
         ]
       )
@@ -32,7 +32,7 @@ import {trigger, transition, state, animate, style, sequence} from '@angular/ani
         sequence(
           [
             animate('400ms ease-in-out', style ({ width: '384px' })),
-            animate('400ms ease-in-out', style ({ height: '684px', overflow: 'visible' }))
+            animate('400ms', style ({ height: '684px', overflow: 'visible' }))
           ]
         )
       )
