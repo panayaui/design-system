@@ -15,7 +15,7 @@ $icon-width-on-medium-screen: 20px;
 $resolution-breakpoint: $width-middle-screen;
 
 :host {
-  width: 100%;
+  //width: 100%;
 }
 
 .p-masthead-settings {
@@ -28,20 +28,24 @@ $resolution-breakpoint: $width-middle-screen;
   border-radius: 54px;
   padding-right: $gap-base;
   padding-left: $logo-gap;
+  overflow: hidden;
   position: absolute;
   top: $gap-base;
-  left: $settings-left;
+  right: $settings-right;
   z-index: 1;
   @media screen and (max-width: $resolution-breakpoint) {
     width: calc(100% - #{$settings-left} - #{$settings-right-mobile});
+    right: $settings-left;
   }
 
-  //
-  //&-nav {
-  //  max-width: calc(100% - #{$logo-and-gap-width} - #{$icons-and-gap-width});
-  //  height: 100%;
-  //  margin-right: auto;
-  //}
+  &-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    flex-shrink: 1;
+    margin-right: auto;
+    overflow: hidden;
+  }
 
   &-title {
     display: flex;
@@ -127,7 +131,7 @@ $resolution-breakpoint: $width-middle-screen;
 
   &-close {
     flex-grow: 0;
-    margin-left: auto;
+    margin-left: $gap-base;
     border-radius: 50%;
     &:hover {
       background-color: $x-hover-dark-text;
