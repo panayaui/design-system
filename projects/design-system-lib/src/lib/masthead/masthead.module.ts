@@ -7,6 +7,7 @@ import {IconModule} from '../icon/icon.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MastheadSearchComponent} from './masthead-search/masthead-search.component';
 import {InputModule} from '../input/input.module';
+import {MastheadSettingsComponent} from './masthead-settings/masthead-settings.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import {InputModule} from '../input/input.module';
   ],
   declarations: [
     MastheadComponent,
-    MastheadSearchComponent
+    MastheadSearchComponent,
+    MastheadSettingsComponent
   ],
   exports: [
     MastheadComponent
