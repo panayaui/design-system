@@ -3,11 +3,14 @@
 $link-padding: $gap-double;
 $logo-gap: 40px;
 $logo-width: 95px;
-$logo-and-gap-width: $logo-width + $link-padding * 2 + $logo-gap - $link-padding * 2;
+$settings-left: $logo-width + $logo-gap * 2 - 2px;
+$settings-right: 30px * 3 + 26px + ($gap-double - 4px) * 4 + $logo-gap - 2px;
+$settings-right-mobile: 28px * 3 + 24px + ($gap-double - 4px) * 5 + $logo-gap - 2px;
 $accent-color: $primary-b-300;
 $background-color: $gray-scale-50;
 $megaMenuTrigger-max-width: 200px;
-$icons-and-gap-width: 20px * 5 + 18px + $gap-double * 5 + $logo-gap;
+$icons-and-gap-width: 30px * 5 + 26px + ($gap-double - 4px) * 5 + $logo-gap - 2px;
+$icons-and-gap-width-mobile: 28px * 5 + 24px + ($gap-double - 4px) * 5 + $logo-gap - 2px;
 $icon-width-on-medium-screen: 20px;
 $resolution-breakpoint: $width-middle-screen;
 
@@ -18,13 +21,20 @@ $resolution-breakpoint: $width-middle-screen;
 .p-masthead-settings {
   display: flex;
   align-items: center;
-  width: calc(100% - #{$logo-and-gap-width});
+  width: calc(100% - #{$settings-left} - #{$settings-right});
   height: $masthead-height - $gap-base * 2;
   background-color: $background-color;
   border: 1px solid $gray-scale-500;
   border-radius: 54px;
   padding-right: $gap-base;
   padding-left: $logo-gap;
+  position: absolute;
+  top: $gap-base;
+  left: $settings-left;
+  z-index: 1;
+  @media screen and (max-width: $resolution-breakpoint) {
+    width: calc(100% - #{$settings-left} - #{$settings-right-mobile});
+  }
 
   //
   //&-nav {

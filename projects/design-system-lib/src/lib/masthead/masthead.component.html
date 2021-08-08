@@ -5,34 +5,34 @@
          class="p-masthead-logo"/>
   </a>
   <nav aria-label="Main Navigation" class="p-masthead-nav">
-    <ul class="p-masthead-nav-list">
-      <li *ngFor="let item of navList"
-          class="p-masthead-nav-item"
-          [ngClass]="{'divider' : item.divider, 'megaMenu-trigger' : item.megaMenu}">
-        <a href=""
-           class="p-masthead-nav-link"
-           [class.selected]="item.selected">
-          <p-icon *ngIf="item.megaMenu"
-                  class="p-masthead-nav-link-icon"
-                  iconName="menu"
-                  width="22"></p-icon>
-          <span class="p-masthead-nav-link-name headline-2-bold">
+  <ul class="p-masthead-nav-list">
+    <li *ngFor="let item of navList"
+        class="p-masthead-nav-item"
+        [ngClass]="{'divider' : item.divider, 'megaMenu-trigger' : item.megaMenu}">
+      <a href=""
+         class="p-masthead-nav-link"
+         [class.selected]="item.selected">
+        <p-icon *ngIf="item.megaMenu"
+                class="p-masthead-nav-link-icon"
+                iconName="menu"
+                width="22"></p-icon>
+        <span class="p-masthead-nav-link-name headline-2-bold">
             {{item.name}}
           </span>
-          <span *ngIf="item.badge" class="p-masthead-nav-badge">
+        <span *ngIf="item.badge" class="p-masthead-nav-badge">
             {{item.badge}}
           </span>
-        </a>
-        <ul *ngIf="item.subMenu" class="p-masthead-submenu-list">
-          <li *ngFor="let subItem of item.subMenu" class="p-masthead-submenu-item">
-            <a href="" class="p-masthead-submenu-link headline-3-regular">
-              {{subItem.name}}
-            </a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
+      </a>
+      <ul *ngIf="item.subMenu" class="p-masthead-submenu-list">
+        <li *ngFor="let subItem of item.subMenu" class="p-masthead-submenu-item">
+          <a href="" class="p-masthead-submenu-link headline-3-regular">
+            {{subItem.name}}
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
   <p-button class="p-masthead-icon-button search"
             ariaLabel="Open search"
@@ -52,7 +52,10 @@
             matTooltip="Settings"
             matTooltipPosition="above"
             matTooltipClass="p-tooltip below"
-            (onClickTask)="buttonPlaceholder()"></p-button>
+            (onClickTask)="toggleSettings(true)"></p-button>
+  <p-masthead-settings [settingsList]="settingsList"
+                       (onCloseSettings)="toggleSettings(false)">
+  </p-masthead-settings>
 
   <p-button class="p-masthead-icon-button track-status"
             ariaLabel="Track the status of your requests"
@@ -101,6 +104,9 @@
                      [filterAriaLabel]="mastheadSearch.filterPlaceholder"
                      (onCloseSearch)="toggleSearch(false)">
   </p-masthead-search>
+
+
+
 </div>
 
 

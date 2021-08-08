@@ -6,6 +6,7 @@ import {IMastheadMenuItem} from '../masthead.interface';
   selector: 'p-masthead-settings',
   templateUrl: './masthead-settings.component.html',
   styleUrls: ['./masthead-settings.component.scss'],
+  
 })
 export class MastheadSettingsComponent {
   @Input() settingsList: IMastheadMenuItem[];
