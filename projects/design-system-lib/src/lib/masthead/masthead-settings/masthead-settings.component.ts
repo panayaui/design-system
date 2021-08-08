@@ -10,23 +10,22 @@ import {animate, sequence, state, style, transition, trigger} from '@angular/ani
   animations: [
     trigger('settingsAnimation', [
       state('open', style({
-        width: '100%',
+        width: 'var(--settings-bar-width)',
         opacity: '1',
         display: 'flex',
-        paddingLeft: '3px'
+        paddingLeft: '40px'
       })),
       state('closed', style({
         width: '0',
         opacity: '0',
-        display: 'none',
-        paddingLeft: '40px'
+        display: 'none'
       })),
       transition('closed => open', // <----
         sequence(
           [
             style ({ display: 'flex' }),
             animate('50ms', style ({ width: '46px', opacity: '1' })),
-            animate('400ms', style ({ width: '100%', paddingLeft: '40px' }))
+            animate('400ms', style ({ width: 'var(--settings-bar-width)', paddingLeft: '40px' }))
           ]
         )
       ),

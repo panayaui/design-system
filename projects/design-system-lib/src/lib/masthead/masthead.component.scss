@@ -3,7 +3,7 @@
 $link-padding: $gap-double;
 $logo-gap: 40px;
 $logo-width: 95px;
-$logo-and-gap-width: $logo-width + $link-padding * 2 + $logo-gap - $link-padding * 2;
+$logo-and-gap-width: $logo-gap + $logo-width + $logo-gap - $link-padding * 2;
 $accent-color: $primary-b-300;
 $background-color: $primary-c-50;
 $megaMenuTrigger-max-width: 200px;
