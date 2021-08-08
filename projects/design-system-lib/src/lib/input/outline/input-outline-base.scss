@@ -20,7 +20,6 @@ $input-text-height: 32px;
     height: $input-text-height - 2px;
     padding-left: $input-text-padding;
     padding-right: $input-text-padding;
-    background-color: $gray-scale-1;
     caret-color: $primary-a-900;
   }
 
@@ -29,6 +28,7 @@ $input-text-height: 32px;
       height: 100%;
       margin-top: 0;
       margin-bottom: 0;
+      background-color: $gray-scale-1;
     }
     .mat-form-field-flex {
       height: 100%;
