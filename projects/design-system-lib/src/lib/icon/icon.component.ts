@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { allIcons } from 'angular-feather/icons';
+import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
 
 @Component({
   selector: 'p-icon',
@@ -30,9 +31,11 @@ export class IconComponent implements OnInit {
     };
   }
 
-  public get customName(): string {
-    return this.disabled ? `p-icon-custom-${this.iconName}-disabled` : `p-icon-custom-${this.iconName}`;
+  public get customName(): SafeUrl {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(this.iconName + '.svg');
   }
+
+  constructor(protected sanitizer: DomSanitizer) {}
 
   ngOnInit(): void {
     allIcons[this.capitalizeName()] ? this.customIcon = false : this.customIcon = true;
