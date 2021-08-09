@@ -6,9 +6,14 @@
 </ng-template>
 
 <ng-template #customIconTemplate>
-  <i class="p-icon p-icon-custom"
-     [ngClass]="customName"
-     [ngStyle]="iconStyles"></i>
+  <object class="p-icon p-icon-custom"
+          type="image/svg+xml"
+          [data]="customName">
+  </object>
+  <!--<object class="p-icon p-icon-custom"-->
+          <!--type="image/svg+xml"-->
+          <!--data="unlink.svg">-->
+  <!--</object>-->
 </ng-template>
 
 

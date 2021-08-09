@@ -1,4 +1,4 @@
-<div class="p-file-upload">
+<div class="p-file-upload" [class.droppable]="isDroppable">
   <input type="file"
          name="fileUpload"
          id="fileUpload"
@@ -10,10 +10,15 @@
             width="18"
             height="18">
     </p-icon>
-    <span class="p-file-upload-text paragraph-2-default">
+    <span *ngIf="isDroppable" class="p-file-upload-text paragraph-2-default">
       Drop / paste or
     </span>
-    <span class="p-file-upload-link paragraph-2-link">click here</span>
+    <span class="p-file-upload-link paragraph-2-link">
+      <span class="first-word">
+        click
+      </span>
+      here
+    </span>
     <span class="p-file-upload-text paragraph-2-default">to add screenshot</span>
   </label>
 </div>

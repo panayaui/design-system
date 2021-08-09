@@ -517,17 +517,17 @@
         },
         {
             "name": "IExpansionPanel",
-            "id": "interface-IExpansionPanel-efc27f797265662ce742c5bee2d5f881",
+            "id": "interface-IExpansionPanel-70165286ccb088a6e5878bd8b336b87f",
             "file": "projects/design-system-lib/src/lib/expansion-panel/expansion-panel.interface.ts",
             "type": "interface",
-            "sourceCode": "export interface IExpansionPanel {\r\n  header: {\r\n    titleMain: string,\r\n    titleSub?: string,\r\n  };\r\n  content: any;\r\n}\r\n",
+            "sourceCode": "export interface IExpansionPanel {\r\n  header: {\r\n    tooltipText?: string;\r\n    titleMain: string,\r\n    titleSub?: string,\r\n  };\r\n  content: any;\r\n}\r\n",
             "properties": [
                 {
                     "name": "content",
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 6
+                    "line": 7
                 },
                 {
                     "name": "header",
@@ -2160,7 +2160,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "",
+                    "data": "img {\r\n  width: 24px;\r\n  height: 24px;\r\n}\r\n",
                     "styleUrl": "./app.component.scss"
                 }
             ],
@@ -2174,7 +2174,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p-masthead [navList]=\"navList\"\r\n            [mastheadSearch]=\"mastheadSearch\"></p-masthead>\r\n"
+            "templateData": "<!--<p-masthead [navList]=\"navList\"-->\r\n            <!--[mastheadSearch]=\"mastheadSearch\"></p-masthead>-->\r\n\r\n<p-icon class=\"p-chip-menuTrigger\"\r\n        iconName=\"unlink\"\r\n        width=\"24\"\r\n        height=\"24\"\r\n        [strokeWidth]=\"2\"></p-icon>\r\n\r\n<!--<img src=\"unlink.svg\" alt=\"\">-->\r\n\r\n<!--<object-->\r\n  <!--type=\"image/svg+xml\"-->\r\n  <!--data=\"unlink.svg\">-->\r\n<!--</object>-->\r\n"
         },
         {
             "name": "BreadcrumbsComponent",
@@ -3570,16 +3570,16 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$header-height: 40px;\r\n$padding-left: $gap-double;\r\n$padding-right: $gap-double;\r\n$padding-top-content: $gap-double;\r\n$padding-bottom-content: $gap-double;\r\n$border: 1px solid $gray-scale-400;\r\n$expand-width: 14px;\r\n\r\n::ng-deep .p-accordion {\r\n  &.mat-accordion {\r\n    .mat-expansion-panel,\r\n    .mat-expansion-panel:first-of-type,\r\n    .mat-expansion-panel:last-of-type {\r\n      margin-top: $gap-small;\r\n      background-color: $gray-scale-1;\r\n      border-radius: 0;\r\n    }\r\n  }\r\n\r\n  .mat-expansion-panel:not([class*=mat-elevation-z]) {\r\n    box-shadow: none;\r\n  }\r\n\r\n  .mat-expansion-panel-spacing {\r\n    margin: 0;\r\n  }\r\n\r\n  .p-expansion-panel-header {\r\n    height: $header-height;\r\n    padding-right: $padding-right;\r\n    padding-left: $padding-left;\r\n    border: $border;\r\n    &.mat-expanded {\r\n      height: $header-height;\r\n    }\r\n  }\r\n\r\n  .mat-expanded {\r\n    .p-expansion-panel-header {\r\n      background-color: $primary-c-50;\r\n    }\r\n\r\n    .p-expansion-panel-icon {\r\n      transform: rotate(0);\r\n    }\r\n  }\r\n\r\n  .mat-content {\r\n    color: $primary-a-900;\r\n    align-items: center;\r\n  }\r\n\r\n  .p-expansion-panel-title-main {\r\n    font-weight: 700;\r\n  }\r\n\r\n  .p-expansion-panel-title-sub {\r\n    display: flex;\r\n    align-items: center;\r\n    margin-left: 10px;\r\n    &:before {\r\n      content: '';\r\n      display: inline-block;\r\n      width: 1px;\r\n      height: 15px;\r\n      background-color: currentColor;\r\n      margin-right: 10px;\r\n    }\r\n  }\r\n\r\n  .mat-expansion-panel-content {\r\n    border-right: $border;\r\n    border-bottom: $border;\r\n    border-left: $border;\r\n  }\r\n\r\n  .mat-expansion-panel-body {\r\n    padding: $padding-top-content 24px $padding-bottom-content 24px;\r\n  }\r\n\r\n  .p-expansion-panel-icon {\r\n    margin-right: $gap-base;\r\n    transform: rotate(-90deg);\r\n    transition: transform 280ms;\r\n  }\r\n}\r\n\r\n// focus & hover\r\n::ng-deep .mat-expansion-panel {\r\n  .mat-expansion-panel-header.cdk-keyboard-focused:not([aria-disabled=true]),\r\n  .mat-expansion-panel-header.cdk-program-focused:not([aria-disabled=true]),\r\n  &:not(.mat-expanded) .mat-expansion-panel-header:hover:not([aria-disabled=true]) {\r\n    background-color: $primary-c-50;\r\n  }\r\n}\r\n\r\n::ng-deep .p-expansion-panel-header.mat-expansion-panel-header.mat-expanded {\r\n  &:focus,\r\n  &:hover {\r\n    background-color: $primary-c-50;\r\n  }\r\n}\r\n\r\n::ng-deep .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:hover:not([aria-disabled=true]),\r\n::ng-deep .p-expansion-panel-header.mat-expansion-panel-header.mat-expanded:hover {\r\n  .mat-content {\r\n    color: $secondary-a-700;\r\n  }\r\n}\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n$header-height: 40px;\r\n$padding-left: $gap-double;\r\n$padding-right: $gap-double;\r\n$padding-top-content: $gap-double;\r\n$padding-bottom-content: $gap-double;\r\n$border: 1px solid $gray-scale-400;\r\n$expand-width: 14px;\r\n\r\n::ng-deep .p-accordion {\r\n  &.mat-accordion {\r\n    .mat-expansion-panel,\r\n    .mat-expansion-panel:first-of-type,\r\n    .mat-expansion-panel:last-of-type {\r\n      margin-top: $gap-small;\r\n      background-color: $gray-scale-1;\r\n      border-radius: 0;\r\n    }\r\n  }\r\n\r\n  .mat-expansion-panel:not([class*=mat-elevation-z]) {\r\n    box-shadow: none;\r\n  }\r\n\r\n  .mat-expansion-panel-spacing {\r\n    margin: 0;\r\n  }\r\n\r\n  .p-expansion-panel-header {\r\n    height: $header-height;\r\n    padding-right: $padding-right;\r\n    padding-left: $padding-left;\r\n    border: $border;\r\n    &.mat-expanded {\r\n      height: $header-height;\r\n    }\r\n  }\r\n\r\n  .mat-expanded {\r\n    .p-expansion-panel-header {\r\n      background-color: $primary-c-50;\r\n    }\r\n\r\n    .p-expansion-panel-icon {\r\n      transform: rotate(0);\r\n    }\r\n  }\r\n\r\n  .mat-content {\r\n    color: $primary-a-900;\r\n    align-items: center;\r\n  }\r\n\r\n  .p-expansion-panel-title-main {\r\n    font-weight: 700;\r\n  }\r\n\r\n  .p-expansion-panel-title-sub {\r\n    display: flex;\r\n    align-items: center;\r\n    margin-left: 10px;\r\n    &:before {\r\n      content: '';\r\n      display: inline-block;\r\n      width: 1px;\r\n      height: 15px;\r\n      background-color: currentColor;\r\n      margin-right: 10px;\r\n    }\r\n  }\r\n\r\n  .mat-expansion-panel-content {\r\n    border-right: $border;\r\n    border-bottom: $border;\r\n    border-left: $border;\r\n  }\r\n\r\n  .mat-expansion-panel-body {\r\n    padding: $padding-top-content 24px $padding-bottom-content 24px;\r\n  }\r\n\r\n  .p-expansion-panel-icon {\r\n    margin-right: $gap-base;\r\n    transform: rotate(-90deg);\r\n    transition: transform 280ms;\r\n  }\r\n\r\n  .p-expansion-panel-info {\r\n    margin-right: $gap-small;\r\n  }\r\n}\r\n\r\n// focus & hover\r\n::ng-deep .mat-expansion-panel {\r\n  .mat-expansion-panel-header.cdk-keyboard-focused:not([aria-disabled=true]),\r\n  .mat-expansion-panel-header.cdk-program-focused:not([aria-disabled=true]),\r\n  &:not(.mat-expanded) .mat-expansion-panel-header:hover:not([aria-disabled=true]) {\r\n    background-color: $primary-c-50;\r\n  }\r\n}\r\n\r\n::ng-deep .p-expansion-panel-header.mat-expansion-panel-header.mat-expanded {\r\n  &:focus,\r\n  &:hover {\r\n    background-color: $primary-c-50;\r\n  }\r\n}\r\n\r\n::ng-deep .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:hover:not([aria-disabled=true]),\r\n::ng-deep .p-expansion-panel-header.mat-expansion-panel-header.mat-expanded:hover {\r\n  .mat-content {\r\n    color: $secondary-a-700;\r\n  }\r\n}\r\n",
                     "styleUrl": "./expansion-panel.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<mat-accordion class=\"p-accordion\" multi>\r\n  <mat-expansion-panel *ngFor=\"let panel of expansionPanel\"\r\n                       class=\"p-expansion-panel\"\r\n                       hideToggle>\r\n    <mat-expansion-panel-header class=\"p-expansion-panel-header\">\r\n      <p-icon class=\"p-expansion-panel-icon\"\r\n              iconName=\"chevron-down\"\r\n              width=\"17\"\r\n              height=\"auto\"\r\n              strokeWidth=\"2.5\">\r\n      </p-icon>\r\n      <span class=\"p-expansion-panel-title-main paragraph-2-default\">\r\n        {{panel.header.titleMain}}\r\n      </span>\r\n      <span *ngIf=\"panel.header.titleSub\" class=\"p-expansion-panel-title-sub paragraph-2-default\">\r\n        {{panel.header.titleSub}}\r\n      </span>\r\n    </mat-expansion-panel-header>\r\n\r\n    <!--expanded content-->\r\n    <div class=\"p-expansion-panel-content\">\r\n      {{panel.content}}\r\n    </div>\r\n  </mat-expansion-panel>\r\n</mat-accordion>\r\n"
+            "templateData": "<mat-accordion class=\"p-accordion\" multi>\r\n  <mat-expansion-panel *ngFor=\"let panel of expansionPanel\"\r\n                       class=\"p-expansion-panel\"\r\n                       hideToggle>\r\n    <mat-expansion-panel-header class=\"p-expansion-panel-header\">\r\n      <p-icon class=\"p-expansion-panel-icon\"\r\n              iconName=\"chevron-down\"\r\n              width=\"17\"\r\n              height=\"auto\"\r\n              strokeWidth=\"2.5\">\r\n      </p-icon>\r\n      <p-icon *ngIf=\"panel.header.tooltipText\"\r\n              class=\"p-expansion-panel-info\"\r\n              iconName=\"info\"\r\n              width=\"16\"\r\n              [matTooltip]=\"panel.header.tooltipText\"\r\n              matTooltipPosition=\"above\"\r\n              matTooltipClass=\"p-tooltip above\">\r\n      </p-icon>\r\n      <span class=\"p-expansion-panel-title-main paragraph-2-default\">\r\n        {{panel.header.titleMain}}\r\n      </span>\r\n      <span *ngIf=\"panel.header.titleSub\" class=\"p-expansion-panel-title-sub paragraph-2-default\">\r\n        {{panel.header.titleSub}}\r\n      </span>\r\n    </mat-expansion-panel-header>\r\n\r\n    <!--expanded content-->\r\n    <div class=\"p-expansion-panel-content\">\r\n      {{panel.content}}\r\n    </div>\r\n  </mat-expansion-panel>\r\n</mat-accordion>\r\n"
         },
         {
             "name": "FileUploadComponent",
-            "id": "component-FileUploadComponent-d647d87d6a14143c4118ea803d295a39",
+            "id": "component-FileUploadComponent-6f71b1dcc548a87e667d25e4d5e5b944",
             "file": "projects/design-system-lib/src/lib/file-upload/file-upload.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3595,7 +3595,14 @@
                 "./file-upload.component.html"
             ],
             "viewProviders": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "isDroppable",
+                    "defaultValue": "true",
+                    "line": 9,
+                    "type": "boolean"
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [],
             "methodsClass": [],
@@ -3604,16 +3611,16 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'p-file-upload',\r\n  templateUrl: './file-upload.component.html',\r\n  styleUrls: ['./file-upload.component.scss'],\r\n})\r\nexport class FileUploadComponent {\r\n\r\n}\r\n",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'p-file-upload',\r\n  templateUrl: './file-upload.component.html',\r\n  styleUrls: ['./file-upload.component.scss'],\r\n})\r\nexport class FileUploadComponent {\r\n  @Input() isDroppable: boolean = true;\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n.p-file-upload {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n\r\n  &-input {\r\n    width: 0.1px;\r\n    height: 0.1px;\r\n    opacity: 0;\r\n    overflow: hidden;\r\n    position: absolute;\r\n    z-index: -1;\r\n  }\r\n\r\n  &-label {\r\n    display: flex;\r\n    align-items: center;\r\n    width: 100%;\r\n    height: 100%;\r\n    padding: 22px 18px;\r\n    border: 1px dashed $gray-scale-500;\r\n    cursor: pointer;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n  }\r\n\r\n  &-icon {\r\n    margin-right: 5px;\r\n  }\r\n\r\n  &-link {\r\n    font-weight: 600;\r\n    margin-right: 4px;\r\n    margin-left: 4px;\r\n    position: relative;\r\n    @include linkHoverUnderline;\r\n  }\r\n}\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n.p-file-upload {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n\r\n  &-input {\r\n    width: 0.1px;\r\n    height: 0.1px;\r\n    opacity: 0;\r\n    overflow: hidden;\r\n    position: absolute;\r\n    z-index: -1;\r\n  }\r\n\r\n  &-label {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    width: 100%;\r\n    height: 100%;\r\n    padding: 22px 20px;\r\n    cursor: pointer;\r\n    &:hover {\r\n      background-color: $primary-c-50;\r\n    }\r\n\r\n    .p-file-upload:not(.droppable) & {\r\n      border: 1px solid $gray-scale-500;\r\n    }\r\n\r\n    .droppable & {\r\n      border: 1px dashed $gray-scale-500;\r\n    }\r\n  }\r\n\r\n  &-icon {\r\n    margin-right: 5px;\r\n  }\r\n\r\n  &-link {\r\n    display: inline-flex;\r\n    align-items: center;\r\n    font-weight: 600;\r\n    margin-right: 4px;\r\n    margin-left: 4px;\r\n    position: relative;\r\n    @include linkHoverUnderline;\r\n  }\r\n\r\n  .first-word {\r\n    margin-right: 4px;\r\n  }\r\n\r\n  &:not(.droppable) .first-word {\r\n    text-transform: capitalize;\r\n  }\r\n}\r\n",
                     "styleUrl": "./file-upload.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"p-file-upload\">\r\n  <input type=\"file\"\r\n         name=\"fileUpload\"\r\n         id=\"fileUpload\"\r\n         class=\"p-file-upload-input\"\r\n         accept=\"image/png, image/jpeg\"/>\r\n  <label for=\"fileUpload\" class=\"p-file-upload-label\">\r\n    <p-icon class=\"p-file-upload-icon\"\r\n            iconName=\"view\"\r\n            width=\"18\"\r\n            height=\"18\">\r\n    </p-icon>\r\n    <span class=\"p-file-upload-text paragraph-2-default\">\r\n      Drop / paste or\r\n    </span>\r\n    <span class=\"p-file-upload-link paragraph-2-link\">click here</span>\r\n    <span class=\"p-file-upload-text paragraph-2-default\">to add screenshot</span>\r\n  </label>\r\n</div>\r\n\r\n"
+            "templateData": "<div class=\"p-file-upload\" [class.droppable]=\"isDroppable\">\r\n  <input type=\"file\"\r\n         name=\"fileUpload\"\r\n         id=\"fileUpload\"\r\n         class=\"p-file-upload-input\"\r\n         accept=\"image/png, image/jpeg\"/>\r\n  <label for=\"fileUpload\" class=\"p-file-upload-label\">\r\n    <p-icon class=\"p-file-upload-icon\"\r\n            iconName=\"view\"\r\n            width=\"18\"\r\n            height=\"18\">\r\n    </p-icon>\r\n    <span *ngIf=\"isDroppable\" class=\"p-file-upload-text paragraph-2-default\">\r\n      Drop / paste or\r\n    </span>\r\n    <span class=\"p-file-upload-link paragraph-2-link\">\r\n      <span class=\"first-word\">\r\n        click\r\n      </span>\r\n      here\r\n    </span>\r\n    <span class=\"p-file-upload-text paragraph-2-default\">to add screenshot</span>\r\n  </label>\r\n</div>\r\n\r\n"
         },
         {
             "name": "HashtagBarComponent",
@@ -3763,7 +3770,7 @@
         },
         {
             "name": "IconComponent",
-            "id": "component-IconComponent-62e5153acfeba0f17641381b0450d2c6",
+            "id": "component-IconComponent-1303d5ccee47d39f666c50b43d158ec6",
             "file": "projects/design-system-lib/src/lib/icon/icon.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3783,54 +3790,54 @@
                 {
                     "name": "disabled",
                     "defaultValue": "false",
-                    "line": 18,
+                    "line": 19,
                     "type": "boolean"
                 },
                 {
                     "name": "fill",
                     "defaultValue": "'none'",
-                    "line": 13,
+                    "line": 14,
                     "type": "string"
                 },
                 {
                     "name": "height",
                     "defaultValue": "'auto'",
-                    "line": 12,
+                    "line": 13,
                     "type": "string"
                 },
                 {
                     "name": "iconName",
-                    "line": 10,
+                    "line": 11,
                     "type": "string"
                 },
                 {
                     "name": "stroke",
                     "defaultValue": "'currentColor'",
-                    "line": 14,
+                    "line": 15,
                     "type": "string"
                 },
                 {
                     "name": "strokeLinecap",
                     "defaultValue": "'round'",
-                    "line": 16,
+                    "line": 17,
                     "type": "string"
                 },
                 {
                     "name": "strokeLinejoin",
                     "defaultValue": "'round'",
-                    "line": 17,
+                    "line": 18,
                     "type": "string"
                 },
                 {
                     "name": "strokeWidth",
                     "defaultValue": "1.5",
-                    "line": 15,
+                    "line": 16,
                     "type": "number"
                 },
                 {
                     "name": "width",
                     "defaultValue": "'16'",
-                    "line": 11,
+                    "line": 12,
                     "type": "string"
                 }
             ],
@@ -3841,7 +3848,7 @@
                     "type": "boolean",
                     "optional": false,
                     "description": "",
-                    "line": 19,
+                    "line": 20,
                     "modifierKind": [
                         114
                     ]
@@ -3854,7 +3861,7 @@
                     "optional": false,
                     "returnType": "string",
                     "typeParameters": [],
-                    "line": 49
+                    "line": 52
                 },
                 {
                     "name": "ngOnInit",
@@ -3862,7 +3869,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 37
+                    "line": 40
                 }
             ],
             "hostBindings": [],
@@ -3870,7 +3877,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport { allIcons } from 'angular-feather/icons';\r\n\r\n@Component({\r\n  selector: 'p-icon',\r\n  templateUrl: './icon.component.html',\r\n  styleUrls: ['./icon.component.scss'],\r\n})\r\nexport class IconComponent implements OnInit {\r\n  @Input() iconName: string;\r\n  @Input() width: string  = '16'; // pixels or auto\r\n  @Input() height: string  = 'auto'; // pixels or auto\r\n  @Input() fill: string = 'none'; // icon background\r\n  @Input() stroke: string = 'currentColor'; // line color\r\n  @Input() strokeWidth: number = 1.5; // line width in pixels\r\n  @Input() strokeLinecap: string = 'round'; // line end\r\n  @Input() strokeLinejoin: string = 'round'; // two lines join\r\n  @Input() disabled: boolean = false;\r\n  public customIcon: boolean;\r\n\r\n  public get iconStyles(): any {\r\n    return {\r\n      width: this.width === 'auto' ? this.width : `${this.width}px`,\r\n      height: this.height === 'auto' ? this.height : `${this.height}px`,\r\n      fill: this.fill,\r\n      stroke: this.stroke,\r\n      strokeWidth: `${this.strokeWidth}px`,\r\n      strokeLinecap: this.strokeLinecap,\r\n      strokeLinejoin: this.strokeLinejoin\r\n    };\r\n  }\r\n\r\n  public get customName(): string {\r\n    return this.disabled ? `p-icon-custom-${this.iconName}-disabled` : `p-icon-custom-${this.iconName}`;\r\n  }\r\n\r\n  ngOnInit(): void {\r\n    allIcons[this.capitalizeName()] ? this.customIcon = false : this.customIcon = true;\r\n\r\n    !this.width ? this.width = '16' : null;\r\n    !this.height ? this.height = 'auto' : null;\r\n    !this.fill ? this.fill = 'none' : null;\r\n    !this.stroke ? this.stroke = 'currentColor' : null;\r\n    !this.strokeWidth ? this.strokeWidth = 1.5 : null;\r\n    !this.strokeLinecap ? this.strokeLinecap = 'round' : null;\r\n    !this.strokeLinejoin ? this.strokeLinejoin = 'round' : null;\r\n  }\r\n\r\n  capitalizeName(): string {\r\n    let iconNameCap = '';\r\n    this.iconName.split('-').forEach( str => iconNameCap += str.charAt(0).toUpperCase() + str.slice(1));\r\n    return iconNameCap;\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport { allIcons } from 'angular-feather/icons';\r\nimport {DomSanitizer, SafeUrl} from '@angular/platform-browser';\r\n\r\n@Component({\r\n  selector: 'p-icon',\r\n  templateUrl: './icon.component.html',\r\n  styleUrls: ['./icon.component.scss'],\r\n})\r\nexport class IconComponent implements OnInit {\r\n  @Input() iconName: string;\r\n  @Input() width: string  = '16'; // pixels or auto\r\n  @Input() height: string  = 'auto'; // pixels or auto\r\n  @Input() fill: string = 'none'; // icon background\r\n  @Input() stroke: string = 'currentColor'; // line color\r\n  @Input() strokeWidth: number = 1.5; // line width in pixels\r\n  @Input() strokeLinecap: string = 'round'; // line end\r\n  @Input() strokeLinejoin: string = 'round'; // two lines join\r\n  @Input() disabled: boolean = false;\r\n  public customIcon: boolean;\r\n\r\n  public get iconStyles(): any {\r\n    return {\r\n      width: this.width === 'auto' ? this.width : `${this.width}px`,\r\n      height: this.height === 'auto' ? this.height : `${this.height}px`,\r\n      fill: this.fill,\r\n      stroke: this.stroke,\r\n      strokeWidth: `${this.strokeWidth}px`,\r\n      strokeLinecap: this.strokeLinecap,\r\n      strokeLinejoin: this.strokeLinejoin\r\n    };\r\n  }\r\n\r\n  public get customName(): SafeUrl {\r\n    return this.sanitizer.bypassSecurityTrustResourceUrl(this.iconName + '.svg');\r\n  }\r\n\r\n  constructor(protected sanitizer: DomSanitizer) {}\r\n\r\n  ngOnInit(): void {\r\n    allIcons[this.capitalizeName()] ? this.customIcon = false : this.customIcon = true;\r\n\r\n    !this.width ? this.width = '16' : null;\r\n    !this.height ? this.height = 'auto' : null;\r\n    !this.fill ? this.fill = 'none' : null;\r\n    !this.stroke ? this.stroke = 'currentColor' : null;\r\n    !this.strokeWidth ? this.strokeWidth = 1.5 : null;\r\n    !this.strokeLinecap ? this.strokeLinecap = 'round' : null;\r\n    !this.strokeLinejoin ? this.strokeLinejoin = 'round' : null;\r\n  }\r\n\r\n  capitalizeName(): string {\r\n    let iconNameCap = '';\r\n    this.iconName.split('-').forEach( str => iconNameCap += str.charAt(0).toUpperCase() + str.slice(1));\r\n    return iconNameCap;\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3879,6 +3886,26 @@
                 }
             ],
             "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "sanitizer",
+                        "type": "DomSanitizer"
+                    }
+                ],
+                "line": 36,
+                "jsdoctags": [
+                    {
+                        "name": "sanitizer",
+                        "type": "DomSanitizer",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
             "implements": [
                 "OnInit"
             ],
@@ -3889,20 +3916,20 @@
                         "name": "iconStyles",
                         "type": "any",
                         "returnType": "any",
-                        "line": 21
+                        "line": 22
                     }
                 },
                 "customName": {
                     "name": "customName",
                     "getSignature": {
                         "name": "customName",
-                        "type": "string",
-                        "returnType": "string",
-                        "line": 33
+                        "type": "",
+                        "returnType": "SafeUrl",
+                        "line": 34
                     }
                 }
             },
-            "templateData": "<ng-template [ngIf]=\"!customIcon\" [ngIfElse]=\"customIconTemplate\">\r\n  <i-feather [name]=\"iconName\"\r\n             [ngStyle]=\"iconStyles\"\r\n             class=\"p-icon\">\r\n  </i-feather>\r\n</ng-template>\r\n\r\n<ng-template #customIconTemplate>\r\n  <i class=\"p-icon p-icon-custom\"\r\n     [ngClass]=\"customName\"\r\n     [ngStyle]=\"iconStyles\"></i>\r\n</ng-template>\r\n\r\n\r\n"
+            "templateData": "<ng-template [ngIf]=\"!customIcon\" [ngIfElse]=\"customIconTemplate\">\r\n  <i-feather [name]=\"iconName\"\r\n             [ngStyle]=\"iconStyles\"\r\n             class=\"p-icon\">\r\n  </i-feather>\r\n</ng-template>\r\n\r\n<ng-template #customIconTemplate>\r\n  <object class=\"p-icon p-icon-custom\"\r\n    type=\"image/svg+xml\"\r\n    [attr.data]=\"customName\">\r\n  </object>\r\n</ng-template>\r\n\r\n\r\n"
         },
         {
             "name": "InputHeaderComponent",
@@ -9866,17 +9893,17 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
-                "type": "Story<CheckboxPageComponent>",
-                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "Story<CheckboxGroupPageComponent>",
+                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
-                "type": "Story<CheckboxGroupPageComponent>",
-                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "Story<CheckboxPageComponent>",
+                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -10996,7 +11023,7 @@
                 "linktype": "component",
                 "name": "FileUploadComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {
@@ -11032,7 +11059,7 @@
                 "linktype": "component",
                 "name": "IconComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/13",
+                "coverageCount": "0/14",
                 "status": "low"
             },
             {
