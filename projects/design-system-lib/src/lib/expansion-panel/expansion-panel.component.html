@@ -9,6 +9,14 @@
               height="auto"
               strokeWidth="2.5">
       </p-icon>
+      <p-icon *ngIf="panel.header.tooltipText"
+              class="p-expansion-panel-info"
+              iconName="info"
+              width="16"
+              [matTooltip]="panel.header.tooltipText"
+              matTooltipPosition="above"
+              matTooltipClass="p-tooltip above">
+      </p-icon>
       <span class="p-expansion-panel-title-main paragraph-2-default">
         {{panel.header.titleMain}}
       </span>

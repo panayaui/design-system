@@ -85,6 +85,10 @@ $expand-width: 14px;
     transform: rotate(-90deg);
     transition: transform 280ms;
   }
+
+  .p-expansion-panel-info {
+    margin-right: $gap-small;
+  }
 }
 
 // focus & hover
