@@ -16,14 +16,22 @@
 
   &-label {
     display: flex;
+    justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
-    padding: 22px 18px;
-    border: 1px dashed $gray-scale-500;
+    padding: 22px 20px;
     cursor: pointer;
     &:hover {
       background-color: $primary-c-50;
+    }
+
+    .p-file-upload:not(.droppable) & {
+      border: 1px solid $gray-scale-500;
+    }
+
+    .droppable & {
+      border: 1px dashed $gray-scale-500;
     }
   }
 
@@ -32,10 +40,20 @@
   }
 
   &-link {
+    display: inline-flex;
+    align-items: center;
     font-weight: 600;
     margin-right: 4px;
     margin-left: 4px;
     position: relative;
     @include linkHoverUnderline;
+  }
+
+  .first-word {
+    margin-right: 4px;
+  }
+
+  &:not(.droppable) .first-word {
+    text-transform: capitalize;
   }
 }

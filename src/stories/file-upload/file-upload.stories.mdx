@@ -21,11 +21,23 @@ export const Template = (args) => <FileUploadComponent {...args} />
 ```ts
   <p-file-upload></p-file-upload>
 ```
-
+###### Droppable
 <Canvas>
-  <Story name="File Upload"
+  <Story name="Droppable"
     args={{
-      label: 'Label'
+      label: 'Label',
+      isDroppable: true
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+###### Not Droppable
+<Canvas>
+  <Story name="Not Droppable"
+    args={{
+      label: 'Label',
+      isDroppable: false
     }}>
     {Template.bind({})}
   </Story>
@@ -33,5 +45,5 @@ export const Template = (args) => <FileUploadComponent {...args} />
 
 The file upload component's width = 100%. 
 
-In this example width = 355px is set on its parent contaner.
+In this example width = 360px is set on its parent contaner.
 
