@@ -1,8 +1,7 @@
 <!--Singe select-->
 <ng-container *ngIf="singleMenuTrigger && !groupTitle">
   <p-menu-single-select [menuList]="singleMenuList"
-                        [buttonFirst]="buttonFirst"
-                        [buttonLast]="buttonLast">
+                        [footerButtons]="footerButtons">
     <!--ng-content-->
     <p-input-text [value]="singleMenuTrigger.value"
                   [ariaLabel]="singleMenuTrigger.ariaLabel"
@@ -14,8 +13,7 @@
 <ng-container *ngIf="singleMenuTrigger && groupTitle && !filterPlaceholder">
   <p-menu-single-select [menuList]="singleMenuList"
                         [groupTitle]="groupTitle"
-                        [buttonFirst]="buttonFirst"
-                        [buttonLast]="buttonLast">
+                        [footerButtons]="footerButtons">
     <!--ng-content-->
     <p-input-text [value]="singleMenuTrigger.value"
                   [ariaLabel]="singleMenuTrigger.ariaLabel"
@@ -29,8 +27,7 @@
                         [groupTitle]="groupTitle"
                         [filterAriaLabel]="filterAriaLabel"
                         [filterPlaceholder]="filterPlaceholder"
-                        [buttonFirst]="buttonFirst"
-                        [buttonLast]="buttonLast">
+                        [footerButtons]="footerButtons">
     <!--ng-content-->
     <p-action-button [label]="singleMenuTrigger.label"
                      [iconBeforeName]="singleMenuTrigger.iconBeforeName"

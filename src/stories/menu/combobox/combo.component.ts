@@ -26,8 +26,7 @@ export class ComboComponent {
   @Input() singleMenuTrigger: IInputText | IActionButton;
   @Input() singleMenuList: any;
   @Input() groupTitle: any;
-  @Input() buttonFirst: IMenuButton;
-  @Input() buttonLast: IMenuButton;
+  @Input() footerButtons: IMenuButton[];
   @Input() filterAriaLabel: string;
   @Input() filterPlaceholder: string;
 

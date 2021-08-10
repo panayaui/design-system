@@ -7,6 +7,7 @@ export * from './lib/button/split-button/split-button.component';
 export * from './lib/icon/icon.module';
 export * from './lib/icon/icon.component';
 export * from './lib/icon/icon.interface';
+export * from './lib/icon/icon-plus/icon.component';
 
 export * from './lib/labels/label-types.enum';
 export * from './lib/labels/label.module';

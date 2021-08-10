@@ -6,9 +6,11 @@
 
 <!--menu-single-select window-->
 <mat-menu #menu="matMenu" class="p-menu p-menu-single" [overlapTrigger]="false">
-  <div class="p-menu-container" (click)="$event.stopPropagation()"
-                                (keydown)="$event.stopPropagation()">
-    <div class="p-menu-header" *ngIf="filterPlaceholder">
+  <div class="p-menu-container"
+       (click)="$event.stopPropagation()"
+       (keydown)="$event.stopPropagation()"
+       [attr.style]="'--custom: ' + footerButtons?.length">
+    <div class="p-menu-header" [style.--my-color]="'red'" *ngIf="filterPlaceholder">
       <p-input-outline class="p-menu-input"
                     [ariaLabel]="filterAriaLabel"
                     [placeholder]="filterPlaceholder"
@@ -46,19 +48,15 @@
       </ng-template>
     </div>
 
-    <div class="p-menu-footer" *ngIf="filterPlaceholder">
-      <p-button class="p-menu-btn-line"
-                [label]="buttonFirst.label"
-                [iconBefore]="buttonFirst.icon.iconName"
-                [iconBeforeWidth]="buttonFirst.icon.width"
-                [iconBeforeHeight]="buttonFirst.icon.height"
-                [buttonType]="buttonFirst.buttonType"></p-button>
-      <p-button class="p-menu-btn-line"
-                [label]="buttonLast.label"
-                [iconBefore]="buttonLast.icon.iconName"
-                [iconBeforeWidth]="buttonLast.icon.width"
-                [iconBeforeHeight]="buttonLast.icon.height"
-                [buttonType]="buttonLast.buttonType"></p-button>
+    <div class="p-menu-footer" *ngIf="footerButtons?.length">
+      <p-button *ngFor="let btn of footerButtons"
+                class="p-menu-btn-line"
+                [label]="btn.label"
+                [iconBefore]="btn.icon.iconName"
+                [iconBeforeWidth]="btn.icon.width"
+                [iconBeforeHeight]="btn.icon.height"
+                [buttonType]="btn.buttonType"
+                (onClickTask)="buttonSwitch(btn.footerBtnCallback)"></p-button>
     </div>
   </div>
 </mat-menu>

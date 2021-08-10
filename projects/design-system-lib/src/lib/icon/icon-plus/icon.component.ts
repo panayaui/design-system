@@ -2,11 +2,11 @@ import {Component, Input, OnInit} from '@angular/core';
 import { allIcons } from 'angular-feather/icons';
 
 @Component({
-  selector: 'p-icon',
+  selector: 'p-icon-plus',
   templateUrl: './icon.component.html',
   styleUrls: ['./icon.component.scss'],
 })
-export class IconComponent implements OnInit {
+export class IconPlusComponent implements OnInit {
   @Input() iconName: string;
   @Input() width: string  = '16'; // pixels or auto
   @Input() height: string  = 'auto'; // pixels or auto
@@ -28,10 +28,6 @@ export class IconComponent implements OnInit {
       strokeLinecap: this.strokeLinecap,
       strokeLinejoin: this.strokeLinejoin
     };
-  }
-
-  public get customName(): string {
-    return this.disabled ? `p-icon-custom-${this.iconName}-disabled` : `p-icon-custom-${this.iconName}`;
   }
 
   ngOnInit(): void {

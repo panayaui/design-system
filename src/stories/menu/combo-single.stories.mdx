@@ -34,25 +34,7 @@ import {stateGroups} from './stateGroups';
         { name: 'Menu item',
           disabled: false
         }
-      ],
-      buttonFirst: {
-        label: 'Share',
-        buttonType: ButtonTypeEnum.Tertiary,
-        icon: {
-          iconName: 'eraser',
-          width: '15',
-          height: '15'
-        }
-      },
-      buttonLast: {
-        label: 'Reset',
-        buttonType: ButtonTypeEnum.Tertiary,
-        icon: {
-          iconName: 'eraser',
-          width: '15',
-          height: '15'
-        }
-      }
+      ]
     }}
  />
 
@@ -97,7 +79,35 @@ export const Template = (args) => <ComboComponent {...args} />
       singleMenuList: stateGroups,
       groupTitle: true,
       filterAriaLabel: 'Find Label',
-      filterPlaceholder: 'Find Label' 
+      filterPlaceholder: 'Find Label',
+      footerButtons: [
+        {
+          label: 'Share',
+          buttonType: ButtonTypeEnum.Tertiary,
+          footerBtnCallback: {
+            name: 'shareFunc',
+            params: 'Share button triggered'
+          },
+          icon: {
+            iconName: 'share-2',
+            width: '15',
+            height: '15'
+          }
+        },
+        {
+          label: 'Reset',
+          buttonType: ButtonTypeEnum.Tertiary,
+          footerBtnCallback: {
+            name: 'resetFunc',
+            params: 'Reset button triggered'
+          },
+          icon: {
+            iconName: 'eraser',
+            width: '15',
+            height: '15'
+          }
+        }
+      ]
     }}>
     {Template.bind({})}
   </Story>

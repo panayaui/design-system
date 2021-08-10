@@ -6,9 +6,5 @@
 </ng-template>
 
 <ng-template #customIconTemplate>
-  <i class="p-icon p-icon-custom"
-     [ngClass]="customName"
-     [ngStyle]="iconStyles"></i>
+  <i class="p-icon-custom" [style.font-size]="width + 'px'">{{ iconName }}</i>
 </ng-template>
-
-
