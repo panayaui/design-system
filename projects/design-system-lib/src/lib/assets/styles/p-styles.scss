@@ -1,3 +1,15 @@
+/* icomoon - custom icons */
+@font-face {
+  font-family: 'IcoMoon';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/icomoon.eot'); /* IE9 Compat Modes */
+  src: local(''),
+  url('../fonts/icomoon.woff') format('woff'), /* Modern Browsers */
+  url('../fonts/icomoon.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('../fonts/icomoon.svg') format('svg'); /* Legacy iOS */
+}
+
 /* source-sans-pro-regular - latin */
 @font-face {
   font-family: 'Source Sans Pro';
@@ -189,7 +201,7 @@ $dev-c-400: #362B97;
 $dev-c-300: #4132C8;
 
 // x-close hover colors
-$x-hover-white-text: rgba(254, 254, 255, 0.2);
+$x-hover-white-text: rgba(254, 254, 255, 0.15);
 $x-hover-dark-text: rgba(45, 48, 71, 0.15);
 $x-hover-purple-text: rgba(254, 254, 255, 0.6);
 
