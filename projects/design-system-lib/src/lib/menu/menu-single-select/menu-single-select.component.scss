@@ -3,7 +3,7 @@
 $input-text-height: 32px;
 $input-text-padding: $menu-padding;
 $menu-header-height: $input-text-height + $menu-padding + $menu-padding;
-$menu-footer-height: $menu-padding * 2 + $menu-item-height * 2 + 1px;
+$menu-footer-height: calc(#{$menu-padding} * 2 + #{$menu-item-height} * var(--custom) + #{$gap-small} * (var(--custom) - 1 ) + 1px);
 
 %menu-item {
   display: flex;
@@ -21,7 +21,7 @@ $menu-footer-height: $menu-padding * 2 + $menu-item-height * 2 + 1px;
 }
 
 ::ng-deep .p-menu-single.mat-menu-panel {
-   .mat-menu-item {
+ .mat-menu-item {
     @extend %menu-item;
     font-size: $small-font-size;
     &:hover,
@@ -88,6 +88,9 @@ $menu-footer-height: $menu-padding * 2 + $menu-item-height * 2 + 1px;
     display: block;
     width: 100%;
     height: $menu-item-height;
+    & + & {
+      margin-top: $gap-small;
+    }
     ::ng-deep .p-btn {
       width: 100%;
       height: 100%;
