@@ -1,6 +1,6 @@
 /* icomoon - custom icons */
 @font-face {
-  font-family: 'IcoMoon';
+  font-family: 'CustomIcons';
   font-style: normal;
   font-weight: 400;
   src: url('../fonts/icomoon.eot'); /* IE9 Compat Modes */
@@ -106,6 +106,7 @@
 // Custom system
 $font-family-accent: 'Source Sans Pro', 'Open Sans', sans-serif;
 $font-family-basic: 'Inter', 'Open Sans', sans-serif;
+$font-family-basic: 'IcoMoon';
 
 // max screen width: 1920px;
 // min screen width: 1366px;

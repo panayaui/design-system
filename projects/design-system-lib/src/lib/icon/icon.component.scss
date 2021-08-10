@@ -69,7 +69,8 @@
   }
 }
 
-.p-icomoon {
-  font-family: 'IcoMoon';
-  font-size: 24px;
+.p-icon-custom {
+  display: inline-block;
+  font-family: $font-family-icon;
+  color: currentColor;
 }
