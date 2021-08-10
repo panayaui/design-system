@@ -3912,6 +3912,140 @@
             "templateData": "<ng-template [ngIf]=\"!customIcon\" [ngIfElse]=\"customIconTemplate\">\r\n  <i-feather [name]=\"iconName\"\r\n             [ngStyle]=\"iconStyles\"\r\n             class=\"p-icon\">\r\n  </i-feather>\r\n</ng-template>\r\n\r\n<ng-template #customIconTemplate>\r\n  <i class=\"p-icon p-icon-custom\"\r\n     [ngClass]=\"customName\"\r\n     [ngStyle]=\"iconStyles\"></i>\r\n</ng-template>\r\n\r\n\r\n"
         },
         {
+            "name": "IconPlusComponent",
+            "id": "component-IconPlusComponent-f3b18ab638b68909bf683e6890b9a276",
+            "file": "projects/design-system-lib/src/lib/icon/icon-plus/icon.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-icon-plus",
+            "styleUrls": [
+                "./icon.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./icon.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "line": 18,
+                    "type": "boolean"
+                },
+                {
+                    "name": "fill",
+                    "defaultValue": "'none'",
+                    "line": 13,
+                    "type": "string"
+                },
+                {
+                    "name": "height",
+                    "defaultValue": "'auto'",
+                    "line": 12,
+                    "type": "string"
+                },
+                {
+                    "name": "iconName",
+                    "line": 10,
+                    "type": "string"
+                },
+                {
+                    "name": "stroke",
+                    "defaultValue": "'currentColor'",
+                    "line": 14,
+                    "type": "string"
+                },
+                {
+                    "name": "strokeLinecap",
+                    "defaultValue": "'round'",
+                    "line": 16,
+                    "type": "string"
+                },
+                {
+                    "name": "strokeLinejoin",
+                    "defaultValue": "'round'",
+                    "line": 17,
+                    "type": "string"
+                },
+                {
+                    "name": "strokeWidth",
+                    "defaultValue": "1.5",
+                    "line": 15,
+                    "type": "number"
+                },
+                {
+                    "name": "width",
+                    "defaultValue": "'16'",
+                    "line": 11,
+                    "type": "string"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "customIcon",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 19,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "capitalizeName",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 45
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 33
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport { allIcons } from 'angular-feather/icons';\r\n\r\n@Component({\r\n  selector: 'p-icon-plus',\r\n  templateUrl: './icon.component.html',\r\n  styleUrls: ['./icon.component.scss'],\r\n})\r\nexport class IconPlusComponent implements OnInit {\r\n  @Input() iconName: string;\r\n  @Input() width: string  = '16'; // pixels or auto\r\n  @Input() height: string  = 'auto'; // pixels or auto\r\n  @Input() fill: string = 'none'; // icon background\r\n  @Input() stroke: string = 'currentColor'; // line color\r\n  @Input() strokeWidth: number = 1.5; // line width in pixels\r\n  @Input() strokeLinecap: string = 'round'; // line end\r\n  @Input() strokeLinejoin: string = 'round'; // two lines join\r\n  @Input() disabled: boolean = false;\r\n  public customIcon: boolean;\r\n\r\n  public get iconStyles(): any {\r\n    return {\r\n      width: this.width === 'auto' ? this.width : `${this.width}px`,\r\n      height: this.height === 'auto' ? this.height : `${this.height}px`,\r\n      fill: this.fill,\r\n      stroke: this.stroke,\r\n      strokeWidth: `${this.strokeWidth}px`,\r\n      strokeLinecap: this.strokeLinecap,\r\n      strokeLinejoin: this.strokeLinejoin\r\n    };\r\n  }\r\n\r\n  ngOnInit(): void {\r\n    allIcons[this.capitalizeName()] ? this.customIcon = false : this.customIcon = true;\r\n\r\n    !this.width ? this.width = '16' : null;\r\n    !this.height ? this.height = 'auto' : null;\r\n    !this.fill ? this.fill = 'none' : null;\r\n    !this.stroke ? this.stroke = 'currentColor' : null;\r\n    !this.strokeWidth ? this.strokeWidth = 1.5 : null;\r\n    !this.strokeLinecap ? this.strokeLinecap = 'round' : null;\r\n    !this.strokeLinejoin ? this.strokeLinejoin = 'round' : null;\r\n  }\r\n\r\n  capitalizeName(): string {\r\n    let iconNameCap = '';\r\n    this.iconName.split('-').forEach( str => iconNameCap += str.charAt(0).toUpperCase() + str.slice(1));\r\n    return iconNameCap;\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n:host {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n.p-icon {\r\n  display: inline-flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n// custom icons\r\n.p-icon-custom {\r\n  display: inline-block;\r\n  font-family: $font-family-icon;\r\n  color: currentColor;\r\n}\r\n",
+                    "styleUrl": "./icon.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "implements": [
+                "OnInit"
+            ],
+            "accessors": {
+                "iconStyles": {
+                    "name": "iconStyles",
+                    "getSignature": {
+                        "name": "iconStyles",
+                        "type": "any",
+                        "returnType": "any",
+                        "line": 21
+                    }
+                }
+            },
+            "templateData": "<ng-template [ngIf]=\"!customIcon\" [ngIfElse]=\"customIconTemplate\">\r\n  <i-feather [name]=\"iconName\"\r\n             [ngStyle]=\"iconStyles\"\r\n             class=\"p-icon\">\r\n  </i-feather>\r\n</ng-template>\r\n\r\n<ng-template #customIconTemplate>\r\n  <i class=\"p-icon-custom\" [style.font-size]=\"width + 'px'\">{{ iconName }}</i>\r\n</ng-template>\r\n"
+        },
+        {
             "name": "InputHeaderComponent",
             "id": "component-InputHeaderComponent-b2116fc7668153caf873244a26b67a6f",
             "file": "projects/design-system-lib/src/lib/input/header/input-header.component.ts",
@@ -9042,6 +9176,9 @@
                     "elements": [
                         {
                             "name": "IconComponent"
+                        },
+                        {
+                            "name": "IconPlusComponent"
                         }
                     ]
                 },
@@ -9054,6 +9191,9 @@
                     "elements": [
                         {
                             "name": "IconComponent"
+                        },
+                        {
+                            "name": "IconPlusComponent"
                         }
                     ]
                 },
@@ -9782,12 +9922,12 @@
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
             {
-                "name": "environment",
+                "name": "Custom",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
-                "type": "object",
-                "defaultValue": "{\r\n  production: false\r\n}"
+                "file": "src/stories/icons/icon.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "environment",
@@ -9796,6 +9936,14 @@
                 "file": "src/environments/environment.prod.ts",
                 "type": "object",
                 "defaultValue": "{\r\n  production: true\r\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.ts",
+                "type": "object",
+                "defaultValue": "{\r\n  production: false\r\n}"
             },
             {
                 "name": "Examples",
@@ -9865,9 +10013,9 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
-                "type": "Story<CheckboxGroupPageComponent>",
-                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
+                "type": "Story<CheckboxGroupComponent>",
+                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -9881,9 +10029,9 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
-                "type": "Story<CheckboxGroupComponent>",
-                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts",
+                "type": "Story<CheckboxGroupPageComponent>",
+                "defaultValue": "(args: CheckboxGroupPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -9900,14 +10048,6 @@
                 "file": "src/stories/colors/color-palette.component.ts",
                 "type": "object",
                 "defaultValue": "{\r\n  primary: {\r\n    a: {\r\n      900: {name: 'P-A 900', labelColor: 'white'}\r\n    },\r\n    b: {\r\n      300: { name: 'P-B 300', labelColor: 'white' }\r\n    },\r\n    c: {\r\n      50: {name: 'P-C 50', labelColor: 'black'}\r\n    }\r\n  },\r\n  secondary: {\r\n    a: { 800: { name: 'S-A 800', labelColor: 'white' },\r\n      700: { name: 'S-A 700', labelColor: 'white' },\r\n      600: { name: 'S-A 600', labelColor: 'white' },\r\n      500: { name: 'S-A 500', labelColor: 'black' },\r\n      200: { name: 'S-A 200', labelColor: 'black' },\r\n      100: { name: 'S-A 100', labelColor: 'black' },\r\n      50: { name: 'S-A 50', labelColor: 'black' } },\r\n    b: { 700: { name: 'S-B 700', labelColor: 'white' },\r\n      500: { name: 'S-B 500', labelColor: 'white' },\r\n      400: { name: 'S-B 400', labelColor: 'white' },\r\n      300: { name: 'S-B 300', labelColor: 'white' },\r\n      200: { name: 'S-B 200', labelColor: 'black' },\r\n      100: { name: 'S-B 100', labelColor: 'black' },\r\n      50: { name: 'S-B 500', labelColor: 'black' }\r\n    }\r\n  },\r\n  gray: {\r\n    scale: { 800: { name: 'grayscale 800', labelColor: 'white' },\r\n        700: { name: 'grayscale 700', labelColor: 'white' },\r\n        600: { name: 'grayscale 600', labelColor: 'white' },\r\n        500: { name: 'grayscale 500', labelColor: 'white' },\r\n        400: { name: 'grayscale 400', labelColor: 'black' },\r\n        100: { name: 'grayscale 100', labelColor: 'black' },\r\n        50: { name: 'grayscale 50', labelColor: 'black' },\r\n        5: { name: 'grayscale 5', labelColor: 'black' },\r\n        1: { name: 'grayscale 1', labelColor: 'black' }\r\n    }\r\n  },\r\n  supportive: {\r\n    alert: {\r\n      800: { name: 'Alert 800', labelColor: 'white' },\r\n      700: { name: 'Alert 700', labelColor: 'white' },\r\n      600: { name: 'Alert 600', labelColor: 'black' },\r\n      500: { name: 'Alert 500', labelColor: 'black' },\r\n      50: { name: 'Alert 50', labelColor: 'black' }\r\n    },\r\n    low: {\r\n      400: { name: 'Low 400', labelColor: 'black' },\r\n      300: { name: 'Low 300', labelColor: 'black' }\r\n    },\r\n    medium: {\r\n      500: { name: 'Medium 500', labelColor: 'black' },\r\n      400: { name: 'Medium 400', labelColor: 'black' },\r\n      50: { name: 'Medium 50', labelColor: 'black' }\r\n    },\r\n    success: {\r\n      500: { name: 'Success 500', labelColor: 'black' },\r\n      400: { name: 'Success 400', labelColor: 'black' },\r\n      50: { name: 'Success 50', labelColor: 'black' }\r\n    }\r\n  },\r\n  dev: {\r\n    a: {\r\n      200: { name: 'A 200', labelColor: 'white' },\r\n      100: { name: 'A 100', labelColor: 'white' }\r\n    },\r\n    b: {\r\n      300: { name: 'B 300', labelColor: 'white' },\r\n      200: { name: 'B 200', labelColor: 'white' }\r\n    },\r\n    c: {\r\n      400: { name: 'C 400', labelColor: 'white' },\r\n      300: { name: 'C 300', labelColor: 'white' }\r\n    }\r\n  }\r\n}"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/icons/icon.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "require",
@@ -9960,8 +10100,8 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/icons/icon.stories.ts",
-                "type": "Story<IconComponent>",
-                "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
+                "type": "Story<IconPlusComponent>",
+                "defaultValue": "(args: IconPlusComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -10363,14 +10503,22 @@
                     "type": "literal type"
                 }
             ],
-            "src/environments/environment.ts": [
+            "src/stories/icons/icon.stories.ts": [
                 {
-                    "name": "environment",
+                    "name": "Custom",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/environments/environment.ts",
-                    "type": "object",
-                    "defaultValue": "{\r\n  production: false\r\n}"
+                    "file": "src/stories/icons/icon.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/icons/icon.stories.ts",
+                    "type": "Story<IconPlusComponent>",
+                    "defaultValue": "(args: IconPlusComponent) => ({\r\n  props: args,\r\n})"
                 }
             ],
             "src/environments/environment.prod.ts": [
@@ -10381,6 +10529,16 @@
                     "file": "src/environments/environment.prod.ts",
                     "type": "object",
                     "defaultValue": "{\r\n  production: true\r\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: false\r\n}"
                 }
             ],
             "src/stories/checkbox/checkbox-group-page/checkbox-group-page.stories.ts": [
@@ -10509,24 +10667,6 @@
                     "file": "src/stories/colors/color-palette.component.ts",
                     "type": "object",
                     "defaultValue": "{\r\n  primary: {\r\n    a: {\r\n      900: {name: 'P-A 900', labelColor: 'white'}\r\n    },\r\n    b: {\r\n      300: { name: 'P-B 300', labelColor: 'white' }\r\n    },\r\n    c: {\r\n      50: {name: 'P-C 50', labelColor: 'black'}\r\n    }\r\n  },\r\n  secondary: {\r\n    a: { 800: { name: 'S-A 800', labelColor: 'white' },\r\n      700: { name: 'S-A 700', labelColor: 'white' },\r\n      600: { name: 'S-A 600', labelColor: 'white' },\r\n      500: { name: 'S-A 500', labelColor: 'black' },\r\n      200: { name: 'S-A 200', labelColor: 'black' },\r\n      100: { name: 'S-A 100', labelColor: 'black' },\r\n      50: { name: 'S-A 50', labelColor: 'black' } },\r\n    b: { 700: { name: 'S-B 700', labelColor: 'white' },\r\n      500: { name: 'S-B 500', labelColor: 'white' },\r\n      400: { name: 'S-B 400', labelColor: 'white' },\r\n      300: { name: 'S-B 300', labelColor: 'white' },\r\n      200: { name: 'S-B 200', labelColor: 'black' },\r\n      100: { name: 'S-B 100', labelColor: 'black' },\r\n      50: { name: 'S-B 500', labelColor: 'black' }\r\n    }\r\n  },\r\n  gray: {\r\n    scale: { 800: { name: 'grayscale 800', labelColor: 'white' },\r\n        700: { name: 'grayscale 700', labelColor: 'white' },\r\n        600: { name: 'grayscale 600', labelColor: 'white' },\r\n        500: { name: 'grayscale 500', labelColor: 'white' },\r\n        400: { name: 'grayscale 400', labelColor: 'black' },\r\n        100: { name: 'grayscale 100', labelColor: 'black' },\r\n        50: { name: 'grayscale 50', labelColor: 'black' },\r\n        5: { name: 'grayscale 5', labelColor: 'black' },\r\n        1: { name: 'grayscale 1', labelColor: 'black' }\r\n    }\r\n  },\r\n  supportive: {\r\n    alert: {\r\n      800: { name: 'Alert 800', labelColor: 'white' },\r\n      700: { name: 'Alert 700', labelColor: 'white' },\r\n      600: { name: 'Alert 600', labelColor: 'black' },\r\n      500: { name: 'Alert 500', labelColor: 'black' },\r\n      50: { name: 'Alert 50', labelColor: 'black' }\r\n    },\r\n    low: {\r\n      400: { name: 'Low 400', labelColor: 'black' },\r\n      300: { name: 'Low 300', labelColor: 'black' }\r\n    },\r\n    medium: {\r\n      500: { name: 'Medium 500', labelColor: 'black' },\r\n      400: { name: 'Medium 400', labelColor: 'black' },\r\n      50: { name: 'Medium 50', labelColor: 'black' }\r\n    },\r\n    success: {\r\n      500: { name: 'Success 500', labelColor: 'black' },\r\n      400: { name: 'Success 400', labelColor: 'black' },\r\n      50: { name: 'Success 50', labelColor: 'black' }\r\n    }\r\n  },\r\n  dev: {\r\n    a: {\r\n      200: { name: 'A 200', labelColor: 'white' },\r\n      100: { name: 'A 100', labelColor: 'white' }\r\n    },\r\n    b: {\r\n      300: { name: 'B 300', labelColor: 'white' },\r\n      200: { name: 'B 200', labelColor: 'white' }\r\n    },\r\n    c: {\r\n      400: { name: 'C 400', labelColor: 'white' },\r\n      300: { name: 'C 300', labelColor: 'white' }\r\n    }\r\n  }\r\n}"
-                }
-            ],
-            "src/stories/icons/icon.stories.ts": [
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/icons/icon.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/icons/icon.stories.ts",
-                    "type": "Story<IconComponent>",
-                    "defaultValue": "(args: IconComponent) => ({\r\n  props: args,\r\n})"
                 }
             ],
             "src/stories/menu/stateGroups.ts": [
@@ -11031,6 +11171,15 @@
                 "name": "IHashtag",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/icon/icon-plus/icon.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "IconPlusComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/13",
                 "status": "low"
             },
             {
@@ -11757,7 +11906,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Primary",
+                "name": "Custom",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

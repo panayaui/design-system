@@ -1,0 +1,10 @@
+<ng-template [ngIf]="!customIcon" [ngIfElse]="customIconTemplate">
+  <i-feather [name]="iconName"
+             [ngStyle]="iconStyles"
+             class="p-icon">
+  </i-feather>
+</ng-template>
+
+<ng-template #customIconTemplate>
+  <i class="p-icon-custom" [style.font-size]="width + 'px'">{{ iconName }}</i>
+</ng-template>

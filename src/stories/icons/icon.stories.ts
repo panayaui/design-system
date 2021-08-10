@@ -1,25 +1,24 @@
 import {moduleMetadata} from '@storybook/angular';
 import {Story, Meta} from '@storybook/angular/types-6-0';
-import {IconComponent} from '../../../projects/design-system-lib/src/lib/icon/icon.component';
-import {IconModule} from '../../../projects/design-system-lib/src/lib/icon/icon.module';
+import {IconPlusComponent} from 'projects/design-system-lib/src/public-api';
+import {IconModule} from 'projects/design-system-lib/src/public-api';
 
-// export default {
-//   title: 'Icons',
-//   component: IconComponent,
-//   decorators: [
-//     moduleMetadata({
-//       imports: [IconModule],
-//     }),
-//   ],
-// } as Meta;
+export default {
+  title: 'Principles/Icons',
+  component: IconPlusComponent,
+  decorators: [
+    moduleMetadata({
+      imports: [IconModule],
+    }),
+  ],
+} as Meta;
 
-const Template: Story<IconComponent> = (args: IconComponent) => ({
+const Template: Story<IconPlusComponent> = (args: IconPlusComponent) => ({
   props: args,
 });
 
-export const Primary = Template.bind({});
-Primary.args = {
-  iconName: 'eye',
-  width: '17'
+export const Custom = Template.bind({});
+Custom.args = {
+  iconName: 'a',
+  width: '16'
 };
-
