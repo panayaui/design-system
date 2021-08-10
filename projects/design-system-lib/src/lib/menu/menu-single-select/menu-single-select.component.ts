@@ -60,4 +60,18 @@ export class MenuSingleSelectComponent implements OnInit, OnDestroy {
     this.onClickTask.emit(item);
     this.menuTrigger.closeMenu();
   }
+
+  buttonSwitch(callback): void {
+    console.log(callback);
+    this[callback.name](callback.params);
+  }
+
+  shareFunc(param): void {
+    console.log(param);
+  }
+
+  resetFunc(param): void {
+    console.log(param);
+  }
+
 }

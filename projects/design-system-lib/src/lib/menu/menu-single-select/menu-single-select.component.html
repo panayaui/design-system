@@ -55,7 +55,8 @@
                 [iconBefore]="btn.icon.iconName"
                 [iconBeforeWidth]="btn.icon.width"
                 [iconBeforeHeight]="btn.icon.height"
-                [buttonType]="btn.buttonType"></p-button>
+                [buttonType]="btn.buttonType"
+                (onClickTask)="buttonSwitch(btn.footerBtnCallback)"></p-button>
     </div>
   </div>
 </mat-menu>

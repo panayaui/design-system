@@ -84,6 +84,10 @@ export const Template = (args) => <ComboComponent {...args} />
         {
           label: 'Share',
           buttonType: ButtonTypeEnum.Tertiary,
+          footerBtnCallback: {
+            name: 'shareFunc',
+            params: 'Share button triggered'
+          },
           icon: {
             iconName: 'share-2',
             width: '15',
@@ -93,6 +97,10 @@ export const Template = (args) => <ComboComponent {...args} />
         {
           label: 'Reset',
           buttonType: ButtonTypeEnum.Tertiary,
+          footerBtnCallback: {
+            name: 'resetFunc',
+            params: 'Reset button triggered'
+          },
           icon: {
             iconName: 'eraser',
             width: '15',
