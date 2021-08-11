@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {ButtonTypeEnum} from '../button/button-type.enum';
 import {IMastheadMenuItem} from './masthead.interface';
+import {IMegaMenuColumn} from './mega-menu/mega-menu-column.interface';
 
 @Component({
   selector: 'p-masthead',
@@ -15,6 +16,7 @@ export class MastheadComponent {
     recentlyViewed: any[];
   };
   @Input() settingsList: IMastheadMenuItem[];
+  @Input() megaMenuList: IMegaMenuColumn[];
   public buttonType = ButtonTypeEnum;
   public searchVisible: boolean = false;
   public settingsVisible: boolean = false;

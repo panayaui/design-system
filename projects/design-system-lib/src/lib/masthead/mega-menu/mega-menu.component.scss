@@ -1,0 +1,48 @@
+@import "../masthead.component";
+
+.p-mega-menu {
+  display: flex;
+  position: static;
+  padding-right: $gap-double-plus;
+  padding-left: $gap-double-plus;
+
+  &-column {
+    width: 180px;
+    & ~ & {
+      margin-left: $gap-double-plus;
+    }
+  }
+
+  &-title {
+    display: flex;
+    align-items: center;
+    height: 64px;
+  }
+
+  &-icon {
+    margin-right: $gap-base;
+  }
+
+  &-list {
+    @include resetUl;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &-item {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &-link {
+    @include ellipsis;
+    margin: 2px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .footer {
+    height: 64px;
+    border-top: 1px solid $gray-scale-400;
+  }
+}

@@ -7,6 +7,7 @@ import {IconModule} from '../icon/icon.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MastheadSearchComponent} from './masthead-search/masthead-search.component';
 import {InputModule} from '../input/input.module';
+import {MegaMenuComponent} from './mega-menu/mega-menu.component';
 import {MastheadSettingsComponent} from './masthead-settings/masthead-settings.component';
 
 @NgModule({
@@ -21,7 +22,8 @@ import {MastheadSettingsComponent} from './masthead-settings/masthead-settings.c
   declarations: [
     MastheadComponent,
     MastheadSearchComponent,
-    MastheadSettingsComponent
+    MastheadSettingsComponent,
+    MegaMenuComponent
   ],
   exports: [
     MastheadComponent

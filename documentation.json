@@ -901,6 +901,46 @@
             "methods": []
         },
         {
+            "name": "IMegaMenuColumn",
+            "id": "interface-IMegaMenuColumn-496513ab0126a72e92062ead086467d0",
+            "file": "projects/design-system-lib/src/lib/masthead/mega-menu/mega-menu-column.interface.ts",
+            "type": "interface",
+            "sourceCode": "export interface IMegaMenuColumn {\r\n  title: string;\r\n  titleIcon: string;\r\n  linksList: {\r\n    name: string;\r\n    link: string;\r\n  }[];\r\n  footerLink: {\r\n    name: string;\r\n    link: string;\r\n  };\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "footerLink",
+                    "type": "literal type",
+                    "optional": false,
+                    "description": "",
+                    "line": 8
+                },
+                {
+                    "name": "linksList",
+                    "type": "literal type[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "title",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "titleIcon",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
             "name": "IMenuButton",
             "id": "interface-IMenuButton-17b6b4ae8f4d81dda8470d7cd6ca64d9",
             "file": "projects/design-system-lib/src/lib/menu/menu-button.interface.ts",
@@ -3876,7 +3916,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../assets/styles/custom\";\r\n\r\n:host {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n.p-icon {\r\n  display: inline-flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n// custom icons\r\n.p-icon-custom {\r\n  background-repeat: no-repeat;\r\n  background-size: contain;\r\n  &-eraser {\r\n    background-image: url('../assets/images/icons/eraser.svg');\r\n  }\r\n  &-eraser-disabled {\r\n    background-image: url('../assets/images/icons/eraser-disabled.svg');\r\n  }\r\n  &-unlink {\r\n    background-image: url('../assets/images/icons/unlink.svg');\r\n  }\r\n  &-first {\r\n    background-image: url('../assets/images/icons/first.svg');\r\n  }\r\n  &-first-disabled {\r\n    background-image: url('../assets/images/icons/first-disabled.svg');\r\n  }\r\n  &-last {\r\n    background-image: url('../assets/images/icons/last.svg');\r\n  }\r\n  &-last-disabled {\r\n    background-image: url('../assets/images/icons/last-disabled.svg');\r\n  }\r\n  &-folder-open {\r\n    background-image: url('../assets/images/icons/folder-open.svg');\r\n  }\r\n  &-view {\r\n    background-image: url('../assets/images/icons/view.svg');\r\n  }\r\n  &-track-status {\r\n    background-image: url('../assets/images/icons/track-status.svg');\r\n  }\r\n  &-track-status:hover {\r\n    background-image: url('../assets/images/icons/track-status-hover.svg');\r\n  }\r\n  &-user-circle {\r\n    background-image: url('../assets/images/icons/user-circle.svg');\r\n  }\r\n  &-user-circle:hover {\r\n    background-image: url('../assets/images/icons/user-circle-hover.svg');\r\n  }\r\n  &-bug {\r\n    background-image: url('../assets/images/icons/bug.svg');\r\n  }\r\n  &-honeycomb {\r\n    background-image: url('../assets/images/icons/honeycomb.svg');\r\n  }\r\n  &-quick-test {\r\n    background-image: url('../assets/images/icons/quick-test.svg');\r\n  }\r\n  &-switch {\r\n    background-image: url('../assets/images/icons/switch.svg');\r\n  }\r\n}\r\n",
+                    "data": "@import \"../assets/styles/custom\";\r\n\r\n:host {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n.p-icon {\r\n  display: inline-flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n// custom icons\r\n.p-icon-custom {\r\n  background-repeat: no-repeat;\r\n  background-size: contain;\r\n  &-eraser {\r\n    background-image: url('../assets/images/icons/eraser.svg');\r\n  }\r\n  &-eraser-disabled {\r\n    background-image: url('../assets/images/icons/eraser-disabled.svg');\r\n  }\r\n  &-unlink {\r\n    background-image: url('../assets/images/icons/unlink.svg');\r\n  }\r\n  &-first {\r\n    background-image: url('../assets/images/icons/first.svg');\r\n  }\r\n  &-first-disabled {\r\n    background-image: url('../assets/images/icons/first-disabled.svg');\r\n  }\r\n  &-last {\r\n    background-image: url('../assets/images/icons/last.svg');\r\n  }\r\n  &-last-disabled {\r\n    background-image: url('../assets/images/icons/last-disabled.svg');\r\n  }\r\n  &-folder-open {\r\n    background-image: url('../assets/images/icons/folder-open.svg');\r\n  }\r\n  &-view {\r\n    background-image: url('../assets/images/icons/view.svg');\r\n  }\r\n  &-track-status {\r\n    background-image: url('../assets/images/icons/track-status.svg');\r\n  }\r\n  &-track-status:hover {\r\n    background-image: url('../assets/images/icons/track-status-hover.svg');\r\n  }\r\n  &-user-circle {\r\n    background-image: url('../assets/images/icons/user-circle.svg');\r\n  }\r\n  &-user-circle:hover {\r\n    background-image: url('../assets/images/icons/user-circle-hover.svg');\r\n  }\r\n  &-bug {\r\n    background-image: url('../assets/images/icons/bug.svg');\r\n  }\r\n  &-honeycomb {\r\n    background-image: url('../assets/images/icons/honeycomb.svg');\r\n  }\r\n  &-quick-test {\r\n    background-image: url('../assets/images/icons/quick-test.svg');\r\n  }\r\n  &-switch {\r\n    background-image: url('../assets/images/icons/switch.svg');\r\n  }\r\n  &-rocket {\r\n    background-image: url('../assets/images/icons/rocket.svg');\r\n  }\r\n  &-system {\r\n    background-image: url('../assets/images/icons/system.svg');\r\n  }\r\n  &-portfolio {\r\n    background-image: url('../assets/images/icons/portfolio.svg');\r\n  }\r\n}\r\n",
                     "styleUrl": "./icon.component.scss"
                 }
             ],
@@ -5273,7 +5313,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"p-masthead\">\r\n  <a href=\"\" class=\"p-masthead-homepage-link\">\r\n    Home page\r\n    <img src=\"./logo.svg\" alt=\"Panaya Logo\"\r\n         class=\"p-masthead-logo\"/>\r\n  </a>\r\n  <nav aria-label=\"Main Navigation\" class=\"p-masthead-nav\">\r\n    <ul class=\"p-masthead-nav-list\" [class.settings-opened]=\"settingsVisible\">\r\n      <li *ngFor=\"let item of navList\"\r\n          class=\"p-masthead-nav-item\"\r\n          [ngClass]=\"{'divider' : item.divider, 'megaMenu-trigger' : item.megaMenu}\">\r\n        <a href=\"\"\r\n           class=\"p-masthead-nav-link\"\r\n           [class.selected]=\"item.selected\">\r\n          <p-icon *ngIf=\"item.megaMenu\"\r\n                  class=\"p-masthead-nav-link-icon\"\r\n                  iconName=\"menu\"\r\n                  width=\"22\"></p-icon>\r\n          <span class=\"p-masthead-nav-link-name headline-2-bold\">\r\n              {{item.name}}\r\n            </span>\r\n          <span *ngIf=\"item.badge\" class=\"p-masthead-nav-badge\">\r\n              {{item.badge}}\r\n          </span>\r\n        </a>\r\n        <ul *ngIf=\"item.subMenu\" class=\"p-masthead-submenu-list\">\r\n          <li *ngFor=\"let subItem of item.subMenu\" class=\"p-masthead-submenu-item\">\r\n            <a href=\"\" class=\"p-masthead-submenu-link headline-3-regular\">\r\n              {{subItem.name}}\r\n            </a>\r\n          </li>\r\n        </ul>\r\n      </li>\r\n    </ul>\r\n  </nav>\r\n\r\n  <p-button class=\"p-masthead-icon-button search\"\r\n            ariaLabel=\"Open search\"\r\n            [buttonType]=\"'isIcon'\"\r\n            iconBefore=\"search\"\r\n            iconBeforeWidth=\"22\"\r\n            matTooltip=\"Search\"\r\n            matTooltipPosition=\"above\"\r\n            matTooltipClass=\"p-tooltip below\"\r\n            (onClickTask)=\"toggleSearch(true)\"></p-button>\r\n\r\n  <p-button class=\"p-masthead-icon-button settings\"\r\n            ariaLabel=\"Open settings\"\r\n            [buttonType]=\"'isIcon'\"\r\n            iconBefore=\"settings\"\r\n            iconBeforeWidth=\"22\"\r\n            matTooltip=\"Settings\"\r\n            matTooltipPosition=\"above\"\r\n            matTooltipClass=\"p-tooltip below\"\r\n            (onClickTask)=\"toggleSettings(true)\"></p-button>\r\n  <p-masthead-settings [settingsList]=\"settingsList\"\r\n                       [isSettingsVisible]=\"settingsVisible\"\r\n                       (onCloseSettings)=\"toggleSettings(false)\">\r\n  </p-masthead-settings>\r\n\r\n  <p-button class=\"p-masthead-icon-button track-status\"\r\n            ariaLabel=\"Track the status of your requests\"\r\n            [buttonType]=\"'isIcon'\"\r\n            iconBefore=\"track-status\"\r\n            iconBeforeWidth=\"18\"\r\n            iconBeforeHeight=\"18\"\r\n            matTooltip=\"Track the status of your requests\"\r\n            matTooltipPosition=\"above\"\r\n            matTooltipClass=\"p-tooltip below\"\r\n            (onClickTask)=\"buttonPlaceholder()\"></p-button>\r\n\r\n  <p-button class=\"p-masthead-icon-button help notification regular\"\r\n            ariaLabel=\"Open help\"\r\n            [buttonType]=\"'isIcon'\"\r\n            iconBefore=\"help-circle\"\r\n            iconBeforeWidth=\"22\"\r\n            matTooltip=\"Help\"\r\n            matTooltipPosition=\"above\"\r\n            matTooltipClass=\"p-tooltip below\"\r\n            (onClickTask)=\"buttonPlaceholder()\"></p-button>\r\n\r\n  <p-button class=\"p-masthead-icon-button bell notification alert\"\r\n            ariaLabel=\"Open notifications\"\r\n            [buttonType]=\"'isIcon'\"\r\n            iconBefore=\"bell\"\r\n            iconBeforeWidth=\"22\"\r\n            matTooltip=\"Notifications\"\r\n            matTooltipPosition=\"above\"\r\n            matTooltipClass=\"p-tooltip below\"\r\n            (onClickTask)=\"buttonPlaceholder()\"></p-button>\r\n\r\n  <p-button class=\"p-masthead-icon-button user\"\r\n            ariaLabel=\"Open your account\"\r\n            [buttonType]=\"'isIcon'\"\r\n            iconBefore=\"user-circle\"\r\n            iconBeforeWidth=\"22\"\r\n            iconBeforeHeight=\"22\"\r\n            matTooltip=\"Account\"\r\n            matTooltipPosition=\"above\"\r\n            matTooltipClass=\"p-tooltip below\"\r\n            (onClickTask)=\"buttonPlaceholder()\"></p-button>\r\n\r\n  <p-masthead-search [isSearchVisible]=\"searchVisible\"\r\n                     [recentlyViewed]=\"mastheadSearch.recentlyViewed\"\r\n                     [filterPlaceholder]=\"mastheadSearch.filterPlaceholder\"\r\n                     [filterAriaLabel]=\"mastheadSearch.filterPlaceholder\"\r\n                     (onCloseSearch)=\"toggleSearch(false)\">\r\n  </p-masthead-search>\r\n</div>\r\n\r\n\r\n"
+            "templateData": "<!--<div class=\"p-masthead\">-->\r\n  <!--<a href=\"\" class=\"p-masthead-homepage-link\">-->\r\n    <!--Home page-->\r\n    <!--<img src=\"./logo.svg\" alt=\"Panaya Logo\"-->\r\n         <!--class=\"p-masthead-logo\"/>-->\r\n  <!--</a>-->\r\n  <!--<nav aria-label=\"Main Navigation\" class=\"p-masthead-nav\">-->\r\n    <!--<ul class=\"p-masthead-nav-list\" [class.settings-opened]=\"settingsVisible\">-->\r\n      <!--<li *ngFor=\"let item of navList\"-->\r\n          <!--class=\"p-masthead-nav-item\"-->\r\n          <!--[ngClass]=\"{'divider' : item.divider, 'megaMenu-trigger' : item.megaMenu}\">-->\r\n        <!--<a href=\"\"-->\r\n           <!--class=\"p-masthead-nav-link\"-->\r\n           <!--[class.selected]=\"item.selected\">-->\r\n          <!--<p-icon *ngIf=\"item.megaMenu\"-->\r\n                  <!--class=\"p-masthead-nav-link-icon\"-->\r\n                  <!--iconName=\"menu\"-->\r\n                  <!--width=\"22\"></p-icon>-->\r\n          <!--<span class=\"p-masthead-nav-link-name headline-2-bold\">-->\r\n              <!--{{item.name}}-->\r\n            <!--</span>-->\r\n          <!--<span *ngIf=\"item.badge\" class=\"p-masthead-nav-badge\">-->\r\n              <!--{{item.badge}}-->\r\n          <!--</span>-->\r\n        <!--</a>-->\r\n        <!--<ul *ngIf=\"item.subMenu\" class=\"p-masthead-submenu-list\">-->\r\n          <!--<li *ngFor=\"let subItem of item.subMenu\" class=\"p-masthead-submenu-item\">-->\r\n            <!--<a href=\"\" class=\"p-masthead-submenu-link headline-3-regular\">-->\r\n              <!--{{subItem.name}}-->\r\n            <!--</a>-->\r\n          <!--</li>-->\r\n        <!--</ul>-->\r\n      <!--</li>-->\r\n    <!--</ul>-->\r\n  <!--</nav>-->\r\n\r\n  <!--<p-button class=\"p-masthead-icon-button search\"-->\r\n            <!--ariaLabel=\"Open search\"-->\r\n            <!--[buttonType]=\"'isIcon'\"-->\r\n            <!--iconBefore=\"search\"-->\r\n            <!--iconBeforeWidth=\"22\"-->\r\n            <!--matTooltip=\"Search\"-->\r\n            <!--matTooltipPosition=\"above\"-->\r\n            <!--matTooltipClass=\"p-tooltip below\"-->\r\n            <!--(onClickTask)=\"toggleSearch(true)\"></p-button>-->\r\n\r\n  <!--<p-button class=\"p-masthead-icon-button settings\"-->\r\n            <!--ariaLabel=\"Open settings\"-->\r\n            <!--[buttonType]=\"'isIcon'\"-->\r\n            <!--iconBefore=\"settings\"-->\r\n            <!--iconBeforeWidth=\"22\"-->\r\n            <!--matTooltip=\"Settings\"-->\r\n            <!--matTooltipPosition=\"above\"-->\r\n            <!--matTooltipClass=\"p-tooltip below\"-->\r\n            <!--(onClickTask)=\"toggleSettings(true)\"></p-button>-->\r\n  <!--<p-masthead-settings [settingsList]=\"settingsList\"-->\r\n                       <!--[isSettingsVisible]=\"settingsVisible\"-->\r\n                       <!--(onCloseSettings)=\"toggleSettings(false)\">-->\r\n  <!--</p-masthead-settings>-->\r\n\r\n  <!--<p-button class=\"p-masthead-icon-button track-status\"-->\r\n            <!--ariaLabel=\"Track the status of your requests\"-->\r\n            <!--[buttonType]=\"'isIcon'\"-->\r\n            <!--iconBefore=\"track-status\"-->\r\n            <!--iconBeforeWidth=\"18\"-->\r\n            <!--iconBeforeHeight=\"18\"-->\r\n            <!--matTooltip=\"Track the status of your requests\"-->\r\n            <!--matTooltipPosition=\"above\"-->\r\n            <!--matTooltipClass=\"p-tooltip below\"-->\r\n            <!--(onClickTask)=\"buttonPlaceholder()\"></p-button>-->\r\n\r\n  <!--<p-button class=\"p-masthead-icon-button help notification regular\"-->\r\n            <!--ariaLabel=\"Open help\"-->\r\n            <!--[buttonType]=\"'isIcon'\"-->\r\n            <!--iconBefore=\"help-circle\"-->\r\n            <!--iconBeforeWidth=\"22\"-->\r\n            <!--matTooltip=\"Help\"-->\r\n            <!--matTooltipPosition=\"above\"-->\r\n            <!--matTooltipClass=\"p-tooltip below\"-->\r\n            <!--(onClickTask)=\"buttonPlaceholder()\"></p-button>-->\r\n\r\n  <!--<p-button class=\"p-masthead-icon-button bell notification alert\"-->\r\n            <!--ariaLabel=\"Open notifications\"-->\r\n            <!--[buttonType]=\"'isIcon'\"-->\r\n            <!--iconBefore=\"bell\"-->\r\n            <!--iconBeforeWidth=\"22\"-->\r\n            <!--matTooltip=\"Notifications\"-->\r\n            <!--matTooltipPosition=\"above\"-->\r\n            <!--matTooltipClass=\"p-tooltip below\"-->\r\n            <!--(onClickTask)=\"buttonPlaceholder()\"></p-button>-->\r\n\r\n  <!--<p-button class=\"p-masthead-icon-button user\"-->\r\n            <!--ariaLabel=\"Open your account\"-->\r\n            <!--[buttonType]=\"'isIcon'\"-->\r\n            <!--iconBefore=\"user-circle\"-->\r\n            <!--iconBeforeWidth=\"22\"-->\r\n            <!--iconBeforeHeight=\"22\"-->\r\n            <!--matTooltip=\"Account\"-->\r\n            <!--matTooltipPosition=\"above\"-->\r\n            <!--matTooltipClass=\"p-tooltip below\"-->\r\n            <!--(onClickTask)=\"buttonPlaceholder()\"></p-button>-->\r\n\r\n  <!--<p-masthead-search [isSearchVisible]=\"searchVisible\"-->\r\n                     <!--[recentlyViewed]=\"mastheadSearch.recentlyViewed\"-->\r\n                     <!--[filterPlaceholder]=\"mastheadSearch.filterPlaceholder\"-->\r\n                     <!--[filterAriaLabel]=\"mastheadSearch.filterPlaceholder\"-->\r\n                     <!--(onCloseSearch)=\"toggleSearch(false)\">-->\r\n  <!--</p-masthead-search>-->\r\n\r\n  <p-mega-menu></p-mega-menu>\r\n<!--</div>-->\r\n\r\n\r\n"
         },
         {
             "name": "MastheadSearchComponent",
@@ -5500,6 +5540,62 @@
             ],
             "stylesData": "",
             "templateData": "<nav [@settingsAnimation]=\"isSettingsVisible ? 'open' : 'closed'\"\r\n     aria-label=\"Settings navigation bar\" class=\"p-masthead-settings\">\r\n  <div class=\"p-masthead-settings-container\">\r\n    <h4 class=\"p-masthead-settings-title\">\r\n      <p-icon class=\"p-masthead-settings-title-icon\"\r\n              iconName=\"settings\"\r\n              width=\"24\"></p-icon>\r\n      <span class=\"p-masthead-settings-title-name headline-2-semibold\">\r\n      Settings\r\n    </span>\r\n    </h4>\r\n\r\n    <ul class=\"p-masthead-settings-list\">\r\n      <li *ngFor=\"let item of settingsList\"\r\n          class=\"p-masthead-settings-item\">\r\n        <a href=\"\"\r\n           class=\"p-masthead-settings-link\"\r\n           [class.selected]=\"item.selected\">\r\n        <span class=\"p-masthead-settings-link-name headline-2-bold\">\r\n            {{item.name}}\r\n        </span>\r\n        </a>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n\r\n  <p-button class=\"p-masthead-settings-close\"\r\n            ariaLabel=\"Close settings navigation bar\"\r\n            [buttonType]=\"buttonType.IsIcon\"\r\n            iconBefore=\"x\"\r\n            iconBeforeWidth=\"18\"\r\n            iconBeforeStrokeWidth=\"2\"\r\n            (onClickTask)=\"onCloseSettings.emit()\"></p-button>\r\n</nav>\r\n"
+        },
+        {
+            "name": "MegaMenuComponent",
+            "id": "component-MegaMenuComponent-e46396908337e4a9a3b384f917c816ca",
+            "file": "projects/design-system-lib/src/lib/masthead/mega-menu/mega-menu.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-mega-menu",
+            "styleUrls": [
+                "./mega-menu.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./mega-menu.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "megaMenuList",
+                    "line": 11,
+                    "type": "IMegaMenuColumn[]"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "searchVisible",
+                    "defaultValue": "false",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {IMastheadMenuItem} from '../masthead.interface';\r\nimport {IMegaMenuColumn} from './mega-menu-column.interface';\r\n\r\n@Component({\r\n  selector: 'p-mega-menu',\r\n  templateUrl: './mega-menu.component.html',\r\n  styleUrls: ['./mega-menu.component.scss'],\r\n})\r\nexport class MegaMenuComponent {\r\n  @Input() megaMenuList: IMegaMenuColumn[];\r\n  public searchVisible: boolean = false;\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../../assets/styles/custom\";\r\n\r\n$link-padding: $gap-double;\r\n$logo-gap: 40px;\r\n$logo-width: 95px;\r\n$logo-and-gap-width: $logo-gap + $logo-width + $logo-gap - $link-padding * 2;\r\n$accent-color: $primary-b-300;\r\n$background-color: $primary-c-50;\r\n$megaMenuTrigger-max-width: 200px;\r\n$icons-and-gap-width: 30px * 5 + 26px + ($gap-double - 4px) * 5 + $logo-gap - 2px;\r\n$icons-and-gap-width-mobile: 28px * 5 + 24px + ($gap-double - 4px) * 5 + $logo-gap - 2px;\r\n$icon-width-on-medium-screen: 20px;\r\n$resolution-breakpoint: $width-middle-screen;\r\n\r\n.p-masthead {\r\n  display: flex;\r\n  align-items: center;\r\n  width: 100%;\r\n  height: $masthead-height;\r\n  background-color: $background-color;\r\n  padding-right: $logo-gap;\r\n  padding-left: $logo-gap - $link-padding;\r\n  position: relative; // to place masthead-search\r\n\r\n  &-homepage-link {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    font-size: 0;\r\n    height: 100%;\r\n    padding-right: $link-padding;\r\n    padding-left: $link-padding;\r\n    margin-right: $logo-gap - $link-padding * 2;\r\n  }\r\n\r\n  &-logo {\r\n    width: $logo-width;\r\n    height: 20px;\r\n  }\r\n\r\n  &-nav {\r\n    max-width: calc(100% - #{$logo-and-gap-width} - #{$icons-and-gap-width});\r\n    height: 100%;\r\n    margin-right: auto;\r\n    @media screen and (max-width: $resolution-breakpoint) {\r\n      max-width: calc(100% - #{$logo-and-gap-width} - #{$icons-and-gap-width-mobile});\r\n    }\r\n  }\r\n\r\n  &-nav-list {\r\n    @include resetUl;\r\n    display: flex;\r\n    align-items: center;\r\n    height: 100%;\r\n  }\r\n\r\n  &-nav-item {\r\n    display: flex;\r\n    align-items: center;\r\n    height: 100%;\r\n    position: relative;\r\n\r\n    &.divider:before {\r\n      content: '';\r\n      width: 1px;\r\n      height: 18px;\r\n      border-right: 1px solid $gray-scale-600;\r\n    }\r\n\r\n    &.megaMenu-trigger {\r\n      max-width: $megaMenuTrigger-max-width;\r\n    }\r\n  }\r\n\r\n  &-nav-link {\r\n    @include resetLink;\r\n    display: flex;\r\n    align-items: center;\r\n    width: 100%;\r\n    height: 100%;\r\n    padding-right: $link-padding;\r\n    padding-left: $link-padding;\r\n    transition: all 200ms ease-in-out;\r\n\r\n    .p-masthead-nav-item:hover &:not(.selected),\r\n    .p-masthead-nav-item:focus-within &:not(.selected) {\r\n      color: $accent-color;\r\n    }\r\n\r\n    &.selected {\r\n      color: $primary-a-900;\r\n      background-color: $accent-color;\r\n      transition: background-color 300ms linear 100ms;\r\n      .settings-opened & {\r\n        background-color: transparent;\r\n      }\r\n    }\r\n\r\n    @media screen and (max-width: $resolution-breakpoint) {\r\n      padding-right: $link-padding - 2px;\r\n      padding-left: $link-padding - 2px;\r\n    }\r\n  }\r\n\r\n  &-nav-link-name {\r\n    @include ellipsis;\r\n\r\n    @media screen and (max-width: $resolution-breakpoint) {\r\n      font-size: $small-font-size;\r\n      letter-spacing: 0.04em;\r\n    }\r\n  }\r\n\r\n  &-nav-link-icon {\r\n    margin-right: $gap-base;\r\n  }\r\n\r\n  &-nav-badge {\r\n    display: flex;\r\n    justify-content: space-around;\r\n    align-items: center;\r\n    flex-shrink: 0;\r\n    font-family: $font-family-accent;\r\n    font-size: $middle-font-size;\r\n    font-weight: 600;\r\n    letter-spacing: 0;\r\n    width: 22px;\r\n    height: 22px;\r\n    margin-left: $gap-base;\r\n    border: 1px solid currentColor;\r\n    border-radius: 50%;\r\n    transition: background-color 200ms ease-in-out;\r\n    .p-masthead-nav-item:hover & ,\r\n    .p-masthead-nav-item:focus-within & {\r\n      font-weight: 700;\r\n      border-width: 2px;\r\n    }\r\n\r\n    .p-masthead-nav-link.selected & {\r\n      font-weight: 600;\r\n      color: $gray-scale-1;\r\n      background-color: $primary-a-900;\r\n      border-color: $primary-a-900;\r\n    }\r\n\r\n    @media screen and (max-width: $resolution-breakpoint) {\r\n      font-size: $small-font-size;\r\n      width: 20px;\r\n      height: 20px;\r\n      margin-left: $gap-base - 2px;\r\n    }\r\n  }\r\n\r\n\r\n\r\n  // dropdown menu hidden by default\r\n  &-submenu-list {\r\n    @include resetUl;\r\n    display: none;\r\n    min-width: 100%;\r\n    padding: 1.5px;\r\n    background: $primary-c-50;\r\n    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1),\r\n                0 2px 6px rgba(0, 0, 0, 0.04),\r\n                0 -3px 6px rgba(0, 0, 0, 0.04);\r\n    overflow: hidden;\r\n    position: absolute;\r\n    top: 100%;\r\n    left: 0;\r\n\r\n    .p-masthead-nav-item:hover &,\r\n    .p-masthead-nav-item:focus-within & {\r\n      display: block; // dropdown menu shown on hover\r\n    }\r\n  }\r\n\r\n  &-submenu-link {\r\n    @include resetLink;\r\n    display: flex;\r\n    align-items: center;\r\n    text-transform: capitalize;\r\n    height: 38px;\r\n    padding-right: $gap-double;\r\n    padding-left: $gap-double;\r\n    white-space: nowrap;\r\n    transition: color 200ms ease-in-out;\r\n    &:hover,\r\n    &:focus {\r\n      color: $accent-color;\r\n    }\r\n  }\r\n\r\n  &-icon-button {\r\n    &:hover {\r\n      color: $secondary-a-700;\r\n      cursor: pointer;\r\n    }\r\n    & ~ & {\r\n      margin-left: $gap-double - 4px;\r\n    }\r\n    &:first-of-type {\r\n      margin-left: $logo-gap - 2px;\r\n    }\r\n    &.notification {\r\n      @include notification($bg-color: $background-color);\r\n    }\r\n    @media screen and (max-width: $resolution-breakpoint) {\r\n      ::ng-deep &:not(.track-status) .p-icon {\r\n        width: $icon-width-on-medium-screen !important;\r\n      }\r\n      ::ng-deep &.track-status .p-icon {\r\n        width: $icon-width-on-medium-screen - 4px !important;\r\n      }\r\n    }\r\n  }\r\n\r\n  &-nav-link-icon {\r\n    @media screen and (max-width: $resolution-breakpoint) {\r\n      ::ng-deep .p-icon {\r\n        width: $icon-width-on-medium-screen !important;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+                    "styleUrl": "./mega-menu.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<ul class=\"p-mega-menu\">\r\n  <li *ngFor=\"let column of megaMenuList\" class=\"p-mega-menu-column\">\r\n    <p-icon class=\"p-mega-menu-icon\"\r\n            [iconName]=\"column.titleIcon\"\r\n            width=\"18\"\r\n            height=\"18\"></p-icon>\r\n    <h6 class=\"p-mega-menu-title\">{{ column.title }}</h6>\r\n\r\n    <ul class=\"p-mega-menu-list\">\r\n      <li *ngFor=\"let item of column.linksList\" class=\"p-mega-menu-item\">\r\n        <a [attr.href]=\"item.link\" class=\"p-mega-menu-link headline-3-regular\">\r\n          {{item.name}}\r\n        </a>\r\n      </li>\r\n\r\n      <li class=\"p-mega-menu-item footer\">\r\n        <a [attr.href]=\"column.footerLink.link\" class=\"p-mega-menu-link headline-3-regular\">\r\n          {{column.footerLink.name}}\r\n        </a>\r\n      </li>\r\n    </ul>\r\n\r\n  </li>\r\n\r\n</ul>\r\n\r\n\r\n"
         },
         {
             "name": "MenuComponent",
@@ -6363,7 +6459,7 @@
         },
         {
             "name": "MenuSingleSelectComponent",
-            "id": "component-MenuSingleSelectComponent-331345f92a7128f0701729a632a0b5b8",
+            "id": "component-MenuSingleSelectComponent-e59470c1b92228ea3cb107074f389130",
             "file": "projects/design-system-lib/src/lib/menu/menu-single-select/menu-single-select.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -6484,6 +6580,28 @@
                     ]
                 },
                 {
+                    "name": "buttonSwitch",
+                    "args": [
+                        {
+                            "name": "callback",
+                            "type": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 64,
+                    "jsdoctags": [
+                        {
+                            "name": "callback",
+                            "type": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
                     "name": "ngOnDestroy",
                     "args": [],
                     "optional": false,
@@ -6533,12 +6651,56 @@
                     ]
                 },
                 {
+                    "name": "resetFunc",
+                    "args": [
+                        {
+                            "name": "param",
+                            "type": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 73,
+                    "jsdoctags": [
+                        {
+                            "name": "param",
+                            "type": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
                     "name": "selectCompleted",
                     "args": [],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
                     "line": 54
+                },
+                {
+                    "name": "shareFunc",
+                    "args": [
+                        {
+                            "name": "param",
+                            "type": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 69,
+                    "jsdoctags": [
+                        {
+                            "name": "param",
+                            "type": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
                 }
             ],
             "hostBindings": [],
@@ -6546,11 +6708,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild} from '@angular/core';\r\nimport {FormControl} from '@angular/forms';\r\nimport {SubscriptionLike} from 'rxjs';\r\nimport {IMenuButton} from '../menu-button.interface';\r\nimport {MatMenuTrigger} from '@angular/material/menu';\r\n\r\n@Component({\r\n  selector: 'p-menu-single-select',\r\n  templateUrl: './menu-single-select.component.html',\r\n  styleUrls: ['./menu-single-select.component.scss'],\r\n})\r\nexport class MenuSingleSelectComponent implements OnInit, OnDestroy {\r\n  @Input() menuList: any[];\r\n  @Input() groupTitle: boolean = false; // true if there is a group title\r\n  @Input() filterPlaceholder: string; // if there is a search and buttons\r\n  @Input() filterAriaLabel: string;\r\n  @Input() footerButtons: IMenuButton[];\r\n  @Output() onClickTask: EventEmitter<any> = new EventEmitter();\r\n  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;\r\n  public filteredList: any[];\r\n  public formFieldControl: FormControl;\r\n  private sub: SubscriptionLike;\r\n\r\n  ngOnInit(): void {\r\n    this.filteredList = this.menuList;\r\n    if (this.filterPlaceholder) {\r\n      this.formFieldControl = new FormControl('');\r\n      this.sub = this.formFieldControl.valueChanges.subscribe((value: string) => {\r\n        this.alterList(value);\r\n      });\r\n    }\r\n    if (!this.filterAriaLabel && this.filterPlaceholder) {\r\n      this.filterAriaLabel = this.filterPlaceholder;\r\n    }\r\n  }\r\n\r\n  ngOnDestroy(): void {\r\n    if (this.filterPlaceholder && this.sub) {\r\n      this.sub.unsubscribe();\r\n      this.sub = null;\r\n    }\r\n  }\r\n\r\n  alterList(value: string): void {\r\n    this.filteredList = [];\r\n    this.menuList.forEach(group => {\r\n      const filteredGroup = group.names.filter( name => name.name.toLowerCase().indexOf(value.toLowerCase()) > -1);\r\n      if (filteredGroup.length > 0) {\r\n        this.filteredList.push(Object.assign({}, group, group.names = filteredGroup));\r\n      }\r\n    });\r\n  }\r\n\r\n  selectCompleted(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  onSelectedItem($event, item): void {\r\n    console.log(item);\r\n    this.onClickTask.emit(item);\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild} from '@angular/core';\r\nimport {FormControl} from '@angular/forms';\r\nimport {SubscriptionLike} from 'rxjs';\r\nimport {IMenuButton} from '../menu-button.interface';\r\nimport {MatMenuTrigger} from '@angular/material/menu';\r\n\r\n@Component({\r\n  selector: 'p-menu-single-select',\r\n  templateUrl: './menu-single-select.component.html',\r\n  styleUrls: ['./menu-single-select.component.scss'],\r\n})\r\nexport class MenuSingleSelectComponent implements OnInit, OnDestroy {\r\n  @Input() menuList: any[];\r\n  @Input() groupTitle: boolean = false; // true if there is a group title\r\n  @Input() filterPlaceholder: string; // if there is a search and buttons\r\n  @Input() filterAriaLabel: string;\r\n  @Input() footerButtons: IMenuButton[];\r\n  @Output() onClickTask: EventEmitter<any> = new EventEmitter();\r\n  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;\r\n  public filteredList: any[];\r\n  public formFieldControl: FormControl;\r\n  private sub: SubscriptionLike;\r\n\r\n  ngOnInit(): void {\r\n    this.filteredList = this.menuList;\r\n    if (this.filterPlaceholder) {\r\n      this.formFieldControl = new FormControl('');\r\n      this.sub = this.formFieldControl.valueChanges.subscribe((value: string) => {\r\n        this.alterList(value);\r\n      });\r\n    }\r\n    if (!this.filterAriaLabel && this.filterPlaceholder) {\r\n      this.filterAriaLabel = this.filterPlaceholder;\r\n    }\r\n  }\r\n\r\n  ngOnDestroy(): void {\r\n    if (this.filterPlaceholder && this.sub) {\r\n      this.sub.unsubscribe();\r\n      this.sub = null;\r\n    }\r\n  }\r\n\r\n  alterList(value: string): void {\r\n    this.filteredList = [];\r\n    this.menuList.forEach(group => {\r\n      const filteredGroup = group.names.filter( name => name.name.toLowerCase().indexOf(value.toLowerCase()) > -1);\r\n      if (filteredGroup.length > 0) {\r\n        this.filteredList.push(Object.assign({}, group, group.names = filteredGroup));\r\n      }\r\n    });\r\n  }\r\n\r\n  selectCompleted(): void {\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  onSelectedItem($event, item): void {\r\n    console.log(item);\r\n    this.onClickTask.emit(item);\r\n    this.menuTrigger.closeMenu();\r\n  }\r\n\r\n  buttonSwitch(callback): void {\r\n    console.log(callback);\r\n    this[callback.name](callback.params);\r\n  }\r\n\r\n  shareFunc(param): void {\r\n    console.log(param);\r\n  }\r\n\r\n  resetFunc(param): void {\r\n    console.log(param);\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../menu/menu-base.component\";\r\n\r\n$input-text-height: 32px;\r\n$input-text-padding: $menu-padding;\r\n$menu-header-height: $input-text-height + $menu-padding + $menu-padding;\r\n$menu-footer-height: $menu-padding * 2 + $menu-item-height * 2 + 1px;\r\n\r\n%menu-item {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n  font-family: $font-family-basic;\r\n  color: $primary-a-900;\r\n  height: $menu-item-height;\r\n  line-height: $menu-item-height;\r\n  padding: 0 $menu-padding;\r\n  @include ellipsis;\r\n  & + & {\r\n    margin-top: $menu-item-margin-top;\r\n  }\r\n}\r\n\r\n::ng-deep .p-menu-single.mat-menu-panel {\r\n   .mat-menu-item {\r\n    @extend %menu-item;\r\n    font-size: $small-font-size;\r\n    &:hover,\r\n    &.cdk-focused {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &[disabled] {\r\n      color: $gray-scale-600;\r\n    }\r\n    &.p-menu-item-selected {\r\n      background-color: $secondary-a-100;\r\n    }\r\n  }\r\n}\r\n\r\n.p-menu-group-title {\r\n  @extend %menu-item;\r\n  font-size: $tiny-font-size;\r\n  font-weight: 700;\r\n  text-transform: uppercase;\r\n}\r\n\r\n.p-menu {\r\n  &-header {\r\n    width: 100%;\r\n    padding: $menu-padding;\r\n    background-color: $menu-background;\r\n    position: absolute;\r\n    z-index: 1;\r\n  }\r\n\r\n  &-body {\r\n    height: 100%;\r\n    padding-top: $menu-padding;\r\n    padding-right: 0;\r\n    padding-bottom: $menu-padding;\r\n    padding-left: $menu-padding;\r\n    .p-menu-header + & {\r\n      height: calc(100% - #{$menu-footer-height});\r\n      min-height: $menu-header-height + $menu-body-min-height;\r\n      padding-top: $menu-header-height;\r\n      padding-bottom: 0;\r\n    }\r\n\r\n    &-container {\r\n      height: 100%;\r\n      padding-right: $menu-padding;\r\n      overflow: auto;\r\n    }\r\n  }\r\n\r\n  &-footer {\r\n    display: block;\r\n    width: 100%;\r\n    height: auto;\r\n    padding-top: $menu-padding;\r\n    padding-right: $menu-padding;\r\n    padding-bottom: $menu-padding;\r\n    padding-left: $menu-padding;\r\n    border-top: 1px solid $gray-scale-400;\r\n  }\r\n\r\n  &-btn-line {\r\n    display: block;\r\n    width: 100%;\r\n    height: $menu-item-height;\r\n    ::ng-deep .p-btn {\r\n      width: 100%;\r\n      height: 100%;\r\n      justify-content: flex-start;\r\n    }\r\n    ::ng-deep .p-btn-icon-before {\r\n      padding-left: $menu-padding;\r\n      .p-btn-label {\r\n        margin-left: $menu-padding;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+                    "data": "@import \"../menu/menu-base.component\";\r\n\r\n$input-text-height: 32px;\r\n$input-text-padding: $menu-padding;\r\n$menu-header-height: $input-text-height + $menu-padding + $menu-padding;\r\n$menu-footer-height: calc(#{$menu-padding} * 2 + #{$menu-item-height} * var(--custom) + #{$gap-small} * (var(--custom) - 1 ) + 1px);\r\n\r\n%menu-item {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n  font-family: $font-family-basic;\r\n  color: $primary-a-900;\r\n  height: $menu-item-height;\r\n  line-height: $menu-item-height;\r\n  padding: 0 $menu-padding;\r\n  @include ellipsis;\r\n  & + & {\r\n    margin-top: $menu-item-margin-top;\r\n  }\r\n}\r\n\r\n::ng-deep .p-menu-single.mat-menu-panel {\r\n .mat-menu-item {\r\n    @extend %menu-item;\r\n    font-size: $small-font-size;\r\n    &:hover,\r\n    &.cdk-focused {\r\n      background-color: $primary-c-50;\r\n    }\r\n    &[disabled] {\r\n      color: $gray-scale-600;\r\n    }\r\n    &.p-menu-item-selected {\r\n      background-color: $secondary-a-100;\r\n    }\r\n  }\r\n}\r\n\r\n.p-menu-group-title {\r\n  @extend %menu-item;\r\n  font-size: $tiny-font-size;\r\n  font-weight: 700;\r\n  text-transform: uppercase;\r\n}\r\n\r\n.p-menu {\r\n  &-header {\r\n    width: 100%;\r\n    padding: $menu-padding;\r\n    background-color: $menu-background;\r\n    position: absolute;\r\n    z-index: 1;\r\n  }\r\n\r\n  &-body {\r\n    height: 100%;\r\n    padding-top: $menu-padding;\r\n    padding-right: 0;\r\n    padding-bottom: $menu-padding;\r\n    padding-left: $menu-padding;\r\n    .p-menu-header + & {\r\n      height: calc(100% - #{$menu-footer-height});\r\n      min-height: $menu-header-height + $menu-body-min-height;\r\n      padding-top: $menu-header-height;\r\n      padding-bottom: 0;\r\n    }\r\n\r\n    &-container {\r\n      height: 100%;\r\n      padding-right: $menu-padding;\r\n      overflow: auto;\r\n    }\r\n  }\r\n\r\n  &-footer {\r\n    display: block;\r\n    width: 100%;\r\n    height: auto;\r\n    padding-top: $menu-padding;\r\n    padding-right: $menu-padding;\r\n    padding-bottom: $menu-padding;\r\n    padding-left: $menu-padding;\r\n    border-top: 1px solid $gray-scale-400;\r\n  }\r\n\r\n  &-btn-line {\r\n    display: block;\r\n    width: 100%;\r\n    height: $menu-item-height;\r\n    & + & {\r\n      margin-top: $gap-small;\r\n    }\r\n    ::ng-deep .p-btn {\r\n      width: 100%;\r\n      height: 100%;\r\n      justify-content: flex-start;\r\n    }\r\n    ::ng-deep .p-btn-icon-before {\r\n      padding-left: $menu-padding;\r\n      .p-btn-label {\r\n        margin-left: $menu-padding;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "./menu-single-select.component.scss"
                 }
             ],
@@ -6559,7 +6721,7 @@
                 "OnInit",
                 "OnDestroy"
             ],
-            "templateData": "<div class=\"p-menu-trigger\"\r\n     [matMenuTriggerFor]=\"menu\"\r\n     #menuTrigger=\"matMenuTrigger\">\r\n  <ng-content></ng-content>\r\n</div>\r\n\r\n<!--menu-single-select window-->\r\n<mat-menu #menu=\"matMenu\" class=\"p-menu p-menu-single\" [overlapTrigger]=\"false\">\r\n  <div class=\"p-menu-container\" (click)=\"$event.stopPropagation()\"\r\n                                (keydown)=\"$event.stopPropagation()\">\r\n    <div class=\"p-menu-header\" *ngIf=\"filterPlaceholder\">\r\n      <p-input-outline class=\"p-menu-input\"\r\n                    [ariaLabel]=\"filterAriaLabel\"\r\n                    [placeholder]=\"filterPlaceholder\"\r\n                    [isSearch]=\"true\"\r\n                    (onSearch)=\"alterList($event)\">\r\n      </p-input-outline>\r\n    </div>\r\n\r\n    <div class=\"p-menu-body\">\r\n      <ng-template [ngIf]=\"filteredList.length\" [ngIfElse]=\"emptyState\">\r\n        <div class=\"p-menu-body-container\">\r\n          <!--groupTitle === true-->\r\n          <ng-template [ngIf]=\"groupTitle\" [ngIfElse]=\"noGroupTitle\">\r\n            <ng-container *ngFor=\"let group of filteredList\">\r\n              <h6 class=\"p-menu-group-title\">{{group.letter}}</h6>\r\n              <ng-container [ngTemplateOutlet]=\"menuLine\"\r\n                            [ngTemplateOutletContext] =\"{itemsList: group.names}\"></ng-container>\r\n            </ng-container>\r\n          </ng-template>\r\n\r\n          <!--groupTitle === false-->\r\n          <ng-template #noGroupTitle>\r\n            <ng-container [ngTemplateOutlet]=\"menuLine\"\r\n                          [ngTemplateOutletContext] =\"{itemsList: menuList}\"></ng-container>\r\n          </ng-template>\r\n        </div>\r\n      </ng-template>\r\n\r\n      <ng-template #emptyState>\r\n        <div class=\"p-menu-empty\">\r\n          <p class=\"p-menu-empty-state paragraph-1-default\">\r\n            No data found\r\n          </p>\r\n        </div>\r\n      </ng-template>\r\n    </div>\r\n\r\n    <div class=\"p-menu-footer\">\r\n      <p-button *ngFor=\"let btn of footerButtons\"\r\n                class=\"p-menu-btn-line\"\r\n                [label]=\"btn.label\"\r\n                [iconBefore]=\"btn.icon.iconName\"\r\n                [iconBeforeWidth]=\"btn.icon.width\"\r\n                [iconBeforeHeight]=\"btn.icon.height\"\r\n                [buttonType]=\"btn.buttonType\"></p-button>\r\n    </div>\r\n  </div>\r\n</mat-menu>\r\n\r\n\r\n\r\n<!--menu-single-select line template-->\r\n<ng-template #menuLine let-itemsList=\"itemsList\">\r\n  <button *ngFor=\"let item of itemsList\"\r\n          mat-menu-item\r\n          [class.p-menu-item-selected]=\"item.selected\"\r\n          [disabled]=\"item.disabled\"\r\n          (click)=\"onSelectedItem($event, item)\">\r\n    <span class=\"p-menu-item-text\">{{item.name}}</span>\r\n    <p-icon *ngIf=\"item.iconName\"\r\n            class=\"p-menu-item-icon\"\r\n            [iconName]=\"item.iconName\"\r\n            width=\"18\"\r\n            height=\"18\"\r\n            [matTooltip]=\"item.tooltipText\"\r\n            matTooltipPosition=\"above\"\r\n            matTooltipClass=\"p-tooltip above\"></p-icon>\r\n  </button>\r\n</ng-template>\r\n"
+            "templateData": "<div class=\"p-menu-trigger\"\r\n     [matMenuTriggerFor]=\"menu\"\r\n     #menuTrigger=\"matMenuTrigger\">\r\n  <ng-content></ng-content>\r\n</div>\r\n\r\n<!--menu-single-select window-->\r\n<mat-menu #menu=\"matMenu\" class=\"p-menu p-menu-single\" [overlapTrigger]=\"false\">\r\n  <div class=\"p-menu-container\"\r\n       (click)=\"$event.stopPropagation()\"\r\n       (keydown)=\"$event.stopPropagation()\"\r\n       [attr.style]=\"'--custom: ' + footerButtons?.length\">\r\n    <div class=\"p-menu-header\" [style.--my-color]=\"'red'\" *ngIf=\"filterPlaceholder\">\r\n      <p-input-outline class=\"p-menu-input\"\r\n                    [ariaLabel]=\"filterAriaLabel\"\r\n                    [placeholder]=\"filterPlaceholder\"\r\n                    [isSearch]=\"true\"\r\n                    (onSearch)=\"alterList($event)\">\r\n      </p-input-outline>\r\n    </div>\r\n\r\n    <div class=\"p-menu-body\">\r\n      <ng-template [ngIf]=\"filteredList.length\" [ngIfElse]=\"emptyState\">\r\n        <div class=\"p-menu-body-container\">\r\n          <!--groupTitle === true-->\r\n          <ng-template [ngIf]=\"groupTitle\" [ngIfElse]=\"noGroupTitle\">\r\n            <ng-container *ngFor=\"let group of filteredList\">\r\n              <h6 class=\"p-menu-group-title\">{{group.letter}}</h6>\r\n              <ng-container [ngTemplateOutlet]=\"menuLine\"\r\n                            [ngTemplateOutletContext] =\"{itemsList: group.names}\"></ng-container>\r\n            </ng-container>\r\n          </ng-template>\r\n\r\n          <!--groupTitle === false-->\r\n          <ng-template #noGroupTitle>\r\n            <ng-container [ngTemplateOutlet]=\"menuLine\"\r\n                          [ngTemplateOutletContext] =\"{itemsList: menuList}\"></ng-container>\r\n          </ng-template>\r\n        </div>\r\n      </ng-template>\r\n\r\n      <ng-template #emptyState>\r\n        <div class=\"p-menu-empty\">\r\n          <p class=\"p-menu-empty-state paragraph-1-default\">\r\n            No data found\r\n          </p>\r\n        </div>\r\n      </ng-template>\r\n    </div>\r\n\r\n    <div class=\"p-menu-footer\" *ngIf=\"footerButtons?.length\">\r\n      <p-button *ngFor=\"let btn of footerButtons\"\r\n                class=\"p-menu-btn-line\"\r\n                [label]=\"btn.label\"\r\n                [iconBefore]=\"btn.icon.iconName\"\r\n                [iconBeforeWidth]=\"btn.icon.width\"\r\n                [iconBeforeHeight]=\"btn.icon.height\"\r\n                [buttonType]=\"btn.buttonType\"\r\n                (onClickTask)=\"buttonSwitch(btn.footerBtnCallback)\"></p-button>\r\n    </div>\r\n  </div>\r\n</mat-menu>\r\n\r\n\r\n\r\n<!--menu-single-select line template-->\r\n<ng-template #menuLine let-itemsList=\"itemsList\">\r\n  <button *ngFor=\"let item of itemsList\"\r\n          mat-menu-item\r\n          [class.p-menu-item-selected]=\"item.selected\"\r\n          [disabled]=\"item.disabled\"\r\n          (click)=\"onSelectedItem($event, item)\">\r\n    <span class=\"p-menu-item-text\">{{item.name}}</span>\r\n    <p-icon *ngIf=\"item.iconName\"\r\n            class=\"p-menu-item-icon\"\r\n            [iconName]=\"item.iconName\"\r\n            width=\"18\"\r\n            height=\"18\"\r\n            [matTooltip]=\"item.tooltipText\"\r\n            matTooltipPosition=\"above\"\r\n            matTooltipClass=\"p-tooltip above\"></p-icon>\r\n  </button>\r\n</ng-template>\r\n"
         },
         {
             "name": "MenuTabsComponent",
@@ -9357,6 +9519,9 @@
                         },
                         {
                             "name": "MastheadSettingsComponent"
+                        },
+                        {
+                            "name": "MegaMenuComponent"
                         }
                     ]
                 },
@@ -10003,9 +10168,9 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
-                "type": "Story<CheckboxGroupComponent>",
-                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
+                "type": "Story<CheckboxPageComponent>",
+                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -10019,9 +10184,9 @@
                 "name": "PageTemplate",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/checkbox/checkbox-page/checkbox-page.stories.ts",
-                "type": "Story<CheckboxPageComponent>",
-                "defaultValue": "(args: CheckboxPageComponent) => ({\r\n  props: args,\r\n})"
+                "file": "src/stories/checkbox/checkbox-group/checkbox-group.stories.ts",
+                "type": "Story<CheckboxGroupComponent>",
+                "defaultValue": "(args: CheckboxGroupComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "PageTemplate",
@@ -11371,6 +11536,24 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/design-system-lib/src/lib/masthead/mega-menu/mega-menu-column.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "IMegaMenuColumn",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system-lib/src/lib/masthead/mega-menu/mega-menu.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MegaMenuComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/design-system-lib/src/lib/menu/menu-button.interface.ts",
                 "type": "interface",
                 "linktype": "interface",
@@ -11439,7 +11622,7 @@
                 "linktype": "component",
                 "name": "MenuSingleSelectComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/16",
+                "coverageCount": "0/19",
                 "status": "low"
             },
             {
