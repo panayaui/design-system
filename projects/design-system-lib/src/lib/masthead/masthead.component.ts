@@ -9,6 +9,7 @@ import {IMegaMenuColumn} from './mega-menu/mega-menu-column.interface';
   styleUrls: ['./masthead.component.scss'],
 })
 export class MastheadComponent {
+  @Input() megaMenu: { name: string };
   @Input() navList: IMastheadMenuItem[];
   @Input() mastheadSearch: {
     filterAriaLabel: string;
