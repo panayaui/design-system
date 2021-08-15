@@ -206,11 +206,7 @@ import {MastheadModule} from 'projects/design-system-lib/src/public-api';
             name: 'PanayaEAD',
             link: 'https://feathericons.com/'
           }
-        ],
-        footerLink: {
-          name: 'All Systems',
-          link: 'https://feathericons.com/'
-        }
+        ]
       }
     ]
   }}
@@ -233,87 +229,22 @@ export const Template = (args) => <MastheadComponent {...args} />
   </Story>
 </Canvas>
 
-###### Deutsche
-<Canvas>
-  <Story name="Deutsche"
-    args={{
-      navList: [
-        {
-          name: 'Deutschland Laufende Veränderungen',
-          megaMenu: true
-        },
-        {
-          name: 'Überblick',
-          divider: true,
-          subMenu: [
-            {
-              name: 'Dashboards'
-            },
-            {
-              name: 'Cycles Progress'
-            },
-            {
-              name: 'Project Details'
-            }
-          ]
-        },
-        {
-          name: 'Entwicklung',
-          badge: '0',
-          subMenu: [
-            {
-              name: 'All Development'
-            },
-            {
-              name: 'Planning board'
-            }
-          ]
-        },
-        {
-          name: 'Tests',
-          badge: '1',
-          selected: true,
-          subMenu: [
-            {
-              name: 'Test Tree'
-            },
-            {
-              name: 'Test List'
-            },
-            {
-              name: 'Playlist Execution'
-            }
-          ]
-        },
-        {
-          name: 'Mängel',
-          badge: '2',
-          subMenu: [
-            {
-              name: 'Defects'
-            },
-            {
-              name: 'System-Wide Defects'
-            }
-          ]
-        },
-        {
-          name: 'Arbeitsunfähigkeitsbescheinigung'
-        },
-        {
-          name: 'Donaudampfschif'
-        }
-      ]
-    }}>
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
 ###### Component
 ```ts
 export class MastheadComponent {
-  @Input() navList: any;
+  @Input() megaMenu: { name: string };
+  @Input() navList: IMastheadMenuItem[];
+  @Input() mastheadSearch: {
+    filterAriaLabel: string;
+    filterPlaceholder: string;
+    recentlyViewed: any[];
+  };
+  @Input() settingsList: IMastheadMenuItem[];
+  @Input() megaMenuList: IMegaMenuColumn[];
   public buttonType = ButtonTypeEnum;
+  public searchVisible: boolean = false;
+  public settingsVisible: boolean = false;
+  public megaMenuVisible: boolean = false;
 }
 ```
 ###### IMastheadMenuItem {
@@ -324,5 +255,20 @@ export interface IMastheadMenuItem {
   badge?: string;
   selected?: boolean;
   subMenu?: { name: string }[];
+}
+```
+###### IMegaMenuColumn {
+```ts
+export interface IMegaMenuColumn {
+  title: string;
+  titleIcon: string;
+  linksList: {
+    name: string;
+    link: string;
+  }[];
+  footerLink: {
+    name: string;
+    link: string;
+  };
 }
 ```
