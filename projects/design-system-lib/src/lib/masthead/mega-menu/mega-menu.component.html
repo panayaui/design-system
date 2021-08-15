@@ -1,0 +1,29 @@
+<ul class="p-masthead-submenu-list p-mega-menu"
+    [class.visible]="megaMenuVisible">
+  <li *ngFor="let column of megaMenuList" class="p-mega-menu-column">
+    <h6 class="p-mega-menu-title headline-4-bold">
+      <p-icon class="p-mega-menu-icon"
+            [iconName]="column.titleIcon"
+            width="18"
+            height="18"></p-icon>
+      {{ column.title }}
+    </h6>
+
+    <ul class="p-mega-menu-list">
+      <li *ngFor="let item of column.linksList" class="p-mega-menu-item">
+        <a [attr.href]="item.link" class="p-masthead-submenu-link p-mega-menu-link paragraph-1-default">
+          {{item.name}}
+        </a>
+      </li>
+
+      <li class="p-mega-menu-item footer">
+        <a [attr.href]="column.footerLink.link" class="p-masthead-submenu-link p-mega-menu-link paragraph-1-default">
+          {{column.footerLink.name}}
+        </a>
+      </li>
+    </ul>
+
+  </li>
+</ul>
+
+

@@ -11,6 +11,27 @@ $icons-and-gap-width: 30px * 5 + 26px + ($gap-double - 4px) * 5 + $logo-gap - 2p
 $icons-and-gap-width-mobile: 28px * 5 + 24px + ($gap-double - 4px) * 5 + $logo-gap - 2px;
 $icon-width-on-medium-screen: 20px;
 $resolution-breakpoint: $width-middle-screen;
+$submenu-link-height: 38px;
+
+@mixin nav-link {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-right: $link-padding;
+  padding-left: $link-padding;
+  transition: all 200ms ease-in-out;
+
+  .p-masthead-nav-item:hover &:not(.selected),
+  .p-masthead-nav-item:focus-within &:not(.selected) {
+    color: $accent-color;
+  }
+
+  @media screen and (max-width: $resolution-breakpoint) {
+    padding-right: $link-padding - 2px;
+    padding-left: $link-padding - 2px;
+  }
+}
 
 .p-masthead {
   display: flex;
@@ -70,23 +91,20 @@ $resolution-breakpoint: $width-middle-screen;
     &.megaMenu-trigger {
       max-width: $megaMenuTrigger-max-width;
     }
+
+    .settings-opened & {
+      pointer-events: none;
+    }
+  }
+
+  &-nav-button {
+    @include resetButton;
+    @include nav-link;
   }
 
   &-nav-link {
     @include resetLink;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    padding-right: $link-padding;
-    padding-left: $link-padding;
-    transition: all 200ms ease-in-out;
-
-    .p-masthead-nav-item:hover &:not(.selected),
-    .p-masthead-nav-item:focus-within &:not(.selected) {
-      color: $accent-color;
-    }
-
+    @include nav-link;
     &.selected {
       color: $primary-a-900;
       background-color: $accent-color;
@@ -94,11 +112,6 @@ $resolution-breakpoint: $width-middle-screen;
       .settings-opened & {
         background-color: transparent;
       }
-    }
-
-    @media screen and (max-width: $resolution-breakpoint) {
-      padding-right: $link-padding - 2px;
-      padding-left: $link-padding - 2px;
     }
   }
 
@@ -179,7 +192,7 @@ $resolution-breakpoint: $width-middle-screen;
     display: flex;
     align-items: center;
     text-transform: capitalize;
-    height: 38px;
+    height: $submenu-link-height;
     padding-right: $gap-double;
     padding-left: $gap-double;
     white-space: nowrap;

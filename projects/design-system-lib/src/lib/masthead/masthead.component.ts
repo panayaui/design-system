@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {ButtonTypeEnum} from '../button/button-type.enum';
 import {IMastheadMenuItem} from './masthead.interface';
+import {IMegaMenuColumn} from './mega-menu/mega-menu-column.interface';
 
 @Component({
   selector: 'p-masthead',
@@ -8,6 +9,7 @@ import {IMastheadMenuItem} from './masthead.interface';
   styleUrls: ['./masthead.component.scss'],
 })
 export class MastheadComponent {
+  @Input() megaMenu: { name: string };
   @Input() navList: IMastheadMenuItem[];
   @Input() mastheadSearch: {
     filterAriaLabel: string;
@@ -15,9 +17,11 @@ export class MastheadComponent {
     recentlyViewed: any[];
   };
   @Input() settingsList: IMastheadMenuItem[];
+  @Input() megaMenuList: IMegaMenuColumn[];
   public buttonType = ButtonTypeEnum;
   public searchVisible: boolean = false;
   public settingsVisible: boolean = false;
+  public megaMenuVisible: boolean = false;
 
   toggleSearch(isSearchVisible: boolean): void {
     this.searchVisible = isSearchVisible;
@@ -29,5 +33,9 @@ export class MastheadComponent {
 
   toggleSettings(settingsVisible: boolean): void {
     this.settingsVisible = settingsVisible;
+  }
+
+  toggleMegaMenu(megaMenuVisible: boolean): void {
+    this.megaMenuVisible = megaMenuVisible;
   }
 }

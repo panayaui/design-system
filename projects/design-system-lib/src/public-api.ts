@@ -119,6 +119,10 @@ export * from './lib/slide-toggle/slide-toggle.component';
 
 export * from './lib/masthead/masthead.module';
 export * from './lib/masthead/masthead.component';
+export * from './lib/masthead/masthead-settings/masthead-settings.component';
+export * from './lib/masthead/masthead-search/masthead-search.component';
+export * from './lib/masthead/mega-menu/mega-menu.component';
 export * from './lib/masthead/masthead.interface';
+export * from './lib/masthead/mega-menu/mega-menu-column.interface';
 
 export * from './lib/breadcrumbs/breadcrumbs.component';

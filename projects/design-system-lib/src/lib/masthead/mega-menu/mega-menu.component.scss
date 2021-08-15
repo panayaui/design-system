@@ -1,0 +1,66 @@
+@import "../masthead.component";
+
+$title-height: 64px;
+$focus-outline-gap: 2px;
+
+.p-mega-menu {
+  padding-right: $gap-double-plus;
+  padding-left: $gap-double-plus;
+  left: -8px;
+
+  &.visible,
+  .megaMenu-trigger:focus-within {
+    display: flex;
+  }
+
+  &-column {
+    width: 180px;
+    & ~ & {
+      margin-left: $gap-double-plus;
+    }
+  }
+
+  &-title {
+    display: flex;
+    align-items: center;
+    height: $title-height;
+  }
+
+  &-icon {
+    margin-right: $gap-base;
+  }
+
+  &-list {
+    @include resetUl;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100% - #{$title-height});
+    overflow: hidden;
+  }
+
+  &-item {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &-link {
+    @include ellipsis;
+    height: $submenu-link-height - $focus-outline-gap * 2;
+    margin: $focus-outline-gap;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .footer {
+    display: flex;
+    align-items: center;
+    height: 64px;
+    margin-top: auto;
+    border-top: 1px solid $gray-scale-400;
+
+    .p-mega-menu-link {
+      width: 100%;
+    }
+  }
+}
