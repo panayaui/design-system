@@ -1,4 +1,5 @@
-<ul class="p-masthead-submenu-list p-mega-menu">
+<ul class="p-masthead-submenu-list p-mega-menu"
+    [class.visible]="megaMenuVisible">
   <li *ngFor="let column of megaMenuList" class="p-mega-menu-column">
     <h6 class="p-mega-menu-title headline-4-bold">
       <p-icon class="p-mega-menu-icon"

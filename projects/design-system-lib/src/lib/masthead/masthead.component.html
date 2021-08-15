@@ -7,7 +7,9 @@
   <nav aria-label="Main Navigation" class="p-masthead-nav">
     <ul class="p-masthead-nav-list" [class.settings-opened]="settingsVisible">
       <li class="p-masthead-nav-item megaMenu-trigger">
-        <button class="p-masthead-nav-button">
+        <button class="p-masthead-nav-button"
+                (click)="toggleMegaMenu(true)"
+                (blur)="toggleMegaMenu(false)">
           <p-icon class="p-masthead-nav-link-icon"
                   iconName="menu"
                   width="22"></p-icon>
@@ -15,7 +17,8 @@
               {{megaMenu.name}}
           </span>
         </button>
-
+        <p-mega-menu [megaMenuList]="megaMenuList"
+                     [megaMenuVisible]="megaMenuVisible"></p-mega-menu>
       </li>
       <li *ngFor="let item of navList"
           class="p-masthead-nav-item"
@@ -117,8 +120,6 @@
                      [filterAriaLabel]="mastheadSearch.filterPlaceholder"
                      (onCloseSearch)="toggleSearch(false)">
   </p-masthead-search>
-
-  <p-mega-menu [megaMenuList]="megaMenuList"></p-mega-menu>
 </div>
 
 

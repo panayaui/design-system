@@ -11,6 +11,7 @@ $icons-and-gap-width: 30px * 5 + 26px + ($gap-double - 4px) * 5 + $logo-gap - 2p
 $icons-and-gap-width-mobile: 28px * 5 + 24px + ($gap-double - 4px) * 5 + $logo-gap - 2px;
 $icon-width-on-medium-screen: 20px;
 $resolution-breakpoint: $width-middle-screen;
+$submenu-link-height: 38px;
 
 @mixin nav-link {
   display: flex;
@@ -191,7 +192,7 @@ $resolution-breakpoint: $width-middle-screen;
     display: flex;
     align-items: center;
     text-transform: capitalize;
-    height: 38px;
+    height: $submenu-link-height;
     padding-right: $gap-double;
     padding-left: $gap-double;
     white-space: nowrap;

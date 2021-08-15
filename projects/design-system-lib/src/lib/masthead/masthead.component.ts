@@ -21,6 +21,7 @@ export class MastheadComponent {
   public buttonType = ButtonTypeEnum;
   public searchVisible: boolean = false;
   public settingsVisible: boolean = false;
+  public megaMenuVisible: boolean = false;
 
   toggleSearch(isSearchVisible: boolean): void {
     this.searchVisible = isSearchVisible;
@@ -32,5 +33,9 @@ export class MastheadComponent {
 
   toggleSettings(settingsVisible: boolean): void {
     this.settingsVisible = settingsVisible;
+  }
+
+  toggleMegaMenu(megaMenuVisible: boolean): void {
+    this.megaMenuVisible = megaMenuVisible;
   }
 }

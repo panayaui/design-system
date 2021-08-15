@@ -8,6 +8,5 @@ import {IMegaMenuColumn} from './mega-menu-column.interface';
 })
 export class MegaMenuComponent {
   @Input() megaMenuList: IMegaMenuColumn[];
-  public searchVisible: boolean = false;
-
+  @Input() megaMenuVisible: boolean = false;
 }
