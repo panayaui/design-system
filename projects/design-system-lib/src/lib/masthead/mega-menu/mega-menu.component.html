@@ -16,7 +16,7 @@
         </a>
       </li>
 
-      <li class="p-mega-menu-item footer">
+      <li *ngIf="column.footerLink" class="p-mega-menu-item footer">
         <a [attr.href]="column.footerLink.link" class="p-masthead-submenu-link p-mega-menu-link paragraph-1-default">
           {{column.footerLink.name}}
         </a>
