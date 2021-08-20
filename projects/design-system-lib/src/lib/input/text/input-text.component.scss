@@ -18,10 +18,11 @@
     .p-input-text-input {
       font-family: $font-family-basic;
       font-size: $small-font-size;
-      width: calc(100% - #{$input-text-padding});
+      width: calc(100% - #{$input-text-padding} * 2);
       line-height: 20px;
       color: $primary-a-900;
       padding-left: $input-text-padding;
+      padding-right: $input-text-padding;
       caret-color: $primary-a-900;
     }
     .mat-form-field-infix {

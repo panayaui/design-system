@@ -33,23 +33,27 @@ export const Template = (args) => <ChipButtonComponent {...args} />
 ```
 ###### With Remove Icon
 <Canvas>
-  <p className="story-title">Default</p>
-  <Story name="Default"
-    args={{  }}>
+  <p className="story-title">No filter Default</p>
+  <Story name="No filter Default"
+    args={{ 
+      values: ['All']
+     }}>
     {Template.bind({})}
   </Story>
-   <p className="story-title">Active</p>
-  <Story name="Active"
-    args={{ active: true }}>
+   <p className="story-title">No filter Clicked</p>
+  <Story name="No filter Clicked"
+    args={{ 
+      active: true,
+      values: ['All'] }}>
     {Template.bind({})}
   </Story>
-  <p className="story-title">Full</p>
-  <Story name="Full"
+  <p className="story-title">With filter Default</p>
+  <Story name="With filter Default"
     args={{ full: true }}>
     {Template.bind({})}
   </Story>
-  <p className="story-title">Full Active</p>
-  <Story name="Full Active"
+  <p className="story-title">With filter Clicked</p>
+  <Story name="With filter Clicked"
     args={{ full: true, active: true }}>
     {Template.bind({})}
   </Story>
@@ -57,13 +61,13 @@ export const Template = (args) => <ChipButtonComponent {...args} />
 
 ###### No Remove Icon
 <Canvas>
-  <p className="story-title">Default</p>
-  <Story name="Default No Remove"
+  <p className="story-title">With filter Default</p>
+  <Story name="With filter Default No Remove"
     args={{ iconRemove: false }}>
     {Template.bind({})}
   </Story>
-  <p className="story-title">Full</p>
-  <Story name="Full No Remove"
+  <p className="story-title">With filter Clicked</p>
+  <Story name="With filter Clicked No Remove"
     args={{ iconRemove: false, full: true }}>
     {Template.bind({})}
   </Story>
