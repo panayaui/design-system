@@ -5,6 +5,8 @@ import {ReactiveFormsModule, Validators} from '@angular/forms';
 import {LabelTypesEnum} from 'projects/design-system-lib/src/lib/labels/label-types.enum';
 import {inputTable} from '../stories/input/inputTable';
 
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
